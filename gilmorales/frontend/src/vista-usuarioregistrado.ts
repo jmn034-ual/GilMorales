@@ -2,10 +2,9 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import 'com.vaadin.flow.component.html.Image';
-import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-split-layout/src/vaadin-split-layout.js';
 
 @customElement('my-view')
 export class MyView extends LitElement {
@@ -48,13 +47,19 @@ export class MyView extends LitElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-grow: 1; flex-shrink: 1; flex-basis: auto;">
   <vaadin-vertical-layout class="sidebar" style="flex-basis: calc(7*var(--lumo-size-s)); flex-shrink: 0; background-color: var(--lumo-contrast-5pct);">
-   <span style="align-self: center; margin: var(--lumo-space-s);">Tendencias</span>
+   <vaadin-split-layout orientation="vertical" style="width: 100%; height: 100%;">
+    <div style="align-self: center; flex-shrink: 0; flex-grow: 1;">
+     <h2>Top Usuarios</h2>
+    </div>
+    <div slot="secondary" style="flex-shrink: 0; align-self: center; flex-grow: 1;">
+     <h2>Top Tendencias</h2>
+    </div>
+   </vaadin-split-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout class="content" style="flex-grow: 1; flex-shrink: 1; flex-basis: auto;">
-   <div style="width: 100%; height: 100%;">
-    <img src="./luffy.jpg" alt="Foto" style="margin-top: var(--lumo-space-l); margin-left: var(--lumo-space-xl);">
-    <vaadin-text-area label="Write a description" placeholder="Add detailed explanation" style="margin-left: var(--lumo-space-s);"></vaadin-text-area>
-   </div>
+   <vaadin-horizontal-layout theme="spacing" class="Primer loyaout" style="width: 100%; height: 50%;"></vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+<vaadin-horizontal-layout theme="spacing" class="Primer loyaout" style="width: 100%; height: 50%;"></vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
