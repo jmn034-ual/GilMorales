@@ -59,8 +59,11 @@ export class MyView extends LitElement {
   <vaadin-vertical-layout class="content" style="flex-grow: 1; flex-shrink: 1; flex-basis: auto;">
    <vaadin-horizontal-layout theme="spacing" class="Primer loyaout" style="width: 100%; height: 50%;"></vaadin-horizontal-layout>
   </vaadin-vertical-layout>
-<vaadin-horizontal-layout theme="spacing" class="Primer loyaout" style="width: 100%; height: 50%;"></vaadin-horizontal-layout>
-  </vaadin-vertical-layout>
+  <vaadin-horizontal-layout theme="spacing" class="Primer loyaout" style="width: 100%; height: 50%;">
+   <div>
+    <span><img src="./luffy.jpg"></span>
+   </div>
+  </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
