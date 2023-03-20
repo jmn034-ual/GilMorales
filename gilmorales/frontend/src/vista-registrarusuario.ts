@@ -25,7 +25,7 @@ export class VistaRegistrarusuario extends LitElement {
   <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; margin: var(--lumo-space-s);">
    <iron-icon icon="lumo:plus"></iron-icon>
   </vaadin-button>
-  <vaadin-text-field placeholder="Search" style="margin: var(--lumo-space-m); flex-grow: 1;">
+  <vaadin-text-field placeholder="Search" style="flex-grow: 1; margin: var(--lumo-space-m);">
    <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
   </vaadin-text-field>
   <vaadin-button style="flex-grow: 1; margin: var(--lumo-space-m);">
@@ -78,25 +78,25 @@ export class VistaRegistrarusuario extends LitElement {
    <label style="width: 75%;">Tipo de usuario:</label>
    <vaadin-radio-group value="foo" style="width: 100%;">
     <vaadin-radio-button name="foo" tabindex="-1">
-     Normal
+      Normal 
     </vaadin-radio-button>
     <vaadin-radio-button name="bar" tabindex="-1">
-     Comercial
+      Comercial 
     </vaadin-radio-button>
    </vaadin-radio-group>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center;">
    <vaadin-button style="flex-grow: 1; width: 100%;">
-    Subir fotografía
+     Subir fotografía 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing-l" style="align-self: center; flex-grow: 0; margin: var(--lumo-space-l); width: 30%;">
   <vaadin-button style="flex-grow: 1; width: 100%;">
-   Descartar
+    Descartar 
   </vaadin-button>
   <vaadin-button style="width: 100%;">
-   Confirmar
+    Confirmar 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
