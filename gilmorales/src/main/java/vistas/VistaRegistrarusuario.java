@@ -11,7 +11,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
-import com.vaadin.flow.component.radiobutton.RadioButton;
+import com.vaadin.flow.component.checkbox.Checkbox;
 
 /**
  * A Designer generated component for the vista-registrarusuario template.
@@ -33,10 +33,11 @@ public class VistaRegistrarusuario extends LitTemplate {
 	private Element ironIcon;
 	@Id("vaadinTextField")
 	private TextField vaadinTextField;
-	@Id("ironIcon1")
-	private Element ironIcon1;
+
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
+	@Id("ironIcon1")
+	private Element ironIcon1;
 	@Id("vaadinButton2")
 	private Button vaadinButton2;
 	@Id("vaadinButton3")
@@ -93,13 +94,26 @@ public class VistaRegistrarusuario extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout9;
 	@Id("label8")
 	private Label label8;
+	@Id("vaadinTextField8")
+	private TextField vaadinTextField8;
 	@Id("vaadinHorizontalLayout10")
 	private HorizontalLayout vaadinHorizontalLayout10;
-	@Id("vaadinRadioGroup")
-	private RadioButtonGroup<String> vaadinRadioGroup;
 	@Id("label9")
 	private Label label9;
-
+	@Id("vaadinHorizontalLayout11")
+	private HorizontalLayout vaadinHorizontalLayout11;
+	@Id("vaadinButton4")
+	private Button vaadinButton4;
+	@Id("vaadinHorizontalLayout12")
+	private HorizontalLayout vaadinHorizontalLayout12;
+	@Id("vaadinButton5")
+	private Button vaadinButton5;
+	@Id("vaadinButton6")
+	private Button vaadinButton6;
+	@Id("vaadinCheckbox")
+	private Checkbox vaadinCheckbox;
+	@Id("vaadinCheckbox1")
+	private Checkbox vaadinCheckbox1;
 	/**
      * Creates a new VistaRegistrarusuario.
      */
