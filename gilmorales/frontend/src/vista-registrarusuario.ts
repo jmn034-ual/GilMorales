@@ -38,7 +38,7 @@ export class VistaRegistrarusuario extends LitElement {
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" style="align-self: center; margin: var(--lumo-space-xl);" id="vaadinHorizontalLayout1">
-  <label id="label">Registrarse en la web</label>
+  <h1 id="h1">Registrarse</h1>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 70%; align-self: center; flex-grow: 0; flex-shrink: 1;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout2">
