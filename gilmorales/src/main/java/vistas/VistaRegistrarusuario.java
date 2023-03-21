@@ -13,7 +13,6 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.component.checkbox.Checkbox;
 
-
 /**
  * A Designer generated component for the vista-registrarusuario template.
  *
