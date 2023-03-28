@@ -9,6 +9,7 @@ import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.button.Button;
 
 /**
  * A Designer generated component for the vista-lista-comentarios-usuario-no-registrado-item template.
@@ -32,13 +33,18 @@ public class VistaListaComentariosUsuarioNoRegistradoItem extends LitTemplate {
 	private H3 nombreUsuario;
 	@Id("comentarioL")
 	private Label comentarioL;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("numeroMeGusta")
 	private Label numeroMeGusta;
 	@Id("meGustaL")
 	private Label meGustaL;
-
+	@Id("vaadinHorizontalLayout2")
+	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("meGustaB")
+	private Button meGustaB;
+	@Id("denunciarB")
+	private Button denunciarB;
+	@Id("borrarComentarioB")
+	private Button borrarComentarioB;
 	/**
      * Creates a new VistaListaComentariosUsuarioNoRegistradoItem.
      */
