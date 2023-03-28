@@ -22,7 +22,9 @@ export class VistaListaComentariosUsuarioNoRegistradoItem extends LitElement {
   <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="align-self: center; flex-grow: 1;">
-  <h3 id="nombreUsuario">Nombre de usuario</h3>
+  <vaadin-button theme="tertiary" id="nombreDeUsuarioB">
+   Nombre de usuario
+  </vaadin-button>
   <label id="comentarioL">Comentario</label>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 1; justify-content: center;">

@@ -27,8 +27,6 @@ public class VistaListaComentariosUsuarioNoRegistradoItem extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("fotoPerfil")
 	private Avatar fotoPerfil;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("nombreUsuario")
 	private H3 nombreUsuario;
 	@Id("comentarioL")
@@ -45,6 +43,8 @@ public class VistaListaComentariosUsuarioNoRegistradoItem extends LitTemplate {
 	private Button denunciarB;
 	@Id("borrarComentarioB")
 	private Button borrarComentarioB;
+	@Id("nombreDeUsuarioB")
+	private Button nombreDeUsuarioB;
 	/**
      * Creates a new VistaListaComentariosUsuarioNoRegistradoItem.
      */
