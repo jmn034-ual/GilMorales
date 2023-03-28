@@ -25,30 +25,30 @@ export class VistaIniciarsesionotraplataforma extends LitElement {
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center;">
    <vaadin-avatar id="fotoUser1"></vaadin-avatar>
    <vaadin-button theme="tertiary" id="botonCuenta1">
-    Cuenta 1
+     Cuenta 1 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout2">
    <vaadin-avatar id="fotoUser2"></vaadin-avatar>
    <vaadin-button theme="tertiary" id="botonCuenta2">
-    Cuenta 2
+     Cuenta 2 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout3">
    <vaadin-avatar id="fotoUser3"></vaadin-avatar>
    <vaadin-button theme="tertiary" id="botonCuenta3">
-    Cuenta 3
+     Cuenta 3 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout4">
    <vaadin-avatar id="fotoUser4"></vaadin-avatar>
    <vaadin-button theme="tertiary" id="botonCuenta4">
-    Cuenta 4
+     Cuenta 4 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout5" style="align-self: center;">
    <vaadin-button id="botonUsarOtraCuenta">
-    Usar otra cuenta 
+     Usar otra cuenta 
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>

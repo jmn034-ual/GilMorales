@@ -21,9 +21,9 @@ export class VistaListaComentariosComercialItem extends LitElement {
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center; justify-content: center;">
   <vaadin-avatar id="avatar" style="align-self: center;"></vaadin-avatar>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="justify-content: center;">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="justify-content: center; flex-grow: 0;">
   <vaadin-button theme="tertiary" id="nombreDeUsuarioB1">
-   Nombre de usuario
+    Nombre de usuario 
   </vaadin-button>
   <label id="comentarioL">Comentario</label>
  </vaadin-vertical-layout>
