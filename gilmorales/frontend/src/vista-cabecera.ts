@@ -21,30 +21,30 @@ export class VistaCabecera extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout id="cabecera" style="align-self: stretch; justify-content: space-around;">
   <vaadin-button theme="icon" aria-label="Add new" id="logoWeb" style="flex-grow: 0;">
-   <iron-icon icon="lumo:plus"></iron-icon>
+   <iron-icon icon="lumo:plus" id="iconoWeb"></iron-icon>
   </vaadin-button>
   <vaadin-horizontal-layout id="barraBusqueda" style="justify-content: flex-start; flex-grow: 0; flex-shrink: 0; width: 35%;">
    <vaadin-text-field placeholder="Search" id="textoBusqueda" style="flex-grow: 0; width: 80%;">
     <iron-icon icon="lumo:search" slot="prefix" id="ironIcon"></iron-icon>
    </vaadin-text-field>
    <vaadin-button id="botonBuscar">
-    Buscar
+     Buscar 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-button id="inicio">
-   Inicio
+    Inicio 
   </vaadin-button>
   <vaadin-button id="botonNotificaciones">
-   Notificaciones
+    Notificaciones 
   </vaadin-button>
   <vaadin-button id="botonAniadir">
-   Añadir
+    Añadir 
   </vaadin-button>
   <vaadin-button id="botonPerfil">
-   Perfil
+    Perfil 
   </vaadin-button>
   <vaadin-button id="botonCerrarSesion">
-   Cerrar Sesión
+    Cerrar Sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
