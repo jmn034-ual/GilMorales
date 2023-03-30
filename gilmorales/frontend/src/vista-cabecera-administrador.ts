@@ -1,12 +1,12 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 
-@customElement('vista-cabecera')
-export class VistaCabecera extends LitElement {
+@customElement('vista-cabecera-administrador')
+export class VistaCabeceraAdministrador extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -16,7 +16,7 @@ export class VistaCabecera extends LitElement {
       `;
   }
 
-  render() {
+ render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout id="cabecera" style="align-self: stretch; justify-content: space-around;">
@@ -34,11 +34,17 @@ export class VistaCabecera extends LitElement {
   <vaadin-button id="inicio">
     Inicio 
   </vaadin-button>
-  <vaadin-button id="gestionarDenunciasB">
-   Gestionar denuncias
+  <vaadin-button id="botonNotificaciones">
+    Notificaciones 
   </vaadin-button>
-  <vaadin-button id="cerrarSesionB">
-   Cerrar sesión
+  <vaadin-button id="botonAniadir">
+    Añadir 
+  </vaadin-button>
+  <vaadin-button id="botonPerfil">
+    Perfil 
+  </vaadin-button>
+  <vaadin-button id="botonCerrarSesion">
+    Cerrar Sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
