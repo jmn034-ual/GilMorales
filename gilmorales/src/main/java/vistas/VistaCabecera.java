@@ -47,6 +47,10 @@ public class VistaCabecera extends LitTemplate {
 	private Button botonCerrarSesion;
 	@Id("iconoWeb")
 	private Element iconoWeb;
+	@Id("gestionarDenunciasB")
+	private Button gestionarDenunciasB;
+	@Id("cerrarSesionB")
+	private Button cerrarSesionB;
 
 	/**
      * Creates a new VistaCabecera.
