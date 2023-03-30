@@ -26,6 +26,8 @@ public class VistaVerListaHashtags extends LitTemplate {
 	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("cabecera")
+	private HorizontalLayout cabecera;
 
 	/**
      * Creates a new VistaVerListaHashtags.
