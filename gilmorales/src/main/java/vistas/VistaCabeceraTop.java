@@ -44,6 +44,8 @@ public class VistaCabeceraTop extends LitTemplate {
 	private Element vaadinVerticalLayout;
 	@Id("vistaCabecera")
 	private VistaCabecera vistaCabecera;
+	@Id("layoutRealizarBusqueda")
+	private Element layoutRealizarBusqueda;
 
 	/**
      * Creates a new VistaCabeceraTop.

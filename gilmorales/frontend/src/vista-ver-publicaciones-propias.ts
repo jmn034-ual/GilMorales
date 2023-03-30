@@ -3,8 +3,8 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
-@customElement('vista-ver-publicaciones-gustadas-usuario-registrado')
-export class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitElement {
+@customElement('vista-ver-publicaciones-propias')
+export class VistaVerPublicacionesPropias extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -14,7 +14,7 @@ export class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitElement {
       `;
   }
 
- render() {
+  render() {
     return html`
 <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout id="layoutCabecera" style="width: 100%;"></vaadin-horizontal-layout>
@@ -64,14 +64,15 @@ export class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitElement {
       Me Gustas 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <vaadin-vertical-layout theme="spacing" id="layoutListaPublicacionesGustadas" style="flex-grow: 1; width: 100%;">
-    <vaadin-horizontal-layout theme="spacing" id="layoutHorizontalPublicacionesGustadas" style="flex-grow: 0; align-self: stretch;"></vaadin-horizontal-layout>
+   <vaadin-vertical-layout theme="spacing" id="layoutListaPublicacionesPropias" style="flex-grow: 1; width: 100%;">
+    <vaadin-horizontal-layout theme="spacing" id="layoutHorizontalPublicacionesPropias" style="width: 100%; flex-grow: 0;"></vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }
+
 
   // Remove this method to render the contents of this view inside Shadow DOM
   createRenderRoot() {

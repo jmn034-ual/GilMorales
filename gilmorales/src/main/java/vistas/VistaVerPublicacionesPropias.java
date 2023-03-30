@@ -12,14 +12,14 @@ import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
 
 /**
- * A Designer generated component for the vista-ver-publicaciones-gustadas-usuario-registrado template.
+ * A Designer generated component for the vista-ver-publicaciones-propias template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("vista-ver-publicaciones-gustadas-usuario-registrado")
-@JsModule("./vista-ver-publicaciones-gustadas-usuario-registrado.ts")
-public class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitTemplate {
+@Tag("vista-ver-publicaciones-propias")
+@JsModule("./src/vista-ver-publicaciones-propias.ts")
+public class VistaVerPublicacionesPropias extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
@@ -75,19 +75,21 @@ public class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitTemplate 
 	private Label labelDescripcion;
 	@Id("layoutBonoes")
 	private HorizontalLayout layoutBonoes;
-	@Id("botonMeGustas")
-	private Button botonMeGustas;
 	@Id("botonVideos")
 	private Button botonVideos;
-	@Id("layoutListaPublicacionesGustadas")
-	private Element layoutListaPublicacionesGustadas;
-	@Id("layoutHorizontalPublicacionesGustadas")
-	private HorizontalLayout layoutHorizontalPublicacionesGustadas;
+	@Id("botonMeGustas")
+	private Button botonMeGustas;
+	@Id("layoutListaPublicaciones")
+	private Element layoutListaPublicaciones;
+	@Id("layoutListaPublicacionesPropias")
+	private Element layoutListaPublicacionesPropias;
+	@Id("layoutHorizontalPublicacionesPropias")
+	private HorizontalLayout layoutHorizontalPublicacionesPropias;
 
 	/**
-     * Creates a new VistaVerPublicacionesGustadasUsuarioRegistrado.
+     * Creates a new VistaVerPublicacionesPropias.
      */
-    public VistaVerPublicacionesGustadasUsuarioRegistrado() {
+    public VistaVerPublicacionesPropias() {
         // You can initialise any data required for the connected UI components here.
     }
 

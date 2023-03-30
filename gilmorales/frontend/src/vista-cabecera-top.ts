@@ -26,15 +26,15 @@ export class VistaCabeceraTop extends LitElement {
    <h3 id="tituloUsuarios" style="align-self: center;">Top Usuarios</h3>
    <vaadin-vertical-layout theme="spacing" id="listaUsuarios" style="align-self: center; flex-grow: 1;"></vaadin-vertical-layout>
    <vaadin-button id="botonVerListaUsuarios" style="align-self: center;">
-    Ver Lista Usuarios
+     Ver Lista Usuarios 
    </vaadin-button>
    <h3 style="align-self: center;" id="tituloHashtag">Top Hashtags</h3>
    <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1;" id="listaTopHashtag"></vaadin-vertical-layout>
    <vaadin-button style="align-self: center;" id="botonVerListaHashtag">
-    Ver Lista Hashtags
+     Ver Lista Hashtags 
    </vaadin-button>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutPublicaciones" style="flex-grow: 1;"></vaadin-vertical-layout>
+  <vaadin-vertical-layout id="layoutRealizarBusqueda" style="flex-grow: 1; margin: var(--lumo-space-s);"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
