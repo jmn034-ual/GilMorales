@@ -27,6 +27,11 @@ export class VistaListaComentariosComercialItem extends LitElement {
   </vaadin-button>
   <label id="comentarioL">Comentario</label>
  </vaadin-vertical-layout>
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 60%; justify-content: flex-end; align-items: center;">
+  <vaadin-button id="denunciarB">
+   Denunciar
+  </vaadin-button>
+ </vaadin-horizontal-layout>
 </vaadin-horizontal-layout>
 `;
   }

@@ -32,6 +32,10 @@ public class VistaListaComentariosComercialItem extends LitTemplate {
 	private Button nombreDeUsuarioB1;
 	@Id("comentarioL")
 	private Label comentarioL;
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("denunciarB")
+	private Button denunciarB;
 
 	/**
      * Creates a new VistaListaComentariosComercialItem.
