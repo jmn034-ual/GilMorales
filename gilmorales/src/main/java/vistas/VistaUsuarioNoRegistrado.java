@@ -5,34 +5,33 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
-import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 /**
- * A Designer generated component for the vista-ver-lista-hashtags template.
+ * A Designer generated component for the vista-usuario-no-registrado template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("vista-ver-lista-hashtags")
-@JsModule("./src/vista-ver-lista-hashtags.ts")
-public class VistaVerListaHashtags extends LitTemplate {
+@Tag("vista-usuario-no-registrado")
+@JsModule("./src/vista-usuario-no-registrado.ts")
+public class VistaUsuarioNoRegistrado extends LitTemplate {
 
-    @Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("h1")
-	private H1 h1;
-	@Id("vaadinVerticalLayout")
+    @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("layoutCabecera")
+	private HorizontalLayout layoutCabecera;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
+	@Id("layoutCabeceraTop")
+	private Element layoutCabeceraTop;
+	@Id("layoutListaPublicaciones")
+	private Element layoutListaPublicaciones;
 
 	/**
-     * Creates a new VistaVerListaHashtags.
+     * Creates a new VistaUsuarioNoRegistrado.
      */
-    public VistaVerListaHashtags() {
+    public VistaUsuarioNoRegistrado() {
         // You can initialise any data required for the connected UI components here.
     }
 
