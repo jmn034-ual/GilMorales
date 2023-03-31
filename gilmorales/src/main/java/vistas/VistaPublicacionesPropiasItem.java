@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Label;
 
 /**
  * A Designer generated component for the vista-publicaciones-propias-item template.
@@ -18,9 +19,7 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vista-publicaciones-propias-item.ts")
 public class VistaPublicacionesPropiasItem extends LitTemplate {
 
-    @Id("layoutItem")
-	private HorizontalLayout layoutItem;
-	@Id("layoutFoto")
+    @Id("layoutFoto")
 	private Element layoutFoto;
 	@Id("botonNombreUsuario")
 	private Button botonNombreUsuario;
@@ -28,6 +27,12 @@ public class VistaPublicacionesPropiasItem extends LitTemplate {
 	private Button botonSeguir;
 	@Id("layoutVideo")
 	private Element layoutVideo;
+	@Id("layoutItem")
+	private Element layoutItem;
+	@Id("layoutPublicacion")
+	private Element layoutPublicacion;
+	@Id("numVisualizaciones")
+	private Label numVisualizaciones;
 
 	/**
      * Creates a new VistaPublicacionesPropiasItem.

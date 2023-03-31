@@ -1,9 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 
-@customElement('vista-publicaciones-propias-item')
-export class VistaPublicacionesPropiasItem extends LitElement {
+@customElement('vista-publicaciones-gustadas-usaurio-publico-item')
+export class VistaPublicacionesGustadasUsaurioPublicoItem extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -13,11 +12,11 @@ export class VistaPublicacionesPropiasItem extends LitElement {
       `;
   }
 
-   render() {
+  render() {
     return html`
-<vaadin-vertical-layout style="width: 100%;" id="layoutItem">
- <vaadin-vertical-layout id="layoutPublicacion" style="align-self: center; flex-grow: 1;">
-  <vaadin-vertical-layout id="layoutVideo" style="align-self: stretch;"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="align-items: center;" id="layoutItem">
+ <vaadin-vertical-layout id="publicacion">
+  <vaadin-vertical-layout theme="spacing" id="video"></vaadin-vertical-layout>
   <label id="numVisualizaciones">0</label>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
