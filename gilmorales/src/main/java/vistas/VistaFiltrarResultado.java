@@ -3,51 +3,25 @@ package vistas;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import vistas.VistaCabecera;
+import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.select.Select;
 
 /**
- * A Designer generated component for the vista-cabecera-top template.
+ * A Designer generated component for the vista-filtrar-resultado template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("vista-cabecera-top")
-@JsModule("./src/vista-cabecera-top.ts")
-public class VistaCabeceraTop extends LitTemplate {
+@Tag("vista-filtrar-resultado")
+@JsModule("./src/vista-filtrar-resultado.ts")
+public class VistaFiltrarResultado extends LitTemplate {
 
-    @Id("botonVerListaHashtag")
-	private Button botonVerListaHashtag;
-	@Id("listaTopHashtag")
-	private Element listaTopHashtag;
-	@Id("tituloHashtag")
-	private H3 tituloHashtag;
-	@Id("botonVerListaUsuarios")
-	private Button botonVerListaUsuarios;
-	@Id("listaUsuarios")
-	private Element listaUsuarios;
-	@Id("tituloUsuarios")
-	private H3 tituloUsuarios;
-	@Id("cabeceraTop")
-	private Element cabeceraTop;
-	@Id("layoutPublicaciones")
-	private Element layoutPublicaciones;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("layoutCabecera")
-	private HorizontalLayout layoutCabecera;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
-	@Id("layoutRealizarBusqueda")
+    @Id("layoutRealizarBusqueda")
 	private Element layoutRealizarBusqueda;
 	@Id("layoutResultadoBusqueda")
 	private Element layoutResultadoBusqueda;
@@ -59,6 +33,8 @@ public class VistaCabeceraTop extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("layoutTituloUsuarios")
 	private HorizontalLayout layoutTituloUsuarios;
+	@Id("tituloUsuarios")
+	private H3 tituloUsuarios;
 	@Id("layoutFiltrar")
 	private HorizontalLayout layoutFiltrar;
 	@Id("labelFiltrar")
@@ -75,19 +51,19 @@ public class VistaCabeceraTop extends LitTemplate {
 	private Element filtrarHashtag;
 	@Id("layoutListaResultadoUsuarios")
 	private Element layoutListaResultadoUsuarios;
-	@Id("layoutTituloHashtags")
-	private HorizontalLayout layoutTituloHashtags;
-	@Id("vaadinHorizontalLayout3")
-	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("tituloHashtags")
 	private H3 tituloHashtags;
+	@Id("vaadinHorizontalLayout3")
+	private HorizontalLayout vaadinHorizontalLayout3;
+	@Id("layoutTituloHashtags")
+	private HorizontalLayout layoutTituloHashtags;
 	@Id("layoutListaResultadoHashtags")
 	private Element layoutListaResultadoHashtags;
 
 	/**
-     * Creates a new VistaCabeceraTop.
+     * Creates a new VistaFiltrarResultado.
      */
-    public VistaCabeceraTop() {
+    public VistaFiltrarResultado() {
         // You can initialise any data required for the connected UI components here.
     }
 
