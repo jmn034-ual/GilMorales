@@ -20,11 +20,7 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-lista-publicaciones-administrador-item.ts")
 public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinHorizontalLayout1")
+    @Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("fotoPerfil")
 	private Div fotoPerfil;
@@ -74,6 +70,34 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout11;
 	@Id("descripcion")
 	private Label descripcion;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("foto")
+	private Div foto;
+	@Id("nombre")
+	private Button nombre;
+	@Id("geolocalizacion")
+	private Label geolocalizacion;
+	@Id("eliminarPub")
+	private Button eliminarPub;
+	@Id("numVis")
+	private Label numVis;
+	@Id("vis")
+	private Label vis;
+	@Id("vaadinVerticalLayout3")
+	private Element vaadinVerticalLayout3;
+	@Id("numG")
+	private Label numG;
+	@Id("likesL")
+	private Label likesL;
+	@Id("vaadinVerticalLayout4")
+	private Element vaadinVerticalLayout4;
+	@Id("numC")
+	private Label numC;
+	@Id("comentarios")
+	private Button comentarios;
 
 	/**
      * Creates a new VistaListaPublicacionesAdministradorItem.

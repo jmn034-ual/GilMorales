@@ -13,6 +13,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.datepicker.DatePicker;
 
 /**
  * A Designer generated component for the vista-registrarusuario template.
@@ -117,6 +118,8 @@ public class VistaRegistrarusuario extends LitTemplate {
 	private Checkbox vaadinCheckbox1;
 	@Id("h1")
 	private H1 h1;
+	@Id("vaadinDatePicker")
+	private DatePicker vaadinDatePicker;
 	/**
      * Creates a new VistaRegistrarusuario.
      */

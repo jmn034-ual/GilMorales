@@ -2,8 +2,9 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 
 @customElement('vista-registrarusuario')
 export class VistaRegistrarusuario extends LitElement {
@@ -53,7 +54,7 @@ export class VistaRegistrarusuario extends LitElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout9">
    <label style="width: 15%; align-self: center;" id="label8">Fecha de naciemiento:</label>
-   <vaadin-text-field style="width: 100%;"></vaadin-text-field>
+   <vaadin-date-picker id="vaadinDatePicker"></vaadin-date-picker>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout10">
    <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout10">
