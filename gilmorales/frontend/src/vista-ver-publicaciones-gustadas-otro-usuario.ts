@@ -3,8 +3,8 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
-@customElement('ver-publicaciones-gustadas-otro-usuario')
-export class VerPublicacionesGustadasOtroUsuario extends LitElement {
+@customElement('vista-ver-publicaciones-gustadas-otro-usuario')
+export class VistaVerPublicacionesGustadasOtroUsuario extends LitElement {
   static get styles() {
     return css`
       :host {

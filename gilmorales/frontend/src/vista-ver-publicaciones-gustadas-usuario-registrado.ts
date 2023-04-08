@@ -14,7 +14,7 @@ export class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitElement {
       `;
   }
 
- render() {
+  render() {
     return html`
 <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout id="layoutCabecera" style="width: 100%;"></vaadin-horizontal-layout>
@@ -72,6 +72,7 @@ export class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitElement {
 </vaadin-vertical-layout>
 `;
   }
+
 
   // Remove this method to render the contents of this view inside Shadow DOM
   createRenderRoot() {

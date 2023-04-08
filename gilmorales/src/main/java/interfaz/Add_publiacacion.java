@@ -1,8 +1,10 @@
-//package interfaz;
-//
-//public class Add_publiacacion {
+package interfaz;
+
+import vistas.VistaAddpublicacion;
+
+public class Add_publiacacion extends VistaAddpublicacion{
 //	private button _subir_videoB;
-//	private button _add_localizaci�nB;
+//	private button _add_localizacionB;
 //	private Label _tituloL;
 //	private Label _subTituloL;
 //	private Video _video;
@@ -14,25 +16,25 @@
 //	private button _descartarB;
 //	private button _publicarB;
 //	public Comun__Comercial_y_Usuario_Registrado_ _comun__Comercial_y_Usuario_Registrado_;
-//	public Ver_publicaci�n_propia _ver_publicaci�n_propia;
-//
-//	public void Subir_video() {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public void Add_localizaci�n() {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public void Ver_publicaci�n_propia() {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public void Publicar() {
-//		throw new UnsupportedOperationException();
-//	}
-//
-//	public void Descartar() {
-//		throw new UnsupportedOperationException();
-//	}
-//}
+//	public Ver_publicacion_propia _ver_publicacion_propia;
+
+	public void Subir_video() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void Add_localizacion() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void Ver_publicacion_propia() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void Publicar() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void Descartar() {
+		throw new UnsupportedOperationException();
+	}
+}

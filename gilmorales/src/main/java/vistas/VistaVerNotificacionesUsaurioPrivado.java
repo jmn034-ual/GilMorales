@@ -15,8 +15,8 @@ import com.vaadin.flow.component.html.H3;
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("ver-notificaciones-usaurio-privado")
-@JsModule("./src/ver-notificaciones-usaurio-privado.ts")
+@Tag("vista-ver-notificaciones-usaurio-privado")
+@JsModule("./src/vista-ver-notificaciones-usaurio-privado.ts")
 public class VistaVerNotificacionesUsaurioPrivado extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
