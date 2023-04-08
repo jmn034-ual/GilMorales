@@ -23,30 +23,28 @@ import com.vaadin.flow.component.select.Select;
 @JsModule("./src/vista-cabecera-top.ts")
 public class VistaCabeceraTop extends LitTemplate {
 
-    @Id("botonVerListaHashtag")
-	private Button botonVerListaHashtag;
-	@Id("listaTopHashtag")
-	private Element listaTopHashtag;
-	@Id("tituloHashtag")
-	private H3 tituloHashtag;
-	@Id("botonVerListaUsuarios")
-	private Button botonVerListaUsuarios;
-	@Id("listaUsuarios")
-	private Element listaUsuarios;
-	@Id("tituloUsuarios")
-	private H3 tituloUsuarios;
-	@Id("cabeceraTop")
-	private Element cabeceraTop;
-	@Id("layoutPublicaciones")
-	private Element layoutPublicaciones;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("layoutCabecera")
-	private HorizontalLayout layoutCabecera;
+ 
+
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vistaCabecera")
-	private VistaCabecera vistaCabecera;
+	@Id("layoutCabecera")
+	private HorizontalLayout layoutCabecera;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("cabeceraTop")
+	private Element cabeceraTop;
+	@Id("tituloUsuarios")
+	private H3 tituloUsuarios;
+	@Id("listaUsuarios")
+	private Element listaUsuarios;
+	@Id("botonVerListaUsuarios")
+	private Button botonVerListaUsuarios;
+	@Id("tituloHashtag")
+	private H3 tituloHashtag;
+	@Id("listaTopHashtag")
+	private Element listaTopHashtag;
+	@Id("botonVerListaHashtag")
+	private Button botonVerListaHashtag;
 	@Id("layoutRealizarBusqueda")
 	private Element layoutRealizarBusqueda;
 	@Id("layoutResultadoBusqueda")
@@ -71,16 +69,16 @@ public class VistaCabeceraTop extends LitTemplate {
 	private Element filtrarNone;
 	@Id("filtrarUsuarios")
 	private Element filtrarUsuarios;
-	@Id("filtrarHashtag")
-	private Element filtrarHashtag;
 	@Id("layoutListaResultadoUsuarios")
 	private Element layoutListaResultadoUsuarios;
+	@Id("filtrarHashtag")
+	private Element filtrarHashtag;
 	@Id("layoutTituloHashtags")
 	private HorizontalLayout layoutTituloHashtags;
-	@Id("vaadinHorizontalLayout3")
-	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("tituloHashtags")
 	private H3 tituloHashtags;
+	@Id("vaadinHorizontalLayout3")
+	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("layoutListaResultadoHashtags")
 	private Element layoutListaResultadoHashtags;
 

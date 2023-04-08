@@ -16,8 +16,7 @@ import com.vaadin.flow.component.template.Id;
 @JsModule("./src/vista-lista-publicaciones-usuario-no-registrado.ts")
 public class VistaListaPublicacionesUsuarioNoRegistrado extends LitTemplate {
 
-    @Id("layoutPublicaciones")
-	private Element layoutPublicaciones;
+  
 	@Id("layoutPublicacionesUNR")
 	private Element layoutPublicacionesUNR;
 	@Id("layoutListaPublicacionesUR")

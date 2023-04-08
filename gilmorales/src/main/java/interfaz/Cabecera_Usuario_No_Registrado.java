@@ -8,7 +8,7 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 //	private button _buscarB;
 //	private TextField _buscarTF;
 //	private ImageIcon _logoWeb;
-	public Usuario_No_Registrado _usuario_No_Registrado = new Usuario_No_Registrado();
+//	public Usuario_No_Registrado _usuario_No_Registrado = new Usuario_No_Registrado();
 	public Realizar_busqueda _realizar_busqueda = new Realizar_busqueda();
 	public Cabecera_TOP _cabecera_TOP;
 
