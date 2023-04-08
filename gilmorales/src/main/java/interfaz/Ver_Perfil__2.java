@@ -7,10 +7,10 @@ public class Ver_Perfil__2 extends Ver_tendencias {
 	public Lista_Publicaciones__Usuario_no_registrado__item _publicaciones__Usuario_no_registrado_;
 	public top_usuarios_item _top_usuarios;
 	public Resultado_usuarios_item _resultado_usuarios;
-	public Ver_publicaci�n_ajena _ver_publicaci�n_ajena;
+	public Ver_publicacion_ajena _ver_publicacion_ajena;
 	public Publicaciones_hashtag_item _publicaciones_hashtag;
 	public lista_usuarios_registrados_item _lista_usuarios_registrados;
-	public Notificaciones__com�n_ _notificaciones__com�n_;
+	public Notificaciones__comun _notificaciones__comun_;
 	public Ver_comentarios _ver_comentarios;
 	public Lista_Comentarios__Vista_Usuario_No_registrado__item _lista_Comentarios__Vista_Usuario_No_registrado_;
 	public Lista_Me_Gustas_Publicacion_item _lista_Me_Gustas_Publicacion;

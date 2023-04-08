@@ -1,10 +1,9 @@
 package interfaz;
 
-import vistas.VistaTopUsuariosItem;
+import vistas.VistaNotificacionesComun;
 
-public class top_usuarios_item extends VistaTopUsuariosItem{
+public class Notificaciones__comun extends VistaNotificacionesComun{
 //	private button _verPerfilB;
-	public top_usuarios _top_usuarios;
 	public Ver_Perfil__2 _ver_perfil;
 
 	public void Ver_perfil() {

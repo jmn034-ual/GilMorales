@@ -10,6 +10,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
+import interfaz.Usuario_Registrado;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -62,7 +64,8 @@ public class MainView extends VerticalLayout {
 //        addClassName("centered-content");
 //
 //        add(textField, button);
-    	System.out.println("Hola");
+    	Usuario_Registrado usuario = new Usuario_Registrado();
+    	add(usuario);
     }
 
 }
