@@ -22,6 +22,27 @@ public class VistaListaPublicacionesUsuarioNoRegistrado extends LitTemplate {
 	@Id("layoutListaPublicacionesUR")
 	private Element layoutListaPublicacionesUR;
 
+	
+	public Element getLayoutPublicacionesUNR() {
+		return layoutPublicacionesUNR;
+	}
+
+
+	public void setLayoutPublicacionesUNR(Element layoutPublicacionesUNR) {
+		this.layoutPublicacionesUNR = layoutPublicacionesUNR;
+	}
+
+
+	public Element getLayoutListaPublicacionesUR() {
+		return layoutListaPublicacionesUR;
+	}
+
+
+	public void setLayoutListaPublicacionesUR(Element layoutListaPublicacionesUR) {
+		this.layoutListaPublicacionesUR = layoutListaPublicacionesUR;
+	}
+
+
 	/**
      * Creates a new VistaListaPublicacionesUsuarioNoRegistrado.
      */
