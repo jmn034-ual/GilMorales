@@ -1,13 +1,16 @@
 package interfaz;
-//package interfaz;
-//
-//import basededatos.iIniciar_sesi�n;
-//
-//public class Iniciar_sesi�n__3 {
-//	public iIniciar_sesi�n _iIniciar_sesi�n;
-//	public Iniciar_Sesi�n__4 _iniciar_sesi�n;
-//
-//	public void Iniciar_sesi�n() {
-//		throw new UnsupportedOperationException();
-//	}
-//}
+
+import ch.qos.logback.core.rolling.helper.ArchiveRemover;
+import vistas.VistaIniciarsesion;
+
+//import basededatos.iIniciar_sesion;
+
+public class Iniciar_sesion__3 extends VistaIniciarsesion{
+	//public iIniciar_sesion _iIniciar_sesion;
+	public Iniciar_Sesion__4 _iniciar_sesion = new Iniciar_Sesion__4();
+	
+
+	public void Iniciar_sesion() {
+		
+	}
+}

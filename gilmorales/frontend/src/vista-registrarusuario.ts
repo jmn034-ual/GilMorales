@@ -20,7 +20,7 @@ export class VistaRegistrarusuario extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" style="align-self: center; margin: var(--lumo-space-xl);" id="vaadinHorizontalLayout1">
+ <vaadin-horizontal-layout theme="spacing" style="align-self: center; margin: var(--lumo-space-xl);" id="vaadinHorizontalLayout">
   <h1 id="h1">Registrarse</h1>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 70%; align-self: center; flex-grow: 0; flex-shrink: 1;" id="vaadinVerticalLayout1">
@@ -67,17 +67,17 @@ export class VistaRegistrarusuario extends LitElement {
     </vaadin-checkbox>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" style="align-self: center;" id="vaadinHorizontalLayout11">
-    <vaadin-button style="flex-grow: 1; width: 100%;" id="vaadinButton4">
+    <vaadin-button style="flex-grow: 1; width: 100%;" id="vaadinButton">
       Subir fotografía 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing-l" style="align-self: center; flex-grow: 0; margin: var(--lumo-space-l); width: 30%;" id="vaadinHorizontalLayout12">
-  <vaadin-button style="flex-grow: 1; width: 100%;" id="vaadinButton5">
+  <vaadin-button style="flex-grow: 1; width: 100%;" id="vaadinButton1">
     Descartar 
   </vaadin-button>
-  <vaadin-button style="width: 100%;" id="vaadinButton6">
+  <vaadin-button style="width: 100%;" id="vaadinButton2">
     Confirmar 
   </vaadin-button>
  </vaadin-horizontal-layout>
