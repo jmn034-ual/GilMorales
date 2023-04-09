@@ -10,6 +10,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
+import interfaz.Iniciar_Sesion__4;
+import interfaz.Iniciar_sesion__3;
 import interfaz.Usuario_No_Registrado;
 import interfaz.Usuario_Registrado;
 
@@ -65,11 +67,17 @@ public class MainView extends VerticalLayout {
 //        addClassName("centered-content");
 //
 //        add(textField, button);
-    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-		nr.getStyle().set("width", "100%");
-		nr.getStyle().set("height", "100%");
-		
-    	add(nr);
+//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
+//		nr.getStyle().set("width", "100%");
+//		nr.getStyle().set("height", "100%");
+//		
+//    	add(nr);
+    	
+    	Iniciar_Sesion__4 is = new Iniciar_Sesion__4();
+    	is.getStyle().set("width", "100%");
+    	is.getStyle().set("height", "100%");
+    	add(is);
+    	is.Iniciar_sesion_otras_plataformas();
     }
 
 }

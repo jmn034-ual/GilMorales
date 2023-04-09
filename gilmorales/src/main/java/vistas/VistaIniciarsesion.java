@@ -63,11 +63,174 @@ public class VistaIniciarsesion extends LitTemplate {
 	@Id("noCuentraL")
 	private Label noCuentraL;
 
+	
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public H1 getIniciarSesionL() {
+		return iniciarSesionL;
+	}
+
+	public void setIniciarSesionL(H1 iniciarSesionL) {
+		this.iniciarSesionL = iniciarSesionL;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public TextField getUsuarioTF() {
+		return usuarioTF;
+	}
+
+	public void setUsuarioTF(TextField usuarioTF) {
+		this.usuarioTF = usuarioTF;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public PasswordField getContrasenaTF() {
+		return contrasenaTF;
+	}
+
+	public void setContrasenaTF(PasswordField contrasenaTF) {
+		this.contrasenaTF = contrasenaTF;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout3() {
+		return vaadinHorizontalLayout3;
+	}
+
+	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
+		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	}
+
+	public Button getRecuperarContrasenaB() {
+		return recuperarContrasenaB;
+	}
+
+	public void setRecuperarContrasenaB(Button recuperarContrasenaB) {
+		this.recuperarContrasenaB = recuperarContrasenaB;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout4() {
+		return vaadinHorizontalLayout4;
+	}
+
+	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
+		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
+	}
+
+	public Button getIniciarSesionB() {
+		return iniciarSesionB;
+	}
+
+	public void setIniciarSesionB(Button iniciarSesionB) {
+		this.iniciarSesionB = iniciarSesionB;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout5() {
+		return vaadinHorizontalLayout5;
+	}
+
+	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
+		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
+	}
+
+	public Button getGoogleB() {
+		return googleB;
+	}
+
+	public void setGoogleB(Button googleB) {
+		this.googleB = googleB;
+	}
+
+	public Button getFacebookB() {
+		return facebookB;
+	}
+
+	public void setFacebookB(Button facebookB) {
+		this.facebookB = facebookB;
+	}
+
+	public Button getTwitterB() {
+		return twitterB;
+	}
+
+	public void setTwitterB(Button twitterB) {
+		this.twitterB = twitterB;
+	}
+
+	public Button getInstagramB() {
+		return instagramB;
+	}
+
+	public void setInstagramB(Button instagramB) {
+		this.instagramB = instagramB;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout6() {
+		return vaadinHorizontalLayout6;
+	}
+
+	public void setVaadinHorizontalLayout6(HorizontalLayout vaadinHorizontalLayout6) {
+		this.vaadinHorizontalLayout6 = vaadinHorizontalLayout6;
+	}
+
+	public Button getRegistrarB() {
+		return registrarB;
+	}
+
+	public void setRegistrarB(Button registrarB) {
+		this.registrarB = registrarB;
+	}
+
+	public Label getNoCuentraL() {
+		return noCuentraL;
+	}
+
+	public void setNoCuentraL(Label noCuentraL) {
+		this.noCuentraL = noCuentraL;
+	}
+
 	/**
      * Creates a new VistaIniciarsesion.
      */
     public VistaIniciarsesion() {
         // You can initialise any data required for the connected UI components here.
     }
+    
+    
 
 }
