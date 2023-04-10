@@ -22,9 +22,7 @@ public class Usar_otra_cuenta extends VistaUsarOtraCuenta{
 	}
 
 	public void Cancelar() {
-		_iniciar_sesion_otras_plataformas.getStyle().set("wide", "100%");
-		_iniciar_sesion_otras_plataformas.getStyle().set("height", "100%");
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_sesion_otras_plataformas());
+		this.getCancelarB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_sesion_otras_plataformas());});
 	}
 }
