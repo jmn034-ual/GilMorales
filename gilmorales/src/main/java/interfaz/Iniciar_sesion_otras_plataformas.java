@@ -28,7 +28,7 @@ public class Iniciar_sesion_otras_plataformas extends VistaIniciarsesionotraplat
 	}
 
 	public void Usar_otra_cuenta() {
-		this.getBotonUsarOtraCuenta().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_usar_otra_cuenta);});
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_usar_otra_cuenta);
 	}
 }

@@ -13,6 +13,9 @@ import com.vaadin.flow.server.PWA;
 import interfaz.Iniciar_Sesion__4;
 import interfaz.Iniciar_sesion__3;
 import interfaz.Iniciar_sesion_otras_plataformas;
+import interfaz.Lista_Publicaciones__Usuario_no_registrado_;
+import interfaz.Lista_Publicaciones__Usuario_no_registrado__item;
+import interfaz.Registrar;
 import interfaz.Usar_otra_cuenta;
 import interfaz.Usuario_No_Registrado;
 import interfaz.Usuario_Registrado;
@@ -49,32 +52,16 @@ public class MainView extends VerticalLayout {
      */
     public MainView() {
 
-//        // Use TextField for standard text input
-//        TextField textField = new TextField("Your name");
-//        textField.addThemeName("bordered");
-//
-//        // Button click listeners can be defined as lambda expressions
-//        Button button = new Button("Say hello",
-//                e -> Notification.show(service.greet(textField.getValue())));
-//
-//        // Theme variants give you predefined extra styles for components.
-//        // Example: Primary button has a more prominent look.
-//        button.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-//
-//        // You can specify keyboard shortcuts for buttons.
-//        // Example: Pressing enter in this view clicks the Button.
-//        button.addClickShortcut(Key.ENTER);
-//
-//        // Use custom CSS classes to apply styling. This is defined in shared-styles.css.
-//        addClassName("centered-content");
-//
-//        add(textField, button);
-//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-//		nr.getStyle().set("width", "100%");
-//		nr.getStyle().set("height", "100%");
-//		
-//    	add(nr);
-    	
+    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
+		nr.getStyle().set("width", "100%");
+		nr.getStyle().set("height", "100%");
+		
+		Lista_Publicaciones__Usuario_no_registrado__item item = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+				"icons/luffy.jpg", "videos/tiktok1.mp4");
+		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
+		lp.anadirPublicacion(item);
+		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
+    	add(nr);
     	
     }
 

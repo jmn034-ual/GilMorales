@@ -13,8 +13,9 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public Cabecera_Usuario_No_Registrado cabeceraUNR = new Cabecera_Usuario_No_Registrado();
 
 	public Usuario_No_Registrado() {
-		Cabecera_Usuario_No_Registrado();
-		Publicaciones__Usuario_no_registrado_();
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		
 	}
 
 	public void Publicaciones__Usuario_no_registrado_() {
