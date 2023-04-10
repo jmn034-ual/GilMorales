@@ -10,9 +10,9 @@ public class Iniciar_sesion_otras_plataformas extends VistaIniciarsesionotraplat
 	private Button _seleccionar_cuentaB;
 	private Button _usarOtraCuentaB;
 	private Label _tituloL;
-	//public Plataformas_externas _plataformas_externas = new Plataformas_externas();
-	//public Iniciar_Sesion__4 _iniciar_sesion = new Iniciar_Sesion__4();
-	public Usar_otra_cuenta _usar_otra_cuenta = new Usar_otra_cuenta();
+	public Plataformas_externas _plataformas_externas;
+	public Iniciar_Sesion__4 _iniciar_sesion;
+	public Usar_otra_cuenta _usar_otra_cuenta= new Usar_otra_cuenta();
 
 	public void Seleccionar_cuenta() {
 //		_plataformas_externas.getStyle().set("width", "100%");

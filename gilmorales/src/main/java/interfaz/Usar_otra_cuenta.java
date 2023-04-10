@@ -23,6 +23,6 @@ public class Usar_otra_cuenta extends VistaUsarOtraCuenta{
 
 	public void Cancelar() {
 		this.getCancelarB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion_otras_plataformas);});
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_sesion_otras_plataformas());});
 	}
 }

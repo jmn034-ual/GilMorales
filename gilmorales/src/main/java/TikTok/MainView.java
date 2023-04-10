@@ -75,15 +75,6 @@ public class MainView extends VerticalLayout {
 //		
 //    	add(nr);
     	
-    	Iniciar_Sesion__4 is = new Iniciar_Sesion__4();
-    	is.getStyle().set("width", "100%");
-    	is.getStyle().set("height", "100%");
-    	add(is);
-    	is.Iniciar_sesion_otras_plataformas();
-    	is.Recuperar_password();
-    	is.Registrar();
-    	is._iniciar_sesion_otras_plataformas.Usar_otra_cuenta();
-    	
     	
     }
 
