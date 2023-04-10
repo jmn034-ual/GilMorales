@@ -4,17 +4,23 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 
 public class Lista_publicaciones__Usuario_Registrado__item extends Lista_Publicaciones__Usuario_no_registrado__item {
-	private Button _seguirB;
-	private Button _denunciarB;
-	private Button _dar_me_gusta_publicacionB;
-	private Button _comentarB;
-	private TextField _comentarioTF;
-	private Button _verPubliacionB;
+//	private Button _seguirB;
+//	private Button _denunciarB;
+//	private Button _dar_me_gusta_publicacionB;
+//	private Button _comentarB;
+//	private TextField _comentarioTF;
+//	private Button _verPubliacionB;
 	public Lista_publicaciones__Usuario_Registrado_ _lista_publicaciones__Usuario_Registrado_;
-	public Ver_publicaci�n_ajena _ver_publicaci�n_ajena;
-	public Denunciar_publicaci�n _denunciar_publicaci�n;
+	public Ver_publicacion_ajena _ver_publicacion_ajena;
+	public Denunciar_publicacion _denunciar_publicacion;
+	
+	public Lista_publicaciones__Usuario_Registrado__item(String usuario, String localizacion, String descripcion,
+			String foto, String video) {
+		super(usuario, localizacion, descripcion, foto, video);
+		
+	}
 
-	public void Ver_publicaci�n_ajena() {
+	public void Ver_publicacion_ajena() {
 		throw new UnsupportedOperationException();
 	}
 
@@ -22,11 +28,11 @@ public class Lista_publicaciones__Usuario_Registrado__item extends Lista_Publica
 		throw new UnsupportedOperationException();
 	}
 
-	public void Dar_me_gusta_publicaci�n() {
+	public void Dar_me_gusta_publicacion() {
 		throw new UnsupportedOperationException();
 	}
 
-	public void Denunciar_publicaci�n() {
+	public void Denunciar_publicacion() {
 		throw new UnsupportedOperationException();
 	}
 

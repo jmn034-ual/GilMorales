@@ -42,6 +42,117 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	@Id("botonCerrarSesion")
 	private Button botonCerrarSesion;
 
+	
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+	public HorizontalLayout getCabecera() {
+		return cabecera;
+	}
+
+
+	public void setCabecera(HorizontalLayout cabecera) {
+		this.cabecera = cabecera;
+	}
+
+
+	public Button getLogoWeb() {
+		return logoWeb;
+	}
+
+
+	public void setLogoWeb(Button logoWeb) {
+		this.logoWeb = logoWeb;
+	}
+
+
+	public Element getIconoWeb() {
+		return iconoWeb;
+	}
+
+
+	public void setIconoWeb(Element iconoWeb) {
+		this.iconoWeb = iconoWeb;
+	}
+
+
+	public HorizontalLayout getBarraBusqueda() {
+		return barraBusqueda;
+	}
+
+
+	public void setBarraBusqueda(HorizontalLayout barraBusqueda) {
+		this.barraBusqueda = barraBusqueda;
+	}
+
+
+	public TextField getTextoBusqueda() {
+		return textoBusqueda;
+	}
+
+
+	public void setTextoBusqueda(TextField textoBusqueda) {
+		this.textoBusqueda = textoBusqueda;
+	}
+
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
+	public Button getBotonBuscar() {
+		return botonBuscar;
+	}
+
+
+	public void setBotonBuscar(Button botonBuscar) {
+		this.botonBuscar = botonBuscar;
+	}
+
+
+	public Button getInicio() {
+		return inicio;
+	}
+
+
+	public void setInicio(Button inicio) {
+		this.inicio = inicio;
+	}
+
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+
+	public Button getBotonCerrarSesion() {
+		return botonCerrarSesion;
+	}
+
+
+	public void setBotonCerrarSesion(Button botonCerrarSesion) {
+		this.botonCerrarSesion = botonCerrarSesion;
+	}
+
+
 	/**
      * Creates a new VistaCabeceraUsuarioNoRegistrado.
      */

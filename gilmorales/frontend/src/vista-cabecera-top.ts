@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-select/src/vaadin-select.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-cabecera-top')
 export class VistaCabeceraTop extends LitElement {
@@ -18,7 +18,6 @@ export class VistaCabeceraTop extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="layoutCabecera" style="width: 100%;"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="flex-grow: 1; align-self: stretch;">
   <vaadin-vertical-layout id="cabeceraTop" style="margin: var(--lumo-space-xl);">
    <h3 id="tituloUsuarios" style="align-self: center;">Top Usuarios</h3>

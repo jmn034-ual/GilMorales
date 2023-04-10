@@ -12,6 +12,8 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 	public Realizar_busqueda _realizar_busqueda = new Realizar_busqueda();
 	public Cabecera_TOP _cabecera_TOP;
 
+	
+	
 	public void Realizar_busqueda() {
 		throw new UnsupportedOperationException();
 	}
