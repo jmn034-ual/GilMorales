@@ -12,6 +12,8 @@ import com.vaadin.flow.server.PWA;
 
 import interfaz.Iniciar_Sesion__4;
 import interfaz.Iniciar_sesion__3;
+import interfaz.Iniciar_sesion_otras_plataformas;
+import interfaz.Usar_otra_cuenta;
 import interfaz.Usuario_No_Registrado;
 import interfaz.Usuario_Registrado;
 
@@ -78,6 +80,11 @@ public class MainView extends VerticalLayout {
     	is.getStyle().set("height", "100%");
     	add(is);
     	is.Iniciar_sesion_otras_plataformas();
+    	is.Recuperar_password();
+    	is.Registrar();
+    	is._iniciar_sesion_otras_plataformas.Usar_otra_cuenta();
+    	
+    	
     }
 
 }
