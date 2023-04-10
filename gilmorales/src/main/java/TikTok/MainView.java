@@ -78,6 +78,8 @@ public class MainView extends VerticalLayout {
     	is.getStyle().set("height", "100%");
     	add(is);
     	is.Iniciar_sesion_otras_plataformas();
+    	is.Recuperar_password();
+    	is.Registrar();
     }
 
 }
