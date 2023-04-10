@@ -28,6 +28,8 @@ public class Iniciar_Sesion__4 extends VistaIniciarsesion{
 	
 
 	public void Iniciar_sesion_otras_plataformas() {
+		_iniciar_sesion_otras_plataformas.getStyle().set("wide", "100%");
+		_iniciar_sesion_otras_plataformas.getStyle().set("height", "100%");
 		this.getFacebookB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion_otras_plataformas);});
 		
