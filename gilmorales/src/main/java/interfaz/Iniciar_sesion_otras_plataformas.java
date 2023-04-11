@@ -12,8 +12,11 @@ public class Iniciar_sesion_otras_plataformas extends VistaIniciarsesionotraplat
 	private Label _tituloL;
 	public Plataformas_externas _plataformas_externas;
 	public Iniciar_Sesion__4 _iniciar_sesion;
-	public Usar_otra_cuenta _usar_otra_cuenta= new Usar_otra_cuenta();
+	public Usar_otra_cuenta _usar_otra_cuenta;
 
+	
+	
+	
 	public void Seleccionar_cuenta() {
 //		_plataformas_externas.getStyle().set("width", "100%");
 //		_plataformas_externas.getStyle().set("height", "100%");
@@ -28,6 +31,7 @@ public class Iniciar_sesion_otras_plataformas extends VistaIniciarsesionotraplat
 	}
 
 	public void Usar_otra_cuenta() {
+		_usar_otra_cuenta= new Usar_otra_cuenta();
 		this.getBotonUsarOtraCuenta().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_usar_otra_cuenta);});
 	}
