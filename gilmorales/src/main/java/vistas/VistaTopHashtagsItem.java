@@ -22,6 +22,27 @@ public class VistaTopHashtagsItem extends LitTemplate {
 	@Id("hashtagItem")
 	private Button hashtagItem;
 
+	
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+	public Button getHashtagItem() {
+		return hashtagItem;
+	}
+
+
+	public void setHashtagItem(Button hashtagItem) {
+		this.hashtagItem = hashtagItem;
+	}
+
+
 	/**
      * Creates a new VistaTopHashtagsItem.
      */

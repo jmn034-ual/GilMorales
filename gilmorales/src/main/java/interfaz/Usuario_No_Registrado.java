@@ -24,8 +24,8 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 		this.getStyle().set("height", "100%");
 		this.Publicaciones__Usuario_no_registrado_();
 		this.Cabecera_Usuario_No_Registrado();	
-		Component component = ComponentUtil.componentFromElement(top.getCabeceraTop(), VerticalLayout.class,  true);
-		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(component);
+		top.getLayoutListaResultadoBusqueda().setVisible(false);
+		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(top);
 	}
 
 	public void Publicaciones__Usuario_no_registrado_() {

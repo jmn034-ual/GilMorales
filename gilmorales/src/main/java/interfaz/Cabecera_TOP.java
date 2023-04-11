@@ -14,12 +14,16 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	public Cabecera_Usuario_No_Registrado _cabecera_Usuario_No_Registrado;
 	public Ver_lista_Hashtag _ver_lista_Hashtag;
-	public top_hashtags _top_hashtags;
+	public top_hashtags _top_hashtags = new top_hashtags();
 	public top_usuarios _top_usuarios;
 	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados;
 	
 	public Cabecera_TOP() {
 		Ver_lista_Hashtag();
+		top_hashtags_item thi = new top_hashtags_item("MDS2");
+		_top_hashtags.anadirHashag(thi);
+		top_hashtags();
+		
 	}
 
 	public void Ver_lista_Hashtag() {
@@ -28,7 +32,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	}
 
 	public void top_hashtags() {
-		throw new UnsupportedOperationException();
+		this.getListaTopHashtag().as(VerticalLayout.class).add(_top_hashtags);
 	}
 
 	public void top_usuarios() {
