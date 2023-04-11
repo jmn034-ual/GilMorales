@@ -19,6 +19,8 @@ import interfaz.Registrar;
 import interfaz.Usar_otra_cuenta;
 import interfaz.Usuario_No_Registrado;
 import interfaz.Usuario_Registrado;
+import interfaz.top_hashtags;
+import interfaz.top_hashtags_item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -61,11 +63,19 @@ public class MainView extends VerticalLayout {
 //		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
 //		lp.anadirPublicacion(item);
 //		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
+<<<<<<< HEAD
 //    	add(nr);
     	
     	
     	Iniciar_Sesion__4 is = new Iniciar_Sesion__4();
     	add(is);
+=======
+//	
+//    	add(nr);
+    	
+    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
+    	add(ini);
+>>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
     	
     }
 

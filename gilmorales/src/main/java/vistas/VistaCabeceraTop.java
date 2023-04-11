@@ -25,9 +25,8 @@ import com.vaadin.flow.component.select.Select;
 @JsModule("./src/vista-cabecera-top.ts")
 public class VistaCabeceraTop extends LitTemplate {
 
- 
-
-
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("cabeceraTop")
@@ -40,14 +39,8 @@ public class VistaCabeceraTop extends LitTemplate {
 	private Button botonVerListaUsuarios;
 	@Id("tituloHashtag")
 	private H3 tituloHashtag;
-	@Id("listaTopHashtag")
-	private Element listaTopHashtag;
 	@Id("botonVerListaHashtag")
 	private Button botonVerListaHashtag;
-	@Id("layoutRealizarBusqueda")
-	private Element layoutRealizarBusqueda;
-	@Id("layoutResultadoBusqueda")
-	private Element layoutResultadoBusqueda;
 	@Id("layoutListaResultadoBusqueda")
 	private Element layoutListaResultadoBusqueda;
 	@Id("tituloResultadoBusqueda")
@@ -68,10 +61,10 @@ public class VistaCabeceraTop extends LitTemplate {
 	private Element filtrarNone;
 	@Id("filtrarUsuarios")
 	private Element filtrarUsuarios;
-	@Id("layoutListaResultadoUsuarios")
-	private Element layoutListaResultadoUsuarios;
 	@Id("filtrarHashtag")
 	private Element filtrarHashtag;
+	@Id("layoutListaResultadoUsuarios")
+	private Element layoutListaResultadoUsuarios;
 	@Id("layoutTituloHashtags")
 	private HorizontalLayout layoutTituloHashtags;
 	@Id("tituloHashtags")
@@ -80,9 +73,10 @@ public class VistaCabeceraTop extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("layoutListaResultadoHashtags")
 	private Element layoutListaResultadoHashtags;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
+	@Id("listaTopHashtag")
+	private Element listaTopHashtag;
 
+	
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
@@ -170,26 +164,6 @@ public class VistaCabeceraTop extends LitTemplate {
 
 	public void setBotonVerListaHashtag(Button botonVerListaHashtag) {
 		this.botonVerListaHashtag = botonVerListaHashtag;
-	}
-
-
-	public Element getLayoutRealizarBusqueda() {
-		return layoutRealizarBusqueda;
-	}
-
-
-	public void setLayoutRealizarBusqueda(Element layoutRealizarBusqueda) {
-		this.layoutRealizarBusqueda = layoutRealizarBusqueda;
-	}
-
-
-	public Element getLayoutResultadoBusqueda() {
-		return layoutResultadoBusqueda;
-	}
-
-
-	public void setLayoutResultadoBusqueda(Element layoutResultadoBusqueda) {
-		this.layoutResultadoBusqueda = layoutResultadoBusqueda;
 	}
 
 
@@ -293,16 +267,6 @@ public class VistaCabeceraTop extends LitTemplate {
 	}
 
 
-	public Element getLayoutListaResultadoUsuarios() {
-		return layoutListaResultadoUsuarios;
-	}
-
-
-	public void setLayoutListaResultadoUsuarios(Element layoutListaResultadoUsuarios) {
-		this.layoutListaResultadoUsuarios = layoutListaResultadoUsuarios;
-	}
-
-
 	public Element getFiltrarHashtag() {
 		return filtrarHashtag;
 	}
@@ -310,6 +274,16 @@ public class VistaCabeceraTop extends LitTemplate {
 
 	public void setFiltrarHashtag(Element filtrarHashtag) {
 		this.filtrarHashtag = filtrarHashtag;
+	}
+
+
+	public Element getLayoutListaResultadoUsuarios() {
+		return layoutListaResultadoUsuarios;
+	}
+
+
+	public void setLayoutListaResultadoUsuarios(Element layoutListaResultadoUsuarios) {
+		this.layoutListaResultadoUsuarios = layoutListaResultadoUsuarios;
 	}
 
 

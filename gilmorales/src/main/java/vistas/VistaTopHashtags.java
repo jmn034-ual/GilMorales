@@ -18,6 +18,20 @@ public class VistaTopHashtags extends LitTemplate {
 
     @Id("layoutListaTopHashtag")
 	private Element layoutListaTopHashtag;
+    
+    
+
+	public Element getLayoutListaTopHashtag() {
+		return layoutListaTopHashtag;
+	}
+
+
+
+	public void setLayoutListaTopHashtag(Element layoutListaTopHashtag) {
+		this.layoutListaTopHashtag = layoutListaTopHashtag;
+	}
+
+
 
 	/**
      * Creates a new VistaTopHashtags.
