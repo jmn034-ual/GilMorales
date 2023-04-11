@@ -54,21 +54,21 @@ public class MainView extends VerticalLayout {
      */
     public MainView() {
 
-//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-//		nr.getStyle().set("width", "100%");
-//		nr.getStyle().set("height", "100%");
-//		
-//		Lista_Publicaciones__Usuario_no_registrado__item item = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
-//				"icons/luffy.jpg", "videos/tiktok1.mp4");
-//		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
-//		lp.anadirPublicacion(item);
-//		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
-//	
-//    	add(nr);
+    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
+		nr.getStyle().set("width", "100%");
+		nr.getStyle().set("height", "100%");
+		
+		Lista_Publicaciones__Usuario_no_registrado__item item = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+				"icons/luffy.jpg", "videos/tiktok1.mp4");
+		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
+		lp.anadirPublicacion(item);
+		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
+	
+    	add(nr);
     	
-    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
-    	add(ini);
-    	
+//    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
+//    	add(ini);
+  	
     }
 
 }
