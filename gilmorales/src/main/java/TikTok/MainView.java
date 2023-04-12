@@ -1,11 +1,13 @@
 package TikTok;
 
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.page.Page;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
@@ -58,13 +60,18 @@ public class MainView extends VerticalLayout {
 		nr.getStyle().set("width", "100%");
 		nr.getStyle().set("height", "100%");
 		
-		Lista_Publicaciones__Usuario_no_registrado__item item = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+		Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+				"icons/icon.png", "videos/tiktok1.mp4");
+		Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
 				"icons/luffy.jpg", "videos/tiktok1.mp4");
 		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
-		lp.anadirPublicacion(item);
+		lp.anadirPublicacion(item1);
+		lp.anadirPublicacion(item2);
+
 		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
 	
     	add(nr);
+    	
     	
 //    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
 //    	add(ini);

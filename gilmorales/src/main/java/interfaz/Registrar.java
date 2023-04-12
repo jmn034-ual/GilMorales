@@ -34,6 +34,10 @@ public class Registrar extends VistaRegistrarusuario{
 	private Button _confirmarB;
 	public Iniciar_Sesion__4 _iniciar_sesion;
 
+	public Registrar() {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("heigth", "100%");
+	}
 	public void Subir_foto() {
 		throw new UnsupportedOperationException();
 	}

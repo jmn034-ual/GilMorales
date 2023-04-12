@@ -16,10 +16,10 @@ export class VistaUsuarioNoRegistrado extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="layoutCabecera" style="align-self: stretch;"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing-s" id="vaadinHorizontalLayout" style="flex-grow: 1; align-self: stretch; margin: var(--lumo-space-s);">
-  <vaadin-vertical-layout id="layoutCabeceraTop"></vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1;"></vaadin-vertical-layout>
+ <vaadin-horizontal-layout theme="spacing" id="layoutCabecera" style="width: 100%;position:fixed;background-color: #fdfd96;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 1; align-self: stretch; margin: var(--lumo-space-s); flex-shrink: 0;">
+  <vaadin-vertical-layout id="layoutCabeceraTop" style="align-items: flex-start; flex-shrink: 1; position: fixed; height: 100%; justify-content: center;"></vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; flex-shrink: 0; align-items: center; margin: var(--lumo-space-xl);"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

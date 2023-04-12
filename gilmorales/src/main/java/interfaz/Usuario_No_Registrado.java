@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.webcomponent.WebComponent;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
+import com.vaadin.flow.dom.Element;
 
 import ch.qos.logback.classic.pattern.RelativeTimeConverter;
 //import basededatos.iUsuario_No_Registrado;
@@ -15,9 +16,10 @@ import vistas.VistaUsuarioNoRegistrado;
 public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	private button _iniciarSesionB;
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
-	Cabecera_TOP top = new Cabecera_TOP();
+	public Cabecera_TOP top = new Cabecera_TOP();
 	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado= new Lista_Publicaciones__Usuario_no_registrado_();
 	public Cabecera_Usuario_No_Registrado cabeceraUNR = new Cabecera_Usuario_No_Registrado();
+	public Element cabeceraTop = top.getCabeceraTop();
 
 	public Usuario_No_Registrado() {
 		this.getStyle().set("width", "100%");

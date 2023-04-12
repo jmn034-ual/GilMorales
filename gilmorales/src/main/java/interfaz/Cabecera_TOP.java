@@ -5,6 +5,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaCabeceraTop;
+import vistas.VistaCabeceraTop2;
 
 public class Cabecera_TOP extends VistaCabeceraTop{
 	private Button _verListaHashtag;
@@ -19,7 +20,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados;
 	
 	public Cabecera_TOP() {
-		Ver_lista_Hashtag();
+	//	Ver_lista_Hashtag();
 		top_hashtags_item thi = new top_hashtags_item("MDS2");
 		_top_hashtags.anadirHashag(thi);
 		top_hashtags();
@@ -29,10 +30,10 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		
 	}
 
-	public void Ver_lista_Hashtag() {
-		this.getBotonVerListaHashtag().addClickListener(event -> {this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_lista_Hashtag);});
-	}
+//	public void Ver_lista_Hashtag() {
+//		this.getBotonVerListaHashtag().addClickListener(event -> {this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+//			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_lista_Hashtag);});
+//	}
 
 	public void top_hashtags() {
 		this.getListaTopHashtag().as(VerticalLayout.class).add(_top_hashtags);
