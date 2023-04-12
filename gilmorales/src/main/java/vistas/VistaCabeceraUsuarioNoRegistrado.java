@@ -19,6 +19,7 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-cabecera-usuario-no-registrado.ts")
 public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 
+
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("vaadinHorizontalLayout")
@@ -41,10 +42,10 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	private Button inicio;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-	@Id("botonCerrarSesion")
-	private Button botonCerrarSesion;
-
+	@Id("botonRegistrarse")
+	private Button botonRegistrarse;
 	
+
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
 	}
@@ -155,13 +156,13 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
-	public Button getBotonCerrarSesion() {
-		return botonCerrarSesion;
+	public Button getBotonRegistrarse() {
+		return botonRegistrarse;
 	}
 
 
-	public void setBotonCerrarSesion(Button botonCerrarSesion) {
-		this.botonCerrarSesion = botonCerrarSesion;
+	public void setBotonRegistrarse(Button botonRegistrarse) {
+		this.botonRegistrarse = botonRegistrarse;
 	}
 
 

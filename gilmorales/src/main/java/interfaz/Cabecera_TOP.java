@@ -5,7 +5,6 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaCabeceraTop;
-import vistas.VistaCabeceraTop2;
 
 public class Cabecera_TOP extends VistaCabeceraTop{
 	private Button _verListaHashtag;

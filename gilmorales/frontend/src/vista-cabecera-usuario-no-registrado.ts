@@ -17,7 +17,7 @@ export class VistaCabeceraUsuarioNoRegistrado extends LitElement {
 
  render() {
     return html`
-<vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="width: 100%;background-color: #fdfd96;">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="width: 100%;">
  <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: center; margin: var(--lumo-space-l);">
   <vaadin-button theme="icon" aria-label="Add new" id="logoWeb" style="flex-grow: 0;background-color: transparent;">
    <iron-icon id="iconoWeb" style="width: 1px; height: 1px;"></iron-icon>
@@ -38,7 +38,7 @@ export class VistaCabeceraUsuarioNoRegistrado extends LitElement {
   <vaadin-button id="vaadinButton">
     Iniciar Sesión 
   </vaadin-button>
-  <vaadin-button id="botonCerrarSesion">
+  <vaadin-button id="botonRegistrarse">
     Registrarse 
   </vaadin-button>
  </vaadin-horizontal-layout>

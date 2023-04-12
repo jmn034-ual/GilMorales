@@ -28,6 +28,8 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 		this.Cabecera_Usuario_No_Registrado();	
 		top.getLayoutListaResultadoBusqueda().setVisible(false);
 		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(top);
+//		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {this.getVaadinVerticalLayout().removeAllChildren(); 
+//		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());});
 	}
 
 	public void Publicaciones__Usuario_no_registrado_() {
@@ -44,6 +46,6 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 
 
 	public void Iniciar_Sesion() {
-		throw new UnsupportedOperationException();
+		
 	}
 }
