@@ -69,7 +69,8 @@ public class MainView extends VerticalLayout {
     	Iniciar_sesion_otras_plataformas isop = new Iniciar_sesion_otras_plataformas();
     	ini.getFacebookB().addClickListener(event->{remove(ini);add(isop);});
     	
-    	
+    	Usar_otra_cuenta uoc = new Usar_otra_cuenta();
+    	isop.getBotonUsarOtraCuenta().addClickListener(event->{remove(isop); add(uoc);});
     	
 
     }

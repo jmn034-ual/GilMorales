@@ -36,7 +36,7 @@ public class Registrar extends VistaRegistrarusuario{
 	public Iniciar_Sesion__4 _iniciar_sesion= new Iniciar_Sesion__4();
 	
 	public Registrar() {
-		this.getStyle().set("wide", "100%");
+		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 	}
 	

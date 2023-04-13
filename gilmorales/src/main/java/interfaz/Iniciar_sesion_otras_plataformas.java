@@ -15,7 +15,7 @@ public class Iniciar_sesion_otras_plataformas extends VistaIniciarsesionotraplat
 	public Usar_otra_cuenta _usar_otra_cuenta;
 
 	public Iniciar_sesion_otras_plataformas() {
-		this.getStyle().set("wide", "100%");
+		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 	}
 	
