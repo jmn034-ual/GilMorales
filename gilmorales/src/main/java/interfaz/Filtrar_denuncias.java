@@ -2,7 +2,7 @@ package interfaz;
 
 import vistas.VistaFiltrarResultado;
 
-public class Filtrar_denuncias extends {
+public class Filtrar_denuncias {
 	public Lista_denuncias_item _lista_denuncias;
 	public Ver_denuncias_aplicadas _ver_denuncias_aplicadas;
 	public Ver_denuncias_pendientes _ver_denuncias_pendientes;

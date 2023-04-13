@@ -19,7 +19,7 @@ export class VistaUsuarioNoRegistrado extends LitElement {
  <vaadin-horizontal-layout id="layoutCabecera" style="width: 100%; z-index: 999; background-color: #757575;"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 1; align-self: stretch; flex-shrink: 0; z-index: 0; width: 100%;overflow: hidden;" theme="spacing-s">
   <vaadin-vertical-layout id="layoutCabeceraTop" style="flex-shrink: 1; flex-grow: 0; z-index: 1; align-items: center; justify-content: flex-start; align-self: stretch; background-color: #757575; width: 10%;"></vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; flex-shrink: 0; align-items: center; background-color: #ffffff; align-self: stretch; justify-content: center; z-index: 0; margin: var(--lumo-space-l); margin-left: var(--lumo-space-xl); margin-top: var(--lumo-space-xl);"></vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; flex-shrink: 0; align-items: center; background-color: #ffffff; align-self: stretch; justify-content: center; z-index: 0; margin: var(--lumo-space-l); margin-left: var(--lumo-space-xl); margin-top: 4%;"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

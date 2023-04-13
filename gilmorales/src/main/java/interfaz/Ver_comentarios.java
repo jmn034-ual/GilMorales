@@ -16,6 +16,10 @@ public class Ver_comentarios extends VistaVerComentarios{
 //	private Label _seguidoresL;
 //	private Label _meGustasL;
 	public Ver_Perfil__2 _ver_perfil;
+	
+	public Ver_comentarios() {
+		
+	}
 
 	public void Ver_perfil() {
 		throw new UnsupportedOperationException();

@@ -1,30 +1,12 @@
 package TikTok;
 
-import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.page.Page;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
-import interfaz.Iniciar_Sesion__4;
-import interfaz.Iniciar_sesion__3;
-import interfaz.Iniciar_sesion_otras_plataformas;
-import interfaz.Lista_Publicaciones__Usuario_no_registrado_;
 import interfaz.Lista_Publicaciones__Usuario_no_registrado__item;
-import interfaz.Registrar;
-import interfaz.Usar_otra_cuenta;
-import interfaz.Usuario_No_Registrado;
-import interfaz.Usuario_Registrado;
-import interfaz.top_hashtags;
-import interfaz.top_hashtags_item;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import interfaz.Ver_comentarios__Usuario_No_registrado_;
 
 /**
  * A sample Vaadin view class.
@@ -61,22 +43,22 @@ public class MainView extends VerticalLayout {
     	this.getStyle().set("height", "100%");
     	this.setMargin(false);
     	this.setPadding(false);
-    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-//		nr.getStyle().set("width", "101%");
-//		nr.getStyle().set("height", "101%");
-		
+//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
+//
+//		
 		Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
 				"icons/icon.png", "videos/tiktok1.mp4");
-		Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
-				"icons/luffy.jpg", "videos/tiktok1.mp4");
-		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
-		lp.anadirPublicacion(item1);
-		lp.anadirPublicacion(item2);
-
-		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
-	
-    	add(nr);
-//    	
+//		Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+//				"icons/luffy.jpg", "videos/tiktok1.mp4");
+//		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
+//		lp.anadirPublicacion(item1);
+//		lp.anadirPublicacion(item2);
+//
+//		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
+//	
+//    	add(nr);
+    	Ver_comentarios__Usuario_No_registrado_ vcnr = new Ver_comentarios__Usuario_No_registrado_(item1);
+    	add(vcnr);
     	
 //    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
 //    	add(ini);
