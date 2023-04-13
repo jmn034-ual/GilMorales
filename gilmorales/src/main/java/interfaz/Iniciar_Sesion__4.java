@@ -26,30 +26,11 @@ public class Iniciar_Sesion__4 extends VistaIniciarsesion{
 	public Recuperar_password _recuperar_password;
 	public Registrar _registrar;
 	
-<<<<<<< HEAD
-
-	public void Iniciar_sesion_otras_plataformas() {
-		
-=======
 	public Iniciar_Sesion__4() {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
->>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
 	}
 
-<<<<<<< HEAD
-	public void Recuperar_password() {
-		
-	}
-
-	public void Validar_datos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void Registrar() {
-		
-	}
-=======
 //	public void Iniciar_sesion_otras_plataformas() {
 //		_iniciar_sesion_otras_plataformas.getStyle().set("wide", "100%");
 //		_iniciar_sesion_otras_plataformas.getStyle().set("height", "100%");
@@ -84,5 +65,4 @@ public class Iniciar_Sesion__4 extends VistaIniciarsesion{
 //		this.getRegistrarB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 //		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_registrar);});
 //	}
->>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
 }

@@ -63,20 +63,15 @@ public class MainView extends VerticalLayout {
 //		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
 //		lp.anadirPublicacion(item);
 //		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
-<<<<<<< HEAD
 //    	add(nr);
     	
-    	
-    	Iniciar_Sesion__4 is = new Iniciar_Sesion__4();
-    	add(is);
-=======
-//	
-//    	add(nr);
     	
     	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
     	add(ini);
->>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
     	
+    	Registrar otro = new Registrar();
+    	
+    	ini.getRegistrarB().addClickListener(event->{remove(ini);add(otro);});
     }
 
 }
