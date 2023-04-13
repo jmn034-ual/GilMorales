@@ -17,6 +17,8 @@ import vistas.VistaUsuarioNoRegistrado;
 public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	private button _iniciarSesionB;
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
+	public Iniciar_Sesion__4 login = new Iniciar_Sesion__4();
+	public Registrar registro = new Registrar();
 	public Cabecera_TOP top = new Cabecera_TOP();
 	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado;
 	public Cabecera_Usuario_No_Registrado cabeceraUNR = new Cabecera_Usuario_No_Registrado();
@@ -56,13 +58,13 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public void Cabecera_Usuario_No_Registrado() {
 
 		this.getLayoutCabecera().add(cabeceraUNR);
-		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {this.getVaadinVerticalLayout().removeAllChildren(); 
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Registrar());});
+		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(registro);});
 	}
 
 
 	public void Iniciar_Sesion() {
-		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {this.getVaadinVerticalLayout().removeAllChildren(); 
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());});
+		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(login);});
 	}
 }
