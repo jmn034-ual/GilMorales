@@ -8,7 +8,7 @@ import vistas.VistaAdministradorPrincipal;
 
 public class Administrador extends VistaAdministradorPrincipal {
 	//public iAdministrador _iAdministrador;
-	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_= new Lista_Publicaciones__Administrador_();
+	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
 	public Cabecera_Administrador _cabecera_Administrador = new Cabecera_Administrador();
 	public Cabecera_TOP top = new Cabecera_TOP();
 	public Element cabeceraTop = top.getCabeceraTop();

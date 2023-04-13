@@ -3,6 +3,7 @@ package TikTok;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
@@ -72,6 +73,13 @@ public class MainView extends VerticalLayout {
     	ls.anadirPublicacion(itemA);
     	Administrador admin = new Administrador(ls);
     	add(admin);
+    	
+    	Lista_denuncias_item itemB= new Lista_denuncias_item();
+    	Lista_denuncias lsd = new Lista_denuncias();
+    	lsd.anadirDenuncia(itemB);
+    	Ver_denuncias denuncia = new Ver_denuncias(lsd);
+    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
+    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
     	
     }
 

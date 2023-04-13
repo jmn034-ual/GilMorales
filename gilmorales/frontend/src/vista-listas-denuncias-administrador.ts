@@ -14,7 +14,7 @@ export class VistaListasDenunciasAdministrador extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;"></vaadin-horizontal-layout>
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="vaadinHorizontalLayout"></vaadin-horizontal-layout>
 `;
   }
 
