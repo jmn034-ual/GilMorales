@@ -12,8 +12,8 @@ public class Lista_Publicaciones__Usuario_no_registrado_ extends VistaListaPubli
 	public Lista_Publicaciones__Usuario_no_registrado__item p = new Lista_Publicaciones__Usuario_no_registrado__item();
 	
 	public Lista_Publicaciones__Usuario_no_registrado_() {
-//		this.p.getBotonVerComentarios().addClickListener(event -> {this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
-//			this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(new Ver_comentarios__Usuario_No_registrado_());});
+		this.p.getBotonVerComentarios().addClickListener(event -> {this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
+			this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(new Ver_comentarios__Usuario_No_registrado_(p));});
 	}
 	public void anadirPublicacion(Lista_Publicaciones__Usuario_no_registrado__item publicacion) {
 		this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(publicacion);
