@@ -24,6 +24,38 @@ public class VistaTopUsuariosItem extends LitTemplate {
 	private Element fotoPerfil;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+	
+	
+	public Button getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+
+	public void setNombreUsuario(Button nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+
+	public Element getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+
+	public void setFotoPerfil(Element fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
 	/**
      * Creates a new VistaTopUsuariosItem.
      */

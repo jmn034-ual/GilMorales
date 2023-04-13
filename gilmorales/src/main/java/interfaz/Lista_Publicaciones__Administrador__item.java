@@ -30,7 +30,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 		throw new UnsupportedOperationException();
 	}
 
-	public void Ver_publicaci�n__Administrador_() {
+	public void Ver_publicacion__Administrador_() {
 		throw new UnsupportedOperationException();
 	}
 

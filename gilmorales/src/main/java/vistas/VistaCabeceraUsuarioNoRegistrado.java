@@ -19,14 +19,17 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-cabecera-usuario-no-registrado.ts")
 public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
+
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("logoWeb")
 	private Button logoWeb;
 	@Id("iconoWeb")
 	private Element iconoWeb;
+	@Id("cabecera")
+	private HorizontalLayout cabecera;
 	@Id("barraBusqueda")
 	private HorizontalLayout barraBusqueda;
 	@Id("textoBusqueda")
@@ -39,27 +42,27 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	private Button inicio;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-	@Id("botonCerrarSesion")
-	private Button botonCerrarSesion;
-
+	@Id("botonRegistrarse")
+	private Button botonRegistrarse;
 	
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
 	}
 
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
 	}
 
 
-	public HorizontalLayout getCabecera() {
-		return cabecera;
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
 	}
 
 
-	public void setCabecera(HorizontalLayout cabecera) {
-		this.cabecera = cabecera;
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
 
@@ -80,6 +83,16 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 
 	public void setIconoWeb(Element iconoWeb) {
 		this.iconoWeb = iconoWeb;
+	}
+
+
+	public HorizontalLayout getCabecera() {
+		return cabecera;
+	}
+
+
+	public void setCabecera(HorizontalLayout cabecera) {
+		this.cabecera = cabecera;
 	}
 
 
@@ -143,13 +156,13 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
-	public Button getBotonCerrarSesion() {
-		return botonCerrarSesion;
+	public Button getBotonRegistrarse() {
+		return botonRegistrarse;
 	}
 
 
-	public void setBotonCerrarSesion(Button botonCerrarSesion) {
-		this.botonCerrarSesion = botonCerrarSesion;
+	public void setBotonRegistrarse(Button botonRegistrarse) {
+		this.botonRegistrarse = botonRegistrarse;
 	}
 
 

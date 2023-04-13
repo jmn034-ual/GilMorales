@@ -1,20 +1,20 @@
 package interfaz;
 
 public class Ver_publicacion__Administrador_ {
-	private Video _video;
-	private int _numeroVisualizaciones;
-	private Label _visualizacionesL;
-	private ImageIcon _usuarioIcono;
-	private button _verPerfilB;
-	private Label _geolocalizacionL;
-	private button _eliminarPublicacionB;
-	private TextArea _descripcionTA;
-	private Label _fechaL;
-	private int _numeroMeGustas;
-	private Label _meGustasL;
-	private int _numeroComentarios;
-	private Label _numeroComentariosL;
-	private button _verComentariosB;
+//	private Video _video;
+//	private int _numeroVisualizaciones;
+//	private Label _visualizacionesL;
+//	private ImageIcon _usuarioIcono;
+//	private button _verPerfilB;
+//	private Label _geolocalizacionL;
+//	private button _eliminarPublicacionB;
+//	private TextArea _descripcionTA;
+//	private Label _fechaL;
+//	private int _numeroMeGustas;
+//	private Label _meGustasL;
+//	private int _numeroComentarios;
+//	private Label _numeroComentariosL;
+//	private button _verComentariosB;
 	public Lista_Publicaciones__Administrador__item _lista_Publicaciones__Administrador_;
 	public Lista_publicaciones_usuario_item _lista_publicaciones_usuario;
 	public Lista_publicaciones_gustadas_item _lista_publicaciones_gustadas;

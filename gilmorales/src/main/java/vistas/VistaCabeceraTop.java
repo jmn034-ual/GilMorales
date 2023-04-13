@@ -25,10 +25,8 @@ import com.vaadin.flow.component.select.Select;
 @JsModule("./src/vista-cabecera-top.ts")
 public class VistaCabeceraTop extends LitTemplate {
 
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+
+
 	@Id("cabeceraTop")
 	private Element cabeceraTop;
 	@Id("tituloUsuarios")
@@ -39,8 +37,11 @@ public class VistaCabeceraTop extends LitTemplate {
 	private Button botonVerListaUsuarios;
 	@Id("tituloHashtag")
 	private H3 tituloHashtag;
+	@Id("listaTopHashtag")
+	private Element listaTopHashtag;
 	@Id("botonVerListaHashtag")
 	private Button botonVerListaHashtag;
+	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("layoutListaResultadoBusqueda")
 	private Element layoutListaResultadoBusqueda;
 	@Id("tituloResultadoBusqueda")
@@ -73,19 +74,6 @@ public class VistaCabeceraTop extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("layoutListaResultadoHashtags")
 	private Element layoutListaResultadoHashtags;
-	@Id("listaTopHashtag")
-	private Element listaTopHashtag;
-
-	
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
@@ -94,76 +82,6 @@ public class VistaCabeceraTop extends LitTemplate {
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-
-	public Element getCabeceraTop() {
-		return cabeceraTop;
-	}
-
-
-	public void setCabeceraTop(Element cabeceraTop) {
-		this.cabeceraTop = cabeceraTop;
-	}
-
-
-	public H3 getTituloUsuarios() {
-		return tituloUsuarios;
-	}
-
-
-	public void setTituloUsuarios(H3 tituloUsuarios) {
-		this.tituloUsuarios = tituloUsuarios;
-	}
-
-
-	public Element getListaUsuarios() {
-		return listaUsuarios;
-	}
-
-
-	public void setListaUsuarios(Element listaUsuarios) {
-		this.listaUsuarios = listaUsuarios;
-	}
-
-
-	public Button getBotonVerListaUsuarios() {
-		return botonVerListaUsuarios;
-	}
-
-
-	public void setBotonVerListaUsuarios(Button botonVerListaUsuarios) {
-		this.botonVerListaUsuarios = botonVerListaUsuarios;
-	}
-
-
-	public H3 getTituloHashtag() {
-		return tituloHashtag;
-	}
-
-
-	public void setTituloHashtag(H3 tituloHashtag) {
-		this.tituloHashtag = tituloHashtag;
-	}
-
-
-	public Element getListaTopHashtag() {
-		return listaTopHashtag;
-	}
-
-
-	public void setListaTopHashtag(Element listaTopHashtag) {
-		this.listaTopHashtag = listaTopHashtag;
-	}
-
-
-	public Button getBotonVerListaHashtag() {
-		return botonVerListaHashtag;
-	}
-
-
-	public void setBotonVerListaHashtag(Button botonVerListaHashtag) {
-		this.botonVerListaHashtag = botonVerListaHashtag;
 	}
 
 
@@ -324,6 +242,76 @@ public class VistaCabeceraTop extends LitTemplate {
 
 	public void setLayoutListaResultadoHashtags(Element layoutListaResultadoHashtags) {
 		this.layoutListaResultadoHashtags = layoutListaResultadoHashtags;
+	}
+
+
+	public Element getCabeceraTop() {
+		return cabeceraTop;
+	}
+
+
+	public void setCabeceraTop(Element cabeceraTop) {
+		this.cabeceraTop = cabeceraTop;
+	}
+
+
+	public H3 getTituloUsuarios() {
+		return tituloUsuarios;
+	}
+
+
+	public void setTituloUsuarios(H3 tituloUsuarios) {
+		this.tituloUsuarios = tituloUsuarios;
+	}
+
+
+	public Element getListaUsuarios() {
+		return listaUsuarios;
+	}
+
+
+	public void setListaUsuarios(Element listaUsuarios) {
+		this.listaUsuarios = listaUsuarios;
+	}
+
+
+	public Button getBotonVerListaUsuarios() {
+		return botonVerListaUsuarios;
+	}
+
+
+	public void setBotonVerListaUsuarios(Button botonVerListaUsuarios) {
+		this.botonVerListaUsuarios = botonVerListaUsuarios;
+	}
+
+
+	public H3 getTituloHashtag() {
+		return tituloHashtag;
+	}
+
+
+	public void setTituloHashtag(H3 tituloHashtag) {
+		this.tituloHashtag = tituloHashtag;
+	}
+
+
+	public Element getListaTopHashtag() {
+		return listaTopHashtag;
+	}
+
+
+	public void setListaTopHashtag(Element listaTopHashtag) {
+		this.listaTopHashtag = listaTopHashtag;
+	}
+
+
+	public Button getBotonVerListaHashtag() {
+		return botonVerListaHashtag;
+	}
+
+
+	public void setBotonVerListaHashtag(Button botonVerListaHashtag) {
+		this.botonVerListaHashtag = botonVerListaHashtag;
 	}
 
 

@@ -40,6 +40,10 @@ public class Registrar extends VistaRegistrarusuario{
 		this.getStyle().set("height", "100%");
 	}
 
+	public Registrar() {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("heigth", "100%");
+	}
 	public void Subir_foto() {
 		
 	}

@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.Scroller;
 
 /**
  * A Designer generated component for the vista-usuario-no-registrado template.
@@ -27,7 +28,6 @@ public class VistaUsuarioNoRegistrado extends LitTemplate {
 	private Element layoutCabeceraTop;
 	@Id("layoutListaPublicaciones")
 	private Element layoutListaPublicaciones;
-
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}

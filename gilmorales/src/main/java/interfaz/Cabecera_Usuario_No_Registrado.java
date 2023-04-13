@@ -1,5 +1,9 @@
 package interfaz;
 
+import javax.swing.ImageIcon;
+
+import com.vaadin.flow.component.html.Image;
+
 import vistas.VistaCabeceraUsuarioNoRegistrado;
 
 public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegistrado{
@@ -12,7 +16,13 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 	public Realizar_busqueda _realizar_busqueda = new Realizar_busqueda();
 	public Cabecera_TOP _cabecera_TOP;
 
-	
+	public Cabecera_Usuario_No_Registrado() {
+		Image customIcon = new Image("icons/logo.png", null);
+		customIcon.getStyle().set("width", "100px");
+		customIcon.getStyle().set("heigth", "100px");
+		this.getLogoWeb().setIcon(customIcon);
+
+	}
 	
 	public void Realizar_busqueda() {
 		throw new UnsupportedOperationException();

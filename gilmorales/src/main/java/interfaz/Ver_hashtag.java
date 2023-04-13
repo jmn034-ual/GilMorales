@@ -6,10 +6,10 @@ import com.vaadin.flow.component.icon.IronIcon;
 import vistas.VistaVerHashtag;
 
 public class Ver_hashtag extends VistaVerHashtag{
-	private IronIcon _iconoHashtag;
-	private Label _nombreHashtagL;
-	private int _numeroVisualizaciones;
-	private Label _visualizacionesL;
+//	private IronIcon _iconoHashtag;
+//	private Label _nombreHashtagL;
+//	private int _numeroVisualizaciones;
+//	private Label _visualizacionesL;
 	public top_hashtags_item _top_hashtags;
 	public Resultado_hashtags_item _resultado_hashtags;
 	public Tendencias_item _tendencias;

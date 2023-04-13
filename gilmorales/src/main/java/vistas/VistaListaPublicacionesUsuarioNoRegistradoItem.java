@@ -9,6 +9,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-publicaciones-usuario-no-registrado-item template.
@@ -68,8 +69,20 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Button botonComentar;
 	@Id("fotoPerfil")
 	private Element fotoPerfil;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
 
 	
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
+	}
+
+
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
+	}
+
+
 	public Element getFotoPerfil() {
 		return fotoPerfil;
 	}
