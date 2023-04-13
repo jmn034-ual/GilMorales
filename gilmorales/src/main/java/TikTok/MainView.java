@@ -42,12 +42,12 @@ public class MainView extends VerticalLayout {
     public MainView() {
 
 //    	this.getStyle().set("background-color", "#000000");
-    	this.getStyle().set("width", "100%");
-    	this.getStyle().set("height", "100%");
-    	this.setMargin(false);
-    	this.setPadding(false);
-    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-    	add(nr);
+//    	this.getStyle().set("width", "100%");
+//    	this.getStyle().set("height", "100%");
+//    	this.setMargin(false);
+//    	this.setPadding(false);
+//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
+//    	add(nr);
 //
 //
 //		
@@ -67,7 +67,7 @@ public class MainView extends VerticalLayout {
 //    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
 //    	add(ini);
 //    	
-<<<<<<< HEAD
+
 //    	Recuperar_password rec = new Recuperar_password();
 //    	ini.getRecuperarContrasenaB().addClickListener(event->{remove(ini); add(rec);});
 //    	
@@ -90,20 +90,10 @@ public class MainView extends VerticalLayout {
     	Administrador admin = new Administrador();
     	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item();
     	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
+    	ls.anadirPublicacion(itemA);
     	
     	admin.getLayoutPublicaciones().as(VerticalLayout.class).add(ls);
     	add(admin);
-=======
-//    	Registrar reg = new Registrar();
-//    	ini.getRegistrarB().addClickListener(event->{remove(ini);add(reg);});
-//    	
-//    	Iniciar_sesion_otras_plataformas isop = new Iniciar_sesion_otras_plataformas();
-//    	ini.getFacebookB().addClickListener(event->{remove(ini);add(isop);});
-//    	
-//    	Usar_otra_cuenta uoc = new Usar_otra_cuenta();
-//    	isop.getBotonUsarOtraCuenta().addClickListener(event->{remove(isop); add(uoc);});
-    	
->>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
 
     }
 

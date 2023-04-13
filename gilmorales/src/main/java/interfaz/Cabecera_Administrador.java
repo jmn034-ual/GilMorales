@@ -24,14 +24,14 @@ public class Cabecera_Administrador extends VistaCabecera{
 	}
 
 	public void Realizar_busqueda() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Cerrar_sesion() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Inicio() {
-		throw new UnsupportedOperationException();
+		
 	}
 }

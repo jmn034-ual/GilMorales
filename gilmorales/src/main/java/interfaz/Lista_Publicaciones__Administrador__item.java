@@ -1,7 +1,10 @@
 package interfaz;
 
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import TikTok.Video;
 import vistas.VistaListaPublicacionesAdministradorItem;
 
 public class Lista_Publicaciones__Administrador__item extends VistaListaPublicacionesAdministradorItem{
@@ -19,9 +22,9 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 //	private button _verComentariosB;
 //	private TextArea _descripcionTA;
 //	private button _verPublicacionB;
-	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_ = new Lista_Publicaciones__Administrador_();
-	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_= new Ver_comentarios__Administrador_();
-	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_ = new Ver_publicacion__Administrador_();
+	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
+	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_;
+	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
 	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
 	
 	public Lista_Publicaciones__Administrador__item() {
