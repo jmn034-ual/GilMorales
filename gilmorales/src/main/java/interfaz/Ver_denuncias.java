@@ -15,6 +15,7 @@ public class Ver_denuncias extends VistaVerDenuncias {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.getLayoutListaDenuncias().as(VerticalLayout.class).add(lista);
+		this.getLayoutCabecera().add(new Cabecera_Administrador());
 	}
 
 	public void Lista_denuncias() {
