@@ -56,9 +56,14 @@ public class MainView extends VerticalLayout {
      */
     public MainView() {
 
+//    	this.getStyle().set("background-color", "#000000");
+    	this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+    	this.setMargin(false);
+    	this.setPadding(false);
     	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-		nr.getStyle().set("width", "100%");
-		nr.getStyle().set("height", "100%");
+//		nr.getStyle().set("width", "101%");
+//		nr.getStyle().set("height", "101%");
 		
 		Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
 				"icons/icon.png", "videos/tiktok1.mp4");
@@ -71,7 +76,7 @@ public class MainView extends VerticalLayout {
 		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
 	
     	add(nr);
-    	
+//    	
     	
 //    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
 //    	add(ini);

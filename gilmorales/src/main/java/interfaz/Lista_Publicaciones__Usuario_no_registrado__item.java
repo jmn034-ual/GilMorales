@@ -40,7 +40,7 @@ public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaLista
 		this.getBotonSeguir().setVisible(false);
 		this.getBotonDenunciar().setVisible(false);
 	//	this.getLabelNumComentarios().add("0");
-		this.getBotonVerComentarios().addClickListener(event->{Ver_comentarios__Usuario_No_registrado_();});
+		this.getBotonVerComentarios().addClickListener(event->{;});
 	//	this.getLabelMeGustas().add(megusta);
 		this.getVaadinButton().setVisible(false);
 		this.getLabelDescripcion().setText(descripcion);

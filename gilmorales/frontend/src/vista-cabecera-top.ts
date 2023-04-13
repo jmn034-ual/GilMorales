@@ -18,19 +18,19 @@ export class VistaCabeceraTop extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 1; align-self: stretch; width: 100%; height: 100%;">
- <vaadin-vertical-layout id="cabeceraTop">
-  <h3 id="tituloUsuarios" style="align-self: center;">Top Usuarios</h3>
-  <vaadin-vertical-layout theme="spacing" id="listaUsuarios" style="align-self: center; flex-grow: 1;"></vaadin-vertical-layout>
-  <vaadin-button id="botonVerListaUsuarios" style="align-self: center;">
+ <vaadin-vertical-layout id="cabeceraTop" style="flex-shrink: 1; flex-grow: 0; height: 100%; justify-content: space-evenly; position: fixed; background-color:#757575; align-items: flex-start; z-index: 0;">
+  <h3 id="tituloUsuarios" style="align-self: center; z-index: 2;">Top Usuarios</h3>
+  <vaadin-vertical-layout theme="spacing" id="listaUsuarios" style="align-self: center; flex-grow: 0;z-index: 2;"></vaadin-vertical-layout>
+  <vaadin-button id="botonVerListaUsuarios" style="align-self: center;z-index: 2; background-color: #ffffff;">
     Ver Lista Usuarios 
   </vaadin-button>
-  <h3 style="align-self: center;" id="tituloHashtag">Top Hashtags</h3>
-  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 1; align-items: center;" id="listaTopHashtag"></vaadin-vertical-layout>
-  <vaadin-button style="align-self: center;" id="botonVerListaHashtag">
+  <h3 style="align-self: center;z-index: 2;" id="tituloHashtag">Top Hashtags</h3>
+  <vaadin-vertical-layout theme="spacing" style="align-self: center; flex-grow: 0; align-items: center;z-index: 2;" id="listaTopHashtag"></vaadin-vertical-layout>
+  <vaadin-button style="align-self: center;z-index: 2;background-color: #ffffff;" id="botonVerListaHashtag">
     Ver Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout id="layoutListaResultadoBusqueda" style="flex-grow: 1; margin: var(--lumo-space-xs); align-items: stretch;">
+ <vaadin-vertical-layout id="layoutListaResultadoBusqueda" style="flex-grow: 1; margin: var(--lumo-space-xs); align-items: stretch; margin-left: 15%;">
   <h2 id="tituloResultadoBusqueda" style="align-self: center; margin: var(--lumo-space-s);">Resultado de la Busqueda</h2>
   <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="align-self: stretch; justify-content: space-around; margin: var(--lumo-space-s);">
    <vaadin-horizontal-layout id="layoutTituloUsuarios" style="flex-grow: 0; justify-content: center; margin: var(--lumo-space-m); width: 100%;">

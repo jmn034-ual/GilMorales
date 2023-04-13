@@ -22,14 +22,18 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public Element cabeceraTop = top.getCabeceraTop();
 
 	public Usuario_No_Registrado() {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("height", "100%");
+		this.getVaadinVerticalLayout().getStyle().set("width", "100%");
+		this.getVaadinVerticalLayout().getStyle().set("height", "100%");
+		this.getLayoutCabeceraTop().getStyle().set("padding", "false");
+		this.getLayoutCabeceraTop().getStyle().set("height", "100%");
 		this.Publicaciones__Usuario_no_registrado_();
 		this.Cabecera_Usuario_No_Registrado();	
 		top.getLayoutListaResultadoBusqueda().setVisible(false);
 		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(top);
-//		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {this.getVaadinVerticalLayout().removeAllChildren(); 
-//		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());});
+		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {this.getVaadinVerticalLayout().removeAllChildren(); 
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());});
+		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {this.getVaadinVerticalLayout().removeAllChildren(); 
+		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Registrar());});
 	}
 
 	public void Publicaciones__Usuario_no_registrado_() {
@@ -39,8 +43,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Cabecera_Usuario_No_Registrado() {
-		cabeceraUNR.getStyle().set("width", "100%");
-		cabeceraUNR.getStyle().set("height", "100%");
+
 		this.getLayoutCabecera().add(cabeceraUNR);
 	}
 
