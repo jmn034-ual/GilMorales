@@ -9,6 +9,7 @@ import interfaz.Lista_Publicaciones__Usuario_no_registrado_;
 import interfaz.Lista_Publicaciones__Usuario_no_registrado__item;
 import interfaz.Usuario_No_Registrado;
 import interfaz.Ver_comentarios__Usuario_No_registrado_;
+import interfaz.*;
 
 /**
  * A sample Vaadin view class.
@@ -47,9 +48,35 @@ public class MainView extends VerticalLayout {
     	this.setPadding(false);
     	Usuario_No_Registrado nr = new Usuario_No_Registrado();
     	add(nr);
+//
+//
+//		
+//		Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+//				"icons/icon.png", "videos/tiktok1.mp4");
+//		Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+//				"icons/luffy.jpg", "videos/tiktok1.mp4");
+//		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
+//		lp.anadirPublicacion(item1);
+//		lp.anadirPublicacion(item2);
+//
+//		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
+//    	add(nr);
+//    	Ver_comentarios__Usuario_No_registrado_ vcnr = new Ver_comentarios__Usuario_No_registrado_(item1);
+//    	add(vcnr);
+    	
 //    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
 //    	add(ini);
-  	
+//    	
+//    	Registrar reg = new Registrar();
+//    	ini.getRegistrarB().addClickListener(event->{remove(ini);add(reg);});
+//    	
+//    	Iniciar_sesion_otras_plataformas isop = new Iniciar_sesion_otras_plataformas();
+//    	ini.getFacebookB().addClickListener(event->{remove(ini);add(isop);});
+//    	
+//    	Usar_otra_cuenta uoc = new Usar_otra_cuenta();
+//    	isop.getBotonUsarOtraCuenta().addClickListener(event->{remove(isop); add(uoc);});
+    	
+
     }
 
 }

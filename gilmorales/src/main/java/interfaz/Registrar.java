@@ -9,6 +9,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import vistas.VistaRegistrarusuario;
 
 public class Registrar extends VistaRegistrarusuario{
+
 	private Label _tituloL;
 	private Button _subirFotoB;
 	private Image _foto;
@@ -32,21 +33,22 @@ public class Registrar extends VistaRegistrarusuario{
 	private ComboBox _tipoCuentaCB;
 	private Button _descartarB;
 	private Button _confirmarB;
-	public Iniciar_Sesion__4 _iniciar_sesion;
-
+	public Iniciar_Sesion__4 _iniciar_sesion= new Iniciar_Sesion__4();
+	
 	public Registrar() {
 		this.getStyle().set("width", "100%");
-		this.getStyle().set("heigth", "100%");
+		this.getStyle().set("height", "100%");
 	}
+	
 	public void Subir_foto() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Validar_registro() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Descartar() {
-		throw new UnsupportedOperationException();
+		
 	}
 }
