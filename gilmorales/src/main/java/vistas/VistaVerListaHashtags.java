@@ -29,6 +29,57 @@ public class VistaVerListaHashtags extends LitTemplate {
 	@Id("cabecera")
 	private HorizontalLayout cabecera;
 
+	
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+
+	public H1 getH1() {
+		return h1;
+	}
+
+
+	public void setH1(H1 h1) {
+		this.h1 = h1;
+	}
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+	public HorizontalLayout getCabecera() {
+		return cabecera;
+	}
+
+
+	public void setCabecera(HorizontalLayout cabecera) {
+		this.cabecera = cabecera;
+	}
+
+
 	/**
      * Creates a new VistaVerListaHashtags.
      */

@@ -15,9 +15,9 @@ export class VistaUsuarioRegistrado extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="cabecera" style="align-self: stretch; margin: var(--lumo-space-s);"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout theme="spacing" style="align-self: stretch; flex-grow: 1; margin: var(--lumo-space-s);">
+ <vaadin-horizontal-layout theme="spacing" style="align-self: stretch; flex-grow: 1; margin: var(--lumo-space-s);" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout id="cabeceraTop"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="listaPublicaciones" style="flex-grow: 1;"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>

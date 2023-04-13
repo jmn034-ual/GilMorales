@@ -19,14 +19,17 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-cabecera-usuario-no-registrado.ts")
 public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
+
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("logoWeb")
 	private Button logoWeb;
 	@Id("iconoWeb")
 	private Element iconoWeb;
+	@Id("cabecera")
+	private HorizontalLayout cabecera;
 	@Id("barraBusqueda")
 	private HorizontalLayout barraBusqueda;
 	@Id("textoBusqueda")
@@ -39,8 +42,129 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	private Button inicio;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-	@Id("botonCerrarSesion")
-	private Button botonCerrarSesion;
+	@Id("botonRegistrarse")
+	private Button botonRegistrarse;
+	
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+	public Button getLogoWeb() {
+		return logoWeb;
+	}
+
+
+	public void setLogoWeb(Button logoWeb) {
+		this.logoWeb = logoWeb;
+	}
+
+
+	public Element getIconoWeb() {
+		return iconoWeb;
+	}
+
+
+	public void setIconoWeb(Element iconoWeb) {
+		this.iconoWeb = iconoWeb;
+	}
+
+
+	public HorizontalLayout getCabecera() {
+		return cabecera;
+	}
+
+
+	public void setCabecera(HorizontalLayout cabecera) {
+		this.cabecera = cabecera;
+	}
+
+
+	public HorizontalLayout getBarraBusqueda() {
+		return barraBusqueda;
+	}
+
+
+	public void setBarraBusqueda(HorizontalLayout barraBusqueda) {
+		this.barraBusqueda = barraBusqueda;
+	}
+
+
+	public TextField getTextoBusqueda() {
+		return textoBusqueda;
+	}
+
+
+	public void setTextoBusqueda(TextField textoBusqueda) {
+		this.textoBusqueda = textoBusqueda;
+	}
+
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
+	public Button getBotonBuscar() {
+		return botonBuscar;
+	}
+
+
+	public void setBotonBuscar(Button botonBuscar) {
+		this.botonBuscar = botonBuscar;
+	}
+
+
+	public Button getInicio() {
+		return inicio;
+	}
+
+
+	public void setInicio(Button inicio) {
+		this.inicio = inicio;
+	}
+
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+
+	public Button getBotonRegistrarse() {
+		return botonRegistrarse;
+	}
+
+
+	public void setBotonRegistrarse(Button botonRegistrarse) {
+		this.botonRegistrarse = botonRegistrarse;
+	}
+
 
 	/**
      * Creates a new VistaCabeceraUsuarioNoRegistrado.

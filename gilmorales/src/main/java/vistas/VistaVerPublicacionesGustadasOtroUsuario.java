@@ -17,9 +17,9 @@ import com.vaadin.flow.component.html.Label;
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("ver-publicaciones-gustadas-otro-usuario")
-@JsModule("./src/ver-publicaciones-gustadas-otro-usuario.ts")
-public class VerPublicacionesGustadasOtroUsuario extends LitTemplate {
+@Tag("vista-ver-publicaciones-gustadas-otro-usuario")
+@JsModule("./src/vista-ver-publicaciones-gustadas-otro-usuario.ts")
+public class VistaVerPublicacionesGustadasOtroUsuario extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
@@ -83,7 +83,7 @@ public class VerPublicacionesGustadasOtroUsuario extends LitTemplate {
 	/**
      * Creates a new VerPublicacionesGustadasOtroUsuario.
      */
-    public VerPublicacionesGustadasOtroUsuario() {
+    public VistaVerPublicacionesGustadasOtroUsuario() {
         // You can initialise any data required for the connected UI components here.
     }
 

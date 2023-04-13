@@ -9,6 +9,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-publicaciones-usuario-no-registrado-item template.
@@ -24,8 +25,6 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private HorizontalLayout layoutPublicacion;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("layoutFotoPerfil")
-	private HorizontalLayout layoutFotoPerfil;
 	@Id("layoutVideoPublicacion")
 	private Element layoutVideoPublicacion;
 	@Id("botonNombreUsuario")
@@ -68,6 +67,260 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private TextField textFieldComentario;
 	@Id("botonComentar")
 	private Button botonComentar;
+	@Id("fotoPerfil")
+	private Element fotoPerfil;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
+
+	
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
+	}
+
+
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
+	}
+
+
+	public Element getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+
+	public void setFotoPerfil(Element fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+
+	public HorizontalLayout getLayoutPublicacion() {
+		return layoutPublicacion;
+	}
+
+
+	public void setLayoutPublicacion(HorizontalLayout layoutPublicacion) {
+		this.layoutPublicacion = layoutPublicacion;
+	}
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Element getLayoutVideoPublicacion() {
+		return layoutVideoPublicacion;
+	}
+
+
+	public void setLayoutVideoPublicacion(Element layoutVideoPublicacion) {
+		this.layoutVideoPublicacion = layoutVideoPublicacion;
+	}
+
+
+	public Button getBotonNombreUsuario() {
+		return botonNombreUsuario;
+	}
+
+
+	public void setBotonNombreUsuario(Button botonNombreUsuario) {
+		this.botonNombreUsuario = botonNombreUsuario;
+	}
+
+
+	public Label getLabelGeolocalizacion() {
+		return labelGeolocalizacion;
+	}
+
+
+	public void setLabelGeolocalizacion(Label labelGeolocalizacion) {
+		this.labelGeolocalizacion = labelGeolocalizacion;
+	}
+
+
+	public Element getLayoutVideo() {
+		return layoutVideo;
+	}
+
+
+	public void setLayoutVideo(Element layoutVideo) {
+		this.layoutVideo = layoutVideo;
+	}
+
+
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
+
+	public Element getLayoutDatos() {
+		return layoutDatos;
+	}
+
+
+	public void setLayoutDatos(Element layoutDatos) {
+		this.layoutDatos = layoutDatos;
+	}
+
+
+	public HorizontalLayout getLayoutBotonesUsuarioR() {
+		return layoutBotonesUsuarioR;
+	}
+
+
+	public void setLayoutBotonesUsuarioR(HorizontalLayout layoutBotonesUsuarioR) {
+		this.layoutBotonesUsuarioR = layoutBotonesUsuarioR;
+	}
+
+
+	public Button getBotonSeguir() {
+		return botonSeguir;
+	}
+
+
+	public void setBotonSeguir(Button botonSeguir) {
+		this.botonSeguir = botonSeguir;
+	}
+
+
+	public Button getBotonDenunciar() {
+		return botonDenunciar;
+	}
+
+
+	public void setBotonDenunciar(Button botonDenunciar) {
+		this.botonDenunciar = botonDenunciar;
+	}
+
+
+	public HorizontalLayout getLayoutBotonesPublicacion() {
+		return layoutBotonesPublicacion;
+	}
+
+
+	public void setLayoutBotonesPublicacion(HorizontalLayout layoutBotonesPublicacion) {
+		this.layoutBotonesPublicacion = layoutBotonesPublicacion;
+	}
+
+
+	public Element getLayoutMeGustas() {
+		return layoutMeGustas;
+	}
+
+
+	public void setLayoutMeGustas(Element layoutMeGustas) {
+		this.layoutMeGustas = layoutMeGustas;
+	}
+
+
+	public Label getLabelNumMeGustas() {
+		return labelNumMeGustas;
+	}
+
+
+	public void setLabelNumMeGustas(Label labelNumMeGustas) {
+		this.labelNumMeGustas = labelNumMeGustas;
+	}
+
+
+	public Label getLabelMeGustas() {
+		return labelMeGustas;
+	}
+
+
+	public void setLabelMeGustas(Label labelMeGustas) {
+		this.labelMeGustas = labelMeGustas;
+	}
+
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+
+	public Element getLayoutComentarios() {
+		return layoutComentarios;
+	}
+
+
+	public void setLayoutComentarios(Element layoutComentarios) {
+		this.layoutComentarios = layoutComentarios;
+	}
+
+
+	public Label getLabelNumComentarios() {
+		return labelNumComentarios;
+	}
+
+
+	public void setLabelNumComentarios(Label labelNumComentarios) {
+		this.labelNumComentarios = labelNumComentarios;
+	}
+
+
+	public Button getBotonVerComentarios() {
+		return botonVerComentarios;
+	}
+
+
+	public void setBotonVerComentarios(Button botonVerComentarios) {
+		this.botonVerComentarios = botonVerComentarios;
+	}
+
+
+	public Label getLabelDescripcion() {
+		return labelDescripcion;
+	}
+
+
+	public void setLabelDescripcion(Label labelDescripcion) {
+		this.labelDescripcion = labelDescripcion;
+	}
+
+
+	public HorizontalLayout getLayoutComentar() {
+		return layoutComentar;
+	}
+
+
+	public void setLayoutComentar(HorizontalLayout layoutComentar) {
+		this.layoutComentar = layoutComentar;
+	}
+
+
+	public TextField getTextFieldComentario() {
+		return textFieldComentario;
+	}
+
+
+	public void setTextFieldComentario(TextField textFieldComentario) {
+		this.textFieldComentario = textFieldComentario;
+	}
+
+
+	public Button getBotonComentar() {
+		return botonComentar;
+	}
+
+
+	public void setBotonComentar(Button botonComentar) {
+		this.botonComentar = botonComentar;
+	}
+
 
 	/**
      * Creates a new VistaListaPublicacionesUsuarioNoRegistradoItem.

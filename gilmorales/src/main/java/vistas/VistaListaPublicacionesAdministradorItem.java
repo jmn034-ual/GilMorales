@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-publicaciones-administrador-item template.
@@ -20,62 +21,11 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-lista-publicaciones-administrador-item.ts")
 public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("fotoPerfil")
-	private Div fotoPerfil;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("nombreDeUsuario")
-	private Button nombreDeUsuario;
-	@Id("localizacion")
-	private Label localizacion;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("eliminarB")
-	private Button eliminarB;
-	@Id("vaadinHorizontalLayout3")
-	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("vaadinHorizontalLayout4")
-	private HorizontalLayout vaadinHorizontalLayout4;
-	@Id("video")
-	private Div video;
-	@Id("numeroVisualizaciones")
-	private Label numeroVisualizaciones;
-	@Id("visualizacionesL")
-	private Label visualizacionesL;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("vaadinHorizontalLayout5")
-	private HorizontalLayout vaadinHorizontalLayout5;
-	@Id("vaadinHorizontalLayout6")
-	private HorizontalLayout vaadinHorizontalLayout6;
-	@Id("numeroMeGustas")
-	private Label numeroMeGustas;
-	@Id("vaadinHorizontalLayout7")
-	private HorizontalLayout vaadinHorizontalLayout7;
-	@Id("numeroComentarios")
-	private Label numeroComentarios;
-	@Id("vaadinHorizontalLayout8")
-	private HorizontalLayout vaadinHorizontalLayout8;
-	@Id("vaadinHorizontalLayout9")
-	private HorizontalLayout vaadinHorizontalLayout9;
-	@Id("meGustasL")
-	private Label meGustasL;
-	@Id("vaadinHorizontalLayout10")
-	private HorizontalLayout vaadinHorizontalLayout10;
-	@Id("comentariosB")
-	private Button comentariosB;
-	@Id("vaadinHorizontalLayout11")
-	private HorizontalLayout vaadinHorizontalLayout11;
-	@Id("descripcion")
-	private Label descripcion;
+    
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("foto")
-	private Div foto;
 	@Id("nombre")
 	private Button nombre;
 	@Id("geolocalizacion")
@@ -98,6 +48,402 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 	private Label numC;
 	@Id("comentarios")
 	private Button comentarios;
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("vaadinHorizontalLayout2")
+	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("vaadinHorizontalLayout3")
+	private HorizontalLayout vaadinHorizontalLayout3;
+	@Id("vaadinVerticalLayout2")
+	private Element vaadinVerticalLayout2;
+	@Id("vaadinHorizontalLayout4")
+	private HorizontalLayout vaadinHorizontalLayout4;
+	@Id("vaadinHorizontalLayout5")
+	private HorizontalLayout vaadinHorizontalLayout5;
+	@Id("descripcion")
+	private Label descripcion;
+	@Id("vaadinVerticalLayout5")
+	private Element vaadinVerticalLayout5;
+	@Id("foto")
+	private Avatar foto;
+	@Id("vaadinVerticalLayout6")
+	private Element vaadinVerticalLayout6;
+	@Id("vaadinHorizontalLayout6")
+	private HorizontalLayout vaadinHorizontalLayout6;
+	
+	
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+
+
+	public Button getNombre() {
+		return nombre;
+	}
+
+
+
+
+
+	public void setNombre(Button nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+
+
+	public Label getGeolocalizacion() {
+		return geolocalizacion;
+	}
+
+
+
+
+
+	public void setGeolocalizacion(Label geolocalizacion) {
+		this.geolocalizacion = geolocalizacion;
+	}
+
+
+
+
+
+	public Button getEliminarPub() {
+		return eliminarPub;
+	}
+
+
+
+
+
+	public void setEliminarPub(Button eliminarPub) {
+		this.eliminarPub = eliminarPub;
+	}
+
+
+
+
+
+	public Label getNumVis() {
+		return numVis;
+	}
+
+
+
+
+
+	public void setNumVis(Label numVis) {
+		this.numVis = numVis;
+	}
+
+
+
+
+
+	public Label getVis() {
+		return vis;
+	}
+
+
+
+
+
+	public void setVis(Label vis) {
+		this.vis = vis;
+	}
+
+
+
+
+
+	public Element getVaadinVerticalLayout3() {
+		return vaadinVerticalLayout3;
+	}
+
+
+
+
+
+	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
+		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
+	}
+
+
+
+
+
+	public Label getNumG() {
+		return numG;
+	}
+
+
+
+
+
+	public void setNumG(Label numG) {
+		this.numG = numG;
+	}
+
+
+
+
+
+	public Label getLikesL() {
+		return likesL;
+	}
+
+
+
+
+
+	public void setLikesL(Label likesL) {
+		this.likesL = likesL;
+	}
+
+
+
+
+
+	public Element getVaadinVerticalLayout4() {
+		return vaadinVerticalLayout4;
+	}
+
+
+
+
+
+	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
+		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
+	}
+
+
+
+
+
+	public Label getNumC() {
+		return numC;
+	}
+
+
+
+
+
+	public void setNumC(Label numC) {
+		this.numC = numC;
+	}
+
+
+
+
+
+	public Button getComentarios() {
+		return comentarios;
+	}
+
+
+
+
+
+	public void setComentarios(Button comentarios) {
+		this.comentarios = comentarios;
+	}
+
+
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+
+
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+
+
+
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout3() {
+		return vaadinHorizontalLayout3;
+	}
+
+
+
+
+
+	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
+		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	}
+
+
+
+
+
+	public Element getVaadinVerticalLayout2() {
+		return vaadinVerticalLayout2;
+	}
+
+
+
+
+
+	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
+		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	}
+
+
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout4() {
+		return vaadinHorizontalLayout4;
+	}
+
+
+
+
+
+	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
+		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
+	}
+
+
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout5() {
+		return vaadinHorizontalLayout5;
+	}
+
+
+
+
+
+	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
+		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
+	}
+
+
+
+
+
+	public Label getDescripcion() {
+		return descripcion;
+	}
+
+
+
+
+
+	public void setDescripcion(Label descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+
+
+
+	public Element getVaadinVerticalLayout5() {
+		return vaadinVerticalLayout5;
+	}
+
+
+
+
+
+	public void setVaadinVerticalLayout5(Element vaadinVerticalLayout5) {
+		this.vaadinVerticalLayout5 = vaadinVerticalLayout5;
+	}
+
+
+
+
+
+	public Avatar getFoto() {
+		return foto;
+	}
+
+
+
+
+
+	public void setFoto(Avatar foto) {
+		this.foto = foto;
+	}
+
+
+
+
 
 	/**
      * Creates a new VistaListaPublicacionesAdministradorItem.

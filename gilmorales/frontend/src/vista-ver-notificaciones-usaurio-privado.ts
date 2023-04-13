@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
-@customElement('ver-notificaciones-usaurio-privado')
-export class VerNotificacionesUsaurioPrivado extends LitElement {
+@customElement('vista-ver-notificaciones-usaurio-privado')
+export class VistaVerNotificacionesUsaurioPrivado extends LitElement {
   static get styles() {
     return css`
       :host {

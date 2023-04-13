@@ -18,28 +18,81 @@ import com.vaadin.flow.component.html.H2;
 @JsModule("./src/vista-administrador-principal.ts")
 public class VistaAdministradorPrincipal extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+   
+
+
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("layoutCabeceraAdmin")
 	private HorizontalLayout layoutCabeceraAdmin;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("topUsuariosL")
-	private H2 topUsuariosL;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("topHashtagL")
-	private H2 topHashtagL;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
 	@Id("layoutPublicaciones")
 	private Element layoutPublicaciones;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	
+	
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public HorizontalLayout getLayoutCabeceraAdmin() {
+		return layoutCabeceraAdmin;
+	}
+
+
+
+	public void setLayoutCabeceraAdmin(HorizontalLayout layoutCabeceraAdmin) {
+		this.layoutCabeceraAdmin = layoutCabeceraAdmin;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+
+
+	public Element getLayoutPublicaciones() {
+		return layoutPublicaciones;
+	}
+
+
+
+	public void setLayoutPublicaciones(Element layoutPublicaciones) {
+		this.layoutPublicaciones = layoutPublicaciones;
+	}
+
+
 
 	/**
      * Creates a new VistaAdministradorPrincipal.

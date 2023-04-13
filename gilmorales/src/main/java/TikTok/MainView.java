@@ -1,15 +1,14 @@
 package TikTok;
 
-import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.button.ButtonVariant;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
+
 import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import interfaz.*;
 
 /**
  * A sample Vaadin view class.
@@ -40,27 +39,48 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
     public MainView() {
-/**
-        // Use TextField for standard text input
-        TextField textField = new TextField("Your name");
-        textField.addThemeName("bordered");
 
-        // Button click listeners can be defined as lambda expressions
-        Button button = new Button("Say hello",
-                e -> Notification.show(service.greet(textField.getValue())));
+//    	this.getStyle().set("background-color", "#000000");
+//    	this.getStyle().set("width", "100%");
+//    	this.getStyle().set("height", "100%");
+//    	this.setMargin(false);
+//    	this.setPadding(false);
+//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
+//    	add(nr);
+//
+//
+//		
+//		Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+//				"icons/icon.png", "videos/tiktok1.mp4");
+//		Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+//				"icons/luffy.jpg", "videos/tiktok1.mp4");
+//		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
+//		lp.anadirPublicacion(item1);
+//		lp.anadirPublicacion(item2);
+//
+//		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
+//    	add(nr);
+//    	Ver_comentarios__Usuario_No_registrado_ vcnr = new Ver_comentarios__Usuario_No_registrado_(item1);
+//    	add(vcnr);
+    	
+//    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
+//    	add(ini);
+//    	
 
-        // Theme variants give you predefined extra styles for components.
-        // Example: Primary button has a more prominent look.
-        button.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-
-        // You can specify keyboard shortcuts for buttons.
-        // Example: Pressing enter in this view clicks the Button.
-        button.addClickShortcut(Key.ENTER);
-
-        // Use custom CSS classes to apply styling. This is defined in shared-styles.css.
-        addClassName("centered-content");
-
-        add(textField, button);*/
+    	
+    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
+    	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+    	ls.anadirPublicacion(itemA);
+    	Administrador admin = new Administrador(ls);
+    	add(admin);
+    	
+    	Lista_denuncias_item itemB= new Lista_denuncias_item();
+    	Lista_denuncias lsd = new Lista_denuncias();
+    	lsd.anadirDenuncia(itemB);
+    	Ver_denuncias denuncia = new Ver_denuncias(lsd);
+    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
+    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
+    	
     }
 
 }

@@ -18,7 +18,7 @@ import com.vaadin.flow.component.html.Label;
  * does not overwrite or otherwise change this file.
  */
 @Tag("vista-ver-publicaciones-gustadas-usuario-registrado")
-@JsModule("./vista-ver-publicaciones-gustadas-usuario-registrado.ts")
+@JsModule("./src/vista-ver-publicaciones-gustadas-usuario-registrado.ts")
 public class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
@@ -35,12 +35,10 @@ public class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitTemplate 
 	private Element layoutHashtags;
 	@Id("botonVerListaHashtags")
 	private Button botonVerListaHashtags;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("fotoPerfil")
-	private Element fotoPerfil;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 	@Id("vaadinVerticalLayout2")
 	private Element vaadinVerticalLayout2;
 	@Id("nombreUsuario")
@@ -57,6 +55,8 @@ public class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitTemplate 
 	private Button botonEliminarPublicacion;
 	@Id("layoutDatosPerfil")
 	private HorizontalLayout layoutDatosPerfil;
+	@Id("fotoPerfil")
+	private Element fotoPerfil;
 	@Id("numSiguiendo")
 	private Label numSiguiendo;
 	@Id("labelSiguiendo")
@@ -75,10 +75,10 @@ public class VistaVerPublicacionesGustadasUsuarioRegistrado extends LitTemplate 
 	private Label labelDescripcion;
 	@Id("layoutBonoes")
 	private HorizontalLayout layoutBonoes;
-	@Id("botonMeGustas")
-	private Button botonMeGustas;
 	@Id("botonVideos")
 	private Button botonVideos;
+	@Id("botonMeGustas")
+	private Button botonMeGustas;
 	@Id("layoutListaPublicacionesGustadas")
 	private Element layoutListaPublicacionesGustadas;
 	@Id("layoutHorizontalPublicacionesGustadas")

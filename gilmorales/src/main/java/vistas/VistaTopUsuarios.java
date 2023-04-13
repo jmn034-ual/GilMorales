@@ -19,6 +19,17 @@ public class VistaTopUsuarios extends LitTemplate {
     @Id("layoutTopUsuarios")
 	private Element layoutTopUsuarios;
 
+    
+	public Element getLayoutTopUsuarios() {
+		return layoutTopUsuarios;
+	}
+
+
+	public void setLayoutTopUsuarios(Element layoutTopUsuarios) {
+		this.layoutTopUsuarios = layoutTopUsuarios;
+	}
+
+
 	/**
      * Creates a new VistaTopUsuarios.
      */

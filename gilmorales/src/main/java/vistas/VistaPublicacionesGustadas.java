@@ -14,7 +14,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
  * does not overwrite or otherwise change this file.
  */
 @Tag("vista-publicaciones-gustadas")
-@JsModule("./vista-publicaciones-gustadas.ts")
+@JsModule("./src/vista-publicaciones-gustadas.ts")
 public class VistaPublicacionesGustadas extends LitTemplate {
 
     @Id("layoutListaVertical")
