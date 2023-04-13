@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaListaPublicacionesAdministradorItem;
 
 public class Lista_Publicaciones__Administrador__item extends VistaListaPublicacionesAdministradorItem{
@@ -17,17 +19,24 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 //	private button _verComentariosB;
 //	private TextArea _descripcionTA;
 //	private button _verPublicacionB;
-	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
-	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_;
-	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
-	public Ver_Perfil__2 _ver_perfil;
+	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_ = new Lista_Publicaciones__Administrador_();
+	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_= new Ver_comentarios__Administrador_();
+	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_ = new Ver_publicacion__Administrador_();
+	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
+	
+	public Lista_Publicaciones__Administrador__item() {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		this.Eliminar_publicacion__Administrador_();
+		this.NumeroComentarios();
+	}
 
 	public void Eliminar_publicacion__Administrador_() {
-		throw new UnsupportedOperationException();
+		this.getEliminarPub().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();});
 	}
 
 	public void Ver_comentarios__Administrador_() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Ver_publicacion__Administrador_() {
@@ -39,7 +48,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	}
 
 	public void NumeroComentarios() {
-		throw new UnsupportedOperationException();
+		this.getNumC();
 	}
 
 	public void VerPerfil() {

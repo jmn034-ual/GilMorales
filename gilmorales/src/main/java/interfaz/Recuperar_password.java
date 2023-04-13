@@ -20,16 +20,21 @@ public class Recuperar_password extends VistaRecuperarpassword{
 	private Label _registrarseL;
 	private Button _registrarseB;
 	public Iniciar_Sesion__4 _iniciar_sesion;
+	
+	public Recuperar_password() {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+	}
 
 	public void Validar_codigo() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Reenviar_codigo() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Validar_datos() {
-		throw new UnsupportedOperationException();
+		
 	}
 }

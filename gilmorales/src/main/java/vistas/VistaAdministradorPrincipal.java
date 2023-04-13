@@ -40,6 +40,140 @@ public class VistaAdministradorPrincipal extends LitTemplate {
 	private Element vaadinVerticalLayout3;
 	@Id("layoutPublicaciones")
 	private Element layoutPublicaciones;
+	
+	
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public HorizontalLayout getLayoutCabeceraAdmin() {
+		return layoutCabeceraAdmin;
+	}
+
+
+
+	public void setLayoutCabeceraAdmin(HorizontalLayout layoutCabeceraAdmin) {
+		this.layoutCabeceraAdmin = layoutCabeceraAdmin;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+
+	public H2 getTopUsuariosL() {
+		return topUsuariosL;
+	}
+
+
+
+	public void setTopUsuariosL(H2 topUsuariosL) {
+		this.topUsuariosL = topUsuariosL;
+	}
+
+
+
+	public Element getVaadinVerticalLayout2() {
+		return vaadinVerticalLayout2;
+	}
+
+
+
+	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
+		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+
+
+	public H2 getTopHashtagL() {
+		return topHashtagL;
+	}
+
+
+
+	public void setTopHashtagL(H2 topHashtagL) {
+		this.topHashtagL = topHashtagL;
+	}
+
+
+
+	public Element getVaadinVerticalLayout3() {
+		return vaadinVerticalLayout3;
+	}
+
+
+
+	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
+		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
+	}
+
+
+
+	public Element getLayoutPublicaciones() {
+		return layoutPublicaciones;
+	}
+
+
+
+	public void setLayoutPublicaciones(Element layoutPublicaciones) {
+		this.layoutPublicaciones = layoutPublicaciones;
+	}
+
+
 
 	/**
      * Creates a new VistaAdministradorPrincipal.

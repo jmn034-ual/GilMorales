@@ -19,14 +19,16 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-cabecera.ts")
 public class VistaCabecera extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+   
+
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("cabecera")
 	private HorizontalLayout cabecera;
 	@Id("logoWeb")
 	private Button logoWeb;
+	@Id("iconoWeb")
+	private Element iconoWeb;
 	@Id("barraBusqueda")
 	private HorizontalLayout barraBusqueda;
 	@Id("textoBusqueda")
@@ -37,20 +39,144 @@ public class VistaCabecera extends LitTemplate {
 	private Button botonBuscar;
 	@Id("inicio")
 	private Button inicio;
-	@Id("botonNotificaciones")
-	private Button botonNotificaciones;
-	@Id("botonAniadir")
-	private Button botonAniadir;
-	@Id("botonPerfil")
-	private Button botonPerfil;
-	@Id("botonCerrarSesion")
-	private Button botonCerrarSesion;
-	@Id("iconoWeb")
-	private Element iconoWeb;
 	@Id("gestionarDenunciasB")
 	private Button gestionarDenunciasB;
 	@Id("cerrarSesionB")
 	private Button cerrarSesionB;
+	
+	
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public HorizontalLayout getCabecera() {
+		return cabecera;
+	}
+
+
+
+	public void setCabecera(HorizontalLayout cabecera) {
+		this.cabecera = cabecera;
+	}
+
+
+
+	public Button getLogoWeb() {
+		return logoWeb;
+	}
+
+
+
+	public void setLogoWeb(Button logoWeb) {
+		this.logoWeb = logoWeb;
+	}
+
+
+
+	public Element getIconoWeb() {
+		return iconoWeb;
+	}
+
+
+
+	public void setIconoWeb(Element iconoWeb) {
+		this.iconoWeb = iconoWeb;
+	}
+
+
+
+	public HorizontalLayout getBarraBusqueda() {
+		return barraBusqueda;
+	}
+
+
+
+	public void setBarraBusqueda(HorizontalLayout barraBusqueda) {
+		this.barraBusqueda = barraBusqueda;
+	}
+
+
+
+	public TextField getTextoBusqueda() {
+		return textoBusqueda;
+	}
+
+
+
+	public void setTextoBusqueda(TextField textoBusqueda) {
+		this.textoBusqueda = textoBusqueda;
+	}
+
+
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
+
+	public Button getBotonBuscar() {
+		return botonBuscar;
+	}
+
+
+
+	public void setBotonBuscar(Button botonBuscar) {
+		this.botonBuscar = botonBuscar;
+	}
+
+
+
+	public Button getInicio() {
+		return inicio;
+	}
+
+
+
+	public void setInicio(Button inicio) {
+		this.inicio = inicio;
+	}
+
+
+
+	public Button getGestionarDenunciasB() {
+		return gestionarDenunciasB;
+	}
+
+
+
+	public void setGestionarDenunciasB(Button gestionarDenunciasB) {
+		this.gestionarDenunciasB = gestionarDenunciasB;
+	}
+
+
+
+	public Button getCerrarSesionB() {
+		return cerrarSesionB;
+	}
+
+
+
+	public void setCerrarSesionB(Button cerrarSesionB) {
+		this.cerrarSesionB = cerrarSesionB;
+	}
+
+
 
 	/**
      * Creates a new VistaCabecera.
