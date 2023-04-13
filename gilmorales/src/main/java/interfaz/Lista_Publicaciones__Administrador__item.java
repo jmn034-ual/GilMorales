@@ -28,8 +28,13 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
 	
 	public Lista_Publicaciones__Administrador__item() {
+		
+	}
+	
+	public Lista_Publicaciones__Administrador__item(String video) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.getVaadinVerticalLayout5().as(VerticalLayout.class).add(new Video(video));
 		this.Eliminar_publicacion__Administrador_();
 		this.NumeroComentarios();
 	}

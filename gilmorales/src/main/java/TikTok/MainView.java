@@ -1,14 +1,12 @@
 package TikTok;
 
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
+
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
-import interfaz.Lista_Publicaciones__Usuario_no_registrado_;
-import interfaz.Lista_Publicaciones__Usuario_no_registrado__item;
-import interfaz.Usuario_No_Registrado;
-import interfaz.Ver_comentarios__Usuario_No_registrado_;
 import interfaz.*;
 
 /**
@@ -67,55 +65,14 @@ public class MainView extends VerticalLayout {
 //    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
 //    	add(ini);
 //    	
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
-//    	Recuperar_password rec = new Recuperar_password();
-//    	ini.getRecuperarContrasenaB().addClickListener(event->{remove(ini); add(rec);});
-//    	
-//    	
-//    	Registrar reg = new Registrar();
-//    	ini.getRegistrarB().addClickListener(event->{remove(ini);add(reg);});
-//    	reg.getDescartar().addClickListener(event->{remove(reg); add(ini);});
-//    	rec.getRegistrarseB().addClickListener(event->{remove(rec);add(reg);});
-//    	
-//    	Iniciar_sesion_otras_plataformas isop = new Iniciar_sesion_otras_plataformas();
-//    	ini.getFacebookB().addClickListener(event->{remove(ini);add(isop);});
-//    	ini.getGoogleB().addClickListener(event->{remove(ini);add(isop);});
-//    	ini.getInstagramB().addClickListener(event->{remove(ini);add(isop);});
-//    	ini.getTwitterB().addClickListener(event->{remove(ini);add(isop);});
-//    	
-//    	Usar_otra_cuenta uoc = new Usar_otra_cuenta();
-//    	isop.getBotonUsarOtraCuenta().addClickListener(event->{remove(isop); add(uoc);});
-//    	uoc.getCancelarB().addClickListener(event->{remove(uoc); add(isop);});
-
-<<<<<<< HEAD
-    	Administrador admin = new Administrador();
-    	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item();
+    	
     	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
+    	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
     	ls.anadirPublicacion(itemA);
-    	
-    	admin.getLayoutPublicaciones().as(VerticalLayout.class).add(ls);
+    	Administrador admin = new Administrador(ls);
     	add(admin);
-=======
-//    	Administrador admin = new Administrador();
-//    	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item();
-//    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
-//    	
-//    	admin.getLayoutPublicaciones().as(VerticalLayout.class).add(ls);
-//    	add(admin);
-//    	Registrar reg = new Registrar();
-//    	ini.getRegistrarB().addClickListener(event->{remove(ini);add(reg);});
-//    	
-//    	Iniciar_sesion_otras_plataformas isop = new Iniciar_sesion_otras_plataformas();
-//    	ini.getFacebookB().addClickListener(event->{remove(ini);add(isop);});
-//    	
-//    	Usar_otra_cuenta uoc = new Usar_otra_cuenta();
-//    	isop.getBotonUsarOtraCuenta().addClickListener(event->{remove(isop); add(uoc);});
     	
->>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
-
     }
 
 }

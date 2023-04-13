@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-publicaciones-administrador-item template.
@@ -49,8 +50,6 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 	private Button comentarios;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("foto")
-	private Div foto;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout2")
@@ -59,21 +58,29 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("vaadinVerticalLayout2")
 	private Element vaadinVerticalLayout2;
-	@Id("video")
-	private Div video;
 	@Id("vaadinHorizontalLayout4")
 	private HorizontalLayout vaadinHorizontalLayout4;
 	@Id("vaadinHorizontalLayout5")
 	private HorizontalLayout vaadinHorizontalLayout5;
 	@Id("descripcion")
 	private Label descripcion;
+	@Id("vaadinVerticalLayout5")
+	private Element vaadinVerticalLayout5;
+	@Id("foto")
+	private Avatar foto;
+	@Id("vaadinVerticalLayout6")
+	private Element vaadinVerticalLayout6;
+	@Id("vaadinHorizontalLayout6")
+	private HorizontalLayout vaadinHorizontalLayout6;
 	
 	
+
 
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
+
 
 
 
@@ -85,9 +92,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
+
 
 
 
@@ -99,9 +108,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Button getNombre() {
 		return nombre;
 	}
+
 
 
 
@@ -113,9 +124,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Label getGeolocalizacion() {
 		return geolocalizacion;
 	}
+
 
 
 
@@ -127,9 +140,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Button getEliminarPub() {
 		return eliminarPub;
 	}
+
 
 
 
@@ -141,9 +156,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Label getNumVis() {
 		return numVis;
 	}
+
 
 
 
@@ -155,9 +172,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Label getVis() {
 		return vis;
 	}
+
 
 
 
@@ -169,9 +188,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Element getVaadinVerticalLayout3() {
 		return vaadinVerticalLayout3;
 	}
+
 
 
 
@@ -183,9 +204,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Label getNumG() {
 		return numG;
 	}
+
 
 
 
@@ -197,9 +220,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Label getLikesL() {
 		return likesL;
 	}
+
 
 
 
@@ -211,9 +236,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Element getVaadinVerticalLayout4() {
 		return vaadinVerticalLayout4;
 	}
+
 
 
 
@@ -225,9 +252,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Label getNumC() {
 		return numC;
 	}
+
 
 
 
@@ -239,9 +268,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Button getComentarios() {
 		return comentarios;
 	}
+
 
 
 
@@ -253,9 +284,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
 	}
+
 
 
 
@@ -267,23 +300,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
-	public Div getFoto() {
-		return foto;
-	}
-
-
-
-
-	public void setFoto(Div foto) {
-		this.foto = foto;
-	}
-
-
-
 
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
 	}
+
 
 
 
@@ -295,9 +316,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public HorizontalLayout getVaadinHorizontalLayout2() {
 		return vaadinHorizontalLayout2;
 	}
+
 
 
 
@@ -309,9 +332,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public HorizontalLayout getVaadinHorizontalLayout3() {
 		return vaadinHorizontalLayout3;
 	}
+
 
 
 
@@ -323,9 +348,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Element getVaadinVerticalLayout2() {
 		return vaadinVerticalLayout2;
 	}
+
 
 
 
@@ -337,23 +364,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
-	public Div getVideo() {
-		return video;
-	}
-
-
-
-
-	public void setVideo(Div video) {
-		this.video = video;
-	}
-
-
-
 
 	public HorizontalLayout getVaadinHorizontalLayout4() {
 		return vaadinHorizontalLayout4;
 	}
+
 
 
 
@@ -365,9 +380,11 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public HorizontalLayout getVaadinHorizontalLayout5() {
 		return vaadinHorizontalLayout5;
 	}
+
 
 
 
@@ -379,6 +396,7 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public Label getDescripcion() {
 		return descripcion;
 	}
@@ -386,9 +404,43 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+
 	public void setDescripcion(Label descripcion) {
 		this.descripcion = descripcion;
 	}
+
+
+
+
+
+	public Element getVaadinVerticalLayout5() {
+		return vaadinVerticalLayout5;
+	}
+
+
+
+
+
+	public void setVaadinVerticalLayout5(Element vaadinVerticalLayout5) {
+		this.vaadinVerticalLayout5 = vaadinVerticalLayout5;
+	}
+
+
+
+
+
+	public Avatar getFoto() {
+		return foto;
+	}
+
+
+
+
+
+	public void setFoto(Avatar foto) {
+		this.foto = foto;
+	}
+
 
 
 

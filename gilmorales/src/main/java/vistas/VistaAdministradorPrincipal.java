@@ -18,28 +18,19 @@ import com.vaadin.flow.component.html.H2;
 @JsModule("./src/vista-administrador-principal.ts")
 public class VistaAdministradorPrincipal extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+   
+
+
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("layoutCabeceraAdmin")
 	private HorizontalLayout layoutCabeceraAdmin;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("topUsuariosL")
-	private H2 topUsuariosL;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("topHashtagL")
-	private H2 topHashtagL;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
 	@Id("layoutPublicaciones")
 	private Element layoutPublicaciones;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 	
 	
 
@@ -87,78 +78,6 @@ public class VistaAdministradorPrincipal extends LitTemplate {
 
 	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
-	}
-
-
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
-	}
-
-
-
-	public H2 getTopUsuariosL() {
-		return topUsuariosL;
-	}
-
-
-
-	public void setTopUsuariosL(H2 topUsuariosL) {
-		this.topUsuariosL = topUsuariosL;
-	}
-
-
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
-	}
-
-
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
-	}
-
-
-
-	public H2 getTopHashtagL() {
-		return topHashtagL;
-	}
-
-
-
-	public void setTopHashtagL(H2 topHashtagL) {
-		this.topHashtagL = topHashtagL;
-	}
-
-
-
-	public Element getVaadinVerticalLayout3() {
-		return vaadinVerticalLayout3;
-	}
-
-
-
-	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
-		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
 	}
 
 
