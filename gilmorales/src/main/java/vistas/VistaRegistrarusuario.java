@@ -25,10 +25,8 @@ import com.vaadin.flow.component.datepicker.DatePicker;
 @JsModule("./src/vista-registrarusuario.ts")
 public class VistaRegistrarusuario extends LitTemplate {
 	
-	
-	
 
-    	@Id("vaadinVerticalLayout")
+		@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 		@Id("vaadinHorizontalLayout")
 		private HorizontalLayout vaadinHorizontalLayout;
@@ -104,11 +102,11 @@ public class VistaRegistrarusuario extends LitTemplate {
 		private Button confirmar;
 		
 		
-		
-		
 		public Element getVaadinVerticalLayout() {
 			return vaadinVerticalLayout;
 		}
+
+
 
 
 
@@ -120,9 +118,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout() {
 			return vaadinHorizontalLayout;
 		}
+
+
 
 
 
@@ -134,9 +136,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public H1 getH1() {
 			return h1;
 		}
+
+
 
 
 
@@ -148,9 +154,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Element getVaadinVerticalLayout1() {
 			return vaadinVerticalLayout1;
 		}
+
+
 
 
 
@@ -162,9 +172,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout2() {
 			return vaadinHorizontalLayout2;
 		}
+
+
 
 
 
@@ -176,9 +190,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel1() {
 			return label1;
 		}
+
+
 
 
 
@@ -190,9 +208,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public TextField getNombreTF() {
 			return nombreTF;
 		}
+
+
 
 
 
@@ -204,9 +226,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout3() {
 			return vaadinHorizontalLayout3;
 		}
+
+
 
 
 
@@ -218,9 +244,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel2() {
 			return label2;
 		}
+
+
 
 
 
@@ -232,9 +262,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public TextField getApellifosTF() {
 			return apellifosTF;
 		}
+
+
 
 
 
@@ -246,9 +280,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout4() {
 			return vaadinHorizontalLayout4;
 		}
+
+
 
 
 
@@ -260,9 +298,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel3() {
 			return label3;
 		}
+
+
 
 
 
@@ -274,9 +316,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public TextField getEmail() {
 			return email;
 		}
+
+
 
 
 
@@ -288,9 +334,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout5() {
 			return vaadinHorizontalLayout5;
 		}
+
+
 
 
 
@@ -302,9 +352,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel4() {
 			return label4;
 		}
+
+
 
 
 
@@ -316,9 +370,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public TextField getContrasenaTF() {
 			return contrasenaTF;
 		}
+
+
 
 
 
@@ -330,9 +388,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout6() {
 			return vaadinHorizontalLayout6;
 		}
+
+
 
 
 
@@ -344,9 +406,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel5() {
 			return label5;
 		}
+
+
 
 
 
@@ -358,9 +424,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public TextField getConfirmarTF() {
 			return confirmarTF;
 		}
+
+
 
 
 
@@ -372,9 +442,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout7() {
 			return vaadinHorizontalLayout7;
 		}
+
+
 
 
 
@@ -386,9 +460,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel6() {
 			return label6;
 		}
+
+
 
 
 
@@ -400,9 +478,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public TextField getDescripcionTF() {
 			return descripcionTF;
 		}
+
+
 
 
 
@@ -414,9 +496,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout8() {
 			return vaadinHorizontalLayout8;
 		}
+
+
 
 
 
@@ -428,9 +514,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel7() {
 			return label7;
 		}
+
+
 
 
 
@@ -442,9 +532,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public TextField getNombreDeUsuarioTF() {
 			return nombreDeUsuarioTF;
 		}
+
+
 
 
 
@@ -456,9 +550,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout9() {
 			return vaadinHorizontalLayout9;
 		}
+
+
 
 
 
@@ -470,9 +568,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel8() {
 			return label8;
 		}
+
+
 
 
 
@@ -484,9 +586,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public DatePicker getFecha() {
 			return fecha;
 		}
+
+
 
 
 
@@ -498,9 +604,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout10() {
 			return vaadinHorizontalLayout10;
 		}
+
+
 
 
 
@@ -512,9 +622,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Label getLabel9() {
 			return label9;
 		}
+
+
 
 
 
@@ -526,9 +640,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Checkbox getNormal() {
 			return normal;
 		}
+
+
 
 
 
@@ -540,9 +658,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Checkbox getComercial() {
 			return comercial;
 		}
+
+
 
 
 
@@ -554,9 +676,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout11() {
 			return vaadinHorizontalLayout11;
 		}
+
+
 
 
 
@@ -568,9 +694,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Button getSubirFoto() {
 			return subirFoto;
 		}
+
+
 
 
 
@@ -582,9 +712,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public HorizontalLayout getVaadinHorizontalLayout12() {
 			return vaadinHorizontalLayout12;
 		}
+
+
 
 
 
@@ -596,9 +730,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Button getDescartar() {
 			return descartar;
 		}
+
+
 
 
 
@@ -610,6 +748,8 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public Button getConfirmar() {
 			return confirmar;
 		}
@@ -617,9 +757,13 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 
 
+
+
 		public void setConfirmar(Button confirmar) {
 			this.confirmar = confirmar;
 		}
+
+
 
 
 

@@ -4,12 +4,12 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
 import vistas.VistaRegistrarusuario;
 
 public class Registrar extends VistaRegistrarusuario{
+
 	private Label _tituloL;
 	private Button _subirFotoB;
 	private Image _foto;
@@ -39,11 +39,7 @@ public class Registrar extends VistaRegistrarusuario{
 		this.getStyle().set("wide", "100%");
 		this.getStyle().set("height", "100%");
 	}
-
-	public Registrar() {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("heigth", "100%");
-	}
+	
 	public void Subir_foto() {
 		
 	}
@@ -53,8 +49,6 @@ public class Registrar extends VistaRegistrarusuario{
 	}
 
 	public void Descartar() {
-		_iniciar_sesion= new Iniciar_Sesion__4();
-		this.getDescartar().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion);});
+		
 	}
 }

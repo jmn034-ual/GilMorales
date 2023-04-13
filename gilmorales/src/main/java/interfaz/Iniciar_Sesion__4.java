@@ -31,38 +31,18 @@ public class Iniciar_Sesion__4 extends VistaIniciarsesion{
     	this.getStyle().set("height", "100%");
 	}
 
-	public void Iniciar_sesion_otras_plataformas() {
-		_iniciar_sesion_otras_plataformas.getStyle().set("wide", "100%");
-		_iniciar_sesion_otras_plataformas.getStyle().set("height", "100%");
-		this.getFacebookB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion_otras_plataformas);});
-		
-		this.getGoogleB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion_otras_plataformas);});
-		
-		this.getTwitterB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion_otras_plataformas);});
-		
-		this.getInstagramB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion_otras_plataformas);});
-	}
-
-	public void Recuperar_password() {
-		_recuperar_password.getStyle().set("width", "100%");
-    	_recuperar_password.getStyle().set("height", "100%");
-		this.getRecuperarContrasenaB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_recuperar_password);});
-		
-	}
+//	public void Iniciar_sesion_otras_plataformas() {
+//	}
+//
+//	public void Recuperar_password() {
+//		
+//	}
 
 	public void Validar_datos() {
-		throw new UnsupportedOperationException();
+		
 	}
 
-	public void Registrar() { 
-		_registrar.getStyle().set("width", "100%");
-		_registrar.getStyle().set("height", "100%");
-		this.getRegistrarB().addClickListener(event->{this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_registrar);});
-	}
+//	public void Registrar() { 
+//		
+//	}
 }
