@@ -26,6 +26,56 @@ public class VistaListaMeGustasPublicacionItem extends LitTemplate {
 	private Button botonNombreUsuario;
 	@Id("botonSeguir")
 	private Button botonSeguir;
+	
+	
+
+	public HorizontalLayout getLayoutItem() {
+		return layoutItem;
+	}
+
+
+
+	public void setLayoutItem(HorizontalLayout layoutItem) {
+		this.layoutItem = layoutItem;
+	}
+
+
+
+	public Element getLayoutFoto() {
+		return layoutFoto;
+	}
+
+
+
+	public void setLayoutFoto(Element layoutFoto) {
+		this.layoutFoto = layoutFoto;
+	}
+
+
+
+	public Button getBotonNombreUsuario() {
+		return botonNombreUsuario;
+	}
+
+
+
+	public void setBotonNombreUsuario(Button botonNombreUsuario) {
+		this.botonNombreUsuario = botonNombreUsuario;
+	}
+
+
+
+	public Button getBotonSeguir() {
+		return botonSeguir;
+	}
+
+
+
+	public void setBotonSeguir(Button botonSeguir) {
+		this.botonSeguir = botonSeguir;
+	}
+
+
 
 	/**
      * Creates a new VistaListaMeGustasPublicacionItem.

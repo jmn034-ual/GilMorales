@@ -1,10 +1,17 @@
 package interfaz;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.List;
+
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.server.StreamResource;
 
 import vistas.VistaRegistrarusuario;
 
@@ -38,14 +45,45 @@ public class Registrar extends VistaRegistrarusuario{
 	public Registrar() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.getSubirFoto().addClickListener(event->this.Subir_foto());
+		this.getConfirmar().addClickListener(event->this.Validar_registro());
 	}
 	
+	
+	
 	public void Subir_foto() {
+		
+		Upload upload = new Upload();
+	    upload.setAcceptedFileTypes("image/*");
+	    
+	    // Añadir un manejador de carga de archivos
+	    upload.addSucceededListener(event -> {
+	      // Obtener el archivo cargado como un arreglo de bytes
+	      byte[] bytes = event.getUpload().toString().getBytes();
+	      
+	      // Crear un recurso de flujo de bytes para la imagen cargada
+	      InputStream stream = new ByteArrayInputStream(bytes);
+	      StreamResource resource = new StreamResource("image.png", () -> stream);
+	      
+	      // Crear un componente de imagen para mostrar la imagen cargada
+	      Image image = new Image(resource, "Imagen cargada");
+	      
+	      Notification.show("Imagen cargada correctamente");
+	    });
 		
 	}
 
 	public void Validar_registro() {
-		
+		this.getNombreDeUsuarioTF().getValue();
+		this.getNombreTF().getValue();
+		this.getContrasenaTF().getValue();
+		this.getConfirmarTF().getValue();
+		this.getApellifosTF().getValue();
+		this.getComercial().getValue();
+		this.getNormal().getValue();
+		this.getDescripcionTF().getValue();
+		this.getEmail().getValue();
+		this.getFecha().getValue();
 	}
 
 	public void Descartar() {

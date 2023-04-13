@@ -60,18 +60,34 @@ public class MainView extends VerticalLayout {
 //    	Ver_comentarios__Usuario_No_registrado_ vcnr = new Ver_comentarios__Usuario_No_registrado_(item1);
 //    	add(vcnr);
     	
-    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
-    	add(ini);
+//    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
+//    	add(ini);
+//    	
+//    	Recuperar_password rec = new Recuperar_password();
+//    	ini.getRecuperarContrasenaB().addClickListener(event->{remove(ini); add(rec);});
+//    	
+//    	
+//    	Registrar reg = new Registrar();
+//    	ini.getRegistrarB().addClickListener(event->{remove(ini);add(reg);});
+//    	reg.getDescartar().addClickListener(event->{remove(reg); add(ini);});
+//    	rec.getRegistrarseB().addClickListener(event->{remove(rec);add(reg);});
+//    	
+//    	Iniciar_sesion_otras_plataformas isop = new Iniciar_sesion_otras_plataformas();
+//    	ini.getFacebookB().addClickListener(event->{remove(ini);add(isop);});
+//    	ini.getGoogleB().addClickListener(event->{remove(ini);add(isop);});
+//    	ini.getInstagramB().addClickListener(event->{remove(ini);add(isop);});
+//    	ini.getTwitterB().addClickListener(event->{remove(ini);add(isop);});
+//    	
+//    	Usar_otra_cuenta uoc = new Usar_otra_cuenta();
+//    	isop.getBotonUsarOtraCuenta().addClickListener(event->{remove(isop); add(uoc);});
+//    	uoc.getCancelarB().addClickListener(event->{remove(uoc); add(isop);});
+
+    	Administrador admin = new Administrador();
+    	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item();
+    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
     	
-    	Registrar reg = new Registrar();
-    	ini.getRegistrarB().addClickListener(event->{remove(ini);add(reg);});
-    	
-    	Iniciar_sesion_otras_plataformas isop = new Iniciar_sesion_otras_plataformas();
-    	ini.getFacebookB().addClickListener(event->{remove(ini);add(isop);});
-    	
-    	Usar_otra_cuenta uoc = new Usar_otra_cuenta();
-    	isop.getBotonUsarOtraCuenta().addClickListener(event->{remove(isop); add(uoc);});
-    	
+    	admin.getLayoutPublicaciones().as(VerticalLayout.class).add(ls);
+    	add(admin);
 
     }
 
