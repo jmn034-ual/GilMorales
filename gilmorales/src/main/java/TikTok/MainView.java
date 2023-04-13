@@ -5,7 +5,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
+import interfaz.Lista_Publicaciones__Usuario_no_registrado_;
 import interfaz.Lista_Publicaciones__Usuario_no_registrado__item;
+import interfaz.Usuario_No_Registrado;
 import interfaz.Ver_comentarios__Usuario_No_registrado_;
 
 /**
@@ -43,23 +45,8 @@ public class MainView extends VerticalLayout {
     	this.getStyle().set("height", "100%");
     	this.setMargin(false);
     	this.setPadding(false);
-//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-//
-//		
-		Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
-				"icons/icon.png", "videos/tiktok1.mp4");
-//		Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
-//				"icons/luffy.jpg", "videos/tiktok1.mp4");
-//		Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
-//		lp.anadirPublicacion(item1);
-//		lp.anadirPublicacion(item2);
-//
-//		nr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
-//	
-//    	add(nr);
-    	Ver_comentarios__Usuario_No_registrado_ vcnr = new Ver_comentarios__Usuario_No_registrado_(item1);
-    	add(vcnr);
-    	
+    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
+    	add(nr);
 //    	Iniciar_Sesion__4 ini = new Iniciar_Sesion__4();
 //    	add(ini);
   	

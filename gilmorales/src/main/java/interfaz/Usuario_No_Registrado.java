@@ -21,13 +21,20 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado;
 	public Cabecera_Usuario_No_Registrado cabeceraUNR = new Cabecera_Usuario_No_Registrado();
 	public Element cabeceraTop = top.getCabeceraTop();
+	Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+			"icons/icon.png", "videos/tiktok1.mp4");
+	Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+			"icons/luffy.jpg", "videos/tiktok1.mp4");
+	Lista_Publicaciones__Usuario_no_registrado_ lp = new Lista_Publicaciones__Usuario_no_registrado_();
+	
 
 	public Usuario_No_Registrado() {
+		lp.anadirPublicacion(item1);
+		lp.anadirPublicacion(item2);
+		Ver_comentarios__Usuario_No_registrado_ verComNR = new Ver_comentarios__Usuario_No_registrado_(item1);
+		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(lp);
 		this.getVaadinVerticalLayout().getStyle().set("width", "100%");
 		this.getVaadinVerticalLayout().getStyle().set("height", "100%");
-		this.getLayoutCabeceraTop().getStyle().set("padding", "false");
-		this.getLayoutCabeceraTop().getStyle().set("height", "100%");
-//		this.Publicaciones__Usuario_no_registrado_();
 		this.Cabecera_Usuario_No_Registrado();	
 		top.getLayoutListaResultadoBusqueda().setVisible(false);
 		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(top);
@@ -35,7 +42,9 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());});
 		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {this.getVaadinVerticalLayout().removeAllChildren(); 
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Registrar());});
-		
+		item1.getBotonVerComentarios().addClickListener(event-> {this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(verComNR);
+		});
 
 	}
 

@@ -12,7 +12,7 @@ public class Ver_comentarios__Usuario_No_registrado_ extends Ver_comentarios {
 		this.getBotonMeGusta().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getLayoutComentar().setVisible(false);
-		this.getBotonNombreUsuario().setText(item.getBotonNombreUsuario().getText());
+		this.getBotonNombreUsuario().setText("Funciona");
 	}
 	
 	public void Lista_Comentarios__Vista_Usuario_No_registrado_() {

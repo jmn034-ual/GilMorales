@@ -38,21 +38,21 @@ public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaLista
 	public Lista_Publicaciones__Usuario_no_registrado__item(String usuario, String localizacion, String descripcion, String foto, String video) {
 		
 		this.getVaadinAvatar().setImage(foto);
-//		this.getFotoPerfil().as(VerticalLayout.class).add(new Image(foto, null));
 		this.getBotonNombreUsuario().setText(usuario);
 		this.getLabelGeolocalizacion().setText(localizacion);
 		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(video));
 		this.getBotonSeguir().setVisible(false);
 		this.getBotonDenunciar().setVisible(false);
 	//	this.getLabelNumComentarios().add("0");
-	//	this.getBotonVerComentarios().addClickListener(event->{this.getLayoutPublicacion().removeAll(); this.getLayoutPublicacion().add(new Ver_comentarios__Usuario_No_registrado_());}); 
-//			this.getLayoutPublicacion().add(verComentariosUNR);});
 	//	this.getLabelMeGustas().add(megusta);
 		this.getVaadinButton().setVisible(false);
 		this.getLabelDescripcion().setText(descripcion);
 		this.getLabelNumMeGustas().setText(""+numeroMeGustas);
 		this.getTextFieldComentario().setVisible(false);
 		this.getBotonComentar().setVisible(false);
+//		this.getBotonVerComentarios().addClickListener(event-> {this.getLayoutPublicacion().removeAll();
+//			this.getLayoutPublicacion().add(new Ver_comentarios__Usuario_No_registrado_(this));
+//		});
 		
 	}
 
