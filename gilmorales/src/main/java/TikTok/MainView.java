@@ -73,11 +73,16 @@ public class MainView extends VerticalLayout {
     	ls.anadirPublicacion(itemA);
     	Administrador admin = new Administrador(ls);
     	add(admin);
+    	Usuario_Registrado usuario = new Usuario_Registrado();
     	
-    	Lista_denuncias_item itemB= new Lista_denuncias_item();
     	Lista_denuncias lsd = new Lista_denuncias();
-    	lsd.anadirDenuncia(itemB);
+    	
+    	Lista_denuncias_pendientes_item itemC = new Lista_denuncias_pendientes_item();
+    	
+    	lsd.anadirDenuncia(itemC);
     	Ver_denuncias denuncia = new Ver_denuncias(lsd);
+    	Lista_denuncias_item itemB= new Lista_denuncias_item(usuario,denuncia);
+    	lsd.anadirDenuncia(itemB);
     	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
     	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
     	
