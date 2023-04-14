@@ -3,9 +3,10 @@ package interfaz;
 import com.vaadin.flow.component.button.Button;
 
 import vistas.VistaCabecera;
-import vistas.VistaCabeceraAdministrador;
+import vistas.VistaCabeceraAdmin;
+import vistas.VistaCabeceraAdmin;
 
-public class Cabecera_Administrador extends VistaCabecera{
+public class Cabecera_Administrador extends VistaCabeceraAdmin{
 	private Button _cerrarSesionB;
 	private Button _gestionarDenunciasB;
 	private Button _inicioB;

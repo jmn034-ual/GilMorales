@@ -10,16 +10,18 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 
 /**
- * A Designer generated component for the vista-cabecera-administrador template.
+ * A Designer generated component for the vista-cabecera template.
  *
  * Designer will add and remove fields with @Id mappings but
  * does not overwrite or otherwise change this file.
  */
-@Tag("vista-cabecera")
-@JsModule("./src/vista-cabecera.ts")
-public class VistaCabecera extends LitTemplate {
+@Tag("vista-cabecera-admin")
+@JsModule("./src/vista-cabecera-admin.ts")
+public class VistaCabeceraAdmin extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+   
+
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("cabecera")
 	private HorizontalLayout cabecera;
@@ -37,19 +39,17 @@ public class VistaCabecera extends LitTemplate {
 	private Button botonBuscar;
 	@Id("inicio")
 	private Button inicio;
-	@Id("botonNotificaciones")
-	private Button botonNotificaciones;
-	@Id("botonPerfil")
-	private Button botonPerfil;
-	@Id("botonCerrarSesion")
-	private Button botonCerrarSesion;
-	@Id("botonAniadir")
-	private Button botonAniadir;
-
+	@Id("gestionarDenunciasB")
+	private Button gestionarDenunciasB;
+	@Id("cerrarSesionB")
+	private Button cerrarSesionB;
 	
+	
+
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
+
 
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
@@ -57,9 +57,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public HorizontalLayout getCabecera() {
 		return cabecera;
 	}
+
 
 
 	public void setCabecera(HorizontalLayout cabecera) {
@@ -67,9 +69,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public Button getLogoWeb() {
 		return logoWeb;
 	}
+
 
 
 	public void setLogoWeb(Button logoWeb) {
@@ -77,9 +81,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public Element getIconoWeb() {
 		return iconoWeb;
 	}
+
 
 
 	public void setIconoWeb(Element iconoWeb) {
@@ -87,9 +93,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public HorizontalLayout getBarraBusqueda() {
 		return barraBusqueda;
 	}
+
 
 
 	public void setBarraBusqueda(HorizontalLayout barraBusqueda) {
@@ -97,9 +105,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public TextField getTextoBusqueda() {
 		return textoBusqueda;
 	}
+
 
 
 	public void setTextoBusqueda(TextField textoBusqueda) {
@@ -107,9 +117,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public Element getIronIcon() {
 		return ironIcon;
 	}
+
 
 
 	public void setIronIcon(Element ironIcon) {
@@ -117,9 +129,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public Button getBotonBuscar() {
 		return botonBuscar;
 	}
+
 
 
 	public void setBotonBuscar(Button botonBuscar) {
@@ -127,9 +141,11 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
+
 	public Button getInicio() {
 		return inicio;
 	}
+
 
 
 	public void setInicio(Button inicio) {
@@ -137,50 +153,35 @@ public class VistaCabecera extends LitTemplate {
 	}
 
 
-	public Button getBotonNotificaciones() {
-		return botonNotificaciones;
+
+	public Button getGestionarDenunciasB() {
+		return gestionarDenunciasB;
 	}
 
 
-	public void setBotonNotificaciones(Button botonNotificaciones) {
-		this.botonNotificaciones = botonNotificaciones;
+
+	public void setGestionarDenunciasB(Button gestionarDenunciasB) {
+		this.gestionarDenunciasB = gestionarDenunciasB;
 	}
 
 
-	public Button getBotonPerfil() {
-		return botonPerfil;
+
+	public Button getCerrarSesionB() {
+		return cerrarSesionB;
 	}
 
 
-	public void setBotonPerfil(Button botonPerfil) {
-		this.botonPerfil = botonPerfil;
+
+	public void setCerrarSesionB(Button cerrarSesionB) {
+		this.cerrarSesionB = cerrarSesionB;
 	}
 
-
-	public Button getBotonCerrarSesion() {
-		return botonCerrarSesion;
-	}
-
-
-	public void setBotonCerrarSesion(Button botonCerrarSesion) {
-		this.botonCerrarSesion = botonCerrarSesion;
-	}
-
-
-	public Button getBotonAniadir() {
-		return botonAniadir;
-	}
-
-
-	public void setBotonAniadir(Button botonAniadir) {
-		this.botonAniadir = botonAniadir;
-	}
 
 
 	/**
-     * Creates a new VistaCabeceraAdministrador.
+     * Creates a new VistaCabecera.
      */
-    public VistaCabecera() {
+    public VistaCabeceraAdmin() {
         // You can initialise any data required for the connected UI components here.
     }
 
