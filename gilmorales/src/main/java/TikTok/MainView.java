@@ -41,10 +41,10 @@ public class MainView extends VerticalLayout {
     public MainView() {
 
 //    	this.getStyle().set("background-color", "#000000");
-//    	this.getStyle().set("width", "100%");
-//    	this.getStyle().set("height", "100%");
-//    	this.setMargin(false);
-//    	this.setPadding(false);
+    	this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+    	this.setMargin(false);
+    	this.setPadding(false);
 //    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
 //    	add(nr);
 //
@@ -67,6 +67,7 @@ public class MainView extends VerticalLayout {
 //    	add(ini);
 //    	
 
+<<<<<<< HEAD
     	
 //    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
 //    	Lista_Publicaciones__Administrador__item item1 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
@@ -101,6 +102,50 @@ public class MainView extends VerticalLayout {
     	
     	
     	
+=======
+
+//    	
+//    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
+//    	Lista_Publicaciones__Administrador__item item1 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+//    	Lista_Publicaciones__Administrador__item item2 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+//
+//    	ls.anadirPublicacion(item1);
+//    	ls.anadirPublicacion(item2);
+//    	Administrador admin = new Administrador(ls);
+//    	add(admin);
+//    	
+//    	Lista_denuncias_item itemB= new Lista_denuncias_item();
+//    	Lista_denuncias lsd = new Lista_denuncias();
+//    	lsd.anadirDenuncia(itemB);
+//    	Ver_denuncias denuncia = new Ver_denuncias(lsd);
+//    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
+//    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
+    	Usuario_Registrado ur = new Usuario_Registrado();
+    	add(ur);
+//
+//    	
+//    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
+//    	Lista_Publicaciones__Administrador__item item1 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+//    	Lista_Publicaciones__Administrador__item item2 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+//
+//    	ls.anadirPublicacion(item1);
+//    	ls.anadirPublicacion(item2);
+//    	Administrador admin = new Administrador(ls);
+//    	add(admin);
+//    	Usuario_Registrado usuario = new Usuario_Registrado();
+//    	
+//    	Lista_denuncias lsd = new Lista_denuncias();
+//    	
+//    	Lista_denuncias_pendientes_item itemC = new Lista_denuncias_pendientes_item();
+//    	
+//    	lsd.anadirDenuncia(itemC);
+//    	Ver_denuncias denuncia = new Ver_denuncias(lsd);
+//    	Lista_denuncias_item itemB= new Lista_denuncias_item(usuario,denuncia);
+//    	lsd.anadirDenuncia(itemB);
+//    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
+//    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
+
+>>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
     	
     }
 
