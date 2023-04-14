@@ -67,7 +67,6 @@ public class MainView extends VerticalLayout {
 //    	add(ini);
 //    	
 
-<<<<<<< HEAD
     	
 //    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
 //    	Lista_Publicaciones__Administrador__item item1 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
@@ -92,17 +91,13 @@ public class MainView extends VerticalLayout {
     	
     	
     	
-    	Lista_publicaciones__Comercial_ lsc = new Lista_publicaciones__Comercial_();
-    	Lista_publicaciones__Comercial__item itemComercial = new Lista_publicaciones__Comercial__item("videos/tiktok1.mp4");
-    	Lista_publicaciones__Comercial__item item2 = new Lista_publicaciones__Comercial__item("videos/tiktok1.mp4");
-    	lsc.anadirPublicacion(itemComercial);
-    	lsc.anadirPublicacion(item2);
-    	Usuario_comercial uc = new Usuario_comercial(lsc,"icons/logo.png","Cristian Gil García","GilGarcíaSL","La mejor empresa del mundo","737");
-    	add(uc);
-    	
-    	
-    	
-=======
+//    	Lista_publicaciones__Comercial_ lsc = new Lista_publicaciones__Comercial_();
+//    	Lista_publicaciones__Comercial__item itemComercial = new Lista_publicaciones__Comercial__item("videos/tiktok1.mp4");
+//    	Lista_publicaciones__Comercial__item item2 = new Lista_publicaciones__Comercial__item("videos/tiktok1.mp4");
+//    	lsc.anadirPublicacion(itemComercial);
+//    	lsc.anadirPublicacion(item2);
+//    	Usuario_comercial uc = new Usuario_comercial(lsc,"icons/logo.png","Cristian Gil García","GilGarcíaSL","La mejor empresa del mundo","737");
+//    	add(uc);
 
 //    	
 //    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
@@ -145,7 +140,6 @@ public class MainView extends VerticalLayout {
 //    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
 //    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
 
->>>>>>> branch 'prototipado' of git@github.com:jmn034-ual/GilMorales.git
     	
     }
 
