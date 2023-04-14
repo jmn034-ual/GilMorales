@@ -13,12 +13,14 @@ public class Video extends HtmlContainer implements ClickNotifier<com.vaadin.flo
         super();
         getElement().setProperty("controls", true);
         getElement().setProperty("autoplay", true);
+        getElement().getStyle().set("border-radius", "8px");
     }
 
     public Video(String src) {
         setSrc(src);
         getElement().setProperty("controls", true);
         getElement().setProperty("autoplay", true);
+        getElement().getStyle().set("border-radius", "8px");
     }
 
     public String getSrc() {

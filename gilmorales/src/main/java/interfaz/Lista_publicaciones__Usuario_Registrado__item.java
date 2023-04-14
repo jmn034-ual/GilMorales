@@ -17,6 +17,10 @@ public class Lista_publicaciones__Usuario_Registrado__item extends Lista_Publica
 	public Lista_publicaciones__Usuario_Registrado__item(String usuario, String localizacion, String descripcion,
 			String foto, String video) {
 		super(usuario, localizacion, descripcion, foto, video);
+		this.getVaadinButton().setVisible(true);
+		this.getLabelMeGustas().setVisible(false);
+		this.getLayoutBotonesUsuarioR().setVisible(true);
+		this.getLayoutComentar().setVisible(true);
 		
 	}
 
@@ -37,6 +41,6 @@ public class Lista_publicaciones__Usuario_Registrado__item extends Lista_Publica
 	}
 
 	public void Comentar() {
-		throw new UnsupportedOperationException();
+		
 	}
 }

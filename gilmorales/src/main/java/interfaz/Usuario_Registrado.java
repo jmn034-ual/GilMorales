@@ -25,7 +25,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 		Lista_publicaciones__Usuario_Registrado_();
 	}
 	public void Lista_publicaciones__Usuario_Registrado_() {
-		this.getListaPublicaciones().as(VerticalLayout.class).add(listaPublicaciones);;
+		this.getListaPublicaciones().as(VerticalLayout.class).add(listaPublicaciones);
 	}
 
 	public void Cabecera_Usuario_Registrado() {
