@@ -67,6 +67,7 @@ public class MainView extends VerticalLayout {
 //    	add(ini);
 //    	
 
+
 //    	
 //    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
 //    	Lista_Publicaciones__Administrador__item item1 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
@@ -85,6 +86,29 @@ public class MainView extends VerticalLayout {
 //    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
     	Usuario_Registrado ur = new Usuario_Registrado();
     	add(ur);
+//
+//    	
+//    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
+//    	Lista_Publicaciones__Administrador__item item1 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+//    	Lista_Publicaciones__Administrador__item item2 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+//
+//    	ls.anadirPublicacion(item1);
+//    	ls.anadirPublicacion(item2);
+//    	Administrador admin = new Administrador(ls);
+//    	add(admin);
+//    	Usuario_Registrado usuario = new Usuario_Registrado();
+//    	
+//    	Lista_denuncias lsd = new Lista_denuncias();
+//    	
+//    	Lista_denuncias_pendientes_item itemC = new Lista_denuncias_pendientes_item();
+//    	
+//    	lsd.anadirDenuncia(itemC);
+//    	Ver_denuncias denuncia = new Ver_denuncias(lsd);
+//    	Lista_denuncias_item itemB= new Lista_denuncias_item(usuario,denuncia);
+//    	lsd.anadirDenuncia(itemB);
+//    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
+//    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
+
     	
     }
 
