@@ -69,8 +69,11 @@ public class MainView extends VerticalLayout {
 
     	
     	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
-    	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
-    	ls.anadirPublicacion(itemA);
+    	Lista_Publicaciones__Administrador__item item1 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+    	Lista_Publicaciones__Administrador__item item2 = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+
+    	ls.anadirPublicacion(item1);
+    	ls.anadirPublicacion(item2);
     	Administrador admin = new Administrador(ls);
     	add(admin);
     	Usuario_Registrado usuario = new Usuario_Registrado();
