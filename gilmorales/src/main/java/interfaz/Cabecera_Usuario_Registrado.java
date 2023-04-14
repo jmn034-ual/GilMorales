@@ -5,11 +5,11 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
 public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Registrado_ {
-	private Button _perfilB;
-	private Button _notificacionesB;
-	private Button _inicioB;
-	private Button _buscarB;
-	private TextField _buscarTF;
+//	private Button _perfilB;
+//	private Button _notificacionesB;
+//	private Button _inicioB;
+//	private Button _buscarB;
+//	private TextField _buscarTF;
 	public Usuario_Registrado _usuario_Registrado;
 	public Ver_notificaciones _ver_notificaciones;
 	public Ver_perfil_propio _ver_perfil_propio;
@@ -17,7 +17,13 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	public Cabecera_TOP _cabecera_TOP = new Cabecera_TOP();
 	
 	public Cabecera_Usuario_Registrado() {
+		super();
     	Cabecera_TOP();
+    	this.getBotonAniadir().addClickListener(event ->{
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
+			this.Add_publiacacion();
+		});
+
     	
 	}
 
@@ -34,10 +40,12 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	}
 
 	public void Cabecera_TOP() {
-		_cabecera_TOP.getStyle().set("width", "100%");
-    	_cabecera_TOP.getStyle().set("height", "100%");
     	_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
     	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
+    	_cabecera_TOP.getBotonVerListaHashtag().addClickListener(event ->{
+    		_cabecera_TOP.Ver_lista_Hashtag();
+    		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
+    	});
 	}
 
 	public void volverInicio() {

@@ -33,6 +33,92 @@ public class VistaListaHashtagsItem extends LitTemplate {
 	private Label lableVisualizaciones;
 	@Id("numVisualizaciones")
 	private Label numVisualizaciones;
+	
+	
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public Element getVideo() {
+		return video;
+	}
+
+
+
+	public void setVideo(Element video) {
+		this.video = video;
+	}
+
+
+
+	public Element getDatosHashtags() {
+		return datosHashtags;
+	}
+
+
+
+	public void setDatosHashtags(Element datosHashtags) {
+		this.datosHashtags = datosHashtags;
+	}
+
+
+
+	public Button getNombreHashtags() {
+		return nombreHashtags;
+	}
+
+
+
+	public void setNombreHashtags(Button nombreHashtags) {
+		this.nombreHashtags = nombreHashtags;
+	}
+
+
+
+	public HorizontalLayout getLayoutVisualizaciones() {
+		return layoutVisualizaciones;
+	}
+
+
+
+	public void setLayoutVisualizaciones(HorizontalLayout layoutVisualizaciones) {
+		this.layoutVisualizaciones = layoutVisualizaciones;
+	}
+
+
+
+	public Label getLableVisualizaciones() {
+		return lableVisualizaciones;
+	}
+
+
+
+	public void setLableVisualizaciones(Label lableVisualizaciones) {
+		this.lableVisualizaciones = lableVisualizaciones;
+	}
+
+
+
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+
+
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
+
 
 	/**
      * Creates a new VistaListaHashtagsItem.

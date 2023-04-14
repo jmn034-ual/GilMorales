@@ -22,10 +22,9 @@ import com.vaadin.flow.component.textfield.TextArea;
 @JsModule("./src/vista-addpublicacion.ts")
 public class VistaAddpublicacion extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("layoutSubirVideo")
@@ -73,16 +72,6 @@ public class VistaAddpublicacion extends LitTemplate {
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-
-	public HorizontalLayout getCabecera() {
-		return cabecera;
-	}
-
-
-	public void setCabecera(HorizontalLayout cabecera) {
-		this.cabecera = cabecera;
 	}
 
 

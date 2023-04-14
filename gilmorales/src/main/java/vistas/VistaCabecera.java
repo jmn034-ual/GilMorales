@@ -46,6 +46,18 @@ public class VistaCabecera extends LitTemplate {
 	private Button botonAniadir;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
 
 
 	public Element getVaadinVerticalLayout() {

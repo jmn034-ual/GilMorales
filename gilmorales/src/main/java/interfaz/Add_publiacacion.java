@@ -19,7 +19,12 @@ public class Add_publiacacion extends VistaAddpublicacion{
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	
 	public Add_publiacacion() {
-		
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		Add_localizacion();
+		Ver_publicacion_propia();
+		Publicar();
+		Descartar();
 	}
 
 	public void Subir_video() {
@@ -27,18 +32,24 @@ public class Add_publiacacion extends VistaAddpublicacion{
 	}
 
 	public void Add_localizacion() {
-		throw new UnsupportedOperationException();
+		this.getTextFielLocalizacion();
 	}
 
 	public void Ver_publicacion_propia() {
-		throw new UnsupportedOperationException();
+		this.getBotonPublicar().addClickListener(event ->{
+			
+		});
 	}
 
 	public void Publicar() {
-		throw new UnsupportedOperationException();
+		this.getBotonPublicar().addClickListener(event -> {
+			
+		});
 	}
 
 	public void Descartar() {
-		throw new UnsupportedOperationException();
+		this.getBotonDescartar().addClickListener(event ->{
+			
+		});
 	}
 }
