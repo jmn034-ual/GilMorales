@@ -19,8 +19,7 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-cabecera.ts")
 public class VistaCabecera extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
+   
 	@Id("cabecera")
 	private HorizontalLayout cabecera;
 	@Id("logoWeb")
@@ -45,8 +44,10 @@ public class VistaCabecera extends LitTemplate {
 	private Button botonCerrarSesion;
 	@Id("botonAniadir")
 	private Button botonAniadir;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 
-	
+
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
