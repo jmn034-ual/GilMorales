@@ -33,15 +33,18 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 
 	public void Cabecera_Usuario_Registrado() {
 		this.getCabecera().add(_cabecera_Usuario_Registrado);
+		this.getCabeceraTop().as(VerticalLayout.class).add(this._cabecera_Usuario_Registrado._cabecera_TOP);
 		this._cabecera_Usuario_Registrado.getBotonAniadir().addClickListener(event ->{
-			this.getVaadinHorizontalLayout().setVisible(false);
+			this.getVaadinHorizontalLayout().removeAll();
 			this.getCabecera().getStyle().set("width", "100%");
 	    	this.getCabecera().getStyle().set("height", "100%");
 		});
 		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
-			this.getVaadinHorizontalLayout().setVisible(false);
-			this.getCabecera().getStyle().set("width", "100%");
-	    	this.getCabecera().getStyle().set("height", "100%");
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
+			this.getVaadinHorizontalLayout().getStyle().set("align-items;", "center");
+//			this.getCabecera().getStyle().set("width", "100%");
+//	    	this.getCabecera().getStyle().set("height", "100%");
 	    	});
 	}
 }

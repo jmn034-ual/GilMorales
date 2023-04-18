@@ -17,7 +17,7 @@ export class VistaCabeceraTop extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 1; align-self: stretch; width: 100%; height: 100%;">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 1; width: 100%; height: 100%;">
  <vaadin-vertical-layout id="cabeceraTop" style="flex-shrink: 1; flex-grow: 0; position: fixed; align-items: flex-start; z-index: 999; margin-top: 5%;">
   <h3 id="tituloUsuarios" style="align-self: center; z-index: 2;">Top Usuarios</h3>
   <vaadin-vertical-layout theme="spacing" id="listaUsuarios" style="align-self: center; flex-grow: 0; z-index: 2; align-items: center;"></vaadin-vertical-layout>

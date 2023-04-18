@@ -33,8 +33,10 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 
 	public void Ver_lista_Hashtag() {
 		this.getBotonVerListaHashtag().addClickListener(event -> {
-			this.getCabeceraTop().setVisible(false);
-			this.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);});
+			this.getCabeceraTop().as(VerticalLayout.class).removeAll();
+			this.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
+			this.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(_ver_lista_Hashtag);
+			});
 	}
 
 	public void top_hashtags() {

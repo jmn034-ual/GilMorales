@@ -19,12 +19,11 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	public Cabecera_Usuario_Registrado() {
 		super();
     	Cabecera_TOP();
+//    	_cabecera_TOP.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
     	this.getBotonAniadir().addClickListener(event ->{
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
 			this.Add_publiacacion();
-		});
-
-    	
+		});   	
 	}
 
 	public void Ver_notificaciones() {
@@ -40,11 +39,10 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	}
 
 	public void Cabecera_TOP() {
-    	_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
-    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
+    	_cabecera_TOP.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
+//    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
     	_cabecera_TOP.getBotonVerListaHashtag().addClickListener(event ->{
     		_cabecera_TOP.Ver_lista_Hashtag();
-    		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
     	});
 	}
 
