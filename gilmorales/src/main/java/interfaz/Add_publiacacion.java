@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaAddpublicacion;
 
 public class Add_publiacacion extends VistaAddpublicacion{
@@ -15,7 +17,7 @@ public class Add_publiacacion extends VistaAddpublicacion{
 //	private TextField _descripcionTF;
 //	private button _descartarB;
 //	private button _publicarB;
-	public Comun__Comercial_y_Usuario_Registrado_ _comun__Comercial_y_Usuario_Registrado_;
+	public Comun__Comercial_y_Usuario_Registrado_ _comun__Comercial_y_Usuario_Registrado_ = new Comun__Comercial_y_Usuario_Registrado_();
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	
 	public Add_publiacacion() {
@@ -49,7 +51,7 @@ public class Add_publiacacion extends VistaAddpublicacion{
 
 	public void Descartar() {
 		this.getBotonDescartar().addClickListener(event ->{
-			
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		});
 	}
 }
