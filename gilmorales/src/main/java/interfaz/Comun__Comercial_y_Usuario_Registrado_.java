@@ -21,7 +21,7 @@ public class Comun__Comercial_y_Usuario_Registrado_ extends VistaCabecera{
 
 		this.getBotonAniadir().addClickListener(event->{
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(new Add_publiacacion());
-			this.getBotonAniadir().setVisible(false);
+//			this.getBotonAniadir().setVisible(false);
 		});
 	}
 

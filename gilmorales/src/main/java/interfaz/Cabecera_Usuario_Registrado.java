@@ -40,7 +40,7 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 
 	public void Cabecera_TOP() {
     	_cabecera_TOP.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
-//    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
+    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
     	_cabecera_TOP.getBotonVerListaHashtag().addClickListener(event ->{
     		_cabecera_TOP.Ver_lista_Hashtag();
     	});
