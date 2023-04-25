@@ -18,7 +18,7 @@ export class VistaVerListaHashtags extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout1">
  <h1 id="h1" style="align-self: center;">Lista de Hashtags</h1>
  <vaadin-vertical-layout id="vaadinVerticalLayout" style="align-self: stretch; flex-grow: 1; align-items: center;">
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center;"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center; flex-grow: 1; width: 100%;"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

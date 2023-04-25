@@ -36,13 +36,13 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 		this._cabecera_Usuario_Registrado.getBotonAniadir().addClickListener(event ->{
 			this.getVaadinHorizontalLayout().removeAll();
 			this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(false);
-//			this.getCabecera().getStyle().set("width", "100%");
-//	    	this.getCabecera().getStyle().set("height", "100%");
+			this.getCabecera().getStyle().set("width", "100%");
+	    	this.getCabecera().getStyle().set("height", "100%");
 		});
 		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
 			this.getVaadinHorizontalLayout().removeAll();
 			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
-			this.getVaadinHorizontalLayout().getStyle().set("align-items;", "center");
+//			this.getVaadinHorizontalLayout().getStyle().set("align-items;", "center");
 	    	});
 	}
 }
