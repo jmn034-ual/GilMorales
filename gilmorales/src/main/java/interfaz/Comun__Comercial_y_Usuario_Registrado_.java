@@ -17,12 +17,13 @@ public class Comun__Comercial_y_Usuario_Registrado_ extends VistaCabecera{
 
 	}
 
-	public void Add_publiacacion() {
+	public Add_publiacacion Add_publiacacion() {
 
 		this.getBotonAniadir().addClickListener(event->{
-			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(new Add_publiacacion());
+//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(nuevaPublicacion);
 //			this.getBotonAniadir().setVisible(false);
 		});
+		return new Add_publiacacion();
 	}
 
 	public void Cerrar_sesion() {
