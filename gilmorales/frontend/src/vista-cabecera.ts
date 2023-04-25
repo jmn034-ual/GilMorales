@@ -19,7 +19,7 @@ export class VistaCabecera extends LitElement {
  render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout id="cabecera" style="justify-content: space-around; position: fixed; width: 100%; margin: var(--lumo-space-m); ">
+ <vaadin-horizontal-layout id="cabecera" style="justify-content: space-evenly; position: fixed; width: 100%; margin-top: var(--lumo-space-s);">
   <vaadin-button theme="icon" aria-label="Add new" id="logoWeb" style="flex-grow: 0;">
    <iron-icon icon="lumo:plus" id="iconoWeb"></iron-icon>
   </vaadin-button>

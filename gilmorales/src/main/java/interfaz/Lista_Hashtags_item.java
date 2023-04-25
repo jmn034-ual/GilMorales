@@ -18,12 +18,11 @@ public class Lista_Hashtags_item extends VistaListaHashtagsItem{
 	
 	public Lista_Hashtags_item(String nombreHashtag) {
 		Video video = new Video("videos/tiktok1.mp4"); 
-		video.getStyle().set("width", "80%");
-		video.getStyle().set("height", "80%");
+		video.getStyle().set("width", "60%");
+		video.getStyle().set("height", "60%");
         video.getElement().setProperty("controls", false);
-		video.getElement().setProperty("autoplay", false);
-
-    	
+		video.getElement().setProperty("autoplay", false); 
+        video.getElement().getStyle().set("border-radius", "8px");
 		this.getNombreHashtags().setText(nombreHashtag);
 		this.getVideo().as(VerticalLayout.class).add(video);
 		
