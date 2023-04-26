@@ -21,7 +21,6 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
     	this.getStyle().set("height", "100%");
 		listaPublicaciones.anadirPublicacion(item1);
 		listaPublicaciones.anadirPublicacion(item2);
-		
 		Cabecera_Usuario_Registrado();
 		Lista_publicaciones__Usuario_Registrado_();
 		
@@ -34,18 +33,28 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 	public void Cabecera_Usuario_Registrado() {
 		this.getCabecera().add(_cabecera_Usuario_Registrado);
 		this._cabecera_Usuario_Registrado.getBotonAniadir().addClickListener(event ->{
-			this.getVaadinHorizontalLayout().removeAll();
+			this.getListaPublicaciones().setVisible(false);
+			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado.Add_publiacacion());
 			this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(false);
-			this.getCabecera().getStyle().set("width", "100%");
-	    	this.getCabecera().getStyle().set("height", "100%");
 		});
 		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
-			this.getVaadinHorizontalLayout().removeAll();
+			this.getListaPublicaciones().setVisible(false);
 			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
 	    	});
 		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaUsuarios().addClickListener(event -> {
-			this.getVaadinHorizontalLayout().removeAll();
+			this.getListaPublicaciones().setVisible(false);
 			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
 	    	});
+		this._cabecera_Usuario_Registrado.getInicio().addClickListener(event -> {
+			if(this.getListaPublicaciones().isVisible()) {
+			}
+			else {
+//				this.getCabeceraTop().as(VerticalLayout.class).add(this._cabecera_Usuario_Registrado._cabecera_TOP);
+				this._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
+				this.getListaPublicaciones().setVisible(true);
+				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
+				if(!_cabecera_Usuario_Registrado.getBotonAniadir().isVisible()) this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
+			}
+		});
 	}
 }

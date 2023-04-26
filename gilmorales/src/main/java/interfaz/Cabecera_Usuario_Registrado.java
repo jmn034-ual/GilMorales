@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Element;
 
 public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Registrado_ {
 //	private Button _perfilB;
@@ -19,11 +20,13 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	public Cabecera_Usuario_Registrado() {
 		super();
     	Cabecera_TOP();
-//    	_cabecera_TOP.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
     	this.getBotonAniadir().addClickListener(event ->{
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
+//			this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
+    		this._cabecera_TOP.getCabeceraTop().setVisible(false);
+    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			this.Add_publiacacion();
-		});   	
+		});   
+    	volverInicio();
 	}
 
 	public void Ver_notificaciones() {
@@ -41,12 +44,12 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	public void Cabecera_TOP() {
     	_cabecera_TOP.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
     	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
-    	_cabecera_TOP.getBotonVerListaHashtag().addClickListener(event ->{
-    		_cabecera_TOP.Ver_lista_Hashtag();
-    	});
 	}
-
 	public void volverInicio() {
-		throw new UnsupportedOperationException();
+		this.getInicio().addClickListener(event -> {
+			this._cabecera_TOP.getCabeceraTop().setVisible(true);
+			this._cabecera_TOP.getLayoutAyuda().setVisible(false);
+			Cabecera_TOP();
+		});
 	}
 }

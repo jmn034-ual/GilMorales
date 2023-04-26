@@ -64,6 +64,7 @@ export class VistaCabeceraTop extends LitElement {
   </vaadin-horizontal-layout>
   <vaadin-vertical-layout style="align-self: stretch; margin: var(--lumo-space-s); justify-content: center;" id="layoutListaResultadoHashtags"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="layoutAyuda" style="flex-shrink: 0;"></vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;
   }
