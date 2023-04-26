@@ -35,11 +35,10 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 
 	public void Ver_lista_Hashtag() {
 		this.getBotonVerListaHashtag().addClickListener(event -> {
-//			this.getCabeceraTop().as(VerticalLayout.class).removeAll();
-//			this.getCabeceraTop().setVisible(false);
-//			this.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
-//			this.getLayoutListaResultadoBusqueda().setVisible(false);
-//			this.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(_ver_lista_Hashtag);
+			this.getCabeceraTop().setVisible(false);
+			this._ver_lista_Hashtag.setVisible(true);
+			this.getLayoutAyuda().setVisible(true);
+			this._ver_lista_usuarios_registrados.setVisible(false);
 			this.getLayoutAyuda().as(VerticalLayout.class).add(_ver_lista_Hashtag);
 			});
 	}
@@ -54,11 +53,10 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 
 	public void Ver_lista_usuarios_registrados() {
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
-//			this.getCabeceraTop().as(VerticalLayout.class).removeAll();
-//			this.getCabeceraTop().setVisible(false);
-//			this.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
-//			this.getLayoutListaResultadoBusqueda().setVisible(false);
-//			this.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(_ver_lista_usuarios_registrados);
+			this.getCabeceraTop().setVisible(false);
+			this._ver_lista_Hashtag.setVisible(false);
+			this._ver_lista_usuarios_registrados.setVisible(true);
+			this.getLayoutAyuda().setVisible(true);
 			this.getLayoutAyuda().as(VerticalLayout.class).add(_ver_lista_usuarios_registrados);
 
 			});

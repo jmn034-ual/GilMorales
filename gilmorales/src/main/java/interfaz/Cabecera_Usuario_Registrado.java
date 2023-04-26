@@ -23,6 +23,7 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
     	this.getBotonAniadir().addClickListener(event ->{
 //			this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
     		this._cabecera_TOP.getCabeceraTop().setVisible(false);
+    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			this.Add_publiacacion();
 		});   
     	volverInicio();
@@ -46,11 +47,9 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	}
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
-//			Cabecera_TOP();
-			if(!this._cabecera_TOP.getCabeceraTop().isVisible()) {
-				System.out.println("*********************************");
-				
-			}
+			this._cabecera_TOP.getCabeceraTop().setVisible(true);
+			this._cabecera_TOP.getLayoutAyuda().setVisible(false);
+			Cabecera_TOP();
 		});
 	}
 }

@@ -50,6 +50,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 			}
 			else {
 //				this.getCabeceraTop().as(VerticalLayout.class).add(this._cabecera_Usuario_Registrado._cabecera_TOP);
+				this._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
 				this.getListaPublicaciones().setVisible(true);
 				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
 				if(!_cabecera_Usuario_Registrado.getBotonAniadir().isVisible()) this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
