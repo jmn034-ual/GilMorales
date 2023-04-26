@@ -46,15 +46,14 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
 	    	});
 		this._cabecera_Usuario_Registrado.getInicio().addClickListener(event -> {
-			if(this.getListaPublicaciones().isVisible()) {
-			}
-			else {
-//				this.getCabeceraTop().as(VerticalLayout.class).add(this._cabecera_Usuario_Registrado._cabecera_TOP);
-				this._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
+			if(!this.getListaPublicaciones().isVisible()) {
 				this.getListaPublicaciones().setVisible(true);
 				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
 				if(!_cabecera_Usuario_Registrado.getBotonAniadir().isVisible()) this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
 			}
+		});
+		this._cabecera_Usuario_Registrado.getBotonPerfil().addClickListener(event -> {
+			
 		});
 	}
 }
