@@ -13,7 +13,7 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 //	private TextField _buscarTF;
 	public Usuario_Registrado _usuario_Registrado;
 	public Ver_notificaciones _ver_notificaciones;
-	public Ver_perfil_propio _ver_perfil_propio;
+	public Ver_perfil_propio _ver_perfil_propio =  new Ver_perfil_propio();
 	public Realizar_busqueda _realizar_busqueda;
 	public Cabecera_TOP _cabecera_TOP = new Cabecera_TOP();
 	
@@ -21,12 +21,13 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 		super();
     	Cabecera_TOP();
     	this.getBotonAniadir().addClickListener(event ->{
-//			this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
+			this._ver_perfil_propio.setVisible(false);
     		this._cabecera_TOP.getCabeceraTop().setVisible(false);
     		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			this.Add_publiacacion();
 		});   
     	volverInicio();
+    	Ver_perfil_propio();
 	}
 
 	public void Ver_notificaciones() {
@@ -34,7 +35,12 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	}
 
 	public void Ver_perfil_propio() {
-		throw new UnsupportedOperationException();
+		this.getBotonPerfil().addClickListener(event -> {
+			this._ver_perfil_propio.setVisible(true);
+			this._cabecera_TOP.getCabeceraTop().setVisible(false);
+    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_perfil_propio);
+		});
 	}
 
 	public void Realizar_busqueda(String aBuscarTF) {
@@ -47,6 +53,7 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	}
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
+			this._ver_perfil_propio.setVisible(false);
 			this._cabecera_TOP.getCabeceraTop().setVisible(true);
 			this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			Cabecera_TOP();

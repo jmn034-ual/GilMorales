@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver-publicaciones-propias')
 export class VistaVerPublicacionesPropias extends LitElement {
@@ -17,16 +17,15 @@ export class VistaVerPublicacionesPropias extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout id="layoutCabecera" style="width: 100%;"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; height: 100%;">
-  <vaadin-vertical-layout style="flex-grow: 0; flex-shrink: 1;" id="layoutTendencias">
+  <vaadin-vertical-layout style="flex-grow: 0; flex-shrink: 0; position: fixed; justify-content: flex-start; margin: var(--lumo-space-xs); padding: 0%; margin-top: 0%; margin-bottom: 5%;" id="layoutTendencias">
    <h4 id="tituloTendencias" style="align-self: center;">Tendencias </h4>
-   <vaadin-vertical-layout id="layoutHashtags" style="flex-grow: 1; align-self: center;"></vaadin-vertical-layout>
+   <vaadin-vertical-layout id="layoutHashtags" style="flex-grow: 0; align-self: center;"></vaadin-vertical-layout>
    <vaadin-button id="botonVerListaHashtags" style="align-self: center; margin: var(--lumo-space-s);">
      Ver Lista Hashtags 
    </vaadin-button>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; margin: var(--lumo-space-s);">
+  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; margin-left: 12%; position: fixed; height: 95%; width: 85%;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%;">
     <vaadin-vertical-layout theme="spacing" id="fotoPerfil"></vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout2" style="justify-content: flex-start; align-items: flex-start;">

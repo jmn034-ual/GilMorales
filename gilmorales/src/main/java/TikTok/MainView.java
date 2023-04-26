@@ -45,17 +45,11 @@ public class MainView extends VerticalLayout {
     	this.getStyle().set("height", "100%");
     	this.setMargin(false);
     	this.setPadding(false);
-//    	Usuario_No_Registrado nr = new Usuario_No_Registrado();
-//    	add(nr);
+
     	
     	Usuario_Registrado ur = new Usuario_Registrado();
     	add(ur);
-    	
-//    	Cabecera_TOP top = new Cabecera_TOP();
-//    	top.getStyle().set("width", "100%");
-//    	top.getStyle().set("height", "100%");
-//    	add(top);
-//    	
+
     	
 
 

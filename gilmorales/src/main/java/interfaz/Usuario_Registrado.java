@@ -53,7 +53,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 			}
 		});
 		this._cabecera_Usuario_Registrado.getBotonPerfil().addClickListener(event -> {
-			
+			this.getListaPublicaciones().setVisible(false);
 		});
 	}
 }
