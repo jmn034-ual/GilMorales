@@ -7,9 +7,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import vistas.VistaVerTendencias;
 
 public class Ver_tendencias extends VistaVerTendencias{
-	private Label _tendenciasL;
-	private Button _verListaHashtagB;
-	public Ver_lista_Hashtag _ver_lista_Hashtag;
+
+	public Ver_lista_Hashtag _ver_lista_Hashtag = new Ver_lista_Hashtag();
 	public Tendencias _tendencias = new Tendencias();
 	
 	Tendencias_item ti1 = new Tendencias_item(new Lista_Hashtags_item("Hashtag1"));
@@ -36,10 +35,14 @@ public class Ver_tendencias extends VistaVerTendencias{
 		_tendencias.addTendencia(ti9);
 		_tendencias.addTendencia(ti10);
 		Tendencias();
+		Ver_lista_Hashtag();
 	}
 
-	public void Ver_lista_Hashtag() {
-		
+	public Ver_lista_Hashtag Ver_lista_Hashtag() {
+//		this.getBotonVerListaHashtags().addClickListener(event -> {
+//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_ver_lista_Hashtag);
+//			});
+		return _ver_lista_Hashtag;
 	}
 
 	public void Tendencias() {
