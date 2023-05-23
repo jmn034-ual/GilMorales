@@ -6,11 +6,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.dom.Element;
 
 public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Registrado_ {
-//	private Button _perfilB;
-//	private Button _notificacionesB;
-//	private Button _inicioB;
-//	private Button _buscarB;
-//	private TextField _buscarTF;
+
 	public Usuario_Registrado _usuario_Registrado;
 	public Ver_notificaciones _ver_notificaciones;
 	public Ver_perfil_propio _ver_perfil_propio =  new Ver_perfil_propio();

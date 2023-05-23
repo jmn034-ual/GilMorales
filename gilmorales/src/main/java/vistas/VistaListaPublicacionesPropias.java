@@ -19,6 +19,17 @@ public class VistaListaPublicacionesPropias extends LitTemplate {
     @Id("layoutLista")
 	private Element layoutLista;
 
+    
+	public Element getLayoutLista() {
+		return layoutLista;
+	}
+
+
+	public void setLayoutLista(Element layoutLista) {
+		this.layoutLista = layoutLista;
+	}
+
+
 	/**
      * Creates a new VistaListaPublicacionesPropias.
      */

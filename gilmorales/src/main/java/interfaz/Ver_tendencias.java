@@ -30,11 +30,6 @@ public class Ver_tendencias extends VistaVerTendencias{
 		_tendencias.addTendencia(ti3);
 		_tendencias.addTendencia(ti4);
 		_tendencias.addTendencia(ti5);
-		_tendencias.addTendencia(ti6);
-		_tendencias.addTendencia(ti7);
-		_tendencias.addTendencia(ti8);
-		_tendencias.addTendencia(ti9);
-		_tendencias.addTendencia(ti10);
 		Tendencias();
 	}
 

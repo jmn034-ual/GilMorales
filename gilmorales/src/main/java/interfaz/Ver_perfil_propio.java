@@ -40,6 +40,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	this.getBotonSeguir().setVisible(false);
     	this.getLabelUsuarioPrivado().setVisible(false);
     	this.getBotonPeticionAmistad().setVisible(false);
+    	Ver_publicaciones_propias();
 		
 	}
 
