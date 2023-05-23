@@ -7,21 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 
 public class Ver_perfil_propio extends Ver_tendencias {
-	private IronIcon _fotoPerfil;
-	private Label _nombreUsuarioL;
-	private Label _nombreApellidosL;
-	private Button _editarPerfilB;
-	private int _numeroSiguiendo;
-	private int _numeroSeguidores;
-	private int _numerMeGusta;
-	private Label _siguiendoL;
-	private Label _seguidoresL;
-	private Label _meGustaL;
-	private TextArea _descripcionTA;
-	private Button _videosB;
-	private Button _meGustaB;
-	private Button _modificarPerfilB;
-	private Button _eliminarPubliacionB;
+	
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	public Ver_publicaciones_gustadas__Usuario_registrado_ _ver_publicaciones_gustadas__Usuario_registrado_;
