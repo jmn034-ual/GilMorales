@@ -13,20 +13,9 @@ import vistas.VistaListaPublicacionesUsuarioNoRegistrado;
 import vistas.VistaListaPublicacionesUsuarioNoRegistradoItem;
 
 public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaListaPublicacionesUsuarioNoRegistradoItem{
-	//	private ImageIcon _iconoUsuario;
-	//	private button _verPerfilB;
-	//	private Label _labelGeolocalizacion;
-	//	private Video _video;
-	//	private int _numeroVisualizaciones;
-	//	private Label _labelVisualizaciones;
+	
 	private int numeroMeGustas = Integer.parseInt(this.getLabelNumMeGustas().getText());
 	private int bMeGustaPulsado = 0;
-	//	private String megusta;
-	//	private button _verComentariosB;
-	//	private int _numeroComentarios;
-	//	private Label _labelComentarios;
-	//	private TextArea _descripcion;
-	//	private button _verPublicacionB;
 	public Lista_Publicaciones__Usuario_no_registrado_ _publicaciones__Usuario_no_registrado_;
 	public Ver_Perfil__2 _ver_perfil;
 	public Ver_publicacion__Usuario_No_Registrado_ verPublicacionUNR;
