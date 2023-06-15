@@ -18,6 +18,17 @@ public class VistaListaUsuariosRegistrados extends LitTemplate {
 
     @Id("layoutListaUsuariosRegistrados")
 	private Element layoutListaUsuariosRegistrados;
+    
+
+	public Element getLayoutListaUsuariosRegistrados() {
+		return layoutListaUsuariosRegistrados;
+	}
+
+
+	public void setLayoutListaUsuariosRegistrados(Element layoutListaUsuariosRegistrados) {
+		this.layoutListaUsuariosRegistrados = layoutListaUsuariosRegistrados;
+	}
+
 
 	/**
      * Creates a new VistaListaUsuariosRegistrados.

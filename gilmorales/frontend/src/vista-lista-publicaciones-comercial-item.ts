@@ -14,12 +14,7 @@ export class VistaListaPublicacionesComercialItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="layoutVideo">
- <div id="div" style="flex-grow: 1;">
-   Div 
-  <a href="https://vaadin.com" id="a">Link</a>
- </div>
-</vaadin-horizontal-layout>
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="layoutVideo"></vaadin-horizontal-layout>
 `;
   }
 

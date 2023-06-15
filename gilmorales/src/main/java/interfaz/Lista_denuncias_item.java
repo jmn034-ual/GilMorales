@@ -28,6 +28,14 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 		this.getVaadinAvatar().setImage(foto);
 		this.Ver_perfil();
 	}
+	
+	public Lista_denuncias_item(Usuario_Registrado usuario, Ver_denuncias admin) {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		this.getNombreCompleto().setText(usuario.toString());
+		this.Ver_perfil(usuario, admin);
+	}
+
 
 	public void Ver_perfil() {
 		getNombreUsuario().addClickListener(event->{

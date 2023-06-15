@@ -21,6 +21,27 @@ public class VistaListaTendenciasItem extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("hashtag")
 	private Button hashtag;
+	
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+	public Button getHashtag() {
+		return hashtag;
+	}
+
+
+	public void setHashtag(Button hashtag) {
+		this.hashtag = hashtag;
+	}
+
 
 	/**
      * Creates a new VistaListaTendenciasItem.

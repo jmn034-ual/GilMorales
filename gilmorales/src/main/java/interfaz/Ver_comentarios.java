@@ -18,7 +18,8 @@ public class Ver_comentarios extends VistaVerComentarios{
 	public Ver_Perfil__2 _ver_perfil;
 	
 	public Ver_comentarios() {
-		
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 	}
 
 	public void Ver_perfil() {

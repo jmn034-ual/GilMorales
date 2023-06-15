@@ -44,7 +44,19 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	private Button vaadinButton;
 	@Id("botonRegistrarse")
 	private Button botonRegistrarse;
+	@Id("cabeceraNR")
+	private Element cabeceraNR;
 	
+
+	public Element getCabeceraNR() {
+		return cabeceraNR;
+	}
+
+
+	public void setCabeceraNR(Element cabeceraNR) {
+		this.cabeceraNR = cabeceraNR;
+	}
+
 
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;

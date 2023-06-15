@@ -26,8 +26,6 @@ public class VistaVerListaHashtags extends LitTemplate {
 	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
 
 	
 	public Element getVaadinVerticalLayout1() {
@@ -70,14 +68,6 @@ public class VistaVerListaHashtags extends LitTemplate {
 	}
 
 
-	public HorizontalLayout getCabecera() {
-		return cabecera;
-	}
-
-
-	public void setCabecera(HorizontalLayout cabecera) {
-		this.cabecera = cabecera;
-	}
 
 
 	/**
