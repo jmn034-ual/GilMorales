@@ -68,16 +68,11 @@ public class MainView extends VerticalLayout {
 //    	
 
     	
-    	Lista_Publicaciones__Administrador_ ls = new Lista_Publicaciones__Administrador_();
-    	Lista_Publicaciones__Administrador__item itemA = new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
-    	ls.anadirPublicacion(itemA);
-    	Administrador admin = new Administrador(ls);
+    	Administrador admin = new Administrador();
     	add(admin);
     	
-    	Lista_denuncias_item itemB= new Lista_denuncias_item();
-    	Lista_denuncias lsd = new Lista_denuncias();
-    	lsd.anadirDenuncia(itemB);
-    	Ver_denuncias denuncia = new Ver_denuncias(lsd);
+    	
+    	Ver_denuncias denuncia = new Ver_denuncias();
     	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
     	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
     	

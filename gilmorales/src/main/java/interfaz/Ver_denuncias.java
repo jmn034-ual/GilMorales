@@ -9,15 +9,18 @@ public class Ver_denuncias extends VistaVerDenuncias {
 	private Label _tituloL;
 	private Label _filtrarL;
 	public Gestionar_denuncias _gestionar_denuncias;
-	public Lista_denuncias _lista_denuncias;
+	public Lista_denuncias _lista_denuncias = new Lista_denuncias();
 	
-	public Ver_denuncias(Lista_denuncias lista) {
+	Lista_denuncias_item item1= new Lista_denuncias_item("Cr", "Cristian", "no aplicada", "ninguno", "icons/icon.png");
+	
+	public Ver_denuncias() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		this.getLayoutListaDenuncias().as(VerticalLayout.class).add(lista);
+		_lista_denuncias.anadirDenuncia(item1);
+		Lista_denuncias();
 	}
 
 	public void Lista_denuncias() {
-		throw new UnsupportedOperationException();
+		this.getLayoutListaDenuncias().as(VerticalLayout.class).add(_lista_denuncias);
 	}
 }

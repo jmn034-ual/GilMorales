@@ -9,6 +9,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-ddenuncias-administrador-item template.
@@ -26,8 +27,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("fotoPerfil")
-	private Div fotoPerfil;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout2")
@@ -46,6 +45,8 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout5;
 	@Id("motivoDenuncia")
 	private Label motivoDenuncia;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
 	
 	
 
@@ -85,14 +86,18 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
 
 
-	public Div getFotoPerfil() {
-		return fotoPerfil;
+	
+
+
+
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
 	}
 
 
 
-	public void setFotoPerfil(Div fotoPerfil) {
-		this.fotoPerfil = fotoPerfil;
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
 	}
 
 
