@@ -25,6 +25,47 @@ public class VistaPublicacionesGustadasItem extends LitTemplate {
 	private Element video;
 	@Id("numVisualizaciones")
 	private Label numVisualizaciones;
+	
+
+	public Element getLayoutItem() {
+		return layoutItem;
+	}
+
+
+	public void setLayoutItem(Element layoutItem) {
+		this.layoutItem = layoutItem;
+	}
+
+
+	public Element getPublicacion() {
+		return publicacion;
+	}
+
+
+	public void setPublicacion(Element publicacion) {
+		this.publicacion = publicacion;
+	}
+
+
+	public Element getVideo() {
+		return video;
+	}
+
+
+	public void setVideo(Element video) {
+		this.video = video;
+	}
+
+
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
 
 	/**
      * Creates a new VistaPublicacionesGustadasItem.

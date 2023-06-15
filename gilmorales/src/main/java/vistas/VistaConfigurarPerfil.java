@@ -80,6 +80,8 @@ public class VistaConfigurarPerfil extends LitTemplate {
 	private Button botonCerrar;
 	@Id("layoutCabeceraVentana")
 	private HorizontalLayout layoutCabeceraVentana;
+	@Id("ironIcon")
+	private Element ironIcon;
 
 	
 	

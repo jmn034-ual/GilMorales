@@ -10,7 +10,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
-	public Ver_publicaciones_gustadas__Usuario_registrado_ _ver_publicaciones_gustadas__Usuario_registrado_;
+	public Ver_publicaciones_gustadas__Usuario_registrado_ publicaciones_gustadas = new Ver_publicaciones_gustadas__Usuario_registrado_();
 	public Ver_publicaciones_propias _ver_publicaciones_propias = new Ver_publicaciones_propias();
 	public Ver_seguidores _ver_seguidores = new Ver_seguidores();
 	public Ver_seguidos _ver_seguidos = new Ver_seguidos();
@@ -33,10 +33,14 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	Ver_seguidos();
     	Editar_perfil();
     	Configurar_perfil();
+    	Ver_publicaciones_gustadas__Usuario_registrado_();
 	}
 
 	public void Ver_publicaciones_gustadas__Usuario_registrado_() {
-		throw new UnsupportedOperationException();
+		this.getBotonMeGustas().addClickListener(event ->{
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(publicaciones_gustadas);
+			this.getLayoutListaPublicaciones().setVisible(false);
+		});
 	}
 
 	public void Ver_publicaciones_propias() {

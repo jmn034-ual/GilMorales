@@ -81,7 +81,7 @@ export class VistaVerTendencias extends LitElement {
      Me Gustas 
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; width: 100%; overflox-y: auto;">
+  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; width: 100%; overflox-y: auto; flex-shrink: 0;">
    <vaadin-horizontal-layout theme="spacing" id="layoutHorizontalPublicaciones" style="width: 100%;"></vaadin-horizontal-layout>
    <label id="labelUsuarioPrivado" style="align-self: center;">Perfil privado, para ver sus videos envíe una petición de amistad.</label>
   </vaadin-vertical-layout>
