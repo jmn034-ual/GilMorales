@@ -24,7 +24,7 @@ public class Lista_denuncias extends VistaListasDenunciasAdministrador {
 	}
 	
 	public void anadirDenuncia(Lista_denuncias_item denuncia) {
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(denuncia);;
+		this.getVaadinHorizontalLayout().add(denuncia);
 		_item.add(denuncia);
 	}
 }

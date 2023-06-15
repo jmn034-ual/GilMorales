@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 
 @customElement('vista-lista-ddenuncias-administrador-item')
 export class VistaListaDdenunciasAdministradorItem extends LitElement {
