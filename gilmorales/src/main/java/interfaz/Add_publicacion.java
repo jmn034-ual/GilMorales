@@ -4,7 +4,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaAddpublicacion;
 
-public class Add_publiacacion extends VistaAddpublicacion{
+public class Add_publicacion extends VistaAddpublicacion{
 //	private button _subir_videoB;
 //	private button _add_localizacionB;
 //	private Label _tituloL;
@@ -20,7 +20,7 @@ public class Add_publiacacion extends VistaAddpublicacion{
 //	public Comun__Comercial_y_Usuario_Registrado_ _comun__Comercial_y_Usuario_Registrado_ = new Comun__Comercial_y_Usuario_Registrado_();
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	
-	public Add_publiacacion() {
+	public Add_publicacion() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		Add_localizacion();
@@ -51,7 +51,7 @@ public class Add_publiacacion extends VistaAddpublicacion{
 
 	public void Descartar() {
 		this.getBotonDescartar().addClickListener(event ->{
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+			this.setVisible(false);
 		});
 	}
 }

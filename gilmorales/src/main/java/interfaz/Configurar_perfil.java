@@ -19,6 +19,11 @@ public class Configurar_perfil extends VistaConfigurarPerfil{
 	private Button _guardarB;
 	public Ver_perfil_propio _ver_perfil_propio;
 
+	public Configurar_perfil() {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+    	BotonCerrar();
+	}
 	public void Restaurar() {
 		throw new UnsupportedOperationException();
 	}
@@ -33,5 +38,10 @@ public class Configurar_perfil extends VistaConfigurarPerfil{
 
 	public void Guardar() {
 		throw new UnsupportedOperationException();
+	}
+	public void BotonCerrar() {
+		this.getBotonCerrar().addClickListener(event->{
+			this.setVisible(false);
+		});
 	}
 }

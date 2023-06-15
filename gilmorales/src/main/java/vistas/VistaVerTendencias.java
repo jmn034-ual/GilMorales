@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-ver-tendencias template.
@@ -22,8 +23,6 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-ver-tendencias.ts")
 public class VistaVerTendencias extends LitTemplate {
 
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("layoutTendencias")
@@ -90,19 +89,48 @@ public class VistaVerTendencias extends LitTemplate {
 	private HorizontalLayout layoutHorizontalPublicaciones;
 	@Id("labelUsuarioPrivado")
 	private Label labelUsuarioPrivado;
+	@Id("verSeguidores")
+	private Button verSeguidores;
+	@Id("verSiguiendos")
+	private Button verSiguiendos;
+	@Id("fotoPerfil1")
+	private Avatar fotoPerfil1;
 	
 	
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Avatar getFotoPerfil1() {
+		return fotoPerfil1;
 	}
 
 
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setFotoPerfil1(Avatar fotoPerfil1) {
+		this.fotoPerfil1 = fotoPerfil1;
 	}
 
+
+
+	public Button getVerSeguidores() {
+		return verSeguidores;
+	}
+
+
+
+	public void setVerSeguidores(Button verSeguidores) {
+		this.verSeguidores = verSeguidores;
+	}
+
+
+
+	public Button getVerSiguiendos() {
+		return verSiguiendos;
+	}
+
+
+
+	public void setVerSiguiendos(Button verSiguiendos) {
+		this.verSiguiendos = verSiguiendos;
+	}
 
 
 	public HorizontalLayout getVaadinHorizontalLayout() {

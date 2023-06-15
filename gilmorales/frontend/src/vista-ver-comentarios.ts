@@ -17,8 +17,8 @@ export class VistaVerComentarios extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; flex-grow: 1; height: 100%;">
- <vaadin-vertical-layout theme="spacing" id="layoutInfo" style="margin: var(--lumo-space-xs);">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; flex-grow: 1; height: 100%; width: 100%; z-index: 999;">
+ <vaadin-vertical-layout theme="spacing" id="layoutInfo" style="margin: var(--lumo-space-xs); flex-shrink: 0; width: 20%; height: 99%; align-items: center;">
   <vaadin-horizontal-layout theme="spacing" id="layoutpropietario" style="align-self: center;">
    <vaadin-vertical-layout theme="spacing" id="layoutFotoPerfil"></vaadin-vertical-layout>
    <vaadin-vertical-layout id="vaadinVerticalLayout1">
@@ -28,8 +28,8 @@ export class VistaVerComentarios extends LitElement {
     <label id="labelGeolocalizacion">Geolocalización</label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <label id="labelDescripcion" style="align-self: stretch; flex-grow: 1;">Descripción de la publicación...</label>
-  <vaadin-vertical-layout theme="spacing" id="layoutEstadisticas" style="align-self: center; flex-grow: 1; justify-content: center; align-items: flex-start;">
+  <label id="labelDescripcion" style="flex-grow: 0;">Descripción de la publicación...</label>
+  <vaadin-vertical-layout theme="spacing" id="layoutEstadisticas" style="align-self: center; flex-grow: 0; justify-content: center; align-items: flex-start; flex-shrink: 0;">
    <vaadin-horizontal-layout theme="spacing" id="layoutMeGustas" style="align-self: stretch;">
     <label id="numMeGustas" style="align-self: center;">0</label>
     <vaadin-button id="botonMeGusta">
@@ -46,7 +46,7 @@ export class VistaVerComentarios extends LitElement {
     <label id="labelVisualizaciones">Numero Visualizaciones</label>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutSeguidores" style="flex-grow: 1; align-self: center;">
+  <vaadin-vertical-layout theme="spacing" id="layoutSeguidores" style="flex-grow: 0; align-self: center; flex-shrink: 0;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: stretch;">
     <label id="numSeguidores">0</label>
     <label id="labelSeguidores">Numero de Seguidores</label>
@@ -59,9 +59,9 @@ export class VistaVerComentarios extends LitElement {
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="flex-grow: 1; margin: var(--lumo-space-xs);">
-  <vaadin-vertical-layout theme="spacing" id="layoutListaComentarios" style="align-self: stretch; flex-grow: 1;"></vaadin-vertical-layout>
-  <vaadin-horizontal-layout theme="spacing-s" id="layoutComentar" style="align-self: stretch; margin: var(--lumo-space-xs);">
+ <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout2" style="flex-grow: 0; margin: var(--lumo-space-xs); flex-shrink: 0; height: 99%; width: 79%;">
+  <vaadin-vertical-layout theme="spacing" id="layoutListaComentarios" style="flex-grow: 1; width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+  <vaadin-horizontal-layout theme="spacing-s" id="layoutComentar" style="margin: var(--lumo-space-xs); width: 100%;">
    <vaadin-text-field label="" placeholder="Escribe tu comentario..." id="textFieldCmentario" style="flex-grow: 1;"></vaadin-text-field>
    <vaadin-button id="botonComentar">
      Comentar 

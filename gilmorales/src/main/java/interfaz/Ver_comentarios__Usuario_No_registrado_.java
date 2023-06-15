@@ -7,7 +7,7 @@ public class Ver_comentarios__Usuario_No_registrado_ extends Ver_comentarios {
 	public Ver_publicacion__Usuario_No_Registrado_ verPublicacionUNR;
 	public Lista_Publicaciones__Usuario_no_registrado__item _publicacionesUNR;
 	public Lista_Comentarios__Vista_Usuario_No_registrado_ _lista_Comentarios__Vista_Usuario_No_registrado_ = new Lista_Comentarios__Vista_Usuario_No_registrado_() ;
-	
+	Lista_Comentarios__Vista_Usuario_No_registrado__item comentario = new Lista_Comentarios__Vista_Usuario_No_registrado__item();
 	public Ver_comentarios__Usuario_No_registrado_() {
 		
 	}
@@ -18,9 +18,8 @@ public class Ver_comentarios__Usuario_No_registrado_ extends Ver_comentarios {
 		this.getBotonMeGusta().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getLayoutComentar().setVisible(false);
-		this.getBotonNombreUsuario().setText("Funciona");
-		_lista_Comentarios__Vista_Usuario_No_registrado_.anadirComentario(new Lista_Comentarios__Vista_Usuario_No_registrado__item());
-		
+		_lista_Comentarios__Vista_Usuario_No_registrado_.anadirComentario(comentario);
+		Lista_Comentarios__Vista_Usuario_No_registrado_();
 	}
 	
 	public void Lista_Comentarios__Vista_Usuario_No_registrado_() {

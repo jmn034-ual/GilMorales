@@ -17,17 +17,17 @@ export class VistaListaComentariosUsuarioNoRegistradoItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" id="vaadinHorizontalLayout">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center; flex-grow: 0; width: 15%; justify-content: center;">
+<vaadin-horizontal-layout class="content" id="vaadinHorizontalLayout" style="width: 100%;">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center; flex-grow: 0; width: 15%; justify-content: center; flex-shrink: 0;">
   <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="align-self: center; flex-grow: 1;">
+ <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout" style="align-self: center; flex-grow: 0; flex-shrink: 0; width: 53%;">
   <vaadin-button theme="tertiary" id="nombreUsuario">
     Nombre de usuario 
   </vaadin-button>
-  <label id="comentarioL">Comentario</label>
+  <label id="comentarioL" style="flex-shrink: 0; align-self: stretch;">Comentario</label>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 1; justify-content: center;">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 0; justify-content: flex-end; flex-shrink: 0;">
   <label id="numeroMeGusta" style="align-self: center;">0</label>
   <label id="meGustaL" style="align-self: center;">Me gusta</label>
   <vaadin-button id="meGustaB">
