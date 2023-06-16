@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.sun.jna.platform.unix.X11.Visual;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.IronIcon;
 
@@ -17,11 +18,19 @@ public class Ver_hashtag extends VistaVerHashtag{
 	public Lista_resultado_item _lista_resultado;
 	public Publicaciones_hashtag _publicaciones_hashtag;
 
+	
+	public Ver_hashtag() {
+		this.getStyle().set("width","100%");
+		this.getStyle().set("height", "100%");
+		Publicaciones_hashtag();
+		Visualizaciones();
+	}
+	
 	public void Publicaciones_hashtag() {
-		throw new UnsupportedOperationException();
+		
 	}
 
 	public void Visualizaciones() {
-		throw new UnsupportedOperationException();
+		
 	}
 }

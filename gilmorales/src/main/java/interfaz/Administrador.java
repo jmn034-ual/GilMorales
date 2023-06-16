@@ -12,6 +12,7 @@ public class Administrador extends VistaAdministradorPrincipal {
 	public Cabecera_Administrador _cabecera_Administrador = new Cabecera_Administrador();
 	public Cabecera_TOP top = new Cabecera_TOP();
 	public Element cabeceraTop = top.getCabeceraTop();
+	//public Gestionar_denuncias denuncias = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png");
 	
 	Lista_Publicaciones__Administrador__item item1= new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
 
@@ -33,5 +34,10 @@ public class Administrador extends VistaAdministradorPrincipal {
 
 	public void Cabecera_Administrador() {
 		this.getLayoutCabeceraAdmin().add(_cabecera_Administrador);
-	}
+		this._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{
+			this._lista_Publicaciones__Administrador_.setVisible(false);
+			this.top.setVisible(false);
+			this.getVaadinHorizontalLayout().add(this._cabecera_Administrador.denuncias);
+		});
+		}
 }

@@ -48,8 +48,7 @@ public class MainView extends VerticalLayout {
 
     	
 
-    	Usuario_Registrado ur = new Usuario_Registrado();
-    	add(ur);
+    	
 
     	
 
@@ -57,12 +56,13 @@ public class MainView extends VerticalLayout {
 
     	Administrador admin = new Administrador();
     	add(admin);
-    	
-    	
-    	Ver_denuncias denuncia = new Ver_denuncias();
-    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
-    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
-    	
+//    	Ver_hashtag hashtag = new Ver_hashtag();
+//    	add(hashtag);
+//    	
+//    	Ver_denuncias denuncia = new Ver_denuncias();
+//    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
+//    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
+//    	
     }
 
 }
