@@ -35,7 +35,8 @@ public class Administrador extends VistaAdministradorPrincipal {
 	public void Cabecera_Administrador() {
 		this.getLayoutCabeceraAdmin().add(_cabecera_Administrador);
 		this._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+//			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+			this.getLayoutPublicaciones().setVisible(false);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this._cabecera_Administrador.denuncias);
 		});
 		}

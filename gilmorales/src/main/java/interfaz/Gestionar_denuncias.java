@@ -18,7 +18,7 @@ public class Gestionar_denuncias extends VistaGestionarDenuncias {
 	private Label _fechaL;
 	private Label _codigoEmpleadoL;
 	private Button _verDenunciasB;
-	public Ver_denuncias _ver_denuncias;
+	public Ver_denuncias _ver_denuncias = new Ver_denuncias();
 
 	public Gestionar_denuncias() {
 		this.getStyle().set("width", "100%");
@@ -40,7 +40,6 @@ public class Gestionar_denuncias extends VistaGestionarDenuncias {
 	
 	public void Ver_denuncias() {
 		this.getVerDenuncias().addClickListener(event->{
-			this._ver_denuncias= new Ver_denuncias();
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_denuncias);});
 	}

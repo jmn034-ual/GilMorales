@@ -9,7 +9,7 @@ public class Ver_denuncias extends VistaVerDenuncias {
 	private Label _tituloL;
 	private Label _filtrarL;
 	public Gestionar_denuncias _gestionar_denuncias;
-	public Cabecera_Administrador cabecera = new Cabecera_Administrador();
+	public Cabecera_Administrador cabecera;
 	public Lista_denuncias _lista_denuncias = new Lista_denuncias();
 	
 
@@ -19,7 +19,6 @@ public class Ver_denuncias extends VistaVerDenuncias {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		_lista_denuncias.anadirDenuncia(item1);
-		this.getLayoutCabecera().add(cabecera);
 		Lista_denuncias();
 		
 	}
