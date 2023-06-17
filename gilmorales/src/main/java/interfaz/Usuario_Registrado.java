@@ -37,12 +37,10 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 			this._cabecera_Usuario_Registrado.getBotonPerfil().setVisible(true);
 			this._cabecera_Usuario_Registrado._ver_notificaciones.setVisible(false);
 		});
-
 		this._cabecera_Usuario_Registrado.getBotonNotificaciones().addClickListener(event ->{
 			this.getListaPublicaciones().setVisible(false);
 			this._cabecera_Usuario_Registrado.getBotonNotificaciones().setVisible(false);
 		});
-
 		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
 			this.getListaPublicaciones().setVisible(false);
 			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);

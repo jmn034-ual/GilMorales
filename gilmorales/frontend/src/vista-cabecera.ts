@@ -47,7 +47,7 @@ export class VistaCabecera extends LitElement {
     Cerrar Sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%; margin-top: 5%; max-height: 92%; flex-grow: 1; flex-shrink: 0; align-items: center;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%; margin-top: 5%; max-height: 92%; flex-grow: 1; flex-shrink: 0; align-items: center; overflow-y: auto; z-index: 999;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

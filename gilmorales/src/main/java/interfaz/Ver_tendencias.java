@@ -38,7 +38,9 @@ public class Ver_tendencias extends VistaVerTendencias{
 	}
 
 	public void Ver_lista_Hashtag() {
-
+		this.getBotonVerListaHashtags().addClickListener(event ->{
+			this._ver_lista_Hashtag.setVisible(true);
+		});
 	}
 
 	public void Tendencias() {
