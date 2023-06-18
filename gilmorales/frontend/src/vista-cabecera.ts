@@ -19,7 +19,7 @@ export class VistaCabecera extends LitElement {
  render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout id="cabecera" style="justify-content: space-evenly; position: fixed; width: 100%; margin-top: var(--lumo-space-s);">
+ <vaadin-horizontal-layout id="cabecera" style="justify-content: space-evenly; position: fixed; width: 100%; margin-top: var(--lumo-space-s); z-index:999;">
   <vaadin-button theme="icon" aria-label="Add new" id="logoWeb" style="flex-grow: 0;">
    <iron-icon icon="lumo:plus" id="iconoWeb"></iron-icon>
   </vaadin-button>
@@ -47,7 +47,7 @@ export class VistaCabecera extends LitElement {
     Cerrar Sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%; margin-top: 5%; max-height: 92%; flex-grow: 1; flex-shrink: 0; align-items: center; overflow-y: auto; z-index: 999;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%; margin-top: 5%; max-height: 92%; flex-grow: 0; flex-shrink: 0; align-items: center; overflow-y: auto; z-index: 999; height: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

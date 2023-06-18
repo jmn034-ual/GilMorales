@@ -48,6 +48,8 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 
 	public void Ver_perfil_propio() {
 		this.getBotonPerfil().addClickListener(event -> {
+			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
+			this._ver_perfil_propio.getLayoutTendencias().setVisible(true);
 			this._ver_notificaciones.setVisible(false);
 			this._ver_perfil_propio.getVaadinVerticalLayout1().setVisible(true);
 			this._ver_perfil_propio.setVisible(true);

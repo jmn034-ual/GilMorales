@@ -94,7 +94,16 @@ public class Ver_perfil_propio extends Ver_tendencias {
 		this.getBotonEliminarPublicacion().addClickListener(event ->{
 			this._eliminar_publicaciones.setVisible(true);
 			this.getLayoutTendencias().setVisible(false);
+//			this.getVaadinHorizontalLayout1().setVisible(false);
+//			this.getLayoutDatosPerfil().setVisible(false);
+//			this.getLabelDescripcion().setVisible(false);
+//			this.getLayoutBonoes().setVisible(false);
+//			this.getListaMeGustas().setVisible(false);
+//			this.getLayoutListaPublicaciones().setVisible(false);
+//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_eliminar_publicaciones);
 			this.getVaadinVerticalLayout1().setVisible(false);
+//			this._eliminar_publicaciones.getStyle().set("width", "100%");
+//	    	this._eliminar_publicaciones.getStyle().set("height", "100%");
 			this.getVaadinHorizontalLayout().add(_eliminar_publicaciones);
 		});
 		this._eliminar_publicaciones.getBotonCancelar().addClickListener(event ->{

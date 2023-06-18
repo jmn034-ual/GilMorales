@@ -17,6 +17,11 @@ public class Publicaciones_propias_item extends VistaPublicacionesPropiasItem{
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	
 	public Publicaciones_propias_item(Publicacion p) {
+		p.getVideo().getStyle().set("width", "60%");
+		p.getVideo().getStyle().set("height", "60%");
+		p.getVideo().getElement().setProperty("controls", false);
+		p.getVideo().getElement().setProperty("autoplay", false); 
+		p.getVideo().getElement().getStyle().set("border-radius", "8px");
 		this.getLayoutVideo().as(VerticalLayout.class).add(p.getVideo());
 		this.getNumVisualizaciones().setText(""+p.getNumVisualizaciones());
 	}
