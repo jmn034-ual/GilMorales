@@ -95,8 +95,22 @@ public class VistaVerTendencias extends LitTemplate {
 	private Button verSiguiendos;
 	@Id("fotoPerfil1")
 	private Avatar fotoPerfil1;
+	@Id("listaMeGustas")
+	private Element listaMeGustas;
 	
 	
+
+	public Element getListaMeGustas() {
+		return listaMeGustas;
+	}
+
+
+
+	public void setListaMeGustas(Element listaMeGustas) {
+		this.listaMeGustas = listaMeGustas;
+	}
+
+
 
 	public Avatar getFotoPerfil1() {
 		return fotoPerfil1;

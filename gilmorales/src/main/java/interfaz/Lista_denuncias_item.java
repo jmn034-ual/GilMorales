@@ -33,7 +33,7 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.getNombreCompleto().setText(usuario.toString());
-		this.Ver_perfil(usuario, admin);
+//		this.Ver_perfil(usuario, admin);
 	}
 
 

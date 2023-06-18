@@ -19,6 +19,17 @@ public class VistaListaPublicacionesPropiasEliminar extends LitTemplate {
     @Id("layoutPublicacionesEliminar")
 	private Element layoutPublicacionesEliminar;
 
+    
+	public Element getLayoutPublicacionesEliminar() {
+		return layoutPublicacionesEliminar;
+	}
+
+
+	public void setLayoutPublicacionesEliminar(Element layoutPublicacionesEliminar) {
+		this.layoutPublicacionesEliminar = layoutPublicacionesEliminar;
+	}
+
+
 	/**
      * Creates a new VistaListaPublicacionesPropiasEliminar.
      */

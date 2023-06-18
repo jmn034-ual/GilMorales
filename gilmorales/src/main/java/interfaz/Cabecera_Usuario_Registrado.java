@@ -31,6 +31,8 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 
 	public void Ver_notificaciones() {
 		this.getBotonNotificaciones().addClickListener(event -> {
+			this._ver_perfil_propio._ver_lista_Hashtag.setVisible(false);
+			this._ver_perfil_propio._ver_lista_Hashtag.setVisible(false);
 			this._ver_perfil_propio._ver_seguidores.setVisible(false);
 			this._ver_perfil_propio._ver_seguidos.setVisible(false);
 			this._ver_notificaciones.setVisible(true);
@@ -46,6 +48,8 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 
 	public void Ver_perfil_propio() {
 		this.getBotonPerfil().addClickListener(event -> {
+			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
+			this._ver_perfil_propio.getLayoutTendencias().setVisible(true);
 			this._ver_notificaciones.setVisible(false);
 			this._ver_perfil_propio.getVaadinVerticalLayout1().setVisible(true);
 			this._ver_perfil_propio.setVisible(true);
@@ -61,7 +65,6 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 			this.getBotonPerfil().setVisible(true);
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._ver_perfil_propio._ver_lista_Hashtag);
-
 		});
 		this._ver_perfil_propio.getVerSeguidores().addClickListener(event->{
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._ver_perfil_propio._ver_seguidores);
@@ -83,7 +86,6 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 
 	public void Cabecera_TOP() {
 		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
-//    	_cabecera_TOP.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
     	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
 	}
 	public void volverInicio() {
