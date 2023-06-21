@@ -36,14 +36,19 @@ public class Administrador extends VistaAdministradorPrincipal {
 		this.getLayoutCabeceraAdmin().add(_cabecera_Administrador);
 		this._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{
 //			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this.getVaadinHorizontalLayout().removeAll();
+			//this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).setVisible(false);
+			this.getLayoutPublicaciones().as(VerticalLayout.class).setVisible(false);
 			this.getVaadinHorizontalLayout().add(this._cabecera_Administrador.denuncias);
 //			this.getVaadinVerticalLayout1().as(VerticalLayout.class).setVisible(false);
 		});
 		
-//		this._cabecera_Administrador.getInicio().addClickListener(event->{
-//			this.getVaadinHorizontalLayout().removeAll();
-//			this.getVaadinHorizontalLayout().add(this._cabecera_Administrador._administrador);
-//		});
+		this._cabecera_Administrador.getInicio().addClickListener(event->{
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).setVisible(false);
+			this.getLayoutPublicaciones().as(VerticalLayout.class).setVisible(false);
+			this.getLayoutCabeceraAdmin().setVisible(false);
+			this._cabecera_Administrador.denuncias.setVisible(false);
+			this.getVaadinHorizontalLayout().add(this._cabecera_Administrador._administrador);
+		});
 		}
 }

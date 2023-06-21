@@ -7,6 +7,10 @@ public class Ver_comentarios__Administrador_ extends VistaVerComentarios{
 	public Lista_Publicaciones__Administrador__item _lista_Publicaciones__Administrador_;
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
 	public Lista_comentarios__Administrador_ _lista_comentarios__Administrador_;
+	
+	public Ver_comentarios__Administrador_() {
+		super();
+	}
 
 	public void Lista_comentarios__Administrador_() {
 		throw new UnsupportedOperationException();

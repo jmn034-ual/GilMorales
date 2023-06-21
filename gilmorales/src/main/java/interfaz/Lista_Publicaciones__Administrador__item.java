@@ -23,7 +23,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 //	private TextArea _descripcionTA;
 //	private button _verPublicacionB;
 	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
-	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_;
+	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_ = new Ver_comentarios__Administrador_();
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
 	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
 	
@@ -44,6 +44,9 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	}
 
 	public void Ver_comentarios__Administrador_() {
+		this.getComentarios().addClickListener(event->{
+			this.getVaadinHorizontalLayout().add(_ver_comentarios__Administrador_);
+		});
 		
 	}
 
