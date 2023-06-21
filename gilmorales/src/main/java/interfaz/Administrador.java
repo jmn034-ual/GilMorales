@@ -14,7 +14,7 @@ public class Administrador extends VistaAdministradorPrincipal {
 	public Element cabeceraTop = top.getCabeceraTop();
 	//public Gestionar_denuncias denuncias = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png");
 	
-	Lista_Publicaciones__Administrador__item item1= new Lista_Publicaciones__Administrador__item("videos/tiktok1.mp4");
+	Lista_Publicaciones__Administrador__item item1= new Lista_Publicaciones__Administrador__item("Cristian", "Almería", "hola", "icons/icon.png", "videos/tiktok1.mp4");
 
 	public Administrador() {
 		this.getStyle().set("width", "100%");

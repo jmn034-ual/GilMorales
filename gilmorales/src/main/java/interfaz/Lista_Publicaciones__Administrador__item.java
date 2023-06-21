@@ -47,10 +47,14 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 
 
 
-	public Lista_Publicaciones__Administrador__item(String video) {
+	public Lista_Publicaciones__Administrador__item(String usuario, String localizacion, String descripcion, String foto, String video) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.getVaadinVerticalLayout5().as(VerticalLayout.class).add(new Video(video));
+		this.getNombre().setText(usuario);
+		this.getGeolocalizacion().setText(localizacion);
+		this.getDescripcion().setText(descripcion);
+		this.getFoto().setImage(foto);
 		this.Eliminar_publicacion__Administrador_();
 		this.NumeroComentarios();
 		this.Ver_comentarios__Administrador_();
