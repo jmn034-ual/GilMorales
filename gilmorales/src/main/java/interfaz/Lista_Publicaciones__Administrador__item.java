@@ -22,6 +22,8 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 //	private button _verComentariosB;
 //	private TextArea _descripcionTA;
 //	private button _verPublicacionB;
+	private boolean verComentarios = false;
+
 	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
 	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_;
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
@@ -31,6 +33,20 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 		
 	}
 	
+	
+	
+	public boolean getVerComentarios() {
+		return verComentarios;
+	}
+
+
+
+	public void setVerComentarios(boolean verComentarios) {
+		this.verComentarios = verComentarios;
+	}
+
+
+
 	public Lista_Publicaciones__Administrador__item(String video) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
@@ -48,7 +64,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 		this.getComentarios().addClickListener(event -> {
 			Ver_comentarios__Administrador_ admin= new Ver_comentarios__Administrador_(this);
 			this.setVerComentarios(true);
-		
+			});
 	}
 
 	public void Ver_publicacion__Administrador_() {
