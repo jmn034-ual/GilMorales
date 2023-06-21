@@ -10,6 +10,8 @@ public class Ver_comentarios__Administrador_ extends VistaVerComentarios{
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
 	public Lista_comentarios__Administrador_ _lista_comentarios__Administrador_ = new Lista_comentarios__Administrador_();
 	
+	Lista_comentarios__Administrador__item comentario = new Lista_comentarios__Administrador__item();
+	
 	public Ver_comentarios__Administrador_(Lista_Publicaciones__Administrador__item item) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
