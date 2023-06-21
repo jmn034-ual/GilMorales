@@ -15,14 +15,14 @@ public class Ver_comentarios__Administrador_ extends VistaVerComentarios{
 	public Ver_comentarios__Administrador_(Lista_Publicaciones__Administrador__item item) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		this.getBotonComentar().setVisible(false);
-		this.getBotonEliminarAdmi().setVisible(false);
-		this.getBotonMeGusta().setVisible(false);
-		this.getBotonSeguir().setVisible(false);
-		this.getLayoutComentar().setVisible(false);
+		this.getBotonComentar().setVisible(true);
+		this.getBotonEliminarAdmi().setVisible(true);
+		this.getBotonMeGusta().setVisible(true);
+		this.getBotonSeguir().setVisible(true);
+		this.getLayoutComentar().setVisible(true);
 		_lista_comentarios__Administrador_.anadirComentario(comentario);
 		Lista_comentarios__Administrador_();
-	}
+	} 
 
 	public void Lista_comentarios__Administrador_() {
 		this.getLayoutListaComentarios().as(VerticalLayout.class).add(_lista_comentarios__Administrador_);

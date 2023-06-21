@@ -62,7 +62,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 
 	public void Ver_comentarios__Administrador_() {
 		this.getComentarios().addClickListener(event -> {
-			Ver_comentarios__Administrador_ admin= new Ver_comentarios__Administrador_(this);
+			_ver_comentarios__Administrador_= new Ver_comentarios__Administrador_(this);
 			this.setVerComentarios(true);
 			});
 	}
