@@ -37,6 +37,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 		this.getVaadinVerticalLayout5().as(VerticalLayout.class).add(new Video(video));
 		this.Eliminar_publicacion__Administrador_();
 		this.NumeroComentarios();
+		this.Ver_comentarios__Administrador_();
 	}
 
 	public void Eliminar_publicacion__Administrador_() {
