@@ -8,7 +8,7 @@ import vistas.VistaUsuarioRegistrado;
 
 public class Usuario_Registrado extends VistaUsuarioRegistrado{
 	//	public iUsuario_Registrado _iUsuario_Registrado;
-	public Lista_publicaciones__Usuario_Registrado_ listaPublicaciones = new Lista_publicaciones__Usuario_Registrado_();
+	public Lista_publicaciones__Usuario_Registrado_ listaPublicaciones = new Lista_publicaciones__Usuario_Registrado_(this);
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado = new Cabecera_Usuario_Registrado();
 
 	Lista_publicaciones__Usuario_Registrado__item item1 = new Lista_publicaciones__Usuario_Registrado__item("usuario1", "Nijar", 
@@ -30,6 +30,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 	}
 	public void Cabecera_Usuario_Registrado() {
 		this.getCabecera().add(_cabecera_Usuario_Registrado);
+		this._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
 		this._cabecera_Usuario_Registrado.getBotonAniadir().addClickListener(event ->{
 			this.getListaPublicaciones().setVisible(false);
 			this._cabecera_Usuario_Registrado.addPubli.setVisible(true);
@@ -50,6 +51,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
 		});
 		this._cabecera_Usuario_Registrado.getInicio().addClickListener(event -> {
+			this._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
 			this.listaPublicaciones.setVisible(true);
 			this.getListaPublicaciones().setVisible(true);
 			this._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
@@ -61,12 +63,16 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 			this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
 		});
 		this._cabecera_Usuario_Registrado.addPubli.getBotonDescartar().addClickListener(event -> {
+			this._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
 			this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
+			this._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
 			this._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
 			this.getListaPublicaciones().setVisible(true);
 			this._cabecera_Usuario_Registrado.addPubli.Descartar();
 		});
-	
+		this._cabecera_Usuario_Registrado.getBotonBuscar().addClickListener(event ->{
+			this.getListaPublicaciones().setVisible(false);
+		});
 	}
 	
 	

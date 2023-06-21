@@ -20,6 +20,8 @@ public class Ver_comentarios extends VistaVerComentarios{
 	public Ver_comentarios() {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
+		this.getFotoPerfil().setSizeFull();
+
 	}
 
 	public void Ver_perfil() {

@@ -10,6 +10,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.avatar.Avatar;
+import com.vaadin.flow.component.html.Hr;
 
 /**
  * A Designer generated component for the vista-lista-publicaciones-usuario-no-registrado-item template.
@@ -71,8 +72,32 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Element fotoPerfil;
 	@Id("vaadinAvatar")
 	private Avatar vaadinAvatar;
+	@Id("lineaHorizontal")
+	private Hr lineaHorizontal;
+	@Id("publicacion")
+	private Element publicacion;
 
 	
+	public Hr getLineaHorizontal() {
+		return lineaHorizontal;
+	}
+
+
+	public void setLineaHorizontal(Hr lineaHorizontal) {
+		this.lineaHorizontal = lineaHorizontal;
+	}
+
+
+	public Element getPublicacion() {
+		return publicacion;
+	}
+
+
+	public void setPublicacion(Element publicacion) {
+		this.publicacion = publicacion;
+	}
+
+
 	public Avatar getVaadinAvatar() {
 		return vaadinAvatar;
 	}

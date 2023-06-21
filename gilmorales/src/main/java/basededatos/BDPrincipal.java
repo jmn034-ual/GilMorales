@@ -21,14 +21,14 @@ import interfaz.Usuario_Registrado;
 import interfaz.Iniciar_Sesion__4;
 
 public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrador_, iAdministrador, iUsuario_No_Registrado, iVer_notificaciones_usuario_publico, iVer_notificaciones_usuario_privado, iVer_perfil_publico, iVer_perfil_privado, iVer_perfil, iPlataformas_externas, iUsuario_Registrado, iIniciar_sesion {
-	public Comentarios _c_comentarios;
-	public Notificaciones _c_notificaciones;
-	public UsuariosRegistrados _c_usuario_registrado;
-	public Publicaciones _c_publicacion;
-	public UsuariosComerciales _c_comercial;
-	public Hashtags _c_hashtag;
-	public UsuariosAdministradores _c_usuarioAdministrador;
-	public Denuncias _c_denuncia;
+	public Comentarios _c_comentarios = new Comentarios();
+	public Notificaciones _c_notificaciones = new Notificaciones();
+	public UsuariosRegistrados _c_usuario_registrado = new UsuariosRegistrados();
+	public Publicaciones _c_publicacion = new Publicaciones();
+	public UsuariosComerciales _c_comercial = new UsuariosComerciales();
+	public Hashtags _c_hashtag = new Hashtags();
+	public UsuariosAdministradores _c_usuarioAdministrador = new UsuariosAdministradores();
+	public Denuncias _c_denuncia = new Denuncias();
 
 	public UsuarioComercial cargarUsuarioComercial() {
 		throw new UnsupportedOperationException();

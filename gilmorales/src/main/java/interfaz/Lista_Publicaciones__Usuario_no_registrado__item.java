@@ -2,13 +2,16 @@ package interfaz;
 
 import javax.swing.ImageIcon;
 
+import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Imagen;
 import TikTok.Video;
+import bd_dcl.Publicacion;
 import vistas.VistaListaPublicacionesUsuarioNoRegistrado;
 import vistas.VistaListaPublicacionesUsuarioNoRegistradoItem;
 
@@ -16,14 +19,19 @@ public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaLista
 	
 	private int numeroMeGustas = Integer.parseInt(this.getLabelNumMeGustas().getText());
 	private int bMeGustaPulsado = 0;
-	private boolean verComentarios = false;
 	public Lista_Publicaciones__Usuario_no_registrado_ _publicaciones__Usuario_no_registrado_;
 	public Ver_Perfil__2 _ver_perfil;
 	public Ver_publicacion__Usuario_No_Registrado_ verPublicacionUNR;
-	public Ver_comentarios__Usuario_No_registrado_ verComentariosUNR;
+	public Ver_comentarios__Usuario_No_registrado_ verComentariosUNR = new Ver_comentarios__Usuario_No_registrado_(this);
+	public Usuario_No_Registrado unr;
 
-	public Lista_Publicaciones__Usuario_no_registrado__item() {
-		
+	public Lista_Publicaciones__Usuario_no_registrado__item(Publicacion publicacion, Usuario_No_Registrado unr) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+		this.getLayoutBotonesUsuarioR().setVisible(false);
+		this.getVaadinAvatar().setImage(publicacion.getPerteneceA().getFoto());
+
+
 	}
 
 	public Lista_Publicaciones__Usuario_no_registrado__item(String usuario, String localizacion, String descripcion, String foto, String video) {
@@ -42,11 +50,21 @@ public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaLista
 		Ver_comentarios__Usuario_No_registrado_();
 	}
 	
-	public boolean getVerComentarios() {
-		return verComentarios;
-	}
-	public void setVerComentarios(boolean verComentarios) {
-		this.verComentarios = verComentarios;
+	public Lista_Publicaciones__Usuario_no_registrado__item(String usuario, String localizacion, String descripcion, String foto, String video, Usuario_No_Registrado unr) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+		this.getLayoutBotonesUsuarioR().setVisible(false);
+		this.getVaadinAvatar().setImage(foto);
+		this.getBotonNombreUsuario().setText(usuario);
+		this.getLabelGeolocalizacion().setText(localizacion);
+		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(video));
+		this.getVaadinButton().setVisible(false);
+		this.getLabelDescripcion().setText(descripcion);
+		this.getLabelNumMeGustas().setText(""+numeroMeGustas);
+		this.getLayoutComentar().setVisible(false);
+		this.unr = unr;
+		NumeroMeGustas();
+		Ver_comentarios__Usuario_No_registrado_();
 	}
 
 	public void Ver_perfil() {
@@ -57,16 +75,11 @@ public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaLista
 		throw new UnsupportedOperationException();
 	}
 	
-	public Lista_Publicaciones__Usuario_no_registrado__item getPublicacion() {
-		return this;
-	}
-
 	public void Ver_comentarios__Usuario_No_registrado_() {
 		this.getBotonVerComentarios().addClickListener(event -> {
-			verComentariosUNR = new Ver_comentarios__Usuario_No_registrado_(this);
-			this.setVerComentarios(true);
-//			this.getLayoutPublicacion().removeAll();
-//			this.getLayoutPublicacion().add(new Ver_comentarios__Usuario_No_registrado_(this));
+			unr.getLayoutListaPublicaciones().setVisible(false);
+			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			unr.getVaadinHorizontalLayout().add(verComentariosUNR);
 		});
 	}
 

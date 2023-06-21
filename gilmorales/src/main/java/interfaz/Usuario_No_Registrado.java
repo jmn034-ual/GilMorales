@@ -17,21 +17,23 @@ import vistas.VistaUsuarioNoRegistrado;
 public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	private button _iniciarSesionB;
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
-	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado = new Lista_Publicaciones__Usuario_no_registrado_();
+	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado = new Lista_Publicaciones__Usuario_no_registrado_(this);
 	public Cabecera_Usuario_No_Registrado cabeceraUNR = new Cabecera_Usuario_No_Registrado();
-	
-	Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
-			"icons/icon.png", "videos/tiktok1.mp4");
-	Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario2", "Nijar", "Una publicacion de prueba",
-			"icons/luffy.jpg", "videos/tiktok1.mp4");
+	Iniciar_Sesion__4 inicioSesion = new Iniciar_Sesion__4();
+//	Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
+//			"icons/icon.png", "videos/tiktok1.mp4");
+//	Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario2", "Nijar", "Una publicacion de prueba",
+//			"icons/luffy.jpg", "videos/tiktok1.mp4");
 	
 
 	public Usuario_No_Registrado() {
-		publicacionesNoRegistrado.anadirPublicacion(item1);
-		publicacionesNoRegistrado.anadirPublicacion(item2);
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+//		publicacionesNoRegistrado.anadirPublicacion(item1);
+//		publicacionesNoRegistrado.anadirPublicacion(item2);
 		Lista_Publicaciones__Usuario_no_registrado_();
 		Iniciar_Sesion();
-		this.Cabecera_Usuario_No_Registrado();	
+		Cabecera_Usuario_No_Registrado();	
 	}
 
 	public void Lista_Publicaciones__Usuario_no_registrado_() {
@@ -39,18 +41,36 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Cabecera_Usuario_No_Registrado() {
-
 		this.getLayoutCabecera().add(cabeceraUNR);
+		this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
 		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
-		this.getStyle().set("width", "100%");
-    	this.getStyle().set("height", "100%");
-    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(cabeceraUNR);});
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(cabeceraUNR);
+		});
+		this.cabeceraUNR._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
+			this.getLayoutListaPublicaciones().setVisible(false);
+			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
+		});
+		this.cabeceraUNR._cabecera_TOP.getBotonVerListaUsuarios().addClickListener(event -> {
+			this.getLayoutListaPublicaciones().setVisible(false);
+			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
+		});
+		this.cabeceraUNR.getInicio().addClickListener(event -> {
+			this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
+			this.publicacionesNoRegistrado.setVisible(true);
+			this.getLayoutListaPublicaciones().setVisible(true);
+			this.cabeceraUNR._cabecera_TOP.setVisible(true);
+		});
+		this.cabeceraUNR.getBotonBuscar().addClickListener(event ->{
+			this.getLayoutListaPublicaciones().setVisible(false);
+		});
 	}
 
 
 	public void Iniciar_Sesion() {
-		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());});
+		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(inicioSesion);
+		});
 	}
 }

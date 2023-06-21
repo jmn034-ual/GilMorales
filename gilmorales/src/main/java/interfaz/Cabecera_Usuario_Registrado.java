@@ -17,6 +17,8 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 		super();
     	Cabecera_TOP();
     	this.getBotonAniadir().addClickListener(event ->{
+			this._realizar_busqueda.setVisible(false);
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this._ver_perfil_propio.setVisible(false);
 			this._ver_perfil_propio._ver_seguidores.setVisible(false);
 			this._ver_perfil_propio._ver_seguidos.setVisible(false);
@@ -27,10 +29,13 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
     	volverInicio();
     	Ver_perfil_propio();
     	Ver_notificaciones();
+    	Realizar_busqueda();
 	}
 
 	public void Ver_notificaciones() {
 		this.getBotonNotificaciones().addClickListener(event -> {
+//			this._realizar_busqueda.setVisible(false);
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this._ver_perfil_propio._ver_lista_Hashtag.setVisible(false);
 			this._ver_perfil_propio._ver_lista_Hashtag.setVisible(false);
 			this._ver_perfil_propio._ver_seguidores.setVisible(false);
@@ -42,12 +47,15 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 			this.addPubli.setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_ver_notificaciones);
 		});
 	}
 
 	public void Ver_perfil_propio() {
 		this.getBotonPerfil().addClickListener(event -> {
+//			this._realizar_busqueda.setVisible(false);
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
 			this._ver_perfil_propio.getLayoutTendencias().setVisible(true);
 			this._ver_notificaciones.setVisible(false);
@@ -62,34 +70,49 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_ver_perfil_propio);
 		});
 		this._ver_perfil_propio.getBotonVerListaHashtags().addClickListener(event -> {
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this.getBotonPerfil().setVisible(true);
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._ver_perfil_propio._ver_lista_Hashtag);
 		});
 		this._ver_perfil_propio.getVerSeguidores().addClickListener(event->{
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._ver_perfil_propio._ver_seguidores);
 		});
 		this._ver_perfil_propio.getVerSiguiendos().addClickListener(event->{
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._ver_perfil_propio._ver_seguidos);
 		});
 		this._ver_perfil_propio.getBotonEditarPerfil().addClickListener(event ->{
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._ver_perfil_propio._editar_perfil);
 		});
 		this._ver_perfil_propio.getBotonModificarPerfil().addClickListener(event ->{
+			this.getVaadinVerticalLayout1().setVisible(true);
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._ver_perfil_propio._configurar_perfil);
 		});
 	}
 
-	public void Realizar_busqueda(String aBuscarTF) {
-		throw new UnsupportedOperationException();
+	public void Realizar_busqueda() {
+		_realizar_busqueda = new Realizar_busqueda();
+		this.getBotonBuscar().addClickListener(event ->{
+			this.getBotonPerfil().setVisible(true);
+			this.getBotonNotificaciones().setVisible(true);
+			this.getBotonAniadir().setVisible(true);
+			this._realizar_busqueda.setVisible(true);
+			this._cabecera_TOP.setVisible(false);
+			this.getVaadinVerticalLayout1().setVisible(true);
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(this._realizar_busqueda);
+		});
 	}
-
 	public void Cabecera_TOP() {
 		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
     	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
 	}
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
+			_realizar_busqueda = new Realizar_busqueda();
 			this._ver_perfil_propio.setVisible(false);
 			this._cabecera_TOP.getCabeceraTop().setVisible(true);
 			this._cabecera_TOP.getLayoutAyuda().setVisible(false);

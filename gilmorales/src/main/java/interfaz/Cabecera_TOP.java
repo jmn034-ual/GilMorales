@@ -29,12 +29,11 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		top_hashtags();
 		_top_usuarios.anadirUsuarios(tui);
 		top_usuarios();
-
-
 	}
 
 	public void Ver_lista_Hashtag() {
 		this.getBotonVerListaHashtag().addClickListener(event -> {
+			this.getLayoutListaResultadoBusqueda().setVisible(false);
 			this.getCabeceraTop().setVisible(false);
 			this._ver_lista_Hashtag.setVisible(true);
 			this.getLayoutAyuda().setVisible(true);
@@ -53,6 +52,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 
 	public void Ver_lista_usuarios_registrados() {
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
+			this.getLayoutListaResultadoBusqueda().setVisible(false);
 			this.getCabeceraTop().setVisible(false);
 			this._ver_lista_Hashtag.setVisible(false);
 			this._ver_lista_usuarios_registrados.setVisible(true);

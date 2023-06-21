@@ -13,6 +13,7 @@ public class Ver_comentarios__Usuario_No_registrado_ extends Ver_comentarios {
 	}
 
 	public Ver_comentarios__Usuario_No_registrado_(Lista_Publicaciones__Usuario_no_registrado__item item) {
+		this.getFotoPerfil().setImage("icons/luffy.jpg");
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(false);
 		this.getBotonMeGusta().setVisible(false);

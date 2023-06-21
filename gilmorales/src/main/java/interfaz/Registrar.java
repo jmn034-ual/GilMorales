@@ -91,7 +91,7 @@ public class Registrar extends VistaRegistrarusuario{
 
 	public void Descartar() {
 		this.getDescartar().addClickListener(event ->{
-			this.getVaadinVerticalLayout().removeAllChildren();
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion);
 		});
 	}
