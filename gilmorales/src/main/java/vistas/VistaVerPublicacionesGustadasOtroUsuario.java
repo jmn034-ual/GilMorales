@@ -21,64 +21,22 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-ver-publicaciones-gustadas-otro-usuario.ts")
 public class VistaVerPublicacionesGustadasOtroUsuario extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("layoutCabecera")
-	private HorizontalLayout layoutCabecera;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("layoutTendencias")
-	private Element layoutTendencias;
-	@Id("tituloTendencias")
-	private H4 tituloTendencias;
-	@Id("layoutHashtags")
-	private Element layoutHashtags;
-	@Id("botonVerListaHashtags")
-	private Button botonVerListaHashtags;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("fotoPerfil")
-	private Element fotoPerfil;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("nombreUsuario")
-	private H3 nombreUsuario;
-	@Id("nombreYapellidos")
-	private H4 nombreYapellidos;
-	@Id("botonSeguir")
-	private Button botonSeguir;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
-	@Id("botonDenunciar")
-	private Button botonDenunciar;
-	@Id("layoutDatosPerfil")
-	private HorizontalLayout layoutDatosPerfil;
-	@Id("numSiguiendo")
-	private Label numSiguiendo;
-	@Id("labelSiguiendo")
-	private Label labelSiguiendo;
-	@Id("numSeguidores")
-	private Label numSeguidores;
-	@Id("labelSeguidores")
-	private Label labelSeguidores;
-	@Id("numMeGustas")
-	private Label numMeGustas;
-	@Id("labelMeGustas")
-	private Label labelMeGustas;
-	@Id("layoutDescripcion")
-	private HorizontalLayout layoutDescripcion;
-	@Id("labelDescripcion")
-	private Label labelDescripcion;
-	@Id("layoutBonoes")
-	private HorizontalLayout layoutBonoes;
-	@Id("botonMeGustas")
-	private Button botonMeGustas;
-	@Id("layoutListaPublicacionesGustadas")
-	private Element layoutListaPublicacionesGustadas;
-	@Id("layoutHorizontalPublicacionesGustadas")
-	private HorizontalLayout layoutHorizontalPublicacionesGustadas;
+	
+	
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
 
 	/**
      * Creates a new VerPublicacionesGustadasOtroUsuario.

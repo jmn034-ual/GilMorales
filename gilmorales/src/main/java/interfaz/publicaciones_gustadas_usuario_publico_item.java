@@ -1,6 +1,8 @@
 package interfaz;
 
-public class publicaciones_gustadas_usuario_publico_item {
+import vistas.VistaPublicacionesGustadasUsaurioPublicoItem;
+
+public class publicaciones_gustadas_usuario_publico_item extends VistaPublicacionesGustadasUsaurioPublicoItem{
 	private int _numeroVisualizaciones;
 //	private Label _visualizacionesL;
 //	private button _verPublicacionB;

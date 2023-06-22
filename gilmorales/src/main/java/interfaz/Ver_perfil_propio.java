@@ -40,9 +40,9 @@ public class Ver_perfil_propio extends Ver_tendencias {
 
 	public void Ver_publicaciones_gustadas__Usuario_registrado_() {
 		this.getBotonMeGustas().addClickListener(event ->{
-			this.getListaMeGustas().as(VerticalLayout.class).add(publicaciones_gustadas);
 			this.getListaMeGustas().setVisible(true);
 			this.getLayoutListaPublicaciones().setVisible(false);
+			this.getListaMeGustas().as(VerticalLayout.class).add(publicaciones_gustadas);
 		});
 	}
 

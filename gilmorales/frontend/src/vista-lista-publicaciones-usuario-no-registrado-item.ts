@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-lista-publicaciones-usuario-no-registrado-item')
 export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
@@ -25,7 +25,7 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
     <vaadin-avatar id="vaadinAvatar"></vaadin-avatar>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout id="layoutVideoPublicacion" style="flex-grow: 1;">
+  <vaadin-vertical-layout id="layoutVideoPublicacion" style="flex-grow: 1; flex-shrink: 0;">
    <vaadin-button theme="tertiary" id="botonNombreUsuario">
      NombreUsuario 
    </vaadin-button>

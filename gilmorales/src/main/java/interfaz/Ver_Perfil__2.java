@@ -1,6 +1,6 @@
 package interfaz;
 
-public class Ver_Perfil__2 extends Ver_tendencias {
+public class Ver_Perfil__2 extends Ver_perfil__1 {
 	public Lista_Top_Comentarios__Usuario_No_Registrado__item _lista_Top_Comentarios__Usuario_No_Registrado_;
 	public Lista_de_seguidores_item _lista_de_seguidores;
 	public Lista_de_segidos_item _lista_de_segidos;

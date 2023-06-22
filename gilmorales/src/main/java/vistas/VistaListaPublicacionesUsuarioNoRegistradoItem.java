@@ -77,7 +77,6 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	@Id("publicacion")
 	private Element publicacion;
 
-	
 	public Hr getLineaHorizontal() {
 		return lineaHorizontal;
 	}

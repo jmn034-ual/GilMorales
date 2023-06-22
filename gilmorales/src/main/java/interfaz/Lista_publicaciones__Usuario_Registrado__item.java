@@ -3,8 +3,11 @@ package interfaz;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 
+import bd_dcl.Publicacion;
+
 public class Lista_publicaciones__Usuario_Registrado__item extends Lista_Publicaciones__Usuario_no_registrado__item {
-//	private Button _seguirB;
+
+	//	private Button _seguirB;
 //	private Button _denunciarB;
 //	private Button _dar_me_gusta_publicacionB;
 //	private Button _comentarB;
@@ -13,17 +16,12 @@ public class Lista_publicaciones__Usuario_Registrado__item extends Lista_Publica
 	public Lista_publicaciones__Usuario_Registrado_ _lista_publicaciones__Usuario_Registrado_;
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
 	public Denunciar_publicacion _denunciar_publicacion;
-	
-	public Lista_publicaciones__Usuario_Registrado__item(String usuario, String localizacion, String descripcion,
-			String foto, String video) {
-		super(usuario, localizacion, descripcion, foto, video);
-		this.getVaadinButton().setVisible(true);
-		this.getLabelMeGustas().setVisible(false);
-		this.getLayoutBotonesUsuarioR().setVisible(true);
-		this.getLayoutComentar().setVisible(true);
-		
-	}
 
+	public Lista_publicaciones__Usuario_Registrado__item(Publicacion publicacion, Usuario_No_Registrado unr) {
+		super(publicacion, unr);
+		// TODO Auto-generated constructor stub
+	}
+	
 	public void Ver_publicacion_ajena() {
 		throw new UnsupportedOperationException();
 	}

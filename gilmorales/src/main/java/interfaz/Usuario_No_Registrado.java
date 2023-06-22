@@ -18,19 +18,13 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	private button _iniciarSesionB;
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
 	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado = new Lista_Publicaciones__Usuario_no_registrado_(this);
-	public Cabecera_Usuario_No_Registrado cabeceraUNR = new Cabecera_Usuario_No_Registrado();
-	Iniciar_Sesion__4 inicioSesion = new Iniciar_Sesion__4();
-//	Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
-//			"icons/icon.png", "videos/tiktok1.mp4");
-//	Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario2", "Nijar", "Una publicacion de prueba",
-//			"icons/luffy.jpg", "videos/tiktok1.mp4");
-	
+	public Cabecera_Usuario_No_Registrado cabeceraUNR;
+	Iniciar_Sesion__4 inicioSesion = new Iniciar_Sesion__4();	
 
 	public Usuario_No_Registrado() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-//		publicacionesNoRegistrado.anadirPublicacion(item1);
-//		publicacionesNoRegistrado.anadirPublicacion(item2);
+		cabeceraUNR = new Cabecera_Usuario_No_Registrado();
 		Lista_Publicaciones__Usuario_no_registrado_();
 		Iniciar_Sesion();
 		Cabecera_Usuario_No_Registrado();	
@@ -60,8 +54,12 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 			this.publicacionesNoRegistrado.setVisible(true);
 			this.getLayoutListaPublicaciones().setVisible(true);
 			this.cabeceraUNR._cabecera_TOP.setVisible(true);
+			this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
 		});
 		this.cabeceraUNR.getBotonBuscar().addClickListener(event ->{
+			System.out.println(this.getVaadinHorizontalLayout().getComponentCount());
+			if(this.getVaadinHorizontalLayout().getComponentCount() != 0)
+				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
 			this.getLayoutListaPublicaciones().setVisible(false);
 		});
 	}
