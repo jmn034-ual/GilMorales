@@ -28,6 +28,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
 	public Administrador admin;
 	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
+	public Ver_perfil__Administrador_ _ver_perfil_administrador_= new Ver_perfil__Administrador_();
 	
 	public Lista_Publicaciones__Administrador__item() {
 		
@@ -45,6 +46,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 		this.NumeroComentarios();
 		this.admin=admin;
 		this.Ver_comentarios__Administrador_();
+		this.VerPerfil();
 	}
 
 	public void Eliminar_publicacion__Administrador_() {
@@ -53,8 +55,8 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 
 	public void Ver_comentarios__Administrador_() {
 		this.getComentarios().addClickListener(event -> {
-			admin.getVaadinHorizontalLayout().removeAll();
-			admin.getVaadinHorizontalLayout().add(_ver_comentarios__Administrador_);
+			this.admin.getVaadinHorizontalLayout().removeAll();
+			this.admin.getVaadinHorizontalLayout().add(_ver_comentarios__Administrador_);
 		});
 	}
 
@@ -71,7 +73,10 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	}
 
 	public void VerPerfil() {
-		throw new UnsupportedOperationException();
+		this.getNombre().addClickListener(event->{
+			this.admin.getVaadinHorizontalLayout().removeAll();
+			//this.admin.getVaadinHorizontalLayout().add(_ver_perfil_administrador_);
+		});
 	}
 
 	public void NumeroVisualizaciones() {

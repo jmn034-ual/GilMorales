@@ -7,7 +7,7 @@ import com.vaadin.flow.component.textfield.TextArea;
 
 //import basededatos.iVer_perfil__Administrador_;
 
-public class Ver_perfil__Administrador_ {
+public class Ver_perfil__Administrador_{
 //	private Button _bloquearB;
 //	private IronIcon _fotoUsuario;
 //	private Label _nombreUsuarioL;
