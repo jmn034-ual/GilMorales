@@ -15,6 +15,8 @@ public class Lista_comentarios__Administrador__item extends VistaListaComentario
 		this.getComentarioL().setText("Este es un comentaio de prueba...");
 		this.getNumeroMeGusta().setText("0");
 		this.getMeGustaL().setText("Me Gustas");
+		this.getDenunciarB().setVisible(false);
+		this.getMeGustaB().setVisible(false);
 	}
 
 	public void Borrar_comentario() {

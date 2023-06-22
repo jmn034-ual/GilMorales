@@ -24,7 +24,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 //	private button _verPublicacionB;
 
 	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
-	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_ = new Ver_comentarios__Administrador_(null);
+	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_ = new Ver_comentarios__Administrador_(this);
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
 	public Administrador admin;
 	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
@@ -33,7 +33,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 		
 	}
 	
-	public Lista_Publicaciones__Administrador__item(String usuario, String localizacion, String descripcion, String foto, String video) {
+	public Lista_Publicaciones__Administrador__item(String usuario, String localizacion, String descripcion, String foto, String video, Administrador admin) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.getVaadinVerticalLayout5().as(VerticalLayout.class).add(new Video(video));
@@ -43,6 +43,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 		this.getFoto().setImage(foto);
 		this.Eliminar_publicacion__Administrador_();
 		this.NumeroComentarios();
+		this.admin=admin;
 		this.Ver_comentarios__Administrador_();
 	}
 
@@ -52,8 +53,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 
 	public void Ver_comentarios__Administrador_() {
 		this.getComentarios().addClickListener(event -> {
-			admin.getLayoutPublicaciones().setVisible(false);
-			admin.cabeceraTop.setVisible(false);
+			admin.getVaadinHorizontalLayout().removeAll();
 			admin.getVaadinHorizontalLayout().add(_ver_comentarios__Administrador_);
 		});
 	}
