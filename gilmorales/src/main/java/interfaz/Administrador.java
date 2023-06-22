@@ -24,12 +24,18 @@ public class Administrador extends VistaAdministradorPrincipal {
 		top.getLayoutListaResultadoBusqueda().setVisible(false);
 		this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(top);
 		this.Lista_Publicaciones__Administrador_();
+		
+		this.top.getBotonVerListaHashtag().addClickListener(event->{
+			this.getLayoutPublicaciones().as(VerticalLayout.class).removeAll();
+		});
+		
+		this.top.getBotonVerListaUsuarios().addClickListener(event->{
+			this.getLayoutPublicaciones().as(VerticalLayout.class).removeAll();
+		});
 	}
 	
 	public void Lista_Publicaciones__Administrador_() {
 		this.getLayoutPublicaciones().as(VerticalLayout.class).add(_lista_Publicaciones__Administrador_);
-		
-	
 	}
 
 	public void Cabecera_Administrador() {
