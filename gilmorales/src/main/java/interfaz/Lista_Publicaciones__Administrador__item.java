@@ -22,31 +22,17 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 //	private button _verComentariosB;
 //	private TextArea _descripcionTA;
 //	private button _verPublicacionB;
-	private boolean verComentarios = false;
 
 	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
-	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_;
+	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_ = new Ver_comentarios__Administrador_(null);
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
+	public Administrador admin;
 	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
 	
 	public Lista_Publicaciones__Administrador__item() {
 		
 	}
 	
-	
-	
-	public boolean getVerComentarios() {
-		return verComentarios;
-	}
-
-
-
-	public void setVerComentarios(boolean verComentarios) {
-		this.verComentarios = verComentarios;
-	}
-
-
-
 	public Lista_Publicaciones__Administrador__item(String usuario, String localizacion, String descripcion, String foto, String video) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
@@ -66,9 +52,10 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 
 	public void Ver_comentarios__Administrador_() {
 		this.getComentarios().addClickListener(event -> {
-			_ver_comentarios__Administrador_= new Ver_comentarios__Administrador_(this);
-			this.setVerComentarios(true);
-			});
+			admin.getLayoutPublicaciones().setVisible(false);
+			admin.cabeceraTop.setVisible(false);
+			admin.getVaadinHorizontalLayout().add(_ver_comentarios__Administrador_);
+		});
 	}
 
 	public void Ver_publicacion__Administrador_() {
