@@ -3,6 +3,7 @@ import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 
 @customElement('vista-ver-comentarios')
 export class VistaVerComentarios extends LitElement {
@@ -20,7 +21,9 @@ export class VistaVerComentarios extends LitElement {
 <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; flex-grow: 1; height: 100%; width: 100%; z-index: 999;">
  <vaadin-vertical-layout theme="spacing" id="layoutInfo" style="margin: var(--lumo-space-xs); flex-shrink: 0; width: 20%; height: 99%; align-items: center;">
   <vaadin-horizontal-layout theme="spacing" id="layoutpropietario" style="align-self: center;">
-   <vaadin-vertical-layout theme="spacing" id="layoutFotoPerfil"></vaadin-vertical-layout>
+   <vaadin-vertical-layout theme="spacing" id="layoutFotoPerfil">
+    <vaadin-avatar id="fotoPerfil"></vaadin-avatar>
+   </vaadin-vertical-layout>
    <vaadin-vertical-layout id="vaadinVerticalLayout1">
     <vaadin-button theme="tertiary" id="botonNombreUsuario">
       NombreUsuario 

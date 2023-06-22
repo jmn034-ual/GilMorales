@@ -9,6 +9,8 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-ver-comentarios template.
@@ -81,7 +83,8 @@ public class VistaVerComentarios extends LitTemplate {
 	private TextField textFieldCmentario;
 	@Id("botonComentar")
 	private Button botonComentar;
-
+	@Id("fotoPerfil")
+	private Avatar fotoPerfil;
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
@@ -320,6 +323,16 @@ public class VistaVerComentarios extends LitTemplate {
 
 	public void setBotonComentar(Button botonComentar) {
 		this.botonComentar = botonComentar;
+	}
+	
+	
+
+	public Avatar getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(Avatar fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
 	}
 
 	/**

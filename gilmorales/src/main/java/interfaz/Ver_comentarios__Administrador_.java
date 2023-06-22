@@ -20,6 +20,7 @@ public class Ver_comentarios__Administrador_ extends VistaVerComentarios{
 		this.getBotonMeGusta().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getLayoutComentar().setVisible(false);
+		this.getFotoPerfil().setImage("icons/luffy.jpg");
 		_lista_comentarios__Administrador_.anadirComentario(comentario);
 		Lista_comentarios__Administrador_();
 	} 
