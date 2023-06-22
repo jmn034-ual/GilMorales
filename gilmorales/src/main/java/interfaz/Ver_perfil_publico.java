@@ -12,7 +12,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	public publicaciones_usuario_publico _publicaciones_usuario_publico;
 	public Ver_publicacciones_gustadas__Otro_usuario_ _ver_publicacciones_gustadas__Otro_usuario_;
 
-	public Ver_perfil_publico() {
+	public Ver_perfil_publico(Usuario_No_Registrado unr) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.getVerSeguidores().setVisible(false);
@@ -36,9 +36,9 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
     	this.getBotonPeticionAmistad().setVisible(false);
     	this.getLabelUsuarioPrivado().setVisible(false);
     	this.getListaMeGustas().setVisible(false);
-    	publicaciones_usuario_publico();
     	_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas__Otro_usuario_();
     	_publicaciones_usuario_publico = new publicaciones_usuario_publico();
+    	publicaciones_usuario_publico();
 	}
 	public void Seguir() {
 		throw new UnsupportedOperationException();

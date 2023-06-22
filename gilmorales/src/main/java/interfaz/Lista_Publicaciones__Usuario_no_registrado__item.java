@@ -66,7 +66,7 @@ public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaLista
 
 	public void Ver_perfil() {
 //		this.ver_perfil = new Ver_perfil_publico(publicacion.getPerteneceA());
-		this.ver_perfil = new Ver_perfil_publico();
+		this.ver_perfil = new Ver_perfil_publico(unr);
 		this.getBotonNombreUsuario().addClickListener(event ->{
 			unr.getLayoutListaPublicaciones().setVisible(false);
 			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
@@ -79,7 +79,7 @@ public class Lista_Publicaciones__Usuario_no_registrado__item extends VistaLista
 	}
 	
 	public void Ver_comentarios__Usuario_No_registrado_() {
-		verComentariosUNR = new Ver_comentarios__Usuario_No_registrado_(this);
+		verComentariosUNR = new Ver_comentarios__Usuario_No_registrado_(this, unr);
 		this.getBotonVerComentarios().addClickListener(event -> {
 			unr.getLayoutListaPublicaciones().setVisible(false);
 			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
