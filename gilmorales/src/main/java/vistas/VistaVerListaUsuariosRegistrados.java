@@ -19,10 +19,8 @@ import com.vaadin.flow.component.select.Select;
 @JsModule("./src/vista-ver-lista-usuarios-registrados.ts")
 public class VistaVerListaUsuariosRegistrados extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
 	@Id("layoutTitulo")
 	private HorizontalLayout layoutTitulo;
 	@Id("titulo")
@@ -31,16 +29,117 @@ public class VistaVerListaUsuariosRegistrados extends LitTemplate {
 	private HorizontalLayout layoutBotonOrdenar;
 	@Id("botonOrdenar")
 	private Select botonOrdenar;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
 	@Id("vaadinListBox")
 	private Element vaadinListBox;
-	@Id("layoutVerticalLista")
-	private Element layoutVerticalLista;
+	@Id("vaadinItem1")
+	private Element vaadinItem1;
+	@Id("vaadinItem")
+	private Element vaadinItem;
 	@Id("layoutHorizontalLista")
 	private HorizontalLayout layoutHorizontalLista;
+	@Id("layoutVerticalLista")
+	private Element layoutVerticalLista;
+
+	
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+	public HorizontalLayout getLayoutTitulo() {
+		return layoutTitulo;
+	}
+
+
+	public void setLayoutTitulo(HorizontalLayout layoutTitulo) {
+		this.layoutTitulo = layoutTitulo;
+	}
+
+
+	public H1 getTitulo() {
+		return titulo;
+	}
+
+
+	public void setTitulo(H1 titulo) {
+		this.titulo = titulo;
+	}
+
+
+	public HorizontalLayout getLayoutBotonOrdenar() {
+		return layoutBotonOrdenar;
+	}
+
+
+	public void setLayoutBotonOrdenar(HorizontalLayout layoutBotonOrdenar) {
+		this.layoutBotonOrdenar = layoutBotonOrdenar;
+	}
+
+
+	public Select getBotonOrdenar() {
+		return botonOrdenar;
+	}
+
+
+	public void setBotonOrdenar(Select botonOrdenar) {
+		this.botonOrdenar = botonOrdenar;
+	}
+
+
+	public Element getVaadinListBox() {
+		return vaadinListBox;
+	}
+
+
+	public void setVaadinListBox(Element vaadinListBox) {
+		this.vaadinListBox = vaadinListBox;
+	}
+
+
+	public Element getVaadinItem1() {
+		return vaadinItem1;
+	}
+
+
+	public void setVaadinItem1(Element vaadinItem1) {
+		this.vaadinItem1 = vaadinItem1;
+	}
+
+
+	public Element getVaadinItem() {
+		return vaadinItem;
+	}
+
+
+	public void setVaadinItem(Element vaadinItem) {
+		this.vaadinItem = vaadinItem;
+	}
+
+
+	public HorizontalLayout getLayoutHorizontalLista() {
+		return layoutHorizontalLista;
+	}
+
+
+	public void setLayoutHorizontalLista(HorizontalLayout layoutHorizontalLista) {
+		this.layoutHorizontalLista = layoutHorizontalLista;
+	}
+
+
+	public Element getLayoutVerticalLista() {
+		return layoutVerticalLista;
+	}
+
+
+	public void setLayoutVerticalLista(Element layoutVerticalLista) {
+		this.layoutVerticalLista = layoutVerticalLista;
+	}
+
 
 	/**
      * Creates a new VistaVerListaUsuariosRegistrados.

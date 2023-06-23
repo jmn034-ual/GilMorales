@@ -2,9 +2,9 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-messages/src/vaadin-message-input-text-area.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver-publicacion-usuario-registrado')
 export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
@@ -20,7 +20,6 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
  render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
- <vaadin-horizontal-layout id="cabecera" style="width: 100%; flex-grow: 0;"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 100%;">
   <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; width: 100%;">
    <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; margin: var(--lumo-space-xs);">
@@ -43,13 +42,13 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
      </vaadin-vertical-layout>
      <vaadin-vertical-layout id="botonDenunciar" style="flex-grow: 1; flex-direction: row; flex-shrink: 0; justify-content: flex-end;">
       <vaadin-button id="botonSeguir" style="align-self: center; margin: var(--lumo-space-xs);">
-       Seguir
+        Seguir 
       </vaadin-button>
       <vaadin-button id="vaadinButton" style="align-self: center; margin: var(--lumo-space-xs);">
-       Denunciar
+        Denunciar 
       </vaadin-button>
       <vaadin-button style="align-self: center; margin: var(--lumo-space-xs);" id="vaadinButton1">
-       Eliminar
+        Eliminar 
       </vaadin-button>
      </vaadin-vertical-layout>
     </vaadin-horizontal-layout>

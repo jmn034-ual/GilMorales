@@ -18,14 +18,17 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @JsModule("./src/vista-lista-hashtags.ts")
 public class VistaListaHashtags extends LitTemplate {
 
-    @Id("h1")
-	private H1 h1;
+
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
 
 	/**
      * Creates a new VistaListaHashtags.

@@ -1,7 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-lista-usuarios-item')
 export class VistaListaUsuariosItem extends LitElement {
@@ -16,13 +17,13 @@ export class VistaListaUsuariosItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; justify-content: center;">
- <vaadin-vertical-layout theme="spacing" id="layoutPublicacion"></vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" id="labelInformacion" style="flex-grow: 0;">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout">
+ <vaadin-vertical-layout id="layoutPublicacion" style="flex-shrink: 1; padding: 0%; align-items: flex-end;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="labelInformacion" style="flex-grow: 1; flex-shrink: 0; align-items: flex-start;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1">
-   <vaadin-vertical-layout theme="spacing" id="layoutFotoperfil"></vaadin-vertical-layout>
+   <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
    <vaadin-button theme="tertiary" id="botonNombreUsuario">
-    NombreUsuario
+     NombreUsuario 
    </vaadin-button>
   </vaadin-horizontal-layout>
   <label id="labelNombreCompleto">Nombre Completo Usuario</label>

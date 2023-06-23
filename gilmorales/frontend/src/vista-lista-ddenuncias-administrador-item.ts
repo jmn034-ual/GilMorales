@@ -1,6 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 
@@ -20,7 +21,7 @@ export class VistaListaDdenunciasAdministradorItem extends LitElement {
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="vaadinHorizontalLayout">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center; width: 50%; height: 30%;">
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 40%; height: 100%;">
-   <vaadin-avatar id="vaadinAvatar"></vaadin-avatar>
+   <vaadin-avatar id="vaadinAvatar" style="width: 100%; height: 100%;"></vaadin-avatar>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="align-items: center;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center;">

@@ -41,6 +41,163 @@ public class VistaVerHashtag extends LitTemplate {
 	private Element layoutLista;
 	@Id("layoutHorizontal")
 	private HorizontalLayout layoutHorizontal;
+	
+	
+	
+
+	public Element getCabecera() {
+		return cabecera;
+	}
+
+
+
+
+	public void setCabecera(Element cabecera) {
+		this.cabecera = cabecera;
+	}
+
+
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+
+	public HorizontalLayout getLayoutDatosHashtag() {
+		return layoutDatosHashtag;
+	}
+
+
+
+
+	public void setLayoutDatosHashtag(HorizontalLayout layoutDatosHashtag) {
+		this.layoutDatosHashtag = layoutDatosHashtag;
+	}
+
+
+
+
+	public Element getImagenHashtag() {
+		return imagenHashtag;
+	}
+
+
+
+
+	public void setImagenHashtag(Element imagenHashtag) {
+		this.imagenHashtag = imagenHashtag;
+	}
+
+
+
+
+	public Element getLayoutInformacionHashtag() {
+		return layoutInformacionHashtag;
+	}
+
+
+
+
+	public void setLayoutInformacionHashtag(Element layoutInformacionHashtag) {
+		this.layoutInformacionHashtag = layoutInformacionHashtag;
+	}
+
+
+
+
+	public H2 getH2() {
+		return h2;
+	}
+
+
+
+
+	public void setH2(H2 h2) {
+		this.h2 = h2;
+	}
+
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+
+
+
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
+
+
+
+	public Label getLabelNumVisualizaciones() {
+		return labelNumVisualizaciones;
+	}
+
+
+
+
+	public void setLabelNumVisualizaciones(Label labelNumVisualizaciones) {
+		this.labelNumVisualizaciones = labelNumVisualizaciones;
+	}
+
+
+
+
+	public Element getLayoutLista() {
+		return layoutLista;
+	}
+
+
+
+
+	public void setLayoutLista(Element layoutLista) {
+		this.layoutLista = layoutLista;
+	}
+
+
+
+
+	public HorizontalLayout getLayoutHorizontal() {
+		return layoutHorizontal;
+	}
+
+
+
+
+	public void setLayoutHorizontal(HorizontalLayout layoutHorizontal) {
+		this.layoutHorizontal = layoutHorizontal;
+	}
+
+
+
 
 	/**
      * Creates a new VistaVerHashtag.

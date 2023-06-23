@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-usuarios-item template.
@@ -19,7 +20,8 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-lista-usuarios-item.ts")
 public class VistaListaUsuariosItem extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
+
+	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("layoutPublicacion")
 	private Element layoutPublicacion;
@@ -27,14 +29,95 @@ public class VistaListaUsuariosItem extends LitTemplate {
 	private Element labelInformacion;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("layoutFotoperfil")
-	private Element layoutFotoperfil;
+	@Id("fotoPerfil")
+	private Avatar fotoPerfil;
 	@Id("botonNombreUsuario")
 	private Button botonNombreUsuario;
 	@Id("labelNombreCompleto")
 	private Label labelNombreCompleto;
 	@Id("labelDescripcion")
 	private Label labelDescripcion;
+
+	
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+	public Element getLayoutPublicacion() {
+		return layoutPublicacion;
+	}
+
+
+	public void setLayoutPublicacion(Element layoutPublicacion) {
+		this.layoutPublicacion = layoutPublicacion;
+	}
+
+
+	public Element getLabelInformacion() {
+		return labelInformacion;
+	}
+
+
+	public void setLabelInformacion(Element labelInformacion) {
+		this.labelInformacion = labelInformacion;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+	public Avatar getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+
+	public void setFotoPerfil(Avatar fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+
+	public Button getBotonNombreUsuario() {
+		return botonNombreUsuario;
+	}
+
+
+	public void setBotonNombreUsuario(Button botonNombreUsuario) {
+		this.botonNombreUsuario = botonNombreUsuario;
+	}
+
+
+	public Label getLabelNombreCompleto() {
+		return labelNombreCompleto;
+	}
+
+
+	public void setLabelNombreCompleto(Label labelNombreCompleto) {
+		this.labelNombreCompleto = labelNombreCompleto;
+	}
+
+
+	public Label getLabelDescripcion() {
+		return labelDescripcion;
+	}
+
+
+	public void setLabelDescripcion(Label labelDescripcion) {
+		this.labelDescripcion = labelDescripcion;
+	}
+
 
 	/**
      * Creates a new VistaListaUsuariosItem.

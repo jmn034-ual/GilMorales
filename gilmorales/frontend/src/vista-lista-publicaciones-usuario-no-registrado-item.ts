@@ -18,7 +18,7 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; z-index: 1000;" id="layoutPublicacion">
+<vaadin-horizontal-layout class="content" style="height: 100%; width: 100%;" id="layoutPublicacion">
  <vaadin-vertical-layout id="vaadinVerticalLayout">
   <vaadin-vertical-layout theme="spacing-s" id="fotoPerfil">
    <vaadin-avatar id="vaadinAvatar"></vaadin-avatar>

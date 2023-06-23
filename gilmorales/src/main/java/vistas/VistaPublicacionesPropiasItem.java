@@ -19,20 +19,57 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-publicaciones-propias-item.ts")
 public class VistaPublicacionesPropiasItem extends LitTemplate {
 
-    @Id("layoutFoto")
-	private Element layoutFoto;
-	@Id("botonNombreUsuario")
-	private Button botonNombreUsuario;
-	@Id("botonSeguir")
-	private Button botonSeguir;
-	@Id("layoutVideo")
-	private Element layoutVideo;
+    
+
 	@Id("layoutItem")
 	private Element layoutItem;
 	@Id("layoutPublicacion")
 	private Element layoutPublicacion;
+	@Id("layoutVideo")
+	private Element layoutVideo;
 	@Id("numVisualizaciones")
 	private Label numVisualizaciones;
+
+	
+	public Element getLayoutItem() {
+		return layoutItem;
+	}
+
+
+	public void setLayoutItem(Element layoutItem) {
+		this.layoutItem = layoutItem;
+	}
+
+
+	public Element getLayoutPublicacion() {
+		return layoutPublicacion;
+	}
+
+
+	public void setLayoutPublicacion(Element layoutPublicacion) {
+		this.layoutPublicacion = layoutPublicacion;
+	}
+
+
+	public Element getLayoutVideo() {
+		return layoutVideo;
+	}
+
+
+	public void setLayoutVideo(Element layoutVideo) {
+		this.layoutVideo = layoutVideo;
+	}
+
+
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
 
 	/**
      * Creates a new VistaPublicacionesPropiasItem.

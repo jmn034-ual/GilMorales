@@ -4,7 +4,9 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Label;
 
-public class Publicaciones_gustadas_item {
+import vistas.VistaPublicacionesGustadasItem;
+
+public class Publicaciones_gustadas_item extends VistaPublicacionesGustadasItem{
 	private int _numeroVisualizaciones;
 	private Div _video;
 	private Label _visualizacionesL;

@@ -22,8 +22,6 @@ import com.vaadin.flow.component.textfield.TextArea;
 @JsModule("./src/vista-editar-perfil.ts")
 public class VistaEditarPerfil extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("layoutEditarPerfil")
 	private Element layoutEditarPerfil;
 	@Id("layoutTitulo")
@@ -70,6 +68,190 @@ public class VistaEditarPerfil extends LitTemplate {
 	private Button botonCancelar;
 	@Id("botonGuardar")
 	private Button botonGuardar;
+
+	public Element getLayoutEditarPerfil() {
+		return layoutEditarPerfil;
+	}
+
+	public void setLayoutEditarPerfil(Element layoutEditarPerfil) {
+		this.layoutEditarPerfil = layoutEditarPerfil;
+	}
+
+	public HorizontalLayout getLayoutTitulo() {
+		return layoutTitulo;
+	}
+
+	public void setLayoutTitulo(HorizontalLayout layoutTitulo) {
+		this.layoutTitulo = layoutTitulo;
+	}
+
+	public H2 getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(H2 titulo) {
+		this.titulo = titulo;
+	}
+
+	public HorizontalLayout getLayoutFoto() {
+		return layoutFoto;
+	}
+
+	public void setLayoutFoto(HorizontalLayout layoutFoto) {
+		this.layoutFoto = layoutFoto;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Label getLabelFoto() {
+		return labelFoto;
+	}
+
+	public void setLabelFoto(Label labelFoto) {
+		this.labelFoto = labelFoto;
+	}
+
+	public Element getLayoutImagen() {
+		return layoutImagen;
+	}
+
+	public void setLayoutImagen(Element layoutImagen) {
+		this.layoutImagen = layoutImagen;
+	}
+
+	public Button getBotonCambiar() {
+		return botonCambiar;
+	}
+
+	public void setBotonCambiar(Button botonCambiar) {
+		this.botonCambiar = botonCambiar;
+	}
+
+	public HorizontalLayout getLayoutNombreUsuario() {
+		return layoutNombreUsuario;
+	}
+
+	public void setLayoutNombreUsuario(HorizontalLayout layoutNombreUsuario) {
+		this.layoutNombreUsuario = layoutNombreUsuario;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public Label getLabelNombreUsuario() {
+		return labelNombreUsuario;
+	}
+
+	public void setLabelNombreUsuario(Label labelNombreUsuario) {
+		this.labelNombreUsuario = labelNombreUsuario;
+	}
+
+	public TextField getTextFieldNombreUsuario() {
+		return textFieldNombreUsuario;
+	}
+
+	public void setTextFieldNombreUsuario(TextField textFieldNombreUsuario) {
+		this.textFieldNombreUsuario = textFieldNombreUsuario;
+	}
+
+	public HorizontalLayout getLayoutNombre() {
+		return layoutNombre;
+	}
+
+	public void setLayoutNombre(HorizontalLayout layoutNombre) {
+		this.layoutNombre = layoutNombre;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public Label getLabelNombre() {
+		return labelNombre;
+	}
+
+	public void setLabelNombre(Label labelNombre) {
+		this.labelNombre = labelNombre;
+	}
+
+	public TextField getTextFieldNombre() {
+		return textFieldNombre;
+	}
+
+	public void setTextFieldNombre(TextField textFieldNombre) {
+		this.textFieldNombre = textFieldNombre;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout3() {
+		return vaadinHorizontalLayout3;
+	}
+
+	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
+		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout4() {
+		return vaadinHorizontalLayout4;
+	}
+
+	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
+		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
+	}
+
+	public Label getLabelDecripcion() {
+		return labelDecripcion;
+	}
+
+	public void setLabelDecripcion(Label labelDecripcion) {
+		this.labelDecripcion = labelDecripcion;
+	}
+
+	public TextArea getTextAreaDescripcion() {
+		return textAreaDescripcion;
+	}
+
+	public void setTextAreaDescripcion(TextArea textAreaDescripcion) {
+		this.textAreaDescripcion = textAreaDescripcion;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout5() {
+		return vaadinHorizontalLayout5;
+	}
+
+	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
+		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
+	}
+
+	public Button getBotonCancelar() {
+		return botonCancelar;
+	}
+
+	public void setBotonCancelar(Button botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+
+	public Button getBotonGuardar() {
+		return botonGuardar;
+	}
+
+	public void setBotonGuardar(Button botonGuardar) {
+		this.botonGuardar = botonGuardar;
+	}
 
 	/**
      * Creates a new VistaEditarPerfil.

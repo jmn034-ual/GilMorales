@@ -2,6 +2,7 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 
 @customElement('vista-usuario-comercial-principal')
 export class VistaUsuarioComercialPrincipal extends LitElement {
@@ -21,18 +22,18 @@ export class VistaUsuarioComercialPrincipal extends LitElement {
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; width: 95%; align-self: center; height: 95%;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: flex-start; align-items: center; width: 100%;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="flex-grow: 0; justify-content: flex-end; width: 8%;">
-    <img id="fotoDePerfil">
+    <vaadin-avatar id="vaadinAvatar" style="width: 100%; height: 100%;"></vaadin-avatar>
    </vaadin-horizontal-layout>
    <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="flex-grow: 1; height: 90%;">
     <h2 id="nombreDeUsuario">NombreDeUsuario</h2>
     <h3 id="nombreDeEmpresa">NombreDeEmpresa</h3>
     <vaadin-button id="editarPerffilB">
-     Editar perfil 
+      Editar perfil 
     </vaadin-button>
    </vaadin-vertical-layout>
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="flex-grow: 1; justify-content: center;">
     <vaadin-button id="eliminarPublicacion" style="flex-grow: 0;">
-     Eliminar publicación
+      Eliminar publicación 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
