@@ -47,8 +47,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 	private Label motivoDenuncia;
 	@Id("vaadinAvatar")
 	private Avatar vaadinAvatar;
-	
-	
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
@@ -85,11 +83,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 	}
 
 
-
-	
-
-
-
 	public Avatar getVaadinAvatar() {
 		return vaadinAvatar;
 	}
@@ -99,6 +92,7 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 	public void setVaadinAvatar(Avatar vaadinAvatar) {
 		this.vaadinAvatar = vaadinAvatar;
 	}
+
 
 
 

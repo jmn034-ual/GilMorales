@@ -18,6 +18,20 @@ public class VistaListaPublicacionesComercial extends LitTemplate {
 
     @Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+    
+    
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
 
 	/**
      * Creates a new VistaListaPublicacionesComercial.

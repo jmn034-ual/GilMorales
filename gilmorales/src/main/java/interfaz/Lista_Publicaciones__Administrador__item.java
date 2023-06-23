@@ -22,21 +22,31 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 //	private button _verComentariosB;
 //	private TextArea _descripcionTA;
 //	private button _verPublicacionB;
+
 	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_;
-	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_;
+	public Ver_comentarios__Administrador_ _ver_comentarios__Administrador_ = new Ver_comentarios__Administrador_(this);
 	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
+	public Administrador admin;
 	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
+	public Ver_perfil__Administrador_ _ver_perfil_administrador_= new Ver_perfil__Administrador_();
 	
 	public Lista_Publicaciones__Administrador__item() {
 		
 	}
 	
-	public Lista_Publicaciones__Administrador__item(String video) {
+	public Lista_Publicaciones__Administrador__item(String usuario, String localizacion, String descripcion, String foto, String video, Administrador admin) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.getVaadinVerticalLayout5().as(VerticalLayout.class).add(new Video(video));
+		this.getNombre().setText(usuario);
+		this.getGeolocalizacion().setText(localizacion);
+		this.getDescripcion().setText(descripcion);
+		this.getFoto().setImage(foto);
 		this.Eliminar_publicacion__Administrador_();
 		this.NumeroComentarios();
+		this.admin=admin;
+		this.Ver_comentarios__Administrador_();
+		this.VerPerfil();
 	}
 
 	public void Eliminar_publicacion__Administrador_() {
@@ -44,7 +54,10 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	}
 
 	public void Ver_comentarios__Administrador_() {
-		
+		this.getComentarios().addClickListener(event -> {
+			this.admin.getVaadinHorizontalLayout().removeAll();
+			this.admin.getVaadinHorizontalLayout().add(_ver_comentarios__Administrador_);
+		});
 	}
 
 	public void Ver_publicacion__Administrador_() {
@@ -60,7 +73,10 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	}
 
 	public void VerPerfil() {
-		throw new UnsupportedOperationException();
+		this.getNombre().addClickListener(event->{
+			this.admin.getVaadinHorizontalLayout().removeAll();
+			this.admin.getVaadinHorizontalLayout().add(_ver_perfil_administrador_);
+		});
 	}
 
 	public void NumeroVisualizaciones() {

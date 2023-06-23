@@ -20,6 +20,17 @@ public class VistaListaTendencias extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+    
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
 
 	/**
      * Creates a new VistaListaTendencias.

@@ -21,6 +21,27 @@ public class VistaPublicacionesGustadas extends LitTemplate {
 	private Element layoutListaVertical;
 	@Id("layoutListaHorizontal")
 	private HorizontalLayout layoutListaHorizontal;
+	
+
+	public Element getLayoutListaVertical() {
+		return layoutListaVertical;
+	}
+
+
+	public void setLayoutListaVertical(Element layoutListaVertical) {
+		this.layoutListaVertical = layoutListaVertical;
+	}
+
+
+	public HorizontalLayout getLayoutListaHorizontal() {
+		return layoutListaHorizontal;
+	}
+
+
+	public void setLayoutListaHorizontal(HorizontalLayout layoutListaHorizontal) {
+		this.layoutListaHorizontal = layoutListaHorizontal;
+	}
+
 
 	/**
      * Creates a new VistaPublicacionesGustadas.

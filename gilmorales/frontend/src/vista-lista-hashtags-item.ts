@@ -17,10 +17,10 @@ export class VistaListaHashtagsItem extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content" id="vaadinHorizontalLayout">
- <vaadin-vertical-layout theme="spacing" id="video"></vaadin-vertical-layout>
- <vaadin-vertical-layout id="datosHashtags" style="justify-content: center; margin: var(--lumo-space-s); flex-grow: 1;">
+ <vaadin-vertical-layout id="video" style="align-items: flex-end;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout id="datosHashtags" style="flex-grow: 1; flex-shrink: 0; align-items: flex-start;">
   <vaadin-button theme="tertiary" id="nombreHashtags">
-   NombreHashtags
+    NombreHashtags 
   </vaadin-button>
   <vaadin-horizontal-layout theme="spacing-s" id="layoutVisualizaciones">
    <label id="numVisualizaciones">0</label>

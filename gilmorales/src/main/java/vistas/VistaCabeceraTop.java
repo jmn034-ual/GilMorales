@@ -72,9 +72,21 @@ public class VistaCabeceraTop extends LitTemplate {
 	private H3 tituloHashtags;
 	@Id("vaadinHorizontalLayout3")
 	private HorizontalLayout vaadinHorizontalLayout3;
+	public Element getLayoutAyuda() {
+		return layoutAyuda;
+	}
+
+
+	public void setLayoutAyuda(Element layoutAyuda) {
+		this.layoutAyuda = layoutAyuda;
+	}
+
+
 	@Id("layoutListaResultadoHashtags")
 	private Element layoutListaResultadoHashtags;
-
+	@Id("layoutAyuda")
+	private Element layoutAyuda;
+	
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}

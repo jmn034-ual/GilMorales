@@ -11,6 +11,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-ver-tendencias template.
@@ -22,11 +23,6 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-ver-tendencias.ts")
 public class VistaVerTendencias extends LitTemplate {
 
-    
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("layoutCabecera")
-	private HorizontalLayout layoutCabecera;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("layoutTendencias")
@@ -93,42 +89,53 @@ public class VistaVerTendencias extends LitTemplate {
 	private HorizontalLayout layoutHorizontalPublicaciones;
 	@Id("labelUsuarioPrivado")
 	private Label labelUsuarioPrivado;
+	@Id("verSeguidores")
+	private Button verSeguidores;
+	@Id("verSiguiendos")
+	private Button verSiguiendos;
+	@Id("fotoPerfil1")
+	private Avatar fotoPerfil1;
 	
 	
-	
 
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public Avatar getFotoPerfil1() {
+		return fotoPerfil1;
 	}
 
 
 
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setFotoPerfil1(Avatar fotoPerfil1) {
+		this.fotoPerfil1 = fotoPerfil1;
 	}
 
 
 
-
-	public HorizontalLayout getLayoutCabecera() {
-		return layoutCabecera;
+	public Button getVerSeguidores() {
+		return verSeguidores;
 	}
 
 
 
-
-	public void setLayoutCabecera(HorizontalLayout layoutCabecera) {
-		this.layoutCabecera = layoutCabecera;
+	public void setVerSeguidores(Button verSeguidores) {
+		this.verSeguidores = verSeguidores;
 	}
 
 
+
+	public Button getVerSiguiendos() {
+		return verSiguiendos;
+	}
+
+
+
+	public void setVerSiguiendos(Button verSiguiendos) {
+		this.verSiguiendos = verSiguiendos;
+	}
 
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
-
 
 
 
@@ -138,11 +145,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Element getLayoutTendencias() {
 		return layoutTendencias;
 	}
-
 
 
 
@@ -152,11 +157,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public H4 getTituloTendencias() {
 		return tituloTendencias;
 	}
-
 
 
 
@@ -166,11 +169,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Element getLayoutHashtags() {
 		return layoutHashtags;
 	}
-
 
 
 
@@ -180,11 +181,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonVerListaHashtags() {
 		return botonVerListaHashtags;
 	}
-
 
 
 
@@ -194,11 +193,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
 	}
-
 
 
 
@@ -208,11 +205,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public HorizontalLayout getVaadinHorizontalLayout1() {
 		return vaadinHorizontalLayout1;
 	}
-
 
 
 
@@ -222,11 +217,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Element getFotoPerfil() {
 		return fotoPerfil;
 	}
-
 
 
 
@@ -236,11 +229,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Element getVaadinVerticalLayout2() {
 		return vaadinVerticalLayout2;
 	}
-
 
 
 
@@ -250,11 +241,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public H3 getNombreUsuario() {
 		return nombreUsuario;
 	}
-
 
 
 
@@ -264,11 +253,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public H4 getNombreYapellidos() {
 		return nombreYapellidos;
 	}
-
 
 
 
@@ -278,11 +265,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonSeguir() {
 		return botonSeguir;
 	}
-
 
 
 
@@ -292,11 +277,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonEditarPerfil() {
 		return botonEditarPerfil;
 	}
-
 
 
 
@@ -306,11 +289,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonPeticionAmistad() {
 		return botonPeticionAmistad;
 	}
-
 
 
 
@@ -320,11 +301,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Element getVaadinVerticalLayout3() {
 		return vaadinVerticalLayout3;
 	}
-
 
 
 
@@ -334,11 +313,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonDenunciar() {
 		return botonDenunciar;
 	}
-
 
 
 
@@ -348,11 +325,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonModificarPerfil() {
 		return botonModificarPerfil;
 	}
-
 
 
 
@@ -362,11 +337,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonEliminarPublicacion() {
 		return botonEliminarPublicacion;
 	}
-
 
 
 
@@ -376,11 +349,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public HorizontalLayout getLayoutDatosPerfil() {
 		return layoutDatosPerfil;
 	}
-
 
 
 
@@ -390,11 +361,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getNumSiguiendo() {
 		return numSiguiendo;
 	}
-
 
 
 
@@ -404,11 +373,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getLabelSiguiendo() {
 		return labelSiguiendo;
 	}
-
 
 
 
@@ -418,11 +385,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getNumSeguidores() {
 		return numSeguidores;
 	}
-
 
 
 
@@ -432,11 +397,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getLabelSeguidores() {
 		return labelSeguidores;
 	}
-
 
 
 
@@ -446,11 +409,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getNumMeGustas() {
 		return numMeGustas;
 	}
-
 
 
 
@@ -460,11 +421,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getLabelMeGustas() {
 		return labelMeGustas;
 	}
-
 
 
 
@@ -474,11 +433,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public HorizontalLayout getLayoutDescripcion() {
 		return layoutDescripcion;
 	}
-
 
 
 
@@ -488,11 +445,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getLabelDescripcion() {
 		return labelDescripcion;
 	}
-
 
 
 
@@ -502,11 +457,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public HorizontalLayout getLayoutBonoes() {
 		return layoutBonoes;
 	}
-
 
 
 
@@ -516,11 +469,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonVideos() {
 		return botonVideos;
 	}
-
 
 
 
@@ -530,11 +481,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Button getBotonMeGustas() {
 		return botonMeGustas;
 	}
-
 
 
 
@@ -544,11 +493,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Element getLayoutListaPublicaciones() {
 		return layoutListaPublicaciones;
 	}
-
 
 
 
@@ -558,11 +505,9 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public HorizontalLayout getLayoutHorizontalPublicaciones() {
 		return layoutHorizontalPublicaciones;
 	}
-
 
 
 
@@ -572,18 +517,15 @@ public class VistaVerTendencias extends LitTemplate {
 
 
 
-
 	public Label getLabelUsuarioPrivado() {
 		return labelUsuarioPrivado;
 	}
 
 
 
-
 	public void setLabelUsuarioPrivado(Label labelUsuarioPrivado) {
 		this.labelUsuarioPrivado = labelUsuarioPrivado;
 	}
-
 
 
 

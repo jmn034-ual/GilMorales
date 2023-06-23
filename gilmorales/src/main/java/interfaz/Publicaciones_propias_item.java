@@ -3,7 +3,9 @@ package interfaz;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import TikTok.Publicacion;
 import vistas.VistaPublicacionesPropiasItem;
 
 public class Publicaciones_propias_item extends VistaPublicacionesPropiasItem{
@@ -13,7 +15,13 @@ public class Publicaciones_propias_item extends VistaPublicacionesPropiasItem{
 	private Button _verPubliacionB;
 	public Lista_Publicaciones_propias _publicaciones_propias;
 	public Ver_publicacion_propia _ver_publicacion_propia;
+	
+	public Publicaciones_propias_item(Publicacion p) {
+		this.getLayoutVideo().as(VerticalLayout.class).add(p.getVideo());
+		this.getNumVisualizaciones().setText(""+p.getNumVisualizaciones());
+	}
 
+	
 	public void Ver_publicacion_propia() {
 		throw new UnsupportedOperationException();
 	}

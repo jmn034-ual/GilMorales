@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Ver_publicacion__usuario_Registrado_ {
+import vistas.VistaVerPublicacionUsuarioRegistrado;
+
+public class Ver_publicacion__usuario_Registrado_ extends VistaVerPublicacionUsuarioRegistrado{
 //	private Video _video;
 //	private int _numeroVisualizaciones;
 //	private Label _visualizacionesL;

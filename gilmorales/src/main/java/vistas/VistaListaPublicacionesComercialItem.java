@@ -20,10 +20,21 @@ public class VistaListaPublicacionesComercialItem extends LitTemplate {
 
     @Id("layoutVideo")
 	private HorizontalLayout layoutVideo;
-	@Id("div")
-	private Div div;
-	@Id("a")
-	private Element a;
+	
+	
+
+	public HorizontalLayout getLayoutVideo() {
+		return layoutVideo;
+	}
+
+
+
+	public void setLayoutVideo(HorizontalLayout layoutVideo) {
+		this.layoutVideo = layoutVideo;
+	}
+
+
+
 
 	/**
      * Creates a new VistaListaPublicacionesComercialItem.
