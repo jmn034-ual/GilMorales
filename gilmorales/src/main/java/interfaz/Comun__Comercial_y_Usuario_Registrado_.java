@@ -31,7 +31,7 @@ public class Comun__Comercial_y_Usuario_Registrado_ extends VistaCabecera{
 	public void Cerrar_sesion() {
 		this.getBotonCerrarSesion().addClickListener(event -> {
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());
+//			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Iniciar_Sesion__4());
 		});
 	}
 }

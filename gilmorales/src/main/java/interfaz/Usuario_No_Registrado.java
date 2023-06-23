@@ -10,6 +10,7 @@ import com.vaadin.flow.component.webcomponent.WebComponent;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.dom.Element;
 
+import basededatos.BDPrincipal;
 import ch.qos.logback.classic.pattern.RelativeTimeConverter;
 //import basededatos.iUsuario_No_Registrado;
 import vistas.VistaUsuarioNoRegistrado;
@@ -19,14 +20,16 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
 	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado = new Lista_Publicaciones__Usuario_no_registrado_(this);
 	public Cabecera_Usuario_No_Registrado cabeceraUNR;
-	Iniciar_Sesion__4 inicioSesion = new Iniciar_Sesion__4();	
+	Iniciar_Sesion__4 inicioSesion;
+	private BDPrincipal bd;
 
-	public Usuario_No_Registrado() {
+	public Usuario_No_Registrado(BDPrincipal bd) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.bd = bd;
 		cabeceraUNR = new Cabecera_Usuario_No_Registrado();
 		Lista_Publicaciones__Usuario_no_registrado_();
-		Iniciar_Sesion();
+//		Iniciar_Sesion();
 		Cabecera_Usuario_No_Registrado();	
 	}
 
@@ -66,6 +69,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 
 
 	public void Iniciar_Sesion() {
+		inicioSesion = new Iniciar_Sesion__4(bd);
 		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(inicioSesion);

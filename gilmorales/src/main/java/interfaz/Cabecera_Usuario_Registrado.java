@@ -5,16 +5,20 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.dom.Element;
 
+import bd_dcl.UsuarioRegistrado;
+
 public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Registrado_ {
 
 	public Usuario_Registrado _usuario_Registrado;
 	public Ver_notificaciones _ver_notificaciones = new Ver_notificaciones();
-	public Ver_perfil_propio _ver_perfil_propio =  new Ver_perfil_propio();
+	public Ver_perfil_propio _ver_perfil_propio;
 	public Realizar_busqueda _realizar_busqueda;
 	public Cabecera_TOP _cabecera_TOP = new Cabecera_TOP();
+	private UsuarioRegistrado ur;
 	
-	public Cabecera_Usuario_Registrado() {
+	public Cabecera_Usuario_Registrado(UsuarioRegistrado ur) {
 		super();
+		this.ur = ur;
     	Cabecera_TOP();
     	this.getBotonAniadir().addClickListener(event ->{
 			this._realizar_busqueda.setVisible(false);
@@ -53,6 +57,7 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	}
 
 	public void Ver_perfil_propio() {
+		_ver_perfil_propio =  new Ver_perfil_propio(ur);
 		this.getBotonPerfil().addClickListener(event -> {
 //			this._realizar_busqueda.setVisible(false);
 			this.getVaadinVerticalLayout1().setVisible(true);

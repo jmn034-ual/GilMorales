@@ -29,7 +29,7 @@ export class VistaEditarPerfil extends LitElement {
     <label id="labelFoto" style="align-self: center;">Foto de perfil:</label>
    </vaadin-horizontal-layout>
    <vaadin-vertical-layout theme="spacing" id="layoutImagen">
-    <vaadin-avatar></vaadin-avatar>
+    <vaadin-avatar id="fotoPerfil"></vaadin-avatar>
    </vaadin-vertical-layout>
    <vaadin-button id="botonCambiar" style="align-self: center;">
      Cambiar 

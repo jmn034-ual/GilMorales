@@ -6,19 +6,22 @@ import com.vaadin.flow.component.icon.IronIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 
+import bd_dcl.UsuarioRegistrado;
+
 public class Ver_perfil_propio extends Ver_tendencias {
 	
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	public Ver_publicaciones_gustadas__Usuario_registrado_ publicaciones_gustadas = new Ver_publicaciones_gustadas__Usuario_registrado_();
 	public Ver_publicaciones_propias _ver_publicaciones_propias = new Ver_publicaciones_propias();
-	public Ver_seguidores _ver_seguidores = new Ver_seguidores();
-	public Ver_seguidos _ver_seguidos = new Ver_seguidos();
-	public Editar_perfil _editar_perfil = new Editar_perfil();
-	public Configurar_perfil _configurar_perfil = new Configurar_perfil();
-	public Eliminar_publicaciones _eliminar_publicaciones = new Eliminar_publicaciones();
+	public Ver_seguidores _ver_seguidores;
+	public Ver_seguidos _ver_seguidos;
+	public Editar_perfil _editar_perfil;
+	public Configurar_perfil _configurar_perfil;
+	public Eliminar_publicaciones _eliminar_publicaciones;
+	private UsuarioRegistrado ur;
 	
-	public Ver_perfil_propio() {
+	public Ver_perfil_propio(UsuarioRegistrado ur) {
 		super();
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
@@ -29,6 +32,9 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	this.getLabelUsuarioPrivado().setVisible(false);
     	this.getBotonPeticionAmistad().setVisible(false);
     	this.getListaMeGustas().setVisible(false);
+    	this.getNombreUsuario().setText(ur.getNombreUsuario());
+    	this.getNombreYapellidos().setText(ur.getNombre() + " " + ur.getApellidos());
+    	this.ur = ur;
     	Ver_publicaciones_propias();
     	Ver_seguidores();
     	Ver_seguidos();
@@ -55,6 +61,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidores() {
+		 _ver_seguidores = new Ver_seguidores(ur);
 		this.getVerSeguidores().addClickListener(event ->{
 			this._ver_seguidores.setVisible(true);
 			this._ver_seguidos.setVisible(false);
@@ -64,6 +71,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidos() {
+		_ver_seguidos = new Ver_seguidos(ur);
 		this.getVerSiguiendos().addClickListener(event ->{
 			this._ver_seguidos.setVisible(true);
 			this._ver_seguidores.setVisible(false);
@@ -73,6 +81,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Editar_perfil() {
+		_editar_perfil = new Editar_perfil(ur);
 		this.getBotonEditarPerfil().addClickListener(event ->{
 			this._editar_perfil.setVisible(true);
 			this._ver_seguidores.setVisible(false);
@@ -82,6 +91,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Configurar_perfil() {
+		_configurar_perfil = new Configurar_perfil(ur);
 		this.getBotonModificarPerfil().addClickListener(event ->{
 			this._configurar_perfil.setVisible(true);
 			this._ver_seguidores.setVisible(false);
@@ -91,6 +101,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Eliminar_publicaciones() {
+		_eliminar_publicaciones = new Eliminar_publicaciones(ur);
 		this.getBotonEliminarPublicacion().addClickListener(event ->{
 			this._eliminar_publicaciones.setVisible(true);
 			this.getLayoutTendencias().setVisible(false);

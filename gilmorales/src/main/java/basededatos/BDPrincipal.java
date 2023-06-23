@@ -6,6 +6,8 @@ import bd_dcl.UsuarioRegistrado;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.orm.PersistentException;
+
 import bd_dcl.Hashtag;
 import interfaz.Usuario_comercial;
 import interfaz.Ver_perfil__Administrador_;
@@ -111,7 +113,12 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, LocalDate aFechaNacimiento, boolean aTipoCuenta, String aFoto) {
-		throw new UnsupportedOperationException();
+		try {
+			this._c_usuario_registrado.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion, aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public List cargarUsuariosUNR() {
@@ -123,7 +130,14 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public UsuarioRegistrado cargarUsuarioRegistrado(String aNombreUsuario, String aPassword) {
-		throw new UnsupportedOperationException();
+		UsuarioRegistrado usuario = null;
+		try {
+			usuario = _c_usuario_registrado.cargarUsuarioRegistrado(aNombreUsuario, aPassword);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return usuario;
 	}
 
 	public void comentarPublicacion(int aIdPublicacion, String aNombreUsuario, String aComentario) {

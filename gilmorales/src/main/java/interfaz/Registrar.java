@@ -15,6 +15,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.server.StreamResource;
 
+import basededatos.BDPrincipal;
+import basededatos.iUsuario_No_Registrado;
 import vistas.VistaRegistrarusuario;
 
 public class Registrar extends VistaRegistrarusuario{
@@ -42,14 +44,18 @@ public class Registrar extends VistaRegistrarusuario{
 //	private ComboBox _tipoCuentaCB;
 //	private Button _descartarB;
 //	private Button _confirmarB;
-	public Iniciar_Sesion__4 _iniciar_sesion= new Iniciar_Sesion__4();
+	public Iniciar_Sesion__4 _iniciar_sesion;
+	iUsuario_No_Registrado  unr;
 	
-	public Registrar() {
+	public Registrar(BDPrincipal bd) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		unr = bd;
 		Descartar();
-		this.getSubirFoto().addClickListener(event->this.Subir_foto());
-		this.getConfirmar().addClickListener(event->this.Validar_registro());
+		Subir_foto();
+		Validar_registro();
+//		this.getSubirFoto().addClickListener(event->this.Subir_foto());
+//		this.getConfirmar().addClickListener(event->this.Validar_registro());
 	}
 	
 	
@@ -77,16 +83,12 @@ public class Registrar extends VistaRegistrarusuario{
 	}
 
 	public void Validar_registro() {
-		this.getNombreDeUsuarioTF().getValue();
-		this.getNombreTF().getValue();
-		this.getContrasenaTF().getValue();
-		this.getConfirmarTF().getValue();
-		this.getApellifosTF().getValue();
-		this.getComercial().getValue();
-		this.getNormal().getValue();
-		this.getDescripcionTF().getValue();
-		this.getEmail().getValue();
-		this.getFecha().getValue();
+		this.getConfirmar().addClickListener(event ->{
+			unr.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
+					this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue(), 
+					true, "icons/icon.png");
+		});
+	
 	}
 
 	public void Descartar() {
