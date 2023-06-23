@@ -15,7 +15,6 @@ public class Cabecera_Administrador extends VistaCabeceraAdmin{
 	public Gestionar_denuncias denuncias= new Gestionar_denuncias("Cristian","27/05/2002","123456","icons/icon.png");
 	public Realizar_busqueda _realizar_busqueda;
 	public Cerrar_sesion _cerrar_sesion;
-	
 	public Cabecera_Administrador() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");

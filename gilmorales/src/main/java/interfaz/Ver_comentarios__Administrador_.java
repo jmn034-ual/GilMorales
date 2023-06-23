@@ -11,6 +11,7 @@ public class Ver_comentarios__Administrador_ extends VistaVerComentarios{
 	public Lista_comentarios__Administrador_ _lista_comentarios__Administrador_ = new Lista_comentarios__Administrador_();
 	
 	Lista_comentarios__Administrador__item comentario = new Lista_comentarios__Administrador__item();
+	public Ver_perfil__Administrador_ ver_perfil = new Ver_perfil__Administrador_();
 	
 	public Ver_comentarios__Administrador_(Lista_Publicaciones__Administrador__item item) {
 		this.getStyle().set("width", "100%");
@@ -21,6 +22,17 @@ public class Ver_comentarios__Administrador_ extends VistaVerComentarios{
 		this.getBotonSeguir().setVisible(false);
 		this.getLayoutComentar().setVisible(false);
 		this.getFotoPerfil().setImage("icons/luffy.jpg");
+		
+		this.comentario.getNombreUsuario().addClickListener(event->{
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(ver_perfil);
+		});
+		
+		this.getBotonNombreUsuario().addClickListener(event->{
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(ver_perfil);
+		});
+		
 		_lista_comentarios__Administrador_.anadirComentario(comentario);
 		Lista_comentarios__Administrador_();
 	} 

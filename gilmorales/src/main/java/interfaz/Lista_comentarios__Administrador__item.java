@@ -1,11 +1,12 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.VistaListaComentariosUsuarioNoRegistradoItem;
 
 public class Lista_comentarios__Administrador__item extends VistaListaComentariosUsuarioNoRegistradoItem{
 //	private button _borrar_comentarioB;
 	public Lista_comentarios__Administrador_ _lista_comentarios__Administrador_ = new Lista_comentarios__Administrador_();
-	
 	
 	public Lista_comentarios__Administrador__item() {
 		this.getStyle().set("width", "100%");

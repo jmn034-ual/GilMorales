@@ -75,7 +75,7 @@ public class Lista_Publicaciones__Administrador__item extends VistaListaPublicac
 	public void VerPerfil() {
 		this.getNombre().addClickListener(event->{
 			this.admin.getVaadinHorizontalLayout().removeAll();
-			//this.admin.getVaadinHorizontalLayout().add(_ver_perfil_administrador_);
+			this.admin.getVaadinHorizontalLayout().add(_ver_perfil_administrador_);
 		});
 	}
 

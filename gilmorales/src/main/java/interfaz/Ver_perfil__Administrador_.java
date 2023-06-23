@@ -7,7 +7,7 @@ import com.vaadin.flow.component.textfield.TextArea;
 
 //import basededatos.iVer_perfil__Administrador_;
 
-public class Ver_perfil__Administrador_{
+public class Ver_perfil__Administrador_ extends Ver_tendencias{
 //	private Button _bloquearB;
 //	private IronIcon _fotoUsuario;
 //	private Label _nombreUsuarioL;
@@ -23,6 +23,13 @@ public class Ver_perfil__Administrador_{
 	public Bloquear_usuario _bloquear_usuario;
 	public Lista_publicaciones_usuario _lista_publicaciones_usuario;
 
+	public Ver_perfil__Administrador_() {
+		this.getBotonSeguir().setVisible(false);
+		this.getBotonPeticionAmistad().setVisible(false);
+		this.getBotonDenunciar().setVisible(false);
+		this.getLabelUsuarioPrivado().setVisible(false);
+	}
+	
 	public void Ver_publicaciones_gustadas() {
 		throw new UnsupportedOperationException();
 	}

@@ -32,6 +32,7 @@ public class Administrador extends VistaAdministradorPrincipal {
 		this.top.getBotonVerListaUsuarios().addClickListener(event->{
 			this.getLayoutPublicaciones().as(VerticalLayout.class).removeAll();
 		});
+		
 	}
 	
 	public void Lista_Publicaciones__Administrador_() {
