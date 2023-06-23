@@ -67,15 +67,11 @@ public class MainView extends VerticalLayout {
 //    	add(ini);
 //    	
 
+    	Usuario_No_Registrado usuario_nr = new Usuario_No_Registrado();
+    	add(usuario_nr);
     	
     	Administrador admin = new Administrador();
     	add(admin);
-    	
-    	
-    	Ver_denuncias denuncia = new Ver_denuncias();
-    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
-    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
-    	
     }
 
 }
