@@ -99,6 +99,7 @@ public class UsuariosRegistrados {
 				ur.setNombreUsuario(aNombreUsuario);
 				ur.setFechaNacimiento(aFechaNacimiento.toString());
 				ur.setFoto(aFoto);
+				ur.setPrivacidad(0);
 				UsuarioRegistradoDAO.save(ur);
 			}else {
 				UsuarioComercial uc = UsuarioComercialDAO.createUsuarioComercial();

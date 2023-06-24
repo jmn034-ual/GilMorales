@@ -71,7 +71,7 @@ public class Registrar extends VistaRegistrarusuario{
 	      byte[] bytes = event.getUpload().toString().getBytes();
 	      
 	      // Crear un recurso de flujo de bytes para la imagen cargada
-	      InputStream stream = new ByteArrayInputStream(bytes);
+	      InputStream stream = new ByteArrayInputStream(bytes); 
 	      StreamResource resource = new StreamResource("image.png", () -> stream);
 	      
 	      // Crear un componente de imagen para mostrar la imagen cargada

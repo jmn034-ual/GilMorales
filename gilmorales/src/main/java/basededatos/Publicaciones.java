@@ -14,6 +14,10 @@ import org.orm.PersistentTransaction;
 import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Publicacion;
 import bd_dcl.PublicacionDAO;
+import bd_dcl.UsuarioComercial;
+import bd_dcl.UsuarioComercialDAO;
+import bd_dcl.UsuarioRegistrado;
+import bd_dcl.UsuarioRegistradoDAO;
 
 public class Publicaciones {
 	public BDPrincipal _c_bd_publicacion;
@@ -32,7 +36,19 @@ public class Publicaciones {
 		Publicacion p = null;
 		try {
 			p = PublicacionDAO.createPublicacion();
-			p.setNombreUsuario(aNombreUsuario);
+			UsuarioRegistrado usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuarioID);
+			if(usuario.getNombreUsuario().equals(aNombreUsuario)) {
+				p.setNombreUsuarioComercial(null);
+				p.setNombreUsuario(aNombreUsuario);
+				p.setEsPublicada(null);
+				p.setPerteneceA(usuario);
+			}else {
+				UsuarioComercial uc = UsuarioComercialDAO.getUsuarioComercialByORMID(aUsuarioID);
+				p.setNombreUsuarioComercial(aNombreUsuario);
+				p.setNombreUsuario(null);
+				p.setPerteneceA(null);
+				p.setEsPublicada(uc);
+			}
 			p.setLocalizacion(aLocalizacion);
 			p.setDescripcion(aDescripcion);
 			p.setVideo(aVideo);
@@ -51,7 +67,8 @@ public class Publicaciones {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		return p;	}
+		return p;	
+	}
 
 	public void meGustaPublicacion(int aIdPublicacion, String aNombreUsuario) {
 		throw new UnsupportedOperationException();

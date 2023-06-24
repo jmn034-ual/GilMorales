@@ -3,6 +3,7 @@ package basededatos;
 import bd_dcl.UsuarioComercial;
 import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
+import bd_dcl.UsuarioRegistradoDAO;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -98,14 +99,14 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo,
 			int aUsuarioID) {
 		Publicacion p = null;
-//		try {
-////			UsuarioRegistrado usuario = usuario_registrado.buscarUsuario(aNombreUsuario);
-//			p = publicacion.addPublicacion(usuario.getNombreUsuario(), aLocalizacion, aDescripcion, aVideo, aUsuarioID);
+		try {
+			UsuarioRegistrado usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuarioID);
+			p = publicacion.addPublicacion(usuario.getNombreUsuario(), aLocalizacion, aDescripcion, aVideo, aUsuarioID);
 //			usuario.publica.add(p);
-//		}catch (PersistentException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		}catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return p;
 	}
 	
