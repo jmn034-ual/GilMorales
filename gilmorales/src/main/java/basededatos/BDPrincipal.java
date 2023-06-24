@@ -9,6 +9,7 @@ import java.util.List;
 import org.orm.PersistentException;
 
 import bd_dcl.Hashtag;
+import bd_dcl.Publicacion;
 import interfaz.Usuario_comercial;
 import interfaz.Ver_perfil__Administrador_;
 import interfaz.Administrador;
@@ -23,14 +24,14 @@ import interfaz.Usuario_Registrado;
 import interfaz.Iniciar_Sesion__4;
 
 public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrador_, iAdministrador, iUsuario_No_Registrado, iVer_notificaciones_usuario_publico, iVer_notificaciones_usuario_privado, iVer_perfil_publico, iVer_perfil_privado, iVer_perfil, iPlataformas_externas, iUsuario_Registrado, iIniciar_sesion {
-	public Comentarios _c_comentarios = new Comentarios();
-	public Notificaciones _c_notificaciones = new Notificaciones();
-	public UsuariosRegistrados _c_usuario_registrado = new UsuariosRegistrados();
-	public Publicaciones _c_publicacion = new Publicaciones();
-	public UsuariosComerciales _c_comercial = new UsuariosComerciales();
-	public Hashtags _c_hashtag = new Hashtags();
+	public Comentarios comentarios = new Comentarios();
+	public Notificaciones notificaciones = new Notificaciones();
+	public UsuariosRegistrados usuario_registrado = new UsuariosRegistrados();
+	public Publicaciones publicacion = new Publicaciones();
+	public UsuariosComerciales comercial = new UsuariosComerciales();
+	public Hashtags hashtag = new Hashtags();
 	public UsuariosAdministradores _c_usuarioAdministrador = new UsuariosAdministradores();
-	public Denuncias _c_denuncia = new Denuncias();
+	public Denuncias denuncia = new Denuncias();
 
 	public UsuarioComercial cargarUsuarioComercial() {
 		throw new UnsupportedOperationException();
@@ -114,7 +115,7 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, LocalDate aFechaNacimiento, boolean aTipoCuenta, String aFoto) {
 		try {
-			this._c_usuario_registrado.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion, aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
+			this.usuario_registrado.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion, aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -132,7 +133,7 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	public UsuarioRegistrado cargarUsuarioRegistrado(String aNombreUsuario, String aPassword) {
 		UsuarioRegistrado usuario = null;
 		try {
-			usuario = _c_usuario_registrado.cargarUsuarioRegistrado(aNombreUsuario, aPassword);
+			usuario = usuario_registrado.cargarUsuarioRegistrado(aNombreUsuario, aPassword);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -172,8 +173,20 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		throw new UnsupportedOperationException();
 	}
 
-	public void addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aFoto, String aVideo) {
-		throw new UnsupportedOperationException();
+	/**
+	 * Añadir una nueva publicaion.
+	 */
+	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aFoto, String aVideo) {
+		Publicacion p = null;
+		try {
+			UsuarioRegistrado usuario = usuario_registrado.buscarUsuario(aNombreUsuario);
+			p = publicacion.addPublicacion(usuario.getNombreUsuario(), aLocalizacion, aDescripcion, aVideo);
+			usuario.publica.add(p);
+		}catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return p;
 	}
 
 	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario) {

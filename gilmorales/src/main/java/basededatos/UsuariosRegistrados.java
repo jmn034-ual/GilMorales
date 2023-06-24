@@ -63,8 +63,22 @@ public class UsuariosRegistrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado buscarUsuario(String aNombreUsuario) {
-		throw new UnsupportedOperationException();
+	public UsuarioRegistrado buscarUsuario(String aNombreUsuario) throws PersistentException {
+		if(aNombreUsuario == "") return null;
+		List lista = null;
+		UsuarioRegistrado usuario = null;
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+			for(int i = 0; i < lista.size(); i++) {
+				usuario = (UsuarioRegistrado) lista.get(i);
+				if(usuario.getNombreUsuario().equals(aNombreUsuario)) return usuario;
+			}
+
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return usuario;
 	}
 
 	public List cargarListaUsuariosTOP() {

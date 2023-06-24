@@ -12,20 +12,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 	public Lista_publicaciones__Usuario_Registrado_ listaPublicaciones = new Lista_publicaciones__Usuario_Registrado_(this);
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	UsuarioRegistrado ur;
-
-//	Lista_publicaciones__Usuario_Registrado__item item1 = new Lista_publicaciones__Usuario_Registrado__item("usuario1", "Nijar", 
-//			"Una publicacion de prueba", "icons/icon.png", "videos/tiktok1.mp4");
-//	Lista_publicaciones__Usuario_Registrado__item item2 = new Lista_publicaciones__Usuario_Registrado__item("usuario1", "Nijar", 
-//			"Una publicacion de prueba", "icons/luffy.jpg", "videos/tiktok1.mp4");
-
-	public Usuario_Registrado() {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("height", "100%");
-//		listaPublicaciones.anadirPublicacion(item1);
-//		listaPublicaciones.anadirPublicacion(item2);
-		Cabecera_Usuario_Registrado();
-		Lista_publicaciones__Usuario_Registrado_();
-	}
+	
 	public Usuario_Registrado(UsuarioRegistrado ur, BDPrincipal bd) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");

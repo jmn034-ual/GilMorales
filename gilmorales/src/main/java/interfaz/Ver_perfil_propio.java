@@ -13,7 +13,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	public Ver_publicaciones_gustadas__Usuario_registrado_ publicaciones_gustadas = new Ver_publicaciones_gustadas__Usuario_registrado_();
-	public Ver_publicaciones_propias _ver_publicaciones_propias = new Ver_publicaciones_propias();
+	public Ver_publicaciones_propias _ver_publicaciones_propias;
 	public Ver_seguidores _ver_seguidores;
 	public Ver_seguidos _ver_seguidos;
 	public Editar_perfil _editar_perfil;
@@ -53,6 +53,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_publicaciones_propias() {
+		_ver_publicaciones_propias = new Ver_publicaciones_propias(ur);
 		this.getBotonVideos().addClickListener(event ->{
 			this.getListaMeGustas().setVisible(false);
 			this.getLayoutListaPublicaciones().setVisible(true);

@@ -19,8 +19,17 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	public Cabecera_Usuario_Registrado(UsuarioRegistrado ur) {
 		super();
 		this.ur = ur;
-    	Cabecera_TOP();
-    	this.getBotonAniadir().addClickListener(event ->{
+		this.addPubli = new Add_publicacion(ur);
+    	Cabecera_TOP();  
+    	Add_publicacion();
+    	volverInicio();
+    	Ver_perfil_propio();
+    	Ver_notificaciones();
+    	Realizar_busqueda();
+	}
+	@Override
+	public void Add_publicacion() {
+		this.getBotonAniadir().addClickListener(event->{
 			this._realizar_busqueda.setVisible(false);
 			this.getVaadinVerticalLayout1().setVisible(true);
 			this._ver_perfil_propio.setVisible(false);
@@ -28,14 +37,13 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 			this._ver_perfil_propio._ver_seguidos.setVisible(false);
     		this._cabecera_TOP.getCabeceraTop().setVisible(false);
     		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
-			this.Add_publicacion();
-		});   
-    	volverInicio();
-    	Ver_perfil_propio();
-    	Ver_notificaciones();
-    	Realizar_busqueda();
+			this.getBotonNotificaciones().setVisible(true);
+			this.getBotonPerfil().setVisible(true);
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
+			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(addPubli);
+		});
 	}
-
+	
 	public void Ver_notificaciones() {
 		this.getBotonNotificaciones().addClickListener(event -> {
 //			this._realizar_busqueda.setVisible(false);

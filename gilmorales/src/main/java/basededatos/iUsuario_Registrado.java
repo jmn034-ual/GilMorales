@@ -3,6 +3,7 @@ package basededatos;
 import java.util.List;
 
 import bd_dcl.Hashtag;
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 
 public interface iUsuario_Registrado {
@@ -25,7 +26,7 @@ public interface iUsuario_Registrado {
 
 	public void dejarSeguirUsuario(String aNombreUsuarioDejarSeguir, String aNombreUsuario);
 
-	public void addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aFoto, String aVideo);
+	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aFoto, String aVideo);
 
 	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario);
 
