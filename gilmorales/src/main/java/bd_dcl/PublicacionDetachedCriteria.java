@@ -31,6 +31,7 @@ public class PublicacionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final StringExpression nombreUsuario;
 	public final StringExpression fechaPublicacion;
 	public final StringExpression video;
+	public final StringExpression localizacion;
 	public final CollectionExpression tieneComentarios;
 	public final CollectionExpression gustaA;
 	public final IntegerExpression perteneceAId;
@@ -52,6 +53,7 @@ public class PublicacionDetachedCriteria extends AbstractORMDetachedCriteria {
 		nombreUsuario = new StringExpression("nombreUsuario", this.getDetachedCriteria());
 		fechaPublicacion = new StringExpression("fechaPublicacion", this.getDetachedCriteria());
 		video = new StringExpression("video", this.getDetachedCriteria());
+		localizacion = new StringExpression("localizacion", this.getDetachedCriteria());
 		tieneComentarios = new CollectionExpression("ORM_tieneComentarios", this.getDetachedCriteria());
 		gustaA = new CollectionExpression("ORM_gustaA", this.getDetachedCriteria());
 		perteneceAId = new IntegerExpression("perteneceA.ID", this.getDetachedCriteria());
@@ -74,6 +76,7 @@ public class PublicacionDetachedCriteria extends AbstractORMDetachedCriteria {
 		nombreUsuario = new StringExpression("nombreUsuario", this.getDetachedCriteria());
 		fechaPublicacion = new StringExpression("fechaPublicacion", this.getDetachedCriteria());
 		video = new StringExpression("video", this.getDetachedCriteria());
+		localizacion = new StringExpression("localizacion", this.getDetachedCriteria());
 		tieneComentarios = new CollectionExpression("ORM_tieneComentarios", this.getDetachedCriteria());
 		gustaA = new CollectionExpression("ORM_gustaA", this.getDetachedCriteria());
 		perteneceAId = new IntegerExpression("perteneceA.ID", this.getDetachedCriteria());

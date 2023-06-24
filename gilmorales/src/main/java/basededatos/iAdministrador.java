@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface iAdministrador {
 
-	public void cargarAdministrador();
+	public void cargarAdministrador(String aNombreAdmin, String aPassword);
 
 	public List cargarPublicacionesUsuarios();
 
@@ -22,7 +22,7 @@ public interface iAdministrador {
 
 	public void addFoto(String aFoto);
 
-	public void bloquearUsuario(String aNombreUsuario);
+	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID);
 
 	public List realizarBusqueda(String aBusqueda, Object aFiltro);
 

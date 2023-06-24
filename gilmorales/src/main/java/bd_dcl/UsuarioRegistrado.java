@@ -104,9 +104,6 @@ public class UsuarioRegistrado implements Serializable {
 	@Column(name="Password", nullable=true, length=255)	
 	private String password;
 	
-	@Column(name="Edad", nullable=false, length=10)	
-	private int edad;
-	
 	@ManyToMany(targetEntity=bd_dcl.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado", joinColumns={ @JoinColumn(name="UsuarioRegistradoID2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoID") })	
@@ -248,14 +245,6 @@ public class UsuarioRegistrado implements Serializable {
 	
 	public String getPassword() {
 		return password;
-	}
-	
-	public void setEdad(int value) {
-		this.edad = value;
-	}
-	
-	public int getEdad() {
-		return edad;
 	}
 	
 	private void setORM_Seguido(java.util.Set value) {

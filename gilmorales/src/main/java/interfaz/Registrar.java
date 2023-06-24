@@ -85,7 +85,7 @@ public class Registrar extends VistaRegistrarusuario{
 	public void Validar_registro() {
 		this.getConfirmar().addClickListener(event ->{
 			unr.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
-					this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue(), 
+					this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(), 
 					true, "icons/icon.png");
 		});
 	

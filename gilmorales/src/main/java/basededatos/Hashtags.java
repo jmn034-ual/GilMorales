@@ -1,8 +1,9 @@
 package basededatos;
 
+import basededatos.BDPrincipal;
+
 import java.util.List;
 import java.util.Vector;
-
 import bd_dcl.Hashtag;
 
 public class Hashtags {
@@ -21,7 +22,7 @@ public class Hashtags {
 		throw new UnsupportedOperationException();
 	}
 
-	public Hashtag buscarHashtag(int aIdHashtag, String aNombreHashtag) {
+	public List buscarHashtag(int aIdHashtag, String aNombreHashtag) {
 		throw new UnsupportedOperationException();
 	}
 

@@ -1,5 +1,7 @@
 package basededatos;
 
+import basededatos.BDPrincipal;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,17 +23,17 @@ public class Publicaciones {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminarPublicacion(int aID) {
+	public void eliminarPublicacion(int aIDPublicacion) {
 		throw new UnsupportedOperationException();
 	}
 
-	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo) throws PersistentException {
+	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		Publicacion p = null;
 		try {
 			p = PublicacionDAO.createPublicacion();
 			p.setNombreUsuario(aNombreUsuario);
-//			p.setLocalizacion(aLocalizacion);
+			p.setLocalizacion(aLocalizacion);
 			p.setDescripcion(aDescripcion);
 			p.setVideo(aVideo);
 			p.setFechaPublicacion(aVideo);
@@ -49,8 +51,7 @@ public class Publicaciones {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		return p;
-	}
+		return p;	}
 
 	public void meGustaPublicacion(int aIdPublicacion, String aNombreUsuario) {
 		throw new UnsupportedOperationException();

@@ -59,7 +59,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 			if(ur != null) {
 //				if(!rutaVideo.isEmpty()) {
 				this.publicacion = bd.addPublicacion(ur.getNombreUsuario(), this.getTextFielLocalizacion().getValue(),
-						this.getTextAreaDescripcion().getValue(), ur.getFoto(), "videos/tiktok1.mp4");
+						this.getTextAreaDescripcion().getValue(), "videos/tiktok1.mp4", ur.getID());
 //				}
 			}
 		});

@@ -14,8 +14,6 @@
 package bd_dcl;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-
 import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
@@ -107,6 +105,9 @@ public class Publicacion implements Serializable {
 	
 	@Column(name="Video", nullable=true, length=255)	
 	private String video;
+	
+	@Column(name="Localizacion", nullable=true, length=255)	
+	private String localizacion;
 	
 	@OneToMany(mappedBy="comentadoEn", targetEntity=bd_dcl.Comentario.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
@@ -212,6 +213,14 @@ public class Publicacion implements Serializable {
 		return video;
 	}
 	
+	public void setLocalizacion(String value) {
+		this.localizacion = value;
+	}
+	
+	public String getLocalizacion() {
+		return localizacion;
+	}
+	
 	private void setORM_TieneComentarios(java.util.Set value) {
 		this.ORM_tieneComentarios = value;
 	}
@@ -314,16 +323,6 @@ public class Publicacion implements Serializable {
 	
 	@Transient	
 	public final bd_dcl.HashtagSetCollection contiene = new bd_dcl.HashtagSetCollection(this, _ormAdapter, bd_dcl.ORMConstants.KEY_PUBLICACION_CONTIENE, bd_dcl.ORMConstants.KEY_HASHTAG_APARECE, bd_dcl.ORMConstants.KEY_MUL_MANY_TO_MANY);
-	
-	public void cargar_publicacion(LocalDate fechaPublicacion) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
-	
-	public void cargar_me_gustas(int idPublicacion) {
-		//TODO: Implement Method
-		throw new UnsupportedOperationException();
-	}
 	
 	public String toString() {
 		return String.valueOf(getIdPublicacion());

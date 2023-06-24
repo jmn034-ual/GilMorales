@@ -1,8 +1,9 @@
 package basededatos;
 
+import basededatos.BDPrincipal;
+
 import java.util.List;
 import java.util.Vector;
-
 import bd_dcl.Notificacion;
 import bd_dcl.UsuarioRegistrado;
 

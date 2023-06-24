@@ -79,7 +79,6 @@ public class UsuarioRegistradoSetCollection extends org.orm.util.ORMSet {
 	 * <li>apellidos</li>
 	 * <li>email</li>
 	 * <li>password</li>
-	 * <li>edad</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -99,7 +98,6 @@ public class UsuarioRegistradoSetCollection extends org.orm.util.ORMSet {
 	 * <li>apellidos</li>
 	 * <li>email</li>
 	 * <li>password</li>
-	 * <li>edad</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

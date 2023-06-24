@@ -1,6 +1,7 @@
 package basededatos;
 
-import java.time.LocalDate;
+import basededatos.BDPrincipal;
+
 import java.util.List;
 import java.util.Vector;
 
@@ -39,47 +40,43 @@ public class UsuariosRegistrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public void cambiarFotoPerfil(String aNombreUsuario, String aFoto) {
+	public void cambiarFotoPerfil(String aNombreUsuario, String aFoto, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void editarPerfilUR(String aNombreUsuario, String aNuevoNombreUsuario, String aNombre, String aDescripcion) {
+	public void editarPerfilUR(String aNombreUsuario, String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto, Object aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void seguirUsuario(String aNombreUsuarioASeguir, String aNombreUsuarioSigue) {
+	public void seguirUsuario(String aNombreUsuarioASeguir, String aNombreUsuarioSigue, int aUsuarioSeguidorID, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void dejarSeguirUsuario(String aNombreUsuarioDejarSeguir, String aNombreUsuario) {
+	public void dejarSeguirUsuario(String aNombreUsuarioDejarSeguir, String aNombreUsuario, int aUsuarioSeguidoID, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargarUsuariosTOP() {
+	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario) {
-		throw new UnsupportedOperationException();
-	}
-
-	public UsuarioRegistrado buscarUsuario(String aNombreUsuario) throws PersistentException {
-		if(aNombreUsuario == "") return null;
-		List lista = null;
-		UsuarioRegistrado usuario = null;
-		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-		try {
-			lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-			for(int i = 0; i < lista.size(); i++) {
-				usuario = (UsuarioRegistrado) lista.get(i);
-				if(usuario.getNombreUsuario().equals(aNombreUsuario)) return usuario;
-			}
-
-		} catch (Exception e) {
-			t.rollback();
-		}
-		return usuario;
-	}
+//	public List buscarUsuario(String aNombreUsuario) {
+//		if(aNombreUsuario == "") return null;
+//		List lista = null;
+//		UsuarioRegistrado usuario = null;
+//		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+//		try {
+//			lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+//			for(int i = 0; i < lista.size(); i++) {
+//				usuario = (UsuarioRegistrado) lista.get(i);
+//				if(usuario.getNombreUsuario().equals(aNombreUsuario)) return usuario;
+//			}
+//
+//		} catch (Exception e) {
+//			t.rollback();
+//		}
+//		return usuario;
+//		}
 
 	public List cargarListaUsuariosTOP() {
 		throw new UnsupportedOperationException();
@@ -89,8 +86,7 @@ public class UsuariosRegistrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, 
-			String aNombreUsuario, LocalDate aFechaNacimiento, boolean aTipoCuenta, String aFoto) throws PersistentException {
+	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			if(aTipoCuenta) {
@@ -102,7 +98,6 @@ public class UsuariosRegistrados {
 				ur.setDescripcion(aDescripcion);
 				ur.setNombreUsuario(aNombreUsuario);
 				ur.setFechaNacimiento(aFechaNacimiento.toString());
-				ur.setEdad(0);
 				ur.setFoto(aFoto);
 				UsuarioRegistradoDAO.save(ur);
 			}else {
@@ -120,18 +115,17 @@ public class UsuariosRegistrados {
 			t.commit();
 		}catch (Exception e) {
 			t.rollback();
-		}
-	}
+		}	}
 
 	public List cargarUsuariosUNR() {
 		throw new UnsupportedOperationException();
 	}
 
-	public void recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario) {
+	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void bloquearUsuario(String aNombreUsuario) {
+	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 }

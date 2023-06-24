@@ -1,8 +1,9 @@
 package basededatos;
 
+import basededatos.BDPrincipal;
+
 import java.util.List;
 import java.util.Vector;
-
 import bd_dcl.Comentario;
 
 public class Comentarios {
@@ -13,15 +14,15 @@ public class Comentarios {
 		throw new UnsupportedOperationException();
 	}
 
-	public void comentarPublicacion(int aIdPublicacion, String aNombreUsuario, String aComentario) {
+	public void comentarPublicacion(int aIdPublicacion, String aNombreUsuario, String aComentario, Object aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void borrarComentario(int aIdComentario, int aIdPublicacion, String aNombreUsuarioPropietario) {
+	public void borrarComentario(int aIdComentario, int aIdPublicacion, String aNombreUsuarioPropietario, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void meGustaComentario(int aIdComentario, String aNombreUsuario) {
+	public void meGustaComentario(int aIdComentario, String aNombreUsuario, Object aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 }

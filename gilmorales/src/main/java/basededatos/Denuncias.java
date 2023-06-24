@@ -1,8 +1,9 @@
 package basededatos;
 
+import basededatos.BDPrincipal;
+
 import java.util.List;
 import java.util.Vector;
-
 import bd_dcl.Denuncia;
 
 public class Denuncias {
@@ -17,15 +18,11 @@ public class Denuncias {
 		throw new UnsupportedOperationException();
 	}
 
-	public void denunciarUsuario(String aNombreUsuarioDenunciado, String aNombreUsuarioDenunciante, String aMotivo) {
+	public void denunciarUsuario(String aNombreUsuarioDenunciado, String aNombreUsuarioDenunciante, String aMotivo, int aUsuarioDenuncianteID, int aUsuarioDenunciadoID) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo, String aExplicacion) {
-		throw new UnsupportedOperationException();
-	}
-
-	public List cargarUsuariosMeGustas(int aIdPublicacion) {
+	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo, String aExplicacion, int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 
