@@ -9,8 +9,8 @@ public class Ver_lista_usuarios_registrados extends VistaVerListaUsuariosRegistr
 	public Cabecera_TOP _cabecera_TOP;
 	public lista_usuarios_registrados _lista_usuarios_registrados = new lista_usuarios_registrados();
 
-	lista_usuarios_registrados_item u1 = new lista_usuarios_registrados_item("Usuario1");
-	lista_usuarios_registrados_item u2 = new lista_usuarios_registrados_item("Usuario2");
+	public lista_usuarios_registrados_item u1 = new lista_usuarios_registrados_item("Usuario1");
+	public lista_usuarios_registrados_item u2 = new lista_usuarios_registrados_item("Usuario2");
 	
 	public Ver_lista_usuarios_registrados() {
 		this.getStyle().set("width", "100%");

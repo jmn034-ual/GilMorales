@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.avatar.Avatar;
 
 /**
@@ -84,7 +85,6 @@ public class VistaVerComentarios extends LitTemplate {
 	@Id("botonComentar")
 	private Button botonComentar;
 
-	
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
@@ -393,6 +393,7 @@ public class VistaVerComentarios extends LitTemplate {
 	public void setBotonComentar(Button botonComentar) {
 		this.botonComentar = botonComentar;
 	}
+	
 
 
 	/**

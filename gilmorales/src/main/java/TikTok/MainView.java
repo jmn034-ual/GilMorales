@@ -58,6 +58,7 @@ public class MainView extends VerticalLayout {
 
 		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
 
+
 			@Override
 			public void onComponentEvent(ClickEvent<Button> event) {
 				// TODO Auto-generated method stub
@@ -87,22 +88,6 @@ public class MainView extends VerticalLayout {
 				});
 			}
 		});
-
-		//    	Usuario_Registrado ur = new Usuario_Registrado();
-		//    	add(ur);
-
-
-
-
-		//
-		//    	Administrador admin = new Administrador();
-		//    	add(admin);
-		//    	
-		//    	
-		//    	Ver_denuncias denuncia = new Ver_denuncias();
-		//    	Gestionar_denuncias ges = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png",denuncia);
-		//    	admin._cabecera_Administrador.getGestionarDenunciasB().addClickListener(event->{remove(admin);add(ges);});
-
 	}
 
 }
