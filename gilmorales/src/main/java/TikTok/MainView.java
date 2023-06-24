@@ -88,6 +88,9 @@ public class MainView extends VerticalLayout {
 				});
 			}
 		});
+		
+//		Ver_publicacion_propia vp = new Ver_publicacion_propia(bd.addPublicacion("jmn034", null, null, "videos/tiktok1.mp4", 1));
+//		this.add(vp);
 	}
 
 }

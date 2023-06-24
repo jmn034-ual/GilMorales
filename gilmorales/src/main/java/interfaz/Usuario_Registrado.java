@@ -26,7 +26,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 		this.getListaPublicaciones().as(VerticalLayout.class).add(listaPublicaciones);
 	}
 	public void Cabecera_Usuario_Registrado() {
-		_cabecera_Usuario_Registrado = new Cabecera_Usuario_Registrado(ur);
+		_cabecera_Usuario_Registrado = new Cabecera_Usuario_Registrado(ur, this);
 		this.getCabecera().add(_cabecera_Usuario_Registrado);
 		this._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
 		this._cabecera_Usuario_Registrado.getBotonAniadir().addClickListener(event ->{
