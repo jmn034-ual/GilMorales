@@ -27,8 +27,16 @@ public class Publicaciones {
 		throw new UnsupportedOperationException();
 	}
 
-	public void eliminarPublicacion(int aIDPublicacion) {
-		throw new UnsupportedOperationException();
+	public void eliminarPublicacion(int aIDPublicacion) throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIDPublicacion);
+			PublicacionDAO.deleteAndDissociate(p);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
 	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID) throws PersistentException {
@@ -67,6 +75,7 @@ public class Publicaciones {
 		} catch (Exception e) {
 			t.rollback();
 		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 		return p;	
 	}
 

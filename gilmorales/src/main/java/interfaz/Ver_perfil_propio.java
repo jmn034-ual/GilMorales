@@ -21,6 +21,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	public Eliminar_publicaciones _eliminar_publicaciones;
 	private UsuarioRegistrado ur;
 	
+	public Ver_perfil_propio() {}
 	public Ver_perfil_propio(UsuarioRegistrado ur) {
 		super();
 		this.getStyle().set("width", "100%");
@@ -62,7 +63,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidores() {
-		 _ver_seguidores = new Ver_seguidores(ur);
+		_ver_seguidores = new Ver_seguidores(ur);
 		this.getVerSeguidores().addClickListener(event ->{
 			this._ver_seguidores.setVisible(true);
 			this._ver_seguidos.setVisible(false);

@@ -60,7 +60,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 			this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
 		});
 		this.cabeceraUNR.getBotonBuscar().addClickListener(event ->{
-			System.out.println(this.getVaadinHorizontalLayout().getComponentCount());
+//			System.out.println(this.getVaadinHorizontalLayout().getComponentCount());
 			if(this.getVaadinHorizontalLayout().getComponentCount() != 0)
 				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
 			this.getLayoutListaPublicaciones().setVisible(false);

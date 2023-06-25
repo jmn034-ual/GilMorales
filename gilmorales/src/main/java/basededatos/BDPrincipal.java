@@ -219,7 +219,12 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 	
 	public void eliminarPublicacion(int aIdPublicacion) {
-		
+		try {
+			publicacion.eliminarPublicacion(aIdPublicacion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	

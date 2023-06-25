@@ -35,7 +35,6 @@ public class Add_publicacion extends VistaAddpublicacion{
 		this.getStyle().set("height", "100%");
 		this.ur = ur;
 		this.urInterfaz = urInterfaz;
-//		this.publicacion =  null;
 		Add_localizacion();
 		Ver_publicacion_propia();
 		Publicar();
@@ -52,7 +51,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 
 	public void Ver_publicacion_propia() {
 		this.getBotonPublicar().addClickListener(event ->{
-			
+			urInterfaz._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
 		});
 	}
 
@@ -70,7 +69,14 @@ public class Add_publicacion extends VistaAddpublicacion{
 
 	public void Descartar() {
 		this.getBotonDescartar().addClickListener(event ->{
-			this.setVisible(false);
-		});
+			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
+			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
+			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
+			urInterfaz.listaPublicaciones.setVisible(true);
+			urInterfaz.getListaPublicaciones().setVisible(true);
+			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
+			urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
+			urInterfaz._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
+			});
 	}
 }
