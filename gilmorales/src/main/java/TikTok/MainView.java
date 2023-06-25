@@ -1,5 +1,6 @@
 package TikTok;
 
+import org.orm.PersistentException;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Admin;
 
 import com.vaadin.flow.component.ClickEvent;
@@ -13,6 +14,7 @@ import com.vaadin.flow.server.PWA;
 
 import basededatos.BDPrincipal;
 import bd_dcl.UsuarioRegistrado;
+import bd_dcl.UsuarioRegistradoDAO;
 import interfaz.*;
 
 /**
@@ -55,7 +57,7 @@ public class MainView extends VerticalLayout {
 
 		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
 		add(unr);
-
+		
 		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
 
 
@@ -89,8 +91,13 @@ public class MainView extends VerticalLayout {
 			}
 		});
 		
-//		Ver_publicacion_propia vp = new Ver_publicacion_propia(bd.addPublicacion("jmn034", null, null, "videos/tiktok1.mp4", 1));
-//		this.add(vp);
+//		try {
+//			Ver_perfil_propio vp = new Ver_perfil_propio(UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(1));
+//			add(vp);
+//		} catch (PersistentException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 }

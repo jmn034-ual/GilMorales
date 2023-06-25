@@ -26,7 +26,7 @@ export class VistaVerTendencias extends LitElement {
     Ver Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; margin-left: 12%; position: fixed; height: 95%; width: 86%; z-index: 998; overflow-y: auto; flex-shrink: 0;">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; margin-left: 12%; position: fixed; height: 95%; width: 86%; overflow-y: auto; flex-shrink: 0;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%;">
    <vaadin-vertical-layout theme="spacing" id="fotoPerfil">
     <vaadin-avatar id="fotoPerfil1"></vaadin-avatar>

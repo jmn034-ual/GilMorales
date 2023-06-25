@@ -17,16 +17,10 @@ public class Ver_publicaciones_propias extends VistaVerPublicacionesPropias{
 	public Ver_perfil_propio _ver_perfil_propio;
 	public Lista_Publicaciones_propias _publicaciones_propias = new Lista_Publicaciones_propias();
 	private UsuarioRegistrado ur;
-	private ArrayList<Publicacion> publicaciones = null;
-	Publicaciones_propias_item p;
+	ArrayList<Publicacion> publicaciones = null;
 	public Ver_publicaciones_propias(UsuarioRegistrado ur) {
 		this.ur = ur;
-		try {
-			this.publicaciones = new ArrayList<Publicacion>(UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(ur.getID()).publica.getCollection());
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.publicaciones = new ArrayList<Publicacion>(ur.publica.getCollection());
 		Publicaciones_propias();
 	}
 

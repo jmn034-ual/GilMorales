@@ -34,13 +34,13 @@ public class Ver_tendencias extends VistaVerTendencias{
 		this.getFotoPerfil1().setSizeFull();
 		this.getFotoPerfil1().setImage("icons/luffy.jpg");
 		Tendencias();
-		Ver_lista_Hashtag();
+//		Ver_lista_Hashtag();
 	}
 
 	public void Ver_lista_Hashtag() {
-		this.getBotonVerListaHashtags().addClickListener(event ->{
-			this._ver_lista_Hashtag.setVisible(true);
-		});
+//		this.getBotonVerListaHashtags().addClickListener(event ->{
+//			this._ver_lista_Hashtag.setVisible(true);
+//		});
 	}
 
 	public void Tendencias() {

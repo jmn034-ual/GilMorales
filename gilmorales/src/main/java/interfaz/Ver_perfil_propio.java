@@ -1,11 +1,16 @@
 package interfaz;
 
+import java.util.ArrayList;
+
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.dialog.DialogVariant;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.IronIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 
 public class Ver_perfil_propio extends Ver_tendencias {
@@ -43,6 +48,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	Configurar_perfil();
     	Ver_publicaciones_gustadas__Usuario_registrado_();
     	Eliminar_publicaciones();
+    	this.Ver_lista_Hashtag();
 	}
 
 	public void Ver_publicaciones_gustadas__Usuario_registrado_() {
@@ -69,6 +75,14 @@ public class Ver_perfil_propio extends Ver_tendencias {
 			this._ver_seguidos.setVisible(false);
 			this._editar_perfil.setVisible(false);
 			this._configurar_perfil.setVisible(false);
+			Dialog dialog = new Dialog(_ver_seguidores);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("70%");
+			dialog.setWidth("61%");
+			this._ver_seguidores.getBotonCerrar().addClickListener(event2 ->{
+				dialog.close();
+			});
+			dialog.open();
 		});
 	}
 
@@ -79,6 +93,14 @@ public class Ver_perfil_propio extends Ver_tendencias {
 			this._ver_seguidores.setVisible(false);
 			this._editar_perfil.setVisible(false);
 			this._configurar_perfil.setVisible(false);
+			Dialog dialog = new Dialog(_ver_seguidos);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("70%");
+			dialog.setWidth("61%");
+			this._ver_seguidos.getBotonSalir().addClickListener(event2 ->{
+				dialog.close();
+			});
+			dialog.open();
 		});
 	}
 
@@ -89,6 +111,14 @@ public class Ver_perfil_propio extends Ver_tendencias {
 			this._ver_seguidores.setVisible(false);
 			this._ver_seguidos.setVisible(false);
 			this._configurar_perfil.setVisible(false);
+			Dialog dialog = new Dialog(_editar_perfil);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("50%");
+			dialog.setWidth("50%");
+			this._editar_perfil.getBotonCancelar().addClickListener(event2 ->{
+				dialog.close();
+			});
+			dialog.open();
 		});
 	}
 
@@ -99,6 +129,14 @@ public class Ver_perfil_propio extends Ver_tendencias {
 			this._ver_seguidores.setVisible(false);
 			this._ver_seguidos.setVisible(false);
 			this._editar_perfil.setVisible(false);
+			Dialog dialog = new Dialog(_configurar_perfil);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("50%");
+			dialog.setWidth("50%");
+			this._configurar_perfil.getBotonCerrar().addClickListener(event2 ->{
+				dialog.close();
+			});
+			dialog.open();
 		});
 	}
 
@@ -107,16 +145,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 		this.getBotonEliminarPublicacion().addClickListener(event ->{
 			this._eliminar_publicaciones.setVisible(true);
 			this.getLayoutTendencias().setVisible(false);
-//			this.getVaadinHorizontalLayout1().setVisible(false);
-//			this.getLayoutDatosPerfil().setVisible(false);
-//			this.getLabelDescripcion().setVisible(false);
-//			this.getLayoutBonoes().setVisible(false);
-//			this.getListaMeGustas().setVisible(false);
-//			this.getLayoutListaPublicaciones().setVisible(false);
-//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_eliminar_publicaciones);
 			this.getVaadinVerticalLayout1().setVisible(false);
-//			this._eliminar_publicaciones.getStyle().set("width", "100%");
-//	    	this._eliminar_publicaciones.getStyle().set("height", "100%");
 			this.getVaadinHorizontalLayout().add(_eliminar_publicaciones);
 		});
 		this._eliminar_publicaciones.getBotonCancelar().addClickListener(event ->{
@@ -126,14 +155,28 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void NumeroSeguidores() {
-		throw new UnsupportedOperationException();
+		this.getNumSeguidores().setText(ur.seguido.size()+"");
 	}
 
 	public void NumeroSeguidos() {
-		throw new UnsupportedOperationException();
+		this.getNumSiguiendo().setText(ur.seguir.size()+"");
 	}
 
 	public void NumeroMeGusta() {
-		throw new UnsupportedOperationException();
+		ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(ur.publica.getCollection());
+		int numMeGustas = 0;
+		for(Publicacion p : publicaciones) {
+			numMeGustas += p.getNumMeGustas();
+		}
+		this.getLabelMeGustas().setText(numMeGustas+"");
+	}
+	@Override
+	public void Ver_lista_Hashtag() {
+		this.getBotonVerListaHashtags().addClickListener(event ->{
+			this._ver_lista_Hashtag.setVisible(true);
+			this.getVaadinVerticalLayout1().setVisible(false);
+			this.getLayoutTendencias().setVisible(false);
+			this.getVaadinHorizontalLayout().add(this._ver_lista_Hashtag);
+		});
 	}
 }
