@@ -28,37 +28,45 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 	public void Cabecera_Usuario_Registrado() {
 		_cabecera_Usuario_Registrado = new Cabecera_Usuario_Registrado(ur, this);
 		this.getCabecera().add(_cabecera_Usuario_Registrado);
-		this._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
 		
-		this._cabecera_Usuario_Registrado.getBotonAniadir().addClickListener(event ->{
-			this.getListaPublicaciones().setVisible(false);
-			this._cabecera_Usuario_Registrado.Add_publicacion();
-			this._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
-			this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(false);
-			this.getListaPublicaciones().setVisible(false);
-			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado.addPubli);
-		});
-		this._cabecera_Usuario_Registrado.getBotonNotificaciones().addClickListener(event ->{
-			this.getListaPublicaciones().setVisible(false);
-			this._cabecera_Usuario_Registrado.getBotonNotificaciones().setVisible(false);
-		});
-		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
-			this.getListaPublicaciones().setVisible(false);
-			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
-		});
-		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaUsuarios().addClickListener(event -> {
-			this.getListaPublicaciones().setVisible(false);
-			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
-		});
-		this._cabecera_Usuario_Registrado.getInicio().addClickListener(event -> {
-			this.listaPublicaciones.setVisible(true);
-			this.getListaPublicaciones().setVisible(true);
-			this._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
-			this._cabecera_Usuario_Registrado.addPubli.setVisible(false);
-			if(this.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-		});
+//		this._cabecera_Usuario_Registrado.getBotonAniadir().addClickListener(event ->{
+//			this.getListaPublicaciones().setVisible(false);
+//			this._cabecera_Usuario_Registrado.Add_publicacion();
+//			this._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
+//			this._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(false);
+//			if(this.getVaadinHorizontalLayout().getComponentCount() != 0) {
+//				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
+//			}
+//			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado.addPubli);
+//		});
+//		this._cabecera_Usuario_Registrado.getBotonNotificaciones().addClickListener(event ->{
+//			this.getListaPublicaciones().setVisible(false);
+//			this._cabecera_Usuario_Registrado.Ver_notificaciones();
+//			this._cabecera_Usuario_Registrado.getBotonNotificaciones().setVisible(false);
+//			this._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
+//			if(this.getVaadinHorizontalLayout().getComponentCount() != 0) {
+//				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
+//			}
+//			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._ver_notificaciones);
+//		});
+//		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
+//			this.getListaPublicaciones().setVisible(false);
+//			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
+//		});
+//		this._cabecera_Usuario_Registrado._cabecera_TOP.getBotonVerListaUsuarios().addClickListener(event -> {
+//			this.getListaPublicaciones().setVisible(false);
+//			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._cabecera_TOP);
+//		});
+//		this._cabecera_Usuario_Registrado.getInicio().addClickListener(event -> {
+//			this.listaPublicaciones.setVisible(true);
+//			this.getListaPublicaciones().setVisible(true);
+//			this._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
+//			this._cabecera_Usuario_Registrado.addPubli.setVisible(false);
+//			this._cabecera_Usuario_Registrado.volverInicio();
+//			if(this.getVaadinHorizontalLayout().getComponentCount() != 0) {
+//				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
+//			}
+//		});
 //		this._cabecera_Usuario_Registrado.getBotonPerfil().addClickListener(event -> {
 //			this.getListaPublicaciones().setVisible(false);
 //			this._cabecera_Usuario_Registrado.addPubli.setVisible(false);
@@ -72,12 +80,14 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 //			this.getListaPublicaciones().setVisible(true);
 //			this._cabecera_Usuario_Registrado.addPubli.Descartar();
 //		});
-		this._cabecera_Usuario_Registrado.getBotonBuscar().addClickListener(event ->{
-			this.getListaPublicaciones().setVisible(false);
-			if(this.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-		});
+//		this._cabecera_Usuario_Registrado.getBotonBuscar().addClickListener(event ->{
+//			this.getListaPublicaciones().setVisible(false);
+//			if(this.getVaadinHorizontalLayout().getComponentCount() != 0) {
+//				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
+//			}
+//			this.getVaadinHorizontalLayout().add(this._cabecera_Usuario_Registrado._realizar_busqueda);
+//
+//		});
 	}
 	
 	
