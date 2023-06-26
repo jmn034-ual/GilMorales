@@ -35,19 +35,19 @@ public class Nuevos_seguidores extends Notificaciones__comun {
 	private Nuevos_seguidores_item informacion(Notificacion notificacionNuevoSeguidor) {
 		Nuevos_seguidores_item nuevoItem = null;
 		try {
-			UsuarioRegistrado nuevoSeguidor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(notificacionNuevoSeguidor.getEnviadaA().getORMID());
-			nuevoItem = new Nuevos_seguidores_item(nuevoSeguidor);
-			if(!ur.seguir.contains(nuevoSeguidor) && nuevoSeguidor.getPrivacidad() != 1) {
+			UsuarioRegistrado usuarioNotifica = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(notificacionNuevoSeguidor.getUsuarioRegistradoIDNotifica());
+			nuevoItem = new Nuevos_seguidores_item(usuarioNotifica);
+			if(!ur.seguir.contains(usuarioNotifica) && usuarioNotifica.getPrivacidad() != 1) {
 				nuevoItem.getPrivado().setVisible(false);
 				nuevoItem.getBotonSeguir().setVisible(true);
 				nuevoItem.getBotonDejarDeSeguir().setVisible(false);
 				nuevoItem.getBotonEnviarSolicitud().setVisible(false);
-			}else if(!ur.seguir.contains(nuevoSeguidor) && nuevoSeguidor.getPrivacidad() == 1){
+			}else if(!ur.seguir.contains(usuarioNotifica) && usuarioNotifica.getPrivacidad() == 1){
 				nuevoItem.getBotonSeguir().setVisible(false);
 				nuevoItem.getPrivado().setVisible(false);
 				nuevoItem.getBotonDejarDeSeguir().setVisible(false);
 				nuevoItem.getBotonEnviarSolicitud().setVisible(true);
-			}else if(ur.seguir.contains(nuevoSeguidor) && nuevoSeguidor.getPrivacidad() == 1) {
+			}else if(ur.seguir.contains(usuarioNotifica) && usuarioNotifica.getPrivacidad() == 1) {
 				nuevoItem.getBotonSeguir().setVisible(false);
 				nuevoItem.getPrivado().setVisible(false);
 				nuevoItem.getBotonDejarDeSeguir().setVisible(true);

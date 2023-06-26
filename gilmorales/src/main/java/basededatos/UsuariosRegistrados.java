@@ -70,7 +70,8 @@ public class UsuariosRegistrados {
 			lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
 			for(int i = 0; i < lista.size(); i++) {
 				UsuarioRegistrado usuario = (UsuarioRegistrado) lista.get(i);
-				if(usuario.getNombreUsuario().equals(aNombreUsuario) || usuario.getNombreUsuario().startsWith(aNombreUsuario.substring(0, 4))) {
+				if(usuario.getNombreUsuario().equals(aNombreUsuario) || usuario.getNombreUsuario().startsWith(aNombreUsuario.substring(0, 3))
+						|| usuario.getNombreUsuario().startsWith(aNombreUsuario.substring(0, 4))) {
 					usuariosCoincidentes.add(usuario);
 				}
 			}

@@ -58,49 +58,49 @@ public class MainView extends VerticalLayout {
 		this.setPadding(false);
 		BDPrincipal bd = new BDPrincipal();
 
-//		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
-//		add(unr);
-//		
-//		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
-//
-//
-//			@Override
-//			public void onComponentEvent(ClickEvent<Button> event) {
-//				// TODO Auto-generated method stub
-//				removeAll();
-//				Registrar registro = new Registrar(bd);
-//				add(registro);
-//				registro.getConfirmar().addClickListener(event2 ->{
-//					removeAll();
-//					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
-//					Usuario_Registrado ur = new Usuario_Registrado(usuario, bd);
-//					add(ur);
-//				});
-//			}
-//		});
-//
-//		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
-//			@Override
-//			public void onComponentEvent(ClickEvent<Button> event) {
-//				removeAll();
-//				Iniciar_Sesion__4 login = new Iniciar_Sesion__4(bd);
-//				add(login);
-//				login.getIniciarSesionB().addClickListener(event2 ->{
-//					removeAll();
-//					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(login.getUsuarioTF().getValue(), login.getContrasenaTF().getValue());
-//					Usuario_Registrado ur2 = new Usuario_Registrado(usuario, bd);
-//					add(ur2);
-//				});
-//			}
-//		});
+		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
+		add(unr);
 		
-		try {
-			Ver_notificaciones_usuario_publico n = new Ver_notificaciones_usuario_publico(UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(1));
-			add(n);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
+
+
+			@Override
+			public void onComponentEvent(ClickEvent<Button> event) {
+				// TODO Auto-generated method stub
+				removeAll();
+				Registrar registro = new Registrar(bd);
+				add(registro);
+				registro.getConfirmar().addClickListener(event2 ->{
+					removeAll();
+					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
+					Usuario_Registrado ur = new Usuario_Registrado(usuario, bd);
+					add(ur);
+				});
+			}
+		});
+
+		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
+			@Override
+			public void onComponentEvent(ClickEvent<Button> event) {
+				removeAll();
+				Iniciar_Sesion__4 login = new Iniciar_Sesion__4(bd);
+				add(login);
+				login.getIniciarSesionB().addClickListener(event2 ->{
+					removeAll();
+					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(login.getUsuarioTF().getValue(), login.getContrasenaTF().getValue());
+					Usuario_Registrado ur2 = new Usuario_Registrado(usuario, bd);
+					add(ur2);
+				});
+			}
+		});
+		
+//		try {
+//			Ver_notificaciones_usuario_publico n = new Ver_notificaciones_usuario_publico(UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(1));
+//			add(n);
+//		} catch (PersistentException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 	}
 

@@ -6,6 +6,7 @@ import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -121,16 +122,18 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 				HashtagDAO.save(nuevoHashatag);
 			}
 			while (m.find()) {
-				String userMencionado = m.group(1);
-				List<UsuarioRegistrado> lista = usuario_registrado.buscarUsuario(userMencionado);
-				Notificacion notificacion = NotificacionDAO.createNotificacion();
-				notificacion.setTipoNotificacion(3);
+				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
 				for(UsuarioRegistrado ur : lista) {
-					if(ur.getNombreUsuario().equals(userMencionado)) {
+					if(ur.getNombreUsuario().equals(m.group(1))) {	
+						Notificacion notificacion = NotificacionDAO.createNotificacion();
+						notificacion.setTipoNotificacion(3);
 						notificacion.setEnviadaA(ur);
+						notificacion.setUsuarioRegistradoIDNotifica(p.getPerteneceA().getID());
+						NotificacionDAO.save(notificacion);
+						break;
 					}
 				}
-				NotificacionDAO.save(notificacion);
+				
 			}
 			GilMoralesPersistentManager.instance().disposePersistentManager();
 		}catch (PersistentException e) {
@@ -189,8 +192,15 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 	
 	public List cargarListaHashtagTOP() {
+		List<Hashtag> hashtags = null;
+		try {
+			hashtags = hashtag.cargarListaHashtagsTOP();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		return null;
+		return hashtags;
 	}
 	
 	public List realizarBusqueda(String aBusqueda, String aFiltro) {

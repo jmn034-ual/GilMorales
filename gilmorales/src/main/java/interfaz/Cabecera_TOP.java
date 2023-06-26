@@ -19,13 +19,11 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados();
 
 	top_usuarios_item tui = new top_usuarios_item("Usuario1");
-	top_hashtags_item thi = new top_hashtags_item("MDS2");
 	
 	public Cabecera_TOP() {
 		this.getLayoutListaResultadoBusqueda().setVisible(false);
 		Ver_lista_Hashtag();
 		Ver_lista_usuarios_registrados();
-		_top_hashtags.anadirHashag(thi);
 		top_hashtags();
 		_top_usuarios.anadirUsuarios(tui);
 		top_usuarios();

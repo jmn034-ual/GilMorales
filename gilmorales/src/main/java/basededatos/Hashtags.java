@@ -2,9 +2,16 @@ package basededatos;
 
 import basededatos.BDPrincipal;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
+
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
+import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Hashtag;
+import bd_dcl.HashtagDAO;
 
 public class Hashtags {
 	public BDPrincipal _c_bd_hashtag;
@@ -18,8 +25,26 @@ public class Hashtags {
 		throw new UnsupportedOperationException();
 	}
 
-	public List cargarListaHashtagsTOP() {
-		throw new UnsupportedOperationException();
+	public List cargarListaHashtagsTOP() throws PersistentException {
+		List<Hashtag> hashtagsTop = new ArrayList<Hashtag>();
+
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			List<Hashtag> hashtags = HashtagDAO.queryHashtag(null, "Hashtag.NumVisualizaciones DESC");
+			if(!hashtags.isEmpty()) {
+				hashtagsTop.add(hashtags.get(0));
+				hashtagsTop.add(hashtags.get(1));
+				hashtagsTop.add(hashtags.get(2));
+				hashtagsTop.add(hashtags.get(3));
+				hashtagsTop.add(hashtags.get(4));
+			}
+
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+
+		return hashtagsTop;
 	}
 
 	public List buscarHashtag(int aIdHashtag, String aNombreHashtag) {

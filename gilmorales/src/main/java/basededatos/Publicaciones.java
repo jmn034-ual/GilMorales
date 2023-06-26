@@ -4,6 +4,7 @@ import basededatos.BDPrincipal;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
@@ -13,6 +14,8 @@ import java.util.regex.Pattern;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import bd_dcl.Comentario;
+import bd_dcl.ComentarioDAO;
 import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Hashtag;
 import bd_dcl.HashtagDAO;
@@ -37,7 +40,27 @@ public class Publicaciones {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIDPublicacion);
-			PublicacionDAO.deleteAndDissociate(p);
+			Pattern mencion = Pattern.compile("@(\\w+)");
+			Matcher m = mencion.matcher(p.getDescripcion());
+	
+			while (m.find()) {
+				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+				for(UsuarioRegistrado ur : lista) {
+					if(ur.getNombreUsuario().equals(m.group(1))) {	
+						List<Notificacion> listaNotificaciones = new ArrayList<Notificacion>(ur.recibe.getCollection());
+						for(Notificacion n : listaNotificaciones) {
+							if(n.getUsuarioRegistradoIDNotifica() == p.getPerteneceA().getID()) {
+								NotificacionDAO.deleteAndDissociate(n);
+							}
+						}
+					}
+				}
+			}
+			List<Comentario> comentarios = new ArrayList<Comentario>(p.tieneComentarios.getCollection());
+			for(Comentario comentario : comentarios) {
+				ComentarioDAO.deleteAndDissociate(comentario);
+			}
+			PublicacionDAO.delete(p);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

@@ -20,8 +20,6 @@ public class Me_gustas extends Nuevos_seguidores {
 	public Me_gustas() {
 		this.getTituloNotificacion().setVisible(false);
 		this.getVaadinHorizontalLayout().setVisible(false);
-		Me_gustas_item nuevoItem = new  Me_gustas_item();
-		this.getNuevosSeguidores().as(VerticalLayout.class).add(nuevoItem);
 	}
 	
 	public Me_gustas(UsuarioRegistrado ur) {

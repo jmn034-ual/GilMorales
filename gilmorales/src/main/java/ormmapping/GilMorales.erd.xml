@@ -513,6 +513,17 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="UsuarioRegistradoIDNotifica">
+    	<PrimaryKey>false</PrimaryKey>
+    	<ForeignKey>false</ForeignKey>
+    	<ReferencedColumn>BD-DCL.UsuarioRegistrado.ID</ReferencedColumn>
+    	<Type>9</Type>
+    	<Length>10</Length>
+    	<Nullable>false</Nullable>
+    	<IDGenerator>native</IDGenerator>
+    	<Unique>false</Unique>
+    	<Index>false</Index>
+    	<UserTypes></UserTypes></Column>
   </Entity>
   <Entity name="Hashtag" Unlogged="false" PKClustered="0">
     <Column name="IdHashtag">
@@ -536,6 +547,17 @@
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
+    </Column>
+    <Column name="numVisualizaciones">
+    	
+    	<PrimaryKey>false</PrimaryKey><ForeignKey>false</ForeignKey>
+    	<Type>9</Type>
+    	<Length>10</Length>
+    	<Nullable>false</Nullable>
+    	<IDGenerator>native</IDGenerator>
+    	<Unique>false</Unique>
+    	<Index>false</Index>
+    	<UserTypes></UserTypes>
     </Column>
   </Entity>
   <Entity name="UsuarioComercial" Unlogged="false" PKClustered="0">
