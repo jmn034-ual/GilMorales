@@ -13,7 +13,7 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 	public Ver_notificaciones _ver_notificaciones;
 	public Ver_perfil_propio _ver_perfil_propio;
 	public Realizar_busqueda _realizar_busqueda;
-	public Cabecera_TOP _cabecera_TOP = new Cabecera_TOP();
+	public Cabecera_TOP _cabecera_TOP;
 	private UsuarioRegistrado ur;
 	private Usuario_Registrado urInterfaz;
 	
@@ -97,10 +97,15 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 			this.getBotonAniadir().setVisible(true);
 			this._realizar_busqueda.setVisible(true);
 			this._cabecera_TOP.setVisible(false);
-			this.getVaadinVerticalLayout1().setVisible(false);
+			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
+				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
+			}
+			urInterfaz.getListaPublicaciones().setVisible(false);
+			urInterfaz.getVaadinHorizontalLayout().add(_realizar_busqueda);
 		});
 	}
 	public void Cabecera_TOP() {
+		this._cabecera_TOP = new Cabecera_TOP();
 		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
     	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
 	}
@@ -113,11 +118,13 @@ public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Regi
 			this.getBotonNotificaciones().setVisible(true);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
-			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
+	    	this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
 			Cabecera_TOP();
 			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
 				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
 			}
+			urInterfaz.getListaPublicaciones().setVisible(true);
+
 		});
 	}
 }

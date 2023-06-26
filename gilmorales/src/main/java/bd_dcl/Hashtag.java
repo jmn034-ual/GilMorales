@@ -47,7 +47,7 @@ public class Hashtag implements Serializable {
 	@Column(name="NombreHashtag", nullable=true, length=255)	
 	private String nombreHashtag;
 	
-	@Column(name="numVisualizaciones", nullable=false, length=10)	
+	@Column(name="NumVisualizaciones", nullable=false, length=10)	
 	private int numVisualizaciones;
 	
 	@ManyToMany(targetEntity=bd_dcl.Publicacion.class)	
@@ -75,8 +75,6 @@ public class Hashtag implements Serializable {
 	public String getNombreHashtag() {
 		return nombreHashtag;
 	}
-	
-	
 	
 	public int getNumVisualizaciones() {
 		return numVisualizaciones;

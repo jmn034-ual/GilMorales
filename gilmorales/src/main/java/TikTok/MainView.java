@@ -93,14 +93,7 @@ public class MainView extends VerticalLayout {
 				});
 			}
 		});
-		
-//		try {
-//			Ver_notificaciones_usuario_publico n = new Ver_notificaciones_usuario_publico(UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(1));
-//			add(n);
-//		} catch (PersistentException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+			
 		
 	}
 
