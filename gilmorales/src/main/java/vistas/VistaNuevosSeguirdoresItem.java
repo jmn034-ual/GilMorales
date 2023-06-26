@@ -18,20 +18,104 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vista-nuevos-seguirdores-item.ts")
 public class VistaNuevosSeguirdoresItem extends LitTemplate {
 
-    @Id("fotoperfil")
-	private HorizontalLayout fotoperfil;
+
+	@Id("nuevoSeguidor")
+	private HorizontalLayout nuevoSeguidor;
 	@Id("fotoPerfil")
-	private Element fotoPerfil;
+	private HorizontalLayout fotoPerfil;
 	@Id("botonDejarDeSeguir")
 	private Button botonDejarDeSeguir;
+	@Id("botonEnviarSolicitud")
+	private Button botonEnviarSolicitud;
 	@Id("botonSeguir")
 	private Button botonSeguir;
+	@Id("privado")
+	private HorizontalLayout privado;
 	@Id("botonCancelar")
 	private Button botonCancelar;
 	@Id("botonAceptar")
 	private Button botonAceptar;
-	@Id("botonEnviarSolicitud")
-	private Button botonEnviarSolicitud;
+
+	
+	public HorizontalLayout getNuevoSeguidor() {
+		return nuevoSeguidor;
+	}
+
+
+	public void setNuevoSeguidor(HorizontalLayout nuevoSeguidor) {
+		this.nuevoSeguidor = nuevoSeguidor;
+	}
+
+
+	public HorizontalLayout getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+
+	public void setFotoPerfil(HorizontalLayout fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+
+	public Button getBotonDejarDeSeguir() {
+		return botonDejarDeSeguir;
+	}
+
+
+	public void setBotonDejarDeSeguir(Button botonDejarDeSeguir) {
+		this.botonDejarDeSeguir = botonDejarDeSeguir;
+	}
+
+
+	public Button getBotonEnviarSolicitud() {
+		return botonEnviarSolicitud;
+	}
+
+
+	public void setBotonEnviarSolicitud(Button botonEnviarSolicitud) {
+		this.botonEnviarSolicitud = botonEnviarSolicitud;
+	}
+
+
+	public Button getBotonSeguir() {
+		return botonSeguir;
+	}
+
+
+	public void setBotonSeguir(Button botonSeguir) {
+		this.botonSeguir = botonSeguir;
+	}
+
+
+	public HorizontalLayout getPrivado() {
+		return privado;
+	}
+
+
+	public void setPrivado(HorizontalLayout privado) {
+		this.privado = privado;
+	}
+
+
+	public Button getBotonCancelar() {
+		return botonCancelar;
+	}
+
+
+	public void setBotonCancelar(Button botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+
+
+	public Button getBotonAceptar() {
+		return botonAceptar;
+	}
+
+
+	public void setBotonAceptar(Button botonAceptar) {
+		this.botonAceptar = botonAceptar;
+	}
+
 
 	/**
      * Creates a new VistaNuevosSeguirdoresItem.

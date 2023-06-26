@@ -2,6 +2,7 @@ package basededatos;
 
 import basededatos.BDPrincipal;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -60,23 +61,25 @@ public class UsuariosRegistrados {
 		throw new UnsupportedOperationException();
 	}
 
-//	public List buscarUsuario(String aNombreUsuario) {
-//		if(aNombreUsuario == "") return null;
-//		List lista = null;
-//		UsuarioRegistrado usuario = null;
-//		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-//		try {
-//			lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-//			for(int i = 0; i < lista.size(); i++) {
-//				usuario = (UsuarioRegistrado) lista.get(i);
-//				if(usuario.getNombreUsuario().equals(aNombreUsuario)) return usuario;
-//			}
-//
-//		} catch (Exception e) {
-//			t.rollback();
-//		}
-//		return usuario;
-//		}
+	public List buscarUsuario(String aNombreUsuario) throws PersistentException {
+		if(aNombreUsuario == "") return null;
+		List lista = null;
+		List<UsuarioRegistrado> usuariosCoincidentes = new ArrayList<UsuarioRegistrado>();
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+			for(int i = 0; i < lista.size(); i++) {
+				UsuarioRegistrado usuario = (UsuarioRegistrado) lista.get(i);
+				if(usuario.getNombreUsuario().equals(aNombreUsuario) || usuario.getNombreUsuario().startsWith(aNombreUsuario.substring(0, 4))) {
+					usuariosCoincidentes.add(usuario);
+				}
+			}
+			t.commit();
+		} catch (PersistentException e) {
+			t.rollback();
+		}
+		return usuariosCoincidentes;
+	}
 
 	public List cargarListaUsuariosTOP() {
 		throw new UnsupportedOperationException();
@@ -116,7 +119,9 @@ public class UsuariosRegistrados {
 			t.commit();
 		}catch (Exception e) {
 			t.rollback();
-		}	}
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
+	}
 
 	public List cargarUsuariosUNR() {
 		throw new UnsupportedOperationException();

@@ -1,6 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-notificaciones-item')
 export class VistaNotificacionesItem extends LitElement {
@@ -15,9 +15,9 @@ export class VistaNotificacionesItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; justify-content: center;" id="vaadinHorizontalLayout">
- <vaadin-vertical-layout theme="spacing" id="layoutFotoPerfil" style="align-self: center;"></vaadin-vertical-layout>
-</vaadin-horizontal-layout>
+<vaadin-vertical-layout theme="spacing" id="notificaciones" style="align-self: center; width: 100%; height: 100%;">
+ <vaadin-horizontal-layout class="content" style="justify-content: center; flex-shrink: 0; width: 100%;" id="vaadinHorizontalLayout"></vaadin-horizontal-layout>
+</vaadin-vertical-layout>
 `;
   }
 

@@ -17,10 +17,32 @@ import com.vaadin.flow.dom.Element;
 @JsModule("./src/vista-notificaciones-item.ts")
 public class VistaNotificacionesItem extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
+
+	@Id("notificaciones")
+	private Element notificaciones;
+	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("layoutFotoPerfil")
-	private Element layoutFotoPerfil;
+
+	
+	public Element getNotificaciones() {
+		return notificaciones;
+	}
+
+
+	public void setNotificaciones(Element notificaciones) {
+		this.notificaciones = notificaciones;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
 
 	/**
      * Creates a new VistaNotificacionesItem.

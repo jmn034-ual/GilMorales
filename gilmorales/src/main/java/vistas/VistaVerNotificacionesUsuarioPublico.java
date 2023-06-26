@@ -20,9 +20,6 @@ import com.vaadin.flow.component.html.H3;
 public class VistaVerNotificacionesUsuarioPublico extends LitTemplate {
 
 
-
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("h1")
@@ -37,31 +34,21 @@ public class VistaVerNotificacionesUsuarioPublico extends LitTemplate {
 	private Element layoutListaNuevosSeguidores;
 	@Id("vaadinHorizontalLayout3")
 	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
-	@Id("tituloMeGustas")
-	private H3 tituloMeGustas;
 	@Id("layoutListaMeGustas")
 	private Element layoutListaMeGustas;
 	@Id("vaadinHorizontalLayout5")
 	private HorizontalLayout vaadinHorizontalLayout5;
-	@Id("vaadinVerticalLayout4")
-	private Element vaadinVerticalLayout4;
-	@Id("tituloComentarios")
-	private H3 tituloComentarios;
 	@Id("layoutListaComentarios")
 	private Element layoutListaComentarios;
-
+	@Id("verticalMenciones")
+	private HorizontalLayout verticalMenciones;
+	@Id("horizontalMenciones")
+	private Element horizontalMenciones;
+	@Id("tituloMenciones")
+	private H3 tituloMenciones;
+	@Id("layoutListaMenciones")
+	private Element layoutListaMenciones;
 	
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
 
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
@@ -133,26 +120,6 @@ public class VistaVerNotificacionesUsuarioPublico extends LitTemplate {
 	}
 
 
-	public Element getVaadinVerticalLayout3() {
-		return vaadinVerticalLayout3;
-	}
-
-
-	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
-		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
-	}
-
-
-	public H3 getTituloMeGustas() {
-		return tituloMeGustas;
-	}
-
-
-	public void setTituloMeGustas(H3 tituloMeGustas) {
-		this.tituloMeGustas = tituloMeGustas;
-	}
-
-
 	public Element getLayoutListaMeGustas() {
 		return layoutListaMeGustas;
 	}
@@ -173,26 +140,6 @@ public class VistaVerNotificacionesUsuarioPublico extends LitTemplate {
 	}
 
 
-	public Element getVaadinVerticalLayout4() {
-		return vaadinVerticalLayout4;
-	}
-
-
-	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
-		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
-	}
-
-
-	public H3 getTituloComentarios() {
-		return tituloComentarios;
-	}
-
-
-	public void setTituloComentarios(H3 tituloComentarios) {
-		this.tituloComentarios = tituloComentarios;
-	}
-
-
 	public Element getLayoutListaComentarios() {
 		return layoutListaComentarios;
 	}
@@ -200,6 +147,46 @@ public class VistaVerNotificacionesUsuarioPublico extends LitTemplate {
 
 	public void setLayoutListaComentarios(Element layoutListaComentarios) {
 		this.layoutListaComentarios = layoutListaComentarios;
+	}
+
+
+	public HorizontalLayout getVerticalMenciones() {
+		return verticalMenciones;
+	}
+
+
+	public void setVerticalMenciones(HorizontalLayout verticalMenciones) {
+		this.verticalMenciones = verticalMenciones;
+	}
+
+
+	public Element getHorizontalMenciones() {
+		return horizontalMenciones;
+	}
+
+
+	public void setHorizontalMenciones(Element horizontalMenciones) {
+		this.horizontalMenciones = horizontalMenciones;
+	}
+
+
+	public H3 getTituloMenciones() {
+		return tituloMenciones;
+	}
+
+
+	public void setTituloMenciones(H3 tituloMenciones) {
+		this.tituloMenciones = tituloMenciones;
+	}
+
+
+	public Element getLayoutListaMenciones() {
+		return layoutListaMenciones;
+	}
+
+
+	public void setLayoutListaMenciones(Element layoutListaMenciones) {
+		this.layoutListaMenciones = layoutListaMenciones;
 	}
 
 

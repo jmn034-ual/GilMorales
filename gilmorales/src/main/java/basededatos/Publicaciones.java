@@ -7,11 +7,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
 import bd_dcl.GilMoralesPersistentManager;
+import bd_dcl.Hashtag;
+import bd_dcl.HashtagDAO;
+import bd_dcl.Notificacion;
+import bd_dcl.NotificacionDAO;
 import bd_dcl.Publicacion;
 import bd_dcl.PublicacionDAO;
 import bd_dcl.UsuarioComercial;
@@ -42,6 +48,7 @@ public class Publicaciones {
 	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		Publicacion p = null;
+        
 		try {
 			p = PublicacionDAO.createPublicacion();
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuarioID);

@@ -7,10 +7,16 @@ import bd_dcl.UsuarioRegistradoDAO;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.orm.PersistentException;
 
+import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Hashtag;
+import bd_dcl.HashtagDAO;
+import bd_dcl.Notificacion;
+import bd_dcl.NotificacionDAO;
 
 public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrador_, iAdministrador, iUsuario_No_Registrado, iVer_notificaciones_usuario_publico, iVer_notificaciones_usuario_privado, iVer_perfil_publico, iVer_perfil_privado, iVer_perfil, iPlataformas_externas, iUsuario_Registrado, iIniciar_sesion {
 	public Comentarios comentarios = new Comentarios();
@@ -102,7 +108,31 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		try {
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuarioID);
 			p = publicacion.addPublicacion(usuario.getNombreUsuario(), aLocalizacion, aDescripcion, aVideo, aUsuarioID);
-//			usuario.publica.add(p);
+			 /*Añadimos los posibles hashtag y/o menciones */
+	        Pattern hashtag = Pattern.compile("#(\\w+)");
+			Pattern mencion = Pattern.compile("@(\\w+)");
+			Matcher h = hashtag.matcher(aDescripcion);
+			Matcher m = mencion.matcher(aDescripcion);
+			
+			while (h.find()) {
+				Hashtag nuevoHashatag = HashtagDAO.createHashtag();
+				nuevoHashatag.setNombreHashtag(h.group(1));
+				nuevoHashatag.aparece.add(p);
+				HashtagDAO.save(nuevoHashatag);
+			}
+			while (m.find()) {
+				String userMencionado = m.group(1);
+				List<UsuarioRegistrado> lista = usuario_registrado.buscarUsuario(userMencionado);
+				Notificacion notificacion = NotificacionDAO.createNotificacion();
+				notificacion.setTipoNotificacion(3);
+				for(UsuarioRegistrado ur : lista) {
+					if(ur.getNombreUsuario().equals(userMencionado)) {
+						notificacion.setEnviadaA(ur);
+					}
+				}
+				NotificacionDAO.save(notificacion);
+			}
+			GilMoralesPersistentManager.instance().disposePersistentManager();
 		}catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

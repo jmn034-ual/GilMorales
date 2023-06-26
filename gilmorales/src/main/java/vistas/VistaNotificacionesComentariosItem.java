@@ -19,16 +19,56 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-notificaciones-comentarios-item.ts")
 public class VistaNotificacionesComentariosItem extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
+
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("botonMeGusta")
-	private Button botonMeGusta;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 	@Id("labelComentario")
 	private Label labelComentario;
+	@Id("botonMeGusta")
+	private Button botonMeGusta;
+	
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+	public Label getLabelComentario() {
+		return labelComentario;
+	}
+
+
+	public void setLabelComentario(Label labelComentario) {
+		this.labelComentario = labelComentario;
+	}
+
+
+	public Button getBotonMeGusta() {
+		return botonMeGusta;
+	}
+
+
+	public void setBotonMeGusta(Button botonMeGusta) {
+		this.botonMeGusta = botonMeGusta;
+	}
+
 
 	/**
      * Creates a new VistaNotificacionesComentariosItem.
