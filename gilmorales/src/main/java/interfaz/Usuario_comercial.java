@@ -21,16 +21,17 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 	public Eliminar_publicaciones__Comercial_ _eliminar_publicaciones__Comercial_;
 	public Editar_perfil__Comercial_ _editar_perfil__Comercial_;
 	public Cabecera_Usuario_Comercial _cabecera_Usuario_Comercial = new Cabecera_Usuario_Comercial();
-	public Lista_publicaciones__Comercial_ _lista_publicaciones__Comercial_;
+	public Lista_publicaciones__Comercial_ _lista_publicaciones__Comercial_ = new Lista_publicaciones__Comercial_();
+	
 	
 	
 	
 
-	public Usuario_comercial(Lista_publicaciones__Comercial_ lista, String imagen, String usuario, String nombreEmpresa, String des, String mg) {
+	public Usuario_comercial(String imagen, String usuario, String nombreEmpresa, String des, String mg) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.Cabecera_Usuario_Comercial();
-		this.Lista_publicaciones__Comercial_(lista);
+		this.Lista_publicaciones__Comercial_();
 		this.getVaadinAvatar().setImage(imagen);
 		this.getNombreDeEmpresa().setText(nombreEmpresa);
 		this.getNombreDeUsuario().setText(usuario);
@@ -48,9 +49,10 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 
 	public void Cabecera_Usuario_Comercial() {
 		this.getCabecera().add(_cabecera_Usuario_Comercial);
+		this._cabecera_Usuario_Comercial.getInicio().setVisible(false);
 	}
 
-	public void Lista_publicaciones__Comercial_(Lista_publicaciones__Comercial_ lista) {
-		this.getListaVideos().as(VerticalLayout.class).add(lista);
+	public void Lista_publicaciones__Comercial_() {
+		this.getListaVideos().as(VerticalLayout.class).add(_lista_publicaciones__Comercial_);
 	}
 }
