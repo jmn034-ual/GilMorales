@@ -23,7 +23,5 @@ public class Ver_notificaciones_usuario_publico extends VistaVerNotificacionesUs
     	this.getLayoutListaComentarios().as(VerticalLayout.class).add(this._notificaciones_usuario_publico.notificaciones._notificaciones_comentarios);
     	this.getLayoutListaMeGustas().as(VerticalLayout.class).add(this._notificaciones_usuario_publico.notificaciones._me_gustas);
     	this.getLayoutListaMenciones().as(VerticalLayout.class).add(this._notificaciones_usuario_publico.notificaciones.nuevasMenciones);
-
-//		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_notificaciones_usuario_publico);
 	}
 }

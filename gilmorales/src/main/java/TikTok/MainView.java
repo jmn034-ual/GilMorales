@@ -16,6 +16,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
 import basededatos.BDPrincipal;
+import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
 import interfaz.*;
@@ -60,7 +61,7 @@ public class MainView extends VerticalLayout {
 
 		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
 		add(unr);
-		
+
 		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
 
 
@@ -70,13 +71,15 @@ public class MainView extends VerticalLayout {
 				removeAll();
 				Registrar registro = new Registrar(bd);
 				add(registro);
-				registro.getConfirmar().addClickListener(event2 ->{
-					removeAll();
-					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
-					Usuario_Registrado ur = new Usuario_Registrado(usuario, bd);
-					add(ur);
-				});
-			}
+					registro.getConfirmar().addClickListener(event2 ->{
+						if(registro.getValido()) {
+						removeAll();
+						UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
+						Usuario_Registrado ur = new Usuario_Registrado(usuario);
+						add(ur);
+						}
+					});
+				}
 		});
 
 		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
@@ -88,13 +91,28 @@ public class MainView extends VerticalLayout {
 				login.getIniciarSesionB().addClickListener(event2 ->{
 					removeAll();
 					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(login.getUsuarioTF().getValue(), login.getContrasenaTF().getValue());
-					Usuario_Registrado ur2 = new Usuario_Registrado(usuario, bd);
+					Usuario_Registrado ur2 = new Usuario_Registrado(usuario);
 					add(ur2);
 				});
 			}
 		});
-			
-		
+//		try {
+//			UsuarioRegistrado w = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(6);
+//			UsuarioRegistrado a = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(5);
+//			w.seguido.add(a);
+//			GilMoralesPersistentManager.instance().disposePersistentManager();
+//
+//			w.seguir.add(w);
+//			GilMoralesPersistentManager.instance().disposePersistentManager();
+//			System.out.println(w.seguido.size());
+//			System.out.println(a.seguir.size());
+//
+//		} catch (PersistentException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+
+
 	}
 
 }

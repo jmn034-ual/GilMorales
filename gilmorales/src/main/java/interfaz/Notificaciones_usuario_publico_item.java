@@ -31,7 +31,7 @@ public class Notificaciones_usuario_publico_item extends Notificaciones_item {
 			this._notificaciones_comentarios = new Notificaciones_comentarios(this.ur);
 			this.getNotificaciones().as(VerticalLayout.class).add(_notificaciones_comentarios);
 
-			this.nuevasMenciones = new Nuevos_seguidores(ur);
+			this.nuevasMenciones = new Nuevos_seguidores(this.ur);
 			this.getNotificaciones().as(VerticalLayout.class).add(nuevasMenciones);
 			
 			/*Cargamos las listas de notificaciones */

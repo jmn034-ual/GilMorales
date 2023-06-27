@@ -1,8 +1,11 @@
 package interfaz;
 
+import bd_dcl.Comentario;
+
 public class Lista_comentarios__Usuario_registrado__item extends Lista_Comentarios__Vista_Usuario_No_registrado__item {
-public Lista_comentarios__Usuario_registrado__item(Usuario_No_Registrado unr) {
-		super(unr);
+
+	public Lista_comentarios__Usuario_registrado__item(Usuario_No_Registrado unr, Comentario comentario) {
+		super(unr, comentario);
 		// TODO Auto-generated constructor stub
 	}
 
