@@ -420,7 +420,12 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	public void borrarComentario(int aIdComentario, int aIdPublicacion, String aNombreUsuarioPropietario) {
 
-		
+		try {
+			this.comentarios.borrarComentario(aIdComentario, aIdPublicacion, aNombreUsuarioPropietario, aIdPublicacion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {
@@ -435,8 +440,14 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public List filtrarDenuncias(String aFiltro) {
-
-		return null;
+		List lista = null;
+		try {
+			lista = this.denuncia.filtrarDenuncias(aFiltro);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return lista;
 	}
 
 	public UsuarioComercial cargarUsuarioComercial(String aNombreUsuario, String aPassword) {
@@ -478,12 +489,18 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo,
 			String aExplicacion) {
-
+		
+		try {
+			this.denuncia.denunciarComentario(aIdComentario, aNombreUsuarioDenunciante, aMotivo, aExplicacion, aIdComentario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
 	public List cargarUsuariosMeGustas(int aIdPublicacion) {
-
+		
 		return null;
 	}
 
