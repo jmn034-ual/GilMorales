@@ -32,8 +32,16 @@ public class Publicaciones {
 	public BDPrincipal _c_bd_publicacion;
 	public Vector<Publicacion> _publiacion = new Vector<Publicacion>();
 
-	public void eliminarSeleccion(List aListaSeleccion) {
-		throw new UnsupportedOperationException();
+	public void eliminarSeleccion(List<Publicacion> aListaSeleccion) throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			for(Publicacion publicacion : aListaSeleccion) {
+				PublicacionDAO.deleteAndDissociate(publicacion);
+			}
+		} catch (Exception e) {
+			t.rollback();
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void eliminarPublicacion(int aIDPublicacion) throws PersistentException {
@@ -42,15 +50,16 @@ public class Publicaciones {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIDPublicacion);
 			Pattern mencion = Pattern.compile("@(\\w+)");
 			Matcher m = mencion.matcher(p.getDescripcion());
-	
 			while (m.find()) {
-				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-				for(UsuarioRegistrado ur : lista) {
-					if(ur.getNombreUsuario().equals(m.group(1))) {	
-						List<Notificacion> listaNotificaciones = new ArrayList<Notificacion>(ur.recibe.getCollection());
-						for(Notificacion n : listaNotificaciones) {
-							if(n.getUsuarioRegistradoIDNotifica() == p.getPerteneceA().getID()) {
-								NotificacionDAO.deleteAndDissociate(n);
+				if(p.getPerteneceA() != null) {
+					List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+					for(UsuarioRegistrado ur : lista) {
+						if(ur.getNombreUsuario().equals(m.group(1))) {	
+							List<Notificacion> listaNotificaciones = new ArrayList<Notificacion>(ur.recibe.getCollection());
+							for(Notificacion n : listaNotificaciones) {
+								if(n.getUsuarioRegistradoIDNotifica() == p.getPerteneceA().getID()) {
+									NotificacionDAO.deleteAndDissociate(n);
+								}
 							}
 						}
 					}
@@ -60,7 +69,7 @@ public class Publicaciones {
 			for(Comentario comentario : comentarios) {
 				ComentarioDAO.deleteAndDissociate(comentario);
 			}
-			PublicacionDAO.delete(p);
+			PublicacionDAO.deleteAndDissociate(p);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -71,7 +80,7 @@ public class Publicaciones {
 	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		Publicacion p = null;
-        
+
 		try {
 			p = PublicacionDAO.createPublicacion();
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuarioID);
@@ -91,17 +100,17 @@ public class Publicaciones {
 			p.setDescripcion(aDescripcion);
 			p.setVideo(aVideo);
 			p.setFechaPublicacion(aVideo);
-			 // Obtener la fecha actual
-	        Date fechaActual = new Date();
-	        // Formatear la fecha en el formato deseado
-	        DateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
-	        String fechaFormateada = formatoFecha.format(fechaActual);
-	        p.setFechaPublicacion(fechaFormateada);
-	        p.setNumComentarios(0);
-	        p.setNumMeGustas(0);
-	        p.setNumVisualizaciones(0);
-	        PublicacionDAO.save(p);
-	        t.commit();			
+			// Obtener la fecha actual
+			Date fechaActual = new Date();
+			// Formatear la fecha en el formato deseado
+			DateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy");
+			String fechaFormateada = formatoFecha.format(fechaActual);
+			p.setFechaPublicacion(fechaFormateada);
+			p.setNumComentarios(0);
+			p.setNumMeGustas(0);
+			p.setNumVisualizaciones(0);
+			PublicacionDAO.save(p);
+			t.commit();			
 		} catch (Exception e) {
 			t.rollback();
 		}
@@ -109,11 +118,33 @@ public class Publicaciones {
 		return p;	
 	}
 
-	public void meGustaPublicacion(int aIdPublicacion, String aNombreUsuario) {
-		throw new UnsupportedOperationException();
+	public void meGustaPublicacion(int aIdPublicacion, String aNombreUsuario, int UsuarioID) throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
+			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(UsuarioID);
+			if(!p.gustaA.contains(usuario)) {
+				p.gustaA.add(usuario);
+			}else {
+				p.setNumMeGustas(p.getNumMeGustas()-1);
+				p.gustaA.remove(usuario);
+			}
+			PublicacionDAO.save(p);
+		} catch (Exception e) {
+			t.rollback();
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
+
 	}
 
-	public List cargarPublicacionesUsuarios() {
-		throw new UnsupportedOperationException();
+	public List cargarPublicacionesUsuarios() throws PersistentException {
+		List<Publicacion> publicaciones = null;
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			publicaciones = PublicacionDAO.queryPublicacion(null, null);
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return publicaciones;
 	}
 }

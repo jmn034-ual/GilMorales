@@ -4,6 +4,8 @@ import bd_dcl.UsuarioComercial;
 
 import java.util.List;
 
+import org.orm.PersistentException;
+
 import bd_dcl.Publicacion;
 
 public interface iUsuario_comercial {
@@ -12,13 +14,13 @@ public interface iUsuario_comercial {
 
 	public Publicacion addPublicacionComercial(String aNombreUsuarioComercial, String aLocalizacion, String aDescripcion, String aVideo, Object aUsuarioComercialID);
 
-	public void editarPerfilUC(String aNombreUsuario, String aNuevoNombreUsuario, String aNombreEmpresa, String aDescripcion, String aFoto);
+	public void editarPerfilUC(String aNuevoNombreUsuario, String aNombreEmpresa, String aDescripcion, String aFoto, int aUsuarioID);
 
-	public void eliminarSeleecion(List aSeleccion);
+	public void eliminarSeleccion(List aSeleccion);
 
 	public void eliminarPublicacoinUC(int aIdPublicacion);
 
-	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo, String aExplicacion);
+	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo, String aExplicacion, int aUsuarioID);
 
 	public List cargarUsuariosMeGustas(int aIdPublicacion);
 }

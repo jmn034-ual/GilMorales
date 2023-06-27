@@ -18,7 +18,7 @@ import vistas.VistaUsuarioNoRegistrado;
 public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	private button _iniciarSesionB;
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
-	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado = new Lista_Publicaciones__Usuario_no_registrado_(this);
+	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado;
 	public Cabecera_Usuario_No_Registrado cabeceraUNR;
 	Iniciar_Sesion__4 inicioSesion;
 	private BDPrincipal bd;
@@ -33,40 +33,14 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Lista_Publicaciones__Usuario_no_registrado_() {
+		this.publicacionesNoRegistrado = new Lista_Publicaciones__Usuario_no_registrado_(this);
 		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(publicacionesNoRegistrado);
 	}
 
 	public void Cabecera_Usuario_No_Registrado() {
 		cabeceraUNR = new Cabecera_Usuario_No_Registrado(this);
 		this.getLayoutCabecera().add(cabeceraUNR);
-//		this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
-//		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {
-//			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
-//			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(cabeceraUNR);
-//		});
-//		this.cabeceraUNR._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
-//			this.getLayoutListaPublicaciones().setVisible(false);
-//			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
-//		});
-//		this.cabeceraUNR._cabecera_TOP.getBotonVerListaUsuarios().addClickListener(event -> {
-//			this.getLayoutListaPublicaciones().setVisible(false);
-//			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
-//		});
-//		this.cabeceraUNR.getInicio().addClickListener(event -> {
-//			this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
-//			this.publicacionesNoRegistrado.setVisible(true);
-//			this.getLayoutListaPublicaciones().setVisible(true);
-//			this.cabeceraUNR._cabecera_TOP.setVisible(true);
-//			this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
-//		});
-//		this.cabeceraUNR.getBotonBuscar().addClickListener(event ->{
-////			System.out.println(this.getVaadinHorizontalLayout().getComponentCount());
-//			if(this.getVaadinHorizontalLayout().getComponentCount() != 0)
-//				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
-//			this.getLayoutListaPublicaciones().setVisible(false);
-//		});
 	}
-
 
 	public void Iniciar_Sesion() {
 		inicioSesion = new Iniciar_Sesion__4(bd);

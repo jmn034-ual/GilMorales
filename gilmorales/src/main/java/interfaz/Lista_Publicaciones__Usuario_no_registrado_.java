@@ -1,35 +1,63 @@
 package interfaz;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
+
+import org.orm.PersistentException;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
+import basededatos.iUsuario_No_Registrado;
+import bd_dcl.Publicacion;
+import bd_dcl.PublicacionDAO;
+import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaPublicacionesUsuarioNoRegistrado;
 
 public class Lista_Publicaciones__Usuario_no_registrado_ extends VistaListaPublicacionesUsuarioNoRegistrado{
 	public Usuario_No_Registrado unr;
 	public Vector<Lista_Publicaciones__Usuario_no_registrado__item> _item = new Vector<Lista_Publicaciones__Usuario_no_registrado__item>();
+	private Lista_Publicaciones__Usuario_no_registrado__item publicacion;
+	private iUsuario_No_Registrado bd = new BDPrincipal();
 	
 	public Lista_Publicaciones__Usuario_no_registrado_(){
-		
 	}
-	
 	public Lista_Publicaciones__Usuario_no_registrado_(Usuario_No_Registrado unr){
 		this.unr = unr;
-		Lista_Publicaciones__Usuario_no_registrado__item item1 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario1", "Nijar", "Una publicacion de prueba",
-				"icons/icon.png", "videos/tiktok1.mp4", unr);
-		Lista_Publicaciones__Usuario_no_registrado__item item2 = new Lista_Publicaciones__Usuario_no_registrado__item("usuario2", "Nijar", "Una publicacion de prueba",
-				"icons/luffy.jpg", "videos/tiktok1.mp4", unr);
-		anadirPublicacion(item1);
-		anadirPublicacion(item2);
-	}
-	public void anadirPublicacion(Lista_Publicaciones__Usuario_no_registrado__item publicacion) {
-		this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(publicacion);
-		_item.add(publicacion);
+		cargarPublicacionesUNR();
 	}
 	
-	public Lista_Publicaciones__Usuario_no_registrado__item getPublicacion(Lista_Publicaciones__Usuario_no_registrado__item publicacion) {
-		if(_item.contains(publicacion))return publicacion;
-		return null;
-	}	
+	public void cargarPublicacionesUNR() {
+//		List<UsuarioRegistrado> lista = bd.cargarUsuariosUNR();
+		
+		this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
+		_item.clear();
+
+//		for(UsuarioRegistrado user : lista) {
+//			List<Publicacion> publicaciones = new ArrayList<Publicacion>(user.publica.getCollection());
+//			for(Publicacion pub : publicaciones) {
+//				this.publicacion = new Lista_Publicaciones__Usuario_no_registrado__item(pub, unr);
+//				this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(this.publicacion);
+//				_item.add(this.publicacion);
+//			}
+//		}
+		List<Publicacion> publicaciones;
+		try {
+			publicaciones = PublicacionDAO.queryPublicacion(null, null);
+			for(Publicacion pub : publicaciones) {
+//				if(pub.getPerteneceA() != null && pub.getEsPublicada() == null) {
+					this.publicacion = new Lista_Publicaciones__Usuario_no_registrado__item(pub, unr);	
+//				}else {
+//					this.publicacion = new Lista_Publicaciones__Usuario_no_registrado__item(pub, unr);	
+//				}
+				this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(this.publicacion);
+				_item.add(this.publicacion);
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 }

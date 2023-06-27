@@ -51,15 +51,19 @@ public class Ver_publicacion_propia extends Ver_publicacion__usuario_Registrado_
 
 	public void Eliminar_publicacion_propia() {
 		this.getVaadinButton1().addClickListener(event ->{
-			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
-			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
-			urInterfaz.listaPublicaciones.setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
-			urInterfaz.getListaPublicaciones().setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado.addPubli.setVisible(false);
+//			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
+//			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
+//			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
+//			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
+//			urInterfaz.listaPublicaciones.setVisible(true);
+//			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
+//			urInterfaz.getListaPublicaciones().setVisible(true);
+//			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
+//			urInterfaz._cabecera_Usuario_Registrado.addPubli.setVisible(false);
+			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
+				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
+			}
+			urInterfaz._cabecera_Usuario_Registrado.volverInicio();
 			bd.eliminarPublicacion(publicacion.getIdPublicacion());
 			Notification.show("Publicacion eliminada.");
 		});

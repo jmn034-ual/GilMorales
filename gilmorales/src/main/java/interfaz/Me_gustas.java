@@ -35,7 +35,7 @@ public class Me_gustas extends Nuevos_seguidores {
 		Me_gustas_item nuevoItem = null;
 		try {
 			UsuarioRegistrado seguidor = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(notificacionNuevoMeGusta.getEnviadaA().getORMID());
-			nuevoItem = new Me_gustas_item(seguidor);
+			nuevoItem = new Me_gustas_item(ur, seguidor);
 			this.getFotoPerfil().setImage(seguidor.getFoto());
 			this.getVaadinButton().setText(seguidor.getNombreUsuario());
 			Avatar avatar = this.getFotoPerfil();

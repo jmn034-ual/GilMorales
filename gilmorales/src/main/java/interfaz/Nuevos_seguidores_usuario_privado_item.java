@@ -7,8 +7,8 @@ public class Nuevos_seguidores_usuario_privado_item extends Nuevos_seguidores_it
 
 	public Nuevos_seguidores_usuario_privado _nuevos_seguidores_usuario_privado;
 	
-	public Nuevos_seguidores_usuario_privado_item(UsuarioRegistrado ur) {
-		super(ur);
+	public Nuevos_seguidores_usuario_privado_item(UsuarioRegistrado usuario, UsuarioRegistrado nuevoSeguidor) {
+		super(usuario, nuevoSeguidor);
 		// TODO Auto-generated constructor stub
 	}
 

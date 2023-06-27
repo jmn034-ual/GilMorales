@@ -11,7 +11,7 @@ public interface iUsuario_Registrado {
 
 	public UsuarioRegistrado cargarUsuarioRegistrado(String aNombreUsuario, String aPassword);
 
-	public void comentarPublicacion(int aIdPublicacion, String aNombreUsuario, String aComentario);
+	public void comentarPublicacion(int aIdPublicacion, String aNombreUsuario, String aComentario, int UsuarioID);
 
 	public void meGustaComentario(int aIdComentario, String aNombreUsuario, int aUsuarioID);
 
@@ -25,11 +25,9 @@ public interface iUsuario_Registrado {
 
 	public void seguirUsuario(String aNombreUsuarioASeguir, String aNombreUsuarioSigue, int aUsuarioSeguidoID, int aUsuarioSeguidorID);
 
-	public void dejarSeguirUsuario(String aNombreUsuarioDejarSeguir, String aNombreUsuario, int aUsuarioDejaSeguirID, Object aUsuarioID);
+	public void dejarSeguirUsuario(String aNombreUsuarioDejarSeguir, String aNombreUsuario, int aUsuarioDejaSeguirID, int aUsuarioID);
 
 	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID);
-
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID);
 
 	public List cargarListaHashtags();
 
@@ -52,10 +50,6 @@ public interface iUsuario_Registrado {
 	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo, String aExplicacion, int aUsuarioID);
 
 	public void eliminarPublicacion(int aIdPublicacion);
-
-	public List resultadoHashstags(int aIdHashtag, String aNombreHashtag);
-
-	public List resultadoUsuarios(String aNombreUsuario);
 
 	public List cargarTendencias();
 

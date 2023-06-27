@@ -36,7 +36,7 @@ public class Nuevos_seguidores extends Notificaciones__comun {
 		Nuevos_seguidores_item nuevoItem = null;
 		try {
 			UsuarioRegistrado usuarioNotifica = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(notificacionNuevoSeguidor.getUsuarioRegistradoIDNotifica());
-			nuevoItem = new Nuevos_seguidores_item(usuarioNotifica);
+			nuevoItem = new Nuevos_seguidores_item(this.ur, usuarioNotifica);
 			if(!ur.seguir.contains(usuarioNotifica) && usuarioNotifica.getPrivacidad() != 1) {
 				nuevoItem.getPrivado().setVisible(false);
 				nuevoItem.getBotonSeguir().setVisible(true);
