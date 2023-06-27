@@ -29,8 +29,6 @@ public interface iUsuario_Registrado {
 
 	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID);
 
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID);
-
 	public List cargarListaHashtags();
 
 	public Hashtag cargarHashtag(int aIdHashtag, String aNombreHashstag);

@@ -33,8 +33,7 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	public Denuncias denuncia = new Denuncias();
 
 	public UsuarioRegistrado iniciarSesion(String aNombreUsuario, String aPassword) {
-
-		return null;
+		return cargarUsuarioRegistrado(aNombreUsuario, aPassword);
 	}
 
 	public UsuarioRegistrado iniciarSesionOtrasPlataformas(String aEmail) {
@@ -48,7 +47,14 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario) {
-	return null;
+		int id = Integer.parseInt(aNombreUsuario);
+		try {
+			String password = this.usuario_registrado.recuperarPassword(aEmailRecuperacion, aNuevaPassword, aNombreUsuario, id);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return aNuevaPassword;
 	}
 
 	public UsuarioRegistrado cargarUsuarioRegistrado(String aNombreUsuario, String aPassword) {
@@ -102,7 +108,12 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public void eliminarSeleccion(List aListaSeleccion) {
-
+		try {
+			this.publicacion.eliminarSeleccion(aListaSeleccion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -209,12 +220,6 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		}
 		return p;
 	}
-
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID) {
-
-		return null;
-	}
-
 	public Hashtag cargarHashtag(int aIdHashtag, String aNombreHashstag) {
 		Hashtag hashtagCargado = null;
 		try {
@@ -228,7 +233,12 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	public void denunciarPublicacion(int aIdPublicacion, String aNombreUsuarioDenunciante, String aMotivo,
 			String aExplicacion, int aUsuarioID) {
-
+		try {
+			this.denuncia.denunciarPublicacion(aIdPublicacion, aNombreUsuarioDenunciante, aMotivo, aExplicacion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -260,13 +270,23 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	public void denunciarUsuario(String aNombreUsuarioDenunciado, String aNombreUsuarioDenunciante, String aMotivo,
 			int aUsuarioDenunciaID, int aUsuarioDenunciadoID) {
-
-
+		try {
+			this.denuncia.denunciarUsuario(aNombreUsuarioDenunciado, aNombreUsuarioDenunciante, aMotivo, aUsuarioDenunciaID, aUsuarioDenunciadoID);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo,
 			String aExplicacion, int aUsuarioID) {
 
+		try {
+			this.denuncia.denunciarComentario(aIdComentario, aNombreUsuarioDenunciante, aMotivo, aExplicacion, aUsuarioID);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -350,7 +370,14 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	public List cargarPublicacionesUsuarios() {
 
-		return null;
+		List lista = null;
+		try {
+			lista = this.publicacion.cargarPublicacionesUsuarios();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return lista;
 	}
 
 	public List cargarListaUsuariosRegistrados() {
@@ -376,8 +403,9 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public List ordenarUsuarios(String aFiltro) {
-
-		return null;
+		List lista = null;
+		lista = this.usuario_registrado.ordenarUsuarios(aFiltro);
+		return lista;
 	}
 
 	public void eliminarPublicacion(int aIdPublicacion) {
@@ -392,12 +420,7 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	public void borrarComentario(int aIdComentario, int aIdPublicacion, String aNombreUsuarioPropietario) {
 
-
-	}
-
-	public void addFoto(String aFoto) {
-
-
+		
 	}
 
 	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {

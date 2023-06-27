@@ -34,7 +34,14 @@ public class Publicaciones {
 
 	public void eliminarSeleccion(List<Publicacion> aListaSeleccion) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-
+		try {
+			for(Publicacion publicacion : aListaSeleccion) {
+				PublicacionDAO.deleteAndDissociate(publicacion);
+			}
+		} catch (Exception e) {
+			t.rollback();
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void eliminarPublicacion(int aIDPublicacion) throws PersistentException {
@@ -130,7 +137,14 @@ public class Publicaciones {
 
 	}
 
-	public List cargarPublicacionesUsuarios() {
-		throw new UnsupportedOperationException();
+	public List cargarPublicacionesUsuarios() throws PersistentException {
+		List<Publicacion> publicaciones = null;
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			publicaciones = PublicacionDAO.queryPublicacion(null, null);
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return publicaciones;
 	}
 }

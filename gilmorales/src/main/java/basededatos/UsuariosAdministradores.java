@@ -35,9 +35,4 @@ public class UsuariosAdministradores {
 		}
 		return admin;
 	}
-
-
-	public void addFoto(String aFoto) {
-		throw new UnsupportedOperationException();
-	}
 }

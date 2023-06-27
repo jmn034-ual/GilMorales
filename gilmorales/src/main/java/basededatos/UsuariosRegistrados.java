@@ -125,10 +125,6 @@ public class UsuariosRegistrados {
 		GilMoralesPersistentManager.instance().disposePersistentManager();	
 	}
 
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID) {
-		throw new UnsupportedOperationException();
-	}
-
 	public List buscarUsuario(String aNombreUsuario) throws PersistentException {
 		if(aNombreUsuario == "") return null;
 		List lista = null;
@@ -187,7 +183,14 @@ public class UsuariosRegistrados {
 	}
 
 	public List ordenarUsuarios(String aFiltro) {
-		throw new UnsupportedOperationException();
+		List<UsuarioRegistrado> lista = null;
+		try {
+			 lista = cargarListaUsuariosRegistrados();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return lista;
 	}
 
 	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) throws PersistentException {

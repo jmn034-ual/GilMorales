@@ -22,8 +22,6 @@ public interface iAdministrador {
 
 	public void borrarComentario(int aIdComentario, int aIdPublicacion, String aNombreUsuarioPropietario);
 
-	public void addFoto(String aFoto);
-
 	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID);
 
 	public List realizarBusqueda(String aBusqueda, String aFiltro);
