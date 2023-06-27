@@ -27,7 +27,6 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.bd = bd;
-		cabeceraUNR = new Cabecera_Usuario_No_Registrado();
 		Lista_Publicaciones__Usuario_no_registrado_();
 //		Iniciar_Sesion();
 		Cabecera_Usuario_No_Registrado();	
@@ -38,33 +37,34 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Cabecera_Usuario_No_Registrado() {
+		cabeceraUNR = new Cabecera_Usuario_No_Registrado(this);
 		this.getLayoutCabecera().add(cabeceraUNR);
-		this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
-		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(cabeceraUNR);
-		});
-		this.cabeceraUNR._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
-			this.getLayoutListaPublicaciones().setVisible(false);
-			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
-		});
-		this.cabeceraUNR._cabecera_TOP.getBotonVerListaUsuarios().addClickListener(event -> {
-			this.getLayoutListaPublicaciones().setVisible(false);
-			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
-		});
-		this.cabeceraUNR.getInicio().addClickListener(event -> {
-			this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
-			this.publicacionesNoRegistrado.setVisible(true);
-			this.getLayoutListaPublicaciones().setVisible(true);
-			this.cabeceraUNR._cabecera_TOP.setVisible(true);
-			this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
-		});
-		this.cabeceraUNR.getBotonBuscar().addClickListener(event ->{
-//			System.out.println(this.getVaadinHorizontalLayout().getComponentCount());
-			if(this.getVaadinHorizontalLayout().getComponentCount() != 0)
-				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
-			this.getLayoutListaPublicaciones().setVisible(false);
-		});
+//		this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
+//		this.cabeceraUNR.getBotonRegistrarse().addClickListener(event-> {
+//			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
+//			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(cabeceraUNR);
+//		});
+//		this.cabeceraUNR._cabecera_TOP.getBotonVerListaHashtag().addClickListener(event -> {
+//			this.getLayoutListaPublicaciones().setVisible(false);
+//			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
+//		});
+//		this.cabeceraUNR._cabecera_TOP.getBotonVerListaUsuarios().addClickListener(event -> {
+//			this.getLayoutListaPublicaciones().setVisible(false);
+//			this.getVaadinHorizontalLayout().add(this.cabeceraUNR._cabecera_TOP);
+//		});
+//		this.cabeceraUNR.getInicio().addClickListener(event -> {
+//			this.cabeceraUNR.getVaadinVerticalLayout().setVisible(false);
+//			this.publicacionesNoRegistrado.setVisible(true);
+//			this.getLayoutListaPublicaciones().setVisible(true);
+//			this.cabeceraUNR._cabecera_TOP.setVisible(true);
+//			this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
+//		});
+//		this.cabeceraUNR.getBotonBuscar().addClickListener(event ->{
+////			System.out.println(this.getVaadinHorizontalLayout().getComponentCount());
+//			if(this.getVaadinHorizontalLayout().getComponentCount() != 0)
+//				this.getVaadinHorizontalLayout().remove(this.getVaadinHorizontalLayout().getComponentAt(0));
+//			this.getLayoutListaPublicaciones().setVisible(false);
+//		});
 	}
 
 

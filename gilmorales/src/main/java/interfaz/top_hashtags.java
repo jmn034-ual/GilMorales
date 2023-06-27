@@ -13,9 +13,10 @@ import vistas.VistaTopHashtags;
 public class top_hashtags extends VistaTopHashtags{
 	public Cabecera_TOP _cabecera_TOP;
 	public Vector<top_hashtags_item> _item = new Vector<top_hashtags_item>();
-	iUsuario_Registrado bd = new BDPrincipal();
+	iUsuario_Registrado bd;
 	top_hashtags_item thi;
 	public top_hashtags() {
+		 bd = new BDPrincipal();
 		cargarHashtagTOP();
 	}
 	public void cargarHashtagTOP() {

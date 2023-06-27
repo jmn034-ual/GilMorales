@@ -33,11 +33,11 @@ public class Administrador extends VistaAdministradorPrincipal {
 			this.getLayoutPublicaciones().as(VerticalLayout.class).removeAll();
 		});
 		
-		this.top.tui.getNombreUsuario().addClickListener(event->{
-			this.getVaadinHorizontalLayout().removeAll();
-			this.getVaadinHorizontalLayout().add(this._lista_Publicaciones__Administrador_.p._ver_perfil_administrador_);
-		
-		});
+//		this.top.tui.getNombreUsuario().addClickListener(event->{
+//			this.getVaadinHorizontalLayout().removeAll();
+//			this.getVaadinHorizontalLayout().add(this._lista_Publicaciones__Administrador_.p._ver_perfil_administrador_);
+//		
+//		});
 		
 		
 		this.top._ver_lista_usuarios_registrados.u1.getBotonNombreUsuario().addClickListener(event->{

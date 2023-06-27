@@ -3,13 +3,21 @@ package basededatos;
 import basededatos.BDPrincipal;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Vector;
 
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+
 import bd_dcl.GilMoralesPersistentManager;
+import bd_dcl.Hashtag;
+import bd_dcl.HashtagDAO;
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioComercialDAO;
 import bd_dcl.UsuarioRegistrado;
@@ -81,9 +89,41 @@ public class UsuariosRegistrados {
 		}
 		return usuariosCoincidentes;
 	}
+	
+	public List cargarListaUsuariosTOP() throws PersistentException {
+		List<UsuarioRegistrado> usuariosTop = new ArrayList<UsuarioRegistrado>();
 
-	public List cargarListaUsuariosTOP() {
-		throw new UnsupportedOperationException();
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			List<UsuarioRegistrado> usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+			HashMap<UsuarioRegistrado, Integer> datos = new HashMap<UsuarioRegistrado, Integer>();
+			for(UsuarioRegistrado user : usuarios) {
+				List<Publicacion> publicaciones = new ArrayList<Publicacion>(user.publica.getCollection());
+				System.out.println("El numero de usuarios es -> " + usuarios.size());
+				int numMeGustas = 0;
+				for(Publicacion publicacion : publicaciones) {
+					numMeGustas += publicacion.getNumMeGustas();
+				}
+				datos.put(user, numMeGustas);
+			}
+			ArrayList<Integer> valores = new ArrayList<Integer>(datos.values());
+			valores.sort(null);
+			int i = 1;
+			for(Entry<UsuarioRegistrado, Integer> d : datos.entrySet()) {
+				if(valores.get(valores.size()-1).equals(d.getValue())) {
+					usuariosTop.add(d.getKey());
+					if(i < 5) {
+						i++;
+					}else {
+						break;
+					}
+				}
+			}
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return usuariosTop;
 	}
 
 	public List ordenarUsuarios(String aFiltro) {

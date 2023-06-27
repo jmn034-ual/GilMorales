@@ -30,20 +30,16 @@ public class Hashtags {
 
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			List<Hashtag> hashtags = HashtagDAO.queryHashtag(null, "Hashtag.NumVisualizaciones DESC");
+			List<Hashtag> hashtags = HashtagDAO.queryHashtag(null, "Hashtag.numVisualizaciones DESC");
 			if(!hashtags.isEmpty()) {
-				hashtagsTop.add(hashtags.get(0));
-				hashtagsTop.add(hashtags.get(1));
-				hashtagsTop.add(hashtags.get(2));
-				hashtagsTop.add(hashtags.get(3));
-				hashtagsTop.add(hashtags.get(4));
+				for(int i = 0; i < hashtags.size() && i < 5 ; i++) {
+					hashtagsTop.add(hashtags.get(i));
+				}
 			}
-
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
-
 		return hashtagsTop;
 	}
 
