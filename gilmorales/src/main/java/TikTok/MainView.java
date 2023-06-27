@@ -58,9 +58,8 @@ public class MainView extends VerticalLayout {
 		this.setPadding(false);
 		BDPrincipal bd = new BDPrincipal();
 
-		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
-		add(unr);
 		
+
 		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
 
 
