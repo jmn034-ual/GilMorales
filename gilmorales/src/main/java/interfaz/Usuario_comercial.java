@@ -36,7 +36,7 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 		this.getNombreDeEmpresa().setText(nombreEmpresa);
 		this.getNombreDeUsuario().setText(usuario);
 		this.getDescripcion().setText(des);
-		this.getNumeroL().setText(mg);;
+		this.getNumeroL().setText(mg);
 	}
 	
 	public void Eliminar_publicaciones__Comercial_() {
