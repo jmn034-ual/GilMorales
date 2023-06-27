@@ -13,7 +13,7 @@ public class CreateGilMoralesData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene, publicacionDenunciadaPor, perteneceA, gustaA, tieneComentarios, numVisualizaciones, numMeGustas, numComentarios, esPublicada, visualizadaPor
 			bd_dcl.PublicacionDAO.save(bD_DCLPublicacion);
 			bd_dcl.UsuarioRegistrado bD_DCLUsuarioRegistrado = bd_dcl.UsuarioRegistradoDAO.createUsuarioRegistrado();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : realizaDenuncia, visualiza, denucia, daMeGustaComentario, seguir, comenta, denunciaComentarioUR, denuciaPublicacion, recibe, publica, daMeGustaPublicacion, esDenunciado, seguido, edad, nombreUsuario
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : realizaDenuncia, visualiza, denucia, daMeGustaComentario, seguir, comenta, denunciaComentarioUR, denuciaPublicacion, recibe, publica, daMeGustaPublicacion, esDenunciado, seguido, nombreUsuario
 			bd_dcl.UsuarioRegistradoDAO.save(bD_DCLUsuarioRegistrado);
 			bd_dcl.UsuarioAdministrador bD_DCLUsuarioAdministrador = bd_dcl.UsuarioAdministradorDAO.createUsuarioAdministrador();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : gestiona, codigoEmpleado

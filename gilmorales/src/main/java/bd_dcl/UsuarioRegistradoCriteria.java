@@ -28,7 +28,6 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 	public final StringExpression apellidos;
 	public final StringExpression email;
 	public final StringExpression password;
-	public final IntegerExpression edad;
 	public final CollectionExpression seguido;
 	public final CollectionExpression esDenunciado;
 	public final CollectionExpression daMeGustaPublicacion;
@@ -54,7 +53,6 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 		apellidos = new StringExpression("apellidos", this);
 		email = new StringExpression("email", this);
 		password = new StringExpression("password", this);
-		edad = new IntegerExpression("edad", this);
 		seguido = new CollectionExpression("ORM_seguido", this);
 		esDenunciado = new CollectionExpression("ORM_esDenunciado", this);
 		daMeGustaPublicacion = new CollectionExpression("ORM_daMeGustaPublicacion", this);

@@ -26,6 +26,47 @@ public class VistaPublicacionesUsuarioPublicoItem extends LitTemplate {
 	@Id("numVisualizaciones")
 	private Label numVisualizaciones;
 
+	
+	public Element getLayoutItem() {
+		return layoutItem;
+	}
+
+
+	public void setLayoutItem(Element layoutItem) {
+		this.layoutItem = layoutItem;
+	}
+
+
+	public Element getLayoutPublicacion() {
+		return layoutPublicacion;
+	}
+
+
+	public void setLayoutPublicacion(Element layoutPublicacion) {
+		this.layoutPublicacion = layoutPublicacion;
+	}
+
+
+	public Element getLayoutVideo() {
+		return layoutVideo;
+	}
+
+
+	public void setLayoutVideo(Element layoutVideo) {
+		this.layoutVideo = layoutVideo;
+	}
+
+
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
+
 	/**
      * Creates a new VistaPublicacionesUsuarioPublicoItem.
      */

@@ -23,8 +23,6 @@ public class VistaEliminarPublicaciones extends LitTemplate {
 
     @Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
 	@Id("titulo")
 	private H1 titulo;
 	@Id("vaadinHorizontalLayout")
@@ -43,6 +41,107 @@ public class VistaEliminarPublicaciones extends LitTemplate {
 	private Button botonEliminar;
 	@Id("labelSelecionar")
 	private Label labelSelecionar;
+
+	
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+	public H1 getTitulo() {
+		return titulo;
+	}
+
+
+	public void setTitulo(H1 titulo) {
+		this.titulo = titulo;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+	public Checkbox getCheckboxSelecionarTodas() {
+		return checkboxSelecionarTodas;
+	}
+
+
+	public void setCheckboxSelecionarTodas(Checkbox checkboxSelecionarTodas) {
+		this.checkboxSelecionarTodas = checkboxSelecionarTodas;
+	}
+
+
+	public Element getLayoutLista() {
+		return layoutLista;
+	}
+
+
+	public void setLayoutLista(Element layoutLista) {
+		this.layoutLista = layoutLista;
+	}
+
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+
+	public Button getBotonCancelar() {
+		return botonCancelar;
+	}
+
+
+	public void setBotonCancelar(Button botonCancelar) {
+		this.botonCancelar = botonCancelar;
+	}
+
+
+	public Button getBotonEliminar() {
+		return botonEliminar;
+	}
+
+
+	public void setBotonEliminar(Button botonEliminar) {
+		this.botonEliminar = botonEliminar;
+	}
+
+
+	public Label getLabelSelecionar() {
+		return labelSelecionar;
+	}
+
+
+	public void setLabelSelecionar(Label labelSelecionar) {
+		this.labelSelecionar = labelSelecionar;
+	}
+
 
 	/**
      * Creates a new VistaEliminarPublicaciones.

@@ -7,6 +7,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-top-usuarios-item template.
@@ -18,14 +19,27 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @JsModule("./src/vista-top-usuarios-item.ts")
 public class VistaTopUsuariosItem extends LitTemplate {
 
-    @Id("nombreUsuario")
+
+	@Id("fotoPerfil1")
+	private Avatar fotoPerfil1;
+	@Id("nombreUsuario")
 	private Button nombreUsuario;
 	@Id("fotoPerfil")
 	private Element fotoPerfil;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
+
 	
-	
+	public Avatar getFotoPerfil1() {
+		return fotoPerfil1;
+	}
+
+
+	public void setFotoPerfil1(Avatar fotoPerfil1) {
+		this.fotoPerfil1 = fotoPerfil1;
+	}
+
+
 	public Button getNombreUsuario() {
 		return nombreUsuario;
 	}

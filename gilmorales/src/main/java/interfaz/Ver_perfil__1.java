@@ -1,8 +1,9 @@
 package interfaz;
 
 import basededatos.iVer_perfil;
+import vistas.VistaVerTendencias;
 
-public class Ver_perfil__1 {
+public class Ver_perfil__1 extends Ver_tendencias{
 	
 	public iVer_perfil _iVer_perfil;
 	public Denunciar_usuario _denunciar_usuario;

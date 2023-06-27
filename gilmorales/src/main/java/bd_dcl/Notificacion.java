@@ -51,6 +51,17 @@ public class Notificacion implements Serializable {
 	@Column(name="TipoNotificacion", nullable=false, length=10)	
 	private int tipoNotificacion;
 	
+	@Column(name="UsuarioRegistradoIDNotifica", nullable=false, length=10)	
+	private int UsuarioRegistradoIDNotifica;
+	
+	public int getUsuarioRegistradoIDNotifica() {
+		return UsuarioRegistradoIDNotifica;
+	}
+
+	public void setUsuarioRegistradoIDNotifica(int usuarioRegistradoIDNotifica) {
+		UsuarioRegistradoIDNotifica = usuarioRegistradoIDNotifica;
+	}
+
 	private void setIdNotificacion(int value) {
 		this.idNotificacion = value;
 	}

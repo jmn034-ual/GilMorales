@@ -79,6 +79,7 @@ public class PublicacionSetCollection extends org.orm.util.ORMSet {
 	 * <li>nombreUsuario</li>
 	 * <li>fechaPublicacion</li>
 	 * <li>video</li>
+	 * <li>localizacion</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -98,6 +99,7 @@ public class PublicacionSetCollection extends org.orm.util.ORMSet {
 	 * <li>nombreUsuario</li>
 	 * <li>fechaPublicacion</li>
 	 * <li>video</li>
+	 * <li>localizacion</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

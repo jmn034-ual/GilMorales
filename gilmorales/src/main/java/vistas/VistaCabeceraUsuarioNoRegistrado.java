@@ -19,17 +19,16 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-cabecera-usuario-no-registrado.ts")
 public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 
-
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("cabeceraNR")
+	private Element cabeceraNR;
+	@Id("cabecera")
+	private HorizontalLayout cabecera;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 	@Id("logoWeb")
 	private Button logoWeb;
 	@Id("iconoWeb")
 	private Element iconoWeb;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
 	@Id("barraBusqueda")
 	private HorizontalLayout barraBusqueda;
 	@Id("textoBusqueda")
@@ -44,43 +43,13 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	private Button vaadinButton;
 	@Id("botonRegistrarse")
 	private Button botonRegistrarse;
-	@Id("cabeceraNR")
-	private Element cabeceraNR;
 	
-
-	public Element getCabeceraNR() {
-		return cabeceraNR;
-	}
-
-
-	public void setCabeceraNR(Element cabeceraNR) {
-		this.cabeceraNR = cabeceraNR;
-	}
-
-
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
-	}
-
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
-	}
-
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
+	
 
 	public Button getLogoWeb() {
 		return logoWeb;
 	}
+
 
 
 	public void setLogoWeb(Button logoWeb) {
@@ -88,9 +57,11 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
+
 	public Element getIconoWeb() {
 		return iconoWeb;
 	}
+
 
 
 	public void setIconoWeb(Element iconoWeb) {
@@ -98,19 +69,11 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
-	public HorizontalLayout getCabecera() {
-		return cabecera;
-	}
-
-
-	public void setCabecera(HorizontalLayout cabecera) {
-		this.cabecera = cabecera;
-	}
-
 
 	public HorizontalLayout getBarraBusqueda() {
 		return barraBusqueda;
 	}
+
 
 
 	public void setBarraBusqueda(HorizontalLayout barraBusqueda) {
@@ -118,9 +81,11 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
+
 	public TextField getTextoBusqueda() {
 		return textoBusqueda;
 	}
+
 
 
 	public void setTextoBusqueda(TextField textoBusqueda) {
@@ -128,9 +93,11 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
+
 	public Element getIronIcon() {
 		return ironIcon;
 	}
+
 
 
 	public void setIronIcon(Element ironIcon) {
@@ -138,9 +105,11 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getBotonBuscar() {
 		return botonBuscar;
 	}
+
 
 
 	public void setBotonBuscar(Button botonBuscar) {
@@ -148,9 +117,11 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getInicio() {
 		return inicio;
 	}
+
 
 
 	public void setInicio(Button inicio) {
@@ -158,9 +129,11 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getVaadinButton() {
 		return vaadinButton;
 	}
+
 
 
 	public void setVaadinButton(Button vaadinButton) {
@@ -168,14 +141,53 @@ public class VistaCabeceraUsuarioNoRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getBotonRegistrarse() {
 		return botonRegistrarse;
 	}
 
 
+
 	public void setBotonRegistrarse(Button botonRegistrarse) {
 		this.botonRegistrarse = botonRegistrarse;
 	}
+
+
+
+	public Element getCabeceraNR() {
+		return cabeceraNR;
+	}
+
+
+
+	public void setCabeceraNR(Element cabeceraNR) {
+		this.cabeceraNR = cabeceraNR;
+	}
+
+
+
+	public HorizontalLayout getCabecera() {
+		return cabecera;
+	}
+
+
+
+	public void setCabecera(HorizontalLayout cabecera) {
+		this.cabecera = cabecera;
+	}
+
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
 
 
 	/**

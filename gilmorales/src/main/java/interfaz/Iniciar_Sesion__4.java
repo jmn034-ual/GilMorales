@@ -5,6 +5,9 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
+import basededatos.BDPrincipal;
+import basededatos.iUsuario_Registrado;
+import bd_dcl.UsuarioRegistrado;
 import vistas.VistaIniciarsesion;
 
 public class Iniciar_Sesion__4 extends VistaIniciarsesion{
@@ -25,11 +28,13 @@ public class Iniciar_Sesion__4 extends VistaIniciarsesion{
 	public Iniciar_sesion_otras_plataformas _iniciar_sesion_otras_plataformas;
 	public Recuperar_password _recuperar_password ;
 	public Registrar _registrar ;
+	private iUsuario_Registrado ur;
 	
-	public Iniciar_Sesion__4() {
+	public Iniciar_Sesion__4(BDPrincipal bd) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-    	Registrar();
+    	this.ur = bd;
+//    	Registrar();
 	}
 
 	public void Iniciar_sesion_otras_plataformas() {
@@ -43,10 +48,10 @@ public class Iniciar_Sesion__4 extends VistaIniciarsesion{
 		
 	}
 
-	public void Registrar() { 
-		this.getRegistrarB().addClickListener(event -> {
-			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
-			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(new Registrar());
-		});
-	}
+//	public void Registrar() { 
+//		this.getRegistrarB().addClickListener(event -> {
+//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
+//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(new Registrar());
+//		});
+//	}
 }

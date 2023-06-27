@@ -31,6 +31,7 @@ public class PublicacionCriteria extends AbstractORMCriteria {
 	public final StringExpression nombreUsuario;
 	public final StringExpression fechaPublicacion;
 	public final StringExpression video;
+	public final StringExpression localizacion;
 	public final CollectionExpression tieneComentarios;
 	public final CollectionExpression gustaA;
 	public final IntegerExpression perteneceAId;
@@ -52,6 +53,7 @@ public class PublicacionCriteria extends AbstractORMCriteria {
 		nombreUsuario = new StringExpression("nombreUsuario", this);
 		fechaPublicacion = new StringExpression("fechaPublicacion", this);
 		video = new StringExpression("video", this);
+		localizacion = new StringExpression("localizacion", this);
 		tieneComentarios = new CollectionExpression("ORM_tieneComentarios", this);
 		gustaA = new CollectionExpression("ORM_gustaA", this);
 		perteneceAId = new IntegerExpression("perteneceA.ID", this);

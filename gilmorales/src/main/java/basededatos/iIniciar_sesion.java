@@ -10,5 +10,5 @@ public interface iIniciar_sesion {
 
 	public UsuarioRegistrado usarOtraCuenta(String aNombreUsuarioOemail, String aPassword);
 
-	public void recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario);
+	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario);
 }

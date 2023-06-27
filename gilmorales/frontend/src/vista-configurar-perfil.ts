@@ -19,7 +19,7 @@ export class VistaConfigurarPerfil extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 50%; height: 70%; background-color: #ffffff; z-index: 999; margin-left: 25%; position: fixed; border-radius: 10px; max-width: 50%;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 50%; height: 50%; background-color: #ffffff; z-index: 999; position: fixed; border-radius: 10px;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout id="layoutCabeceraVentana" style="justify-content: flex-start; background-color: #AED6F1; align-self: stretch;">
   <vaadin-button theme="icon" aria-label="Add new" id="botonCerrar" style="flex-shrink: 1; font-size: var(--lumo-icon-size-l); flex-grow: 0; height: 100%; align-self: center; background-color: transparent; border: none;">
    <iron-icon icon="lumo:cross" id="ironIcon"></iron-icon>
@@ -28,7 +28,7 @@ export class VistaConfigurarPerfil extends LitElement {
    <h1 id="titulo" style="align-self: center; flex-grow: 0;">Configurar Perfil</h1>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout1" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 70%;">
+ <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout1" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 60%;">
   <vaadin-vertical-layout id="layoutPrivacidad" style="flex-grow: 0; align-self: center; flex-shrink: 0;">
    <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: flex-start; justify-content: flex-start;">
     <h4 id="tituloPrivacidad" style="margin: var(--lumo-space-xs); margin-top: var(--lumo-space-s);">Privacidad</h4>

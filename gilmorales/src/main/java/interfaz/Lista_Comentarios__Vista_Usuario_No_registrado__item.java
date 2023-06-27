@@ -1,5 +1,6 @@
 package interfaz;
 
+import bd_dcl.Comentario;
 import vistas.VistaListaComentariosUsuarioNoRegistradoItem;
 
 public class Lista_Comentarios__Vista_Usuario_No_registrado__item extends VistaListaComentariosUsuarioNoRegistradoItem{
@@ -11,9 +12,11 @@ public class Lista_Comentarios__Vista_Usuario_No_registrado__item extends VistaL
 	private int numeroMeGustas = Integer.parseInt(this.getNumeroMeGusta().getText());
 	private int bMeGustaPulsado = 0;
 	public Lista_Comentarios__Vista_Usuario_No_registrado_ listaComentariosUNR = new Lista_Comentarios__Vista_Usuario_No_registrado_();
-	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
+	public Ver_perfil_publico ver_perfil;
+	private Usuario_No_Registrado unr;
+	Comentario comentario;
 
-	public Lista_Comentarios__Vista_Usuario_No_registrado__item() {
+	public Lista_Comentarios__Vista_Usuario_No_registrado__item(Usuario_No_Registrado unr, Comentario comentario) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
 		this.getFotoPerfil().setImage("icons/icon.png");
@@ -21,10 +24,20 @@ public class Lista_Comentarios__Vista_Usuario_No_registrado__item extends VistaL
 		this.getComentarioL().setText("Este es un comentaio de prueba...");
 		this.getNumeroMeGusta().setText("0");
 		this.getMeGustaL().setText("Me Gustas");
+		this.unr = unr;
+		this.comentario = comentario;
 		MeGustasComentarios();
+		Ver_perfil();
 	}
 	
 	public void Ver_perfil() {
+		this.ver_perfil = new Ver_perfil_publico(unr, comentario.getEsComentadoPor());
+		this.getNombreUsuario().addClickListener(event ->{
+			unr.getLayoutListaPublicaciones().setVisible(false);
+			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
+			unr.getVaadinHorizontalLayout().add(ver_perfil);
+			});
 	}
 
 	public void MeGustasComentarios() {

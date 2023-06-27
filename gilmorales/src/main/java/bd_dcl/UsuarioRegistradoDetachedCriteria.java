@@ -28,7 +28,6 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 	public final StringExpression apellidos;
 	public final StringExpression email;
 	public final StringExpression password;
-	public final IntegerExpression edad;
 	public final CollectionExpression seguido;
 	public final CollectionExpression esDenunciado;
 	public final CollectionExpression daMeGustaPublicacion;
@@ -54,7 +53,6 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		email = new StringExpression("email", this.getDetachedCriteria());
 		password = new StringExpression("password", this.getDetachedCriteria());
-		edad = new IntegerExpression("edad", this.getDetachedCriteria());
 		seguido = new CollectionExpression("ORM_seguido", this.getDetachedCriteria());
 		esDenunciado = new CollectionExpression("ORM_esDenunciado", this.getDetachedCriteria());
 		daMeGustaPublicacion = new CollectionExpression("ORM_daMeGustaPublicacion", this.getDetachedCriteria());
@@ -81,7 +79,6 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		email = new StringExpression("email", this.getDetachedCriteria());
 		password = new StringExpression("password", this.getDetachedCriteria());
-		edad = new IntegerExpression("edad", this.getDetachedCriteria());
 		seguido = new CollectionExpression("ORM_seguido", this.getDetachedCriteria());
 		esDenunciado = new CollectionExpression("ORM_esDenunciado", this.getDetachedCriteria());
 		daMeGustaPublicacion = new CollectionExpression("ORM_daMeGustaPublicacion", this.getDetachedCriteria());

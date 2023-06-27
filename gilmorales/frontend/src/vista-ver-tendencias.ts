@@ -26,7 +26,7 @@ export class VistaVerTendencias extends LitElement {
     Ver Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; margin-left: 12%; position: fixed; height: 95%; width: 86%; z-index: 998; overflow-y: auto; flex-shrink: 0;">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; margin-left: 12%; position: fixed; height: 95%; width: 86%; overflow-y: auto; flex-shrink: 0;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%;">
    <vaadin-vertical-layout theme="spacing" id="fotoPerfil">
     <vaadin-avatar id="fotoPerfil1"></vaadin-avatar>
@@ -81,6 +81,7 @@ export class VistaVerTendencias extends LitElement {
      Me Gustas 
    </vaadin-button>
   </vaadin-horizontal-layout>
+  <vaadin-vertical-layout theme="spacing" id="listaMeGustas" style="flex-grow: 1; width: 100%; overflox-y: auto; flex-shrink: 0;"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; width: 100%; overflox-y: auto; flex-shrink: 0;">
    <vaadin-horizontal-layout theme="spacing" id="layoutHorizontalPublicaciones" style="width: 100%;"></vaadin-horizontal-layout>
    <label id="labelUsuarioPrivado" style="align-self: center;">Perfil privado, para ver sus videos envíe una petición de amistad.</label>

@@ -17,7 +17,7 @@ export class VistaVerSeguidos extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 60%; height: 80%; background-color: #ffffff; z-index: 999; margin-left: 20%; position: fixed; border-radius: 10px;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 60%; height: 80%; background-color: #ffffff; z-index: 999; position: fixed; border-radius: 10px;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout id="layoutTitulo" style="flex-shrink: 0; align-self: stretch; align-items: flex-start; justify-content: flex-start; background-color: #AED6F1;">
   <vaadin-button theme="icon" aria-label="Add new" id="botonSalir" style="flex-shrink: 1; font-size: var(--lumo-icon-size-l); flex-grow: 0; background-color: transparent; border: none; height: 100%; align-self: center;">
    <iron-icon icon="lumo:cross" id="ironIcon"></iron-icon>

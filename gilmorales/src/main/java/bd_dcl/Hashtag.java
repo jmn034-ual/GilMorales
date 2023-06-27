@@ -47,6 +47,9 @@ public class Hashtag implements Serializable {
 	@Column(name="NombreHashtag", nullable=true, length=255)	
 	private String nombreHashtag;
 	
+	@Column(name="NumVisualizaciones", nullable=false, length=10)	
+	private int numVisualizaciones;
+	
 	@ManyToMany(targetEntity=bd_dcl.Publicacion.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Publicacion_Hashtag", joinColumns={ @JoinColumn(name="HashtagIdHashtag") }, inverseJoinColumns={ @JoinColumn(name="PublicacionIdPublicacion") })	
@@ -73,6 +76,14 @@ public class Hashtag implements Serializable {
 		return nombreHashtag;
 	}
 	
+	public int getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+	public void setNumVisualizaciones(int numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
 	private void setORM_Aparece(java.util.Set value) {
 		this.ORM_aparece = value;
 	}

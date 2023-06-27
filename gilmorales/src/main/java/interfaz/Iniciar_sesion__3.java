@@ -7,7 +7,7 @@ import vistas.VistaIniciarsesion;
 
 public class Iniciar_sesion__3 extends VistaIniciarsesion{
 	//public iIniciar_sesion _iIniciar_sesion;
-	public Iniciar_Sesion__4 _iniciar_sesion = new Iniciar_Sesion__4();
+	public Iniciar_Sesion__4 _iniciar_sesion;
 	
 
 	public void Iniciar_sesion() {

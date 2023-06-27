@@ -15,15 +15,16 @@ public class Ver_comentarios extends VistaVerComentarios{
 //	private int _numeroSeguidores;
 //	private Label _seguidoresL;
 //	private Label _meGustasL;
-	public Ver_Perfil__2 _ver_perfil;
+	public Ver_perfil_publico ver_perfil;
 	
 	public Ver_comentarios() {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
+		this.getFotoPerfil().setSizeFull();
+
 	}
 
 	public void Ver_perfil() {
-		throw new UnsupportedOperationException();
 	}
 
 	public void NumeroMeGustas() {

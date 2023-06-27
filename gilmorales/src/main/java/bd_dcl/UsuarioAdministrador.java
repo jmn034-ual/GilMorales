@@ -14,7 +14,7 @@
 package bd_dcl;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.*;
 @Entity
@@ -56,7 +56,7 @@ public class UsuarioAdministrador implements Serializable {
 	private String apellidosAdmin;
 	
 	@Column(name="FechaContratacion", nullable=true)	
-	private LocalDate fechaContratacion;
+	private Date fechaContratacion;
 	
 	@Column(name="Foto", nullable=true, length=255)	
 	private String foto;
@@ -102,11 +102,11 @@ public class UsuarioAdministrador implements Serializable {
 		return apellidosAdmin;
 	}
 	
-	public void setFechaContratacion(LocalDate value) {
+	public void setFechaContratacion(Date value) {
 		this.fechaContratacion = value;
 	}
 	
-	public LocalDate getFechaContratacion() {
+	public Date getFechaContratacion() {
 		return fechaContratacion;
 	}
 	

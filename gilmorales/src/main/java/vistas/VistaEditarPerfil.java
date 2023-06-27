@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-editar-perfil template.
@@ -68,6 +69,17 @@ public class VistaEditarPerfil extends LitTemplate {
 	private Button botonCancelar;
 	@Id("botonGuardar")
 	private Button botonGuardar;
+	@Id("fotoPerfil")
+	private Avatar fotoPerfil;
+	
+
+	public Avatar getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(Avatar fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
 
 	public Element getLayoutEditarPerfil() {
 		return layoutEditarPerfil;

@@ -19,7 +19,7 @@
       <ReferencedColumn>BD-DCL.UsuarioRegistrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
-      <Nullable>false</Nullable>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -31,7 +31,7 @@
       <ReferencedColumn>BD-DCL.UsuarioComercial.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
-      <Nullable>false</Nullable>
+      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -115,6 +115,17 @@
       <UserTypes/>
     </Column>
     <Column name="Video">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>true</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Localizacion">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>27</Type>
@@ -226,17 +237,16 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="Edad">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
+    <Column name="Privacidad">
+    	<PrimaryKey>false</PrimaryKey>
+    	<ForeignKey>false</ForeignKey>
+    	<Type>9</Type>
+    	<Length>10</Length>
+    	<Nullable>true</Nullable>
+    	<IDGenerator>native</IDGenerator>
+    	<Unique>false</Unique>
+    	<Index>false</Index>
+    	<UserTypes></UserTypes></Column>
   </Entity>
   <Entity name="UsuarioAdministrador" Unlogged="false" PKClustered="0">
     <Column name="ID">
@@ -503,6 +513,17 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+    <Column name="UsuarioRegistradoIDNotifica">
+    	<PrimaryKey>false</PrimaryKey>
+    	<ForeignKey>false</ForeignKey>
+    	<ReferencedColumn>BD-DCL.UsuarioRegistrado.ID</ReferencedColumn>
+    	<Type>9</Type>
+    	<Length>10</Length>
+    	<Nullable>false</Nullable>
+    	<IDGenerator>native</IDGenerator>
+    	<Unique>false</Unique>
+    	<Index>false</Index>
+    	<UserTypes></UserTypes></Column>
   </Entity>
   <Entity name="Hashtag" Unlogged="false" PKClustered="0">
     <Column name="IdHashtag">
@@ -526,6 +547,17 @@
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
+    </Column>
+    <Column name="numVisualizaciones">
+    	
+    	<PrimaryKey>false</PrimaryKey><ForeignKey>false</ForeignKey>
+    	<Type>9</Type>
+    	<Length>10</Length>
+    	<Nullable>false</Nullable>
+    	<IDGenerator>native</IDGenerator>
+    	<Unique>false</Unique>
+    	<Index>false</Index>
+    	<UserTypes></UserTypes>
     </Column>
   </Entity>
   <Entity name="UsuarioComercial" Unlogged="false" PKClustered="0">
