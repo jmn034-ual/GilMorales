@@ -239,10 +239,18 @@ public class UsuariosRegistrados {
 		}catch(Exception e){
 			t.rollback();
 		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 		return password;
 	}
 
-	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {
-		throw new UnsupportedOperationException();
+	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
+			UsuarioRegistradoDAO.deleteAndDissociate(usuario);
+		}catch(Exception e){
+			t.rollback();
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 }

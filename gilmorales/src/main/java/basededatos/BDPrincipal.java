@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import bd_dcl.Comentario;
 import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Hashtag;
 import bd_dcl.HashtagDAO;
@@ -231,9 +232,15 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	}
 
-	public List cargarComentariosTOP(int aIdPublicacion) {
-
-		return null;
+	public List<Comentario> cargarComentariosTOP(int aIdPublicacion) {
+		List<Comentario> top = null;
+		try {
+			top = this.comentarios.cargarComentariosTOP(aIdPublicacion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return top;
 	}
 
 	public List cargarListaUsuariosTOP() {
@@ -261,16 +268,6 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 			String aExplicacion, int aUsuarioID) {
 
 
-	}
-
-	public List resultadoHashstags(int aIdHashtag, String aNombreHashtag) {
-
-		return null;
-	}
-
-	public List resultadoUsuarios(String aNombreUsuario) {
-
-		return null;
 	}
 
 	public List cargarListaHashtagTOP() {
@@ -404,7 +401,13 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {
-
+		
+		try {
+			this.usuario_registrado.bloquearUsuario(aNombreUsuario, aUsuarioID);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 
@@ -414,8 +417,15 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public UsuarioComercial cargarUsuarioComercial(String aNombreUsuario, String aPassword) {
+		UsuarioComercial comercial = null;
+		try {
+			comercial = this.comercial.cargarUsuarioComercial(aNombreUsuario, aPassword);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return comercial;
 
-		return null;
 	}
 
 	public Publicacion addPublicacionComercial(String aNombreUsuarioComercial, String aLocalizacion, String aDescripcion,
@@ -435,8 +445,12 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	}
 
 	public void eliminarPublicacoinUC(int aIdPublicacion) {
-
-
+		try {
+			this.publicacion.eliminarPublicacion(aIdPublicacion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo,
