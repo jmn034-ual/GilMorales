@@ -37,7 +37,7 @@ public class Comentarios {
 		return top;
 	}
 
-	public void comentarPublicacion(int aIdPublicacion, String aNombreUsuario, String aComentario, int aUsuarioID) throws PersistentException {
+	public void comentarPublicacion(int aIdPublicacion, String aComentario, int aUsuarioID)throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
@@ -48,14 +48,15 @@ public class Comentarios {
 			comentario.setEsComentadoPor(usuario);
 			comentario.setNumeroMeGustas(0);
 			ComentarioDAO.save(comentario);
+			publicacion.tieneComentarios.add(comentario);
+			PublicacionDAO.save(publicacion);
 		} catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-
-	public void borrarComentario(int aIdComentario, int aIdPublicacion, String aNombreUsuarioPropietario, int aUsuarioID) throws PersistentException {
+	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
@@ -66,21 +67,25 @@ public class Comentarios {
 				user.comenta.remove(comentario);
 				ComentarioDAO.deleteAndDissociate(comentario);
 			}
-
+			UsuarioRegistradoDAO.save(user);
+			PublicacionDAO.save(publicacion);
 		} catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void meGustaComentario(int aIdComentario, String aNombreUsuario, int aUsuarioID) throws PersistentException {
+	public void meGustaComentario(int aIdComentario, int aUsuarioID)throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Comentario c = ComentarioDAO.loadComentarioByORMID(aIdComentario);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			if(!c.gustaA.contains(usuario)) {
+				usuario.daMeGustaComentario.add(c);
 				c.gustaA.add(usuario);
+				c.setNumeroMeGustas(c.getNumeroMeGustas()+1);
 			}else {
+				usuario.daMeGustaComentario.remove(c);
 				c.setNumeroMeGustas(c.getNumeroMeGustas()-1);
 				c.gustaA.remove(usuario);
 			}

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -65,7 +65,7 @@ public class UsuarioRegistradoDAO {
 	
 	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.load(bd_dcl.UsuarioRegistrado.class, Integer.valueOf(ID));
+			return (UsuarioRegistrado) session.load(bd_dcl.UsuarioRegistrado.class, new Integer(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class UsuarioRegistradoDAO {
 	
 	public static UsuarioRegistrado getUsuarioRegistradoByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.get(bd_dcl.UsuarioRegistrado.class, Integer.valueOf(ID));
+			return (UsuarioRegistrado) session.get(bd_dcl.UsuarioRegistrado.class, new Integer(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class UsuarioRegistradoDAO {
 	
 	public static UsuarioRegistrado loadUsuarioRegistradoByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.load(bd_dcl.UsuarioRegistrado.class, Integer.valueOf(ID), lockMode);
+			return (UsuarioRegistrado) session.load(bd_dcl.UsuarioRegistrado.class, new Integer(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class UsuarioRegistradoDAO {
 	
 	public static UsuarioRegistrado getUsuarioRegistradoByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioRegistrado) session.get(bd_dcl.UsuarioRegistrado.class, Integer.valueOf(ID), lockMode);
+			return (UsuarioRegistrado) session.get(bd_dcl.UsuarioRegistrado.class, new Integer(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -323,9 +323,9 @@ public class UsuarioRegistradoDAO {
 	
 	public static boolean deleteAndDissociate(bd_dcl.UsuarioRegistrado usuarioRegistrado)throws PersistentException {
 		try {
-			bd_dcl.UsuarioRegistrado[] lSeguidos = usuarioRegistrado.seguido.toArray();
-			for(int i = 0; i < lSeguidos.length; i++) {
-				lSeguidos[i].seguir.remove(usuarioRegistrado);
+			bd_dcl.UsuarioRegistrado[] lSeguidors = usuarioRegistrado.seguidor.toArray();
+			for(int i = 0; i < lSeguidors.length; i++) {
+				lSeguidors[i].seguir.remove(usuarioRegistrado);
 			}
 			bd_dcl.UsuarioRegistrado[] lEsDenunciados = usuarioRegistrado.esDenunciado.toArray();
 			for(int i = 0; i < lEsDenunciados.length; i++) {
@@ -357,7 +357,7 @@ public class UsuarioRegistradoDAO {
 			}
 			bd_dcl.UsuarioRegistrado[] lSeguirs = usuarioRegistrado.seguir.toArray();
 			for(int i = 0; i < lSeguirs.length; i++) {
-				lSeguirs[i].seguido.remove(usuarioRegistrado);
+				lSeguirs[i].seguidor.remove(usuarioRegistrado);
 			}
 			bd_dcl.Comentario[] lDaMeGustaComentarios = usuarioRegistrado.daMeGustaComentario.toArray();
 			for(int i = 0; i < lDaMeGustaComentarios.length; i++) {
@@ -385,9 +385,9 @@ public class UsuarioRegistradoDAO {
 	
 	public static boolean deleteAndDissociate(bd_dcl.UsuarioRegistrado usuarioRegistrado, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			bd_dcl.UsuarioRegistrado[] lSeguidos = usuarioRegistrado.seguido.toArray();
-			for(int i = 0; i < lSeguidos.length; i++) {
-				lSeguidos[i].seguir.remove(usuarioRegistrado);
+			bd_dcl.UsuarioRegistrado[] lSeguidors = usuarioRegistrado.seguidor.toArray();
+			for(int i = 0; i < lSeguidors.length; i++) {
+				lSeguidors[i].seguir.remove(usuarioRegistrado);
 			}
 			bd_dcl.UsuarioRegistrado[] lEsDenunciados = usuarioRegistrado.esDenunciado.toArray();
 			for(int i = 0; i < lEsDenunciados.length; i++) {
@@ -419,7 +419,7 @@ public class UsuarioRegistradoDAO {
 			}
 			bd_dcl.UsuarioRegistrado[] lSeguirs = usuarioRegistrado.seguir.toArray();
 			for(int i = 0; i < lSeguirs.length; i++) {
-				lSeguirs[i].seguido.remove(usuarioRegistrado);
+				lSeguirs[i].seguidor.remove(usuarioRegistrado);
 			}
 			bd_dcl.Comentario[] lDaMeGustaComentarios = usuarioRegistrado.daMeGustaComentario.toArray();
 			for(int i = 0; i < lDaMeGustaComentarios.length; i++) {

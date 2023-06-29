@@ -6,7 +6,7 @@ import bd_dcl.UsuarioAdministrador;
 
 public interface iAdministrador {
 
-	public UsuarioAdministrador cargarAdministrador(String aNombreAdmin, String aPassword);
+	public UsuarioAdministrador cargarAdministrador(int aCodigoEmpleado);
 
 	public List cargarPublicacionesUsuarios();
 
@@ -20,7 +20,9 @@ public interface iAdministrador {
 
 	public void eliminarPublicacion(int aIdPublicacion);
 
-	public void borrarComentario(int aIdComentario, int aIdPublicacion, String aNombreUsuarioPropietario);
+	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aIDUsuarioPropietario);
+
+	public void addFoto(String aFoto, int aCodigoEmpleado);
 
 	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID);
 

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -27,23 +27,19 @@ public class DenunciaCriteria extends AbstractORMCriteria {
 	public final IntegerExpression tipoDenuncia;
 	public final IntegerExpression tipoEstado;
 	public final StringExpression motivo;
-	public final StringExpression nombreUsuario;
 	public final StringExpression explicacion;
-	public final IntegerExpression codigoEmpleado;
 	
 	public DenunciaCriteria(Criteria criteria) {
 		super(criteria);
 		idDenuncia = new IntegerExpression("idDenuncia", this);
 		realizadaPorId = new IntegerExpression("realizadaPor.ID", this);
 		realizadaPor = new AssociationExpression("realizadaPor", this);
-		atendidaId = new IntegerExpression("atendida.ID", this);
+		atendidaId = new IntegerExpression("atendida.codigoEmpleado", this);
 		atendida = new AssociationExpression("atendida", this);
 		tipoDenuncia = new IntegerExpression("tipoDenuncia", this);
 		tipoEstado = new IntegerExpression("tipoEstado", this);
 		motivo = new StringExpression("motivo", this);
-		nombreUsuario = new StringExpression("nombreUsuario", this);
 		explicacion = new StringExpression("explicacion", this);
-		codigoEmpleado = new IntegerExpression("codigoEmpleado", this);
 	}
 	
 	public DenunciaCriteria(PersistentSession session) {

@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.upload.Upload;
 
 /**
  * A Designer generated component for the vista-addpublicacion template.
@@ -64,7 +65,6 @@ public class VistaAddpublicacion extends LitTemplate {
 	@Id("botonPublicar")
 	private Button botonPublicar;
 
-	
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}

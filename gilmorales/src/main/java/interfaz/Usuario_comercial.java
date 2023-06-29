@@ -2,10 +2,11 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import bd_dcl.UsuarioComercial;
 import vistas.VistaUsuarioComercialPrincipal;
 
 //
-//import basededatos.iUsuario_comercial;
+import basededatos.iUsuario_comercial;
 
 public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 //	private ImageIcon _fotoComercial;
@@ -17,26 +18,27 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 //	private Label _meGustasL;
 //	private TextArea _descripcionTA;
 //	private Label _tituloVideosL;
-//	public iUsuario_comercial _iUsuario_comercial;
-	public Eliminar_publicaciones__Comercial_ _eliminar_publicaciones__Comercial_;
-	public Editar_perfil__Comercial_ _editar_perfil__Comercial_;
+	public iUsuario_comercial _iUsuario_comercial;
+	public Eliminar_publicaciones_Comercial _eliminar_publicaciones__Comercial_;
+	public Editar_perfil_Comercial _editar_perfil__Comercial_;
 	public Cabecera_Usuario_Comercial _cabecera_Usuario_Comercial = new Cabecera_Usuario_Comercial();
-	public Lista_publicaciones__Comercial_ _lista_publicaciones__Comercial_ = new Lista_publicaciones__Comercial_();
+	public Lista_publicaciones_Comercial _lista_publicaciones__Comercial_ = new Lista_publicaciones_Comercial();
 	
-	
+	UsuarioComercial comercial;
 	
 	
 
-	public Usuario_comercial(String imagen, String usuario, String nombreEmpresa, String des, String mg) {
+	public Usuario_comercial(int UsuarioComercialID) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.comercial = _iUsuario_comercial.cargarUsuarioComercial(UsuarioComercialID);
 		this.Cabecera_Usuario_Comercial();
 		this.Lista_publicaciones__Comercial_();
-		this.getVaadinAvatar().setImage(imagen);
-		this.getNombreDeEmpresa().setText(nombreEmpresa);
-		this.getNombreDeUsuario().setText(usuario);
-		this.getDescripcion().setText(des);
-		this.getNumeroL().setText(mg);
+		this.getVaadinAvatar().setImage(this.comercial.getFoto());
+		this.getNombreDeEmpresa().setText(this.comercial.getNombreEmpresa());
+		this.getNombreDeUsuario().setText(this.comercial.getNombreUsuarioComercial());
+		this.getDescripcion().setText(this.comercial.getDescripcion());
+		this.getNumeroL().setVisible(false);
 	}
 	
 	public void Eliminar_publicaciones__Comercial_() {

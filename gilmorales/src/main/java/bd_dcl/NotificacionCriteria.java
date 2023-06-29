@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -23,6 +23,7 @@ public class NotificacionCriteria extends AbstractORMCriteria {
 	public final IntegerExpression enviadaAId;
 	public final AssociationExpression enviadaA;
 	public final IntegerExpression tipoNotificacion;
+	public final IntegerExpression IDUsuarioNotifica;
 	
 	public NotificacionCriteria(Criteria criteria) {
 		super(criteria);
@@ -30,6 +31,7 @@ public class NotificacionCriteria extends AbstractORMCriteria {
 		enviadaAId = new IntegerExpression("enviadaA.ID", this);
 		enviadaA = new AssociationExpression("enviadaA", this);
 		tipoNotificacion = new IntegerExpression("tipoNotificacion", this);
+		IDUsuarioNotifica = new IntegerExpression("IDUsuarioNotifica", this);
 	}
 	
 	public NotificacionCriteria(PersistentSession session) {

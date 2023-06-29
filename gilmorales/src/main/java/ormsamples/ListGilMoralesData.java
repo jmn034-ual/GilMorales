@@ -1,5 +1,5 @@
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -103,7 +103,7 @@ public class ListGilMoralesData {
 		System.out.println("Listing UsuarioAdministrador by Criteria...");
 		bd_dcl.UsuarioAdministradorCriteria bD_DCLUsuarioAdministradorCriteria = new bd_dcl.UsuarioAdministradorCriteria();
 		// Please uncomment the follow line and fill in parameter(s) 
-		//bD_DCLUsuarioAdministradorCriteria.ID.eq();
+		//bD_DCLUsuarioAdministradorCriteria.codigoEmpleado.eq();
 		bD_DCLUsuarioAdministradorCriteria.setMaxResults(ROW_COUNT);
 		bd_dcl.UsuarioAdministrador[] bD_DCLUsuarioAdministradors = bD_DCLUsuarioAdministradorCriteria.listUsuarioAdministrador();
 		length =bD_DCLUsuarioAdministradors== null ? 0 : Math.min(bD_DCLUsuarioAdministradors.length, ROW_COUNT); 

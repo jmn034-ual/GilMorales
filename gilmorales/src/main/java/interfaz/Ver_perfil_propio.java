@@ -17,7 +17,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
-	public Ver_publicaciones_gustadas__Usuario_registrado_ publicaciones_gustadas = new Ver_publicaciones_gustadas__Usuario_registrado_();
+	public Ver_publicaciones_gustadas_Usuario_registrado publicaciones_gustadas = new Ver_publicaciones_gustadas_Usuario_registrado();
 	public Ver_publicaciones_propias _ver_publicaciones_propias;
 	public Ver_seguidores _ver_seguidores;
 	public Ver_seguidos _ver_seguidos;
@@ -155,7 +155,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void NumeroSeguidores() {
-		this.getNumSeguidores().setText(ur.seguido.size()+"");
+		this.getNumSeguidores().setText(ur.seguidor.size()+"");
 	}
 
 	public void NumeroSeguidos() {

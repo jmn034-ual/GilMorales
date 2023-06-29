@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -65,7 +65,7 @@ public class HashtagDAO {
 	
 	public static Hashtag loadHashtagByORMID(PersistentSession session, int idHashtag) throws PersistentException {
 		try {
-			return (Hashtag) session.load(bd_dcl.Hashtag.class, Integer.valueOf(idHashtag));
+			return (Hashtag) session.load(bd_dcl.Hashtag.class, new Integer(idHashtag));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class HashtagDAO {
 	
 	public static Hashtag getHashtagByORMID(PersistentSession session, int idHashtag) throws PersistentException {
 		try {
-			return (Hashtag) session.get(bd_dcl.Hashtag.class, Integer.valueOf(idHashtag));
+			return (Hashtag) session.get(bd_dcl.Hashtag.class, new Integer(idHashtag));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class HashtagDAO {
 	
 	public static Hashtag loadHashtagByORMID(PersistentSession session, int idHashtag, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Hashtag) session.load(bd_dcl.Hashtag.class, Integer.valueOf(idHashtag), lockMode);
+			return (Hashtag) session.load(bd_dcl.Hashtag.class, new Integer(idHashtag), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class HashtagDAO {
 	
 	public static Hashtag getHashtagByORMID(PersistentSession session, int idHashtag, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Hashtag) session.get(bd_dcl.Hashtag.class, Integer.valueOf(idHashtag), lockMode);
+			return (Hashtag) session.get(bd_dcl.Hashtag.class, new Integer(idHashtag), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

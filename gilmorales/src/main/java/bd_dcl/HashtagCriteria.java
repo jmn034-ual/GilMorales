@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -21,12 +21,14 @@ import org.orm.criteria.*;
 public class HashtagCriteria extends AbstractORMCriteria {
 	public final IntegerExpression idHashtag;
 	public final StringExpression nombreHashtag;
+	public final IntegerExpression numVisualizaciones;
 	public final CollectionExpression aparece;
 	
 	public HashtagCriteria(Criteria criteria) {
 		super(criteria);
 		idHashtag = new IntegerExpression("idHashtag", this);
 		nombreHashtag = new StringExpression("nombreHashtag", this);
+		numVisualizaciones = new IntegerExpression("numVisualizaciones", this);
 		aparece = new CollectionExpression("ORM_aparece", this);
 	}
 	

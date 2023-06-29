@@ -41,9 +41,7 @@ public class Cabecera_Administrador extends VistaCabeceraAdmin{
 	}
 
 	public void Inicio() {
-		
 		this.getInicio().addClickListener(event->{
-			_administrador=new Administrador();
 			this.denuncias.setVisible(false);
 			this._administrador.setVisible(true);
 		});

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -72,6 +72,7 @@ public class NotificacionSetCollection extends org.orm.util.ORMSet {
 	 * @param propertyName Name of the property for sorting:<ul>
 	 * <li>idNotificacion</li>
 	 * <li>tipoNotificacion</li>
+	 * <li>IDUsuarioNotifica</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -84,6 +85,7 @@ public class NotificacionSetCollection extends org.orm.util.ORMSet {
 	 * @param propertyName Name of the property for sorting:<ul>
 	 * <li>idNotificacion</li>
 	 * <li>tipoNotificacion</li>
+	 * <li>IDUsuarioNotifica</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

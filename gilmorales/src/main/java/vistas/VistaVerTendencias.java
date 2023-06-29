@@ -97,8 +97,21 @@ public class VistaVerTendencias extends LitTemplate {
 	private Avatar fotoPerfil1;
 	@Id("listaMeGustas")
 	private Element listaMeGustas;
+	@Id("botonBloquear")
+	private Button botonBloquear;
 	
-	
+
+	public Button getBotonBloquear() {
+		return botonBloquear;
+	}
+
+
+
+	public void setBotonBloquear(Button botonBloquear) {
+		this.botonBloquear = botonBloquear;
+	}
+
+
 
 	public Element getListaMeGustas() {
 		return listaMeGustas;

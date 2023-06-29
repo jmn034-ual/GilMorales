@@ -18,9 +18,9 @@ import vistas.VistaUsuarioNoRegistrado;
 public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	private button _iniciarSesionB;
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
-	public Lista_Publicaciones__Usuario_no_registrado_ publicacionesNoRegistrado;
+	public Lista_Publicaciones_Usuario_no_registrado publicacionesNoRegistrado;
 	public Cabecera_Usuario_No_Registrado cabeceraUNR;
-	Iniciar_Sesion__4 inicioSesion;
+	Login inicioSesion;
 	private BDPrincipal bd;
 
 	public Usuario_No_Registrado(BDPrincipal bd) {
@@ -33,7 +33,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Lista_Publicaciones__Usuario_no_registrado_() {
-		this.publicacionesNoRegistrado = new Lista_Publicaciones__Usuario_no_registrado_(this);
+		this.publicacionesNoRegistrado = new Lista_Publicaciones_Usuario_no_registrado(this);
 		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(publicacionesNoRegistrado);
 	}
 
@@ -43,7 +43,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Iniciar_Sesion() {
-		inicioSesion = new Iniciar_Sesion__4(bd);
+		inicioSesion = new Login(bd);
 		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(inicioSesion);

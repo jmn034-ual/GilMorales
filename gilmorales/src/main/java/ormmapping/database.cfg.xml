@@ -286,21 +286,6 @@
     <ServerName></ServerName>
     <SelectedForm>true</SelectedForm>
   </Setting>
-  <Setting type="2">
-    <Driver>MySQL5 (Connector/J Driver)</Driver>
-    <DriverFiles>&lt;&lt;MySQL Connector/J 8.0.31&gt;&gt;</DriverFiles>
-    <Dialect>org.hibernate.dialect.MySQL5InnoDBDialect</Dialect>
-    <DriverClass>com.mysql.cj.jdbc.Driver</DriverClass>
-    <URL>jdbc:mysql://localhost:3306/proyectomds2</URL>
-    <UserName>root</UserName>
-    <EncryptedPassword>32F3ACE632ECEBAFB24DCAF99A8C6CDC</EncryptedPassword>
-    <HostName>localhost</HostName>
-    <PortNO>3306</PortNO>
-    <DBName>proyectomds2</DBName>
-    <ServiceName></ServiceName>
-    <ServerName></ServerName>
-    <SelectedForm>true</SelectedForm>
-  </Setting>
   <Setting type="16777216">
     <Driver></Driver>
     <DriverFiles></DriverFiles>
@@ -312,6 +297,21 @@
     <HostName></HostName>
     <PortNO></PortNO>
     <DBName></DBName>
+    <ServiceName></ServiceName>
+    <ServerName></ServerName>
+    <SelectedForm>true</SelectedForm>
+  </Setting>
+  <Setting type="2">
+    <Driver>MySQL5 (Connector/J Driver)</Driver>
+    <DriverFiles>&lt;&lt;MySQL Connector/J 8.0.31&gt;&gt;</DriverFiles>
+    <Dialect>org.hibernate.dialect.MySQL5InnoDBDialect</Dialect>
+    <DriverClass>com.mysql.cj.jdbc.Driver</DriverClass>
+    <URL>jdbc:mysql://localhost:3306/proyectomds2</URL>
+    <UserName>root</UserName>
+    <EncryptedPassword>32F3ACE632ECEBAFB24DCAF99A8C6CDC</EncryptedPassword>
+    <HostName>localhost</HostName>
+    <PortNO>3306</PortNO>
+    <DBName>proyectomds2</DBName>
     <ServiceName></ServiceName>
     <ServerName></ServerName>
     <SelectedForm>true</SelectedForm>

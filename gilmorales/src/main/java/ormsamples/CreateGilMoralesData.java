@@ -1,5 +1,5 @@
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -13,22 +13,22 @@ public class CreateGilMoralesData {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : contiene, publicacionDenunciadaPor, perteneceA, gustaA, tieneComentarios, numVisualizaciones, numMeGustas, numComentarios, esPublicada, visualizadaPor
 			bd_dcl.PublicacionDAO.save(bD_DCLPublicacion);
 			bd_dcl.UsuarioRegistrado bD_DCLUsuarioRegistrado = bd_dcl.UsuarioRegistradoDAO.createUsuarioRegistrado();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : realizaDenuncia, visualiza, denucia, daMeGustaComentario, seguir, comenta, denunciaComentarioUR, denuciaPublicacion, recibe, publica, daMeGustaPublicacion, esDenunciado, seguido, nombreUsuario
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : realizaDenuncia, visualiza, denucia, daMeGustaComentario, seguir, comenta, denunciaComentarioUR, denuciaPublicacion, recibe, publica, daMeGustaPublicacion, esDenunciado, seguidor, privacidad, nombreUsuario
 			bd_dcl.UsuarioRegistradoDAO.save(bD_DCLUsuarioRegistrado);
 			bd_dcl.UsuarioAdministrador bD_DCLUsuarioAdministrador = bd_dcl.UsuarioAdministradorDAO.createUsuarioAdministrador();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : gestiona, codigoEmpleado
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : gestiona
 			bd_dcl.UsuarioAdministradorDAO.save(bD_DCLUsuarioAdministrador);
 			bd_dcl.Comentario bD_DCLComentario = bd_dcl.ComentarioDAO.createComentario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : gustaA, esComentadoPor, denunciaDe, numeroMeGustas, comentadoEn, denunciadoPor
 			bd_dcl.ComentarioDAO.save(bD_DCLComentario);
 			bd_dcl.Denuncia bD_DCLDenuncia = bd_dcl.DenunciaDAO.createDenuncia();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : codigoEmpleado, tipoEstado, tipoDenuncia, atendida, realizadaPor
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tipoEstado, tipoDenuncia, atendida, realizadaPor
 			bd_dcl.DenunciaDAO.save(bD_DCLDenuncia);
 			bd_dcl.Notificacion bD_DCLNotificacion = bd_dcl.NotificacionDAO.createNotificacion();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tipoNotificacion, enviadaA
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : IDUsuarioNotifica, tipoNotificacion, enviadaA
 			bd_dcl.NotificacionDAO.save(bD_DCLNotificacion);
 			bd_dcl.Hashtag bD_DCLHashtag = bd_dcl.HashtagDAO.createHashtag();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : aparece
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : aparece, numVisualizaciones
 			bd_dcl.HashtagDAO.save(bD_DCLHashtag);
 			bd_dcl.UsuarioComercial bD_DCLUsuarioComercial = bd_dcl.UsuarioComercialDAO.createUsuarioComercial();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : denunciaComentarioUC, publica, nombreUsuarioComercial

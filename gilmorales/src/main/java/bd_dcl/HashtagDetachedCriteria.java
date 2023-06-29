@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -21,12 +21,14 @@ import org.orm.criteria.*;
 public class HashtagDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression idHashtag;
 	public final StringExpression nombreHashtag;
+	public final IntegerExpression numVisualizaciones;
 	public final CollectionExpression aparece;
 	
 	public HashtagDetachedCriteria() {
 		super(bd_dcl.Hashtag.class, bd_dcl.HashtagCriteria.class);
 		idHashtag = new IntegerExpression("idHashtag", this.getDetachedCriteria());
 		nombreHashtag = new StringExpression("nombreHashtag", this.getDetachedCriteria());
+		numVisualizaciones = new IntegerExpression("numVisualizaciones", this.getDetachedCriteria());
 		aparece = new CollectionExpression("ORM_aparece", this.getDetachedCriteria());
 	}
 	
@@ -34,6 +36,7 @@ public class HashtagDetachedCriteria extends AbstractORMDetachedCriteria {
 		super(aDetachedCriteria, bd_dcl.HashtagCriteria.class);
 		idHashtag = new IntegerExpression("idHashtag", this.getDetachedCriteria());
 		nombreHashtag = new StringExpression("nombreHashtag", this.getDetachedCriteria());
+		numVisualizaciones = new IntegerExpression("numVisualizaciones", this.getDetachedCriteria());
 		aparece = new CollectionExpression("ORM_aparece", this.getDetachedCriteria());
 	}
 	

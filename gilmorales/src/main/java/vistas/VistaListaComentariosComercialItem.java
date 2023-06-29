@@ -20,22 +20,97 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-lista-comentarios-comercial-item.ts")
 public class VistaListaComentariosComercialItem extends LitTemplate {
 
-    @Id("nombreDeUsuarioB")
+
+	@Id("nombreDeUsuarioB")
 	private HorizontalLayout nombreDeUsuarioB;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("avatar")
 	private Avatar avatar;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("nombreDeUsuarioB1")
 	private Button nombreDeUsuarioB1;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 	@Id("comentarioL")
 	private Label comentarioL;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("label")
+	private Label label;
 	@Id("denunciarB")
 	private Button denunciarB;
+
+	public HorizontalLayout getNombreDeUsuarioB() {
+		return nombreDeUsuarioB;
+	}
+
+	public void setNombreDeUsuarioB(HorizontalLayout nombreDeUsuarioB) {
+		this.nombreDeUsuarioB = nombreDeUsuarioB;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Avatar getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Avatar avatar) {
+		this.avatar = avatar;
+	}
+
+	public Button getNombreDeUsuarioB1() {
+		return nombreDeUsuarioB1;
+	}
+
+	public void setNombreDeUsuarioB1(Button nombreDeUsuarioB1) {
+		this.nombreDeUsuarioB1 = nombreDeUsuarioB1;
+	}
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public Label getComentarioL() {
+		return comentarioL;
+	}
+
+	public void setComentarioL(Label comentarioL) {
+		this.comentarioL = comentarioL;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public Label getLabel() {
+		return label;
+	}
+
+	public void setLabel(Label label) {
+		this.label = label;
+	}
+
+	public Button getDenunciarB() {
+		return denunciarB;
+	}
+
+	public void setDenunciarB(Button denunciarB) {
+		this.denunciarB = denunciarB;
+	}
 
 	/**
      * Creates a new VistaListaComentariosComercialItem.

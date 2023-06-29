@@ -22,9 +22,7 @@ import com.vaadin.flow.server.StreamResource;
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_No_Registrado;
 import bd_dcl.UsuarioComercial;
-import bd_dcl.UsuarioComercialDAO;
 import bd_dcl.UsuarioRegistrado;
-import bd_dcl.UsuarioRegistradoDAO;
 import vistas.VistaRegistrarusuario;
 
 public class Registrar extends VistaRegistrarusuario{
@@ -52,10 +50,11 @@ public class Registrar extends VistaRegistrarusuario{
 	//	private ComboBox _tipoCuentaCB;
 	//	private Button _descartarB;
 	//	private Button _confirmarB;
-	public Iniciar_Sesion__4 _iniciar_sesion;
+	public Login _iniciar_sesion;
 	iUsuario_No_Registrado  unr;
 	boolean tipoCuenta;
 	private boolean valido;
+	private String foto;
 
 	public Registrar(BDPrincipal bd) {
 		this.getStyle().set("width", "100%");
@@ -108,25 +107,13 @@ public class Registrar extends VistaRegistrarusuario{
 		List<UsuarioRegistrado> usuarios = null;
 		List<UsuarioComercial> comerciales = null;
 		TreeSet<String> nombresUsuarios = new TreeSet<String>();
-		try {
-			usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-			comerciales = UsuarioComercialDAO.queryUsuarioComercial(null, null);
-			for(UsuarioRegistrado user : usuarios) {
-				nombresUsuarios.add(user.getNombreUsuario());
-			}
-			for(UsuarioComercial uc : comerciales) {
-				nombresUsuarios.add(uc.getNombreUsuarioComercial());
-			}
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		this.getConfirmar().addClickListener(event ->{
 			String nombreUsuario = this.getNombreDeUsuarioTF().getValue();
 			if(!nombresUsuarios.contains(nombreUsuario)) {
 				unr.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
 						this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(), 
-						tipoCuenta, "icons/icon.png");
+						tipoCuenta, this.foto);
 				this.valido = true;
 			}else {
 				this.valido = false;

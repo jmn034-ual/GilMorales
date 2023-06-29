@@ -11,7 +11,14 @@ import com.vaadin.flow.component.ComponentEventListener;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.FileBuffer;
+import com.vaadin.flow.component.upload.receivers.FileData;
+import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
+import com.vaadin.flow.component.upload.receivers.MultiFileBuffer;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 
@@ -58,45 +65,45 @@ public class MainView extends VerticalLayout {
 		this.setMargin(false);
 		this.setPadding(false);
 		BDPrincipal bd = new BDPrincipal();
+		
 
-		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
-		add(unr);
-
-		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
-
-
-			@Override
-			public void onComponentEvent(ClickEvent<Button> event) {
-				// TODO Auto-generated method stub
-				removeAll();
-				Registrar registro = new Registrar(bd);
-				add(registro);
-					registro.getConfirmar().addClickListener(event2 ->{
-						if(registro.getValido()) {
-						removeAll();
-						UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
-						Usuario_Registrado ur = new Usuario_Registrado(usuario);
-						add(ur);
-						}
-					});
-				}
-		});
-
-		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
-			@Override
-			public void onComponentEvent(ClickEvent<Button> event) {
-				removeAll();
-				Iniciar_Sesion__4 login = new Iniciar_Sesion__4(bd);
-				add(login);
-				login.getIniciarSesionB().addClickListener(event2 ->{
-					removeAll();
-					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(login.getUsuarioTF().getValue(), login.getContrasenaTF().getValue());
-					Usuario_Registrado ur2 = new Usuario_Registrado(usuario);
-					add(ur2);
-				});
-			}
-		});
-
+//		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
+//		add(unr);
+//
+//		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
+//
+//
+//			@Override
+//			public void onComponentEvent(ClickEvent<Button> event) {
+//				// TODO Auto-generated method stub
+//				removeAll();
+//				Registrar registro = new Registrar(bd);
+//				add(registro);
+//				registro.getConfirmar().addClickListener(event2 ->{
+//					if(registro.getValido()) {
+//						removeAll();
+//						//						UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
+//						//						Usuario_Registrado ur = new Usuario_Registrado(usuario);
+//						//						add(ur);
+//					}
+//				});
+//			}
+//		});
+//
+//		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
+//			@Override
+//			public void onComponentEvent(ClickEvent<Button> event) {
+//				removeAll();
+//				Iniciar_Sesion__4 login = new Iniciar_Sesion__4(bd);
+//				add(login);
+//				login.getIniciarSesionB().addClickListener(event2 ->{
+//					removeAll();
+//					//					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(login.getUsuarioTF().getValue(), login.getContrasenaTF().getValue());
+//					//					Usuario_Registrado ur2 = new Usuario_Registrado(usuario);
+//					//					add(ur2);
+//				});
+//			}
+//		});
 
 
 	}

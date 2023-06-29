@@ -21,12 +21,12 @@ public class Add_publicacion extends VistaAddpublicacion{
 //	private button _descartarB;
 //	private button _publicarB;
 //	public Comun__Comercial_y_Usuario_Registrado_ _comun__Comercial_y_Usuario_Registrado_ = new Comun__Comercial_y_Usuario_Registrado_();
-	public Ver_publicacion_propia _ver_publicacion_propia = new Ver_publicacion_propia();
+	public Ver_publicacion_propia _ver_publicacion_propia;
 	private UsuarioRegistrado ur;
 	private BDPrincipal bd = new BDPrincipal();
 	private Publicacion publicacion;
 	private Usuario_Registrado urInterfaz;
-
+	private String localizacion = "";
 	
 	public Add_publicacion() {}
 	
@@ -42,11 +42,13 @@ public class Add_publicacion extends VistaAddpublicacion{
 	}
 
 	public void Subir_video() {
-		
+//		this.getUpload().addSucceededListener(null)
 	}
 
 	public void Add_localizacion() {
-		this.getTextFielLocalizacion();
+		this.getBotonAniadir().addClickListener(event ->{
+			localizacion = this.getLabelLocalizacion().getText();
+		});
 	}
 
 	public void Ver_publicacion_propia() {
@@ -58,7 +60,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 	public void Publicar() {
 		this.getBotonPublicar().addClickListener(event -> {
 			if(ur != null) {
-				this.publicacion = bd.addPublicacion(ur.getNombreUsuario(), this.getTextFielLocalizacion().getValue(),
+				this.publicacion = bd.addPublicacion(ur.getNombreUsuario(), this.localizacion,
 						this.getTextAreaDescripcion().getValue(), "videos/tiktok1.mp4", ur.getID());
 				this.getVaadinHorizontalLayout().removeAll();
 				_ver_publicacion_propia = new Ver_publicacion_propia(publicacion, urInterfaz);

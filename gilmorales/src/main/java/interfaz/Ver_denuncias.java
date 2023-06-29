@@ -11,14 +11,10 @@ public class Ver_denuncias extends VistaVerDenuncias {
 	public Gestionar_denuncias _gestionar_denuncias;
 	public Cabecera_Administrador cabecera;
 	public Lista_denuncias _lista_denuncias = new Lista_denuncias();
-	
-
-	Lista_denuncias_item item1= new Lista_denuncias_item("Cr", "Cristian", "no aplicada", "ninguno", "icons/icon.png");
-	
+		
 	public Ver_denuncias() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		_lista_denuncias.anadirDenuncia(item1);
 		Lista_denuncias();
 		
 	}

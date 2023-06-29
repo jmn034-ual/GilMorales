@@ -19,7 +19,7 @@ public class Recuperar_password extends VistaRecuperarpassword{
 	private Button _enviarB;
 	private Label _registrarseL;
 	private Button _registrarseB;
-	public Iniciar_Sesion__4 _iniciar_sesion;
+	public Login _iniciar_sesion;
 	
 	public Recuperar_password() {
 		this.getStyle().set("width", "100%");

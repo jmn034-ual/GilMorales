@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -65,7 +65,7 @@ public class ComentarioDAO {
 	
 	public static Comentario loadComentarioByORMID(PersistentSession session, int idComentario) throws PersistentException {
 		try {
-			return (Comentario) session.load(bd_dcl.Comentario.class, Integer.valueOf(idComentario));
+			return (Comentario) session.load(bd_dcl.Comentario.class, new Integer(idComentario));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class ComentarioDAO {
 	
 	public static Comentario getComentarioByORMID(PersistentSession session, int idComentario) throws PersistentException {
 		try {
-			return (Comentario) session.get(bd_dcl.Comentario.class, Integer.valueOf(idComentario));
+			return (Comentario) session.get(bd_dcl.Comentario.class, new Integer(idComentario));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class ComentarioDAO {
 	
 	public static Comentario loadComentarioByORMID(PersistentSession session, int idComentario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Comentario) session.load(bd_dcl.Comentario.class, Integer.valueOf(idComentario), lockMode);
+			return (Comentario) session.load(bd_dcl.Comentario.class, new Integer(idComentario), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class ComentarioDAO {
 	
 	public static Comentario getComentarioByORMID(PersistentSession session, int idComentario, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Comentario) session.get(bd_dcl.Comentario.class, Integer.valueOf(idComentario), lockMode);
+			return (Comentario) session.get(bd_dcl.Comentario.class, new Integer(idComentario), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

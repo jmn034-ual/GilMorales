@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -76,14 +76,14 @@ public class Hashtag implements Serializable {
 		return nombreHashtag;
 	}
 	
+	public void setNumVisualizaciones(int value) {
+		this.numVisualizaciones = value;
+	}
+	
 	public int getNumVisualizaciones() {
 		return numVisualizaciones;
 	}
-
-	public void setNumVisualizaciones(int numVisualizaciones) {
-		this.numVisualizaciones = numVisualizaciones;
-	}
-
+	
 	private void setORM_Aparece(java.util.Set value) {
 		this.ORM_aparece = value;
 	}

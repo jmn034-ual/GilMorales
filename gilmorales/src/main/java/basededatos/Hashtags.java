@@ -5,6 +5,8 @@ import basededatos.BDPrincipal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
@@ -12,6 +14,7 @@ import org.orm.PersistentTransaction;
 import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Hashtag;
 import bd_dcl.HashtagDAO;
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
 

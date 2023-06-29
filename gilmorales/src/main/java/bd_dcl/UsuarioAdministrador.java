@@ -8,14 +8,12 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
 
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.persistence.*;
 @Entity
 @org.hibernate.annotations.Proxy(lazy=false)
@@ -40,13 +38,10 @@ public class UsuarioAdministrador implements Serializable {
 		
 	};
 	
-	@Column(name="ID", nullable=false, length=10)	
-	@Id	
-	@GeneratedValue(generator="BD_DCL_USUARIOADMINISTRADOR_ID_GENERATOR")	
-	@org.hibernate.annotations.GenericGenerator(name="BD_DCL_USUARIOADMINISTRADOR_ID_GENERATOR", strategy="native")	
-	private int ID;
-	
 	@Column(name="CodigoEmpleado", nullable=false, length=10)	
+	@Id	
+	@GeneratedValue(generator="BD_DCL_USUARIOADMINISTRADOR_CODIGOEMPLEADO_GENERATOR")	
+	@org.hibernate.annotations.GenericGenerator(name="BD_DCL_USUARIOADMINISTRADOR_CODIGOEMPLEADO_GENERATOR", strategy="native")	
 	private int codigoEmpleado;
 	
 	@Column(name="NombreAdmin", nullable=true, length=255)	
@@ -55,8 +50,8 @@ public class UsuarioAdministrador implements Serializable {
 	@Column(name="ApellidosAdmin", nullable=true, length=255)	
 	private String apellidosAdmin;
 	
-	@Column(name="FechaContratacion", nullable=true)	
-	private Date fechaContratacion;
+	@Column(name="FechaContratacion", nullable=true, length=255)	
+	private String fechaContratacion;
 	
 	@Column(name="Foto", nullable=true, length=255)	
 	private String foto;
@@ -66,24 +61,16 @@ public class UsuarioAdministrador implements Serializable {
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_gestiona = new java.util.HashSet();
 	
-	private void setID(int value) {
-		this.ID = value;
-	}
-	
-	public int getID() {
-		return ID;
-	}
-	
-	public int getORMID() {
-		return getID();
-	}
-	
-	public void setCodigoEmpleado(int value) {
+	private void setCodigoEmpleado(int value) {
 		this.codigoEmpleado = value;
 	}
 	
 	public int getCodigoEmpleado() {
 		return codigoEmpleado;
+	}
+	
+	public int getORMID() {
+		return getCodigoEmpleado();
 	}
 	
 	public void setNombreAdmin(String value) {
@@ -102,11 +89,11 @@ public class UsuarioAdministrador implements Serializable {
 		return apellidosAdmin;
 	}
 	
-	public void setFechaContratacion(Date value) {
+	public void setFechaContratacion(String value) {
 		this.fechaContratacion = value;
 	}
 	
-	public Date getFechaContratacion() {
+	public String getFechaContratacion() {
 		return fechaContratacion;
 	}
 	
@@ -130,7 +117,7 @@ public class UsuarioAdministrador implements Serializable {
 	public final bd_dcl.DenunciaSetCollection gestiona = new bd_dcl.DenunciaSetCollection(this, _ormAdapter, bd_dcl.ORMConstants.KEY_USUARIOADMINISTRADOR_GESTIONA, bd_dcl.ORMConstants.KEY_DENUNCIA_ATENDIDA, bd_dcl.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
-		return String.valueOf(getID());
+		return String.valueOf(getCodigoEmpleado());
 	}
 	
 }

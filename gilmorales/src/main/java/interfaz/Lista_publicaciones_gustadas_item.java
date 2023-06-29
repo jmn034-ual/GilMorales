@@ -10,9 +10,9 @@ public class Lista_publicaciones_gustadas_item {
 	private Label _visualizacionesL;
 	private Button _verPublicacionB;
 	public Lista_publicaciones_gustadas _lista_publicaciones_gustadas;
-	public Ver_publicacion__Administrador_ _ver_publicacion__Administrador_;
+	public Ver_publicacion_Administrador _ver_publicacion__Administrador_;
 
-	public void Ver_publicacion__Administrador_() {
+	public void Ver_publicacion__Administrador() {
 		throw new UnsupportedOperationException();
 	}
 }

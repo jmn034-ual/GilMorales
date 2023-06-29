@@ -57,7 +57,7 @@ public class Publicaciones {
 						if(ur.getNombreUsuario().equals(m.group(1))) {	
 							List<Notificacion> listaNotificaciones = new ArrayList<Notificacion>(ur.recibe.getCollection());
 							for(Notificacion n : listaNotificaciones) {
-								if(n.getUsuarioRegistradoIDNotifica() == p.getPerteneceA().getID()) {
+								if(n.getIDUsuarioNotifica() == p.getPerteneceA().getID()) {
 									NotificacionDAO.deleteAndDissociate(n);
 								}
 							}
@@ -110,6 +110,8 @@ public class Publicaciones {
 			p.setNumMeGustas(0);
 			p.setNumVisualizaciones(0);
 			PublicacionDAO.save(p);
+			crearHashtag(p);
+			crearMencion(p);
 			t.commit();			
 		} catch (Exception e) {
 			t.rollback();
@@ -118,14 +120,18 @@ public class Publicaciones {
 		return p;	
 	}
 
-	public void meGustaPublicacion(int aIdPublicacion, String aNombreUsuario, int UsuarioID) throws PersistentException {
+
+	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID)throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
-			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(UsuarioID);
+			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			if(!p.gustaA.contains(usuario)) {
+				p.setNumMeGustas(p.getNumMeGustas()+1);
 				p.gustaA.add(usuario);
+				usuario.daMeGustaPublicacion.add(p);
 			}else {
+				usuario.daMeGustaPublicacion.remove(p);
 				p.setNumMeGustas(p.getNumMeGustas()-1);
 				p.gustaA.remove(usuario);
 			}
@@ -146,5 +152,61 @@ public class Publicaciones {
 			t.rollback();
 		}
 		return publicaciones;
+	}
+	public void crearMencion(Publicacion p) {
+		Pattern mencion = Pattern.compile("@(\\w+)");
+		Matcher m = mencion.matcher(p.getDescripcion());
+		try {
+			while (m.find()) {
+				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+				for(UsuarioRegistrado ur : lista) {
+					if(ur.getNombreUsuario().equals(m.group(1))) {	
+						Notificacion notificacion = NotificacionDAO.createNotificacion();
+						notificacion.setTipoNotificacion(3);
+						notificacion.setEnviadaA(ur);
+						notificacion.setIDUsuarioNotifica(p.getPerteneceA().getID());
+						NotificacionDAO.save(notificacion);
+						break;
+					}
+				}
+			}
+			GilMoralesPersistentManager.instance().disposePersistentManager();
+		}catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void crearHashtag(Publicacion p) {
+		Pattern hashtag = Pattern.compile("#(\\w+)");
+		Matcher h = hashtag.matcher(p.getDescripcion());
+		try {
+			while (h.find()) {
+				String nombreHashtag = h.group(1);
+				List<Hashtag> listaHashtag = HashtagDAO.queryHashtag(null, null);
+				if(listaHashtag.isEmpty()) {
+					Hashtag nuevoHashatag = HashtagDAO.createHashtag();
+					nuevoHashatag.setNombreHashtag(nombreHashtag);
+					nuevoHashatag.aparece.add(p);
+					HashtagDAO.save(nuevoHashatag);	
+				}else {
+					for(Hashtag h2 : listaHashtag) {
+						if(!h2.getNombreHashtag().equals(nombreHashtag)) {
+							Hashtag nuevoHashatag = HashtagDAO.createHashtag();
+							nuevoHashatag.setNombreHashtag(nombreHashtag);
+							nuevoHashatag.aparece.add(p);
+							HashtagDAO.save(nuevoHashatag);	
+							break;
+						}else if(h2.getNombreHashtag().equals(nombreHashtag)){
+							h2.aparece.add(p);
+							HashtagDAO.save(h2);
+						}
+					}	
+				}
+			}
+			GilMoralesPersistentManager.instance().disposePersistentManager();
+		}catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

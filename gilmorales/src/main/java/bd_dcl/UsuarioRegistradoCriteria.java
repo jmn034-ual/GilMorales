@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -28,7 +28,8 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 	public final StringExpression apellidos;
 	public final StringExpression email;
 	public final StringExpression password;
-	public final CollectionExpression seguido;
+	public final IntegerExpression privacidad;
+	public final CollectionExpression seguidor;
 	public final CollectionExpression esDenunciado;
 	public final CollectionExpression daMeGustaPublicacion;
 	public final CollectionExpression publica;
@@ -53,7 +54,8 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 		apellidos = new StringExpression("apellidos", this);
 		email = new StringExpression("email", this);
 		password = new StringExpression("password", this);
-		seguido = new CollectionExpression("ORM_seguido", this);
+		privacidad = new IntegerExpression("privacidad", this);
+		seguidor = new CollectionExpression("ORM_seguidor", this);
 		esDenunciado = new CollectionExpression("ORM_esDenunciado", this);
 		daMeGustaPublicacion = new CollectionExpression("ORM_daMeGustaPublicacion", this);
 		publica = new CollectionExpression("ORM_publica", this);
@@ -76,8 +78,8 @@ public class UsuarioRegistradoCriteria extends AbstractORMCriteria {
 		this(bd_dcl.GilMoralesPersistentManager.instance().getSession());
 	}
 	
-	public bd_dcl.UsuarioRegistradoCriteria createSeguidoCriteria() {
-		return new bd_dcl.UsuarioRegistradoCriteria(createCriteria("ORM_seguido"));
+	public bd_dcl.UsuarioRegistradoCriteria createSeguidorCriteria() {
+		return new bd_dcl.UsuarioRegistradoCriteria(createCriteria("ORM_seguidor"));
 	}
 	
 	public bd_dcl.UsuarioRegistradoCriteria createEsDenunciadoCriteria() {

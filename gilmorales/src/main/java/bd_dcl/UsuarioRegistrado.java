@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -23,8 +23,8 @@ public class UsuarioRegistrado implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIDO) {
-			return ORM_seguido;
+		if (key == bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIDOR) {
+			return ORM_seguidor;
 		}
 		else if (key == bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_ESDENUNCIADO) {
 			return ORM_esDenunciado;
@@ -104,14 +104,14 @@ public class UsuarioRegistrado implements Serializable {
 	@Column(name="Password", nullable=true, length=255)	
 	private String password;
 	
-	@Column(name="Privacidad", nullable=true, length=255)	
+	@Column(name="Privacidad", nullable=false, length=10)	
 	private int privacidad;
 	
 	@ManyToMany(targetEntity=bd_dcl.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="UsuarioRegistrado_UsuarioRegistrado", joinColumns={ @JoinColumn(name="UsuarioRegistradoID2") }, inverseJoinColumns={ @JoinColumn(name="UsuarioRegistradoID") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM_seguido = new java.util.HashSet();
+	private java.util.Set ORM_seguidor = new java.util.HashSet();
 	
 	@ManyToMany(targetEntity=bd_dcl.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
@@ -149,7 +149,7 @@ public class UsuarioRegistrado implements Serializable {
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_comenta = new java.util.HashSet();
 	
-	@ManyToMany(mappedBy="ORM_seguido", targetEntity=bd_dcl.UsuarioRegistrado.class)	
+	@ManyToMany(mappedBy="ORM_seguidor", targetEntity=bd_dcl.UsuarioRegistrado.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_seguir = new java.util.HashSet();
@@ -258,16 +258,16 @@ public class UsuarioRegistrado implements Serializable {
 		return privacidad;
 	}
 	
-	private void setORM_Seguido(java.util.Set value) {
-		this.ORM_seguido = value;
+	private void setORM_Seguidor(java.util.Set value) {
+		this.ORM_seguidor = value;
 	}
 	
-	private java.util.Set getORM_Seguido() {
-		return ORM_seguido;
+	private java.util.Set getORM_Seguidor() {
+		return ORM_seguidor;
 	}
 	
 	@Transient	
-	public final bd_dcl.UsuarioRegistradoSetCollection seguido = new bd_dcl.UsuarioRegistradoSetCollection(this, _ormAdapter, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIDO, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIR, bd_dcl.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final bd_dcl.UsuarioRegistradoSetCollection seguidor = new bd_dcl.UsuarioRegistradoSetCollection(this, _ormAdapter, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIDOR, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIR, bd_dcl.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_EsDenunciado(java.util.Set value) {
 		this.ORM_esDenunciado = value;
@@ -355,7 +355,7 @@ public class UsuarioRegistrado implements Serializable {
 	}
 	
 	@Transient	
-	public final bd_dcl.UsuarioRegistradoSetCollection seguir = new bd_dcl.UsuarioRegistradoSetCollection(this, _ormAdapter, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIR, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIDO, bd_dcl.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final bd_dcl.UsuarioRegistradoSetCollection seguir = new bd_dcl.UsuarioRegistradoSetCollection(this, _ormAdapter, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIR, bd_dcl.ORMConstants.KEY_USUARIOREGISTRADO_SEGUIDOR, bd_dcl.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_DaMeGustaComentario(java.util.Set value) {
 		this.ORM_daMeGustaComentario = value;

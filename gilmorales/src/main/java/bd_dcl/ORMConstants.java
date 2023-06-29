@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -72,7 +72,7 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_USUARIOREGISTRADO_RECIBE = 2086911517;
 	
-	final int KEY_USUARIOREGISTRADO_SEGUIDO = 1161309651;
+	final int KEY_USUARIOREGISTRADO_SEGUIDOR = 1640860927;
 	
 	final int KEY_USUARIOREGISTRADO_SEGUIR = 2115671594;
 	

@@ -7,7 +7,7 @@ import com.vaadin.flow.dom.Element;
 
 import bd_dcl.UsuarioRegistrado;
 
-public class Cabecera_Usuario_Registrado extends Comun__Comercial_y_Usuario_Registrado_ {
+public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Registrado {
 
 	public Usuario_Registrado _usuario_Registrado;
 	public Ver_notificaciones _ver_notificaciones;

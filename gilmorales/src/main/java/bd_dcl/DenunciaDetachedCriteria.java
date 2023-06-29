@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -27,23 +27,19 @@ public class DenunciaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression tipoDenuncia;
 	public final IntegerExpression tipoEstado;
 	public final StringExpression motivo;
-	public final StringExpression nombreUsuario;
 	public final StringExpression explicacion;
-	public final IntegerExpression codigoEmpleado;
 	
 	public DenunciaDetachedCriteria() {
 		super(bd_dcl.Denuncia.class, bd_dcl.DenunciaCriteria.class);
 		idDenuncia = new IntegerExpression("idDenuncia", this.getDetachedCriteria());
 		realizadaPorId = new IntegerExpression("realizadaPor.ID", this.getDetachedCriteria());
 		realizadaPor = new AssociationExpression("realizadaPor", this.getDetachedCriteria());
-		atendidaId = new IntegerExpression("atendida.ID", this.getDetachedCriteria());
+		atendidaId = new IntegerExpression("atendida.codigoEmpleado", this.getDetachedCriteria());
 		atendida = new AssociationExpression("atendida", this.getDetachedCriteria());
 		tipoDenuncia = new IntegerExpression("tipoDenuncia", this.getDetachedCriteria());
 		tipoEstado = new IntegerExpression("tipoEstado", this.getDetachedCriteria());
 		motivo = new StringExpression("motivo", this.getDetachedCriteria());
-		nombreUsuario = new StringExpression("nombreUsuario", this.getDetachedCriteria());
 		explicacion = new StringExpression("explicacion", this.getDetachedCriteria());
-		codigoEmpleado = new IntegerExpression("codigoEmpleado", this.getDetachedCriteria());
 	}
 	
 	public DenunciaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -51,14 +47,12 @@ public class DenunciaDetachedCriteria extends AbstractORMDetachedCriteria {
 		idDenuncia = new IntegerExpression("idDenuncia", this.getDetachedCriteria());
 		realizadaPorId = new IntegerExpression("realizadaPor.ID", this.getDetachedCriteria());
 		realizadaPor = new AssociationExpression("realizadaPor", this.getDetachedCriteria());
-		atendidaId = new IntegerExpression("atendida.ID", this.getDetachedCriteria());
+		atendidaId = new IntegerExpression("atendida.codigoEmpleado", this.getDetachedCriteria());
 		atendida = new AssociationExpression("atendida", this.getDetachedCriteria());
 		tipoDenuncia = new IntegerExpression("tipoDenuncia", this.getDetachedCriteria());
 		tipoEstado = new IntegerExpression("tipoEstado", this.getDetachedCriteria());
 		motivo = new StringExpression("motivo", this.getDetachedCriteria());
-		nombreUsuario = new StringExpression("nombreUsuario", this.getDetachedCriteria());
 		explicacion = new StringExpression("explicacion", this.getDetachedCriteria());
-		codigoEmpleado = new IntegerExpression("codigoEmpleado", this.getDetachedCriteria());
 	}
 	
 	public UsuarioRegistradoDetachedCriteria createRealizadaPorCriteria() {

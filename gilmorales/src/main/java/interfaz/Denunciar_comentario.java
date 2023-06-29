@@ -8,8 +8,8 @@ public class Denunciar_comentario {
 //	private TextField _explicacionTF;
 //	private button _cancelarB;
 //	private button _enviarB;
-	public Lista_comentarios__Usuario_registrado__item _lista_comentarios__Usuario_registrado_;
-	public Lista_comentarios__Comercial__item _lista_comentarios__Comercial_;
+	public Lista_comentarios_Usuario_registrado_item _lista_comentarios__Usuario_registrado_;
+	public Lista_comentarios_Comercial_item _lista_comentarios__Comercial_;
 
 	public void Elegir_motivo_denuncia() {
 		throw new UnsupportedOperationException();

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -65,7 +65,7 @@ public class NotificacionDAO {
 	
 	public static Notificacion loadNotificacionByORMID(PersistentSession session, int idNotificacion) throws PersistentException {
 		try {
-			return (Notificacion) session.load(bd_dcl.Notificacion.class, Integer.valueOf(idNotificacion));
+			return (Notificacion) session.load(bd_dcl.Notificacion.class, new Integer(idNotificacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class NotificacionDAO {
 	
 	public static Notificacion getNotificacionByORMID(PersistentSession session, int idNotificacion) throws PersistentException {
 		try {
-			return (Notificacion) session.get(bd_dcl.Notificacion.class, Integer.valueOf(idNotificacion));
+			return (Notificacion) session.get(bd_dcl.Notificacion.class, new Integer(idNotificacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class NotificacionDAO {
 	
 	public static Notificacion loadNotificacionByORMID(PersistentSession session, int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Notificacion) session.load(bd_dcl.Notificacion.class, Integer.valueOf(idNotificacion), lockMode);
+			return (Notificacion) session.load(bd_dcl.Notificacion.class, new Integer(idNotificacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class NotificacionDAO {
 	
 	public static Notificacion getNotificacionByORMID(PersistentSession session, int idNotificacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Notificacion) session.get(bd_dcl.Notificacion.class, Integer.valueOf(idNotificacion), lockMode);
+			return (Notificacion) session.get(bd_dcl.Notificacion.class, new Integer(idNotificacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

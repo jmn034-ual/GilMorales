@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -65,7 +65,7 @@ public class DenunciaDAO {
 	
 	public static Denuncia loadDenunciaByORMID(PersistentSession session, int idDenuncia) throws PersistentException {
 		try {
-			return (Denuncia) session.load(bd_dcl.Denuncia.class, Integer.valueOf(idDenuncia));
+			return (Denuncia) session.load(bd_dcl.Denuncia.class, new Integer(idDenuncia));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class DenunciaDAO {
 	
 	public static Denuncia getDenunciaByORMID(PersistentSession session, int idDenuncia) throws PersistentException {
 		try {
-			return (Denuncia) session.get(bd_dcl.Denuncia.class, Integer.valueOf(idDenuncia));
+			return (Denuncia) session.get(bd_dcl.Denuncia.class, new Integer(idDenuncia));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class DenunciaDAO {
 	
 	public static Denuncia loadDenunciaByORMID(PersistentSession session, int idDenuncia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Denuncia) session.load(bd_dcl.Denuncia.class, Integer.valueOf(idDenuncia), lockMode);
+			return (Denuncia) session.load(bd_dcl.Denuncia.class, new Integer(idDenuncia), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class DenunciaDAO {
 	
 	public static Denuncia getDenunciaByORMID(PersistentSession session, int idDenuncia, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Denuncia) session.get(bd_dcl.Denuncia.class, Integer.valueOf(idDenuncia), lockMode);
+			return (Denuncia) session.get(bd_dcl.Denuncia.class, new Integer(idDenuncia), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

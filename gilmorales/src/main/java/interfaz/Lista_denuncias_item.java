@@ -6,6 +6,8 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
+import bd_dcl.Denuncia;
+import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaDdenunciasAdministradorItem;
 
 public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem {
@@ -16,16 +18,24 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 	private Label _motivoL;
 	public Lista_denuncias _lista_denuncias;
 	public Filtrar_denuncias _filtrar_denuncias;
-	public Ver_Perfil__2 _ver_perfil = new Ver_Perfil__2();
+	public Ver_perfil_publico _ver_perfil;
+	UsuarioRegistrado denunciante;
 	
-	public Lista_denuncias_item(String usuario, String nombreCompleto, String estado, String motivo, String foto) {
+	public Lista_denuncias_item(Denuncia d) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		this.getNombreCompleto().setText(nombreCompleto);
-		this.getNombreUsuario().setText(usuario);
-		this.getEstadoDenuncia().setText(estado);
-		this.getMotivoDenuncia().setText(motivo);
-		this.getVaadinAvatar().setImage(foto);
+		this.getNombreCompleto().setText(d.getRealizadaPor().getNombre() + " " + d.getRealizadaPor().getApellidos());
+		this.getNombreUsuario().setText(d.getRealizadaPor().getNombreUsuario());
+		if(d.getTipoEstado() == 0) {
+			this.getEstadoDenuncia().setText("Aplicada");
+		} else if(d.getTipoEstado() == 1) {
+			this.getEstadoDenuncia().setText("Finalizada");
+		}else {
+			this.getEstadoDenuncia().setText("Pendiente");
+		}
+		this.getMotivoDenuncia().setText(d.getMotivo());
+		this.getVaadinAvatar().setImage(d.getRealizadaPor().getFoto());
+		this.denunciante = d.getRealizadaPor();
 		this.Ver_perfil();
 	}
 	
@@ -37,6 +47,7 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 
 
 	public void Ver_perfil() {
+		_ver_perfil = new Ver_perfil_publico(denunciante);
 		getNombreUsuario().addClickListener(event->{
 			this.getVaadinHorizontalLayout().setVisible(false);
 			this.getVaadinHorizontalLayout().add(this._ver_perfil);

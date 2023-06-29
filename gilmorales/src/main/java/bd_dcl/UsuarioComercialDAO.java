@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -65,7 +65,7 @@ public class UsuarioComercialDAO {
 	
 	public static UsuarioComercial loadUsuarioComercialByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (UsuarioComercial) session.load(bd_dcl.UsuarioComercial.class, Integer.valueOf(ID));
+			return (UsuarioComercial) session.load(bd_dcl.UsuarioComercial.class, new Integer(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class UsuarioComercialDAO {
 	
 	public static UsuarioComercial getUsuarioComercialByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (UsuarioComercial) session.get(bd_dcl.UsuarioComercial.class, Integer.valueOf(ID));
+			return (UsuarioComercial) session.get(bd_dcl.UsuarioComercial.class, new Integer(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class UsuarioComercialDAO {
 	
 	public static UsuarioComercial loadUsuarioComercialByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioComercial) session.load(bd_dcl.UsuarioComercial.class, Integer.valueOf(ID), lockMode);
+			return (UsuarioComercial) session.load(bd_dcl.UsuarioComercial.class, new Integer(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class UsuarioComercialDAO {
 	
 	public static UsuarioComercial getUsuarioComercialByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioComercial) session.get(bd_dcl.UsuarioComercial.class, Integer.valueOf(ID), lockMode);
+			return (UsuarioComercial) session.get(bd_dcl.UsuarioComercial.class, new Integer(ID), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

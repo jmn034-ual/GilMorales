@@ -20,17 +20,11 @@ public class UsuariosComerciales {
 	public BDPrincipal _c_bd_comercial;
 	public Vector<UsuarioComercial> _usuarioComercial = new Vector<UsuarioComercial>();
 
-	public UsuarioComercial cargarUsuarioComercial(String aNombreUsuario, String aPassword) throws PersistentException {
+	public UsuarioComercial cargarUsuarioComercial(int aUsuarioComercialID) throws PersistentException {
 		UsuarioComercial comercial = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			List<UsuarioComercial> lista = UsuarioComercialDAO.queryUsuarioComercial(null, null);
-			for(UsuarioComercial administrador : lista) {
-				if((administrador.getNombreUsuarioComercial().equals(aNombreUsuario)) && (administrador.getPassword().equals(aPassword))){
-					comercial = administrador;
-					break;
-				}
-			}
+			comercial = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioComercialID);
 		}catch(Exception e){
 			t.rollback();
 		}
@@ -38,21 +32,21 @@ public class UsuariosComerciales {
 	}
 
 	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario, int aUsuarioID) throws PersistentException {
-			String password = "";
-			PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-			try {
-				UsuarioComercial usuario = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioID);
-				password = usuario.getPassword();
-				if(!password.equals(aNuevaPassword)) {
-					usuario.setPassword(aNuevaPassword);
-					password = aNuevaPassword;
-					UsuarioComercialDAO.save(usuario);
-				}
-			}catch(Exception e){
-				t.rollback();
+		String password = "";
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			UsuarioComercial usuario = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioID);
+			password = usuario.getPassword();
+			if(!password.equals(aNuevaPassword)) {
+				usuario.setPassword(aNuevaPassword);
+				password = aNuevaPassword;
+				UsuarioComercialDAO.save(usuario);
 			}
-			return password;
-		}	
+		}catch(Exception e){
+			t.rollback();
+		}
+		return password;
+	}	
 
 	public void editarPerfilUC(String aNuevoNombreUsuario, String aNombreEmpresa, String aDescripcion, String aFoto, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
@@ -69,7 +63,7 @@ public class UsuariosComerciales {
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
-	
+
 	public void registrarUsuario(String aNombre, String aEmail, String aPassword, String aDescripcion, String aNombreUsuarioEmpresa, String aFechaNacimiento, String aFoto) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {

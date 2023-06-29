@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -19,29 +19,29 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class UsuarioAdministradorDetachedCriteria extends AbstractORMDetachedCriteria {
-	public final IntegerExpression ID;
 	public final IntegerExpression codigoEmpleado;
 	public final StringExpression nombreAdmin;
 	public final StringExpression apellidosAdmin;
+	public final StringExpression fechaContratacion;
 	public final StringExpression foto;
 	public final CollectionExpression gestiona;
 	
 	public UsuarioAdministradorDetachedCriteria() {
 		super(bd_dcl.UsuarioAdministrador.class, bd_dcl.UsuarioAdministradorCriteria.class);
-		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		codigoEmpleado = new IntegerExpression("codigoEmpleado", this.getDetachedCriteria());
 		nombreAdmin = new StringExpression("nombreAdmin", this.getDetachedCriteria());
 		apellidosAdmin = new StringExpression("apellidosAdmin", this.getDetachedCriteria());
+		fechaContratacion = new StringExpression("fechaContratacion", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 	}
 	
 	public UsuarioAdministradorDetachedCriteria(DetachedCriteria aDetachedCriteria) {
 		super(aDetachedCriteria, bd_dcl.UsuarioAdministradorCriteria.class);
-		ID = new IntegerExpression("ID", this.getDetachedCriteria());
 		codigoEmpleado = new IntegerExpression("codigoEmpleado", this.getDetachedCriteria());
 		nombreAdmin = new StringExpression("nombreAdmin", this.getDetachedCriteria());
 		apellidosAdmin = new StringExpression("apellidosAdmin", this.getDetachedCriteria());
+		fechaContratacion = new StringExpression("fechaContratacion", this.getDetachedCriteria());
 		foto = new StringExpression("foto", this.getDetachedCriteria());
 		gestiona = new CollectionExpression("ORM_gestiona", this.getDetachedCriteria());
 	}

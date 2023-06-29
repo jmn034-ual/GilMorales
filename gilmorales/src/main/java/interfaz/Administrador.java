@@ -3,56 +3,32 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.dom.Element;
 
+import basededatos.BDPrincipal;
+import basededatos.iAdministrador;
+import bd_dcl.UsuarioAdministrador;
 //import basededatos.iAdministrador;
 import vistas.VistaAdministradorPrincipal;
 
 public class Administrador extends VistaAdministradorPrincipal {
-	//public iAdministrador _iAdministrador;
-	public Lista_Publicaciones__Administrador_ _lista_Publicaciones__Administrador_= new Lista_Publicaciones__Administrador_();
+	public iAdministrador _iAdministrador = new BDPrincipal();
+	public Lista_Publicaciones_Administrador _lista_Publicaciones__Administrador_;
 	public Cabecera_Administrador _cabecera_Administrador = new Cabecera_Administrador();
 	public Cabecera_TOP top = new Cabecera_TOP();
 	public Element cabeceraTop = top.getCabeceraTop();
-	//public Gestionar_denuncias denuncias = new Gestionar_denuncias("Cristian Gil García","27/05/2002","123456","icons/icon.png");
+	UsuarioAdministrador admin;
 	
-	Lista_Publicaciones__Administrador__item item1= new Lista_Publicaciones__Administrador__item("Cristian", "Almería", "hola", "icons/icon.png", "videos/tiktok1.mp4",this);
-
-	public Administrador() {
+	public Administrador(int codigoEmpleado) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.admin = this._iAdministrador.cargarAdministrador(codigoEmpleado);
 		this.Cabecera_Administrador();
-		this._lista_Publicaciones__Administrador_.anadirPublicacion(item1);
 		top.getLayoutListaResultadoBusqueda().setVisible(false);
 		this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(top);
 		this.Lista_Publicaciones__Administrador_();
-		
-		this.top.getBotonVerListaHashtag().addClickListener(event->{
-			this.getLayoutPublicaciones().as(VerticalLayout.class).removeAll();
-		});
-		
-		this.top.getBotonVerListaUsuarios().addClickListener(event->{
-			this.getLayoutPublicaciones().as(VerticalLayout.class).removeAll();
-		});
-		
-//		this.top.tui.getNombreUsuario().addClickListener(event->{
-//			this.getVaadinHorizontalLayout().removeAll();
-//			this.getVaadinHorizontalLayout().add(this._lista_Publicaciones__Administrador_.p._ver_perfil_administrador_);
-//		
-//		});
-		
-		
-		this.top._ver_lista_usuarios_registrados.u1.getBotonNombreUsuario().addClickListener(event->{
-			this.getVaadinHorizontalLayout().removeAll();
-			this.getVaadinHorizontalLayout().add(this._lista_Publicaciones__Administrador_.p._ver_perfil_administrador_);
-			
-		});
-		
-		this.top._ver_lista_usuarios_registrados.u2.getBotonNombreUsuario().addClickListener(event->{
-			this.getVaadinHorizontalLayout().removeAll();
-			this.getVaadinHorizontalLayout().add(this._lista_Publicaciones__Administrador_.p._ver_perfil_administrador_);
-		});
 	}
 	
 	public void Lista_Publicaciones__Administrador_() {
+		_lista_Publicaciones__Administrador_= new Lista_Publicaciones_Administrador(this.admin, this);
 		this.getLayoutPublicaciones().as(VerticalLayout.class).add(_lista_Publicaciones__Administrador_);
 	}
 

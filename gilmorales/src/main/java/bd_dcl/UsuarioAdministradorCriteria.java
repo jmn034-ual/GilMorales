@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -19,19 +19,19 @@ import org.orm.PersistentSession;
 import org.orm.criteria.*;
 
 public class UsuarioAdministradorCriteria extends AbstractORMCriteria {
-	public final IntegerExpression ID;
 	public final IntegerExpression codigoEmpleado;
 	public final StringExpression nombreAdmin;
 	public final StringExpression apellidosAdmin;
+	public final StringExpression fechaContratacion;
 	public final StringExpression foto;
 	public final CollectionExpression gestiona;
 	
 	public UsuarioAdministradorCriteria(Criteria criteria) {
 		super(criteria);
-		ID = new IntegerExpression("ID", this);
 		codigoEmpleado = new IntegerExpression("codigoEmpleado", this);
 		nombreAdmin = new StringExpression("nombreAdmin", this);
 		apellidosAdmin = new StringExpression("apellidosAdmin", this);
+		fechaContratacion = new StringExpression("fechaContratacion", this);
 		foto = new StringExpression("foto", this);
 		gestiona = new CollectionExpression("ORM_gestiona", this);
 	}

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -28,7 +28,8 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 	public final StringExpression apellidos;
 	public final StringExpression email;
 	public final StringExpression password;
-	public final CollectionExpression seguido;
+	public final IntegerExpression privacidad;
+	public final CollectionExpression seguidor;
 	public final CollectionExpression esDenunciado;
 	public final CollectionExpression daMeGustaPublicacion;
 	public final CollectionExpression publica;
@@ -53,7 +54,8 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		email = new StringExpression("email", this.getDetachedCriteria());
 		password = new StringExpression("password", this.getDetachedCriteria());
-		seguido = new CollectionExpression("ORM_seguido", this.getDetachedCriteria());
+		privacidad = new IntegerExpression("privacidad", this.getDetachedCriteria());
+		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
 		esDenunciado = new CollectionExpression("ORM_esDenunciado", this.getDetachedCriteria());
 		daMeGustaPublicacion = new CollectionExpression("ORM_daMeGustaPublicacion", this.getDetachedCriteria());
 		publica = new CollectionExpression("ORM_publica", this.getDetachedCriteria());
@@ -79,7 +81,8 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 		apellidos = new StringExpression("apellidos", this.getDetachedCriteria());
 		email = new StringExpression("email", this.getDetachedCriteria());
 		password = new StringExpression("password", this.getDetachedCriteria());
-		seguido = new CollectionExpression("ORM_seguido", this.getDetachedCriteria());
+		privacidad = new IntegerExpression("privacidad", this.getDetachedCriteria());
+		seguidor = new CollectionExpression("ORM_seguidor", this.getDetachedCriteria());
 		esDenunciado = new CollectionExpression("ORM_esDenunciado", this.getDetachedCriteria());
 		daMeGustaPublicacion = new CollectionExpression("ORM_daMeGustaPublicacion", this.getDetachedCriteria());
 		publica = new CollectionExpression("ORM_publica", this.getDetachedCriteria());
@@ -94,8 +97,8 @@ public class UsuarioRegistradoDetachedCriteria extends AbstractORMDetachedCriter
 		realizaDenuncia = new CollectionExpression("ORM_realizaDenuncia", this.getDetachedCriteria());
 	}
 	
-	public bd_dcl.UsuarioRegistradoDetachedCriteria createSeguidoCriteria() {
-		return new bd_dcl.UsuarioRegistradoDetachedCriteria(createCriteria("ORM_seguido"));
+	public bd_dcl.UsuarioRegistradoDetachedCriteria createSeguidorCriteria() {
+		return new bd_dcl.UsuarioRegistradoDetachedCriteria(createCriteria("ORM_seguidor"));
 	}
 	
 	public bd_dcl.UsuarioRegistradoDetachedCriteria createEsDenunciadoCriteria() {

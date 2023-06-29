@@ -1,6 +1,5 @@
 package basededatos;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public interface iUsuario_No_Registrado {

@@ -8,7 +8,7 @@ public class Denunciar_publicacion {
 //	private button _cancelarB;
 //	private button _enviarB;
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
-	public Lista_publicaciones__Usuario_Registrado__item _lista_publicaciones__Usuario_Registrado_;
+	public Lista_publicaciones_Usuario_Registrado_item _lista_publicaciones__Usuario_Registrado_;
 
 	public void Elegir_motivo_denuncia() {
 		throw new UnsupportedOperationException();

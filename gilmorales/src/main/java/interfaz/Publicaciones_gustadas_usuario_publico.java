@@ -1,0 +1,10 @@
+package interfaz;
+
+import java.util.Vector;
+
+import vistas.VistaPublicacionesGustadasUsuarioPublico;
+
+public class Publicaciones_gustadas_usuario_publico extends VistaPublicacionesGustadasUsuarioPublico{
+	public Ver_publicacciones_gustadas_Otro_usuario _ver_publicacciones_gustadas__Otro_usuario_;
+	public Vector<Publicaciones_gustadas_usuario_publico_item> _item = new Vector<Publicaciones_gustadas_usuario_publico_item>();
+}

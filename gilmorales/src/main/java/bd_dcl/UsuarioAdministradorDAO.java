@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -19,10 +19,10 @@ import org.hibernate.LockMode;
 import java.util.List;
 
 public class UsuarioAdministradorDAO {
-	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(int ID) throws PersistentException {
+	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(int codigoEmpleado) throws PersistentException {
 		try {
 			PersistentSession session = bd_dcl.GilMoralesPersistentManager.instance().getSession();
-			return loadUsuarioAdministradorByORMID(session, ID);
+			return loadUsuarioAdministradorByORMID(session, codigoEmpleado);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -30,10 +30,10 @@ public class UsuarioAdministradorDAO {
 		}
 	}
 	
-	public static UsuarioAdministrador getUsuarioAdministradorByORMID(int ID) throws PersistentException {
+	public static UsuarioAdministrador getUsuarioAdministradorByORMID(int codigoEmpleado) throws PersistentException {
 		try {
 			PersistentSession session = bd_dcl.GilMoralesPersistentManager.instance().getSession();
-			return getUsuarioAdministradorByORMID(session, ID);
+			return getUsuarioAdministradorByORMID(session, codigoEmpleado);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -41,10 +41,10 @@ public class UsuarioAdministradorDAO {
 		}
 	}
 	
-	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(int codigoEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = bd_dcl.GilMoralesPersistentManager.instance().getSession();
-			return loadUsuarioAdministradorByORMID(session, ID, lockMode);
+			return loadUsuarioAdministradorByORMID(session, codigoEmpleado, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -52,10 +52,10 @@ public class UsuarioAdministradorDAO {
 		}
 	}
 	
-	public static UsuarioAdministrador getUsuarioAdministradorByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioAdministrador getUsuarioAdministradorByORMID(int codigoEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = bd_dcl.GilMoralesPersistentManager.instance().getSession();
-			return getUsuarioAdministradorByORMID(session, ID, lockMode);
+			return getUsuarioAdministradorByORMID(session, codigoEmpleado, lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -63,9 +63,9 @@ public class UsuarioAdministradorDAO {
 		}
 	}
 	
-	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(PersistentSession session, int ID) throws PersistentException {
+	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(PersistentSession session, int codigoEmpleado) throws PersistentException {
 		try {
-			return (UsuarioAdministrador) session.load(bd_dcl.UsuarioAdministrador.class, Integer.valueOf(ID));
+			return (UsuarioAdministrador) session.load(bd_dcl.UsuarioAdministrador.class, new Integer(codigoEmpleado));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -73,9 +73,9 @@ public class UsuarioAdministradorDAO {
 		}
 	}
 	
-	public static UsuarioAdministrador getUsuarioAdministradorByORMID(PersistentSession session, int ID) throws PersistentException {
+	public static UsuarioAdministrador getUsuarioAdministradorByORMID(PersistentSession session, int codigoEmpleado) throws PersistentException {
 		try {
-			return (UsuarioAdministrador) session.get(bd_dcl.UsuarioAdministrador.class, Integer.valueOf(ID));
+			return (UsuarioAdministrador) session.get(bd_dcl.UsuarioAdministrador.class, new Integer(codigoEmpleado));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -83,9 +83,9 @@ public class UsuarioAdministradorDAO {
 		}
 	}
 	
-	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioAdministrador loadUsuarioAdministradorByORMID(PersistentSession session, int codigoEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioAdministrador) session.load(bd_dcl.UsuarioAdministrador.class, Integer.valueOf(ID), lockMode);
+			return (UsuarioAdministrador) session.load(bd_dcl.UsuarioAdministrador.class, new Integer(codigoEmpleado), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -93,9 +93,9 @@ public class UsuarioAdministradorDAO {
 		}
 	}
 	
-	public static UsuarioAdministrador getUsuarioAdministradorByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
+	public static UsuarioAdministrador getUsuarioAdministradorByORMID(PersistentSession session, int codigoEmpleado, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (UsuarioAdministrador) session.get(bd_dcl.UsuarioAdministrador.class, Integer.valueOf(ID), lockMode);
+			return (UsuarioAdministrador) session.get(bd_dcl.UsuarioAdministrador.class, new Integer(codigoEmpleado), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

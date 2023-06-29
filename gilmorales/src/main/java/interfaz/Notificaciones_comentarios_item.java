@@ -2,24 +2,33 @@ package interfaz;
 
 import com.vaadin.flow.component.html.Label;
 
+import basededatos.BDPrincipal;
+import basededatos.iUsuario_Registrado;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaNotificacionesComentariosItem;
 
 public class Notificaciones_comentarios_item extends VistaNotificacionesComentariosItem{
 
 //	public Notificaciones_comentarios _notificaciones_comentarios;
+	iUsuario_Registrado bd = new BDPrincipal();
+	UsuarioRegistrado daMeGusta;
+	UsuarioRegistrado recibe;
 	
 	public Notificaciones_comentarios_item() {
-		this.getBotonMeGusta().setVisible(false);
-		this.getVaadinVerticalLayout().setVisible(false);
-		this.getLabelComentario().setText("No tienes notificaciones");
 	}
 	
-	public Notificaciones_comentarios_item(UsuarioRegistrado usuarioComenta) {
 	
-	}	
+	public Notificaciones_comentarios_item(UsuarioRegistrado daMeGusta, UsuarioRegistrado recibe) {
+		this.getBotonMeGusta().setVisible(false);
+		this.getVaadinVerticalLayout().setVisible(false);
+		this.daMeGusta = daMeGusta;
+		this.recibe = recibe;
+		this.getLabelComentario().setText("No tienes notificaciones");
+	}
 
 	public void Dar_me_gusta_comentario() {
-		throw new UnsupportedOperationException();
+		this.getBotonMeGusta().addClickListener(event -> {
+			this.bd.meGustaComentario(daMeGusta.getID(), recibe.getID());
+		});
 	}
 }

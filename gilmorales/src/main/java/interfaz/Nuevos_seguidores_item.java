@@ -15,7 +15,7 @@ public class Nuevos_seguidores_item extends VistaNuevosSeguirdoresItem{
 	UsuarioRegistrado nuevoSeguidor;
 	UsuarioRegistrado usuario;
 	iUsuario_Registrado bd = new BDPrincipal();
-	
+
 	public Nuevos_seguidores_item() {
 		this.getPrivado().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
@@ -33,23 +33,25 @@ public class Nuevos_seguidores_item extends VistaNuevosSeguirdoresItem{
 		this.getFotoPerfil().add(avatar);
 		this.getFotoPerfil().add(boton);
 		Seguir();
+		Enviar_peticion_amistad();
+		Dejar_de_seguir();
 	}
 
 	public void Seguir() {
-		this.getBotonSeguir().addClickListener(event -> {
-			this.bd.seguirUsuario(this.usuario.getNombreUsuario(), this.nuevoSeguidor.getNombreUsuario(),
-					 this.nuevoSeguidor.getID(), this.usuario.getID());
-			System.out.println(usuario.getNombre());
-			System.out.println(nuevoSeguidor.getNombre());
-			this.getBotonSeguir().setText("Funciona");
+		this.getBotonSeguir().addClickListener(event ->{
+			this.bd.seguirUsuario( this.usuario.getID(), this.nuevoSeguidor.getID());
 		});
 	}
 
 	public void Enviar_peticion_amistad() {
-		throw new UnsupportedOperationException();
+		this.getBotonEnviarSolicitud().addClickListener(event ->{
+			
+		});
 	}
 
 	public void Dejar_de_seguir() {
-		throw new UnsupportedOperationException();
+		this.getBotonDejarDeSeguir().addClickListener(event ->{
+			this.bd.dejarSeguirUsuario( this.usuario.getID(), this.nuevoSeguidor.getID());
+		});
 	}
 }

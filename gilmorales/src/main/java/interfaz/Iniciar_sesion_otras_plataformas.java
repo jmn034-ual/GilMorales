@@ -11,7 +11,7 @@ public class Iniciar_sesion_otras_plataformas extends VistaIniciarsesionotraplat
 	private Button _usarOtraCuentaB;
 	private Label _tituloL;
 	public Plataformas_externas _plataformas_externas;
-	public Iniciar_Sesion__4 _iniciar_sesion;
+	public Login _iniciar_sesion;
 	public Usar_otra_cuenta _usar_otra_cuenta;
 
 	public Iniciar_sesion_otras_plataformas() {

@@ -25,9 +25,9 @@ export class VistaListaComentariosUsuarioNoRegistradoItem extends LitElement {
   <vaadin-button theme="tertiary" id="nombreUsuario">
     Nombre de usuario 
   </vaadin-button>
-  <label id="comentarioL" style="flex-shrink: 0; align-self: stretch;">Comentario</label>
+  <label id="comentarioL" style="flex-shrink: 0; align-self: stretch; margin-left: var(--lumo-space-xs);">Comentario</label>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 1; justify-content: flex-end; flex-shrink: 0; flex-direction: row;">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 1; justify-content: flex-end; flex-shrink: 0;">
   <label id="numeroMeGusta" style="align-self: center;">0</label>
   <label id="meGustaL" style="align-self: center;">Me gusta</label>
   <vaadin-button id="meGustaB">

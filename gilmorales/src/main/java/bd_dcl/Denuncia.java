@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -54,7 +54,7 @@ public class Denuncia implements Serializable {
 	
 	@ManyToOne(targetEntity=bd_dcl.UsuarioAdministrador.class, fetch=FetchType.LAZY)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.LOCK})	
-	@JoinColumns(value={ @JoinColumn(name="UsuarioAdministradorID", referencedColumnName="ID", nullable=false) }, foreignKey=@ForeignKey(name="FKDenuncia859523"))	
+	@JoinColumns(value={ @JoinColumn(name="UsuarioAdministradorCodigoEmpleado", referencedColumnName="CodigoEmpleado", nullable=false) }, foreignKey=@ForeignKey(name="FKDenuncia607679"))	
 	@org.hibernate.annotations.LazyToOne(value=org.hibernate.annotations.LazyToOneOption.NO_PROXY)	
 	private bd_dcl.UsuarioAdministrador atendida;
 	
@@ -67,14 +67,8 @@ public class Denuncia implements Serializable {
 	@Column(name="Motivo", nullable=true, length=255)	
 	private String motivo;
 	
-	@Column(name="NombreUsuario", nullable=true, length=255)	
-	private String nombreUsuario;
-	
 	@Column(name="Explicacion", nullable=true, length=255)	
 	private String explicacion;
-	
-	@Column(name="CodigoEmpleado", nullable=false, length=10)	
-	private int codigoEmpleado;
 	
 	public void setTipoDenuncia(int value) {
 		this.tipoDenuncia = value;
@@ -100,14 +94,6 @@ public class Denuncia implements Serializable {
 		return motivo;
 	}
 	
-	public void setNombreUsuario(String value) {
-		this.nombreUsuario = value;
-	}
-	
-	public String getNombreUsuario() {
-		return nombreUsuario;
-	}
-	
 	public void setExplicacion(String value) {
 		this.explicacion = value;
 	}
@@ -126,14 +112,6 @@ public class Denuncia implements Serializable {
 	
 	public int getORMID() {
 		return getIdDenuncia();
-	}
-	
-	public void setCodigoEmpleado(int value) {
-		this.codigoEmpleado = value;
-	}
-	
-	public int getCodigoEmpleado() {
-		return codigoEmpleado;
 	}
 	
 	public void setAtendida(bd_dcl.UsuarioAdministrador value) {

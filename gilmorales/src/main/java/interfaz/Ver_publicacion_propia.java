@@ -11,7 +11,7 @@ import bd_dcl.Publicacion;
 import bd_dcl.PublicacionDAO;
 import bd_dcl.UsuarioRegistrado;
 
-public class Ver_publicacion_propia extends Ver_publicacion__usuario_Registrado_ {
+public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 //	private Button _eliminar_publicacion_propiaB;
 //	private Button _verPerfilB;
 //	private Button _eliminarB;
@@ -25,19 +25,18 @@ public class Ver_publicacion_propia extends Ver_publicacion__usuario_Registrado_
 	private Usuario_Registrado urInterfaz;
 	private iUsuario_Registrado bd = new BDPrincipal();
 
-	
-	public Ver_publicacion_propia() {}
-
 	public Ver_publicacion_propia(Publicacion publicacion, Usuario_Registrado urInterfaz) {
+		super(publicacion, publicacion.getPerteneceA());
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.publicacion = publicacion;
 		this.urInterfaz = urInterfaz;
+		this.getVaadinHorizontalLayout2().setVisible(false);
 		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
 		this.getGeolocalizacion().setText(this.publicacion.getLocalizacion());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
-		this.getVaadinButton().setVisible(false);
+		this.getBotonComentar().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getVaadinHorizontalLayout2().setVisible(false);
 		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas()+"");

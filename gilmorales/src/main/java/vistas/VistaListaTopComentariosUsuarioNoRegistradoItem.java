@@ -44,6 +44,152 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 	private Button meGustaB;
 	@Id("borrarComentarioB")
 	private Button borrarComentarioB;
+	
+	
+
+	public HorizontalLayout getNombreDeUsuarioB() {
+		return nombreDeUsuarioB;
+	}
+
+
+
+	public void setNombreDeUsuarioB(HorizontalLayout nombreDeUsuarioB) {
+		this.nombreDeUsuarioB = nombreDeUsuarioB;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public Button getNombreDeUsuarioB1() {
+		return nombreDeUsuarioB1;
+	}
+
+
+
+	public void setNombreDeUsuarioB1(Button nombreDeUsuarioB1) {
+		this.nombreDeUsuarioB1 = nombreDeUsuarioB1;
+	}
+
+
+
+	public Label getComentarioL() {
+		return comentarioL;
+	}
+
+
+
+	public void setComentarioL(Label comentarioL) {
+		this.comentarioL = comentarioL;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+
+	public Avatar getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+
+
+	public void setFotoPerfil(Avatar fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+
+
+	public Label getNumeroMeGusta() {
+		return numeroMeGusta;
+	}
+
+
+
+	public void setNumeroMeGusta(Label numeroMeGusta) {
+		this.numeroMeGusta = numeroMeGusta;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+
+
+	public Label getMeGustaL() {
+		return meGustaL;
+	}
+
+
+
+	public void setMeGustaL(Label meGustaL) {
+		this.meGustaL = meGustaL;
+	}
+
+
+
+	public Button getMeGustaB() {
+		return meGustaB;
+	}
+
+
+
+	public void setMeGustaB(Button meGustaB) {
+		this.meGustaB = meGustaB;
+	}
+
+
+
+	public Button getBorrarComentarioB() {
+		return borrarComentarioB;
+	}
+
+
+
+	public void setBorrarComentarioB(Button borrarComentarioB) {
+		this.borrarComentarioB = borrarComentarioB;
+	}
+
+
 
 	/**
      * Creates a new VistaListaTopComentariosUsuarioNoRegistradoItem.

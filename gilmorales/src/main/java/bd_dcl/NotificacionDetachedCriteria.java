@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -23,6 +23,7 @@ public class NotificacionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression enviadaAId;
 	public final AssociationExpression enviadaA;
 	public final IntegerExpression tipoNotificacion;
+	public final IntegerExpression IDUsuarioNotifica;
 	
 	public NotificacionDetachedCriteria() {
 		super(bd_dcl.Notificacion.class, bd_dcl.NotificacionCriteria.class);
@@ -30,6 +31,7 @@ public class NotificacionDetachedCriteria extends AbstractORMDetachedCriteria {
 		enviadaAId = new IntegerExpression("enviadaA.ID", this.getDetachedCriteria());
 		enviadaA = new AssociationExpression("enviadaA", this.getDetachedCriteria());
 		tipoNotificacion = new IntegerExpression("tipoNotificacion", this.getDetachedCriteria());
+		IDUsuarioNotifica = new IntegerExpression("IDUsuarioNotifica", this.getDetachedCriteria());
 	}
 	
 	public NotificacionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -38,6 +40,7 @@ public class NotificacionDetachedCriteria extends AbstractORMDetachedCriteria {
 		enviadaAId = new IntegerExpression("enviadaA.ID", this.getDetachedCriteria());
 		enviadaA = new AssociationExpression("enviadaA", this.getDetachedCriteria());
 		tipoNotificacion = new IntegerExpression("tipoNotificacion", this.getDetachedCriteria());
+		IDUsuarioNotifica = new IntegerExpression("IDUsuarioNotifica", this.getDetachedCriteria());
 	}
 	
 	public UsuarioRegistradoDetachedCriteria createEnviadaACriteria() {

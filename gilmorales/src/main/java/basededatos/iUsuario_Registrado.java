@@ -1,41 +1,40 @@
 package basededatos;
 
 import bd_dcl.UsuarioRegistrado;
-import bd_dcl.Publicacion;
 
 import java.util.List;
 
-import bd_dcl.Hashtag;
+import bd_dcl.Publicacion;
 
 public interface iUsuario_Registrado {
 
-	public UsuarioRegistrado cargarUsuarioRegistrado(String aNombreUsuario, String aPassword);
+	public UsuarioRegistrado cargarUsuarioRegistrado(int aUsuarioID);
 
-	public void comentarPublicacion(int aIdPublicacion, String aNombreUsuario, String aComentario, int UsuarioID);
+	public void comentarPublicacion(int aIdPublicacion, int aUsuarioID, String aComentario);
 
-	public void meGustaComentario(int aIdComentario, String aNombreUsuario, int aUsuarioID);
+	public void meGustaComentario(int aIdComentario, int aUsuarioID);
 
 	public void cambiarFotoPerfil(int aUsuarioID, String aNombreUsuario, String aFoto);
 
-	public void editarPerfilUR(int aUsuarioID, String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto);
+	public void editarPerfilUR(String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto, int aUsuarioID);
 
 	public void eliminarSeleccion(List aListaSeleccion);
 
-	public void meGustaPublicacion(int aIdPublicacion, String aNombreUsuario, int aUsuarioID);
+	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID);
 
-	public void seguirUsuario(String aNombreUsuarioASeguir, String aNombreUsuarioSigue, int aUsuarioSeguidoID, int aUsuarioSeguidorID);
+	public void seguirUsuario(int aUsuarioSeguidorID, int aUsuarioAseguirID);
 
-	public void dejarSeguirUsuario(String aNombreUsuarioDejarSeguir, String aNombreUsuario, int aUsuarioDejaSeguirID, int aUsuarioID);
+	public void dejarSeguirUsuario(int aUsuarioDejaSeguirID, int aUsuarioDejadoSeguirID);
 
 	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID);
 
-	public List cargarListaHashtags();
+	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID);
 
-	public Hashtag cargarHashtag(int aIdHashtag, String aNombreHashstag);
+	public List cargarListaHashtags();
 
 	public List realizarBusqueda(String aBusqueda, String aFiltro);
 
-	public void denunciarPublicacion(int aIdPublicacion, String aNombreUsuarioDenunciante, String aMotivo, String aExplicacion, int aUsuarioID);
+	public void denunciarPublicacion(int aIdPublicacion, String aMotivo, String aExplicacion, int aUsuarioID);
 
 	public List cargarComentariosTOP(int aIdPublicacion);
 
@@ -45,9 +44,9 @@ public interface iUsuario_Registrado {
 
 	public List ordenarUsuarios(String aFiltro);
 
-	public void denunciarUsuario(String aNombreUsuarioDenunciado, String aNombreUsuarioDenunciante, String aMotivo, int aUsuarioDenunciaID, int aUsuarioDenunciadoID);
+	public void denunciarUsuario(String aExplicacion, String aMotivo, int aUsuarioDenuncianteID, int aUsuarioDenunciadoID);
 
-	public void denunciarComentario(int aIdComentario, String aNombreUsuarioDenunciante, String aMotivo, String aExplicacion, int aUsuarioID);
+	public void denunciarComentario(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID);
 
 	public void eliminarPublicacion(int aIdPublicacion);
 

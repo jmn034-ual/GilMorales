@@ -13,20 +13,31 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	private Label _topHashtagsL;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	public Cabecera_Usuario_No_Registrado _cabecera_Usuario_No_Registrado;
-	public Ver_lista_Hashtag _ver_lista_Hashtag = new Ver_lista_Hashtag();
-	public top_hashtags _top_hashtags;
-	public top_usuarios _top_usuarios;
-	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados();
+	public Ver_lista_Hashtag _ver_lista_Hashtag;
+	public Top_hashtags _top_hashtags;
+	public Top_usuarios _top_usuarios;
+	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados;
+	Administrador adminInterfaz;
 
 	public Cabecera_TOP() {
+		this.getLayoutListaResultadoBusqueda().setVisible(false);
+		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados();
+		Ver_lista_Hashtag();
+		Ver_lista_usuarios_registrados();
+		top_hashtags();
+		top_usuarios();
+	}
+	public Cabecera_TOP(Administrador adminInterfaz) {
+		this.adminInterfaz = adminInterfaz;
+		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this.adminInterfaz);
 		this.getLayoutListaResultadoBusqueda().setVisible(false);
 		Ver_lista_Hashtag();
 		Ver_lista_usuarios_registrados();
 		top_hashtags();
 		top_usuarios();
 	}
-
 	public void Ver_lista_Hashtag() {
+		 _ver_lista_Hashtag = new Ver_lista_Hashtag();
 		this.getBotonVerListaHashtag().addClickListener(event -> {
 			this.getLayoutListaResultadoBusqueda().setVisible(false);
 			this.getCabeceraTop().setVisible(false);
@@ -38,12 +49,12 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	}
 
 	public void top_hashtags() {
-		 _top_hashtags = new top_hashtags();
+		 _top_hashtags = new Top_hashtags();
 		this.getListaTopHashtag().as(VerticalLayout.class).add(_top_hashtags);
 	}
 
 	public void top_usuarios() {
-		_top_usuarios = new top_usuarios();
+		_top_usuarios = new Top_usuarios();
 		this.getListaUsuarios().as(VerticalLayout.class).add(_top_usuarios);
 	}
 
@@ -55,7 +66,6 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 			this._ver_lista_usuarios_registrados.setVisible(true);
 			this.getLayoutAyuda().setVisible(true);
 			this.getLayoutAyuda().as(VerticalLayout.class).add(_ver_lista_usuarios_registrados);
-
 			});
 	}
 }

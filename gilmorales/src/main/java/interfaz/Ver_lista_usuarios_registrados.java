@@ -7,16 +7,22 @@ import vistas.VistaVerListaUsuariosRegistrados;
 public class Ver_lista_usuarios_registrados extends VistaVerListaUsuariosRegistrados{
 //	private Label _tituloL;
 	public Cabecera_TOP _cabecera_TOP;
-	public lista_usuarios_registrados _lista_usuarios_registrados = new lista_usuarios_registrados();
-
-	public lista_usuarios_registrados_item u1 = new lista_usuarios_registrados_item("Usuario1");
-	public lista_usuarios_registrados_item u2 = new lista_usuarios_registrados_item("Usuario2");
+	public Lista_usuarios_registrados _lista_usuarios_registrados;
+	Administrador adminInterfaz;
 	
 	public Ver_lista_usuarios_registrados() {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-		_lista_usuarios_registrados.anadirUsuario(u1);
-		_lista_usuarios_registrados.anadirUsuario(u2);
+		_lista_usuarios_registrados = new Lista_usuarios_registrados();
+		lista_usuarios_registrados();
+	}
+
+	
+	public Ver_lista_usuarios_registrados(Administrador adminInterfaz) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+    	this.adminInterfaz = adminInterfaz;
+		_lista_usuarios_registrados = new Lista_usuarios_registrados(this.adminInterfaz);
 		lista_usuarios_registrados();
 	}
 	

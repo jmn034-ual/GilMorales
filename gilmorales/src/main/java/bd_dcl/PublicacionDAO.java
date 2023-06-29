@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -65,7 +65,7 @@ public class PublicacionDAO {
 	
 	public static Publicacion loadPublicacionByORMID(PersistentSession session, int idPublicacion) throws PersistentException {
 		try {
-			return (Publicacion) session.load(bd_dcl.Publicacion.class, Integer.valueOf(idPublicacion));
+			return (Publicacion) session.load(bd_dcl.Publicacion.class, new Integer(idPublicacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class PublicacionDAO {
 	
 	public static Publicacion getPublicacionByORMID(PersistentSession session, int idPublicacion) throws PersistentException {
 		try {
-			return (Publicacion) session.get(bd_dcl.Publicacion.class, Integer.valueOf(idPublicacion));
+			return (Publicacion) session.get(bd_dcl.Publicacion.class, new Integer(idPublicacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class PublicacionDAO {
 	
 	public static Publicacion loadPublicacionByORMID(PersistentSession session, int idPublicacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Publicacion) session.load(bd_dcl.Publicacion.class, Integer.valueOf(idPublicacion), lockMode);
+			return (Publicacion) session.load(bd_dcl.Publicacion.class, new Integer(idPublicacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class PublicacionDAO {
 	
 	public static Publicacion getPublicacionByORMID(PersistentSession session, int idPublicacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Publicacion) session.get(bd_dcl.Publicacion.class, Integer.valueOf(idPublicacion), lockMode);
+			return (Publicacion) session.get(bd_dcl.Publicacion.class, new Integer(idPublicacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

@@ -19,6 +19,14 @@ public class VistaListaTopComentariosUsuarioNoRegistrado extends LitTemplate {
     @Id("listaTopComentarios")
 	private Element listaTopComentarios;
 
+    public Element getListaTopComentarios() {
+		return listaTopComentarios;
+	}
+
+	public void setListaTopComentarios(Element listaTopComentarios) {
+		this.listaTopComentarios = listaTopComentarios;
+	}
+	
 	/**
      * Creates a new VistaListaTopComentariosUsuarioNoRegistrado.
      */
@@ -26,12 +34,6 @@ public class VistaListaTopComentariosUsuarioNoRegistrado extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
-	public Element getListaTopComentarios() {
-		return listaTopComentarios;
-	}
-
-	public void setListaTopComentarios(Element listaTopComentarios) {
-		this.listaTopComentarios = listaTopComentarios;
-	}
+	
 
 }

@@ -19,7 +19,7 @@
       <ReferencedColumn>BD-DCL.UsuarioRegistrado.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
-      <Nullable>true</Nullable>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -31,7 +31,7 @@
       <ReferencedColumn>BD-DCL.UsuarioComercial.ID</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
-      <Nullable>true</Nullable>
+      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -238,19 +238,7 @@
       <UserTypes/>
     </Column>
     <Column name="Privacidad">
-    	<PrimaryKey>false</PrimaryKey>
-    	<ForeignKey>false</ForeignKey>
-    	<Type>9</Type>
-    	<Length>10</Length>
-    	<Nullable>true</Nullable>
-    	<IDGenerator>native</IDGenerator>
-    	<Unique>false</Unique>
-    	<Index>false</Index>
-    	<UserTypes></UserTypes></Column>
-  </Entity>
-  <Entity name="UsuarioAdministrador" Unlogged="false" PKClustered="0">
-    <Column name="ID">
-      <PrimaryKey>true</PrimaryKey>
+      <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>9</Type>
       <Length>10</Length>
@@ -260,8 +248,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
+  </Entity>
+  <Entity name="UsuarioAdministrador" Unlogged="false" PKClustered="0">
     <Column name="CodigoEmpleado">
-      <PrimaryKey>false</PrimaryKey>
+      <PrimaryKey>true</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>9</Type>
       <Length>10</Length>
@@ -296,8 +286,8 @@
     <Column name="FechaContratacion">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
-      <Type>17</Type>
-      <Length>0</Length>
+      <Type>27</Type>
+      <Length>255</Length>
       <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
@@ -399,10 +389,10 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="UsuarioAdministradorID">
+    <Column name="UsuarioAdministradorCodigoEmpleado">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>BD-DCL.UsuarioAdministrador.ID</ReferencedColumn>
+      <ReferencedColumn>BD-DCL.UsuarioAdministrador.CodigoEmpleado</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -444,34 +434,12 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="NombreUsuario">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="Explicacion">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
       <Type>27</Type>
       <Length>255</Length>
       <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="CodigoEmpleado">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -513,17 +481,17 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="UsuarioRegistradoIDNotifica">
-    	<PrimaryKey>false</PrimaryKey>
-    	<ForeignKey>false</ForeignKey>
-    	<ReferencedColumn>BD-DCL.UsuarioRegistrado.ID</ReferencedColumn>
-    	<Type>9</Type>
-    	<Length>10</Length>
-    	<Nullable>false</Nullable>
-    	<IDGenerator>native</IDGenerator>
-    	<Unique>false</Unique>
-    	<Index>false</Index>
-    	<UserTypes></UserTypes></Column>
+    <Column name="IDUsuarioNotifica">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
   </Entity>
   <Entity name="Hashtag" Unlogged="false" PKClustered="0">
     <Column name="IdHashtag">
@@ -548,16 +516,16 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="numVisualizaciones">
-    	
-    	<PrimaryKey>false</PrimaryKey><ForeignKey>false</ForeignKey>
-    	<Type>9</Type>
-    	<Length>10</Length>
-    	<Nullable>false</Nullable>
-    	<IDGenerator>native</IDGenerator>
-    	<Unique>false</Unique>
-    	<Index>false</Index>
-    	<UserTypes></UserTypes>
+    <Column name="NumVisualizaciones">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
     </Column>
   </Entity>
   <Entity name="UsuarioComercial" Unlogged="false" PKClustered="0">
@@ -924,14 +892,14 @@
       <Column>ID</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKDenuncia859523">
+  <ForeignKey name="FKDenuncia607679">
     <ReferenceTable>Denuncia</ReferenceTable>
     <ReferencedTable>UsuarioAdministrador</ReferencedTable>
     <Columns>
-      <Column>UsuarioAdministradorID</Column>
+      <Column>UsuarioAdministradorCodigoEmpleado</Column>
     </Columns>
     <RefColumns>
-      <Column>ID</Column>
+      <Column>CodigoEmpleado</Column>
     </RefColumns>
   </ForeignKey>
   <ForeignKey name="Tiene">

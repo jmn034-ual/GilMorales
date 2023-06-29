@@ -17,22 +17,28 @@ import interfaz.Administrador;
 
 public class UsuariosAdministradores {
 	public BDPrincipal _c_bd_administrador;
-	public Vector<UsuarioAdministrador> _usuarioAdministrador = new Vector<UsuarioAdministrador>();	
+	public Vector<UsuarioAdministrador> _usuarioAdministrador = new Vector<UsuarioAdministrador>();
 
-	public UsuarioAdministrador cargarAdministrador(int aCodigoEmpleado, String aNombreAdmin) throws PersistentException {
+	public UsuarioAdministrador cargarAdministrador(int aCodigoEmpleado) throws PersistentException {
 		UsuarioAdministrador admin = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			List<UsuarioAdministrador> lista = UsuarioAdministradorDAO.queryUsuarioAdministrador(null, null);
-			for(UsuarioAdministrador administrador : lista) {
-				if((administrador.getCodigoEmpleado() == aCodigoEmpleado) && (administrador.getNombreAdmin().equals(aNombreAdmin))){
-					admin = administrador;
-					break;
-				}
-			}
+			admin = UsuarioAdministradorDAO.loadUsuarioAdministradorByORMID(aCodigoEmpleado);			
 		}catch(Exception e){
 			t.rollback();
 		}
 		return admin;
+	}
+
+	public void addFoto(String aFoto, int aCodigoEmpleado) throws PersistentException {
+		UsuarioAdministrador admin = null;
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			admin = UsuarioAdministradorDAO.loadUsuarioAdministradorByORMID(aCodigoEmpleado);
+			admin.setFoto(aFoto);
+			UsuarioAdministradorDAO.save(admin);
+		}catch(Exception e){
+			t.rollback();
+		}
 	}
 }

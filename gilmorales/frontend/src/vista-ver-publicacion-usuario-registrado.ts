@@ -1,10 +1,10 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-messages/src/vaadin-message-input-text-area.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver-publicacion-usuario-registrado')
 export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
@@ -40,11 +40,11 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
       </vaadin-button>
       <label id="geolocalizacion" style="width: 100%; flex-grow: 0; flex-shrink: 1;">Geolocalización</label>
      </vaadin-vertical-layout>
-     <vaadin-vertical-layout id="botonDenunciar" style="flex-grow: 1; flex-direction: row; flex-shrink: 0; justify-content: flex-end;">
+     <vaadin-vertical-layout id="botones" style="flex-grow: 1; flex-direction: row; flex-shrink: 0; justify-content: flex-end;">
       <vaadin-button id="botonSeguir" style="align-self: center; margin: var(--lumo-space-xs);">
         Seguir 
       </vaadin-button>
-      <vaadin-button id="vaadinButton" style="align-self: center; margin: var(--lumo-space-xs);">
+      <vaadin-button id="botonDenunciar" style="align-self: center; margin: var(--lumo-space-xs);">
         Denunciar 
       </vaadin-button>
       <vaadin-button style="align-self: center; margin: var(--lumo-space-xs);" id="vaadinButton1">
@@ -77,10 +77,10 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout5" style="flex-grow: 0; width: 100%;"></vaadin-vertical-layout>
-   <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="width: 100%; margin: var(--lumo-space-xs);">
-    <vaadin-message-input-text-area id="textComentario" placeholder="Escribe tu comentario..."></vaadin-message-input-text-area>
-    <vaadin-button theme="icon" aria-label="Add new" id="botonComentar" style="margin: var(--lumo-space-xs);">
-     <iron-icon icon="lumo:plus" id="ironIcon3"></iron-icon>
+   <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="width: 100%; margin: var(--lumo-space-xs);" theme="spacing-s">
+    <vaadin-text-field id="textComentario" style="flex-grow: 1;" placeholder="Escribe aqui tu comentario..."></vaadin-text-field>
+    <vaadin-button id="botonComentar">
+     Comentar
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>

@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -51,17 +51,9 @@ public class Notificacion implements Serializable {
 	@Column(name="TipoNotificacion", nullable=false, length=10)	
 	private int tipoNotificacion;
 	
-	@Column(name="UsuarioRegistradoIDNotifica", nullable=false, length=10)	
-	private int UsuarioRegistradoIDNotifica;
+	@Column(name="IDUsuarioNotifica", nullable=false, length=10)	
+	private int IDUsuarioNotifica;
 	
-	public int getUsuarioRegistradoIDNotifica() {
-		return UsuarioRegistradoIDNotifica;
-	}
-
-	public void setUsuarioRegistradoIDNotifica(int usuarioRegistradoIDNotifica) {
-		UsuarioRegistradoIDNotifica = usuarioRegistradoIDNotifica;
-	}
-
 	private void setIdNotificacion(int value) {
 		this.idNotificacion = value;
 	}
@@ -80,6 +72,14 @@ public class Notificacion implements Serializable {
 	
 	public int getTipoNotificacion() {
 		return tipoNotificacion;
+	}
+	
+	public void setIDUsuarioNotifica(int value) {
+		this.IDUsuarioNotifica = value;
+	}
+	
+	public int getIDUsuarioNotifica() {
+		return IDUsuarioNotifica;
 	}
 	
 	public void setEnviadaA(bd_dcl.UsuarioRegistrado value) {

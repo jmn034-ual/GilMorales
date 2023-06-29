@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Joaquín Morales Nieto(University of Almeria)
+ * Licensee: Jmn034(University of Almeria)
  * License Type: Academic
  */
 package bd_dcl;
@@ -74,9 +74,7 @@ public class DenunciaSetCollection extends org.orm.util.ORMSet {
 	 * <li>tipoDenuncia</li>
 	 * <li>tipoEstado</li>
 	 * <li>motivo</li>
-	 * <li>nombreUsuario</li>
 	 * <li>explicacion</li>
-	 * <li>codigoEmpleado</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -91,9 +89,7 @@ public class DenunciaSetCollection extends org.orm.util.ORMSet {
 	 * <li>tipoDenuncia</li>
 	 * <li>tipoEstado</li>
 	 * <li>motivo</li>
-	 * <li>nombreUsuario</li>
 	 * <li>explicacion</li>
-	 * <li>codigoEmpleado</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
