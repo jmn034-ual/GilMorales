@@ -32,16 +32,10 @@ public class Publicaciones {
 	public BDPrincipal _c_bd_publicacion;
 	public Vector<Publicacion> _publiacion = new Vector<Publicacion>();
 
-	public void eliminarSeleccion(List<Publicacion> aListaSeleccion) throws PersistentException {
-		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-		try {
-			for(Publicacion publicacion : aListaSeleccion) {
-				PublicacionDAO.deleteAndDissociate(publicacion);
-			}
-		} catch (Exception e) {
-			t.rollback();
+	public void eliminarSeleccion(List<Publicacion> aListaSeleccion) throws PersistentException {		
+		for(Publicacion publicacion : aListaSeleccion) {
+			eliminarPublicacion(publicacion.getIdPublicacion());
 		}
-		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void eliminarPublicacion(int aIDPublicacion) throws PersistentException {
@@ -90,7 +84,7 @@ public class Publicaciones {
 				p.setEsPublicada(null);
 				p.setPerteneceA(usuario);
 			}else {
-				UsuarioComercial uc = UsuarioComercialDAO.getUsuarioComercialByORMID(aUsuarioID);
+				UsuarioComercial uc = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioID);
 				p.setNombreUsuarioComercial(aNombreUsuario);
 				p.setNombreUsuario(null);
 				p.setPerteneceA(null);
@@ -109,9 +103,9 @@ public class Publicaciones {
 			p.setNumComentarios(0);
 			p.setNumMeGustas(0);
 			p.setNumVisualizaciones(0);
+//			crearHashtag(p);
+//			crearMencion(p);
 			PublicacionDAO.save(p);
-			crearHashtag(p);
-			crearMencion(p);
 			t.commit();			
 		} catch (Exception e) {
 			t.rollback();

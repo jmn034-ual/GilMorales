@@ -19,8 +19,8 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
 
  render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 100%; justify-content: center;" theme="spacing-xl">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout" theme="spacing">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="justify-content: center; margin: var(--lumo-space-xl);" theme="spacing-xl">
   <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0;">
    <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 0; margin-bottom: var(--lumo-space-l); flex-shrink: 0; height: 100%; justify-content: flex-start; align-self: stretch;">
     <vaadin-horizontal-layout id="video" style="flex-grow: 0; width: 100%; margin-right: var(--lumo-space-m); align-items: flex-start; flex-shrink: 0;"></vaadin-horizontal-layout>
@@ -60,7 +60,7 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
       <vaadin-horizontal-layout id="layoutLabels" style="flex-shrink: 1; margin: var(--lumo-space-xs); flex-grow: 0; justify-content: center;">
        <label id="numMeGustas" style="flex-grow: 0; flex-shrink: 1; align-self: center; margin: var(--lumo-space-xs);">0</label>
        <vaadin-button theme="icon" aria-label="Add new" id="botonMeGusta">
-        <iron-icon icon="lumo:plus" id="ironIcon"></iron-icon>
+        <iron-icon icon="vaadin:heart-o" id="ironIcon"></iron-icon>
        </vaadin-button>
        <vaadin-button theme="icon" aria-label="Add new" id="botonVerMeGustas">
         <iron-icon icon="lumo:plus" id="ironIcon1"></iron-icon>
@@ -80,7 +80,7 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
    <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="width: 100%; margin: var(--lumo-space-xs);" theme="spacing-s">
     <vaadin-text-field id="textComentario" style="flex-grow: 1;" placeholder="Escribe aqui tu comentario..."></vaadin-text-field>
     <vaadin-button id="botonComentar">
-     Comentar
+      Comentar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>

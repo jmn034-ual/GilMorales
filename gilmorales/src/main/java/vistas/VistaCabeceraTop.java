@@ -26,7 +26,8 @@ import com.vaadin.flow.component.select.Select;
 public class VistaCabeceraTop extends LitTemplate {
 
 
-
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("cabeceraTop")
 	private Element cabeceraTop;
 	@Id("tituloUsuarios")
@@ -41,7 +42,6 @@ public class VistaCabeceraTop extends LitTemplate {
 	private Element listaTopHashtag;
 	@Id("botonVerListaHashtag")
 	private Button botonVerListaHashtag;
-	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("layoutListaResultadoBusqueda")
 	private Element layoutListaResultadoBusqueda;
 	@Id("tituloResultadoBusqueda")
@@ -52,18 +52,6 @@ public class VistaCabeceraTop extends LitTemplate {
 	private HorizontalLayout layoutTituloUsuarios;
 	@Id("layoutFiltrar")
 	private HorizontalLayout layoutFiltrar;
-	@Id("labelFiltrar")
-	private Label labelFiltrar;
-	@Id("vaadinSelect")
-	private Select vaadinSelect;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("filtrarNone")
-	private Element filtrarNone;
-	@Id("filtrarUsuarios")
-	private Element filtrarUsuarios;
-	@Id("filtrarHashtag")
-	private Element filtrarHashtag;
 	@Id("layoutListaResultadoUsuarios")
 	private Element layoutListaResultadoUsuarios;
 	@Id("layoutTituloHashtags")
@@ -72,260 +60,162 @@ public class VistaCabeceraTop extends LitTemplate {
 	private H3 tituloHashtags;
 	@Id("vaadinHorizontalLayout3")
 	private HorizontalLayout vaadinHorizontalLayout3;
-	public Element getLayoutAyuda() {
-		return layoutAyuda;
-	}
-
-
-	public void setLayoutAyuda(Element layoutAyuda) {
-		this.layoutAyuda = layoutAyuda;
-	}
-
-
 	@Id("layoutListaResultadoHashtags")
 	private Element layoutListaResultadoHashtags;
 	@Id("layoutAyuda")
 	private Element layoutAyuda;
-	
+
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
-
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-
-	public Element getLayoutListaResultadoBusqueda() {
-		return layoutListaResultadoBusqueda;
-	}
-
-
-	public void setLayoutListaResultadoBusqueda(Element layoutListaResultadoBusqueda) {
-		this.layoutListaResultadoBusqueda = layoutListaResultadoBusqueda;
-	}
-
-
-	public H2 getTituloResultadoBusqueda() {
-		return tituloResultadoBusqueda;
-	}
-
-
-	public void setTituloResultadoBusqueda(H2 tituloResultadoBusqueda) {
-		this.tituloResultadoBusqueda = tituloResultadoBusqueda;
-	}
-
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
-	}
-
-
-	public HorizontalLayout getLayoutTituloUsuarios() {
-		return layoutTituloUsuarios;
-	}
-
-
-	public void setLayoutTituloUsuarios(HorizontalLayout layoutTituloUsuarios) {
-		this.layoutTituloUsuarios = layoutTituloUsuarios;
-	}
-
-
-	public HorizontalLayout getLayoutFiltrar() {
-		return layoutFiltrar;
-	}
-
-
-	public void setLayoutFiltrar(HorizontalLayout layoutFiltrar) {
-		this.layoutFiltrar = layoutFiltrar;
-	}
-
-
-	public Label getLabelFiltrar() {
-		return labelFiltrar;
-	}
-
-
-	public void setLabelFiltrar(Label labelFiltrar) {
-		this.labelFiltrar = labelFiltrar;
-	}
-
-
-	public Select getVaadinSelect() {
-		return vaadinSelect;
-	}
-
-
-	public void setVaadinSelect(Select vaadinSelect) {
-		this.vaadinSelect = vaadinSelect;
-	}
-
-
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-
-	public Element getFiltrarNone() {
-		return filtrarNone;
-	}
-
-
-	public void setFiltrarNone(Element filtrarNone) {
-		this.filtrarNone = filtrarNone;
-	}
-
-
-	public Element getFiltrarUsuarios() {
-		return filtrarUsuarios;
-	}
-
-
-	public void setFiltrarUsuarios(Element filtrarUsuarios) {
-		this.filtrarUsuarios = filtrarUsuarios;
-	}
-
-
-	public Element getFiltrarHashtag() {
-		return filtrarHashtag;
-	}
-
-
-	public void setFiltrarHashtag(Element filtrarHashtag) {
-		this.filtrarHashtag = filtrarHashtag;
-	}
-
-
-	public Element getLayoutListaResultadoUsuarios() {
-		return layoutListaResultadoUsuarios;
-	}
-
-
-	public void setLayoutListaResultadoUsuarios(Element layoutListaResultadoUsuarios) {
-		this.layoutListaResultadoUsuarios = layoutListaResultadoUsuarios;
-	}
-
-
-	public HorizontalLayout getLayoutTituloHashtags() {
-		return layoutTituloHashtags;
-	}
-
-
-	public void setLayoutTituloHashtags(HorizontalLayout layoutTituloHashtags) {
-		this.layoutTituloHashtags = layoutTituloHashtags;
-	}
-
-
-	public H3 getTituloHashtags() {
-		return tituloHashtags;
-	}
-
-
-	public void setTituloHashtags(H3 tituloHashtags) {
-		this.tituloHashtags = tituloHashtags;
-	}
-
-
-	public HorizontalLayout getVaadinHorizontalLayout3() {
-		return vaadinHorizontalLayout3;
-	}
-
-
-	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
-		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
-	}
-
-
-	public Element getLayoutListaResultadoHashtags() {
-		return layoutListaResultadoHashtags;
-	}
-
-
-	public void setLayoutListaResultadoHashtags(Element layoutListaResultadoHashtags) {
-		this.layoutListaResultadoHashtags = layoutListaResultadoHashtags;
-	}
-
-
 	public Element getCabeceraTop() {
 		return cabeceraTop;
 	}
-
 
 	public void setCabeceraTop(Element cabeceraTop) {
 		this.cabeceraTop = cabeceraTop;
 	}
 
-
 	public H3 getTituloUsuarios() {
 		return tituloUsuarios;
 	}
-
 
 	public void setTituloUsuarios(H3 tituloUsuarios) {
 		this.tituloUsuarios = tituloUsuarios;
 	}
 
-
 	public Element getListaUsuarios() {
 		return listaUsuarios;
 	}
-
 
 	public void setListaUsuarios(Element listaUsuarios) {
 		this.listaUsuarios = listaUsuarios;
 	}
 
-
 	public Button getBotonVerListaUsuarios() {
 		return botonVerListaUsuarios;
 	}
-
 
 	public void setBotonVerListaUsuarios(Button botonVerListaUsuarios) {
 		this.botonVerListaUsuarios = botonVerListaUsuarios;
 	}
 
-
 	public H3 getTituloHashtag() {
 		return tituloHashtag;
 	}
-
 
 	public void setTituloHashtag(H3 tituloHashtag) {
 		this.tituloHashtag = tituloHashtag;
 	}
 
-
 	public Element getListaTopHashtag() {
 		return listaTopHashtag;
 	}
-
 
 	public void setListaTopHashtag(Element listaTopHashtag) {
 		this.listaTopHashtag = listaTopHashtag;
 	}
 
-
 	public Button getBotonVerListaHashtag() {
 		return botonVerListaHashtag;
 	}
-
 
 	public void setBotonVerListaHashtag(Button botonVerListaHashtag) {
 		this.botonVerListaHashtag = botonVerListaHashtag;
 	}
 
+	public Element getLayoutListaResultadoBusqueda() {
+		return layoutListaResultadoBusqueda;
+	}
+
+	public void setLayoutListaResultadoBusqueda(Element layoutListaResultadoBusqueda) {
+		this.layoutListaResultadoBusqueda = layoutListaResultadoBusqueda;
+	}
+
+	public H2 getTituloResultadoBusqueda() {
+		return tituloResultadoBusqueda;
+	}
+
+	public void setTituloResultadoBusqueda(H2 tituloResultadoBusqueda) {
+		this.tituloResultadoBusqueda = tituloResultadoBusqueda;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
+	}
+
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+	public HorizontalLayout getLayoutTituloUsuarios() {
+		return layoutTituloUsuarios;
+	}
+
+	public void setLayoutTituloUsuarios(HorizontalLayout layoutTituloUsuarios) {
+		this.layoutTituloUsuarios = layoutTituloUsuarios;
+	}
+
+	public HorizontalLayout getLayoutFiltrar() {
+		return layoutFiltrar;
+	}
+
+	public void setLayoutFiltrar(HorizontalLayout layoutFiltrar) {
+		this.layoutFiltrar = layoutFiltrar;
+	}
+
+	public Element getLayoutListaResultadoUsuarios() {
+		return layoutListaResultadoUsuarios;
+	}
+
+	public void setLayoutListaResultadoUsuarios(Element layoutListaResultadoUsuarios) {
+		this.layoutListaResultadoUsuarios = layoutListaResultadoUsuarios;
+	}
+
+	public HorizontalLayout getLayoutTituloHashtags() {
+		return layoutTituloHashtags;
+	}
+
+	public void setLayoutTituloHashtags(HorizontalLayout layoutTituloHashtags) {
+		this.layoutTituloHashtags = layoutTituloHashtags;
+	}
+
+	public H3 getTituloHashtags() {
+		return tituloHashtags;
+	}
+
+	public void setTituloHashtags(H3 tituloHashtags) {
+		this.tituloHashtags = tituloHashtags;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout3() {
+		return vaadinHorizontalLayout3;
+	}
+
+	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
+		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	}
+
+	public Element getLayoutListaResultadoHashtags() {
+		return layoutListaResultadoHashtags;
+	}
+
+	public void setLayoutListaResultadoHashtags(Element layoutListaResultadoHashtags) {
+		this.layoutListaResultadoHashtags = layoutListaResultadoHashtags;
+	}
+
+	public Element getLayoutAyuda() {
+		return layoutAyuda;
+	}
+
+	public void setLayoutAyuda(Element layoutAyuda) {
+		this.layoutAyuda = layoutAyuda;
+	}
 
 	/**
      * Creates a new VistaCabeceraTop.

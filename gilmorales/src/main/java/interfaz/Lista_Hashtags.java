@@ -19,6 +19,7 @@ public class Lista_Hashtags extends VistaListaHashtags{
 	public Lista_Hashtags() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		cargarHashtags();
 	}
 	
 	public void cargarHashtags() {

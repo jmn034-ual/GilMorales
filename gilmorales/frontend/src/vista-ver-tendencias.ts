@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 @customElement('vista-ver-tendencias')
 export class VistaVerTendencias extends LitElement {
@@ -19,7 +19,7 @@ export class VistaVerTendencias extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; height: 100%; flex-shrink: 0;">
- <vaadin-vertical-layout style="flex-grow: 0; flex-shrink: 0; position: fixed; justify-content: flex-start; margin: var(--lumo-space-xs); padding: 0%; margin-top: 0%; margin-bottom: 5%; z-index: 999;" id="layoutTendencias" theme="spacing-xs">
+ <vaadin-vertical-layout style="flex-grow: 0; flex-shrink: 0; position: fixed; justify-content: flex-start; margin: var(--lumo-space-xs); padding: 0%; margin-top: 2%; margin-bottom: 5%; z-index: 999;" id="layoutTendencias" theme="spacing-xs">
   <h4 id="tituloTendencias" style="align-self: center; margin-bottom: 0px; margin-top: 0px;">Tendencias </h4>
   <vaadin-vertical-layout id="layoutHashtags" style="flex-grow: 0; align-self: center; align-items: center; flex-shrink: 0; justify-content: flex-start; margin-top: 0%; padding: 0%;"></vaadin-vertical-layout>
   <vaadin-button id="botonVerListaHashtags" style="align-self: center;">

@@ -20,16 +20,14 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	//	public iUsuario_No_Registrado _iUsuario_No_Registrado;
 	public Lista_Publicaciones_Usuario_no_registrado publicacionesNoRegistrado;
 	public Cabecera_Usuario_No_Registrado cabeceraUNR;
-	Login inicioSesion;
-	private BDPrincipal bd;
+	public Login inicioSesion;	
 
-	public Usuario_No_Registrado(BDPrincipal bd) {
+	public Usuario_No_Registrado() {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		this.bd = bd;
-		Lista_Publicaciones__Usuario_no_registrado_();
-//		Iniciar_Sesion();
 		Cabecera_Usuario_No_Registrado();	
+		Lista_Publicaciones__Usuario_no_registrado_();
+		Iniciar_Sesion();
 	}
 
 	public void Lista_Publicaciones__Usuario_no_registrado_() {
@@ -43,9 +41,10 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Iniciar_Sesion() {
-		inicioSesion = new Login(bd);
+		inicioSesion = new Login(this);
 		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll(); 
+			this.cabeceraUNR.setVisible(false);
+			this.getVaadinHorizontalLayout().setVisible(false);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(inicioSesion);
 		});
 	}

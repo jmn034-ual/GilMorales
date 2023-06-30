@@ -76,6 +76,18 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Hr lineaHorizontal;
 	@Id("publicacion")
 	private Element publicacion;
+	@Id("ver")
+	private Button ver;
+
+	public Button getVer() {
+		return ver;
+	}
+
+
+	public void setVer(Button ver) {
+		this.ver = ver;
+	}
+
 
 	public Hr getLineaHorizontal() {
 		return lineaHorizontal;

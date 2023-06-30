@@ -15,9 +15,9 @@ export class VistaUsuarioRegistrado extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; position: fixed; overflow-y: auto;" id="vaadinVerticalLayout" theme="spacing-xs">
- <vaadin-horizontal-layout theme="spacing" id="cabecera" style="align-self: stretch; align-items: flex-start; flex-shrink: 0;"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="flex-grow: 1; position:fixed; width: 100%; margin-top: 5%; overflow-y: auto; flex-shrink: 0; height: 90%; justify-content: flex-start;" id="vaadinHorizontalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%; position: fixed; overflow-y: auto; padding: 0%;" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout id="cabecera" style="align-self: stretch; align-items: flex-start; flex-shrink: 0; z-index:999;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout style="flex-grow: 1; position:fixed; width: 100%; margin-top: 6%; overflow-y: auto; flex-shrink: 0; height: 90%; justify-content: flex-start; background-color: #ffffff;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout id="cabeceraTop" style="height: 95%; flex-shrink: 1;"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing-s" id="listaPublicaciones" style="flex-grow: 0; align-items: center; flex-shrink: 1; width: 100%; padding-left: 10%; overflow-y: auto; z-index: 999;"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>

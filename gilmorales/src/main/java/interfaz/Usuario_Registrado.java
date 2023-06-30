@@ -16,6 +16,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 	public Usuario_Registrado(int UsuarioID) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+
 		this.ur = _iUsuario_Registrado.cargarUsuarioRegistrado(UsuarioID);
 		Cabecera_Usuario_Registrado();
 		Lista_publicaciones__Usuario_Registrado_();

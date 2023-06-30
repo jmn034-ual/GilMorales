@@ -27,16 +27,6 @@ public class VistaVerListaUsuariosRegistrados extends LitTemplate {
 	private H1 titulo;
 	@Id("layoutBotonOrdenar")
 	private HorizontalLayout layoutBotonOrdenar;
-	@Id("botonOrdenar")
-	private Select botonOrdenar;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("vaadinItem1")
-	private Element vaadinItem1;
-	@Id("vaadinItem")
-	private Element vaadinItem;
-	@Id("layoutHorizontalLista")
-	private HorizontalLayout layoutHorizontalLista;
 	@Id("layoutVerticalLista")
 	private Element layoutVerticalLista;
 
@@ -78,56 +68,6 @@ public class VistaVerListaUsuariosRegistrados extends LitTemplate {
 
 	public void setLayoutBotonOrdenar(HorizontalLayout layoutBotonOrdenar) {
 		this.layoutBotonOrdenar = layoutBotonOrdenar;
-	}
-
-
-	public Select getBotonOrdenar() {
-		return botonOrdenar;
-	}
-
-
-	public void setBotonOrdenar(Select botonOrdenar) {
-		this.botonOrdenar = botonOrdenar;
-	}
-
-
-	public Element getVaadinListBox() {
-		return vaadinListBox;
-	}
-
-
-	public void setVaadinListBox(Element vaadinListBox) {
-		this.vaadinListBox = vaadinListBox;
-	}
-
-
-	public Element getVaadinItem1() {
-		return vaadinItem1;
-	}
-
-
-	public void setVaadinItem1(Element vaadinItem1) {
-		this.vaadinItem1 = vaadinItem1;
-	}
-
-
-	public Element getVaadinItem() {
-		return vaadinItem;
-	}
-
-
-	public void setVaadinItem(Element vaadinItem) {
-		this.vaadinItem = vaadinItem;
-	}
-
-
-	public HorizontalLayout getLayoutHorizontalLista() {
-		return layoutHorizontalLista;
-	}
-
-
-	public void setLayoutHorizontalLista(HorizontalLayout layoutHorizontalLista) {
-		this.layoutHorizontalLista = layoutHorizontalLista;
 	}
 
 

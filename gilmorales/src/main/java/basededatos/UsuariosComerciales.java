@@ -65,6 +65,7 @@ public class UsuariosComerciales {
 	}
 
 	public void registrarUsuario(String aNombre, String aEmail, String aPassword, String aDescripcion, String aNombreUsuarioEmpresa, String aFechaNacimiento, String aFoto) throws PersistentException {
+		UsuarioComercial comercial = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 				UsuarioComercial uc = UsuarioComercialDAO.createUsuarioComercial();

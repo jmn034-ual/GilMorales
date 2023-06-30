@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver-publicacion-usuario-no-registrado')
 export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
@@ -19,7 +19,6 @@ export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
  render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
- <vaadin-horizontal-layout id="cabecera" style="width: 100%; flex-grow: 0;"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 100%;">
   <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; width: 100%;">
    <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; margin: var(--lumo-space-xs);">

@@ -51,18 +51,19 @@ public class Registrar extends VistaRegistrarusuario{
 	//	private Button _descartarB;
 	//	private Button _confirmarB;
 	public Login _iniciar_sesion;
-	iUsuario_No_Registrado  unr;
+	iUsuario_No_Registrado  bd = new BDPrincipal();
 	boolean tipoCuenta;
 	private boolean valido;
 	private String foto;
+	Usuario_No_Registrado interfaz;
+	int usuarioID;
 
-	public Registrar(BDPrincipal bd) {
+
+	public Registrar(Usuario_No_Registrado interfaz) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		unr = bd;
-		Descartar();
+//		Descartar();
 		Subir_foto();
-		Validar_registro();
 		this.getNormal().addClickListener(event ->{
 			this.getVaadinHorizontalLayout3().setVisible(true);
 			this.getLabel1().setText("Nombre:");
@@ -75,10 +76,11 @@ public class Registrar extends VistaRegistrarusuario{
 			tipoCuenta = false;
 			this.getNormal().setValue(false);
 		});
+		Validar_registro() ;
 	}
 
 	public boolean getValido() {
-		return this.valido;
+		return this.tipoCuenta;
 	}
 
 	public void Subir_foto() {
@@ -104,29 +106,29 @@ public class Registrar extends VistaRegistrarusuario{
 	}
 
 	public void Validar_registro() {
-		List<UsuarioRegistrado> usuarios = null;
-		List<UsuarioComercial> comerciales = null;
-		TreeSet<String> nombresUsuarios = new TreeSet<String>();
-	
+		//		List<UsuarioRegistrado> usuarios = null;
+		//		List<UsuarioComercial> comerciales = null;
 		this.getConfirmar().addClickListener(event ->{
-			String nombreUsuario = this.getNombreDeUsuarioTF().getValue();
-			if(!nombresUsuarios.contains(nombreUsuario)) {
-				unr.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
+//			if(tipoCuenta) {
+				this.bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
 						this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(), 
-						tipoCuenta, this.foto);
+						tipoCuenta, "icons/luffy.jpg");
 				this.valido = true;
-			}else {
-				this.valido = false;
-				Notification.show("El nombre de usuario elegido esta ocupado. Por favor, elija otro nombre de usuario");
-			}
-		});
+//			}else {
+//				this.usuarioID = bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
+//						this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(),
+//						tipoCuenta, "icons/luffy.jpg");
+//				this.valido = false;
+//			}
 
-	}
-
-	public void Descartar() {
-		this.getDescartar().addClickListener(event ->{
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_iniciar_sesion);
 		});
 	}
+
+//	public void Descartar() {
+//		this.getDescartar().addClickListener(event ->{
+//			this.interfaz.cabeceraUNR.setVisible(true);
+//			this.interfaz.getVaadinHorizontalLayout().setVisible(true);
+//			this.interfaz.getVaadinVerticalLayout().as(VerticalLayout.class).remove(this.interfaz.inicioSesion._registrar);
+//		});
+//	}
 }

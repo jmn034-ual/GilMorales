@@ -182,6 +182,7 @@ public class UsuariosRegistrados {
 	}
 
 	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) throws PersistentException {
+		UsuarioRegistrado user = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			if(aTipoCuenta) {

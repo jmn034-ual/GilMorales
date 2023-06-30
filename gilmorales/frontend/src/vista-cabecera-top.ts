@@ -1,7 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-select/src/vaadin-select.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-cabecera-top')
@@ -18,7 +17,7 @@ export class VistaCabeceraTop extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 1; width: 100%; height: 100%; overflow-y: auto;">
- <vaadin-vertical-layout id="cabeceraTop" style="flex-shrink: 1; flex-grow: 0; position: fixed; align-items: center; z-index: 999; margin-top: 2%;">
+ <vaadin-vertical-layout id="cabeceraTop" style="flex-shrink: 1; flex-grow: 0; position: fixed; align-items: center; z-index: 99; margin-top: 4.2%; background-color: #C8C4C4; height: 100%; width: 10%; margin-left: 0; padding: 0%; justify-content: flex-start;">
   <h3 id="tituloUsuarios" style="align-self: center; z-index: 2;">Top Usuarios</h3>
   <vaadin-vertical-layout id="listaUsuarios" style="flex-grow: 0; z-index: 2; align-items: center; padding: 0%; margin: 0%;"></vaadin-vertical-layout>
   <vaadin-button id="botonVerListaUsuarios" style="align-self: center;z-index: 2; background-color: #ffffff;">
@@ -36,24 +35,7 @@ export class VistaCabeceraTop extends LitElement {
    <vaadin-horizontal-layout id="layoutTituloUsuarios" style="flex-grow: 0; justify-content: flex-start; flex-shrink: 0; margin-left: 15%;">
     <h3 id="tituloUsuarios">Usuarios</h3>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing-xs" id="layoutFiltrar" style="margin: var(--lumo-space-m); flex-grow: 0; justify-content: flex-end; width: 100%;">
-    <label id="labelFiltrar" style="align-self: center;">Filtrar</label>
-    <vaadin-select value="Item one" id="vaadinSelect" style="align-self: center;">
-     <template>
-      <vaadin-list-box id="vaadinListBox" selected="0">
-       <vaadin-item id="filtrarNone" selected>
-         None 
-       </vaadin-item>
-       <vaadin-item id="filtrarUsuarios">
-         Usuarios 
-       </vaadin-item>
-       <vaadin-item id="filtrarHashtag">
-         Hashtags 
-       </vaadin-item>
-      </vaadin-list-box>
-     </template>
-    </vaadin-select>
-   </vaadin-horizontal-layout>
+   <vaadin-horizontal-layout theme="spacing-xs" id="layoutFiltrar" style="margin: var(--lumo-space-m); flex-grow: 0; justify-content: flex-end; width: 100%;"></vaadin-horizontal-layout>
   </vaadin-horizontal-layout>
   <vaadin-vertical-layout id="layoutListaResultadoUsuarios" style="margin: var(--lumo-space-s); justify-content: center; flex-shrink: 0; flex-grow: 1;"></vaadin-vertical-layout>
   <vaadin-horizontal-layout id="layoutTituloUsuarios" style="flex-grow: 0; justify-content: flex-start; margin: var(--lumo-space-s); align-self: stretch;">

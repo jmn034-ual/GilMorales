@@ -49,6 +49,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		}else {
 			this.getBotonNombreUsuario().setDisableOnClick(false);
 		}
+		Ver_publicacion__Usuario_No_Registrado_();
 	}
 	public void mostrarDatosUsuario() {
 		if(this.publicacion.getPerteneceA() != null) {
@@ -71,7 +72,12 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	}
 
 	public void Ver_publicacion__Usuario_No_Registrado_() {
-		throw new UnsupportedOperationException();
+		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, this.unr);
+		this.getVer().addClickListener(event ->{
+			unr.getLayoutListaPublicaciones().setVisible(false);
+			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			unr.getVaadinHorizontalLayout().add(verPublicacionUNR);
+			});
 	}
 	
 	public void Ver_comentarios__Usuario_No_registrado_() {

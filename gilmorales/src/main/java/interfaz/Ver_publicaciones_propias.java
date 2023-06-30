@@ -15,20 +15,17 @@ import vistas.VistaVerPublicacionesPropias;
 
 public class Ver_publicaciones_propias extends VistaVerPublicacionesPropias{
 	public Ver_perfil_propio _ver_perfil_propio;
-	public Lista_Publicaciones_propias _publicaciones_propias = new Lista_Publicaciones_propias();
+	public Lista_Publicaciones_propias _publicaciones_propias;
 	private UsuarioRegistrado ur;
-	ArrayList<Publicacion> publicaciones = null;
+
 	public Ver_publicaciones_propias(UsuarioRegistrado ur) {
 		this.ur = ur;
-		this.publicaciones = new ArrayList<Publicacion>(ur.publica.getCollection());
 		Publicaciones_propias();
 	}
 
 	public void Publicaciones_propias() {
-		for(int i = 0; i < publicaciones.size(); i++) {
-			Publicaciones_propias_item p = new Publicaciones_propias_item((Publicacion) publicaciones.get(i));
-			_publicaciones_propias.addPublicacionPropia(p);
-		}
+		_publicaciones_propias = new Lista_Publicaciones_propias(ur);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_publicaciones_propias);
 	}
+	
 }

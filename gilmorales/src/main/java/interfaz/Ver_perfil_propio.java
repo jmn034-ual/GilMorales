@@ -17,7 +17,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
-	public Ver_publicaciones_gustadas_Usuario_registrado publicaciones_gustadas = new Ver_publicaciones_gustadas_Usuario_registrado();
+	public Ver_publicaciones_gustadas_Usuario_registrado publicaciones_gustadas ;
 	public Ver_publicaciones_propias _ver_publicaciones_propias;
 	public Ver_seguidores _ver_seguidores;
 	public Ver_seguidos _ver_seguidos;
@@ -40,6 +40,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	this.getListaMeGustas().setVisible(false);
     	this.getNombreUsuario().setText(ur.getNombreUsuario());
     	this.getNombreYapellidos().setText(ur.getNombre() + " " + ur.getApellidos());
+    	this.getBotonBloquear().setVisible(false);
     	this.ur = ur;
     	Ver_publicaciones_propias();
     	Ver_seguidores();
@@ -52,6 +53,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_publicaciones_gustadas__Usuario_registrado_() {
+		this.publicaciones_gustadas = new Ver_publicaciones_gustadas_Usuario_registrado();
 		this.getBotonMeGustas().addClickListener(event ->{
 			this.getListaMeGustas().setVisible(true);
 			this.getLayoutListaPublicaciones().setVisible(false);
@@ -151,6 +153,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 		this._eliminar_publicaciones.getBotonCancelar().addClickListener(event ->{
 			this.getLayoutTendencias().setVisible(true);
 			this.getVaadinVerticalLayout1().setVisible(true);
+			this._ver_publicaciones_propias = new Ver_publicaciones_propias(ur);
 		});
 	}
 

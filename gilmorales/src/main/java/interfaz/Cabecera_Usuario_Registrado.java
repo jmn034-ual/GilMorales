@@ -1,6 +1,8 @@
 package interfaz;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.dom.Element;
@@ -19,9 +21,19 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	
 	public Cabecera_Usuario_Registrado(UsuarioRegistrado ur, Usuario_Registrado urInterfaz) {
 		super();
-		this.ur = ur;
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+    	this.getTextoBusqueda().getStyle().set("background-color", "transparent");
+    	this.getTextoBusqueda().getStyle().set("border-radius", "8px");
+    	this.getTextoBusqueda().getStyle().set("color", "#FFFFF");
+    	this.getBotonAniadir().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
+    	Image customIcon = new Image("icons/logo.png", null);
+		customIcon.getStyle().set("width", "80px");
+		customIcon.getStyle().set("heigth", "80px");
+		this.getLogoWeb().setIcon(customIcon);
+    	this.ur = ur;
 		this.urInterfaz = urInterfaz; 
-		this._ver_notificaciones = new Ver_notificaciones(ur);
+		this._ver_notificaciones = new Ver_notificaciones(this.ur);
 		this.addPubli = new Add_publicacion(ur, urInterfaz);
 		this._ver_perfil_propio = new Ver_perfil_propio(ur);
 		this.getVaadinVerticalLayout1().setVisible(false);
@@ -51,7 +63,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	
 	public void Ver_notificaciones() {
 		this.getBotonNotificaciones().addClickListener(event -> {
-			_ver_notificaciones = new Ver_notificaciones(ur);
+			_ver_notificaciones = new Ver_notificaciones(this.ur);
 			this._ver_notificaciones.setVisible(true);
 			this.getBotonNotificaciones().setVisible(false);
 			this._cabecera_TOP.getCabeceraTop().setVisible(false);
@@ -91,7 +103,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 
 	public void Realizar_busqueda() {
 		this.getBotonBuscar().addClickListener(event ->{
-			_realizar_busqueda = new Realizar_busqueda();
+			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue());
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
@@ -105,13 +117,13 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 		});
 	}
 	public void Cabecera_TOP() {
-		this._cabecera_TOP = new Cabecera_TOP();
+		this._cabecera_TOP = new Cabecera_TOP(this.urInterfaz);
 		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
     	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
 	}
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
-			_realizar_busqueda = new Realizar_busqueda();
+//			_realizar_busqueda = new Realizar_busqueda();
 			this._ver_perfil_propio.setVisible(false);
 			this._cabecera_TOP.getCabeceraTop().setVisible(true);
 			this._cabecera_TOP.getLayoutAyuda().setVisible(false);

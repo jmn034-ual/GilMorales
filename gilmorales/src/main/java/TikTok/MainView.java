@@ -24,6 +24,7 @@ import com.vaadin.flow.server.PWA;
 
 import basededatos.BDPrincipal;
 import bd_dcl.GilMoralesPersistentManager;
+import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
 import interfaz.*;
@@ -58,52 +59,74 @@ public class MainView extends VerticalLayout {
 	 */
 	public MainView() {
 
-		//    	this.getStyle().set("background-color", "#000000");
-		//    	this.getStyle().set("width", "100%");
-		//    	this.getStyle().set("height", "100%");
+		this.getStyle().set("background-color", "#423F3F");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
 		this.setSizeFull();
 		this.setMargin(false);
 		this.setPadding(false);
 		BDPrincipal bd = new BDPrincipal();
-		
 
-//		Usuario_No_Registrado unr = new Usuario_No_Registrado(bd);
-//		add(unr);
-//
-//		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
-//
-//
-//			@Override
-//			public void onComponentEvent(ClickEvent<Button> event) {
-//				// TODO Auto-generated method stub
-//				removeAll();
-//				Registrar registro = new Registrar(bd);
-//				add(registro);
-//				registro.getConfirmar().addClickListener(event2 ->{
-//					if(registro.getValido()) {
-//						removeAll();
-//						//						UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
-//						//						Usuario_Registrado ur = new Usuario_Registrado(usuario);
-//						//						add(ur);
-//					}
-//				});
-//			}
-//		});
-//
-//		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
-//			@Override
-//			public void onComponentEvent(ClickEvent<Button> event) {
-//				removeAll();
-//				Iniciar_Sesion__4 login = new Iniciar_Sesion__4(bd);
-//				add(login);
-//				login.getIniciarSesionB().addClickListener(event2 ->{
-//					removeAll();
-//					//					UsuarioRegistrado usuario = bd.cargarUsuarioRegistrado(login.getUsuarioTF().getValue(), login.getContrasenaTF().getValue());
-//					//					Usuario_Registrado ur2 = new Usuario_Registrado(usuario);
-//					//					add(ur2);
-//				});
-//			}
-//		});
+		//		Usuario_Registrado ur = new Usuario_Registrado(1);
+		//		add(ur);
+		Usuario_No_Registrado unr = new Usuario_No_Registrado();
+		add(unr);
+
+		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
+
+
+			@Override
+			public void onComponentEvent(ClickEvent<Button> event) {
+				// TODO Auto-generated method stub
+				removeAll();
+				Registrar registro = new Registrar(unr);
+				add(registro);
+				registro.getConfirmar().addClickListener(event2 ->{
+					if(registro.getValido()) {
+						removeAll();
+						UsuarioRegistrado user = (UsuarioRegistrado) bd.iniciarSesion(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
+						Usuario_Registrado ur = new Usuario_Registrado(user.getID());
+						add(ur);
+					}else {
+						removeAll();
+						UsuarioComercial uc = (UsuarioComercial) bd.iniciarSesion(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
+						Usuario_comercial comercial = new Usuario_comercial(uc.getID());
+						add(comercial);
+					}
+				});
+			}
+		});
+
+		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
+			@Override
+			public void onComponentEvent(ClickEvent<Button> event) {
+				unr.inicioSesion.getIniciarSesionB().addClickListener(event2 ->{
+					UsuarioRegistrado ur2 = (UsuarioRegistrado) unr.inicioSesion.Validar_datos();
+					if(ur2 != null) {	
+						if(ur2 != null && ur2.getNombreUsuario().equals(unr.inicioSesion.getNombreUsuario())) {
+							removeAll();
+							Usuario_Registrado urInterfaz = new Usuario_Registrado(ur2.getID());
+							add(urInterfaz);
+							urInterfaz._cabecera_Usuario_Registrado.getBotonCerrarSesion().addClickListener(event3 ->{
+								removeAll();
+								add(unr);
+							});
+						}
+					}else {
+						UsuarioComercial com = (UsuarioComercial) unr.inicioSesion.Validar_datos();
+						if(com != null && com.getNombreUsuarioComercial().equals(unr.inicioSesion.getNombreUsuario())) {
+							Usuario_comercial comercial = new Usuario_comercial(com.getID());
+							removeAll();
+							add(comercial);
+							comercial._cabecera_Usuario_Comercial.getBotonCerrarSesion().addClickListener(event4 ->{
+								removeAll();
+								add(unr);
+							});
+						}
+					}
+				});
+			}
+		});
 
 
 	}

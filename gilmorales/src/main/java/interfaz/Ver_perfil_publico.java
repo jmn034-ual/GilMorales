@@ -30,8 +30,8 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
     	this.getBotonPeticionAmistad().setVisible(false);
     	this.getLabelUsuarioPrivado().setVisible(false);
     	this.getListaMeGustas().setVisible(false);
-    	this.getNombreUsuario().setText(this.user.getNombreUsuario());
-    	this.getNombreYapellidos().setText(this.user.getNombre() + " " + this.user.getApellidos());
+    	this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
+    	this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
     	_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas_Otro_usuario();
     	publicaciones_usuario_publico();
 	}
@@ -49,8 +49,8 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
     	this.getBotonPeticionAmistad().setVisible(false);
     	this.getLabelUsuarioPrivado().setVisible(false);
     	this.getListaMeGustas().setVisible(false);
-    	this.getNombreUsuario().setText(this.user.getNombreUsuario());
-    	this.getNombreYapellidos().setText(this.user.getNombre() + " " + this.user.getApellidos());
+    	this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
+    	this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
     	_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas_Otro_usuario();
     	publicaciones_usuario_publico();
     	if(this.user.seguir.contains(userAver)) {
@@ -75,7 +75,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	}
 
 	public void publicaciones_usuario_publico() {
-		this._publicaciones_usuario_publico = new Publicaciones_usuario_publico(this.user);
+		this._publicaciones_usuario_publico = new Publicaciones_usuario_publico(this.userAver);
 		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_publicaciones_usuario_publico);
 		this.getBotonVideos().addClickListener(event ->{
 			this.getListaMeGustas().setVisible(false);

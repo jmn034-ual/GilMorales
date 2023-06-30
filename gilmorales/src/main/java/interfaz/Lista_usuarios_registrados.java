@@ -12,22 +12,32 @@ import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaUsuariosRegistrados;
 
 public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados{
-//	private ComboBox _ordenarCB;
+	//	private ComboBox _ordenarCB;
 	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados;
 	public Vector<Lista_usuarios_registrados_item> _item = new Vector<Lista_usuarios_registrados_item>();
 	iAdministrador bd = new BDPrincipal();
 	Lista_usuarios_registrados_item usuario;
 	Administrador adminInterfaz;
-	
+	Usuario_No_Registrado unr;
+	Usuario_Registrado ur;
+
 	public Lista_usuarios_registrados() {
 		cargarListaUsuarios();
+	}
+	public Lista_usuarios_registrados(Usuario_No_Registrado unr) {
+		this.unr = unr;
+		cargarListaUsuariosAdministrador();
+	}
+	public Lista_usuarios_registrados(Usuario_Registrado ur) {
+		this.ur = ur;
+		cargarListaUsuariosAdministrador();
 	}
 
 	public Lista_usuarios_registrados(Administrador adminInterfaz) {
 		this.adminInterfaz = adminInterfaz;
 		cargarListaUsuariosAdministrador();
 	}
-	
+
 	public void cargarListaUsuarios() {
 		List<UsuarioRegistrado> lista = bd.cargarListaUsuariosRegistrados();
 
@@ -49,13 +59,20 @@ public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados{
 		_item.clear();
 
 		for(UsuarioRegistrado user : lista) {
-			this.usuario = new Lista_usuarios_registrados_item(user, this.adminInterfaz);
+			if(unr != null) {
+				this.usuario = new Lista_usuarios_registrados_item(user, this.unr);
+			}else if(ur != null) {
+				this.usuario = new Lista_usuarios_registrados_item(user, this.ur);
+
+			}else {
+				this.usuario = new Lista_usuarios_registrados_item(user, this.adminInterfaz);
+			}
 			this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
 			_item.add(this.usuario);
 
 		}
 	}	
 	public void Ordenar() {
-		
+
 	}
 }

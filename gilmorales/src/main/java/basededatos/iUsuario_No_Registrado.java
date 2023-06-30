@@ -2,6 +2,8 @@ package basededatos;
 
 import java.util.List;
 
+import bd_dcl.UsuarioRegistrado;
+
 public interface iUsuario_No_Registrado {
 
 	public List realizarBusqueda(String aBusqueda, String aFiltro);

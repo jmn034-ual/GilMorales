@@ -42,12 +42,12 @@ public class VistaCabecera extends LitTemplate {
 	private Button botonPerfil;
 	@Id("botonCerrarSesion")
 	private Button botonCerrarSesion;
-	@Id("botonAniadir")
-	private Button botonAniadir;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
+	@Id("botonAniadir")
+	private Button botonAniadir;
 
 
 	public Element getVaadinVerticalLayout1() {
@@ -178,6 +178,7 @@ public class VistaCabecera extends LitTemplate {
 	public void setBotonCerrarSesion(Button botonCerrarSesion) {
 		this.botonCerrarSesion = botonCerrarSesion;
 	}
+
 
 
 	public Button getBotonAniadir() {

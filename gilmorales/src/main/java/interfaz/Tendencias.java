@@ -17,11 +17,11 @@ public class Tendencias extends VistaListaTendencias{
 	public Vector<Tendencias_item> _item = new Vector<Tendencias_item>();
 	iUsuario_Registrado bd = new BDPrincipal();
 	Tendencias_item tendencia;
-	
+
 	public Tendencias() {
 		cargarTendencias();
 	}
-	
+
 	public void cargarTendencias() {
 		List<Hashtag> tendencias = bd.cargarTendencias();
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
@@ -31,7 +31,6 @@ public class Tendencias extends VistaListaTendencias{
 			tendencia = new Tendencias_item(h);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(tendencia);
 			_item.add(tendencia);
-		}
-
+		}	
 	}
 }

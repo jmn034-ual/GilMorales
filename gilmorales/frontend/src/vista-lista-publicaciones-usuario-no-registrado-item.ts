@@ -66,8 +66,8 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-button style="align-self: stretch; margin: 0%; padding: 0%; flex-shrink: 0; flex-grow: 0;">
-   Button 
+ <vaadin-button style="align-self: stretch; margin: 0%; padding: 0%; flex-shrink: 0; flex-grow: 0;" id="ver">
+  Ver Publicacion
  </vaadin-button>
  <hr id="lineaHorizontal" style="width: 99%; height: 2px;">
 </vaadin-vertical-layout>

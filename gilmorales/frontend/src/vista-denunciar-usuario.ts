@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-denunciar-usuario')
 export class VistaDenunciarUsuario extends LitElement {
@@ -19,7 +19,6 @@ export class VistaDenunciarUsuario extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing" id="cabecera" style="align-self: stretch;"></vaadin-horizontal-layout>
  <vaadin-vertical-layout id="layoutDenunciarUsuario" style="align-self: stretch; flex-grow: 1;">
   <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: center; margin: var(--lumo-space-m);">
    <h1 id="titulo">Denunciar Usuario</h1>
@@ -35,10 +34,10 @@ export class VistaDenunciarUsuario extends LitElement {
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" id="layoutBotones" style="align-self: stretch; justify-content: center;">
     <vaadin-button id="botonCancelar">
-     Cancelar
+      Cancelar 
     </vaadin-button>
     <vaadin-button id="botonEnviar">
-     Enviar
+      Enviar 
     </vaadin-button>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>

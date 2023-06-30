@@ -1,8 +1,35 @@
 package interfaz;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
-public class Lista_Me_Gustas_Publicacion {
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import bd_dcl.Publicacion;
+import bd_dcl.UsuarioRegistrado;
+import vistas.VistaListaMeGustasPublicacion;
+
+public class Lista_Me_Gustas_Publicacion extends VistaListaMeGustasPublicacion{
 	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
 	public Vector<Lista_Me_Gustas_Publicacion_item> _item = new Vector<Lista_Me_Gustas_Publicacion_item>();
+	Publicacion p;
+	Lista_Me_Gustas_Publicacion_item meGusta;
+	public Lista_Me_Gustas_Publicacion(Publicacion p) {
+		this.p = p;
+	}
+	
+	public void cargarMeGustas() {
+		List<UsuarioRegistrado> meGustas = new ArrayList<UsuarioRegistrado>(this.p.gustaA.getCollection());
+		
+		this.getLayoutLista().as(VerticalLayout.class).removeAll();
+		_item.clear();
+		
+		for(UsuarioRegistrado u : meGustas) {
+			this.meGusta = new Lista_Me_Gustas_Publicacion_item(u);
+			this.getLayoutLista().as(VerticalLayout.class).add(this.meGusta);
+			_item.add(meGusta);
+			
+		}
+	}
 }

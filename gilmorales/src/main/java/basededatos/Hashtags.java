@@ -84,7 +84,7 @@ public class Hashtags {
 	}
 
 	public List<Hashtag> cargarTendencias() throws PersistentException {
-		List<Hashtag> tendencias = null;
+		List<Hashtag> tendencias = new ArrayList<Hashtag>();
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			List<Hashtag> hashtags = HashtagDAO.queryHashtag(null, "Hashtag.numVisualizaciones DESC");

@@ -5,6 +5,8 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
+import basededatos.BDPrincipal;
+import basededatos.iUsuario_Registrado;
 import bd_dcl.Publicacion;
 import vistas.VistaListaPublicacionesPropiasEliminarItem;
 
@@ -14,6 +16,7 @@ public class Lista_publicaciones_propias_Eliminar_item extends VistaListaPublica
 	private Div _video;
 	public Lista_publicaciones_propias_Eliminar _lista_publicaciones_propias;
 	public Ver_publicacion_propia _ver_publicacion_propia;
+	Publicacion publicacion;
 	
 	public Lista_publicaciones_propias_Eliminar_item(Publicacion publicacion) {
 		Video video = new Video(publicacion.getVideo());
@@ -22,7 +25,9 @@ public class Lista_publicaciones_propias_Eliminar_item extends VistaListaPublica
 		video.getElement().setProperty("controls", false);
 		video.getElement().setProperty("autoplay", false); 
 		video.getElement().getStyle().set("border-radius", "8px");
+		this.publicacion = publicacion;
 		this.getLayoutVideo().as(VerticalLayout.class).add(video);
+		this.getCheckboxEliminar().setValue(false);
 		this.getNumVisualizaciones().setText(""+publicacion.getNumVisualizaciones());
 	}
 
@@ -30,7 +35,7 @@ public class Lista_publicaciones_propias_Eliminar_item extends VistaListaPublica
 		throw new UnsupportedOperationException();
 	}
 
-	public void Seleccionar_publicacion() {
-		throw new UnsupportedOperationException();
+	public Publicacion Seleccionar_publicacion() {
+		return publicacion;
 	}
 }

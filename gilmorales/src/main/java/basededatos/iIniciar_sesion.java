@@ -4,7 +4,7 @@ import bd_dcl.UsuarioRegistrado;
 
 public interface iIniciar_sesion {
 
-	public UsuarioRegistrado iniciarSesion(String aNombreUsuario, String aPassword);
+	public Object iniciarSesion(String aNombreUsuario, String aPassword);
 
 	public UsuarioRegistrado iniciarSesionOtrasPlataformas(String aEmail);
 

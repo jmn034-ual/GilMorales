@@ -10,7 +10,7 @@ import basededatos.iUsuario_Registrado;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaIniciarsesion;
 
-public class Login extends VistaIniciarsesion{
+public class Login extends Iniciar_sesion{
 //	private Label _tituloL;
 //	private Label _usuarioL;
 //	private TextField _usuarioTF;
@@ -29,12 +29,18 @@ public class Login extends VistaIniciarsesion{
 	public Recuperar_password _recuperar_password ;
 	public Registrar _registrar ;
 	private iUsuario_Registrado ur;
+	Usuario_No_Registrado interfaz;
+	private String nombreUsuario;
+	private String password;
+	private boolean tipoCuenta = false;
+	Object user = null;
 	
-	public Login(BDPrincipal bd) {
+	public Login(Usuario_No_Registrado interfaz) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-    	this.ur = bd;
-//    	Registrar();
+    	this.interfaz = interfaz;
+    	Registrar();
+    	Validar_datos();
 	}
 
 	public void Iniciar_sesion_otras_plataformas() {
@@ -44,14 +50,31 @@ public class Login extends VistaIniciarsesion{
 		
 	}
 
-	public void Validar_datos() {
-		
+	public String getNombreUsuario() {
+		return this.nombreUsuario;
+	}
+	
+	public Object Validar_datos() {
+		this.getIniciarSesionB().addClickListener(event ->{
+			this.nombreUsuario = this.getUsuarioTF().getValue();
+			this.password = this.getContrasenaTF().getValue();
+			user = this.Iniciar_sesion(this.nombreUsuario, this.password);
+		});
+		return user;
 	}
 
-//	public void Registrar() { 
-//		this.getRegistrarB().addClickListener(event -> {
-//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
-//			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(new Registrar());
-//		});
-//	}
+	public void Registrar() { 
+		_registrar = new Registrar(this.interfaz);
+		this.getRegistrarB().addClickListener(event -> {
+//			this.getVaadinHorizontalLayout().setVisible(false);
+//			this.getVaadinHorizontalLayout1().setVisible(false);
+//			this.getVaadinHorizontalLayout2().setVisible(false);
+//			this.getVaadinHorizontalLayout3().setVisible(false);
+//			this.getVaadinHorizontalLayout4().setVisible(false);
+//			this.getVaadinHorizontalLayout5().setVisible(false);
+//			this.getVaadinHorizontalLayout6().setVisible(false);
+			this.interfaz.getVaadinVerticalLayout().as(VerticalLayout.class).remove(this.interfaz.inicioSesion);
+			this.interfaz.getVaadinVerticalLayout().as(VerticalLayout.class).add(this._registrar);
+		});
+	}
 }

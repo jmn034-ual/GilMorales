@@ -18,8 +18,8 @@ export class VistaAddpublicacion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing-s" style="width: 100%; position: fixed; height: 90%; justify-content: center; z-index: 999;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; flex-shrink: 1; flex-grow: 0; height: 100%; justify-content: center; " id="vaadinHorizontalLayout">
+<vaadin-vertical-layout theme="spacing-s" style="width: 100%; position: fixed; height: 90%; justify-content: center; z-index: 999; background-color: #fffff;" id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; flex-shrink: 1; flex-grow: 0; height: 100%; justify-content: center; background-color: #ffffff;" id="vaadinHorizontalLayout">
   <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-s); width: 40%; margin-left: var(--lumo-space-xl);" id="layoutSubirVideo" theme="spacing-xs">
    <vaadin-vertical-layout theme="spacing-xs" id="layoutTitulo" style="margin: var(--lumo-space-s); margin-left: var(--lumo-space-xl);">
     <h2 id="titulo" style="margin: var(--lumo-space-s); align-self: flex-start;">Añadir publicación</h2>

@@ -1,6 +1,8 @@
 package interfaz;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaCabecera;
@@ -14,6 +16,10 @@ public class Comun_Comercial_y_Usuario_Registrado extends VistaCabecera{
 	public Comun_Comercial_y_Usuario_Registrado() {
 		this.getStyle().set("width","100%");
 		this.getStyle().set("height","100%");
+		this.getBotonAniadir().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
+    	Image customIcon = new Image("icons/logo.png", null);
+		customIcon.getStyle().set("width", "80px");
+		customIcon.getStyle().set("heigth", "80px");
 //		addPubli = new Add_publicacion();
 //		Add_publicacion();
 		Cerrar_sesion();

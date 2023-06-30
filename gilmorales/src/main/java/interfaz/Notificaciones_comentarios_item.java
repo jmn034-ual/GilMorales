@@ -15,6 +15,8 @@ public class Notificaciones_comentarios_item extends VistaNotificacionesComentar
 	UsuarioRegistrado recibe;
 	
 	public Notificaciones_comentarios_item() {
+		this.getLabelComentario().setText("No tienes notificaciones");
+		this.getBotonMeGusta().setVisible(false);
 	}
 	
 	
@@ -23,7 +25,6 @@ public class Notificaciones_comentarios_item extends VistaNotificacionesComentar
 		this.getVaadinVerticalLayout().setVisible(false);
 		this.daMeGusta = daMeGusta;
 		this.recibe = recibe;
-		this.getLabelComentario().setText("No tienes notificaciones");
 	}
 
 	public void Dar_me_gusta_comentario() {

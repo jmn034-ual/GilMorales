@@ -23,9 +23,10 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public Ver_Perfil__2 _ver_perfil;
 	iUsuario_Registrado bd = new BDPrincipal();
 	Publicacion publicacion;
+	Usuario_Registrado urInterfaz;
 	
-	public Ver_publicacion_ajena(Publicacion p, UsuarioRegistrado user) {
-		super(p, user);
+	public Ver_publicacion_ajena(Publicacion p, UsuarioRegistrado user, Usuario_Registrado urInterfaz) {
+//		super(p, user);
 		this.publicacion = p;
 		this.getVaadinHorizontalLayout2().setVisible(true);
 		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());

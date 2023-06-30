@@ -24,6 +24,37 @@ public class VistaListaResultado extends LitTemplate {
 	private Element layoutResultadoUsuario;
 	@Id("layoutResultadoHashtags")
 	private Element layoutResultadoHashtags;
+	
+
+	public Element getLayoutResultadoBusqueda() {
+		return layoutResultadoBusqueda;
+	}
+
+
+	public void setLayoutResultadoBusqueda(Element layoutResultadoBusqueda) {
+		this.layoutResultadoBusqueda = layoutResultadoBusqueda;
+	}
+
+
+	public Element getLayoutResultadoUsuario() {
+		return layoutResultadoUsuario;
+	}
+
+
+	public void setLayoutResultadoUsuario(Element layoutResultadoUsuario) {
+		this.layoutResultadoUsuario = layoutResultadoUsuario;
+	}
+
+
+	public Element getLayoutResultadoHashtags() {
+		return layoutResultadoHashtags;
+	}
+
+
+	public void setLayoutResultadoHashtags(Element layoutResultadoHashtags) {
+		this.layoutResultadoHashtags = layoutResultadoHashtags;
+	}
+
 
 	/**
      * Creates a new VistaListaResultado.

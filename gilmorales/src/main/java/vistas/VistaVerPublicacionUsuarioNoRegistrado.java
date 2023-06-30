@@ -20,10 +20,207 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vista-ver-publicacion-usuario-no-registrado.ts")
 public class VistaVerPublicacionUsuarioNoRegistrado extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("cabecera")
-	private HorizontalLayout cabecera;
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+	public Element getVaadinVerticalLayout2() {
+		return vaadinVerticalLayout2;
+	}
+
+	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
+		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	}
+
+	public HorizontalLayout getVideo() {
+		return video;
+	}
+
+	public void setVideo(HorizontalLayout video) {
+		this.video = video;
+	}
+
+	public HorizontalLayout getLayoutNumVisualizaciones() {
+		return layoutNumVisualizaciones;
+	}
+
+	public void setLayoutNumVisualizaciones(HorizontalLayout layoutNumVisualizaciones) {
+		this.layoutNumVisualizaciones = layoutNumVisualizaciones;
+	}
+
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
+	}
+
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
+	}
+
+	public Label getLabel() {
+		return label;
+	}
+
+	public void setLabel(Label label) {
+		this.label = label;
+	}
+
+	public Element getVaadinVerticalLayout3() {
+		return vaadinVerticalLayout3;
+	}
+
+	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
+		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
+	}
+
+	public Element getVaadinVerticalLayout4() {
+		return vaadinVerticalLayout4;
+	}
+
+	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
+		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
+	}
+
+	public HorizontalLayout getLayoutUsuario() {
+		return layoutUsuario;
+	}
+
+	public void setLayoutUsuario(HorizontalLayout layoutUsuario) {
+		this.layoutUsuario = layoutUsuario;
+	}
+
+	public Avatar getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Avatar avatar) {
+		this.avatar = avatar;
+	}
+
+	public Element getLayoutVerPerfil() {
+		return layoutVerPerfil;
+	}
+
+	public void setLayoutVerPerfil(Element layoutVerPerfil) {
+		this.layoutVerPerfil = layoutVerPerfil;
+	}
+
+	public Button getVerPerfil() {
+		return verPerfil;
+	}
+
+	public void setVerPerfil(Button verPerfil) {
+		this.verPerfil = verPerfil;
+	}
+
+	public Label getGeolocalizacion() {
+		return geolocalizacion;
+	}
+
+	public void setGeolocalizacion(Label geolocalizacion) {
+		this.geolocalizacion = geolocalizacion;
+	}
+
+	public HorizontalLayout getLayoutLabels() {
+		return layoutLabels;
+	}
+
+	public void setLayoutLabels(HorizontalLayout layoutLabels) {
+		this.layoutLabels = layoutLabels;
+	}
+
+	public Label getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(Label descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+	public Label getNumMeGustas() {
+		return numMeGustas;
+	}
+
+	public void setNumMeGustas(Label numMeGustas) {
+		this.numMeGustas = numMeGustas;
+	}
+
+	public Label getLabelNumMeGustas() {
+		return labelNumMeGustas;
+	}
+
+	public void setLabelNumMeGustas(Label labelNumMeGustas) {
+		this.labelNumMeGustas = labelNumMeGustas;
+	}
+
+	public Label getNumComentarios() {
+		return numComentarios;
+	}
+
+	public void setNumComentarios(Label numComentarios) {
+		this.numComentarios = numComentarios;
+	}
+
+	public Button getBotonVerComentario() {
+		return botonVerComentario;
+	}
+
+	public void setBotonVerComentario(Button botonVerComentario) {
+		this.botonVerComentario = botonVerComentario;
+	}
+
+	public Element getIronIcon2() {
+		return ironIcon2;
+	}
+
+	public void setIronIcon2(Element ironIcon2) {
+		this.ironIcon2 = ironIcon2;
+	}
+
+	public Label getFechaSubida() {
+		return fechaSubida;
+	}
+
+	public void setFechaSubida(Label fechaSubida) {
+		this.fechaSubida = fechaSubida;
+	}
+
+	public Element getVaadinVerticalLayout5() {
+		return vaadinVerticalLayout5;
+	}
+
+	public void setVaadinVerticalLayout5(Element vaadinVerticalLayout5) {
+		this.vaadinVerticalLayout5 = vaadinVerticalLayout5;
+	}
+
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinVerticalLayout1")
@@ -72,6 +269,8 @@ public class VistaVerPublicacionUsuarioNoRegistrado extends LitTemplate {
 	private Label fechaSubida;
 	@Id("vaadinVerticalLayout5")
 	private Element vaadinVerticalLayout5;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
 
 	/**
      * Creates a new VistaVerPublicacionUsuarioNoRegistrado.

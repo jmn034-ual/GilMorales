@@ -34,6 +34,104 @@ public class VistaListaResultadoItem extends LitTemplate {
 	private Element layoutFotoHashtag;
 	@Id("botonHashtag")
 	private Button botonHashtag;
+	
+	
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public Element getLayoutFotoPerfil() {
+		return layoutFotoPerfil;
+	}
+
+
+
+	public void setLayoutFotoPerfil(Element layoutFotoPerfil) {
+		this.layoutFotoPerfil = layoutFotoPerfil;
+	}
+
+
+
+	public Button getBotonNombreUsuario() {
+		return botonNombreUsuario;
+	}
+
+
+
+	public void setBotonNombreUsuario(Button botonNombreUsuario) {
+		this.botonNombreUsuario = botonNombreUsuario;
+	}
+
+
+
+	public Button getBotonSeguir() {
+		return botonSeguir;
+	}
+
+
+
+	public void setBotonSeguir(Button botonSeguir) {
+		this.botonSeguir = botonSeguir;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+
+	public Element getLayoutFotoHashtag() {
+		return layoutFotoHashtag;
+	}
+
+
+
+	public void setLayoutFotoHashtag(Element layoutFotoHashtag) {
+		this.layoutFotoHashtag = layoutFotoHashtag;
+	}
+
+
+
+	public Button getBotonHashtag() {
+		return botonHashtag;
+	}
+
+
+
+	public void setBotonHashtag(Button botonHashtag) {
+		this.botonHashtag = botonHashtag;
+	}
+
+
 
 	/**
      * Creates a new VistaListaResultadoItem.
