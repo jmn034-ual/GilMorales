@@ -1,4 +1,4 @@
-package interfaz;
+ package interfaz;
 
 public class Ver_Perfil__2 extends Ver_perfil__1 {
 	public Lista_Top_Comentarios_Usuario_No_Registrado_item _lista_Top_Comentarios__Usuario_No_Registrado_;

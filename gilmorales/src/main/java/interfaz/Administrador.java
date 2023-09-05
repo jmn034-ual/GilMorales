@@ -22,7 +22,6 @@ public class Administrador extends VistaAdministradorPrincipal {
 		this.getStyle().set("height", "100%");
 		this.admin = this._iAdministrador.cargarAdministrador(codigoEmpleado);
 		this.Cabecera_Administrador();
-		top.getLayoutListaResultadoBusqueda().setVisible(false);
 		this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(top);
 		this.Lista_Publicaciones__Administrador_();
 	}

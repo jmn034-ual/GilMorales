@@ -18,19 +18,17 @@ export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
 
  render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 100%; justify-content: center;">
-  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; width: 100%;">
-   <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; margin: var(--lumo-space-xs);">
-    <vaadin-horizontal-layout id="video" style="flex-grow: 1; width: 100%;"></vaadin-horizontal-layout>
-    <vaadin-horizontal-layout id="layoutNumVisualizaciones" style="flex-shrink: 1; margin: var(--lumo-space-s);" theme="spacing-s">
-     <label id="numVisualizaciones">0</label>
-     <label id="label">Visualizaciones</label>
-    </vaadin-horizontal-layout>
-   </vaadin-vertical-layout>
+<vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; height: 100%;">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m); margin-top: var(--lumo-space-l);">
+  <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 0; flex-shrink: 0; margin: var(--lumo-space-m);">
+   <vaadin-horizontal-layout id="video" style="flex-grow: 0; align-self: center; flex-shrink: 0; margin-left: var(--lumo-space-m); margin-top: var(--lumo-space-l);"></vaadin-horizontal-layout>
+   <vaadin-horizontal-layout id="layoutNumVisualizaciones" style="flex-shrink: 1; margin: var(--lumo-space-s);" theme="spacing-s">
+    <label id="numVisualizaciones">0</label>
+    <label id="label">Visualizaciones</label>
+   </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout3" style="flex-grow: 1; margin: var(--lumo-space-s); flex-shrink: 1; width: 100%;">
-   <vaadin-vertical-layout id="vaadinVerticalLayout4" style="width: 100%;">
+  <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout3" style="flex-grow: 0; margin: var(--lumo-space-s); flex-shrink: 0; width: 30%; margin-left: var(--lumo-space-xl);">
+   <vaadin-vertical-layout id="vaadinVerticalLayout4" style="margin-left: var(--lumo-space-m); align-self: stretch;">
     <vaadin-horizontal-layout id="layoutUsuario" style="width: 100%;">
      <vaadin-avatar id="avatar" style="margin: var(--lumo-space-xs);"></vaadin-avatar>
      <vaadin-vertical-layout id="layoutVerPerfil" style="flex-shrink: 1; flex-grow: 0;">

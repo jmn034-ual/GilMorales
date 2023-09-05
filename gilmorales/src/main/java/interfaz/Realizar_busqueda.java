@@ -4,7 +4,9 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.select.Select;
 
-public class Realizar_busqueda extends Cabecera_TOP {
+import vistas.VistaRealizarBusqueda;
+
+public class Realizar_busqueda extends VistaRealizarBusqueda {
 	private Label _tituloL;
 	public Cabecera_Administrador _cabecera_Administrador;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;

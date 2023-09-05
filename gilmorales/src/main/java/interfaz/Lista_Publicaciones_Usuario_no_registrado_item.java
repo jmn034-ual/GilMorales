@@ -62,11 +62,10 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 
 	}
 	public void Ver_perfil() {
-//		this.ver_perfil = new Ver_perfil_publico(publicacion.getPerteneceA());
 		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA());
 		this.getBotonNombreUsuario().addClickListener(event ->{
 			unr.getLayoutListaPublicaciones().setVisible(false);
-			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			unr.getLayoutCabeceraTop().setVisible(false);
 			unr.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}
@@ -75,7 +74,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, this.unr);
 		this.getVer().addClickListener(event ->{
 			unr.getLayoutListaPublicaciones().setVisible(false);
-			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			unr.getLayoutCabeceraTop().setVisible(false);
 			unr.getVaadinHorizontalLayout().add(verPublicacionUNR);
 			});
 	}
