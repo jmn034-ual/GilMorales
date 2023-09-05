@@ -19,7 +19,7 @@ export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
  render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 100%;">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 100%; justify-content: center;">
   <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; width: 100%;">
    <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; margin: var(--lumo-space-xs);">
     <vaadin-horizontal-layout id="video" style="flex-grow: 1; width: 100%;"></vaadin-horizontal-layout>

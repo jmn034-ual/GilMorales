@@ -27,6 +27,8 @@ public class Ver_publicacion_Usuario_No_Registrado extends VistaVerPublicacionUs
 	public Ver_publicacion_Usuario_No_Registrado(Publicacion p, Usuario_No_Registrado unr) {
 		this.p = p;
 		this.unr = unr;
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
 		this.getVideo().add(new Video(p.getVideo()));
 		Comentarios();
 		Lista_Top_Comentarios__Usuario_No_Registrado_();
