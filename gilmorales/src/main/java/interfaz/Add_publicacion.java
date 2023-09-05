@@ -1,7 +1,17 @@
 package interfaz;
 
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import java.io.InputStream;
 
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.FileBuffer;
+import com.vaadin.flow.component.upload.receivers.FileData;
+import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
+import com.vaadin.flow.component.upload.receivers.MultiFileBuffer;
+
+import TikTok.Video;
 import basededatos.BDPrincipal;
 import bd_dcl.Publicacion;
 import bd_dcl.UsuarioComercial;
@@ -43,6 +53,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 		Ver_publicacion_propia();
 		Publicar();
 		Descartar();
+		Subir_video();
 	}
 
 	public Add_publicacion(UsuarioComercial uc, Usuario_comercial comercial) {
@@ -54,10 +65,27 @@ public class Add_publicacion extends VistaAddpublicacion{
 		Ver_publicacion_propia();
 		Publicar();
 		Descartar();
+		Subir_video();
 	}
 
 	public void Subir_video() {
-		//		this.getUpload().addSucceededListener(null)
+		/* Example for FileBuffer */
+		FileBuffer fileBuffer = new FileBuffer();
+		Upload singleFileUpload = new Upload(fileBuffer);
+//		singleFileUpload.setAcceptedFileTypes("video/*");
+
+		int maxFileSizeInBytes = 10 * 1024 * 1024; // 10MB
+		singleFileUpload.setMaxFileSize(maxFileSizeInBytes);
+
+
+		singleFileUpload.addSucceededListener(event -> {
+			// Get information about the file that was written to the file system
+			FileData savedFileData = fileBuffer.getFileData();
+			String absolutePath = savedFileData.getFile().getAbsolutePath();
+			System.out.println(absolutePath);
+			this.getLayoutVideo().as(VerticalLayout.class).add(new Video(absolutePath));
+		});
+		this.getLayoutSubirVideo().as(VerticalLayout.class).add(singleFileUpload);
 	}
 
 	public void Add_localizacion() {
@@ -91,7 +119,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 				this.publicacion = bd.addPublicacionComercial(uc.getNombreUsuarioComercial(), this.localizacion, 
 						this.getTextAreaDescripcion().getValue(), "videos/tiktok1.mp4", uc.getID());
 				this.getVaadinHorizontalLayout().removeAll();
-//				_ver_publicacion_propia = new Ver_publicacion_propia_Comercial(publicacion, ucInterfaz, this.uc);
+				//				_ver_publicacion_propia = new Ver_publicacion_propia_Comercial(publicacion, ucInterfaz, this.uc);
 				this.getVaadinHorizontalLayout().add(this.ucInterfaz);
 			}
 		});
@@ -100,7 +128,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 	public void Descartar() {
 		this.getBotonDescartar().addClickListener(event ->{
 			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
+			//			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
 			urInterfaz.listaPublicaciones.setVisible(true);
 			urInterfaz.getListaPublicaciones().setVisible(true);

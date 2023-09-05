@@ -25,6 +25,8 @@ public class Ver_publicacion_Usuario_No_Registrado extends VistaVerPublicacionUs
 	Usuario_No_Registrado unr;
 	
 	public Ver_publicacion_Usuario_No_Registrado(Publicacion p, Usuario_No_Registrado unr) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this.p = p;
 		this.unr = unr;
 		this.getVideo().add(new Video(p.getVideo()));

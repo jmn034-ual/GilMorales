@@ -19,15 +19,15 @@ export class VistaVerTendencias extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="width: 100%; height: 100%; flex-shrink: 0;">
- <vaadin-vertical-layout style="flex-grow: 0; flex-shrink: 0; position: fixed; justify-content: flex-start; margin: var(--lumo-space-xs); padding: 0%; margin-top: 2%; margin-bottom: 5%; z-index: 999;" id="layoutTendencias" theme="spacing-xs">
+ <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 0; position: fixed; align-items: center; z-index: 999; height: 100%; width: 170px; margin-left: 0%; padding: 0%; justify-content: flex-start; margin-top: 0px;" id="layoutTendencias" theme="spacing-xs">
   <h4 id="tituloTendencias" style="align-self: center; margin-bottom: 0px; margin-top: 0px;">Tendencias </h4>
   <vaadin-vertical-layout id="layoutHashtags" style="flex-grow: 0; align-self: center; align-items: center; flex-shrink: 0; justify-content: flex-start; margin-top: 0%; padding: 0%;"></vaadin-vertical-layout>
   <vaadin-button id="botonVerListaHashtags" style="align-self: center;">
     Ver Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 1; margin-left: 12%; position: fixed; height: 95%; width: 86%; overflow-y: auto; flex-shrink: 0;">
-  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="width: 100%;">
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="flex-grow: 0; margin-left: 12%; position: fixed; height: 95%; width: 88%; overflow-y: auto; flex-shrink: 0;">
+  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="flex-grow: 0; margin: var(--lumo-space-xs); margin-top: var(--lumo-space-l); flex-shrink: 0; align-self: stretch;">
    <vaadin-vertical-layout theme="spacing" id="fotoPerfil">
     <vaadin-avatar id="fotoPerfil1"></vaadin-avatar>
    </vaadin-vertical-layout>

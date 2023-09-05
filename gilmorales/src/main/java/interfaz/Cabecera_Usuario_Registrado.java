@@ -21,15 +21,15 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	
 	public Cabecera_Usuario_Registrado(UsuarioRegistrado ur, Usuario_Registrado urInterfaz) {
 		super();
-		this.getStyle().set("width", "100%");
-    	this.getStyle().set("height", "100%");
+//		this.getStyle().set("width", "100%");
+//    	this.getStyle().set("height", "100%");
     	this.getTextoBusqueda().getStyle().set("background-color", "transparent");
     	this.getTextoBusqueda().getStyle().set("border-radius", "8px");
     	this.getTextoBusqueda().getStyle().set("color", "#FFFFF");
     	this.getBotonAniadir().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
     	Image customIcon = new Image("icons/logo.png", null);
-		customIcon.getStyle().set("width", "80px");
-		customIcon.getStyle().set("heigth", "80px");
+		customIcon.getStyle().set("width", "6%");
+//		customIcon.getStyle().set("heigth", "80px");
 		this.getLogoWeb().setIcon(customIcon);
     	this.ur = ur;
 		this.urInterfaz = urInterfaz; 
@@ -52,7 +52,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
     		this._cabecera_TOP.getCabeceraTop().setVisible(false);
-    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
+//    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
 				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
 			}
@@ -67,7 +67,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this._ver_notificaciones.setVisible(true);
 			this.getBotonNotificaciones().setVisible(false);
 			this._cabecera_TOP.getCabeceraTop().setVisible(false);
-    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
+//    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			this._ver_perfil_propio.setVisible(false);
 			this.addPubli.setVisible(false);
 			this.getBotonPerfil().setVisible(true);
@@ -89,7 +89,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this._ver_perfil_propio.getVaadinVerticalLayout1().setVisible(true);
 			this._ver_perfil_propio.setVisible(true);
 			this._cabecera_TOP.getCabeceraTop().setVisible(false);
-    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
+//    		this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			this.getBotonPerfil().setVisible(false);
 			this.getBotonAniadir().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
@@ -118,15 +118,15 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 	public void Cabecera_TOP() {
 		this._cabecera_TOP = new Cabecera_TOP(this.urInterfaz);
-		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
-    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
+//		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
+//    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
 	}
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
 //			_realizar_busqueda = new Realizar_busqueda();
 			this._ver_perfil_propio.setVisible(false);
 			this._cabecera_TOP.getCabeceraTop().setVisible(true);
-			this._cabecera_TOP.getLayoutAyuda().setVisible(false);
+//			this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			this.getBotonNotificaciones().setVisible(true);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);

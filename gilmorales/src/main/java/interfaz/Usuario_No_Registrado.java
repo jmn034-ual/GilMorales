@@ -23,8 +23,8 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public Login inicioSesion;	
 
 	public Usuario_No_Registrado() {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("height", "100%");
+//		this.getStyle().set("width", "100%");
+//		this.getStyle().set("height", "100%");
 		Cabecera_Usuario_No_Registrado();	
 		Lista_Publicaciones__Usuario_no_registrado_();
 		Iniciar_Sesion();
@@ -37,6 +37,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 
 	public void Cabecera_Usuario_No_Registrado() {
 		cabeceraUNR = new Cabecera_Usuario_No_Registrado(this);
+		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(this.cabeceraUNR._cabecera_TOP);
 		this.getLayoutCabecera().add(cabeceraUNR);
 	}
 

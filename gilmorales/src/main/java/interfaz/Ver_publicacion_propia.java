@@ -58,7 +58,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		this.getVaadinButton1().addClickListener(event ->{
 			//			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
 			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
+//			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			//			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
 			urInterfaz.listaPublicaciones.setVisible(true);
 			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
