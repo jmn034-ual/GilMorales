@@ -114,24 +114,22 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			}
 			urInterfaz.getListaPublicaciones().setVisible(false);
 			urInterfaz.getVaadinHorizontalLayout().add(_realizar_busqueda);
+			this.getTextoBusqueda().setValue("");
 		});
 	}
 	public void Cabecera_TOP() {
 		this._cabecera_TOP = new Cabecera_TOP(this.urInterfaz);
-//		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
-//    	this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_cabecera_TOP);
+
 	}
+	
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
-//			_realizar_busqueda = new Realizar_busqueda();
-			this._ver_perfil_propio.setVisible(false);
+			urInterfaz.getCabeceraTop().setVisible(true);
+			this._cabecera_TOP.setVisible(true);
 			this._cabecera_TOP.getCabeceraTop().setVisible(true);
-//			this._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			this.getBotonNotificaciones().setVisible(true);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
-	    	this.getVaadinVerticalLayout().as(VerticalLayout.class).remove(_cabecera_TOP);
-			Cabecera_TOP();
 			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
 				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
 			}

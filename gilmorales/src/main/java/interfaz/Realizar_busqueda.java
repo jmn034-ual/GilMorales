@@ -12,6 +12,7 @@ public class Realizar_busqueda extends VistaRealizarBusqueda {
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	public Cabecera_Usuario_No_Registrado _cabecera_Usuario_No_Registrado;
 	public Lista_resultado _lista_resultado;
+	Select<String> select ;
 	
 //	public Realizar_busqueda() {
 //		this.getStyle().set("width", "100%");
@@ -33,14 +34,15 @@ public class Realizar_busqueda extends VistaRealizarBusqueda {
 		this.getStyle().set("height", "100%");
 //		this.getVaadinHorizontalLayout().remove(this.getCabeceraTop().as(VerticalLayout.class));
 //		this.getCabeceraTop().removeAllChildren();
-		Select<String> select = new Select<>();
+		select = new Select<>();
         select.setLabel("Filtrar por:");
         select.setItems("Hashtags", "Usuarios",
                 "None");
         select.setValue("None");
-        this.getLayoutFiltrar().add(select);
-		_lista_resultado = new Lista_resultado(buscar, select.getValue());
+        this.getVaadinVerticalLayout().as(VerticalLayout.class).add(select);
+		_lista_resultado = new Lista_resultado(buscar, select.getValue(), this);
 		this.getLayoutListaResultadoBusqueda().setVisible(true);
+		Lista_resultado();
 	}
 
 	public void Lista_resultado() {

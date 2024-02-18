@@ -18,8 +18,6 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 	Usuario_No_Registrado unr;
 
 	public Cabecera_Usuario_No_Registrado(Usuario_No_Registrado unr) {
-//		this.getStyle().set("width","100%");
-//		this.getStyle().set("height","100%");
 		this.unr = unr;
 		this.getTextoBusqueda().getStyle().set("background-color", "transparent");
 		this.getTextoBusqueda().getStyle().set("border-radius", "8px");
@@ -39,6 +37,7 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 	public void Realizar_busqueda() {
 		this.getBotonBuscar().addClickListener(event ->{
 			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue());
+			System.out.println(this.getTextoBusqueda().getValue());
 			this._realizar_busqueda.setVisible(true);
 			this._cabecera_TOP.setVisible(false);
 			if(unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
@@ -46,6 +45,7 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 			}
 			unr.getLayoutListaPublicaciones().setVisible(false);
 			unr.getVaadinHorizontalLayout().add(_realizar_busqueda);
+			this.getTextoBusqueda().setValue("");
 		});
 	}
 

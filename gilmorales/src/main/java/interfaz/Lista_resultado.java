@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
+import bd_dcl.Hashtag;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaResultado;
 
@@ -17,29 +18,60 @@ public class Lista_resultado extends VistaListaResultado{
 	private ComboBox _filtrarCB;
 	private Label _usuariosL;
 	private Label _hashtagsL;
-	public Realizar_busqueda _realizar_busqueda;
+	public static Realizar_busqueda _realizar_busqueda;
 	public Vector<Lista_resultado_item> _item = new Vector<Lista_resultado_item>();
 	public Filtrar_resultado _filtrar_resultado;
 	iUsuario_Registrado bd = new BDPrincipal();
 	Lista_resultado_item item;
+	Realizar_busqueda rb;
 
-	public Lista_resultado(String buscar, String filtro) {
-		
+	public Lista_resultado(String buscar, String filtro, Realizar_busqueda rb) {
+		this.rb = rb;
+		Filtrar_resultado();
 		cargarBusqueda(buscar, filtro);
 	}
 	
 	public void cargarBusqueda(String buscar, String filtro){
-			List resultado = bd.realizarBusqueda(buscar, filtro);
-			this.getLayoutResultadoBusqueda().as(VerticalLayout.class).removeAll();
+			List<Object> resultado = bd.realizarBusqueda(buscar, filtro);
+			this.getLayoutResultadoUsuario().as(VerticalLayout.class).removeAll();
 			_item.clear();
 			
-			for (int i = 0; i < resultado.size(); i++) {
-				item = new Lista_resultado_item();
-				this.getLayoutResultadoBusqueda().as(VerticalLayout.class).add(item);
+			for (int i = 0; i < resultado.size(); i++) {				
+				if (resultado.get(i) instanceof UsuarioRegistrado) {
+					UsuarioRegistrado ur = bd.cargarUsuarioRegistrado(Integer.parseInt(resultado.get(i).toString()));
+					item = new Lista_resultado_item(ur);
+//					this.getLayoutResultadoUsuario().as(VerticalLayout.class).add(item);
+					this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).add(item);
+	            } else if (resultado.get(i) instanceof Hashtag) {
+	            	Hashtag h = bd.cargarHashtag(Integer.parseInt(resultado.get(i).toString()), buscar);
+					item = new Lista_resultado_item(h);
+					this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).add(item);
+//					this.getLayoutResultadoHashtags().as(VerticalLayout.class).add(item);
+	            }
 				_item.add(item);
 			}
 	}
 	public void Filtrar_resultado() {
-		throw new UnsupportedOperationException();
+		this.rb.select.addValueChangeListener(event -> {
+			if(this.rb.select.getValue() == "Usuarios") {
+				this.rb.getVaadinHorizontalLayout2().setVisible(true);
+				this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(true);
+				this.rb.getLayoutTituloHashtags().setVisible(false);
+				this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(false);
+				this.rb.getBarraHorizontal().setVisible(false);
+			}else if(this.rb.select.getValue() == "Hashtags") {
+				this.rb.getVaadinHorizontalLayout2().setVisible(false);
+				this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(false);
+				this.rb.getLayoutTituloHashtags().setVisible(true);
+				this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(true);
+				this.rb.getBarraHorizontal().setVisible(false);
+			}else {
+				this.rb.getVaadinHorizontalLayout2().setVisible(true);
+				this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(true);
+				this.rb.getLayoutTituloHashtags().setVisible(true);
+				this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(true);
+				this.rb.getBarraHorizontal().setVisible(true);
+			}
+		});
 	}
 }

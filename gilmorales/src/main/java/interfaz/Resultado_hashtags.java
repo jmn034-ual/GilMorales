@@ -8,7 +8,7 @@ public class Resultado_hashtags extends Lista_resultado {
 	public Vector<Resultado_hashtags_item> _item = new Vector<Resultado_hashtags_item>();
 	
 	public Resultado_hashtags(String buscar, String filtro) {
-		super(buscar, filtro);
+		super(buscar, filtro, _realizar_busqueda);
 		
 	}
 

@@ -4,6 +4,7 @@ import bd_dcl.UsuarioRegistrado;
 
 import java.util.List;
 
+import bd_dcl.Hashtag;
 import bd_dcl.Publicacion;
 
 public interface iUsuario_Registrado {
@@ -53,4 +54,6 @@ public interface iUsuario_Registrado {
 	public List cargarTendencias();
 
 	public List cargarListaHashtagTOP();
+
+	public Hashtag cargarHashtag(int parseInt, String buscar);
 }

@@ -10,7 +10,7 @@ import bd_dcl.UsuarioRegistrado;
 public class Resultado_usuarios extends Lista_resultado {
 	Resultado_usuarios_item item;
 	public Resultado_usuarios(String buscar, String filtro) {
-		super(buscar, filtro);
+		super(buscar, filtro, _realizar_busqueda);
 		cargarUsuariosBusqueda(buscar, filtro);
 	}
 	public Buscar_Usuario _buscar_Usuario;

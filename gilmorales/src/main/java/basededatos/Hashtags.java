@@ -71,9 +71,13 @@ public class Hashtags {
 		try {
 			List<Hashtag> lista = HashtagDAO.queryHashtag(null, null);
 			for(Hashtag h : lista) {
-				if(h.getNombreHashtag().equals(aNombreHashtag) || h.getNombreHashtag().startsWith(aNombreHashtag.substring(0, 3))
-						|| h.getNombreHashtag().startsWith(aNombreHashtag.substring(0, 2))) {
+				if(h.getNombreHashtag().equals(aNombreHashtag)){
 					hashtagsCoincidentes.add(h);
+				}else if(aNombreHashtag.length() > 2) {
+					if( h.getNombreHashtag().startsWith(aNombreHashtag.substring(0, 3))
+							|| h.getNombreHashtag().startsWith(aNombreHashtag.substring(0, 2))){
+						hashtagsCoincidentes.add(h);
+					}
 				}
 			}
 			t.commit();

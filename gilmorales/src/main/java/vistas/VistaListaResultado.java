@@ -24,7 +24,7 @@ public class VistaListaResultado extends LitTemplate {
 	private Element layoutResultadoUsuario;
 	@Id("layoutResultadoHashtags")
 	private Element layoutResultadoHashtags;
-	
+
 
 	public Element getLayoutResultadoBusqueda() {
 		return layoutResultadoBusqueda;

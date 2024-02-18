@@ -7,6 +7,8 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.Hr;
 
 /**
  * A Designer generated component for the vista-realizar-busqueda template.
@@ -36,8 +38,78 @@ public class VistaRealizarBusqueda extends LitTemplate {
 	private Element layoutListaResultadoHashtags;
 	@Id("layoutFiltrar")
 	private HorizontalLayout layoutFiltrar;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("tituloUsuarios")
+	private H3 tituloUsuarios;
+	@Id("tituloHashtags")
+	private H3 tituloHashtags;
+	@Id("barraHorizontal")
+	private Hr barraHorizontal;
 	
 	
+
+	public Hr getBarraHorizontal() {
+		return barraHorizontal;
+	}
+
+
+
+	public void setBarraHorizontal(Hr barraHorizontal) {
+		this.barraHorizontal = barraHorizontal;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public H3 getTituloUsuarios() {
+		return tituloUsuarios;
+	}
+
+
+
+	public void setTituloUsuarios(H3 tituloUsuarios) {
+		this.tituloUsuarios = tituloUsuarios;
+	}
+
+
+
+	public H3 getTituloHashtags() {
+		return tituloHashtags;
+	}
+
+
+
+	public void setTituloHashtags(H3 tituloHashtags) {
+		this.tituloHashtags = tituloHashtags;
+	}
+
+
 
 	public Element getLayoutListaResultadoBusqueda() {
 		return layoutListaResultadoBusqueda;

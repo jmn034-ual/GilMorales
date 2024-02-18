@@ -42,6 +42,17 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		}
 		return comercial;
 	}
+	
+	public Hashtag cargarHashtag(int idHashtag, String nombre) {
+		Hashtag h = null;
+		try {
+			h = this.hashtag.cargarHashtag(idHashtag, nombre);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return h;
+	}
 
 	public Publicacion addPublicacionComercial(String aNombreUsuarioComercial, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioComercialID) {
 		Publicacion p = null;
@@ -197,8 +208,8 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 
 	}
 
-	public List realizarBusqueda(String aBusqueda, String aFiltro) {
-		List resultado = new ArrayList();
+	public ArrayList<Object> realizarBusqueda(String aBusqueda, String aFiltro) {
+		ArrayList<Object> resultado = new ArrayList<Object>();
 		try {
 			if(aFiltro.equals("Hashtags")) {
 				resultado.clear();
