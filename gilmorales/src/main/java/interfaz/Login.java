@@ -59,6 +59,8 @@ public class Login extends Iniciar_sesion{
 			this.nombreUsuario = this.getUsuarioTF().getValue();
 			this.password = this.getContrasenaTF().getValue();
 			user = this.Iniciar_sesion(this.nombreUsuario, this.password);
+			this.getUsuarioTF().setValue("");
+			this.getContrasenaTF().setValue("");
 		});
 		return user;
 	}

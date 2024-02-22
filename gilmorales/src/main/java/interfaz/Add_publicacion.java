@@ -33,48 +33,48 @@ public class Add_publicacion extends VistaAddpublicacion{
 	public Add_publicacion() {}
 
 	public Add_publicacion(UsuarioRegistrado ur, Usuario_Registrado urInterfaz) {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("height", "100%");
+//		this.getStyle().set("width", "100%");
+//		this.getStyle().set("height", "100%");
 		this.ur = ur;
 		this.urInterfaz = urInterfaz;
 		Add_localizacion();
 		Ver_publicacion_propia();
 		Publicar();
 		Descartar();
-		Subir_video();
+//		Subir_video();
 	}
 
 	public Add_publicacion(UsuarioComercial uc, Usuario_comercial comercial) {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("height", "100%");
+//		this.getStyle().set("width", "100%");
+//		this.getStyle().set("height", "100%");
 		this.uc = uc;
 		this.ucInterfaz = comercial;
 		Add_localizacion();
 		Ver_publicacion_propia();
 		Publicar();
 		Descartar();
-		Subir_video();
+//		Subir_video();
 	}
 
-	public void Subir_video() {
-		/* Example for FileBuffer */
-		FileBuffer fileBuffer = new FileBuffer();
-		Upload singleFileUpload = new Upload(fileBuffer);
-//		singleFileUpload.setAcceptedFileTypes("video/*");
-
-		int maxFileSizeInBytes = 10 * 1024 * 1024; // 10MB
-		singleFileUpload.setMaxFileSize(maxFileSizeInBytes);
-
-
-		singleFileUpload.addSucceededListener(event -> {
-			// Get information about the file that was written to the file system
-			FileData savedFileData = fileBuffer.getFileData();
-			String absolutePath = savedFileData.getFile().getAbsolutePath();
-			System.out.println(absolutePath);
-			this.getLayoutVideo().as(VerticalLayout.class).add(new Video(absolutePath));
-		});
-		this.getLayoutSubirVideo().as(VerticalLayout.class).add(singleFileUpload);
-	}
+//	public void Subir_video() {
+//		/* Example for FileBuffer */
+//		FileBuffer fileBuffer = new FileBuffer();
+//		Upload singleFileUpload = new Upload(fileBuffer);
+////		singleFileUpload.setAcceptedFileTypes("video/*");
+//
+//		int maxFileSizeInBytes = 10 * 1024 * 1024; // 10MB
+//		singleFileUpload.setMaxFileSize(maxFileSizeInBytes);
+//
+//
+//		singleFileUpload.addSucceededListener(event -> {
+//			// Get information about the file that was written to the file system
+//			FileData savedFileData = fileBuffer.getFileData();
+//			String absolutePath = savedFileData.getFile().getAbsolutePath();
+//			System.out.println(absolutePath);
+//			this.getLayoutVideo().as(VerticalLayout.class).add(new Video(absolutePath));
+//		});
+//		this.getLayoutSubirVideo().as(VerticalLayout.class).add(singleFileUpload);
+//	}
 
 	public void Add_localizacion() {
 		this.getBotonAniadir().addClickListener(event ->{

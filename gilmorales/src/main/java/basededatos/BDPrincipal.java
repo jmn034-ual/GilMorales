@@ -20,7 +20,10 @@ import bd_dcl.UsuarioComercialDAO;
 import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
 
-public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrador_, iAdministrador, iUsuario_No_Registrado, iVer_notificaciones_usuario_publico, iVer_notificaciones_usuario_privado, iVer_perfil_publico, iVer_perfil_privado, iVer_perfil, iPlataformas_externas, iUsuario_Registrado, iIniciar_sesion {
+public class BDPrincipal
+		implements iUsuario_comercial, iVer_perfil__Administrador_, iAdministrador, iUsuario_No_Registrado,
+		iVer_notificaciones_usuario_publico, iVer_notificaciones_usuario_privado, iVer_perfil_publico,
+		iVer_perfil_privado, iVer_perfil, iPlataformas_externas, iUsuario_Registrado, iIniciar_sesion {
 	public Comentarios comentarios = new Comentarios();
 	public Notificaciones notificaciones = new Notificaciones();
 	public UsuariosRegistrados usuario_registrado = new UsuariosRegistrados();
@@ -42,7 +45,7 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		}
 		return comercial;
 	}
-	
+
 	public Hashtag cargarHashtag(int idHashtag, String nombre) {
 		Hashtag h = null;
 		try {
@@ -54,20 +57,23 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		return h;
 	}
 
-	public Publicacion addPublicacionComercial(String aNombreUsuarioComercial, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioComercialID) {
+	public Publicacion addPublicacionComercial(String aNombreUsuarioComercial, String aLocalizacion,
+			String aDescripcion, String aVideo, int aUsuarioComercialID) {
 		Publicacion p = null;
 		try {
-			p = this.publicacion.addPublicacion(aNombreUsuarioComercial, aLocalizacion, aDescripcion, aVideo, aUsuarioComercialID);
+			p = this.publicacion.addPublicacion(aNombreUsuarioComercial, aLocalizacion, aDescripcion, aVideo,
+					aUsuarioComercialID);
 //			this.publicacion.crearHashtag(p);
 //			this.publicacion.crearMencion(p);
-		}catch (PersistentException e) {
+		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return p;
 	}
 
-	public void editarPerfilUC(String aNuevoNombreUsuario, String aNombreEmpresa, String aDescripcion, String aFoto, int aUsuarioID){
+	public void editarPerfilUC(String aNuevoNombreUsuario, String aNombreEmpresa, String aDescripcion, String aFoto,
+			int aUsuarioID) {
 		try {
 			this.comercial.editarPerfilUC(aNuevoNombreUsuario, aNombreEmpresa, aDescripcion, aFoto, aUsuarioID);
 		} catch (PersistentException e) {
@@ -211,13 +217,13 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	public ArrayList<Object> realizarBusqueda(String aBusqueda, String aFiltro) {
 		ArrayList<Object> resultado = new ArrayList<Object>();
 		try {
-			if(aFiltro.equals("Hashtags")) {
+			if (aFiltro.equals("Hashtags")) {
 				resultado.clear();
 				resultado.addAll(this.hashtag.buscarHashtag(aBusqueda));
-			}else if(aFiltro.equals("Usuarios")) {
+			} else if (aFiltro.equals("Usuarios")) {
 				resultado.clear();
 				resultado.addAll(this.usuario_registrado.buscarUsuario(aBusqueda));
-			}else {
+			} else {
 				resultado.addAll(this.usuario_registrado.buscarUsuario(aBusqueda));
 				resultado.addAll(this.hashtag.buscarHashtag(aBusqueda));
 			}
@@ -239,18 +245,22 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		return lista;
 	}
 
-	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) {
+	//La estructura nombresUsuarios no sirve para nada, por tanto tengo que darle una vuelta para que no se puedan registrar usuarios con el mismo nombre
+	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword,
+			String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) {
 		try {
-			if(!nombresUsuarios.containsKey(aNombreUsuario)) {
-				if(aTipoCuenta) {
+			if (!nombresUsuarios.containsKey(aNombreUsuario)) {
+				if (aTipoCuenta) {
 					nombresUsuarios.put(aNombreUsuario, "UsuarioRegistrado");
-					this.usuario_registrado.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion, aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
-				}else if(aTipoCuenta == false){
+					this.usuario_registrado.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion,
+							aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
+				} else if (aTipoCuenta == false) {
 					nombresUsuarios.put(aNombreUsuario, "UsuarioComercial");
-					this.comercial.registrarUsuario(aNombre, aEmail, aPassword, aDescripcion, aNombreUsuario, aFechaNacimiento, aFoto);
+					this.comercial.registrarUsuario(aNombre, aEmail, aPassword, aDescripcion, aNombreUsuario,
+							aFechaNacimiento, aFoto);
 
 				}
-			}else {
+			} else {
 				Notification.show("El nombre de usuario elegido esta ocupado. Por favor, elija otro nombre de usuario");
 			}
 		} catch (PersistentException e) {
@@ -263,7 +273,7 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		List<UsuarioRegistrado> usuarios = null;
 		try {
 			usuarios = usuario_registrado.cargarUsuariosUNR();
-		}catch (PersistentException e) {
+		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -310,7 +320,8 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		}
 	}
 
-	public void editarPerfilUR(String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto, int aUsuarioID) {
+	public void editarPerfilUR(String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto,
+			int aUsuarioID) {
 		try {
 			this.usuario_registrado.editarPerfilUR(aNuevoNombreUsuario, aNombre, aDescripcion, aFoto, aUsuarioID);
 		} catch (PersistentException e) {
@@ -346,13 +357,14 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		}
 	}
 
-	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID) {
+	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo,
+			int aUsuarioID) {
 		Publicacion p = null;
 		try {
 			p = this.publicacion.addPublicacion(aNombreUsuario, aLocalizacion, aDescripcion, aVideo, aUsuarioID);
 			this.publicacion.crearHashtag(p);
 			this.publicacion.crearMencion(p);
-		}catch (PersistentException e) {
+		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -387,7 +399,7 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		List<UsuarioRegistrado> usuariosTop = new ArrayList<UsuarioRegistrado>();
 		try {
 			List<UsuarioRegistrado> usuarios = usuario_registrado.cargarListaUsuariosTOP();
-			for(int i = 0; i < usuarios.size() && i < 5 ; i++) {
+			for (int i = 0; i < usuarios.size() && i < 5; i++) {
 				usuariosTop.add(usuarios.get(i));
 			}
 		} catch (PersistentException e) {
@@ -398,7 +410,8 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		return usuariosTop;
 	}
 
-	public void denunciarUsuario(String aExplicacion, String aMotivo, int aUsuarioDenuncianteID, int aUsuarioDenunciadoID) {
+	public void denunciarUsuario(String aExplicacion, String aMotivo, int aUsuarioDenuncianteID,
+			int aUsuarioDenunciadoID) {
 		try {
 			this.denuncia.denunciarUsuario(aUsuarioDenunciadoID, aExplicacion, aMotivo, aUsuarioDenuncianteID);
 		} catch (PersistentException e) {
@@ -423,31 +436,41 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 		Object user = null;
 		try {
 			// Realizar la consulta utilizando el método queryUsuarioRegistrado
-			
-			System.out.println(nombresUsuarios.get(aNombreUsuario));
-			List<UsuarioRegistrado> usuariosRegistrados = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+			List<Object> usuarios = new ArrayList<>();
+			usuarios.addAll(UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null));
+			usuarios.addAll(UsuarioComercialDAO.queryUsuarioComercial(null, null));
+		
 			// Verificar si se encontró un usuario con el nombre especificado
-			if (!usuariosRegistrados.isEmpty()) {
-				for(UsuarioRegistrado ur : usuariosRegistrados) {
-					System.out.println("Hay usuarios");
-					if(ur.getNombreUsuario().equals(aNombreUsuario) && ur.getPassword().equals(aPassword)) {
-						user = usuario_registrado.cargarUsuarioRegistrado(ur.getID());
-						break;
+			if (!usuarios.isEmpty()) {
+				for(Object ur : usuarios) {
+					if(ur instanceof UsuarioRegistrado) {
+						UsuarioRegistrado userAux = cargarUsuarioRegistrado(Integer.parseInt(ur.toString()));
+						if(userAux.getNombreUsuario().equals(aNombreUsuario) && userAux.getPassword().equals(aPassword)) {
+							return user = usuario_registrado.cargarUsuarioRegistrado(userAux.getID());
+						}
+					}else if(ur instanceof UsuarioComercial) {
+						UsuarioComercial userAux = cargarUsuarioComercial(Integer.parseInt(ur.toString()));
+						if(userAux.getNombreUsuarioComercial().equals(aNombreUsuario) && userAux.getPassword().equals(aPassword)) {
+							return user = comercial.cargarUsuarioComercial(userAux.getID());
+						}
+					}else if(aNombreUsuario.equals("admin") && aPassword.equals("admin")) { 
+						user = _c_usuarioAdministrador.cargarAdministrador(0);
 					}
+					
 				}
 
-			} 
-			List<UsuarioComercial> comerciales = UsuarioComercialDAO.queryUsuarioComercial(null, null);
-			if (!comerciales.isEmpty()) {
-					for(UsuarioComercial uc : comerciales) {
-						if(uc.getNombreUsuarioComercial().equals(aNombreUsuario) && uc.getPassword().equals(aPassword)) 
-							user = comercial.cargarUsuarioComercial(uc.getID());
-					}
-			}else if(aNombreUsuario.equals("admin") && aPassword.equals("admin")) { 
-				user = _c_usuarioAdministrador.cargarAdministrador(0);
-			}else {
-				// Manejar el caso en el que no se encontró ningún usuario con el nombre especificado
-				Notification.show("Usuario y/o contraseña incorrecta.");
+//			} else{
+////				List<UsuarioComercial> comerciales = UsuarioComercialDAO.queryUsuarioComercial(null, null);
+//				if (!comerciales.isEmpty()) {
+//					for(UsuarioComercial uc : comerciales) {
+//						System.out.println("Usuario comercial");
+//						if(uc.getNombreUsuarioComercial().equals(aNombreUsuario) && uc.getPassword().equals(aPassword)) 
+//							user = comercial.cargarUsuarioComercial(uc.getID());
+//					}
+//				}else if(aNombreUsuario.equals("admin") && aPassword.equals("admin")) { 
+//					user = _c_usuarioAdministrador.cargarAdministrador(0);
+//				}
+//
 			}
 		} catch (PersistentException e) {
 			e.printStackTrace();
@@ -467,7 +490,8 @@ public class BDPrincipal implements iUsuario_comercial, iVer_perfil__Administrad
 	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario) {
 		int id = Integer.parseInt(aNombreUsuario);
 		try {
-			String password = this.usuario_registrado.recuperarPassword(aEmailRecuperacion, aNuevaPassword, aNombreUsuario, id);
+			String password = this.usuario_registrado.recuperarPassword(aEmailRecuperacion, aNuevaPassword,
+					aNombreUsuario, id);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

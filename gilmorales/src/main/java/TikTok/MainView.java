@@ -66,9 +66,17 @@ public class MainView extends VerticalLayout {
 		this.setMargin(false);
 		this.setPadding(false);
 		BDPrincipal bd = new BDPrincipal();
+		
+//		Usuario_No_Registrado unr = new Usuario_No_Registrado();
+//
+//		
+//		Registrar registro = new Registrar(unr);
+//		add(registro);
+		
 
 		//		Usuario_Registrado ur = new Usuario_Registrado(1);
 		//		add(ur);
+		
 		Usuario_No_Registrado unr = new Usuario_No_Registrado();
 		add(unr);
 
@@ -101,28 +109,63 @@ public class MainView extends VerticalLayout {
 			@Override
 			public void onComponentEvent(ClickEvent<Button> event) {
 				unr.inicioSesion.getIniciarSesionB().addClickListener(event2 ->{
-					UsuarioRegistrado ur2 = (UsuarioRegistrado) unr.inicioSesion.Validar_datos();
-					if(ur2 != null) {	
-						if(ur2 != null && ur2.getNombreUsuario().equals(unr.inicioSesion.getNombreUsuario())) {
-							removeAll();
-							Usuario_Registrado urInterfaz = new Usuario_Registrado(ur2.getID());
-							add(urInterfaz);
-							urInterfaz._cabecera_Usuario_Registrado.getBotonCerrarSesion().addClickListener(event3 ->{
-								removeAll();
-								add(unr);
-							});
-						}
-					}else {
-						UsuarioComercial com = (UsuarioComercial) unr.inicioSesion.Validar_datos();
-						if(com != null && com.getNombreUsuarioComercial().equals(unr.inicioSesion.getNombreUsuario())) {
-							Usuario_comercial comercial = new Usuario_comercial(com.getID());
-							removeAll();
-							add(comercial);
-							comercial._cabecera_Usuario_Comercial.getBotonCerrarSesion().addClickListener(event4 ->{
-								removeAll();
-								add(unr);
-							});
-						}
+					Object usuarioValidado =  unr.inicioSesion.Validar_datos();
+					if(usuarioValidado == null) {
+						// Manejar el caso en el que no se encontró ningún usuario con el nombre especificado
+						Notification.show("Usuario y/o contraseña incorrecta.");
+					}
+//					else if(ur2 != null) {	
+//						if(ur2 != null && ur2.getNombreUsuario().equals(unr.inicioSesion.getNombreUsuario())) {
+//							removeAll();
+//							Usuario_Registrado urInterfaz = new Usuario_Registrado(ur2.getID());
+//							add(urInterfaz);
+//							urInterfaz._cabecera_Usuario_Registrado.getBotonCerrarSesion().addClickListener(event3 ->{
+//								removeAll();
+//								add(unr);
+//							});
+//						}
+//					}else {
+//						UsuarioComercial com = (UsuarioComercial) unr.inicioSesion.Validar_datos();
+//						if(com != null && com.getNombreUsuarioComercial().equals(unr.inicioSesion.getNombreUsuario())) {
+//							Usuario_comercial comercial = new Usuario_comercial(com.getID());
+//							removeAll();
+//							add(comercial);
+//							comercial._cabecera_Usuario_Comercial.getBotonCerrarSesion().addClickListener(event4 ->{
+//								removeAll();
+//								add(unr);
+//							});
+//						}
+//					}
+					else {
+					 switch (usuarioValidado.getClass().getSimpleName()) {
+				        case "UsuarioRegistrado":
+				            UsuarioRegistrado ur2 = (UsuarioRegistrado) usuarioValidado;
+//				            if (ur2.getNombreUsuario().equals(unr.inicioSesion.getNombreUsuario())) {
+				                removeAll();
+				                Usuario_Registrado urInterfaz = new Usuario_Registrado(ur2.getID());
+				                add(urInterfaz);
+				                urInterfaz._cabecera_Usuario_Registrado.getBotonCerrarSesion().addClickListener(event3 ->{
+				                    removeAll();
+				                    add(unr);
+				                });
+//				            }
+				            break;
+				        case "UsuarioComercial":
+				            UsuarioComercial com = (UsuarioComercial) usuarioValidado;
+//				            if (com.getNombreUsuarioComercial().equals(unr.inicioSesion.getNombreUsuario())) {
+				                Usuario_comercial comercial = new Usuario_comercial(com.getID());
+				                removeAll();
+				                add(comercial);
+				                comercial._cabecera_Usuario_Comercial.getBotonCerrarSesion().addClickListener(event4 ->{
+				                    removeAll();
+				                    add(unr);
+				                });
+//				            }
+				            break;
+				        default:
+							Notification.show("Usuario y/o contraseña incorrecta.");
+				            break;
+				    }
 					}
 				});
 			}

@@ -1,82 +1,50 @@
 package interfaz;
 
 import java.io.ByteArrayInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeSet;
 
-import org.orm.PersistentException;
-
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Label;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 import com.vaadin.flow.server.StreamResource;
 
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_No_Registrado;
-import bd_dcl.UsuarioComercial;
-import bd_dcl.UsuarioRegistrado;
 import vistas.VistaRegistrarusuario;
 
-public class Registrar extends VistaRegistrarusuario{
-
-	//	private Label _tituloL;
-	//	private Button _subirFotoB;
-	//	private Image _foto;
-	//	private Label _nombreL;
-	//	private TextField _nombreTF;
-	//	private Label _apellidosL;
-	//	private TextField _apellidosTF;
-	//	private Label _emailL;
-	//	private TextField _emailTF;
-	//	private Label _passwordL;
-	//	private TextField _passwordTF;
-	//	private Label _confirmarPasswordL;
-	//	private TextField _confirmarPasswordTF;
-	//	private Label _descripcionL;
-	//	private TextField _descripcionTF;
-	//	private Label _usuarioL;
-	//	private TextField _usuarioTF;
-	//	private Label _fechaL;
-	//	private TextField _fechaTF;
-	//	private Label _tipoCuentaL;
-	//	private ComboBox _tipoCuentaCB;
-	//	private Button _descartarB;
-	//	private Button _confirmarB;
+public class Registrar extends VistaRegistrarusuario {
+	
 	public Login _iniciar_sesion;
-	iUsuario_No_Registrado  bd = new BDPrincipal();
+	iUsuario_No_Registrado bd = new BDPrincipal();
 	boolean tipoCuenta;
-	private boolean valido;
-	private String foto;
+	private String fotoURL = "";
+	private String fotoURL2 = "";
 	Usuario_No_Registrado interfaz;
+	private Image imagen;
 	int usuarioID;
-
 
 	public Registrar(Usuario_No_Registrado interfaz) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-//		Descartar();
+		Descartar();
 		Subir_foto();
-		this.getNormal().addClickListener(event ->{
+		this.getNormal().addClickListener(event -> {
 			this.getVaadinHorizontalLayout3().setVisible(true);
 			this.getLabel1().setText("Nombre:");
 			tipoCuenta = true;
 			this.getComercial().setValue(false);
 		});
-		this.getComercial().addClickListener(event ->{
+		this.getComercial().addClickListener(event -> {
 			this.getVaadinHorizontalLayout3().setVisible(false);
 			this.getLabel1().setText("Nombre Empresa:");
 			tipoCuenta = false;
 			this.getNormal().setValue(false);
 		});
-		Validar_registro() ;
+		Validar_registro();
 	}
 
 	public boolean getValido() {
@@ -85,50 +53,59 @@ public class Registrar extends VistaRegistrarusuario{
 
 	public void Subir_foto() {
 
-		Upload upload = new Upload();
-		upload.setAcceptedFileTypes("image/*");
+		this.getSubirFoto().addClickListener(event -> {
+			MemoryBuffer  buffer = new MemoryBuffer ();
+			Upload upload = new Upload(buffer);
+			upload.setAcceptedFileTypes("image/*");
 
-		// Añadir un manejador de carga de archivos
-		upload.addSucceededListener(event -> {
-			// Obtener el archivo cargado como un arreglo de bytes
-			byte[] bytes = event.getUpload().toString().getBytes();
+			Dialog dialog = new Dialog();
+			dialog.getElement().setAttribute("aria-label", "Subir Imagen");
 
-			// Crear un recurso de flujo de bytes para la imagen cargada
-			InputStream stream = new ByteArrayInputStream(bytes); 
-			StreamResource resource = new StreamResource("image.png", () -> stream);
+			dialog.add(upload);
 
-			// Crear un componente de imagen para mostrar la imagen cargada
-			Image image = new Image(resource, "Imagen cargada");
+			upload.addSucceededListener(event2 -> {
+				 try {
+		                InputStream inputStream = buffer.getInputStream();
+		                byte[] bytes = inputStream.readAllBytes();
+		                
+		    			System.out.println();
 
-			Notification.show("Imagen cargada correctamente");
+		                
+		                // Ruta donde se almacenará la imagen
+//		                this.fotoURL = System.getProperty("user.dir") + "/src/main/resources/META-INF/resources/icons/" + this.getNombreDeUsuarioTF().getValue() + ".jpg";		                
+		                this.fotoURL = "C:/Users/kino_/Escritorio" + this.getNombreDeUsuarioTF().getValue() + ".jpg";
+		                this.fotoURL2 = "icons/" + this.getNombreDeUsuarioTF().getValue() + ".jpg";
+		                // Guardar la imagen en el directorio		                
+		                FileOutputStream fos = new FileOutputStream(fotoURL);
+		                fos.write(bytes);
+		                fos.close();
+		                
+		                ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
+		                StreamResource streamResource = new StreamResource("image.jpg", () -> byteArrayInputStream);
+		                 this.imagen = new Image(streamResource, "uploaded image");
+		            } catch (Exception e) {
+		                e.printStackTrace();
+		            }
+			});
+			dialog.open();
 		});
-
 	}
-
+	
 	public void Validar_registro() {
-		//		List<UsuarioRegistrado> usuarios = null;
-		//		List<UsuarioComercial> comerciales = null;
-		this.getConfirmar().addClickListener(event ->{
-//			if(tipoCuenta) {
-				this.bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
-						this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(), 
-						tipoCuenta, "icons/luffy.jpg");
-				this.valido = true;
-//			}else {
-//				this.usuarioID = bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(), this.getEmail().getValue(), 
-//						this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(), this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(),
-//						tipoCuenta, "icons/luffy.jpg");
-//				this.valido = false;
-//			}
-
+		this.getConfirmar().addClickListener(event -> {
+			this.bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(),
+					this.getEmail().getValue(), this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(),
+					this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(), tipoCuenta,
+					this.fotoURL2);
 		});
 	}
 
-//	public void Descartar() {
-//		this.getDescartar().addClickListener(event ->{
-//			this.interfaz.cabeceraUNR.setVisible(true);
-//			this.interfaz.getVaadinHorizontalLayout().setVisible(true);
-//			this.interfaz.getVaadinVerticalLayout().as(VerticalLayout.class).remove(this.interfaz.inicioSesion._registrar);
-//		});
-//	}
+	public void Descartar() {
+		this.getDescartar().addClickListener(event -> {
+			this.interfaz.cabeceraUNR.setVisible(true);
+			this.interfaz.getVaadinHorizontalLayout().setVisible(true);
+			this.interfaz.getVaadinVerticalLayout().as(VerticalLayout.class)
+					.remove(this.interfaz.inicioSesion._registrar);
+		});
+	}
 }

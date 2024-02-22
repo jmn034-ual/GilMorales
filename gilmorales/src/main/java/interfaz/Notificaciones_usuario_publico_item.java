@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -11,12 +12,15 @@ public class Notificaciones_usuario_publico_item extends Notificaciones_item {
 	public Notificaciones_usuario_publico _notificaciones_usuario_publico;
 	public Nuevos_seguidores _nuevos_seguidores;
 	public Nuevos_seguidores nuevasMenciones;
-	private ArrayList<Notificacion> notificaciones;
+	private List<Notificacion> notificaciones;
 	private UsuarioRegistrado ur;
 
 	public Notificaciones_usuario_publico_item(UsuarioRegistrado ur) {
 		this.ur = ur;
 		this.notificaciones = new ArrayList<Notificacion>(this.ur.recibe.getCollection());
+		
+//		this.notificaciones = new ArrayList<Notificacion>();
+		System.out.println(notificaciones.isEmpty());
 		
 		if(notificaciones.isEmpty()) {
 			this._nuevos_seguidores = new Nuevos_seguidores();

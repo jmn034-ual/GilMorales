@@ -29,7 +29,8 @@ public class UsuariosRegistrados {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		return usuario;	}
+		return usuario;	
+	}
 
 	public List cargarListaUsuariosRegistrados() throws PersistentException {
 		List<UsuarioRegistrado> usuarios = null;
