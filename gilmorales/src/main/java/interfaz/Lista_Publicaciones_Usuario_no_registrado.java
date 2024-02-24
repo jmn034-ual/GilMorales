@@ -32,6 +32,7 @@ public class Lista_Publicaciones_Usuario_no_registrado extends VistaListaPublica
 
 		this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 		_item.clear();
+		if(lista != null) {
 		for( UsuarioRegistrado u : lista) {
 			if(u.getPrivacidad() == 1){
 				continue;
@@ -43,7 +44,7 @@ public class Lista_Publicaciones_Usuario_no_registrado extends VistaListaPublica
 					_item.add(this.publicacion);
 				}		
 			}
-			
+		}
 		}
 	}
 }

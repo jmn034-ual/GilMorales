@@ -38,6 +38,7 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 		this.ver_perfil = new Ver_perfil_publico(this.usuario);
 		this.getNombreUsuario().addClickListener(event ->{
 			unrInterfaz.getLayoutListaPublicaciones().setVisible(false);
+			unrInterfaz.getLayoutCabeceraTop().setVisible(false);
 			unrInterfaz.cabeceraUNR._cabecera_TOP.setVisible(false);
 //			unrInterfaz.getVaadinHorizontalLayout().remove(unrInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
 			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);

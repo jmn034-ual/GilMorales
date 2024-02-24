@@ -10,7 +10,7 @@ public class Ver_tendencias extends VistaVerTendencias{
 	public Tendencias _tendencias;
 	
 	public Ver_tendencias() {
-		this.getFotoPerfil1().setSizeFull();
+//		this.getFotoPerfil1().setSizeFull();
 		this.getFotoPerfil1().setImage("icons/luffy.jpg");
 		Tendencias();
 //		Ver_lista_Hashtag();

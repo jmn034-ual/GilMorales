@@ -44,9 +44,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	this.getNombreUsuario().setText(ur.getNombreUsuario());
     	this.getNombreYapellidos().setText(ur.getNombre() + " " + ur.getApellidos());
     	this.getBotonBloquear().setVisible(false);
-		   this.imagenPerfil = new Image();
-	        actualizarImagenPerfil(ur.getFoto()); // Método para actualizar la imagen del perfil
-			this.getFotoPerfil1().setImage(this.imagenPerfil.getSrc());
+    	this.getFotoPerfil1().setImage(ur.getFoto());
+    	System.out.println(ur.getFoto());
     	this.ur = ur;
     	Ver_publicaciones_propias();
     	Ver_seguidores();
@@ -57,17 +56,6 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	Eliminar_publicaciones();
     	this.Ver_lista_Hashtag();
 	}
-	
-	 // Método para actualizar la imagen del perfil
-    private void actualizarImagenPerfil(String urlImagen) {
-        if (urlImagen != null && !urlImagen.isEmpty()) {
-            imagenPerfil.setSrc(urlImagen);
-            imagenPerfil.setAlt("Foto de perfil");
-        } else {
-            // Si no hay URL de imagen válida, se puede establecer una imagen de perfil predeterminada
-            // imagenPerfil.setSrc("ruta/a/imagen_predeterminada.jpg");
-        }
-    }
 
 	public void Ver_publicaciones_gustadas__Usuario_registrado_() {
 		this.publicaciones_gustadas = new Ver_publicaciones_gustadas_Usuario_registrado();

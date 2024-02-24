@@ -13,33 +13,33 @@ public class Ver_lista_usuarios_registrados extends VistaVerListaUsuariosRegistr
 	Usuario_No_Registrado unr;
 	Usuario_Registrado ur;
 	
-	public Ver_lista_usuarios_registrados() {
-		this.getStyle().set("width", "100%");
-    	this.getStyle().set("height", "100%");
-		_lista_usuarios_registrados = new Lista_usuarios_registrados();
-		lista_usuarios_registrados();
-		Select<String> select = new Select<>();
-        select.setLabel("Ordenar por:");
-        select.setItems("Me Gustas", "Seguidores",
-                "None");
-        select.setValue("None");
-
-		this.getLayoutBotonOrdenar().add(select);
-	}
+//	public Ver_lista_usuarios_registrados() {
+//		this.getStyle().set("width", "100%");
+//    	this.getStyle().set("height", "100%");
+//		_lista_usuarios_registrados = new Lista_usuarios_registrados();
+//		lista_usuarios_registrados();
+//		Select<String> select = new Select<>();
+//        select.setLabel("Ordenar por:");
+//        select.setItems("Me Gustas", "Seguidores",
+//                "None");
+//        select.setValue("None");
+//
+//		this.getLayoutBotonOrdenar().add(select);
+//	}
 	
 	public Ver_lista_usuarios_registrados(Usuario_Registrado ur) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.ur = ur;
-		_lista_usuarios_registrados = new Lista_usuarios_registrados(this.ur);
-		lista_usuarios_registrados();
+//		_lista_usuarios_registrados = new Lista_usuarios_registrados(this.ur);
+		lista_usuarios_registrados(ur);
 	}
 	public Ver_lista_usuarios_registrados(Usuario_No_Registrado unr) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.unr = unr;
-		_lista_usuarios_registrados = new Lista_usuarios_registrados(this.unr);
-		lista_usuarios_registrados();
+//		_lista_usuarios_registrados = new Lista_usuarios_registrados(this.unr);
+		lista_usuarios_registrados(unr);
 	}
 
 	
@@ -47,11 +47,18 @@ public class Ver_lista_usuarios_registrados extends VistaVerListaUsuariosRegistr
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.adminInterfaz = adminInterfaz;
-		_lista_usuarios_registrados = new Lista_usuarios_registrados(this.adminInterfaz);
-		lista_usuarios_registrados();
+//		_lista_usuarios_registrados = new Lista_usuarios_registrados(this.adminInterfaz);
+		lista_usuarios_registrados(adminInterfaz);
 	}
 	
-	public void lista_usuarios_registrados() {
+	public void lista_usuarios_registrados(Object interfaz) {
+		if(interfaz instanceof Usuario_Registrado) {
+			_lista_usuarios_registrados = new Lista_usuarios_registrados(this.ur);
+		}else if(interfaz instanceof Usuario_No_Registrado) {
+			_lista_usuarios_registrados = new Lista_usuarios_registrados(this.unr);
+		}else {
+			_lista_usuarios_registrados = new Lista_usuarios_registrados(this.adminInterfaz);
+		}
 		this.getLayoutVerticalLista().as(VerticalLayout.class).add(_lista_usuarios_registrados);
 	}
 }

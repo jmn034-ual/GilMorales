@@ -80,8 +80,8 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 	public void Ver_perfilUR() {
 		this.ver_perfil = new Ver_perfil_publico(this.user);
 		this.getBotonNombreUsuario().addClickListener(event ->{
-			ur.getListaPublicaciones().setVisible(false);
-			ur._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
+//			ur.getListaPublicaciones().setVisible(false);
+//			ur._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
 			if(ur.getVaadinHorizontalLayout().getComponentCount() != 0) {
 				ur.getVaadinHorizontalLayout().remove(ur.getVaadinHorizontalLayout().getComponentAt(0));
 			}
@@ -93,8 +93,9 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 	public void Ver_perfilUNR() {
 		this.ver_perfil = new Ver_perfil_publico(this.user);
 		this.getBotonNombreUsuario().addClickListener(event ->{
-			unr.getLayoutListaPublicaciones().setVisible(false);
-			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			if(unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
+				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
+			}
 			unr.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 		

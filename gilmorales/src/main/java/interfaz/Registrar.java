@@ -67,13 +67,10 @@ public class Registrar extends VistaRegistrarusuario {
 				 try {
 		                InputStream inputStream = buffer.getInputStream();
 		                byte[] bytes = inputStream.readAllBytes();
-		                
-		    			System.out.println();
-
+		             
 		                
 		                // Ruta donde se almacenará la imagen
-//		                this.fotoURL = System.getProperty("user.dir") + "/src/main/resources/META-INF/resources/icons/" + this.getNombreDeUsuarioTF().getValue() + ".jpg";		                
-		                this.fotoURL = "C:/Users/kino_/Escritorio" + this.getNombreDeUsuarioTF().getValue() + ".jpg";
+		                this.fotoURL = System.getProperty("user.dir") + "/src/main/resources/META-INF/resources/icons/" + this.getNombreDeUsuarioTF().getValue() + ".jpg";		                
 		                this.fotoURL2 = "icons/" + this.getNombreDeUsuarioTF().getValue() + ".jpg";
 		                // Guardar la imagen en el directorio		                
 		                FileOutputStream fos = new FileOutputStream(fotoURL);

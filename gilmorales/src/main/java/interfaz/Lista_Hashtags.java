@@ -27,11 +27,12 @@ public class Lista_Hashtags extends VistaListaHashtags{
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		_item.clear();
 
+		if(hashtags != null) {
 		for (Hashtag h : hashtags) {
 			this.hashtag = new Lista_Hashtags_item(h);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.hashtag);
 			_item.add(hashtag);
 		}
-
+		}
 	}
 }

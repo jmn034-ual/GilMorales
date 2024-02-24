@@ -27,7 +27,6 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		this.unr = unr;
 		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this.unr);
 //		this.getLayoutListaResultadoBusqueda().setVisible(false);
-		_top_usuarios = new Top_usuarios(unr);
 		Ver_lista_HashtagUNR();
 		Ver_lista_usuarios_registradosUNR();
 		top_hashtags();
@@ -37,7 +36,6 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		this.ur = ur;
 		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this.ur);
 //		this.getLayoutListaResultadoBusqueda().setVisible(false);
-		_top_usuarios = new Top_usuarios(ur);
 		Ver_lista_HashtagUR();
 		Ver_lista_usuarios_registradosUR();
 		top_hashtags();
@@ -96,6 +94,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	}
 
 	public void top_usuarios() {
+		_top_usuarios = new Top_usuarios(unr);
 		this.getListaUsuarios().as(VerticalLayout.class).add(_top_usuarios);
 	}
 

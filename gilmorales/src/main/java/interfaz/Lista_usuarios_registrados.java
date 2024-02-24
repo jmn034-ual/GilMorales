@@ -11,8 +11,8 @@ import bd_dcl.Comentario;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaUsuariosRegistrados;
 
-public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados{
-	//	private ComboBox _ordenarCB;
+public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados {
+	// private ComboBox _ordenarCB;
 	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados;
 	public Vector<Lista_usuarios_registrados_item> _item = new Vector<Lista_usuarios_registrados_item>();
 	iAdministrador bd = new BDPrincipal();
@@ -24,10 +24,12 @@ public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados{
 	public Lista_usuarios_registrados() {
 		cargarListaUsuarios();
 	}
+
 	public Lista_usuarios_registrados(Usuario_No_Registrado unr) {
 		this.unr = unr;
 		cargarListaUsuariosAdministrador();
 	}
+
 	public Lista_usuarios_registrados(Usuario_Registrado ur) {
 		this.ur = ur;
 		cargarListaUsuariosAdministrador();
@@ -43,13 +45,15 @@ public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados{
 
 		this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).removeAll();
 		_item.clear();
+		if (lista != null) {
+			for (UsuarioRegistrado user : lista) {
+				this.usuario = new Lista_usuarios_registrados_item(user);
+				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
+				_item.add(this.usuario);
 
-		for(UsuarioRegistrado user : lista) {
-			this.usuario = new Lista_usuarios_registrados_item(user);
-			this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
-			_item.add(this.usuario);
-
+			}
 		}
+
 	}
 
 	public void cargarListaUsuariosAdministrador() {
@@ -57,21 +61,22 @@ public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados{
 
 		this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).removeAll();
 		_item.clear();
+		if (lista != null) {
+			for (UsuarioRegistrado user : lista) {
+				if (unr != null) {
+					this.usuario = new Lista_usuarios_registrados_item(user, this.unr);
+				} else if (ur != null) {
+					this.usuario = new Lista_usuarios_registrados_item(user, this.ur);
 
-		for(UsuarioRegistrado user : lista) {
-			if(unr != null) {
-				this.usuario = new Lista_usuarios_registrados_item(user, this.unr);
-			}else if(ur != null) {
-				this.usuario = new Lista_usuarios_registrados_item(user, this.ur);
-
-			}else {
-				this.usuario = new Lista_usuarios_registrados_item(user, this.adminInterfaz);
+				} else {
+					this.usuario = new Lista_usuarios_registrados_item(user, this.adminInterfaz);
+				}
+				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
+				_item.add(this.usuario);
 			}
-			this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
-			_item.add(this.usuario);
-
 		}
-	}	
+	}
+
 	public void Ordenar() {
 
 	}
