@@ -7,12 +7,6 @@ import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 
 public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
-	//	private button _seguirB;
-//	private button _comentarB;
-//	private button _dar_me_gusta_publicaci�nB;
-//	private button _denunciarB;
-//	private button _verPerfilB;
-//	private TextField _comentarTF;
 	public Lista_publicaciones_Usuario_Registrado_item _lista_publicaciones__Usuario_Registrado_;
 	public Publicaciones_gustadas_item _publicaciones_gustadas;
 	public Publicaciones_usuario_publico_item _publicaciones_usuario_publico;

@@ -15,12 +15,9 @@ export class VistaRealizarBusqueda extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout id="layoutListaResultadoBusqueda" style="flex-grow: 1; align-items: stretch; flex-shrink: 0; overflow-y: auto; width: 100%; height: 100%;">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout">
-  <vaadin-horizontal-layout style="flex-grow: 0; flex-shrink: 0; width: 85%; justify-content: center;">
-   <h2 id="tituloResultadoBusqueda" style="flex-grow: 0; flex-shrink: 0; margin-left: var(--lumo-space-xl);">Resultado de la Busqueda</h2>
-  </vaadin-horizontal-layout>
-  <vaadin-vertical-layout id="vaadinVerticalLayout" style="flex-grow: 0; align-self: flex-end; flex-shrink: 0; align-items: flex-start; width: 15%; padding-right: var(--lumo-space-xl);"></vaadin-vertical-layout>
+<vaadin-vertical-layout id="layoutListaResultadoBusqueda" style="flex-grow: 1; flex-shrink: 0; overflow-y: auto; width: 100%; height: 100%;">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; flex-shrink: 0; justify-content: space-around;">
+  <h2 id="tituloResultadoBusqueda" style="flex-grow: 0; flex-shrink: 0;">Resultado de la Busqueda</h2>
  </vaadin-horizontal-layout>
  <hr style="width: 95%;">
  <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="align-self: stretch; justify-content: space-around; margin: var(--lumo-space-s);">

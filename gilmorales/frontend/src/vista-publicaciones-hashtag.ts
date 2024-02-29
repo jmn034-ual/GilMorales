@@ -14,7 +14,7 @@ export class VistaPublicacionesHashtag extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutLista"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="height: 100%;" id="layoutLista"></vaadin-vertical-layout>
 `;
   }
 

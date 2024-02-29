@@ -14,7 +14,7 @@ export class VistaVerPublicacionesPropias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
+<vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout" style="width: 100%; height: 100%; overflox-y: auto;"></vaadin-vertical-layout>
 `;
   }
 

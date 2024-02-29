@@ -1,18 +1,9 @@
 package interfaz;
 
-import javax.swing.ImageIcon;
-
-import com.vaadin.flow.component.ClickEvent;
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
-import TikTok.Imagen;
 import TikTok.Video;
 import bd_dcl.Publicacion;
-import vistas.VistaListaPublicacionesUsuarioNoRegistrado;
 import vistas.VistaListaPublicacionesUsuarioNoRegistradoItem;
 
 public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPublicacionesUsuarioNoRegistradoItem{
@@ -72,7 +63,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 
 	public void Ver_publicacion__Usuario_No_Registrado_() {
 		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, this.unr);
-		this.getVer().addClickListener(event ->{
+		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event ->{
 			unr.getLayoutListaPublicaciones().setVisible(false);
 			unr.getLayoutCabeceraTop().setVisible(false);
 			unr.getVaadinHorizontalLayout().add(verPublicacionUNR);

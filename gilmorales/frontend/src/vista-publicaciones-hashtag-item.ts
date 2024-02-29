@@ -16,11 +16,11 @@ export class VistaPublicacionesHashtagItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%;" id="layoutItem" theme="spacing">
- <vaadin-vertical-layout theme="spacing" id="imagenPublicacion"></vaadin-vertical-layout>
- <vaadin-vertical-layout id="vaadinVerticalLayout" style="justify-content: center;">
+<vaadin-horizontal-layout class="content" id="layoutItem" theme="spacing-xs">
+ <vaadin-vertical-layout id="imagenPublicacion" style="justify-content: center; flex-shrink: 0; width: 2%;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout id="vaadinVerticalLayout" style="justify-content: center; flex-shrink: 0;">
   <vaadin-button theme="tertiary" id="botonNombreUsuario">
-   NombreUsuario
+    NombreUsuario 
   </vaadin-button>
   <label id="descripcion" style="flex-grow: 0; width: 100%;">Label</label>
  </vaadin-vertical-layout>

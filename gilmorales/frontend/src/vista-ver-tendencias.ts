@@ -26,7 +26,7 @@ export class VistaVerTendencias extends LitElement {
     Ver Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0; position: fixed; height: 95%; flex-shrink: 0; padding-left: 180px; width: 99%;">
+ <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0; height: 95%; flex-shrink: 0; padding-left: 180px; width: 99%;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="flex-grow: 0; margin: var(--lumo-space-xs); margin-top: var(--lumo-space-l); flex-shrink: 0; align-self: stretch;">
    <vaadin-vertical-layout theme="spacing" id="fotoPerfil">
     <vaadin-avatar id="fotoPerfil1" style="width: 150px; height: 150px;"></vaadin-avatar>
@@ -44,7 +44,7 @@ export class VistaVerTendencias extends LitElement {
       Enviar Petición de Amistad 
     </vaadin-button>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout3" style="flex-grow: 1; margin: var(--lumo-space-xs);">
+   <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout3" style="flex-grow: 1; padding-right: 70px;">
     <vaadin-button id="botonBloquear" style="align-self: flex-end; margin: var(--lumo-space-xs);">
       Button 
     </vaadin-button>

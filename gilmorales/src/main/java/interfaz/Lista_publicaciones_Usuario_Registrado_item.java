@@ -68,7 +68,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	
 	public void Ver_publicacion_ajena() {
 		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.user, this.urinterfaz);
-		this.getVer().addClickListener(event ->{
+		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event ->{
 			urinterfaz.getListaPublicaciones().setVisible(false);
 			urinterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
 			urinterfaz.getVaadinHorizontalLayout().add(_ver_publicacion_ajena);

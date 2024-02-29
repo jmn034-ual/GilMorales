@@ -17,14 +17,15 @@ public class Top_usuarios extends VistaTopUsuarios{
 	Top_usuarios_item tui;
 	Usuario_Registrado user;
 	Usuario_No_Registrado unr;
-	public Top_usuarios(Usuario_No_Registrado unr) {
-		this.unr = unr;
+	public Top_usuarios(Object user) {
+		if(user instanceof Usuario_No_Registrado) {
+			this.unr = (Usuario_No_Registrado) user;
+		}else {
+			this.user = (Usuario_Registrado) user;
+		}			
 		cargarUsuariosTOP();
 	}
-	public Top_usuarios(Usuario_Registrado ur) {
-		this.user = ur;
-		cargarUsuariosTOP();
-	}
+
 	
 	public void cargarUsuariosTOP() {
 		List<UsuarioRegistrado> top = bd.cargarListaUsuariosTOP();

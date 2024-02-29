@@ -39,7 +39,7 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue());
 			System.out.println(this.getTextoBusqueda().getValue());
 			this._realizar_busqueda.setVisible(true);
-			this._cabecera_TOP.setVisible(false);
+			this._cabecera_TOP.setVisible(true);
 			if(unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
 				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
 			}

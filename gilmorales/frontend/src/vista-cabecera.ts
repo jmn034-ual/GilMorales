@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-cabecera')
 export class VistaCabecera extends LitElement {
@@ -47,7 +47,6 @@ export class VistaCabecera extends LitElement {
     Cerrar Sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="width: 100%; margin-top: 5%; max-height: 92%; flex-grow: 0; flex-shrink: 0; align-items: center; overflow-y: auto; z-index: 999; height: 100%;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

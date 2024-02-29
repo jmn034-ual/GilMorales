@@ -14,6 +14,7 @@ import vistas.VistaCabecera;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.select.Select;
+import com.vaadin.flow.component.html.H4;
 
 /**
  * A Designer generated component for the vista-cabecera-top template.
@@ -28,18 +29,18 @@ public class VistaCabeceraTop extends LitTemplate {
 
 	@Id("cabeceraTop")
 	private Element cabeceraTop;
-	@Id("tituloUsuarios")
-	private H3 tituloUsuarios;
 	@Id("listaUsuarios")
 	private Element listaUsuarios;
 	@Id("botonVerListaUsuarios")
 	private Button botonVerListaUsuarios;
 	@Id("tituloHashtag")
-	private H3 tituloHashtag;
+	private H4 tituloHashtag;
 	@Id("listaTopHashtag")
 	private Element listaTopHashtag;
 	@Id("botonVerListaHashtag")
 	private Button botonVerListaHashtag;
+	@Id("tituloUsuarios")
+	private H4 tituloUsuarios;
 	
 	
 
@@ -55,13 +56,13 @@ public class VistaCabeceraTop extends LitTemplate {
 
 
 
-	public H3 getTituloUsuarios() {
+	public H4 getTituloUsuarios() {
 		return tituloUsuarios;
 	}
 
 
 
-	public void setTituloUsuarios(H3 tituloUsuarios) {
+	public void setTituloUsuarios(H4 tituloUsuarios) {
 		this.tituloUsuarios = tituloUsuarios;
 	}
 
@@ -91,13 +92,13 @@ public class VistaCabeceraTop extends LitTemplate {
 
 
 
-	public H3 getTituloHashtag() {
+	public H4 getTituloHashtag() {
 		return tituloHashtag;
 	}
 
 
 
-	public void setTituloHashtag(H3 tituloHashtag) {
+	public void setTituloHashtag(H4 tituloHashtag) {
 		this.tituloHashtag = tituloHashtag;
 	}
 
