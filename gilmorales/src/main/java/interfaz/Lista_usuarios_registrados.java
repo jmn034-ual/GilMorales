@@ -3,6 +3,7 @@ package interfaz;
 import java.util.List;
 import java.util.Vector;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -61,20 +62,36 @@ public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados {
 
 		this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).removeAll();
 		_item.clear();
-		if (lista != null) {
-			for (UsuarioRegistrado user : lista) {
-				if (unr != null) {
-					this.usuario = new Lista_usuarios_registrados_item(user, this.unr);
-				} else if (ur != null) {
-					this.usuario = new Lista_usuarios_registrados_item(user, this.ur);
-
-				} else {
-					this.usuario = new Lista_usuarios_registrados_item(user, this.adminInterfaz);
+//		if (lista != null) {
+//			for (UsuarioRegistrado user : lista) {
+//				if (unr != null) {
+//					this.usuario = new Lista_usuarios_registrados_item(user, this.unr);
+//				} else if (ur != null) {
+//					this.usuario = new Lista_usuarios_registrados_item(user, this.ur);
+//
+//				} else {
+//					this.usuario = new Lista_usuarios_registrados_item(user, this.adminInterfaz);
+//				}
+//				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
+//				_item.add(this.usuario);
+//			}
+//		}
+				int tamanio = lista.size();
+				for(int i = 0; i < lista.size(); i++) {
+					if(tamanio >= 3) {					
+						this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_usuarios_registrados_item(lista.get(i)),
+								new Lista_usuarios_registrados_item(lista.get(++i)), new Lista_usuarios_registrados_item(lista.get(i+=1))));
+						System.out.println("Hay 3 o mas");
+						tamanio -= 3;
+					}else if(tamanio == 2){
+						this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_usuarios_registrados_item(lista.get(i)),
+								new Lista_usuarios_registrados_item(lista.get(++i))));
+						System.out.println("Hay menos de 3");
+					}else {
+						this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_usuarios_registrados_item(lista.get(i))));
+					}
 				}
-				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
-				_item.add(this.usuario);
-			}
-		}
+			
 	}
 
 	public void Ordenar() {

@@ -3,6 +3,7 @@ package interfaz;
 import java.util.List;
 import java.util.Vector;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -28,11 +29,26 @@ public class Lista_Hashtags extends VistaListaHashtags{
 		_item.clear();
 
 		if(hashtags != null) {
-		for (Hashtag h : hashtags) {
-			this.hashtag = new Lista_Hashtags_item(h);
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.hashtag);
-			_item.add(hashtag);
-		}
+//		for (Hashtag h : hashtags) {
+//			this.hashtag = new Lista_Hashtags_item(h);
+//			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.hashtag);
+//			_item.add(hashtag);
+//		}
+			int tamanio = hashtags.size();
+			for(int i = 0; i < hashtags.size(); i++) {
+				if(tamanio >= 3) {					
+					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i)),
+							new Lista_Hashtags_item(hashtags.get(++i)), new Lista_Hashtags_item(hashtags.get(i+=1))));
+					System.out.println("Hay 3 o mas");
+					tamanio -= 3;
+				}else if(tamanio == 2){
+					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i)),
+							new Lista_Hashtags_item(hashtags.get(++i))));
+					System.out.println("Hay menos de 3");
+				}else {
+					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i))));
+				}
+			}
 		}
 	}
 }

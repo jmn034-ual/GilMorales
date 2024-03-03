@@ -17,8 +17,8 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem{
 	public Publicaciones_hashtag_item(Publicacion p) {
 		this.publicacion = p;
 		Video video = new Video(this.publicacion.getVideo());
-		video.getStyle().set("width", "50%");
-		video.getStyle().set("height", "50%");
+		video.getStyle().set("width", "70%");
+		video.getStyle().set("height", "70%");
 		this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getImagenPublicacion().as(VerticalLayout.class).add(video);

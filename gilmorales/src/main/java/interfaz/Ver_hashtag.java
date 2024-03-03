@@ -1,11 +1,6 @@
 package interfaz;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.swing.ImageIcon;
-
-import com.sun.jna.platform.unix.X11.Visual;
 import com.vaadin.flow.component.html.Image;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -16,10 +11,7 @@ import bd_dcl.Hashtag;
 import vistas.VistaVerHashtag;
 
 public class Ver_hashtag extends VistaVerHashtag{
-//	private IronIcon _iconoHashtag;
-//	private Label _nombreHashtagL;
-//	private int _numeroVisualizaciones;
-//	private Label _visualizacionesL;
+
 	public Top_hashtags_item _top_hashtags;
 	public Resultado_hashtags_item _resultado_hashtags;
 	public Tendencias_item _tendencias;

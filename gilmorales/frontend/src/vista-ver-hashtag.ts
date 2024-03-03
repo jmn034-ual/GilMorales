@@ -15,9 +15,8 @@ export class VistaVerHashtag extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%;" id="cabecera"></vaadin-vertical-layout>
 <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%; height: 100%; overflow-y: auto; scrollbar-color: transparent transparent;">
- <vaadin-horizontal-layout id="layoutDatosHashtag" style="justify-content: center; align-self: center; flex-shrink: 0;">
+ <vaadin-horizontal-layout id="layoutDatosHashtag" style="justify-content: center; align-self: center; flex-shrink: 0; margin-top: var(--lumo-space-xl);">
   <vaadin-vertical-layout id="imagenHashtag" style="flex-shrink: 0; align-self: center; align-items: center;"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="layoutInformacionHashtag">
    <h2 id="h2">#NombreHashtag</h2>
@@ -27,9 +26,8 @@ export class VistaVerHashtag extends LitElement {
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="layoutLista" style="flex-grow: 0; flex-shrink: 0; align-self: center;">
-  <vaadin-horizontal-layout theme="spacing" id="layoutHorizontal" style="width: 100%;"></vaadin-horizontal-layout>
- </vaadin-vertical-layout>
+ <hr style="width: 98%; height: 2px;">
+ <vaadin-vertical-layout theme="spacing" id="layoutLista" style="flex-grow: 0; flex-shrink: 0; align-self: center; width: 100%; align-items: center;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

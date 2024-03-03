@@ -19,8 +19,6 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-ver-hashtag.ts")
 public class VistaVerHashtag extends LitTemplate {
 
-    @Id("cabecera")
-	private Element cabecera;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("layoutDatosHashtag")
@@ -39,23 +37,6 @@ public class VistaVerHashtag extends LitTemplate {
 	private Label labelNumVisualizaciones;
 	@Id("layoutLista")
 	private Element layoutLista;
-	@Id("layoutHorizontal")
-	private HorizontalLayout layoutHorizontal;
-	
-	
-	
-
-	public Element getCabecera() {
-		return cabecera;
-	}
-
-
-
-
-	public void setCabecera(Element cabecera) {
-		this.cabecera = cabecera;
-	}
-
 
 
 
@@ -181,22 +162,6 @@ public class VistaVerHashtag extends LitTemplate {
 	public void setLayoutLista(Element layoutLista) {
 		this.layoutLista = layoutLista;
 	}
-
-
-
-
-	public HorizontalLayout getLayoutHorizontal() {
-		return layoutHorizontal;
-	}
-
-
-
-
-	public void setLayoutHorizontal(HorizontalLayout layoutHorizontal) {
-		this.layoutHorizontal = layoutHorizontal;
-	}
-
-
 
 
 	/**

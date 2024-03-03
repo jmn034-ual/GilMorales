@@ -42,10 +42,11 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	public void Add_publicacion() {
 		this.addPubli = new Add_publicacion(ur, urInterfaz);
 		this.getBotonAniadir().addClickListener(event->{
+			this.addPubli = new Add_publicacion(ur, urInterfaz);
 			this.getBotonAniadir().setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
-    		this._cabecera_TOP.getCabeceraTop().setVisible(false);
+			urInterfaz.getCabeceraTop().setVisible(false);
 			this.addPubli.setVisible(true);
 			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
 				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
@@ -58,9 +59,10 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	public void Ver_notificaciones() {
 		_ver_notificaciones = new Ver_notificaciones(this.ur);
 		this.getBotonNotificaciones().addClickListener(event -> {
+			_ver_notificaciones = new Ver_notificaciones(this.ur);
 			this._ver_notificaciones.setVisible(true);
 			this.getBotonNotificaciones().setVisible(false);
-			this._cabecera_TOP.getCabeceraTop().setVisible(false);
+			urInterfaz.getCabeceraTop().setVisible(false);
 			this.addPubli.setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
@@ -75,6 +77,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	public void Ver_perfil_propio() {
 		_ver_perfil_propio =  new Ver_perfil_propio(ur);
 		this.getBotonPerfil().addClickListener(event -> {
+
 			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
 			this._ver_perfil_propio.getLayoutTendencias().setVisible(true);
 			this._ver_notificaciones.setVisible(false);

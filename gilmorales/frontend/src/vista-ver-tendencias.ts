@@ -18,7 +18,7 @@ export class VistaVerTendencias extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="flex-shrink: 0; padding-top: var(--lumo-space-l);">
+<vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="flex-shrink: 0; padding-top: var(--lumo-space-l); overflow-y: auto;">
  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 0; position: fixed; align-items: center; z-index: 999; height: 100%; width: 170px; margin-left: 0%; padding: 0%; justify-content: flex-start; margin-top: 0px;" id="layoutTendencias" theme="spacing-xs">
   <h4 id="tituloTendencias" style="align-self: center; margin-bottom: 0px; margin-top: 0px;">Tendencias </h4>
   <vaadin-vertical-layout id="layoutHashtags" style="flex-grow: 0; align-self: center; align-items: center; flex-shrink: 0; justify-content: flex-start; margin-top: 0%; padding: 0%;"></vaadin-vertical-layout>
@@ -26,7 +26,7 @@ export class VistaVerTendencias extends LitElement {
     Ver Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0; height: 95%; flex-shrink: 0; padding-left: 180px; width: 99%;">
+ <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0; height: 95%; flex-shrink: 0; padding-left: 180px; width: 99%; overflow-y: auto;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="flex-grow: 0; margin: var(--lumo-space-xs); margin-top: var(--lumo-space-l); flex-shrink: 0; align-self: stretch;">
    <vaadin-vertical-layout theme="spacing" id="fotoPerfil">
     <vaadin-avatar id="fotoPerfil1" style="width: 150px; height: 150px;"></vaadin-avatar>
@@ -84,10 +84,10 @@ export class VistaVerTendencias extends LitElement {
      Me Gustas 
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <hr style="width: 90%;">
-  <vaadin-vertical-layout theme="spacing" id="listaMeGustas" style="flex-grow: 1; width: 90%; overflox-y: auto; flex-shrink: 0; align-self: center;"></vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; width: 100%; overflox-y: auto; flex-shrink: 0;">
-   <vaadin-horizontal-layout theme="spacing" id="layoutHorizontalPublicaciones" style="flex-shrink: 0; flex-grow: 1; align-self: center; width: 90%;"></vaadin-horizontal-layout>
+  <hr style="width: 98%; align-self: center;">
+  <vaadin-vertical-layout theme="spacing" id="listaMeGustas" style="flex-grow: 1; width: 90%; overflow-y: auto; flex-shrink: 0; align-self: center;"></vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 1; width: 100%; overflow-y: auto; flex-shrink: 0;">
+   <vaadin-horizontal-layout theme="spacing" id="layoutHorizontalPublicaciones" style="flex-shrink: 0; flex-grow: 1; align-self: center; width: 90%; overflow-y: auto;"></vaadin-horizontal-layout>
    <label id="labelUsuarioPrivado" style="align-self: center;">Perfil privado, para ver sus videos envíe una petición de amistad.</label>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>

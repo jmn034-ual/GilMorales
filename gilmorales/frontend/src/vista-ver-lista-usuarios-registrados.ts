@@ -20,7 +20,8 @@ export class VistaVerListaUsuariosRegistrados extends LitElement {
   <h1 style="flex-grow: 0; align-self: center; flex-shrink: 0; margin-top: 5%;" id="titulo">Lista de Usuarios Registrados</h1>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="align-self: flex-end; margin: var(--lumo-space-s); margin-right: 3%;" id="layoutBotonOrdenar"></vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing" id="layoutVerticalLista" style="flex-grow: 1; width: 100%; flex-shrink: 0; justify-content: flex-start;"></vaadin-vertical-layout>
+ <hr style="width: 98%; align-self: center; height: 2px;">
+ <vaadin-vertical-layout theme="spacing" id="layoutVerticalLista" style="flex-grow: 1; width: 100%; flex-shrink: 0; justify-content: flex-start; align-items: center;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }
