@@ -29,8 +29,9 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 		this.ver_perfil = new Ver_perfil_publico(this.usuario);
 		this.getNombreUsuario().addClickListener(event ->{
 			ur.getListaPublicaciones().setVisible(false);
+			ur.getCabeceraTop().setVisible(false);
 			ur._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
-			ur.getVaadinHorizontalLayout().remove(ur.getVaadinHorizontalLayout().getComponentAt(0));
+//			ur.getVaadinHorizontalLayout().remove(ur.getVaadinHorizontalLayout().getComponentAt(0));
 			ur.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}

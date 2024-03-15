@@ -16,7 +16,7 @@ export class VistaListaHashtagsItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" id="vaadinHorizontalLayout" style="z-index: 11; background-color: #423F3F; width: 600px; align-items: center;">
+<vaadin-horizontal-layout class="content" id="vaadinHorizontalLayout" style="z-index: 11; background-color: #423F3F; width: 33,3%; align-items: center;">
  <vaadin-vertical-layout id="video" style="align-items: center; width: 70%; align-self: center;"></vaadin-vertical-layout>
  <vaadin-vertical-layout id="datosHashtags" style="flex-grow: 0; flex-shrink: 0; z-index: 12; width: 30%; align-self: center;">
   <vaadin-button theme="tertiary" id="nombreHashtags" style="z-index: 13; flex-shrink: 0; align-self: center;">

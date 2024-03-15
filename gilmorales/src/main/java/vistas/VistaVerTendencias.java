@@ -12,6 +12,7 @@ import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.avatar.Avatar;
+import com.vaadin.flow.component.html.Hr;
 
 /**
  * A Designer generated component for the vista-ver-tendencias template.
@@ -85,8 +86,6 @@ public class VistaVerTendencias extends LitTemplate {
 	private Button botonMeGustas;
 	@Id("layoutListaPublicaciones")
 	private Element layoutListaPublicaciones;
-	@Id("layoutHorizontalPublicaciones")
-	private HorizontalLayout layoutHorizontalPublicaciones;
 	@Id("labelUsuarioPrivado")
 	private Label labelUsuarioPrivado;
 	@Id("verSeguidores")
@@ -99,7 +98,21 @@ public class VistaVerTendencias extends LitTemplate {
 	private Element listaMeGustas;
 	@Id("botonBloquear")
 	private Button botonBloquear;
+	@Id("barraHorizontal")
+	private Hr barraHorizontal;
 	
+
+	public Hr getBarraHorizontal() {
+		return barraHorizontal;
+	}
+
+
+
+	public void setBarraHorizontal(Hr barraHorizontal) {
+		this.barraHorizontal = barraHorizontal;
+	}
+
+
 
 	public Button getBotonBloquear() {
 		return botonBloquear;
@@ -529,19 +542,6 @@ public class VistaVerTendencias extends LitTemplate {
 	public void setLayoutListaPublicaciones(Element layoutListaPublicaciones) {
 		this.layoutListaPublicaciones = layoutListaPublicaciones;
 	}
-
-
-
-	public HorizontalLayout getLayoutHorizontalPublicaciones() {
-		return layoutHorizontalPublicaciones;
-	}
-
-
-
-	public void setLayoutHorizontalPublicaciones(HorizontalLayout layoutHorizontalPublicaciones) {
-		this.layoutHorizontalPublicaciones = layoutHorizontalPublicaciones;
-	}
-
 
 
 	public Label getLabelUsuarioPrivado() {

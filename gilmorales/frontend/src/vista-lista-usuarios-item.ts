@@ -17,9 +17,9 @@ export class VistaListaUsuariosItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="z-index: 11; background-color: #423F3F; width: 600px; align-items: center;">
- <vaadin-vertical-layout id="layoutPublicacion" style="align-items: center; width: 70%; align-self: center;"></vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" id="labelInformacion" style="flex-grow: 0; flex-shrink: 0; z-index: 12; width: 30%; align-self: center;">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="z-index: 11; background-color: #423F3F; align-items: center;">
+ <vaadin-vertical-layout id="layoutPublicacion" style="align-items: center; align-self: center; flex-shrink: 1;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="labelInformacion" style="flex-grow: 0; flex-shrink: 1; z-index: 12; align-self: center;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1">
    <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
    <vaadin-button theme="tertiary" id="botonNombreUsuario">

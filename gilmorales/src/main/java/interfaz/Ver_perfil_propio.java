@@ -180,6 +180,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 	@Override
 	public void Ver_lista_Hashtag() {
+		super.Ver_lista_Hashtag();
 		this.getBotonVerListaHashtags().addClickListener(event ->{
 			this._ver_lista_Hashtag.setVisible(true);
 			this.getVaadinVerticalLayout1().setVisible(false);

@@ -21,6 +21,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.userAver = userAver;
+//    	this.getBarraHorizontal().setVisible(true);   
     	this.getBotonSeguir().setVisible(false);
     	this.getVerSeguidores().setVisible(false);
     	this.getVerSiguiendos().setVisible(false);

@@ -24,9 +24,6 @@ public class VistaVerListaHashtags extends LitTemplate {
 	private H1 h1;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
-
 	
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
@@ -56,19 +53,6 @@ public class VistaVerListaHashtags extends LitTemplate {
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
-
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-
-
 
 	/**
      * Creates a new VistaVerListaHashtags.

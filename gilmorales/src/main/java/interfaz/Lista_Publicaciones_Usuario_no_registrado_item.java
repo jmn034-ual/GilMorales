@@ -74,7 +74,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		verComentariosUNR = new Ver_comentarios_Usuario_No_registrado(this.publicacion, unr);
 		this.getBotonVerComentarios().addClickListener(event -> {
 			unr.getLayoutListaPublicaciones().setVisible(false);
-			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			unr.getLayoutCabeceraTop().setVisible(false);
 			unr.getVaadinHorizontalLayout().add(verComentariosUNR);
 		});
 	}

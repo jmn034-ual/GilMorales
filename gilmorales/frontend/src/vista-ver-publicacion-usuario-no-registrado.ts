@@ -18,11 +18,11 @@ export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
 
  render() {
     return html`
-<vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; height: 100%;">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; justify-content: center; flex-shrink: 0; margin: var(--lumo-space-m); margin-top: var(--lumo-space-l);">
+<vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; height: 100%;  overflow-y: auto;  scrollbar-color: transparent transparent;">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; justify-content: center; flex-shrink: 0; scrollbar-color: transparent transparent; overflow-y: auto; height: 100%;">
   <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 0; flex-shrink: 0; margin: var(--lumo-space-m);">
    <vaadin-horizontal-layout id="video" style="flex-grow: 0; align-self: center; flex-shrink: 0; margin-left: var(--lumo-space-m); margin-top: var(--lumo-space-l);"></vaadin-horizontal-layout>
-   <vaadin-horizontal-layout id="layoutNumVisualizaciones" style="flex-shrink: 1; margin: var(--lumo-space-s);" theme="spacing-s">
+   <vaadin-horizontal-layout id="layoutNumVisualizaciones" style="flex-shrink: 1;" theme="spacing-s">
     <label id="numVisualizaciones">0</label>
     <label id="label">Visualizaciones</label>
    </vaadin-horizontal-layout>
