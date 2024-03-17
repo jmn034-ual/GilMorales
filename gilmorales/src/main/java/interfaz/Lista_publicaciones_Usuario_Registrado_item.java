@@ -38,10 +38,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this.getVaadinButton().setVisible(true);
 		this.getLabelMeGustas().setVisible(false);
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
-		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas()+"");
 		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios()+"");
 		this.getLayoutComentar().setVisible(true);
-		Dar_me_gusta_publicacion();
 		Ver_comentarios__Usuario_No_registrado_();
 		mostrarDatosUsuario();
 		if(this.publicacion.getPerteneceA() != null) {
@@ -53,6 +51,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		Dar_me_gusta_publicacion();
 		Ver_publicacion_ajena();
 		Denunciar_publicacion();
+		Comentar();
 		
 	}
 	@Override
@@ -82,8 +81,12 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Dar_me_gusta_publicacion() {
+		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getVaadinButton().addClickListener(event -> {
 			this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
+			System.out.println("El numero de me gustas es ----> " + publicacion.getNumMeGustas());
+//			this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+			NumeroMeGustas(this.publicacion.getNumMeGustas());
 		});
 	}
 

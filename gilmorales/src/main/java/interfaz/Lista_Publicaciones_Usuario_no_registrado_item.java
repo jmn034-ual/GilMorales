@@ -24,14 +24,13 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
     	this.getStyle().set("height", "100%");
 		this.unr = unr;
 		this.publicacion = publicacion;
-		this.numeroMeGustas = publicacion.getNumMeGustas();
 		this.getLayoutBotonesUsuarioR().setVisible(false);
 		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
 		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
 		this.getVaadinButton().setVisible(false);
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
-		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas()+"");
-		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios()+"");
+		NumeroComentarios();
+		NumeroMeGustas(publicacion.getNumMeGustas());
 		this.getLayoutComentar().setVisible(false);
 		Ver_comentarios__Usuario_No_registrado_();
 		mostrarDatosUsuario();
@@ -79,15 +78,12 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		});
 	}
 
-	public void NumeroMeGustas() {
-		this.getVaadinButton().addClickListener(event ->{
-			bMeGustaPulsado = bMeGustaPulsado == 0 ? 1 : 0;
-			numeroMeGustas = bMeGustaPulsado == 1 ? ++numeroMeGustas : --numeroMeGustas;
-			this.getLabelNumMeGustas().setText(""+numeroMeGustas);			
-		});
+	public void NumeroMeGustas(int numMegustas) {
+		this.numeroMeGustas = numMegustas;
+		this.getLabelNumMeGustas().setText(numeroMeGustas+"");
 	}
 
 	public void NumeroComentarios() {
-		throw new UnsupportedOperationException();
+		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios()+"");
 	}
 }

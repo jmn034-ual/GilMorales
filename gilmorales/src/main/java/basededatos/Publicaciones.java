@@ -120,16 +120,18 @@ public class Publicaciones {
 		try {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
+
 			if(!p.gustaA.contains(usuario)) {
-				p.setNumMeGustas(p.getNumMeGustas()+1);
 				p.gustaA.add(usuario);
+				p.setNumMeGustas(p.gustaA.size());
 				usuario.daMeGustaPublicacion.add(p);
 			}else {
-				usuario.daMeGustaPublicacion.remove(p);
-				p.setNumMeGustas(p.getNumMeGustas()-1);
 				p.gustaA.remove(usuario);
+				usuario.daMeGustaPublicacion.remove(p);
+				p.setNumMeGustas(p.gustaA.size());
 			}
 			PublicacionDAO.save(p);
+			t.commit();			
 		} catch (Exception e) {
 			t.rollback();
 		}
@@ -142,6 +144,7 @@ public class Publicaciones {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			publicaciones = PublicacionDAO.queryPublicacion(null, null);
+			t.commit();			
 		} catch (Exception e) {
 			t.rollback();
 		}
