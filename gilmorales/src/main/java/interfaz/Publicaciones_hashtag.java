@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bd_dcl.Hashtag;
@@ -17,6 +18,8 @@ public class Publicaciones_hashtag extends VistaPublicacionesHashtag{
 	Publicaciones_hashtag_item publicacion;
 	
 	public Publicaciones_hashtag(Hashtag hashtag) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this.hashtag = hashtag;
 		cargarPubliacaciones();
 	}
@@ -26,11 +29,26 @@ public class Publicaciones_hashtag extends VistaPublicacionesHashtag{
 
 		this.getLayoutLista().as(VerticalLayout.class).removeAll();
 		this._item.clear();
-		
-		for(Publicacion p : publicaciones) {
-			publicacion = new Publicaciones_hashtag_item(p);
-			this.getLayoutLista().as(VerticalLayout.class).add(publicacion);
-			this._item.add(publicacion);
+
+		if(publicaciones != null) {
+			int tamanio = publicaciones.size();
+			for(int i = 0; i < publicaciones.size(); i++) {
+				if(tamanio >= 3) {					
+					this.getLayoutLista().as(VerticalLayout.class).add(new HorizontalLayout(new Publicaciones_hashtag_item(publicaciones.get(i)),
+							new Publicaciones_hashtag_item(publicaciones.get(++i)), new Publicaciones_hashtag_item(publicaciones.get(i+=1))));
+					tamanio -= 3;
+				}else if(tamanio == 2){
+					HorizontalLayout horizontal2 = new HorizontalLayout(new Publicaciones_hashtag_item(publicaciones.get(i)),
+							new Publicaciones_hashtag_item(publicaciones.get(++i)));
+					horizontal2.getStyle().set("width", "66.66%");
+
+					this.getLayoutLista().as(VerticalLayout.class).add(horizontal2);
+				}else {
+					HorizontalLayout horizontal = new HorizontalLayout(new Publicaciones_hashtag_item(publicaciones.get(i)));
+					horizontal.getStyle().set("width", "33%");
+					this.getLayoutLista().as(VerticalLayout.class).add(horizontal);
+				}
+			}
 		}
 	}
 }

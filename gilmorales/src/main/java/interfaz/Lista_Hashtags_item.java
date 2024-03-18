@@ -33,7 +33,9 @@ public class Lista_Hashtags_item extends VistaListaHashtagsItem{
 	}
 
 	public void Ver_hashtag() {
-		throw new UnsupportedOperationException();
+		this.getNombreHashtags().addClickListener(event ->{
+			
+		});
 	}
 
 	public void Visualizaciones() {

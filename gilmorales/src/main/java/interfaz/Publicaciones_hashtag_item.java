@@ -11,7 +11,8 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem{
 
 	public Publicaciones_hashtag _publicaciones_hashtag;
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
-	public Ver_Perfil__2 _ver_perfil;
+	public Ver_perfil_publico perfilPublico;
+	public Ver_perfil_privado perfilPrivado;
 	Publicacion publicacion;
 	
 	public Publicaciones_hashtag_item(Publicacion p) {
@@ -33,6 +34,16 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem{
 	}
 
 	public void Ver_perfil() {
-		throw new UnsupportedOperationException();
+		this.getBotonNombreUsuario().addClickListener(event ->{
+			if(this.publicacion.getPerteneceA()!= null && this.publicacion.getPerteneceA().getPrivacidad() != 0) {
+				perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA());
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPrivado);
+			}else if(this.publicacion.getPerteneceA() != null) {
+				perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA());
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPublico);
+			}
+		});
 	}
 }

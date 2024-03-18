@@ -26,22 +26,25 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
     	this.getStyle().set("height", "100%");
 		this.unr = unr;
 		this.publicacion = publicacion;
-		this.getLayoutBotonesUsuarioR().setVisible(false);
-		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
-		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
-		this.getVaadinButton().setVisible(false);
-		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
 		NumeroComentarios();
 		NumeroMeGustas();
-		this.getLayoutComentar().setVisible(false);
 		Ver_comentarios__Usuario_No_registrado_();
 		mostrarDatosUsuario();
 		if(this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();	
 		}else {
-			this.getBotonNombreUsuario().setDisableOnClick(false);
+			this.getBotonNombreUsuario().setEnabled(false);
 		}
 		Ver_publicacion__Usuario_No_Registrado_();
+	}
+	public void mostrarDatosPublicacion() {
+		this.getLayoutBotonesUsuarioR().setVisible(false);
+		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
+		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
+		this.getVaadinButton().setVisible(false);
+		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
+		this.getLayoutComentar().setVisible(false);
+
 	}
 	public void mostrarDatosUsuario() {
 		if(this.publicacion.getPerteneceA() != null) {
@@ -51,8 +54,9 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 			this.getVaadinAvatar().setImage(this.publicacion.getEsPublicada().getFoto());
 			this.getBotonNombreUsuario().setText(this.publicacion.getEsPublicada().getNombreUsuarioComercial());
 		}
-
+		mostrarDatosPublicacion();
 	}
+	
 	public void Ver_perfil() {
 		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA());
 		this.getBotonNombreUsuario().addClickListener(event ->{

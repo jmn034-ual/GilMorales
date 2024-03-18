@@ -33,7 +33,6 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
     	this.getListaMeGustas().setVisible(false);
     	this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
     	this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
-    	_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas_Otro_usuario();
     	publicaciones_usuario_publico();
 	}
 	
@@ -85,6 +84,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	}
 
 	public void Ver_publicacciones_gustadas__Otro_usuario_() {
+    	_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas_Otro_usuario();
 		this.getBotonMeGustas().addClickListener(event ->{
 			this.getLayoutListaPublicaciones().setVisible(false);
 			this.getListaMeGustas().setVisible(true);
