@@ -26,19 +26,19 @@ public class BDPrincipal
 		iVer_perfil_privado, iVer_perfil, iPlataformas_externas, iUsuario_Registrado, iIniciar_sesion {
 	public Comentarios comentarios = new Comentarios();
 	public Notificaciones notificaciones = new Notificaciones();
-	public UsuariosRegistrados usuario_registrado = new UsuariosRegistrados();
-	public Publicaciones publicacion = new Publicaciones();
-	public UsuariosComerciales comercial = new UsuariosComerciales();
-	public Hashtags hashtag = new Hashtags();
+	public UsuariosRegistrados usuarios_registrados = new UsuariosRegistrados();
+	public Publicaciones publicaciones = new Publicaciones();
+	public UsuariosComerciales comerciales = new UsuariosComerciales();
+	public Hashtags hashtags = new Hashtags();
 	public UsuariosAdministradores _c_usuarioAdministrador = new UsuariosAdministradores();
-	public Denuncias denuncia = new Denuncias();
+	public Denuncias denuncias = new Denuncias();
 
 	TreeMap<String, String> nombresUsuarios = new TreeMap<String, String>();
 
 	public UsuarioComercial cargarUsuarioComercial(int aUsuarioComercialID) {
 		UsuarioComercial comercial = null;
 		try {
-			comercial = this.comercial.cargarUsuarioComercial(aUsuarioComercialID);
+			comercial = this.comerciales.cargarUsuarioComercial(aUsuarioComercialID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,10 +46,21 @@ public class BDPrincipal
 		return comercial;
 	}
 
+	public Publicacion cargarPublicacion(int idPublicacion) {
+		Publicacion publi = null;
+
+		try {
+			publi = this.publicaciones.cargarPublicacion(idPublicacion);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+		return publi;
+	}
+
 	public Hashtag cargarHashtag(int idHashtag, String nombre) {
 		Hashtag h = null;
 		try {
-			h = this.hashtag.cargarHashtag(idHashtag, nombre);
+			h = this.hashtags.cargarHashtag(idHashtag, nombre);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -61,7 +72,7 @@ public class BDPrincipal
 			String aDescripcion, String aVideo, int aUsuarioComercialID) {
 		Publicacion p = null;
 		try {
-			p = this.publicacion.addPublicacion(aNombreUsuarioComercial, aLocalizacion, aDescripcion, aVideo,
+			p = this.publicaciones.addPublicacion(aNombreUsuarioComercial, aLocalizacion, aDescripcion, aVideo,
 					aUsuarioComercialID);
 //			this.publicacion.crearHashtag(p);
 //			this.publicacion.crearMencion(p);
@@ -75,7 +86,7 @@ public class BDPrincipal
 	public void editarPerfilUC(String aNuevoNombreUsuario, String aNombreEmpresa, String aDescripcion, String aFoto,
 			int aUsuarioID) {
 		try {
-			this.comercial.editarPerfilUC(aNuevoNombreUsuario, aNombreEmpresa, aDescripcion, aFoto, aUsuarioID);
+			this.comerciales.editarPerfilUC(aNuevoNombreUsuario, aNombreEmpresa, aDescripcion, aFoto, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -85,7 +96,7 @@ public class BDPrincipal
 
 	public void eliminarSeleccion(List aListaSeleccion) {
 		try {
-			this.publicacion.eliminarSeleccion(aListaSeleccion);
+			this.publicaciones.eliminarSeleccion(aListaSeleccion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -94,7 +105,7 @@ public class BDPrincipal
 
 	public void eliminarPublicacoinUC(int aIdPublicacion) {
 		try {
-			this.publicacion.eliminarPublicacion(aIdPublicacion);
+			this.publicaciones.eliminarPublicacion(aIdPublicacion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -103,7 +114,7 @@ public class BDPrincipal
 
 	public void denunciarComentario(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID) {
 		try {
-			this.denuncia.denunciarComentario(aIdComentario, aMotivo, aExplicacion, aUsuarioID);
+			this.denuncias.denunciarComentario(aIdComentario, aMotivo, aExplicacion, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -129,7 +140,7 @@ public class BDPrincipal
 
 		List lista = null;
 		try {
-			lista = this.publicacion.cargarPublicacionesUsuarios();
+			lista = this.publicaciones.cargarPublicacionesUsuarios();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -140,7 +151,7 @@ public class BDPrincipal
 	public List cargarListaUsuariosRegistrados() {
 		List<UsuarioRegistrado> usuarios = null;
 		try {
-			usuarios = usuario_registrado.cargarListaUsuariosRegistrados();
+			usuarios = usuarios_registrados.cargarListaUsuariosRegistrados();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -151,7 +162,7 @@ public class BDPrincipal
 	public List<Hashtag> cargarListaHashtags() {
 		List<Hashtag> lista = null;
 		try {
-			lista = this.hashtag.cargarListaHashtags();
+			lista = this.hashtags.cargarListaHashtags();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -162,7 +173,7 @@ public class BDPrincipal
 	public List cargarTendencias() {
 		List<Hashtag> tendencias = null;
 		try {
-			tendencias = this.hashtag.cargarTendencias();
+			tendencias = this.hashtags.cargarTendencias();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -172,13 +183,13 @@ public class BDPrincipal
 
 	public List ordenarUsuarios(String aFiltro) {
 		List lista = null;
-		lista = this.usuario_registrado.ordenarUsuarios(aFiltro);
+		lista = this.usuarios_registrados.ordenarUsuarios(aFiltro);
 		return lista;
 	}
 
 	public void eliminarPublicacion(int aIdPublicacion) {
 		try {
-			publicacion.eliminarPublicacion(aIdPublicacion);
+			publicaciones.eliminarPublicacion(aIdPublicacion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -206,7 +217,7 @@ public class BDPrincipal
 
 	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {
 		try {
-			this.usuario_registrado.bloquearUsuario(aNombreUsuario, aUsuarioID);
+			this.usuarios_registrados.bloquearUsuario(aNombreUsuario, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -219,13 +230,13 @@ public class BDPrincipal
 		try {
 			if (aFiltro.equals("Hashtags")) {
 				resultado.clear();
-				resultado.addAll(this.hashtag.buscarHashtag(aBusqueda));
+				resultado.addAll(this.hashtags.buscarHashtag(aBusqueda));
 			} else if (aFiltro.equals("Usuarios")) {
 				resultado.clear();
-				resultado.addAll(this.usuario_registrado.buscarUsuario(aBusqueda));
+				resultado.addAll(this.usuarios_registrados.buscarUsuario(aBusqueda));
 			} else {
-				resultado.addAll(this.usuario_registrado.buscarUsuario(aBusqueda));
-				resultado.addAll(this.hashtag.buscarHashtag(aBusqueda));
+				resultado.addAll(this.usuarios_registrados.buscarUsuario(aBusqueda));
+				resultado.addAll(this.hashtags.buscarHashtag(aBusqueda));
 			}
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
@@ -237,7 +248,7 @@ public class BDPrincipal
 	public List filtrarDenuncias(String aFiltro) {
 		List lista = null;
 		try {
-			lista = this.denuncia.filtrarDenuncias(aFiltro);
+			lista = this.denuncias.filtrarDenuncias(aFiltro);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -245,18 +256,19 @@ public class BDPrincipal
 		return lista;
 	}
 
-	//La estructura nombresUsuarios no sirve para nada, por tanto tengo que darle una vuelta para que no se puedan registrar usuarios con el mismo nombre
+	// La estructura nombresUsuarios no sirve para nada, por tanto tengo que darle
+	// una vuelta para que no se puedan registrar usuarios con el mismo nombre
 	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword,
 			String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) {
 		try {
 			if (!nombresUsuarios.containsKey(aNombreUsuario)) {
 				if (aTipoCuenta) {
 					nombresUsuarios.put(aNombreUsuario, "UsuarioRegistrado");
-					this.usuario_registrado.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion,
+					this.usuarios_registrados.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion,
 							aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
 				} else if (aTipoCuenta == false) {
 					nombresUsuarios.put(aNombreUsuario, "UsuarioComercial");
-					this.comercial.registrarUsuario(aNombre, aEmail, aPassword, aDescripcion, aNombreUsuario,
+					this.comerciales.registrarUsuario(aNombre, aEmail, aPassword, aDescripcion, aNombreUsuario,
 							aFechaNacimiento, aFoto);
 
 				}
@@ -272,7 +284,7 @@ public class BDPrincipal
 	public List cargarUsuariosUNR() {
 		List<UsuarioRegistrado> usuarios = null;
 		try {
-			usuarios = usuario_registrado.cargarUsuariosUNR();
+			usuarios = usuarios_registrados.cargarUsuariosUNR();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -283,7 +295,7 @@ public class BDPrincipal
 	public UsuarioRegistrado cargarUsuarioRegistrado(int aUsuarioID) {
 		UsuarioRegistrado usuario = null;
 		try {
-			usuario = usuario_registrado.cargarUsuarioRegistrado(aUsuarioID);
+			usuario = usuarios_registrados.cargarUsuarioRegistrado(aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -313,7 +325,7 @@ public class BDPrincipal
 
 	public void cambiarFotoPerfil(int aUsuarioID, String aNombreUsuario, String aFoto) {
 		try {
-			this.usuario_registrado.cambiarFotoPerfil(aNombreUsuario, aFoto, aUsuarioID);
+			this.usuarios_registrados.cambiarFotoPerfil(aNombreUsuario, aFoto, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -323,7 +335,7 @@ public class BDPrincipal
 	public void editarPerfilUR(String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto,
 			int aUsuarioID) {
 		try {
-			this.usuario_registrado.editarPerfilUR(aNuevoNombreUsuario, aNombre, aDescripcion, aFoto, aUsuarioID);
+			this.usuarios_registrados.editarPerfilUR(aNuevoNombreUsuario, aNombre, aDescripcion, aFoto, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -332,7 +344,7 @@ public class BDPrincipal
 
 	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID) {
 		try {
-			this.publicacion.meGustaPublicacion(aIdPublicacion, aUsuarioID);
+			this.publicaciones.meGustaPublicacion(aIdPublicacion, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -341,7 +353,7 @@ public class BDPrincipal
 
 	public void seguirUsuario(int aUsuarioSeguidorID, int aUsuarioAseguirID) {
 		try {
-			this.usuario_registrado.seguirUsuario(aUsuarioSeguidorID, aUsuarioAseguirID);
+			this.usuarios_registrados.seguirUsuario(aUsuarioSeguidorID, aUsuarioAseguirID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -350,7 +362,7 @@ public class BDPrincipal
 
 	public void dejarSeguirUsuario(int aUsuarioDejaSeguirID, int aUsuarioDejadoSeguirID) {
 		try {
-			this.usuario_registrado.dejarSeguirUsuario(aUsuarioDejaSeguirID, aUsuarioDejadoSeguirID);
+			this.usuarios_registrados.dejarSeguirUsuario(aUsuarioDejaSeguirID, aUsuarioDejadoSeguirID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -361,9 +373,9 @@ public class BDPrincipal
 			int aUsuarioID) {
 		Publicacion p = null;
 		try {
-			p = this.publicacion.addPublicacion(aNombreUsuario, aLocalizacion, aDescripcion, aVideo, aUsuarioID);
-			this.publicacion.crearHashtag(p);
-			this.publicacion.crearMencion(p);
+			p = this.publicaciones.addPublicacion(aNombreUsuario, aLocalizacion, aDescripcion, aVideo, aUsuarioID);
+			this.publicaciones.crearHashtag(p);
+			this.publicaciones.crearMencion(p);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -377,7 +389,7 @@ public class BDPrincipal
 
 	public void denunciarPublicacion(int aIdPublicacion, String aMotivo, String aExplicacion, int aUsuarioID) {
 		try {
-			this.denuncia.denunciarPublicacion(aIdPublicacion, aMotivo, aExplicacion, aUsuarioID);
+			this.denuncias.denunciarPublicacion(aIdPublicacion, aMotivo, aExplicacion, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -398,7 +410,7 @@ public class BDPrincipal
 	public List<UsuarioRegistrado> cargarListaUsuariosTOP() {
 		List<UsuarioRegistrado> usuariosTop = new ArrayList<UsuarioRegistrado>();
 		try {
-			List<UsuarioRegistrado> usuarios = usuario_registrado.cargarListaUsuariosTOP();
+			List<UsuarioRegistrado> usuarios = usuarios_registrados.cargarListaUsuariosTOP();
 			for (int i = 0; i < usuarios.size() && i < 5; i++) {
 				usuariosTop.add(usuarios.get(i));
 			}
@@ -413,7 +425,7 @@ public class BDPrincipal
 	public void denunciarUsuario(String aExplicacion, String aMotivo, int aUsuarioDenuncianteID,
 			int aUsuarioDenunciadoID) {
 		try {
-			this.denuncia.denunciarUsuario(aUsuarioDenunciadoID, aExplicacion, aMotivo, aUsuarioDenuncianteID);
+			this.denuncias.denunciarUsuario(aUsuarioDenunciadoID, aExplicacion, aMotivo, aUsuarioDenuncianteID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -421,15 +433,15 @@ public class BDPrincipal
 	}
 
 	public List cargarListaHashtagTOP() {
-		List<Hashtag> hashtags = null;
+		List<Hashtag> listaHashtags = null;
 		try {
-			hashtags = hashtag.cargarListaHashtagsTOP();
+			listaHashtags = hashtags.cargarListaHashtagsTOP();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return hashtags;
+		return listaHashtags;
 	}
 
 	public Object iniciarSesion(String aNombreUsuario, String aPassword) {
@@ -439,24 +451,26 @@ public class BDPrincipal
 			List<Object> usuarios = new ArrayList<>();
 			usuarios.addAll(UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null));
 			usuarios.addAll(UsuarioComercialDAO.queryUsuarioComercial(null, null));
-		
+
 			// Verificar si se encontró un usuario con el nombre especificado
 			if (!usuarios.isEmpty()) {
-				for(Object ur : usuarios) {
-					if(ur instanceof UsuarioRegistrado) {
+				for (Object ur : usuarios) {
+					if (ur instanceof UsuarioRegistrado) {
 						UsuarioRegistrado userAux = cargarUsuarioRegistrado(Integer.parseInt(ur.toString()));
-						if(userAux.getNombreUsuario().equals(aNombreUsuario) && userAux.getPassword().equals(aPassword)) {
-							return user = usuario_registrado.cargarUsuarioRegistrado(userAux.getID());
+						if (userAux.getNombreUsuario().equals(aNombreUsuario)
+								&& userAux.getPassword().equals(aPassword)) {
+							return user = usuarios_registrados.cargarUsuarioRegistrado(userAux.getID());
 						}
-					}else if(ur instanceof UsuarioComercial) {
+					} else if (ur instanceof UsuarioComercial) {
 						UsuarioComercial userAux = cargarUsuarioComercial(Integer.parseInt(ur.toString()));
-						if(userAux.getNombreUsuarioComercial().equals(aNombreUsuario) && userAux.getPassword().equals(aPassword)) {
-							return user = comercial.cargarUsuarioComercial(userAux.getID());
+						if (userAux.getNombreUsuarioComercial().equals(aNombreUsuario)
+								&& userAux.getPassword().equals(aPassword)) {
+							return user = comerciales.cargarUsuarioComercial(userAux.getID());
 						}
-					}else if(aNombreUsuario.equals("admin") && aPassword.equals("admin")) { 
+					} else if (aNombreUsuario.equals("admin") && aPassword.equals("admin")) {
 						user = _c_usuarioAdministrador.cargarAdministrador(0);
 					}
-					
+
 				}
 
 //			} else{
@@ -490,7 +504,7 @@ public class BDPrincipal
 	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario) {
 		int id = Integer.parseInt(aNombreUsuario);
 		try {
-			String password = this.usuario_registrado.recuperarPassword(aEmailRecuperacion, aNuevaPassword,
+			String password = this.usuarios_registrados.recuperarPassword(aEmailRecuperacion, aNuevaPassword,
 					aNombreUsuario, id);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

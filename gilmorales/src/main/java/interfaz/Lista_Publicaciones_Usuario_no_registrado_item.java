@@ -17,7 +17,9 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	public Usuario_No_Registrado unr;
 	public Publicacion publicacion;
 	
-	public Lista_Publicaciones_Usuario_no_registrado_item() {}
+	public Lista_Publicaciones_Usuario_no_registrado_item(Publicacion publicacion) {
+		this.publicacion = publicacion;
+	}
 
 	public Lista_Publicaciones_Usuario_no_registrado_item(Publicacion publicacion, Usuario_No_Registrado unr) {
 		this.getStyle().set("width", "100%");
@@ -30,7 +32,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		this.getVaadinButton().setVisible(false);
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
 		NumeroComentarios();
-		NumeroMeGustas(publicacion.getNumMeGustas());
+		NumeroMeGustas();
 		this.getLayoutComentar().setVisible(false);
 		Ver_comentarios__Usuario_No_registrado_();
 		mostrarDatosUsuario();
@@ -78,9 +80,8 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		});
 	}
 
-	public void NumeroMeGustas(int numMegustas) {
-		this.numeroMeGustas = numMegustas;
-		this.getLabelNumMeGustas().setText(numeroMeGustas+"");
+	public void NumeroMeGustas() {
+		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas()+"");
 	}
 
 	public void NumeroComentarios() {

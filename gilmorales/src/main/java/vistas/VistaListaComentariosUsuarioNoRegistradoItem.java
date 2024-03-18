@@ -40,14 +40,12 @@ public class VistaListaComentariosUsuarioNoRegistradoItem extends LitTemplate {
 	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("numeroMeGusta")
 	private Label numeroMeGusta;
-	@Id("meGustaL")
-	private Label meGustaL;
-	@Id("meGustaB")
-	private Button meGustaB;
 	@Id("denunciarB")
 	private Button denunciarB;
 	@Id("borrarComentarioB")
 	private Button borrarComentarioB;
+	@Id("meGustaB")
+	private Button meGustaB;
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
@@ -111,14 +109,6 @@ public class VistaListaComentariosUsuarioNoRegistradoItem extends LitTemplate {
 
 	public void setNumeroMeGusta(Label numeroMeGusta) {
 		this.numeroMeGusta = numeroMeGusta;
-	}
-
-	public Label getMeGustaL() {
-		return meGustaL;
-	}
-
-	public void setMeGustaL(Label meGustaL) {
-		this.meGustaL = meGustaL;
 	}
 
 	public Button getMeGustaB() {

@@ -66,14 +66,12 @@ public class MainView extends VerticalLayout {
 		this.setMargin(false);
 		this.setPadding(false);
 		BDPrincipal bd = new BDPrincipal();
-		
-//
-//		
+
 //		Registrar registro = new Registrar(unr);
 //		add(registro);
 		
 //
-//				Usuario_Registrado ur = new Usuario_Registrado(6);
+//				Usuario_Registrado ur = new Usuario_Registrado(1);
 //				add(ur);
 		
 		Usuario_No_Registrado unr = new Usuario_No_Registrado();

@@ -32,8 +32,20 @@ public class Publicaciones {
 	public BDPrincipal _c_bd_publicacion;
 	public Vector<Publicacion> _publiacion = new Vector<Publicacion>();
 
-	public void eliminarSeleccion(List<Publicacion> aListaSeleccion) throws PersistentException {		
-		for(Publicacion publicacion : aListaSeleccion) {
+	public Publicacion cargarPublicacion(int idPublicacion) throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		Publicacion publicacion = null;
+		try {
+			publicacion = PublicacionDAO.getPublicacionByORMID(idPublicacion);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return publicacion;
+	}
+
+	public void eliminarSeleccion(List<Publicacion> aListaSeleccion) throws PersistentException {
+		for (Publicacion publicacion : aListaSeleccion) {
 			eliminarPublicacion(publicacion.getIdPublicacion());
 		}
 	}
@@ -45,13 +57,14 @@ public class Publicaciones {
 			Pattern mencion = Pattern.compile("@(\\w+)");
 			Matcher m = mencion.matcher(p.getDescripcion());
 			while (m.find()) {
-				if(p.getPerteneceA() != null) {
+				if (p.getPerteneceA() != null) {
 					List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-					for(UsuarioRegistrado ur : lista) {
-						if(ur.getNombreUsuario().equals(m.group(1))) {	
-							List<Notificacion> listaNotificaciones = new ArrayList<Notificacion>(ur.recibe.getCollection());
-							for(Notificacion n : listaNotificaciones) {
-								if(n.getIDUsuarioNotifica() == p.getPerteneceA().getID()) {
+					for (UsuarioRegistrado ur : lista) {
+						if (ur.getNombreUsuario().equals(m.group(1))) {
+							List<Notificacion> listaNotificaciones = new ArrayList<Notificacion>(
+									ur.recibe.getCollection());
+							for (Notificacion n : listaNotificaciones) {
+								if (n.getIDUsuarioNotifica() == p.getPerteneceA().getID()) {
 									NotificacionDAO.deleteAndDissociate(n);
 								}
 							}
@@ -60,7 +73,7 @@ public class Publicaciones {
 				}
 			}
 			List<Comentario> comentarios = new ArrayList<Comentario>(p.tieneComentarios.getCollection());
-			for(Comentario comentario : comentarios) {
+			for (Comentario comentario : comentarios) {
 				ComentarioDAO.deleteAndDissociate(comentario);
 			}
 			PublicacionDAO.deleteAndDissociate(p);
@@ -71,19 +84,20 @@ public class Publicaciones {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID) throws PersistentException {
+	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo,
+			int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		Publicacion p = null;
 
 		try {
 			p = PublicacionDAO.createPublicacion();
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuarioID);
-			if(usuario.getNombreUsuario().equals(aNombreUsuario)) {
+			if (usuario.getNombreUsuario().equals(aNombreUsuario)) {
 				p.setNombreUsuarioComercial(null);
 				p.setNombreUsuario(aNombreUsuario);
 				p.setEsPublicada(null);
 				p.setPerteneceA(usuario);
-			}else {
+			} else {
 				UsuarioComercial uc = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioID);
 				p.setNombreUsuarioComercial(aNombreUsuario);
 				p.setNombreUsuario(null);
@@ -106,32 +120,31 @@ public class Publicaciones {
 //			crearHashtag(p);
 //			crearMencion(p);
 			PublicacionDAO.save(p);
-			t.commit();			
+			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
-		return p;	
+		return p;
 	}
 
-
-	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID)throws PersistentException {
+	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 
-			if(!p.gustaA.contains(usuario)) {
+			if (!p.gustaA.contains(usuario)) {
 				p.gustaA.add(usuario);
 				p.setNumMeGustas(p.gustaA.size());
 				usuario.daMeGustaPublicacion.add(p);
-			}else {
+			} else {
 				p.gustaA.remove(usuario);
 				usuario.daMeGustaPublicacion.remove(p);
 				p.setNumMeGustas(p.gustaA.size());
 			}
 			PublicacionDAO.save(p);
-			t.commit();			
+			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
@@ -144,20 +157,21 @@ public class Publicaciones {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			publicaciones = PublicacionDAO.queryPublicacion(null, null);
-			t.commit();			
+			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
 		return publicaciones;
 	}
+
 	public void crearMencion(Publicacion p) {
 		Pattern mencion = Pattern.compile("@(\\w+)");
 		Matcher m = mencion.matcher(p.getDescripcion());
 		try {
 			while (m.find()) {
 				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-				for(UsuarioRegistrado ur : lista) {
-					if(ur.getNombreUsuario().equals(m.group(1))) {	
+				for (UsuarioRegistrado ur : lista) {
+					if (ur.getNombreUsuario().equals(m.group(1))) {
 						Notificacion notificacion = NotificacionDAO.createNotificacion();
 						notificacion.setTipoNotificacion(3);
 						notificacion.setEnviadaA(ur);
@@ -168,11 +182,12 @@ public class Publicaciones {
 				}
 			}
 			GilMoralesPersistentManager.instance().disposePersistentManager();
-		}catch (PersistentException e) {
+		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+
 	public void crearHashtag(Publicacion p) {
 		Pattern hashtag = Pattern.compile("#(\\w+)");
 		Matcher h = hashtag.matcher(p.getDescripcion());
@@ -180,28 +195,28 @@ public class Publicaciones {
 			while (h.find()) {
 				String nombreHashtag = h.group(1);
 				List<Hashtag> listaHashtag = HashtagDAO.queryHashtag(null, null);
-				if(listaHashtag.isEmpty()) {
+				if (listaHashtag.isEmpty()) {
 					Hashtag nuevoHashatag = HashtagDAO.createHashtag();
 					nuevoHashatag.setNombreHashtag(nombreHashtag);
 					nuevoHashatag.aparece.add(p);
-					HashtagDAO.save(nuevoHashatag);	
-				}else {
-					for(Hashtag h2 : listaHashtag) {
-						if(!h2.getNombreHashtag().equals(nombreHashtag)) {
+					HashtagDAO.save(nuevoHashatag);
+				} else {
+					for (Hashtag h2 : listaHashtag) {
+						if (!h2.getNombreHashtag().equals(nombreHashtag)) {
 							Hashtag nuevoHashatag = HashtagDAO.createHashtag();
 							nuevoHashatag.setNombreHashtag(nombreHashtag);
 							nuevoHashatag.aparece.add(p);
-							HashtagDAO.save(nuevoHashatag);	
+							HashtagDAO.save(nuevoHashatag);
 							break;
-						}else if(h2.getNombreHashtag().equals(nombreHashtag)){
+						} else if (h2.getNombreHashtag().equals(nombreHashtag)) {
 							h2.aparece.add(p);
 							HashtagDAO.save(h2);
 						}
-					}	
+					}
 				}
 			}
 			GilMoralesPersistentManager.instance().disposePersistentManager();
-		}catch (PersistentException e) {
+		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -1,5 +1,7 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
@@ -10,27 +12,22 @@ import TikTok.Video;
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
 import bd_dcl.Publicacion;
+import bd_dcl.PublicacionDAO;
 import bd_dcl.UsuarioRegistrado;
 
 public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaciones_Usuario_no_registrado_item {
 
-//	private Button _seguirB;
-//	private Button _denunciarB;
-//	private Button _dar_me_gusta_publicacionB;
-//	private Button _comentarB;
-//	private TextField _comentarioTF;
-//	private Button _verPubliacionB;
 	public Lista_publicaciones_Usuario_Registrado _lista_publicaciones__Usuario_Registrado_;
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
 	public Denunciar_publicacion _denunciar_publicacion;
+	public Ver_comentarios_Usuario_Registrado verComentarios;
 	Usuario_Registrado urinterfaz;
-	iUsuario_Registrado bd = new BDPrincipal();
+	BDPrincipal bd = new BDPrincipal();
 	UsuarioRegistrado user;
 
 	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion, Usuario_Registrado urinterfaz, UsuarioRegistrado user) {
-		super();
+		super(publicacion);
 		this.urinterfaz = urinterfaz;
-		this.publicacion = publicacion;
 		this.user = user;
 		this.getLayoutBotonesUsuarioR().setVisible(true);
 		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
@@ -40,7 +37,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
 		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios()+"");
 		this.getLayoutComentar().setVisible(true);
-		Ver_comentarios__Usuario_No_registrado_();
+		Ver_comentarios__Usuario_Registrado_();
 		mostrarDatosUsuario();
 		if(this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();	
@@ -53,6 +50,15 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		Denunciar_publicacion();
 		Comentar();
 		
+	}
+	
+	public void Ver_comentarios__Usuario_Registrado_() {
+		verComentarios = new Ver_comentarios_Usuario_Registrado(this.publicacion, urinterfaz, user);
+		this.getBotonVerComentarios().addClickListener(event -> {
+			urinterfaz.getListaPublicaciones().setVisible(false);
+			urinterfaz.getCabeceraTop().setVisible(false);
+			urinterfaz.getVaadinHorizontalLayout().add(verComentarios);
+		});
 	}
 	@Override
 	public void Ver_perfil() {
@@ -84,9 +90,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getVaadinButton().addClickListener(event -> {
 			this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
-			System.out.println("El numero de me gustas es ----> " + publicacion.getNumMeGustas());
-//			this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
-			NumeroMeGustas(this.publicacion.getNumMeGustas());
+			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+			this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		});
 	}
 

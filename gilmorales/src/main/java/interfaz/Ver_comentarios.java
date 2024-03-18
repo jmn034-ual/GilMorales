@@ -1,5 +1,6 @@
 package interfaz;
 
+import basededatos.BDPrincipal;
 import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaVerComentarios;
@@ -7,10 +8,10 @@ import vistas.VistaVerComentarios;
 public class Ver_comentarios extends VistaVerComentarios{
 
 	public Ver_perfil_publico ver_perfil;
-	UsuarioRegistrado user;
 	Publicacion publicacion;
+	BDPrincipal bd = new BDPrincipal();
 	
-	public Ver_comentarios(Publicacion publicacion,Object userInterfaz) {
+	public Ver_comentarios(Publicacion publicacion) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.publicacion = publicacion;

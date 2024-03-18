@@ -15,7 +15,7 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	Publicacion publicacion;
 	
 	public Ver_comentarios_Usuario_No_registrado(Publicacion publicacion, Usuario_No_Registrado unr) {
-		super(publicacion, unr);
+		super(publicacion);
 		this.getFotoPerfil().setImage("icons/luffy.jpg");
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(false);
@@ -26,7 +26,7 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 		this.publicacion = publicacion;
 		this.user = publicacion.getPerteneceA();
 		Lista_Comentarios__Vista_Usuario_No_registrado_();
-		Ver_perfil();
+		this.Ver_perfil();
 	}
 	
 	public void Lista_Comentarios__Vista_Usuario_No_registrado_() {

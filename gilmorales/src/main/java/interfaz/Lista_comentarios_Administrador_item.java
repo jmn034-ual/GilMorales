@@ -21,7 +21,6 @@ public class Lista_comentarios_Administrador_item extends VistaListaComentariosU
 		this.getNombreUsuario().setText(comentario.getEsComentadoPor().getNombreUsuario());
 		this.getComentarioL().setText(comentario.getComentario());
 		this.getNumeroMeGusta().setText(comentario.getNumeroMeGustas()+"");
-		this.getMeGustaL().setText("Me Gustas");
 		this.getDenunciarB().setVisible(false);
 		this.getMeGustaB().setVisible(false);
 		Borrar_comentario();
