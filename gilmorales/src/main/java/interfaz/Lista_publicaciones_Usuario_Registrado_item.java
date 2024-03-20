@@ -25,10 +25,10 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	BDPrincipal bd = new BDPrincipal();
 	UsuarioRegistrado user;
 
-	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion, Usuario_Registrado urinterfaz, UsuarioRegistrado user) {
+	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion, Lista_publicaciones_Usuario_Registrado interfaz) {
 		super(publicacion);
-		this.urinterfaz = urinterfaz;
-		this.user = user;
+		this.urinterfaz = interfaz.urInterfaz;
+		this.user = interfaz.urInterfaz.ur;
 		this.getLayoutBotonesUsuarioR().setVisible(true);
 		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
 		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
@@ -62,7 +62,6 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 	@Override
 	public void Ver_perfil() {
-//		this.ver_perfil = new Ver_perfil_publico(publicacion.getPerteneceA());
 		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA());
 		this.getBotonNombreUsuario().addClickListener(event ->{
 			urinterfaz.getListaPublicaciones().setVisible(false);
@@ -72,7 +71,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 	
 	public void Ver_publicacion_ajena() {
-		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.user, this.urinterfaz);
+		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.urinterfaz);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event ->{
 			urinterfaz.getListaPublicaciones().setVisible(false);
 			urinterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);

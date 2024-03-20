@@ -32,7 +32,7 @@ public class Ver_hashtag extends VistaVerHashtag{
 	}
 	
 	public void Publicaciones_hashtag() {
-		this._publicaciones_hashtag = new Publicaciones_hashtag(this.hashtag);
+		this._publicaciones_hashtag = new Publicaciones_hashtag(this.hashtag, this);
 		this.getLayoutLista().as(VerticalLayout.class).add(this._publicaciones_hashtag);
 	}
 

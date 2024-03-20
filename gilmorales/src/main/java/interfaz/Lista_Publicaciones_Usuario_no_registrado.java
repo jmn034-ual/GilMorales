@@ -39,7 +39,7 @@ public class Lista_Publicaciones_Usuario_no_registrado extends VistaListaPublica
 			}else {
 				List<Publicacion> publicaciones = new ArrayList<Publicacion>(u.publica.getCollection());
 				for(Publicacion pub : publicaciones) {
-					this.publicacion = new Lista_Publicaciones_Usuario_no_registrado_item(pub, unr);	
+					this.publicacion = new Lista_Publicaciones_Usuario_no_registrado_item(pub, this);	
 					this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(this.publicacion);
 					_item.add(this.publicacion);
 				}		

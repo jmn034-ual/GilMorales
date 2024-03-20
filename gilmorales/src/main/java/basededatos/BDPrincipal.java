@@ -408,12 +408,12 @@ public class BDPrincipal
 	}
 
 	public List<UsuarioRegistrado> cargarListaUsuariosTOP() {
-		List<UsuarioRegistrado> usuariosTop = new ArrayList<UsuarioRegistrado>();
+		List<UsuarioRegistrado> usuariosTop = null;
 		try {
-			List<UsuarioRegistrado> usuarios = usuarios_registrados.cargarListaUsuariosTOP();
-			for (int i = 0; i < usuarios.size() && i < 5; i++) {
-				usuariosTop.add(usuarios.get(i));
-			}
+			usuariosTop = usuarios_registrados.cargarListaUsuariosTOP();
+//			for (int i = 0; i < usuarios.size() && i < 5; i++) {
+//				usuariosTop.add(usuarios.get(i));
+//			}
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

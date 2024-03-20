@@ -17,9 +17,10 @@ public class Lista_Hashtags extends VistaListaHashtags{
 	iUsuario_Registrado bd = new BDPrincipal();
 	Lista_Hashtags_item hashtag;
 
-	public Lista_Hashtags() {
+	public Lista_Hashtags(Ver_lista_Hashtag interfaz) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this._ver_lista_Hashtag = interfaz;
 		cargarHashtags();
 	}
 	
@@ -32,17 +33,17 @@ public class Lista_Hashtags extends VistaListaHashtags{
 			int tamanio = hashtags.size();
 			for(int i = 0; i < hashtags.size(); i++) {
 				if(tamanio >= 3) {					
-					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i)),
-							new Lista_Hashtags_item(hashtags.get(++i)), new Lista_Hashtags_item(hashtags.get(i+=1))));
+					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i), this),
+							new Lista_Hashtags_item(hashtags.get(++i), this), new Lista_Hashtags_item(hashtags.get(i+=1), this)));
 					tamanio -= 3;
 				}else if(tamanio == 2){
-					HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i)),
-							new Lista_Hashtags_item(hashtags.get(++i)));
+					HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i), this),
+							new Lista_Hashtags_item(hashtags.get(++i), this));
 					horizontal2.getStyle().set("width", "66.66%");
 
 					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal2);
 				}else {
-					HorizontalLayout horizontal = new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i)));
+					HorizontalLayout horizontal = new HorizontalLayout(new Lista_Hashtags_item(hashtags.get(i), this));
 					horizontal.getStyle().set("width", "33%");
 					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal);
 				}

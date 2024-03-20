@@ -15,7 +15,8 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem{
 	public Ver_perfil_privado perfilPrivado;
 	Publicacion publicacion;
 	
-	public Publicaciones_hashtag_item(Publicacion p) {
+	public Publicaciones_hashtag_item(Publicacion p, Publicaciones_hashtag interfaz) {
+		this._publicaciones_hashtag = interfaz;
 		this.publicacion = p;
 		Video video = new Video(this.publicacion.getVideo());
 		video.getStyle().set("width", "70%");
@@ -23,12 +24,14 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem{
 		this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getImagenPublicacion().as(VerticalLayout.class).add(video);
-		Ver_publicacion_ajena();
+//		Ver_publicacion_ajena();
 	}
 
 	public void Ver_publicacion_ajena() {
+//		_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this._publicaciones_hashtag.);
 		this.getImagenPublicacion().as(VerticalLayout.class).addClickListener(event -> {
-			Notification.show("Has hecho click");
+			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_publicacion_ajena);
 		});
 		
 	}

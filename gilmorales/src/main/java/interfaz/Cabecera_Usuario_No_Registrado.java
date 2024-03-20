@@ -12,10 +12,10 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import vistas.VistaCabeceraUsuarioNoRegistrado;
 
-public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegistrado{
+public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegistrado {
 	public Realizar_busqueda _realizar_busqueda;
 	public Cabecera_TOP _cabecera_TOP;
-	Usuario_No_Registrado unr;
+	public Usuario_No_Registrado unr;
 
 	public Cabecera_Usuario_No_Registrado(Usuario_No_Registrado unr) {
 		this.unr = unr;
@@ -35,12 +35,12 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 	}
 
 	public void Realizar_busqueda() {
-		this.getBotonBuscar().addClickListener(event ->{
+		this.getBotonBuscar().addClickListener(event -> {
 			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue());
 			System.out.println(this.getTextoBusqueda().getValue());
 			this._realizar_busqueda.setVisible(true);
 			this._cabecera_TOP.setVisible(true);
-			if(unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
+			if (unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
 				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
 			}
 			unr.getLayoutListaPublicaciones().setVisible(false);
@@ -50,19 +50,23 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 	}
 
 	public void Cabecera_TOP() {
-		this._cabecera_TOP = new Cabecera_TOP(this.unr);
-//		_cabecera_TOP.getLayoutListaResultadoBusqueda().setVisible(false);
-//		this.getCabeceraNR().as(VerticalLayout.class).add(_cabecera_TOP);
+		this._cabecera_TOP = new Cabecera_TOP(this);
+		unr.getLayoutCabeceraTop().as(VerticalLayout.class).add(this._cabecera_TOP);
 	}
 
 	public void Volver_Inicio() {
 		this.getInicio().addClickListener(event -> {
+			unr.getLayoutCabeceraTop().as(VerticalLayout.class).remove(this._cabecera_TOP);
+			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).remove(unr.publicacionesNoRegistrado);
+//			if (unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
+//				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
+//			}
+//			unr.getLayoutListaPublicaciones().setVisible(true);
+			Cabecera_TOP();
+			unr.Lista_Publicaciones__Usuario_no_registrado_();
+//			unr.getLayoutCabeceraTop().as(VerticalLayout.class).add(this._cabecera_TOP);
 			unr.getLayoutCabeceraTop().setVisible(true);
 			this._cabecera_TOP.setVisible(true);
-			if(unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			unr.getLayoutListaPublicaciones().setVisible(true);
 		});
 	}
 //

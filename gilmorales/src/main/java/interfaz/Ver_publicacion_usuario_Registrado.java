@@ -10,19 +10,7 @@ import bd_dcl.UsuarioRegistrado;
 import vistas.VistaVerPublicacionUsuarioRegistrado;
 
 public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuarioRegistrado{
-//	private Video _video;
-//	private int _numeroVisualizaciones;
-//	private Label _visualizacionesL;
-//	private ImageIcon _usuarioIcono;
-//	private button _verPerfilB;
-//	private Label _geolocalizacionL;
-//	private TextArea _descripcioTA;
-//	private Label _fechaL;
-//	private int _numeroMeGustas;
-//	private Label _meGustasL;
-//	private int _numeroComentarios;
-//	private Label _comentariosL;
-//	private button _verComentariosB;
+
 	public Ver_comentarios_Usuario_Registrado _ver_comentarios__Usuario_Registrado_;
 	public Lista_Top_comentarios_Usuario_Registrado _lista_Top_comentarios__Usuario_Registrado_;
 	Publicacion publicacion;

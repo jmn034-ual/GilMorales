@@ -11,13 +11,12 @@ import bd_dcl.UsuarioRegistrado;
 
 public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Registrado {
 
-	public Usuario_Registrado _usuario_Registrado;
+	public Usuario_Registrado urInterfaz;
 	public Ver_notificaciones _ver_notificaciones;
 	public Ver_perfil_propio _ver_perfil_propio;
 	public Realizar_busqueda _realizar_busqueda;
 	public Cabecera_TOP _cabecera_TOP;
 	private UsuarioRegistrado ur;
-	private Usuario_Registrado urInterfaz;
 	
 	public Cabecera_Usuario_Registrado(UsuarioRegistrado ur, Usuario_Registrado urInterfaz) {
 		super();
@@ -57,9 +56,9 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 	
 	public void Ver_notificaciones() {
-		_ver_notificaciones = new Ver_notificaciones(this.ur);
+		_ver_notificaciones = new Ver_notificaciones(this);
 		this.getBotonNotificaciones().addClickListener(event -> {
-			_ver_notificaciones = new Ver_notificaciones(this.ur);
+			_ver_notificaciones = new Ver_notificaciones(this);
 			this._ver_notificaciones.setVisible(true);
 			this.getBotonNotificaciones().setVisible(false);
 			urInterfaz.getCabeceraTop().setVisible(false);
@@ -75,7 +74,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 
 	public void Ver_perfil_propio() {
-		_ver_perfil_propio =  new Ver_perfil_propio(ur);
+		_ver_perfil_propio =  new Ver_perfil_propio(this);
 		this.getBotonPerfil().addClickListener(event -> {
 
 			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
@@ -122,7 +121,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 		});
 	}
 	public void Cabecera_TOP() {
-		this._cabecera_TOP = new Cabecera_TOP(this.urInterfaz);
+		this._cabecera_TOP = new Cabecera_TOP(this);
 	}
 	
 	public void volverInicio() {
