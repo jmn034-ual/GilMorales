@@ -25,7 +25,6 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 		this.getVaadinButton().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
 		Image customIcon = new Image("icons/logo.png", null);
 		customIcon.getStyle().set("width", "6%");
-//		customIcon.getStyle().set("heigth", "8%");
 		this.getLogoWeb().setIcon(customIcon);
 		this.getVaadinVerticalLayout().setVisible(false);
 //		Registrarse();
@@ -36,7 +35,7 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 
 	public void Realizar_busqueda() {
 		this.getBotonBuscar().addClickListener(event -> {
-			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue());
+			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue(), this);
 			System.out.println(this.getTextoBusqueda().getValue());
 			this._realizar_busqueda.setVisible(true);
 			this._cabecera_TOP.setVisible(true);
@@ -57,15 +56,14 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 	public void Volver_Inicio() {
 		this.getInicio().addClickListener(event -> {
 			unr.getLayoutCabeceraTop().as(VerticalLayout.class).remove(this._cabecera_TOP);
-			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).remove(unr.publicacionesNoRegistrado);
+			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
 //			if (unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
 //				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
 //			}
-//			unr.getLayoutListaPublicaciones().setVisible(true);
-			Cabecera_TOP();
-			unr.Lista_Publicaciones__Usuario_no_registrado_();
-//			unr.getLayoutCabeceraTop().as(VerticalLayout.class).add(this._cabecera_TOP);
+			unr.getLayoutListaPublicaciones().setVisible(true);
+			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(new Lista_Publicaciones_Usuario_no_registrado(unr));
 			unr.getLayoutCabeceraTop().setVisible(true);
+			Cabecera_TOP();
 			this._cabecera_TOP.setVisible(true);
 		});
 	}

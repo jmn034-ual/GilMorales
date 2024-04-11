@@ -14,9 +14,17 @@ public class Realizar_busqueda extends VistaRealizarBusqueda {
 	public Lista_resultado _lista_resultado;
 	Select<String> select ;
 
-	public Realizar_busqueda(String buscar) {
+	public Realizar_busqueda(String buscar, Object cabecera) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		
+		if(cabecera instanceof Cabecera_Usuario_No_Registrado) {
+			this._cabecera_Usuario_No_Registrado = (Cabecera_Usuario_No_Registrado) cabecera;
+		}else if(cabecera instanceof Cabecera_Usuario_Registrado){
+			this._cabecera_Usuario_Registrado = (Cabecera_Usuario_Registrado) cabecera;
+		}else {
+			this._cabecera_Administrador = (Cabecera_Administrador) cabecera;
+		}
 		select = new Select<>();
         select.setLabel("Filtrar por:");
         select.setItems("Hashtags", "Usuarios",

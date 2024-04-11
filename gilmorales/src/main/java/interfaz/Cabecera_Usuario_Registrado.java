@@ -106,7 +106,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 
 	public void Realizar_busqueda() {
 		this.getBotonBuscar().addClickListener(event ->{
-			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue());
+			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue(), this);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
@@ -122,31 +122,20 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 	public void Cabecera_TOP() {
 		this._cabecera_TOP = new Cabecera_TOP(this);
+		urInterfaz.getCabeceraTop().as(VerticalLayout.class).add(this._cabecera_TOP);
 	}
+	
 	
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
+			urInterfaz.getCabeceraTop().as(VerticalLayout.class).remove(this._cabecera_TOP);
+			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
 			urInterfaz.getCabeceraTop().setVisible(true);
-			this._cabecera_TOP.setVisible(true);
-			this._cabecera_TOP.getCabeceraTop().setVisible(true);
-			this.getBotonNotificaciones().setVisible(true);
-			this.getBotonPerfil().setVisible(true);
-			this.getBotonAniadir().setVisible(true);
-			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
 			urInterfaz.getListaPublicaciones().setVisible(true);
-
+			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(new Lista_publicaciones_Usuario_Registrado(urInterfaz));
+			Cabecera_TOP();
+			this._cabecera_TOP.setVisible(true);
 		});
 	}
-	
-//	public void volverInicio() {
-//		this.getInicio().addClickListener(event -> {
-//			urInterfaz.getCabeceraTop().setVisible(true);
-//			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
-//			urInterfaz.Lista_publicaciones__Usuario_Registrado_();
-//
-//		});
-//	}
 
 }

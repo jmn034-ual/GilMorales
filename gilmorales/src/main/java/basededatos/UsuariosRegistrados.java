@@ -117,7 +117,7 @@ public class UsuariosRegistrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public List buscarUsuario(String aNombreUsuario) throws PersistentException {
+	public List<UsuarioRegistrado> buscarUsuario(String aNombreUsuario) throws PersistentException {
 		if(aNombreUsuario == "") return null;
 		List lista = null;
 		List<UsuarioRegistrado> usuariosCoincidentes = new ArrayList<UsuarioRegistrado>();
@@ -142,7 +142,7 @@ public class UsuariosRegistrados {
 		return usuariosCoincidentes;
 	}
 
-	public List cargarListaUsuariosTOP() throws PersistentException {
+	public List<UsuarioRegistrado> cargarListaUsuariosTOP() throws PersistentException {
 		List<UsuarioRegistrado> usuariosTop = new ArrayList<UsuarioRegistrado>();
 
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
