@@ -29,6 +29,68 @@ public class VistaPublicacionesHashtagItem extends LitTemplate {
 	private Button botonNombreUsuario;
 	@Id("descripcion")
 	private Label descripcion;
+	
+	
+
+	public HorizontalLayout getLayoutItem() {
+		return layoutItem;
+	}
+
+
+
+	public void setLayoutItem(HorizontalLayout layoutItem) {
+		this.layoutItem = layoutItem;
+	}
+
+
+
+	public Element getImagenPublicacion() {
+		return imagenPublicacion;
+	}
+
+
+
+	public void setImagenPublicacion(Element imagenPublicacion) {
+		this.imagenPublicacion = imagenPublicacion;
+	}
+
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public Button getBotonNombreUsuario() {
+		return botonNombreUsuario;
+	}
+
+
+
+	public void setBotonNombreUsuario(Button botonNombreUsuario) {
+		this.botonNombreUsuario = botonNombreUsuario;
+	}
+
+
+
+	public Label getDescripcion() {
+		return descripcion;
+	}
+
+
+
+	public void setDescripcion(Label descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
 
 	/**
      * Creates a new VistaPublicacionesHashtagItem.

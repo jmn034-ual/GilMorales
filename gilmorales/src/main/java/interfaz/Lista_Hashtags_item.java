@@ -10,15 +10,13 @@ import bd_dcl.Hashtag;
 import vistas.VistaListaHashtagsItem;
 
 public class Lista_Hashtags_item extends VistaListaHashtagsItem{
-	private Button _verHashtagB;
-	private Label _numeroVisualizacionesL;
-	private int _numeroVisualizaciones;
-	private IronIcon _iconoHashtag;
+
 	public Lista_Hashtags _lista_Hashtags;
 	public Ver_hashtag _ver_hashtag;
 	Hashtag hashtag;
 	
-	public Lista_Hashtags_item(Hashtag hashtag) {
+	public Lista_Hashtags_item(Hashtag hashtag, Lista_Hashtags interfaz) {
+		this._lista_Hashtags = interfaz;
 		this.hashtag = hashtag;
 		Video video = new Video("videos/tiktok1.mp4"); 
 		video.getStyle().set("width", "60%");
@@ -29,11 +27,15 @@ public class Lista_Hashtags_item extends VistaListaHashtagsItem{
 		this.getNombreHashtags().setText(hashtag.getNombreHashtag());
 		this.getVideo().as(VerticalLayout.class).add(video);
 		Visualizaciones();
-		
+		Ver_hashtag();
 	}
 
 	public void Ver_hashtag() {
-		throw new UnsupportedOperationException();
+		this._ver_hashtag = new Ver_hashtag(hashtag);
+		this.getNombreHashtags().addClickListener(event ->{
+			this._lista_Hashtags._ver_lista_Hashtag.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
+			this._lista_Hashtags._ver_lista_Hashtag.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_ver_hashtag);
+		});
 	}
 
 	public void Visualizaciones() {

@@ -22,7 +22,7 @@ public class Resultado_usuarios extends Lista_resultado {
 			_item.clear();
 			
 			for (int i = 0; i < resultado.size(); i++) {
-				item = new Resultado_usuarios_item(resultado.get(i));
+				item = new Resultado_usuarios_item(resultado.get(i), this);
 				this.getLayoutResultadoBusqueda().as(VerticalLayout.class).add(item);
 				_item.add(item);
 			}

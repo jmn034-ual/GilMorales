@@ -50,6 +50,7 @@ public class Comentarios {
 			ComentarioDAO.save(comentario);
 			publicacion.tieneComentarios.add(comentario);
 			PublicacionDAO.save(publicacion);
+			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
@@ -69,6 +70,7 @@ public class Comentarios {
 			}
 			UsuarioRegistradoDAO.save(user);
 			PublicacionDAO.save(publicacion);
+			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
@@ -90,6 +92,7 @@ public class Comentarios {
 				c.gustaA.remove(usuario);
 			}
 			ComentarioDAO.save(c);
+			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}

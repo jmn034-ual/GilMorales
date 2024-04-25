@@ -61,7 +61,6 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 //			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
 			//			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
 			urInterfaz.listaPublicaciones.setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().setVisible(false);
 			urInterfaz.getListaPublicaciones().setVisible(true);
 			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
 			//			urInterfaz._cabecera_Usuario_Registrado.addPubli.setVisible(false);
@@ -78,11 +77,9 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		this.getVerPerfil().addClickListener(event ->{
 			UsuarioRegistrado ur = this.publicacion.getPerteneceA();
 			if(ur != null) {
-				this.ver_perfil_propio = new Ver_perfil_propio(ur);
+				this.ver_perfil_propio = new Ver_perfil_propio(_add_publiacacion.urInterfaz._cabecera_Usuario_Registrado);
 				urInterfaz.getListaPublicaciones().setVisible(false);
 				urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
-				urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
-				urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().as(VerticalLayout.class).add(ver_perfil_propio);
 			}
 		});	
 	}

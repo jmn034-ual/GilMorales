@@ -15,14 +15,14 @@ export class VistaCabeceraTop extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout id="cabeceraTop" style="flex-shrink: 0; flex-grow: 0; position: fixed; align-items: center; z-index: 999; height: 100%; width: 170px; margin-left: 0%; padding: 0%; justify-content: flex-start; margin-top: 0px;">
- <h3 id="tituloUsuarios" style="align-self: center; z-index: 2;">Top Usuarios</h3>
- <vaadin-vertical-layout id="listaUsuarios" style="flex-grow: 0; z-index: 2; align-items: center; padding: 0%; margin: 0%;"></vaadin-vertical-layout>
+<vaadin-vertical-layout id="cabeceraTop" style="flex-shrink: 0; flex-grow: 0; position: fixed; align-items: center; z-index: 999; height: 100%; justify-content: flex-start; overflow-y: auto; scrollbar-color: transparent transparent; padding-bottom: 5%; padding-left: 0.5%;" theme="spacing-xs">
+ <h4 id="tituloUsuarios">Top Usuarios</h4>
+ <vaadin-vertical-layout id="listaUsuarios" style="flex-grow: 0; z-index: 2; align-items: center; padding: 0%; margin: 0%;" theme="spacing-xs"></vaadin-vertical-layout>
  <vaadin-button id="botonVerListaUsuarios" style="align-self: center;z-index: 2; background-color: #ffffff;">
    Ver Lista Usuarios 
  </vaadin-button>
- <h3 style="align-self: center; z-index: 2; margin-top: 1px;" id="tituloHashtag">Top Hashtags</h3>
- <vaadin-vertical-layout style="align-self: center; flex-grow: 0; align-items: center; z-index: 2; justify-content: center; padding: 0%; margin: 0%;" id="listaTopHashtag"></vaadin-vertical-layout>
+ <h4 id="tituloHashtag">Top Hashtags</h4>
+ <vaadin-vertical-layout style="align-self: center; flex-grow: 0; align-items: center; z-index: 2; justify-content: flex-start; padding: 0%; margin: 0%;" id="listaTopHashtag"></vaadin-vertical-layout>
  <vaadin-button style="align-self: center;z-index: 2;background-color: #ffffff;" id="botonVerListaHashtag">
    Ver Lista Hashtags 
  </vaadin-button>

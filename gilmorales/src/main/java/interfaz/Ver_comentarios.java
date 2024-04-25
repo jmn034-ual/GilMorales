@@ -1,45 +1,47 @@
 package interfaz;
 
+import basededatos.BDPrincipal;
+import bd_dcl.Publicacion;
+import bd_dcl.UsuarioRegistrado;
 import vistas.VistaVerComentarios;
 
 public class Ver_comentarios extends VistaVerComentarios{
-//	private ImageIcon _usuarioIcono;
-//	private button _verPerfilB;
-//	private Label _geolocalizacionL;
-//	private TextArea _descripcionTA;
-//	private int _numeroMeGustas;
-//	private int _numeroComentarios;
-//	private int _numeroVisualizaciones;
-//	private Label _comentariosL;
-//	private Label _visualizacionesL;
-//	private int _numeroSeguidores;
-//	private Label _seguidoresL;
-//	private Label _meGustasL;
+
 	public Ver_perfil_publico ver_perfil;
+	Publicacion publicacion;
+	BDPrincipal bd = new BDPrincipal();
 	
-	public Ver_comentarios() {
+	public Ver_comentarios(Publicacion publicacion) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
+    	this.publicacion = publicacion;
 		this.getFotoPerfil().setSizeFull();
-
+		NumeroMeGustas();
+		NumeroComentarios();
+		NumeroVisualizaciones();
+		NumeroSeguidores();
 	}
 
 	public void Ver_perfil() {
 	}
 
 	public void NumeroMeGustas() {
-		throw new UnsupportedOperationException();
+		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 	}
 
 	public void NumeroComentarios() {
-		throw new UnsupportedOperationException();
+		this.getNumComentarios().setText(this.publicacion.getNumComentarios() + "");
 	}
 
 	public void NumeroVisualizaciones() {
-		throw new UnsupportedOperationException();
+		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones() + "");
 	}
 
 	public void NumeroSeguidores() {
-		throw new UnsupportedOperationException();
+		if(this.publicacion.getPerteneceA() != null) {			
+			this.getNumSeguidores().setText(this.publicacion.getPerteneceA().seguidor.size() + "");
+		}else {
+			this.getNumSeguidores().setVisible(false);
+		}
 	}
 }

@@ -3,6 +3,7 @@ package interfaz;
 import java.util.List;
 import java.util.Vector;
 
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -61,20 +62,29 @@ public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados {
 
 		this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).removeAll();
 		_item.clear();
-		if (lista != null) {
-			for (UsuarioRegistrado user : lista) {
-				if (unr != null) {
-					this.usuario = new Lista_usuarios_registrados_item(user, this.unr);
-				} else if (ur != null) {
-					this.usuario = new Lista_usuarios_registrados_item(user, this.ur);
+		int tamanio = lista.size();
+		for (int i = 0; i < lista.size(); i++) {
+			if (tamanio >= 3) {
+				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class)
+						.add(new HorizontalLayout(new Lista_usuarios_registrados_item(lista.get(i)),
+								new Lista_usuarios_registrados_item(lista.get(++i)),
+								new Lista_usuarios_registrados_item(lista.get(i += 1))));
+				tamanio -= 3;
+			} else if (tamanio == 2) {
+				HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_usuarios_registrados_item(lista.get(i)),
+						new Lista_usuarios_registrados_item(lista.get(++i)));
+				horizontal2.getStyle().set("width", "66.66%");
+				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class)
+						.add(horizontal2);
+			} else {
+				HorizontalLayout horizontal1 = new HorizontalLayout(new Lista_usuarios_registrados_item(lista.get(i)));
+				horizontal1.getStyle().set("width", "33%");
 
-				} else {
-					this.usuario = new Lista_usuarios_registrados_item(user, this.adminInterfaz);
-				}
-				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
-				_item.add(this.usuario);
+				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class)
+						.add(horizontal1);
 			}
 		}
+
 	}
 
 	public void Ordenar() {

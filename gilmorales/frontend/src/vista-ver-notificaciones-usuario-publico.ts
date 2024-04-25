@@ -15,7 +15,7 @@ export class VistaVerNotificacionesUsuarioPublico extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="align-self: stretch; flex-grow: 1; width: 100%; height: 100%;">
+<vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="align-self: stretch; flex-grow: 1; width: 100%; height: 100%; overflow-y: auto;">
  <h1 id="h1" style="align-self: center;">Notificaciones</h1>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: stretch;">
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="flex-grow: 1; margin-left: 25%;">

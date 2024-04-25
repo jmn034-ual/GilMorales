@@ -40,8 +40,6 @@ public class VistaRealizarBusqueda extends LitTemplate {
 	private HorizontalLayout layoutFiltrar;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("tituloUsuarios")
 	private H3 tituloUsuarios;
 	@Id("tituloHashtags")
@@ -73,17 +71,6 @@ public class VistaRealizarBusqueda extends LitTemplate {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
 
 
 

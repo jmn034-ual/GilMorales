@@ -18,7 +18,7 @@ export class VistaVerComentarios extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; flex-grow: 1; height: 100%; width: 100%; z-index: 999;">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; flex-grow: 1; height: 100%; width: 100%; z-index: 999; padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-m);">
  <vaadin-vertical-layout theme="spacing" id="layoutInfo" style="flex-shrink: 0; width: 20%; height: 99%; align-items: center;">
   <vaadin-horizontal-layout theme="spacing" id="layoutpropietario" style="align-self: center;">
    <vaadin-vertical-layout theme="spacing" id="layoutFotoPerfil">
@@ -62,9 +62,10 @@ export class VistaVerComentarios extends LitElement {
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout2" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 80%;">
+ <hr style="height: 90%; width: 2px; padding: var(--lumo-space-xs);">
+ <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 80%;">
   <vaadin-vertical-layout theme="spacing" id="layoutListaComentarios" style="flex-grow: 0; width: 100%; flex-shrink: 0; height: 94%;"></vaadin-vertical-layout>
-  <vaadin-horizontal-layout theme="spacing-s" id="layoutComentar" style="margin: var(--lumo-space-xs); width: 100%; flex-shrink: 0;">
+  <vaadin-horizontal-layout theme="spacing-s" id="layoutComentar" style="flex-shrink: 0; width: 100%;">
    <vaadin-text-field label="" placeholder="Escribe tu comentario..." id="textFieldCmentario" style="flex-grow: 1;"></vaadin-text-field>
    <vaadin-button id="botonComentar">
      Comentar 

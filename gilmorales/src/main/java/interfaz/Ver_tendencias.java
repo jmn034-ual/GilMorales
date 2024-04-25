@@ -6,17 +6,19 @@ import vistas.VistaVerTendencias;
 
 public class Ver_tendencias extends VistaVerTendencias{
 
-	public Ver_lista_Hashtag _ver_lista_Hashtag = new Ver_lista_Hashtag();
+	public Ver_lista_Hashtag _ver_lista_Hashtag;
 	public Tendencias _tendencias;
 	
 	public Ver_tendencias() {
-//		this.getFotoPerfil1().setSizeFull();
-		this.getFotoPerfil1().setImage("icons/luffy.jpg");
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
+    	this.getFotoPerfil1().setImage("icons/luffy.jpg");
 		Tendencias();
-//		Ver_lista_Hashtag();
+		Ver_lista_Hashtag();
 	}
 
 	public void Ver_lista_Hashtag() {
+		 _ver_lista_Hashtag = new Ver_lista_Hashtag(this);
 //		this.getBotonVerListaHashtags().addClickListener(event ->{
 //			this._ver_lista_Hashtag.setVisible(true);
 //		});

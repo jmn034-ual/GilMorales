@@ -13,7 +13,7 @@ public class Administrador extends VistaAdministradorPrincipal {
 	public iAdministrador _iAdministrador = new BDPrincipal();
 	public Lista_Publicaciones_Administrador _lista_Publicaciones__Administrador_;
 	public Cabecera_Administrador _cabecera_Administrador = new Cabecera_Administrador();
-	public Cabecera_TOP top = new Cabecera_TOP();
+	public Cabecera_TOP top;
 	public Element cabeceraTop = top.getCabeceraTop();
 	UsuarioAdministrador admin;
 	

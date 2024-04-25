@@ -33,7 +33,7 @@ public class Lista_denuncias extends VistaListasDenunciasAdministrador {
 	public void cargarDenuncias() {
 		List<Denuncia> denuncias = null;
 		try {
-			denuncias = new ArrayList<Denuncia>(admin.denuncia.cargarDenuncias());
+			denuncias = new ArrayList<Denuncia>(admin.denuncias.cargarDenuncias());
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

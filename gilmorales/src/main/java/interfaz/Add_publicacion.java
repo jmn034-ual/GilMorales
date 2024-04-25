@@ -25,7 +25,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 	private UsuarioRegistrado ur;
 	private BDPrincipal bd = new BDPrincipal();
 	private Publicacion publicacion;
-	private Usuario_Registrado urInterfaz;
+	public Usuario_Registrado urInterfaz;
 	private String localizacion = "";
 	Usuario_comercial ucInterfaz;
 	UsuarioComercial uc;

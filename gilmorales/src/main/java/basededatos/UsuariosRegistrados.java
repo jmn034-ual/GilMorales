@@ -3,11 +3,14 @@ package basededatos;
 import basededatos.BDPrincipal;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 import java.util.Vector;
 
+import org.hibernate.mapping.Collection;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -114,7 +117,7 @@ public class UsuariosRegistrados {
 		throw new UnsupportedOperationException();
 	}
 
-	public List buscarUsuario(String aNombreUsuario) throws PersistentException {
+	public List<UsuarioRegistrado> buscarUsuario(String aNombreUsuario) throws PersistentException {
 		if(aNombreUsuario == "") return null;
 		List lista = null;
 		List<UsuarioRegistrado> usuariosCoincidentes = new ArrayList<UsuarioRegistrado>();
@@ -139,34 +142,34 @@ public class UsuariosRegistrados {
 		return usuariosCoincidentes;
 	}
 
-	public List cargarListaUsuariosTOP() throws PersistentException {
+	public List<UsuarioRegistrado> cargarListaUsuariosTOP() throws PersistentException {
 		List<UsuarioRegistrado> usuariosTop = new ArrayList<UsuarioRegistrado>();
 
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			List<UsuarioRegistrado> usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-			HashMap<UsuarioRegistrado, Integer> datos = new HashMap<UsuarioRegistrado, Integer>();
+			TreeMap<Integer, UsuarioRegistrado> datos = new TreeMap<Integer, UsuarioRegistrado>(Collections.reverseOrder());
 			for(UsuarioRegistrado user : usuarios) {
 				List<Publicacion> publicaciones = new ArrayList<Publicacion>(user.publica.getCollection());
-				System.out.println("El numero de usuarios es -> " + usuarios.size());
 				int numMeGustas = 0;
 				for(Publicacion publicacion : publicaciones) {
 					numMeGustas += publicacion.getNumMeGustas();
 				}
-				datos.put(user, numMeGustas);
-			}
-			ArrayList<Integer> valores = new ArrayList<Integer>(datos.values());
-			valores.sort(null);
-			int i = 1;
-			for(Entry<UsuarioRegistrado, Integer> d : datos.entrySet()) {
-				if(valores.get(valores.size()-1).equals(d.getValue())) {
-					usuariosTop.add(d.getKey());
-					if(i < 5) {
-						i++;
+				if(numMeGustas != 0) {
+					if(!datos.containsKey(numMeGustas)) {						
+						datos.put(numMeGustas, user);
 					}else {
-						break;
+						usuariosTop.add(user);
 					}
 				}
+			}
+
+			for(Entry<Integer, UsuarioRegistrado> d : datos.entrySet()) {
+				if((usuariosTop.size() < 5)) {
+					usuariosTop.add(d.getValue());
+				}else {
+						break;
+					}
 			}
 			t.commit();
 		} catch (Exception e) {

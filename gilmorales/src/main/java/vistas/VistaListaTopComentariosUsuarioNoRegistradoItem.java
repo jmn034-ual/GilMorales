@@ -20,24 +20,24 @@ import com.vaadin.flow.component.avatar.Avatar;
 @JsModule("./src/vista-lista-top-comentarios-usuario-no-registrado-item.ts")
 public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate {
 
-    @Id("nombreDeUsuarioB")
-	private HorizontalLayout nombreDeUsuarioB;
+
+
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("nombreDeUsuarioB1")
-	private Button nombreDeUsuarioB1;
-	@Id("comentarioL")
-	private Label comentarioL;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("fotoPerfil")
 	private Avatar fotoPerfil;
-	@Id("numeroMeGusta")
-	private Label numeroMeGusta;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("nombreDeUsuarioB")
+	private Button nombreDeUsuarioB;
+	@Id("comentarioL")
+	private Label comentarioL;
 	@Id("vaadinHorizontalLayout2")
 	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("numeroMeGusta")
+	private Label numeroMeGusta;
 	@Id("meGustaL")
 	private Label meGustaL;
 	@Id("meGustaB")
@@ -47,18 +47,6 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 	
 	
 
-	public HorizontalLayout getNombreDeUsuarioB() {
-		return nombreDeUsuarioB;
-	}
-
-
-
-	public void setNombreDeUsuarioB(HorizontalLayout nombreDeUsuarioB) {
-		this.nombreDeUsuarioB = nombreDeUsuarioB;
-	}
-
-
-
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
@@ -67,42 +55,6 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
-
-
-	public Button getNombreDeUsuarioB1() {
-		return nombreDeUsuarioB1;
-	}
-
-
-
-	public void setNombreDeUsuarioB1(Button nombreDeUsuarioB1) {
-		this.nombreDeUsuarioB1 = nombreDeUsuarioB1;
-	}
-
-
-
-	public Label getComentarioL() {
-		return comentarioL;
-	}
-
-
-
-	public void setComentarioL(Label comentarioL) {
-		this.comentarioL = comentarioL;
 	}
 
 
@@ -131,14 +83,38 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 
 
 
-	public Label getNumeroMeGusta() {
-		return numeroMeGusta;
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
 	}
 
 
 
-	public void setNumeroMeGusta(Label numeroMeGusta) {
-		this.numeroMeGusta = numeroMeGusta;
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public Button getNombreDeUsuarioB() {
+		return nombreDeUsuarioB;
+	}
+
+
+
+	public void setNombreDeUsuarioB(Button nombreDeUsuarioB) {
+		this.nombreDeUsuarioB = nombreDeUsuarioB;
+	}
+
+
+
+	public Label getComentarioL() {
+		return comentarioL;
+	}
+
+
+
+	public void setComentarioL(Label comentarioL) {
+		this.comentarioL = comentarioL;
 	}
 
 
@@ -151,6 +127,18 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 
 	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
 		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
+	}
+
+
+
+	public Label getNumeroMeGusta() {
+		return numeroMeGusta;
+	}
+
+
+
+	public void setNumeroMeGusta(Label numeroMeGusta) {
+		this.numeroMeGusta = numeroMeGusta;
 	}
 
 

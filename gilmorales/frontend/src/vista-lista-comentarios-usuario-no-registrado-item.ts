@@ -2,6 +2,7 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
+import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-lista-comentarios-usuario-no-registrado-item')
@@ -29,9 +30,8 @@ export class VistaListaComentariosUsuarioNoRegistradoItem extends LitElement {
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 1; justify-content: flex-end; flex-shrink: 0;">
   <label id="numeroMeGusta" style="align-self: center;">0</label>
-  <label id="meGustaL" style="align-self: center;">Me gusta</label>
-  <vaadin-button id="meGustaB">
-    Me gusta 
+  <vaadin-button theme="icon" aria-label="Add new" id="meGustaB">
+   <iron-icon icon="lumo:plus"></iron-icon>
   </vaadin-button>
   <vaadin-button id="denunciarB">
     Denunciar 

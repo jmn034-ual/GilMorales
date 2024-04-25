@@ -39,18 +39,17 @@ public class Lista_resultado extends VistaListaResultado{
 			for (int i = 0; i < resultado.size(); i++) {				
 				if (resultado.get(i) instanceof UsuarioRegistrado) {
 					UsuarioRegistrado ur = bd.cargarUsuarioRegistrado(Integer.parseInt(resultado.get(i).toString()));
-					item = new Lista_resultado_item(ur);
-//					this.getLayoutResultadoUsuario().as(VerticalLayout.class).add(item);
+					item = new Resultado_usuarios_item(ur, this);
 					this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).add(item);
 	            } else if (resultado.get(i) instanceof Hashtag) {
 	            	Hashtag h = bd.cargarHashtag(Integer.parseInt(resultado.get(i).toString()), buscar);
-					item = new Lista_resultado_item(h);
+					item = new Resultado_hashtags_item(h, this);
 					this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).add(item);
-//					this.getLayoutResultadoHashtags().as(VerticalLayout.class).add(item);
 	            }
 				_item.add(item);
 			}
 	}
+	
 	public void Filtrar_resultado() {
 		this.rb.select.addValueChangeListener(event -> {
 			if(this.rb.select.getValue() == "Usuarios") {

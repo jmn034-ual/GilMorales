@@ -35,7 +35,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 
 	public void Cabecera_Usuario_No_Registrado() {
 		cabeceraUNR = new Cabecera_Usuario_No_Registrado(this);
-		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(this.cabeceraUNR._cabecera_TOP);
+//		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(this.cabeceraUNR._cabecera_TOP);
 		this.getLayoutCabecera().add(cabeceraUNR);
 	}
 
