@@ -21,8 +21,8 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	}
 
 	public Lista_Publicaciones_Usuario_no_registrado_item(Publicacion publicacion, Lista_Publicaciones_Usuario_no_registrado interfaz) {
-		this.getStyle().set("width", "100%");
-    	this.getStyle().set("height", "100%");
+//		this.getStyle().set("width", "100%");
+//    	this.getStyle().set("height", "100%");
 		this._publicaciones__Usuario_no_registrado_  = interfaz;
 		this.publicacion = publicacion;
 		NumeroComentarios();
@@ -62,25 +62,24 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 			_publicaciones__Usuario_no_registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 			_publicaciones__Usuario_no_registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(ver_perfil);
 			_publicaciones__Usuario_no_registrado_.unr.getLayoutCabeceraTop().setVisible(false);
-//			unr.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}
 
 	public void Ver_publicacion__Usuario_No_Registrado_() {
 		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, _publicaciones__Usuario_no_registrado_.unr);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event ->{
-			_publicaciones__Usuario_no_registrado_.unr.getLayoutListaPublicaciones().setVisible(false);
+			_publicaciones__Usuario_no_registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 			_publicaciones__Usuario_no_registrado_.unr.getLayoutCabeceraTop().setVisible(false);
-			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().add(verPublicacionUNR);
+			_publicaciones__Usuario_no_registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(verPublicacionUNR);
 			});
 	}
 	
 	public void Ver_comentarios__Usuario_No_registrado_() {
 		verComentariosUNR = new Ver_comentarios_Usuario_No_registrado(this.publicacion, _publicaciones__Usuario_no_registrado_.unr);
 		this.getBotonVerComentarios().addClickListener(event -> {
-			_publicaciones__Usuario_no_registrado_.unr.getLayoutListaPublicaciones().setVisible(false);
+			_publicaciones__Usuario_no_registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 			_publicaciones__Usuario_no_registrado_.unr.getLayoutCabeceraTop().setVisible(false);
-			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().add(verComentariosUNR);
+			_publicaciones__Usuario_no_registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(verComentariosUNR);
 		});
 	}
 

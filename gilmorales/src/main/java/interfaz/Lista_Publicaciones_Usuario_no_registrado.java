@@ -23,6 +23,8 @@ public class Lista_Publicaciones_Usuario_no_registrado extends VistaListaPublica
 	public Lista_Publicaciones_Usuario_no_registrado(){
 	}
 	public Lista_Publicaciones_Usuario_no_registrado(Usuario_No_Registrado unr){
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this.unr = unr;
 		cargarPublicacionesUNR();
 	}

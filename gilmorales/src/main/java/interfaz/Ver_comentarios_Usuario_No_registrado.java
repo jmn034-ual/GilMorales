@@ -16,6 +16,8 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	
 	public Ver_comentarios_Usuario_No_registrado(Publicacion publicacion, Usuario_No_Registrado unr) {
 		super(publicacion);
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this.getFotoPerfil().setImage("icons/luffy.jpg");
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(false);

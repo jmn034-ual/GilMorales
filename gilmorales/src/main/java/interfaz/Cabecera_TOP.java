@@ -34,27 +34,17 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		_ver_lista_Hashtag = new Ver_lista_Hashtag(this);
 		this.getBotonVerListaHashtag().addClickListener(event -> {
 			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
-			this._ver_lista_Hashtag.setVisible(true);
-			this._ver_lista_usuarios_registrados.setVisible(false);
-			if(this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().remove(this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().setVisible(false);
-			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);
+			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
+			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_Hashtag);
 			});
 	}
+	
 	public void Ver_lista_HashtagUR() {
 		_ver_lista_Hashtag = new Ver_lista_Hashtag(this);
 		this.getBotonVerListaHashtag().addClickListener(event -> {
-			this.getCabeceraTop().setVisible(false);
-			this._ver_lista_Hashtag.setVisible(true);
 			_cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
-			this._ver_lista_usuarios_registrados.setVisible(false);
-			if(this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().remove(this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().setVisible(false);
-			this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);
+			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
+			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_Hashtag);
 		});
 	}
 
@@ -72,26 +62,16 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this._cabecera_Usuario_Registrado.urInterfaz);
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
 			_cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
-			this._ver_lista_Hashtag.setVisible(false);
-			this._ver_lista_usuarios_registrados.setVisible(true);
-			if(this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().remove(this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().setVisible(false);
-			this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().add(_ver_lista_usuarios_registrados);
+			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
+			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_usuarios_registrados);
 		});
 	}
 	public void Ver_lista_usuarios_registradosUNR() {
 		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this._cabecera_Usuario_No_Registrado.unr);
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
-			this._ver_lista_Hashtag.setVisible(false);
-			this._ver_lista_usuarios_registrados.setVisible(true);
 			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
-			if(this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().remove(this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().setVisible(false);
-			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().add(_ver_lista_usuarios_registrados);
+			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
+			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_usuarios_registrados);
 		});
 	}
 }

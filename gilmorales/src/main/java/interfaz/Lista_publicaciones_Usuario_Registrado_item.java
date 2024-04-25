@@ -21,13 +21,13 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
 	public Denunciar_publicacion _denunciar_publicacion;
 	public Ver_comentarios_Usuario_Registrado verComentarios;
-	Usuario_Registrado urinterfaz;
 	BDPrincipal bd = new BDPrincipal();
 	UsuarioRegistrado user;
 
-	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion, Lista_publicaciones_Usuario_Registrado interfaz) {
+	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,
+			Lista_publicaciones_Usuario_Registrado interfaz) {
 		super(publicacion);
-		this.urinterfaz = interfaz.urInterfaz;
+		this._lista_publicaciones__Usuario_Registrado_ = interfaz;
 		this.user = interfaz.urInterfaz.ur;
 		this.getLayoutBotonesUsuarioR().setVisible(true);
 		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
@@ -35,48 +35,55 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this.getVaadinButton().setVisible(true);
 		this.getLabelMeGustas().setVisible(false);
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
-		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios()+"");
+		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios() + "");
 		this.getLayoutComentar().setVisible(true);
 		Ver_comentarios__Usuario_Registrado_();
 		mostrarDatosUsuario();
-		if(this.publicacion.getPerteneceA() != null) {
-			Ver_perfil();	
+		if (this.publicacion.getPerteneceA() != null) {
+			Ver_perfil();
 			Seguir();
-		}else {
+		} else {
 			this.getBotonNombreUsuario().setDisableOnClick(false);
 		}
 		Dar_me_gusta_publicacion();
 		Ver_publicacion_ajena();
 		Denunciar_publicacion();
 		Comentar();
-		
+
 	}
-	
+
 	public void Ver_comentarios__Usuario_Registrado_() {
-		verComentarios = new Ver_comentarios_Usuario_Registrado(this.publicacion, urinterfaz, user);
+		verComentarios = new Ver_comentarios_Usuario_Registrado(this.publicacion,
+				_lista_publicaciones__Usuario_Registrado_.urInterfaz, user);
 		this.getBotonVerComentarios().addClickListener(event -> {
-			urinterfaz.getListaPublicaciones().setVisible(false);
-			urinterfaz.getCabeceraTop().setVisible(false);
-			urinterfaz.getVaadinHorizontalLayout().add(verComentarios);
+			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
+			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)
+					.add(verComentarios);
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getCabeceraTop().setVisible(false);
+
 		});
 	}
+
 	@Override
 	public void Ver_perfil() {
 		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA());
-		this.getBotonNombreUsuario().addClickListener(event ->{
-			urinterfaz.getListaPublicaciones().setVisible(false);
-			urinterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
-			urinterfaz.getVaadinHorizontalLayout().add(ver_perfil);
-			});
+		this.getBotonNombreUsuario().addClickListener(event -> {
+			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
+			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)
+					.add(ver_perfil);
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getCabeceraTop().setVisible(false);
+		});
 	}
-	
+
 	public void Ver_publicacion_ajena() {
-		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.urinterfaz);
-		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event ->{
-			urinterfaz.getListaPublicaciones().setVisible(false);
-			urinterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
-			urinterfaz.getVaadinHorizontalLayout().add(_ver_publicacion_ajena);
-			});
+		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion,
+				_lista_publicaciones__Usuario_Registrado_.urInterfaz);
+		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event -> {
+			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
+			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)
+					.add(_ver_publicacion_ajena);
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getCabeceraTop().setVisible(false);
+		});
 	}
 
 	public void Seguir() {
@@ -96,12 +103,12 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 
 	public void Denunciar_publicacion() {
 		_denunciar_publicacion = new Denunciar_publicacion(this.publicacion.getPerteneceA(), this.user);
-		this.getBotonDenunciar().addClickListener(event ->{
+		this.getBotonDenunciar().addClickListener(event -> {
 			Dialog dialog = new Dialog(_denunciar_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("70%");
 			dialog.setWidth("61%");
-			this._denunciar_publicacion.getBotonCancelar().addClickListener(event2 ->{
+			this._denunciar_publicacion.getBotonCancelar().addClickListener(event2 -> {
 				dialog.close();
 			});
 			dialog.open();
@@ -110,7 +117,10 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 
 	public void Comentar() {
 		this.getBotonComentar().addClickListener(event -> {
-			 this.bd.comentarPublicacion(this.publicacion.getIdPublicacion(), this.user.getID(), this.getTextFieldComentario().getValue());
+			this.bd.comentarPublicacion(this.publicacion.getIdPublicacion(), this.user.getID(),
+					this.getTextFieldComentario().getValue());
+			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+
 		});
 	}
 }

@@ -31,22 +31,18 @@ public class Top_hashtags_item extends VistaTopHashtagsItem{
 	public void Ver_hashtagUR() {
 		this._ver_hashtag = new Ver_hashtag(hashtag);
 		this.getHashtagItem().addClickListener(event -> {
-			userInterfaz.getListaPublicaciones().setVisible(false);
 			userInterfaz.getCabeceraTop().setVisible(false);
-			userInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
-//			userInterfaz.getVaadinHorizontalLayout().remove(userInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			userInterfaz.getVaadinHorizontalLayout().add(_ver_hashtag);
+			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
+			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(_ver_hashtag);
 		});
 	}
 	
 	public void Ver_hashtagUNR() {
 		this._ver_hashtag = new Ver_hashtag(hashtag);
 		this.getHashtagItem().addClickListener(event -> {
-			unrInterfaz.getLayoutListaPublicaciones().setVisible(false);
 			unrInterfaz.getLayoutCabeceraTop().setVisible(false);
-			unrInterfaz.cabeceraUNR._cabecera_TOP.setVisible(false);
-//			unrInterfaz.getVaadinHorizontalLayout().remove(unrInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			unrInterfaz.getVaadinHorizontalLayout().add(_ver_hashtag);
+			unrInterfaz.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
+			unrInterfaz.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_hashtag);
 		});
 	}
 }
