@@ -15,7 +15,6 @@ public class Lista_Hashtags extends VistaListaHashtags{
 	public Ver_lista_Hashtag _ver_lista_Hashtag;
 	public Vector<Lista_Hashtags_item> _item = new Vector<Lista_Hashtags_item>();
 	iUsuario_Registrado bd = new BDPrincipal();
-	Lista_Hashtags_item hashtag;
 
 	public Lista_Hashtags(Ver_lista_Hashtag interfaz) {
 		this.getStyle().set("width", "100%");

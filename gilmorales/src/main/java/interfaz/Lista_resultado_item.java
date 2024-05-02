@@ -48,7 +48,7 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 	}
 
 	public void Ver_hashtag() {
-		this._ver_hashtag = new Ver_hashtag(hashtag);
+		this._ver_hashtag = new Ver_hashtag(hashtag, this);
 		this.getBotonHashtag().addClickListener(event -> {
 			if(this._lista_resultado.rb._cabecera_Usuario_No_Registrado != null) {
 				this._lista_resultado.rb._cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);

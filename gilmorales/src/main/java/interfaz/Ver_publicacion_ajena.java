@@ -19,8 +19,23 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	Publicacion publicacion;
 	Usuario_Registrado urInterfaz;
 	
-	public Ver_publicacion_ajena(Publicacion p, Usuario_Registrado urInterfaz) {
+	public Ver_publicacion_ajena(Publicacion p, Object urInterfaz) {
 		this.publicacion = p;
+		
+		if(urInterfaz instanceof Lista_publicaciones_Usuario_Registrado_item) {
+			_lista_publicaciones__Usuario_Registrado_ = (Lista_publicaciones_Usuario_Registrado_item) urInterfaz;
+		}else if(urInterfaz instanceof Publicaciones_gustadas_item) {
+			_publicaciones_gustadas = (Publicaciones_gustadas_item) urInterfaz;
+		}else if(urInterfaz instanceof Publicaciones_usuario_publico_item) {
+			_publicaciones_usuario_publico = (Publicaciones_usuario_publico_item) urInterfaz;
+		}else if(urInterfaz instanceof Publicaciones_gustadas_usuario_publico_item) {
+			_publicaciones_gustadas_usuario_publico = (Publicaciones_gustadas_usuario_publico_item) urInterfaz;
+		}else if(urInterfaz instanceof Publicaciones_hashtag_item) {
+			_publicaciones_hashtag = (Publicaciones_hashtag_item) urInterfaz;
+		}else if(urInterfaz instanceof Lista_usuarios_registrados_item) {
+			_lista_usuarios_registrados = (Lista_usuarios_registrados_item) urInterfaz;
+		}
+		
 		this.getVaadinHorizontalLayout2().setVisible(true);
 		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getAvatar().setImage(this.publicacion.getPerteneceA().getFoto());

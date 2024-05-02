@@ -13,10 +13,13 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem{
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
 	public Ver_perfil_publico perfilPublico;
 	public Ver_perfil_privado perfilPrivado;
+	public Usuario_No_Registrado userNoRegistrado;
+	public Usuario_Registrado userRegistrado;
 	Publicacion publicacion;
 	
 	public Publicaciones_hashtag_item(Publicacion p, Publicaciones_hashtag interfaz) {
 		this._publicaciones_hashtag = interfaz;
+		System.out.println(this._publicaciones_hashtag != null);
 		this.publicacion = p;
 		Video video = new Video(this.publicacion.getVideo());
 		video.getStyle().set("width", "70%");
@@ -24,17 +27,34 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem{
 		this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getImagenPublicacion().as(VerticalLayout.class).add(video);
-//		Ver_publicacion_ajena();
+		
+//		if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
+//			this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+//			Ver_publicacion_ajenaUNR();
+//		}else {		
+//			this.userRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+			Ver_publicacion_ajena();
+//		}
+		
 	}
 
 	public void Ver_publicacion_ajena() {
-//		_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this._publicaciones_hashtag.);
-		this.getImagenPublicacion().as(VerticalLayout.class).addClickListener(event -> {
+		_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.userRegistrado);
+		this.getLayoutItem().addClickListener(event -> {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_publicacion_ajena);
 		});
 		
 	}
+	
+//	public void Ver_publicacion_ajenaUNR() {
+//		Ver_publicacion_Usuario_No_Registrado _ver_publicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, userNoRegistrado);
+//		this.getLayoutItem().addClickListener(event -> {
+//			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+//			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_publicacionUNR);
+//		});
+//		
+//	}
 
 	public void Ver_perfil() {
 		this.getBotonNombreUsuario().addClickListener(event ->{

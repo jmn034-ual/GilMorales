@@ -12,24 +12,25 @@ import vistas.VistaTopHashtagsItem;
 public class Top_hashtags_item extends VistaTopHashtagsItem{
 	public Top_hashtags _top_hashtags;
 	public Ver_hashtag _ver_hashtag;
-	Usuario_No_Registrado unrInterfaz;
-	Usuario_Registrado userInterfaz;
 	Hashtag hashtag;
+	Usuario_Registrado userInterfaz;
+	Usuario_No_Registrado unrInterfaz;
 
-	public Top_hashtags_item(Hashtag hashtag, Object user) {
+	public Top_hashtags_item(Hashtag hashtag, Object interfaz) {
 		this.hashtag = hashtag;
-		if(user instanceof Usuario_No_Registrado) {
-			this.unrInterfaz = (Usuario_No_Registrado) user;
+		this._top_hashtags = (Top_hashtags) interfaz;
+		if(this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {			
 			Ver_hashtagUNR();
 		}else {
-			this.userInterfaz = (Usuario_Registrado) user;
 			Ver_hashtagUR();
-		}	
+		}
+	
 		this.getHashtagItem().setText(hashtag.getNombreHashtag());
 	}
 	
 	public void Ver_hashtagUR() {
-		this._ver_hashtag = new Ver_hashtag(hashtag);
+		this.userInterfaz = this._top_hashtags._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+		this._ver_hashtag = new Ver_hashtag(hashtag, this);
 		this.getHashtagItem().addClickListener(event -> {
 			userInterfaz.getCabeceraTop().setVisible(false);
 			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
@@ -38,7 +39,8 @@ public class Top_hashtags_item extends VistaTopHashtagsItem{
 	}
 	
 	public void Ver_hashtagUNR() {
-		this._ver_hashtag = new Ver_hashtag(hashtag);
+		this.unrInterfaz = this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+		this._ver_hashtag = new Ver_hashtag(hashtag, this);
 		this.getHashtagItem().addClickListener(event -> {
 			unrInterfaz.getLayoutCabeceraTop().setVisible(false);
 			unrInterfaz.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();

@@ -57,9 +57,6 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 		this.getInicio().addClickListener(event -> {
 			unr.getLayoutCabeceraTop().as(VerticalLayout.class).remove(this._cabecera_TOP);
 			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
-//			if (unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
-//				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
-//			}
 			unr.getLayoutListaPublicaciones().setVisible(true);
 			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(new Lista_Publicaciones_Usuario_no_registrado(unr));
 			unr.getLayoutCabeceraTop().setVisible(true);

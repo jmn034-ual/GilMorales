@@ -19,10 +19,11 @@ public class Top_hashtags extends VistaTopHashtags{
 	Usuario_No_Registrado unr;
 	
 	public Top_hashtags(Object user) {
-		if(user instanceof Usuario_No_Registrado) {
-			this.unr = (Usuario_No_Registrado) user;
+		this._cabecera_TOP = (Cabecera_TOP) user;
+		if(this._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
+			this.unr = this._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
 		}else {
-			this.user = (Usuario_Registrado) user;
+			this.user = this._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 		}	
 		cargarHashtagTOP();
 	}
@@ -33,9 +34,9 @@ public class Top_hashtags extends VistaTopHashtags{
 		_item.clear();
 		for (Hashtag h : top) {
 			if(unr != null && h != null) {
-				thi = new Top_hashtags_item(h, unr);
+				thi = new Top_hashtags_item(h, this);
 			}else {
-				thi = new Top_hashtags_item(h, user);
+				thi = new Top_hashtags_item(h, this);
 			}
 			this.getLayoutListaTopHashtag().as(VerticalLayout.class).add(thi);
 			_item.add(thi);

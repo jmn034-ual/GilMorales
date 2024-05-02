@@ -14,7 +14,7 @@ public class Tendencias_item extends VistaListaTendenciasItem{
 		this.getHashtag().setText(h.getNombreHashtag());
 	}
 	public void Ver_hashtag() {
-		this._ver_hashtag = new Ver_hashtag(hashtag);
+		this._ver_hashtag = new Ver_hashtag(hashtag, this);
 		
 	}
 }

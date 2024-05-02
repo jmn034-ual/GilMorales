@@ -18,7 +18,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		this._cabecera_Usuario_Registrado = interfazUR;
 		Ver_lista_HashtagUR();
 		Ver_lista_usuarios_registradosUR();
-		top_hashtags(_cabecera_Usuario_Registrado.urInterfaz);
+		top_hashtags();
 		top_usuarios(_cabecera_Usuario_Registrado.urInterfaz);
 	}
 
@@ -26,7 +26,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 			this._cabecera_Usuario_No_Registrado = interfazUNR;
 			Ver_lista_HashtagUNR();
 			Ver_lista_usuarios_registradosUNR();
-			top_hashtags(_cabecera_Usuario_No_Registrado.unr);
+			top_hashtags();
 			top_usuarios(_cabecera_Usuario_No_Registrado.unr);	
 	}
 	
@@ -48,8 +48,8 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		});
 	}
 
-	public void top_hashtags(Object user) {
-		_top_hashtags = new Top_hashtags(user);
+	public void top_hashtags() {
+		_top_hashtags = new Top_hashtags(this);
 		this.getListaTopHashtag().as(VerticalLayout.class).add(_top_hashtags);
 	}
 
