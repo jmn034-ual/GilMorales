@@ -18,8 +18,8 @@ public class Top_hashtags extends VistaTopHashtags{
 	Usuario_Registrado user;
 	Usuario_No_Registrado unr;
 	
-	public Top_hashtags(Object user) {
-		this._cabecera_TOP = (Cabecera_TOP) user;
+	public Top_hashtags(Cabecera_TOP user) {
+		this._cabecera_TOP = user;
 		if(this._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
 			this.unr = this._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
 		}else {

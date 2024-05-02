@@ -53,7 +53,6 @@ public class Ver_publicacion_Usuario_No_Registrado extends VistaVerPublicacionUs
 		this.getVerPerfil().addClickListener(event ->{
 			unr.getLayoutListaPublicaciones().setVisible(false);
 			unr.getLayoutCabeceraTop().setVisible(false);
-//			unr.getVaadinHorizontalLayout().remove(null)
 			unr.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}

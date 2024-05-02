@@ -16,9 +16,9 @@ public class Top_hashtags_item extends VistaTopHashtagsItem{
 	Usuario_Registrado userInterfaz;
 	Usuario_No_Registrado unrInterfaz;
 
-	public Top_hashtags_item(Hashtag hashtag, Object interfaz) {
+	public Top_hashtags_item(Hashtag hashtag, Top_hashtags interfaz) {
 		this.hashtag = hashtag;
-		this._top_hashtags = (Top_hashtags) interfaz;
+		this._top_hashtags = interfaz;
 		if(this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {			
 			Ver_hashtagUNR();
 		}else {
