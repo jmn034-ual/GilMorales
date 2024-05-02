@@ -25,19 +25,15 @@ public class Ver_hashtag extends VistaVerHashtag{
 		
 		if(interfaz instanceof Lista_Hashtags_item) {
 			this._lista_Hashtags = (Lista_Hashtags_item) interfaz;
-			System.out.println("************* Ver hashtag" + _lista_Hashtags != null);
 		}else if(interfaz instanceof Top_hashtags_item) {
 			this._top_hashtags = (Top_hashtags_item) interfaz;
-			System.out.println("************* Ver hashtag" + _top_hashtags != null);
-
+		}else if(interfaz instanceof Resultado_hashtags_item) {
+			this._resultado_hashtags = (Resultado_hashtags_item) interfaz;
+		}else if(interfaz instanceof Tendencias_item) {
+			this._tendencias = (Tendencias_item) interfaz;
+		}else if(interfaz instanceof Lista_resultado_item) {
+			this._lista_resultado = (Lista_resultado_item) interfaz;
 		}
-//		}else if(interfaz instanceof Resultado_hashtags_item) {
-//			this._resultado_hashtags = (Resultado_hashtags_item) interfaz;
-//		}else if(interfaz instanceof Tendencias_item) {
-//			this._tendencias = (Tendencias_item) interfaz;
-//		}else if(interfaz instanceof Lista_resultado_item) {
-//			this._lista_resultado = (Lista_resultado_item) interfaz;
-//		}
 		
 		this.getStyle().set("width","100%");
 		this.getStyle().set("height", "100%");

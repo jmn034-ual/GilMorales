@@ -54,7 +54,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	}
 
 	public void top_usuarios(Object user) {
-		_top_usuarios = new Top_usuarios(user);
+		_top_usuarios = new Top_usuarios(this);
 		this.getListaUsuarios().as(VerticalLayout.class).add(_top_usuarios);
 	}
 
