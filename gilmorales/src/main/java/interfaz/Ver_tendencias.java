@@ -19,13 +19,14 @@ public class Ver_tendencias extends VistaVerTendencias{
 
 	public void Ver_lista_Hashtag() {
 		 _ver_lista_Hashtag = new Ver_lista_Hashtag(this);
-//		this.getBotonVerListaHashtags().addClickListener(event ->{
-//			this._ver_lista_Hashtag.setVisible(true);
-//		});
+		this.getBotonVerListaHashtags().addClickListener(event ->{
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);
+			});
 	}
 
 	public void Tendencias() {
-		 _tendencias = new Tendencias();
+		 _tendencias = new Tendencias(this);
 		this.getLayoutHashtags().as(VerticalLayout.class).add(_tendencias);
 	}
 }

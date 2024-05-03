@@ -59,7 +59,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 	}
 
 	public void Ver_lista_usuarios_registradosUR() {
-		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this._cabecera_Usuario_Registrado.urInterfaz);
+		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this);
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
 			_cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
 			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
@@ -67,7 +67,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		});
 	}
 	public void Ver_lista_usuarios_registradosUNR() {
-		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this._cabecera_Usuario_No_Registrado.unr);
+		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this);
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
 			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
 			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();

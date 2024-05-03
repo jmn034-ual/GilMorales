@@ -31,17 +31,16 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 		} else if (urInterfaz instanceof Publicaciones_usuario_publico_item) {
 			_publicaciones_usuario_publico = (Publicaciones_usuario_publico_item) urInterfaz;
 			this.urInterfaz = this._publicaciones_usuario_publico._publicaciones_usuario_publico._ver_perfil_publico._top_usuarios.userInterfaz;
-		}
 //		}else if(urInterfaz instanceof Publicaciones_gustadas_usuario_publico_item) {
 //			_publicaciones_gustadas_usuario_publico = (Publicaciones_gustadas_usuario_publico_item) urInterfaz;
 //			this.urInterfaz = this._publicaciones_gustadas_usuario_publico.;
 //		}else if(urInterfaz instanceof Publicaciones_hashtag_item) {
 //			_publicaciones_hashtag = (Publicaciones_hashtag_item) urInterfaz;
 //			this.urInterfaz = urInterfaz;
-//		}else if(urInterfaz instanceof Lista_usuarios_registrados_item) {
-//			_lista_usuarios_registrados = (Lista_usuarios_registrados_item) urInterfaz;
-//			this.urInterfaz = urInterfaz;
-//		}
+		}else if(urInterfaz instanceof Lista_usuarios_registrados_item) {
+			_lista_usuarios_registrados = (Lista_usuarios_registrados_item) urInterfaz;
+			this.urInterfaz = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+		}
 
 		this.getVaadinHorizontalLayout2().setVisible(true);
 		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());

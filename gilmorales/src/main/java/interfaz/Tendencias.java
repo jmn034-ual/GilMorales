@@ -18,7 +18,8 @@ public class Tendencias extends VistaListaTendencias{
 	iUsuario_Registrado bd = new BDPrincipal();
 	Tendencias_item tendencia;
 
-	public Tendencias() {
+	public Tendencias(Ver_tendencias interfaz) {
+		this._ver_tendencias = interfaz;
 		cargarTendencias();
 	}
 
