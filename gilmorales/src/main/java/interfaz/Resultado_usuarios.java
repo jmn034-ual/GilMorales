@@ -9,12 +9,13 @@ import bd_dcl.UsuarioRegistrado;
 
 public class Resultado_usuarios extends Lista_resultado {
 	Resultado_usuarios_item item;
+	public Buscar_Usuario _buscar_Usuario;
+	public Vector<Resultado_usuarios_item> _item = new Vector<Resultado_usuarios_item>();
+	
 	public Resultado_usuarios(String buscar, String filtro) {
 		super(buscar, filtro, _realizar_busqueda);
 		cargarUsuariosBusqueda(buscar, filtro);
 	}
-	public Buscar_Usuario _buscar_Usuario;
-	public Vector<Resultado_usuarios_item> _item = new Vector<Resultado_usuarios_item>();
 	
 	public void cargarUsuariosBusqueda(String buscar, String filtro) {
 			List<UsuarioRegistrado> resultado = bd.realizarBusqueda(buscar, filtro);

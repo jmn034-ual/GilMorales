@@ -1,6 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
@@ -16,6 +15,8 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 	public Usuario_No_Registrado userNoRegistrado;
 	public Usuario_Registrado userRegistrado;
 	Publicacion publicacion;
+	
+	public Tendencias_item tendencias;
 
 	public Publicaciones_hashtag_item(Publicacion p, Publicaciones_hashtag interfaz) {
 		this._publicaciones_hashtag = interfaz;
@@ -26,20 +27,39 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 		this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getImagenPublicacion().as(VerticalLayout.class).add(video);
+		
+		if(this._publicaciones_hashtag._ver_hashtag._top_hashtags != null) {
+			if(this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null)
+				this.userNoRegistrado =  this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+			if(userNoRegistrado == null)
+				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+		}else if(this._publicaciones_hashtag._ver_hashtag._resultado_hashtags != null) {
+			this.userNoRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_No_Registrado.unr;
+			if(userNoRegistrado == null)
+				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz;
+		}else if(this._publicaciones_hashtag._ver_hashtag._tendencias != null) {
+			this.tendencias = this._publicaciones_hashtag._ver_hashtag._tendencias;
+//			this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._tendencias._tendencias._ver_tendencias._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+//			this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+		}else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null){
+			if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado != null)
+				this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+			if(userNoRegistrado == null){
+				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+			}
+		}
+		
 		Ver_publicacion_ajena();
 		Ver_perfil();
-
 	}
 
 	public void Ver_publicacion_ajena() {
 		this.getImagenPublicacion().as(VerticalLayout.class).addClickListener(event -> {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			if (this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
-				this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+			if (this.userNoRegistrado != null) {
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 						.add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this.userNoRegistrado));
-			} else if (this._publicaciones_hashtag._ver_hashtag._top_hashtags.userInterfaz != null) {
-				this.userRegistrado = this._publicaciones_hashtag._ver_hashtag._top_hashtags.userInterfaz;
+			} else {
 				if (this.userRegistrado.ur.equals(this.publicacion.getPerteneceA())) {
 					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 							.add(new Ver_publicacion_propia(publicacion, this.userRegistrado));
@@ -50,7 +70,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 				}
 			}
 		});
-
 	}
 
 	public void Ver_perfil() {

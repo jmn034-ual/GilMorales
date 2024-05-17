@@ -85,9 +85,14 @@ public class UsuariosRegistrados {
 			if(!userAseguir.seguidor.contains(userSigue)) {
 				userAseguir.seguidor.add(userSigue);
 				userSigue.seguir.add(userAseguir);
-				UsuarioRegistradoDAO.save(userAseguir);
-				UsuarioRegistradoDAO.save(userSigue);
+//				UsuarioRegistradoDAO.save(userAseguir);
+//				UsuarioRegistradoDAO.save(userSigue);
+			}else {
+				userAseguir.seguidor.remove(userSigue);
+				userSigue.seguir.remove(userAseguir);
 			}
+			UsuarioRegistradoDAO.save(userAseguir);
+			UsuarioRegistradoDAO.save(userSigue);
 			t.commit();
 		} catch (PersistentException e) {
 			t.rollback();

@@ -15,11 +15,7 @@ import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
 
 public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
-	//	private Button _eliminar_publicacion_propiaB;
-	//	private Button _verPerfilB;
-	//	private Button _eliminarB;
-	//	private Button _verMeGustasB;
-	//	public Lista_publicaciones_propias__Eliminar__item _lista_publicaciones_propias;
+
 	public Publicaciones_propias_item _publicaciones_propias;
 	public Add_publicacion _add_publiacacion;
 	public Ver_perfil_propio ver_perfil_propio;

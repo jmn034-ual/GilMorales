@@ -15,7 +15,7 @@ export class VistaVerHashtag extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout" style="width: 100%; height: 100%; overflow-y: auto; scrollbar-color: transparent transparent;">
+<vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout" style="width: 100%; height: 100%; overflow-y: auto; scrollbar-color: transparent transparent; align-items: center;">
  <vaadin-horizontal-layout id="layoutDatosHashtag" style="justify-content: center; align-self: center; flex-shrink: 0; margin-top: var(--lumo-space-xl);">
   <vaadin-vertical-layout id="imagenHashtag" style="flex-shrink: 0; align-self: center; align-items: center;"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="layoutInformacionHashtag">

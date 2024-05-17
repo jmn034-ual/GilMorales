@@ -36,28 +36,28 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 			this._ver_perfil = new Ver_perfil_privado(user);
 		}
 		this.getBotonNombreUsuario().addClickListener(event -> {
-			if(this._lista_resultado.rb._cabecera_Usuario_No_Registrado != null) {
-				this._lista_resultado.rb._cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
+			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null) {
+				this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
 
-			}else if(this._lista_resultado.rb._cabecera_Usuario_Registrado != null) {
-				this._lista_resultado.rb._cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
+			}else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null) {
+				this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
 			}
-			this._lista_resultado.rb.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
-			this._lista_resultado.rb.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(_ver_perfil);
+			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
+			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(_ver_perfil);
 		});
 	}
 
 	public void Ver_hashtag() {
 		this._ver_hashtag = new Ver_hashtag(hashtag, this);
 		this.getBotonHashtag().addClickListener(event -> {
-			if(this._lista_resultado.rb._cabecera_Usuario_No_Registrado != null) {
-				this._lista_resultado.rb._cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
+			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null) {
+				this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
 
-			}else if(this._lista_resultado.rb._cabecera_Usuario_Registrado != null) {
-				this._lista_resultado.rb._cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
+			}else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null) {
+				this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
 			}
-			this._lista_resultado.rb.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
-			this._lista_resultado.rb.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(this._ver_hashtag);
+			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
+			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(this._ver_hashtag);
 		});
 
 	}

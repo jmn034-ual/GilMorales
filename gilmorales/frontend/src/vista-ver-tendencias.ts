@@ -46,7 +46,7 @@ export class VistaVerTendencias extends LitElement {
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout3" style="flex-grow: 1; padding-right: 70px;">
     <vaadin-button id="botonBloquear" style="align-self: flex-end; margin: var(--lumo-space-xs);">
-      Button 
+     Bloquear
     </vaadin-button>
     <vaadin-button id="botonDenunciar" style="align-self: flex-end; margin: var(--lumo-space-xs);">
       Denunciar 

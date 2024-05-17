@@ -57,7 +57,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 				this.getBotonSeguir().setText("Seguir");
 			}
 		}
-		this.getVaadinHorizontalLayout2().setVisible(false);
+		this.getVaadinHorizontalLayout2().setVisible(true);
 		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getNumComentarios().setText(this.publicacion.getNumComentarios() + "");
 		this.getFechaSubida().setText(this.publicacion.getFechaPublicacion());
