@@ -42,9 +42,9 @@ public class Top_hashtags_item extends VistaTopHashtagsItem{
 		this.unrInterfaz = this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
 		this._ver_hashtag = new Ver_hashtag(hashtag, this);
 		this.getHashtagItem().addClickListener(event -> {
-			unrInterfaz.getLayoutCabeceraTop().setVisible(false);
-			unrInterfaz.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
-			unrInterfaz.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_hashtag);
+//			unrInterfaz.getLayoutCabeceraTop().setVisible(false);
+			unrInterfaz.getVaadinHorizontalLayout().removeAll();
+			unrInterfaz.getVaadinHorizontalLayout().add(_ver_hashtag);
 		});
 	}
 }

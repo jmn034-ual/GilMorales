@@ -37,11 +37,9 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	}
 	@Override
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.user);
+		this.ver_perfil = new Ver_perfil_publico(this.user, this);
 		this.getBotonNombreUsuario().addClickListener(event ->{
-			unrInterfaz.getLayoutListaPublicaciones().setVisible(false);
-			unrInterfaz.cabeceraUNR._cabecera_TOP.setVisible(false);
-			unrInterfaz.getVaadinHorizontalLayout().remove(unrInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
+			unrInterfaz.getVaadinHorizontalLayout().removeAll();
 			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}

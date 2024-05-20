@@ -46,24 +46,24 @@ public class Ver_publicacion_Usuario_No_Registrado extends VistaVerPublicacionUs
 	
 	public void Ver_perfil() {
 		if(this.p.getPerteneceA().getPrivacidad() == 0)
-			this.ver_perfil = new Ver_perfil_publico(this.p.getPerteneceA());
+			this.ver_perfil = new Ver_perfil_publico(this.p.getPerteneceA(), this);
 		else 
 			this.ver_perfil = new Ver_perfil_privado(this.p.getPerteneceA());
 		
 		this.getVerPerfil().addClickListener(event ->{
-			unr.getLayoutListaPublicaciones().setVisible(false);
-			unr.getLayoutCabeceraTop().setVisible(false);
-			unr.getVaadinHorizontalLayout().add(ver_perfil);
+
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}
 	
 	public void Ver_comentarios__Usuario_No_registrado_() {
 		_ver_comentarios__Usuario_No_registrado_ = new Ver_comentarios_Usuario_No_registrado(this.p, unr);
 		this.getBotonVerComentario().addClickListener(event -> {
-			unr.getLayoutListaPublicaciones().setVisible(false);
-			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
-			this.getVaadinHorizontalLayout().setVisible(false);
-			this.getVaadinVerticalLayout2().as(VerticalLayout.class).add(_ver_comentarios__Usuario_No_registrado_);
+//			unr.getLayoutListaPublicaciones().setVisible(false);
+//			unr.cabeceraUNR._cabecera_TOP.setVisible(false);
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(_ver_comentarios__Usuario_No_registrado_);
 		});	}
 
 	public void Lista_Top_Comentarios__Usuario_No_Registrado_() {

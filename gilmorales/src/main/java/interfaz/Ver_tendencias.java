@@ -16,7 +16,7 @@ public class Ver_tendencias extends VistaVerTendencias{
 		Tendencias();
 		Ver_lista_Hashtag();
 	}
-
+	
 	public void Ver_lista_Hashtag() {
 		 _ver_lista_Hashtag = new Ver_lista_Hashtag(this);
 		this.getBotonVerListaHashtags().addClickListener(event ->{

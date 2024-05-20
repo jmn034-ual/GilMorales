@@ -10,7 +10,7 @@ public interface iUsuario_comercial {
 
 	public UsuarioComercial cargarUsuarioComercial(int aUsuarioComercialID);
 
-	public Publicacion addPublicacionComercial(String aNombreUsuarioComercial, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioComercialID);
+	public Publicacion addPublicacionComercial(String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioComercialID);
 
 	public void editarPerfilUC(String aNuevoNombreUsuario, String aNombreEmpresa, String aDescripcion, String aFoto, int aUsuarioID);
 

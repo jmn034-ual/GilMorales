@@ -26,11 +26,11 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 	}
 	
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(comentario.getEsComentadoPor());
+		this.ver_perfil = new Ver_perfil_publico(comentario.getEsComentadoPor(), this);
 		this.getNombreUsuario().addClickListener(event ->{
-			unrInterfaz.getLayoutListaPublicaciones().setVisible(false);
-			unrInterfaz.cabeceraUNR._cabecera_TOP.setVisible(false);
-			unrInterfaz.getVaadinHorizontalLayout().remove(unrInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
+//			unrInterfaz.getLayoutListaPublicaciones().setVisible(false);
+//			unrInterfaz.cabeceraUNR._cabecera_TOP.setVisible(false);
+			unrInterfaz.getVaadinHorizontalLayout().removeAll();
 			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}

@@ -9,7 +9,6 @@ import bd_dcl.UsuarioRegistrado;
 //import basededatos.iVer_perfil_publico;
 
 public class Ver_perfil_publico extends Ver_Perfil__2 {
-//	private button _seguir;
 //	public iVer_perfil_publico _iVer_perfil_ublico;
 	public Publicaciones_usuario_publico _publicaciones_usuario_publico;
 	public Ver_publicacciones_gustadas_Otro_usuario _ver_publicacciones_gustadas__Otro_usuario_;
@@ -17,7 +16,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	UsuarioRegistrado user;
 	iUsuario_Registrado bd = new BDPrincipal();
 	
-	public Ver_perfil_publico(UsuarioRegistrado userAver) {
+	public Ver_perfil_publico(UsuarioRegistrado userAver, Object interfaz) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.userAver = userAver;
