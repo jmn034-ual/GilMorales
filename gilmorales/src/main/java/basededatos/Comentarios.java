@@ -61,15 +61,15 @@ public class Comentarios {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
-			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
-			UsuarioRegistrado user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
-			if(publicacion.tieneComentarios.contains(comentario) && user.comenta.contains(comentario)) {
-				publicacion.tieneComentarios.remove(comentario);
-				user.comenta.remove(comentario);
+//			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
+//			UsuarioRegistrado user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
+//			if(publicacion.tieneComentarios.contains(comentario) && user.comenta.contains(comentario)) {
+//				publicacion.tieneComentarios.remove(comentario);
+//				user.comenta.remove(comentario);
 				ComentarioDAO.deleteAndDissociate(comentario);
-			}
-			UsuarioRegistradoDAO.save(user);
-			PublicacionDAO.save(publicacion);
+//			}
+//			UsuarioRegistradoDAO.save(user);
+//			PublicacionDAO.save(publicacion);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
