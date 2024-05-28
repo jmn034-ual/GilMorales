@@ -18,7 +18,8 @@ public class Lista_Top_Comentarios_Administrador_item extends Lista_Top_Comentar
 
 	public void Borrar_comentario() {
 		this.getBorrarComentarioB().addClickListener(event -> { 
-			bd.borrarComentario(comentario.getIdComentario(), comentario.getComentadoEn().getIdPublicacion(), comentario.getComentadoEn().getPerteneceA().getID());
+//			bd.borrarComentario(comentario.getIdComentario(), comentario.getComentadoEn().getIdPublicacion(), comentario.getComentadoEn().getPerteneceA().getID());
+			bd.borrarComentario(comentario.getIdComentario());
 		});
 	}
 }

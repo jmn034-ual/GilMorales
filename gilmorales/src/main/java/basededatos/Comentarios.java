@@ -57,7 +57,8 @@ public class Comentarios {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aUsuarioID) throws PersistentException {
+//	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aUsuarioID) throws PersistentException {
+	public void borrarComentario(int aIdComentario) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);

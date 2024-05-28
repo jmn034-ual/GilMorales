@@ -11,24 +11,26 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	public Lista_Publicaciones_Usuario_no_registrado_item _publicacionesUNR;
 	public Lista_Comentarios_Vista_Usuario_No_registrado _lista_Comentarios__Vista_Usuario_No_registrado_;
 	private Usuario_No_Registrado unrInterfaz;
-	UsuarioRegistrado user;
 	Publicacion publicacion;
 	
 	public Ver_comentarios_Usuario_No_registrado(Publicacion publicacion, Usuario_No_Registrado unr) {
 		super(publicacion);
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-		this.getFotoPerfil().setImage("icons/luffy.jpg");
+		this.unrInterfaz = unr;
+		this.publicacion = publicacion;
+		interfazUserNoRegistrado();
+		Lista_Comentarios__Vista_Usuario_No_registrado_();
+		this.Ver_perfil();
+	}
+	
+	public void interfazUserNoRegistrado() {
+		this.getFotoPerfil().setImage(publicacion.getPerteneceA().getFoto());
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(false);
 		this.getBotonMeGusta().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getLayoutComentar().setVisible(false);
-		this.unrInterfaz = unr;
-		this.publicacion = publicacion;
-		this.user = publicacion.getPerteneceA();
-		Lista_Comentarios__Vista_Usuario_No_registrado_();
-		this.Ver_perfil();
 	}
 	
 	public void Lista_Comentarios__Vista_Usuario_No_registrado_() {
@@ -37,11 +39,9 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	}
 	@Override
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.user);
+		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this);
 		this.getBotonNombreUsuario().addClickListener(event ->{
-			unrInterfaz.getLayoutListaPublicaciones().setVisible(false);
-			unrInterfaz.cabeceraUNR._cabecera_TOP.setVisible(false);
-			unrInterfaz.getVaadinHorizontalLayout().remove(unrInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
+			unrInterfaz.getVaadinHorizontalLayout().removeAll();
 			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
 			});
 	}

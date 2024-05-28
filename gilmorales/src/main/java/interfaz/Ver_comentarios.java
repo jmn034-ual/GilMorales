@@ -15,14 +15,18 @@ public class Ver_comentarios extends VistaVerComentarios{
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.publicacion = publicacion;
-		this.getFotoPerfil().setSizeFull();
+//		this.getFotoPerfil().setSizeFull();
+		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
+		this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		NumeroMeGustas();
 		NumeroComentarios();
 		NumeroVisualizaciones();
 		NumeroSeguidores();
 	}
 
+	
 	public void Ver_perfil() {
+		
 	}
 
 	public void NumeroMeGustas() {

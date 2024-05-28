@@ -12,11 +12,10 @@ public class Ver_tendencias extends VistaVerTendencias{
 	public Ver_tendencias() {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-    	this.getFotoPerfil1().setImage("icons/luffy.jpg");
 		Tendencias();
 		Ver_lista_Hashtag();
 	}
-
+	
 	public void Ver_lista_Hashtag() {
 		 _ver_lista_Hashtag = new Ver_lista_Hashtag(this);
 		this.getBotonVerListaHashtags().addClickListener(event ->{

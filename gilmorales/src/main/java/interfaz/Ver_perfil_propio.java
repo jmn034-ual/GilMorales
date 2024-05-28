@@ -52,7 +52,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	Configurar_perfil();
     	Ver_publicaciones_gustadas__Usuario_registrado_();
     	Eliminar_publicaciones();
-    	this.Ver_lista_Hashtag();
+    	NumeroMeGusta();
+//    	this.Ver_lista_Hashtag();
 	}
 
 	public void Ver_publicaciones_gustadas__Usuario_registrado_() {
@@ -174,16 +175,13 @@ public class Ver_perfil_propio extends Ver_tendencias {
 		for(Publicacion p : publicaciones) {
 			numMeGustas += p.getNumMeGustas();
 		}
-		this.getLabelMeGustas().setText(numMeGustas+"");
+		this.getNumMeGustas().setText(numMeGustas+"");
 	}
-	@Override
-	public void Ver_lista_Hashtag() {
-		super.Ver_lista_Hashtag();
-		this.getBotonVerListaHashtags().addClickListener(event ->{
-			this._ver_lista_Hashtag.setVisible(true);
-			this.getVaadinVerticalLayout1().setVisible(false);
-			this.getLayoutTendencias().setVisible(false);
-			this.getVaadinHorizontalLayout().add(this._ver_lista_Hashtag);
-		});
-	}
+//	@Override
+//	public void Ver_lista_Hashtag() {
+//		
+//		this.getBotonVerListaHashtags().addClickListener(event ->{
+//			super.Ver_lista_Hashtag();
+//		});
+//	}
 }

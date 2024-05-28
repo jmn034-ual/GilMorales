@@ -26,25 +26,25 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 
 	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,
 			Lista_publicaciones_Usuario_Registrado interfaz) {
-		super(publicacion);
+		super(publicacion, interfaz);
 		this._lista_publicaciones__Usuario_Registrado_ = interfaz;
 		this.user = interfaz.urInterfaz.ur;
 		this.getLayoutBotonesUsuarioR().setVisible(true);
 		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
-		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
+//		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
 		this.getVaadinButton().setVisible(true);
 		this.getLabelMeGustas().setVisible(false);
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
 		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios() + "");
 		this.getLayoutComentar().setVisible(true);
-		Ver_comentarios__Usuario_Registrado_();
-		mostrarDatosUsuario();
+//		mostrarDatosUsuario();
 		if (this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();
 			Seguir();
 		} else {
 			this.getBotonNombreUsuario().setDisableOnClick(false);
 		}
+		this.Ver_comentarios__Usuario_Registrado_();
 		Dar_me_gusta_publicacion();
 		Ver_publicacion_ajena();
 		Denunciar_publicacion();
@@ -66,7 +66,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 
 	@Override
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA());
+		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this);
 		this.getBotonNombreUsuario().addClickListener(event -> {
 			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)

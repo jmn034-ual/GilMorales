@@ -24,10 +24,10 @@ public class VistaUsuarioNoRegistrado extends LitTemplate {
 	private HorizontalLayout layoutCabecera;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("layoutCabeceraTop")
-	private Element layoutCabeceraTop;
-	@Id("layoutListaPublicaciones")
-	private Element layoutListaPublicaciones;
+//	@Id("layoutCabeceraTop")
+//	private Element layoutCabeceraTop;
+//	@Id("layoutListaPublicaciones")
+//	private Element layoutListaPublicaciones;
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
@@ -52,21 +52,21 @@ public class VistaUsuarioNoRegistrado extends LitTemplate {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-	public Element getLayoutCabeceraTop() {
-		return layoutCabeceraTop;
-	}
+//	public Element getLayoutCabeceraTop() {
+//		return layoutCabeceraTop;
+//	}
+//
+//	public void setLayoutCabeceraTop(Element layoutCabeceraTop) {
+//		this.layoutCabeceraTop = layoutCabeceraTop;
+//	}
 
-	public void setLayoutCabeceraTop(Element layoutCabeceraTop) {
-		this.layoutCabeceraTop = layoutCabeceraTop;
-	}
-
-	public Element getLayoutListaPublicaciones() {
-		return layoutListaPublicaciones;
-	}
-
-	public void setLayoutListaPublicaciones(Element layoutListaPublicaciones) {
-		this.layoutListaPublicaciones = layoutListaPublicaciones;
-	}
+//	public Element getLayoutListaPublicaciones() {
+//		return layoutListaPublicaciones;
+//	}
+//
+//	public void setLayoutListaPublicaciones(Element layoutListaPublicaciones) {
+//		this.layoutListaPublicaciones = layoutListaPublicaciones;
+//	}
 
 	/**
      * Creates a new VistaUsuarioNoRegistrado.

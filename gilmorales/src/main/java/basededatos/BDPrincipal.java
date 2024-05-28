@@ -68,7 +68,7 @@ public class BDPrincipal
 		return h;
 	}
 
-	public Publicacion addPublicacionComercial( String aLocalizacion,
+	public Publicacion addPublicacionComercial(String aLocalizacion,
 			String aDescripcion, String aVideo, int aUsuarioComercialID) {
 		Publicacion p = null;
 		try {
@@ -197,9 +197,9 @@ public class BDPrincipal
 
 	}
 
-	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aIDUsuarioPropietario) {
+	public void borrarComentario(int aIdComentario) {
 		try {
-			this.comentarios.borrarComentario(aIdComentario, aIdPublicacion, aIDUsuarioPropietario);
+			this.comentarios.borrarComentario(aIdComentario);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -215,9 +215,9 @@ public class BDPrincipal
 		}
 	}
 
-	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {
+	public void bloquearUsuario(int aUsuarioID) {
 		try {
-			this.usuarios_registrados.bloquearUsuario(aNombreUsuario, aUsuarioID);
+			this.usuarios_registrados.bloquearUsuario(aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

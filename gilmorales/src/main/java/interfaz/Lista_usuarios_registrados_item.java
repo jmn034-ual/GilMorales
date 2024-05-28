@@ -39,7 +39,7 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 	}
 
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.user);
+		this.ver_perfil = new Ver_perfil_publico(this.user, this);
 		this.getBotonNombreUsuario().addClickListener(event ->{
 			this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.ver_perfil);

@@ -45,7 +45,7 @@ public class Ver_perfil_Administrador extends Ver_tendencias{
 
 	public void Bloquear_usuario() {
 		this.getBotonBloquear().addClickListener(event ->{
-			bd.bloquearUsuario(this.ur.getNombreUsuario(), this.ur.getID());
+			bd.bloquearUsuario(this.ur.getID());
 		});
 	}
 
