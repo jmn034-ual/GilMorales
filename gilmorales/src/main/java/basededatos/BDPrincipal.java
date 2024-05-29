@@ -68,11 +68,11 @@ public class BDPrincipal
 		return h;
 	}
 
-	public Publicacion addPublicacionComercial(String aNombreUsuarioComercial, String aLocalizacion,
+	public Publicacion addPublicacionComercial(String aLocalizacion,
 			String aDescripcion, String aVideo, int aUsuarioComercialID) {
 		Publicacion p = null;
 		try {
-			p = this.publicaciones.addPublicacion(aNombreUsuarioComercial, aLocalizacion, aDescripcion, aVideo,
+			p = this.publicaciones.addPublicacion(aLocalizacion, aDescripcion, aVideo,
 					aUsuarioComercialID);
 //			this.publicacion.crearHashtag(p);
 //			this.publicacion.crearMencion(p);
@@ -197,9 +197,9 @@ public class BDPrincipal
 
 	}
 
-	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aIDUsuarioPropietario) {
+	public void borrarComentario(int aIdComentario) {
 		try {
-			this.comentarios.borrarComentario(aIdComentario, aIdPublicacion, aIDUsuarioPropietario);
+			this.comentarios.borrarComentario(aIdComentario);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -215,9 +215,9 @@ public class BDPrincipal
 		}
 	}
 
-	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID) {
+	public void bloquearUsuario(int aUsuarioID) {
 		try {
-			this.usuarios_registrados.bloquearUsuario(aNombreUsuario, aUsuarioID);
+			this.usuarios_registrados.bloquearUsuario(aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -369,11 +369,11 @@ public class BDPrincipal
 		}
 	}
 
-	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo,
+	public Publicacion addPublicacion(String aLocalizacion, String aDescripcion, String aVideo,
 			int aUsuarioID) {
 		Publicacion p = null;
 		try {
-			p = this.publicaciones.addPublicacion(aNombreUsuario, aLocalizacion, aDescripcion, aVideo, aUsuarioID);
+			p = this.publicaciones.addPublicacion(aLocalizacion, aDescripcion, aVideo, aUsuarioID);
 			this.publicaciones.crearHashtag(p);
 			this.publicaciones.crearMencion(p);
 		} catch (PersistentException e) {
@@ -383,7 +383,7 @@ public class BDPrincipal
 		return p;
 	}
 
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID) {
+	public UsuarioRegistrado verPerfilAjeno(int aUsuarioID) {
 		throw new UnsupportedOperationException();
 	}
 

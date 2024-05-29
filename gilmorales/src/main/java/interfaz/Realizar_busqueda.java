@@ -7,7 +7,6 @@ import com.vaadin.flow.component.select.Select;
 import vistas.VistaRealizarBusqueda;
 
 public class Realizar_busqueda extends VistaRealizarBusqueda {
-	private Label _tituloL;
 	public Cabecera_Administrador _cabecera_Administrador;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	public Cabecera_Usuario_No_Registrado _cabecera_Usuario_No_Registrado;

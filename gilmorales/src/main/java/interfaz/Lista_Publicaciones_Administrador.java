@@ -34,11 +34,11 @@ public class Lista_Publicaciones_Administrador extends VistaListaPublicacionesAd
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		_item.clear();
 
-		for(Publicacion p : lista) {
-				this.publicacion = new Lista_Publicaciones_Administrador_item(p, this.admin, this._administrador);
-				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.publicacion);
-				_item.add(this.publicacion);
-			
-		}
+//		for(Publicacion p : lista) {
+//				this.publicacion = new Lista_Publicaciones_Administrador_item(p, this.admin, this._administrador);
+//				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.publicacion);
+//				_item.add(this.publicacion);
+//			
+//		}
 	}
 }

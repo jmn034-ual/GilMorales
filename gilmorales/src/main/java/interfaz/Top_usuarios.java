@@ -17,11 +17,12 @@ public class Top_usuarios extends VistaTopUsuarios{
 	Top_usuarios_item tui;
 	Usuario_Registrado user;
 	Usuario_No_Registrado unr;
-	public Top_usuarios(Object user) {
-		if(user instanceof Usuario_No_Registrado) {
-			this.unr = (Usuario_No_Registrado) user;
+	
+	public Top_usuarios(Cabecera_TOP interfaz) {
+		if(interfaz instanceof Cabecera_TOP) {
+			this._cabecera_TOP = (Cabecera_TOP) interfaz;
 		}else {
-			this.user = (Usuario_Registrado) user;
+			this._cabecera_TOP = (Cabecera_TOP) interfaz;
 		}			
 		cargarUsuariosTOP();
 	}
@@ -33,16 +34,13 @@ public class Top_usuarios extends VistaTopUsuarios{
 		_item.clear();
 		
 		for (UsuarioRegistrado u : top) {
-			if(unr != null) {
-			tui = new Top_usuarios_item(u, this.unr);
+			if(this._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
+				tui = new Top_usuarios_item(u, this);
 			}else {
-				tui = new Top_usuarios_item(u, this.user);
+				tui = new Top_usuarios_item(u, this);
 			}
 			this.getLayoutTopUsuarios().as(VerticalLayout.class).add(tui);
 			_item.add(tui);
-		}
-		if(top.isEmpty()) {
-			System.out.println("Esta vacio.");
 		}
 	}
 }

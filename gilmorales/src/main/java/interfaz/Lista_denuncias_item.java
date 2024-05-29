@@ -47,7 +47,7 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 
 
 	public void Ver_perfil() {
-		_ver_perfil = new Ver_perfil_publico(denunciante);
+//		_ver_perfil = new Ver_perfil_publico(denunciante, this);
 		getNombreUsuario().addClickListener(event->{
 			this.getVaadinHorizontalLayout().setVisible(false);
 			this.getVaadinHorizontalLayout().add(this._ver_perfil);

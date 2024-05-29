@@ -98,13 +98,13 @@ public class Add_publicacion extends VistaAddpublicacion{
 	public void Publicar() {
 		this.getBotonPublicar().addClickListener(event -> {
 			if(this.ur != null) {
-				this.publicacion = bd.addPublicacion(ur.getNombreUsuario(), this.localizacion,
+				this.publicacion = bd.addPublicacion(this.localizacion,
 						this.getTextAreaDescripcion().getValue(), "videos/tiktok1.mp4", ur.getID());
 				this.getVaadinHorizontalLayout().removeAll();
 				_ver_publicacion_propia = new Ver_publicacion_propia(publicacion, urInterfaz);
 				this.getVaadinHorizontalLayout().add(_ver_publicacion_propia);
 			}else {
-				this.publicacion = bd.addPublicacionComercial(uc.getNombreUsuarioComercial(), this.localizacion, 
+				this.publicacion = bd.addPublicacionComercial(this.localizacion, 
 						this.getTextAreaDescripcion().getValue(), "videos/tiktok1.mp4", uc.getID());
 				this.getVaadinHorizontalLayout().removeAll();
 				//				_ver_publicacion_propia = new Ver_publicacion_propia_Comercial(publicacion, ucInterfaz, this.uc);

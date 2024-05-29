@@ -18,7 +18,8 @@ public class Tendencias extends VistaListaTendencias{
 	iUsuario_Registrado bd = new BDPrincipal();
 	Tendencias_item tendencia;
 
-	public Tendencias() {
+	public Tendencias(Ver_tendencias interfaz) {
+		this._ver_tendencias = interfaz;
 		cargarTendencias();
 	}
 
@@ -28,7 +29,7 @@ public class Tendencias extends VistaListaTendencias{
 		_item.clear();
 
 		for (Hashtag h : tendencias) {
-			tendencia = new Tendencias_item(h);
+			tendencia = new Tendencias_item(h, this);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(tendencia);
 			_item.add(tendencia);
 		}	

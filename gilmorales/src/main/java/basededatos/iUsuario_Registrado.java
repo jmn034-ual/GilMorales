@@ -27,9 +27,9 @@ public interface iUsuario_Registrado {
 
 	public void dejarSeguirUsuario(int aUsuarioDejaSeguirID, int aUsuarioDejadoSeguirID);
 
-	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID);
+	public Publicacion addPublicacion(String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID);
 
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID);
+	public UsuarioRegistrado verPerfilAjeno(int aUsuarioID);
 
 	public List cargarListaHashtags();
 

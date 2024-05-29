@@ -18,7 +18,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		this._cabecera_Usuario_Registrado = interfazUR;
 		Ver_lista_HashtagUR();
 		Ver_lista_usuarios_registradosUR();
-		top_hashtags(_cabecera_Usuario_Registrado.urInterfaz);
+		top_hashtags();
 		top_usuarios(_cabecera_Usuario_Registrado.urInterfaz);
 	}
 
@@ -26,16 +26,18 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 			this._cabecera_Usuario_No_Registrado = interfazUNR;
 			Ver_lista_HashtagUNR();
 			Ver_lista_usuarios_registradosUNR();
-			top_hashtags(_cabecera_Usuario_No_Registrado.unr);
+			top_hashtags();
 			top_usuarios(_cabecera_Usuario_No_Registrado.unr);	
 	}
 	
 	public void Ver_lista_HashtagUNR() {
 		_ver_lista_Hashtag = new Ver_lista_Hashtag(this);
 		this.getBotonVerListaHashtag().addClickListener(event -> {
-			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
-			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
-			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_Hashtag);
+			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().removeAll();
+			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);
+//			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
+//			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
+//			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_Hashtag);
 			});
 	}
 	
@@ -48,18 +50,18 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		});
 	}
 
-	public void top_hashtags(Object user) {
-		_top_hashtags = new Top_hashtags(user);
+	public void top_hashtags() {
+		_top_hashtags = new Top_hashtags(this);
 		this.getListaTopHashtag().as(VerticalLayout.class).add(_top_hashtags);
 	}
 
 	public void top_usuarios(Object user) {
-		_top_usuarios = new Top_usuarios(user);
+		_top_usuarios = new Top_usuarios(this);
 		this.getListaUsuarios().as(VerticalLayout.class).add(_top_usuarios);
 	}
 
 	public void Ver_lista_usuarios_registradosUR() {
-		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this._cabecera_Usuario_Registrado.urInterfaz);
+		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this);
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
 			_cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
 			this._cabecera_Usuario_Registrado.urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
@@ -67,11 +69,11 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		});
 	}
 	public void Ver_lista_usuarios_registradosUNR() {
-		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this._cabecera_Usuario_No_Registrado.unr);
+		_ver_lista_usuarios_registrados = new Ver_lista_usuarios_registrados(this);
 		this.getBotonVerListaUsuarios().addClickListener(event -> {
-			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
-			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
-			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_usuarios_registrados);
+//			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
+			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().removeAll();
+			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().add(_ver_lista_usuarios_registrados);
 		});
 	}
 }

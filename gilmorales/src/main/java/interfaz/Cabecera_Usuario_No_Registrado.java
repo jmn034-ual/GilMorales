@@ -37,36 +37,37 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 		this.getBotonBuscar().addClickListener(event -> {
 			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue(), this);
 			System.out.println(this.getTextoBusqueda().getValue());
-			this._realizar_busqueda.setVisible(true);
-			this._cabecera_TOP.setVisible(true);
-			if (unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			unr.getLayoutListaPublicaciones().setVisible(false);
-			unr.getVaadinHorizontalLayout().add(_realizar_busqueda);
+//			unr.getLayoutCabeceraTop().setVisible(true);
+			unr.getVaadinHorizontalLayout().removeAll();
+			unr.getVaadinHorizontalLayout().add(this._realizar_busqueda);
 			this.getTextoBusqueda().setValue("");
 		});
 	}
 
 	public void Cabecera_TOP() {
 		this._cabecera_TOP = new Cabecera_TOP(this);
-		unr.getLayoutCabeceraTop().as(VerticalLayout.class).add(this._cabecera_TOP);
+		this.unr.getVaadinHorizontalLayout().add(_cabecera_TOP);
+//		unr.getLayoutCabeceraTop().as(VerticalLayout.class).add(this._cabecera_TOP);
 	}
 
+//	public void Volver_Inicio() {
+//		this.getInicio().addClickListener(event -> {
+//			unr.getLayoutCabeceraTop().as(VerticalLayout.class).remove(this._cabecera_TOP);
+//			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
+//			unr.getLayoutListaPublicaciones().setVisible(true);
+//			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(new Lista_Publicaciones_Usuario_no_registrado(unr));
+//			unr.getLayoutCabeceraTop().setVisible(true);
+//			Cabecera_TOP();
+//			this._cabecera_TOP.setVisible(true);
+//		});
+//	}
+	
 	public void Volver_Inicio() {
-		this.getInicio().addClickListener(event -> {
-			unr.getLayoutCabeceraTop().as(VerticalLayout.class).remove(this._cabecera_TOP);
-			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
-//			if (unr.getVaadinHorizontalLayout().getComponentCount() != 0) {
-//				unr.getVaadinHorizontalLayout().remove(unr.getVaadinHorizontalLayout().getComponentAt(0));
-//			}
-			unr.getLayoutListaPublicaciones().setVisible(true);
-			unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(new Lista_Publicaciones_Usuario_no_registrado(unr));
-			unr.getLayoutCabeceraTop().setVisible(true);
-			Cabecera_TOP();
-			this._cabecera_TOP.setVisible(true);
-		});
-	}
+	this.getInicio().addClickListener(event -> {
+		unr.getVaadinHorizontalLayout().removeAll();
+		unr.getVaadinHorizontalLayout().add(new Cabecera_TOP(this), new Lista_Publicaciones_Usuario_no_registrado(unr));
+	});
+}
 //
 //	public void Registrarse() {
 //		this.getBotonRegistrarse().addClickListener(event -> {

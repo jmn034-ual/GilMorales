@@ -14,24 +14,20 @@ import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaResultado;
 
 public class Lista_resultado extends VistaListaResultado{
-	private Label _filtrarL;
-	private ComboBox _filtrarCB;
-	private Label _usuariosL;
-	private Label _hashtagsL;
+
 	public static Realizar_busqueda _realizar_busqueda;
 	public Vector<Lista_resultado_item> _item = new Vector<Lista_resultado_item>();
 	public Filtrar_resultado _filtrar_resultado;
 	iUsuario_Registrado bd = new BDPrincipal();
 	Lista_resultado_item item;
-	Realizar_busqueda rb;
 
-	public Lista_resultado(String buscar, String filtro, Realizar_busqueda rb) {
-		this.rb = rb;
+	public Lista_resultado(String buscar, String filtro, Realizar_busqueda _realizar_busqueda) {
+		this._realizar_busqueda = _realizar_busqueda;
 		Filtrar_resultado();
-		cargarBusqueda(buscar, filtro);
+		carga_realizar_busqueda(buscar, filtro);
 	}
 	
-	public void cargarBusqueda(String buscar, String filtro){
+	public void carga_realizar_busqueda(String buscar, String filtro){
 			List<Object> resultado = bd.realizarBusqueda(buscar, filtro);
 			this.getLayoutResultadoUsuario().as(VerticalLayout.class).removeAll();
 			_item.clear();
@@ -40,36 +36,36 @@ public class Lista_resultado extends VistaListaResultado{
 				if (resultado.get(i) instanceof UsuarioRegistrado) {
 					UsuarioRegistrado ur = bd.cargarUsuarioRegistrado(Integer.parseInt(resultado.get(i).toString()));
 					item = new Resultado_usuarios_item(ur, this);
-					this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).add(item);
+					this._realizar_busqueda.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).add(item);
 	            } else if (resultado.get(i) instanceof Hashtag) {
 	            	Hashtag h = bd.cargarHashtag(Integer.parseInt(resultado.get(i).toString()), buscar);
 					item = new Resultado_hashtags_item(h, this);
-					this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).add(item);
+					this._realizar_busqueda.getLayoutListaResultadoHashtags().as(VerticalLayout.class).add(item);
 	            }
 				_item.add(item);
 			}
 	}
 	
 	public void Filtrar_resultado() {
-		this.rb.select.addValueChangeListener(event -> {
-			if(this.rb.select.getValue() == "Usuarios") {
-				this.rb.getVaadinHorizontalLayout2().setVisible(true);
-				this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(true);
-				this.rb.getLayoutTituloHashtags().setVisible(false);
-				this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(false);
-				this.rb.getBarraHorizontal().setVisible(false);
-			}else if(this.rb.select.getValue() == "Hashtags") {
-				this.rb.getVaadinHorizontalLayout2().setVisible(false);
-				this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(false);
-				this.rb.getLayoutTituloHashtags().setVisible(true);
-				this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(true);
-				this.rb.getBarraHorizontal().setVisible(false);
+		this._realizar_busqueda.select.addValueChangeListener(event -> {
+			if(this._realizar_busqueda.select.getValue() == "Usuarios") {
+				this._realizar_busqueda.getVaadinHorizontalLayout2().setVisible(true);
+				this._realizar_busqueda.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(true);
+				this._realizar_busqueda.getLayoutTituloHashtags().setVisible(false);
+				this._realizar_busqueda.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(false);
+				this._realizar_busqueda.getBarraHorizontal().setVisible(false);
+			}else if(this._realizar_busqueda.select.getValue() == "Hashtags") {
+				this._realizar_busqueda.getVaadinHorizontalLayout2().setVisible(false);
+				this._realizar_busqueda.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(false);
+				this._realizar_busqueda.getLayoutTituloHashtags().setVisible(true);
+				this._realizar_busqueda.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(true);
+				this._realizar_busqueda.getBarraHorizontal().setVisible(false);
 			}else {
-				this.rb.getVaadinHorizontalLayout2().setVisible(true);
-				this.rb.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(true);
-				this.rb.getLayoutTituloHashtags().setVisible(true);
-				this.rb.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(true);
-				this.rb.getBarraHorizontal().setVisible(true);
+				this._realizar_busqueda.getVaadinHorizontalLayout2().setVisible(true);
+				this._realizar_busqueda.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).setVisible(true);
+				this._realizar_busqueda.getLayoutTituloHashtags().setVisible(true);
+				this._realizar_busqueda.getLayoutListaResultadoHashtags().as(VerticalLayout.class).setVisible(true);
+				this._realizar_busqueda.getBarraHorizontal().setVisible(true);
 			}
 		});
 	}

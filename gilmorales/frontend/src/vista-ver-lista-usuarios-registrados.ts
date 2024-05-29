@@ -15,7 +15,7 @@ export class VistaVerListaUsuariosRegistrados extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; position: fixed; overflow-y: auto; scrollbar-color: transparent transparent;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; position: fixed; overflow-y: auto; scrollbar-color: transparent transparent; padding: 0px;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout style="width: 100%; justify-content: center; flex-shrink: 0; height: 60px;" id="layoutTitulo">
   <h1 style="flex-grow: 0; align-self: center; flex-shrink: 0; margin-top: 5%;" id="titulo">Lista de Usuarios Registrados</h1>
  </vaadin-horizontal-layout>

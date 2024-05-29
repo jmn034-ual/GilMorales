@@ -14,7 +14,7 @@ export class VistaListaHashtags extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; margin: 0%; padding: 0%; z-index: 10; align-items: center;" id="vaadinVerticalLayout" theme="spacing-xs"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%; margin: 0px; padding: 0px; z-index: 10; align-items: center;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
 `;
   }
 

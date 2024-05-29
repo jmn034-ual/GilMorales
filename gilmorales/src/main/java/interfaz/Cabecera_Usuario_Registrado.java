@@ -74,7 +74,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 
 	public void Ver_perfil_propio() {
-		_ver_perfil_propio =  new Ver_perfil_propio(this);
+		_ver_perfil_propio =  new Ver_perfil_propio(this, this._cabecera_TOP);
 		this.getBotonPerfil().addClickListener(event -> {
 
 			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
@@ -132,10 +132,12 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
 			urInterfaz.getCabeceraTop().setVisible(true);
 			urInterfaz.getListaPublicaciones().setVisible(true);
+			urInterfaz.ur = urInterfaz._iUsuario_Registrado.cargarUsuarioRegistrado(urInterfaz.ur.getID());
 			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(new Lista_publicaciones_Usuario_Registrado(urInterfaz));
 			Cabecera_TOP();
 			this._cabecera_TOP.setVisible(true);
 		});
 	}
+	
 
 }

@@ -84,7 +84,7 @@ public class Publicaciones {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public Publicacion addPublicacion(String aNombreUsuario, String aLocalizacion, String aDescripcion, String aVideo,
+	public Publicacion addPublicacion(String aLocalizacion, String aDescripcion, String aVideo,
 			int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		Publicacion p = null;
@@ -92,14 +92,14 @@ public class Publicaciones {
 		try {
 			p = PublicacionDAO.createPublicacion();
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.getUsuarioRegistradoByORMID(aUsuarioID);
-			if (usuario.getNombreUsuario().equals(aNombreUsuario)) {
+			if (usuario != null) {
 				p.setNombreUsuarioComercial(null);
-				p.setNombreUsuario(aNombreUsuario);
+				p.setNombreUsuario(usuario.getNombreUsuario());
 				p.setEsPublicada(null);
 				p.setPerteneceA(usuario);
 			} else {
 				UsuarioComercial uc = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioID);
-				p.setNombreUsuarioComercial(aNombreUsuario);
+				p.setNombreUsuarioComercial(uc.getNombreUsuarioComercial());
 				p.setNombreUsuario(null);
 				p.setPerteneceA(null);
 				p.setEsPublicada(uc);

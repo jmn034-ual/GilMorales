@@ -12,7 +12,7 @@ import bd_dcl.UsuarioRegistrado;
 
 //import basededatos.iVer_perfil__Administrador_;
 
-public class Ver_perfil_Administrador extends Ver_tendencias{
+public class Ver_perfil_Administrador{
 //	private Button _bloquearB;
 //	private IronIcon _fotoUsuario;
 //	private Label _nombreUsuarioL;
@@ -30,26 +30,26 @@ public class Ver_perfil_Administrador extends Ver_tendencias{
 	iAdministrador bd = new BDPrincipal();
 	UsuarioRegistrado ur;
 	public Ver_perfil_Administrador() {}
-
-	public Ver_perfil_Administrador(UsuarioRegistrado ur) {
-		this.ur = ur;
-		this.getBotonSeguir().setVisible(false);
-		this.getBotonPeticionAmistad().setVisible(false);
-		this.getBotonDenunciar().setVisible(false);
-		this.getLabelUsuarioPrivado().setVisible(false);
-	}
-	
-	public void Ver_publicaciones_gustadas() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void Bloquear_usuario() {
-		this.getBotonBloquear().addClickListener(event ->{
-			bd.bloquearUsuario(this.ur.getNombreUsuario(), this.ur.getID());
-		});
-	}
-
-	public void Lista_publicaciones_usuario() {
-		throw new UnsupportedOperationException();
-	}
+//
+//	public Ver_perfil_Administrador(UsuarioRegistrado ur) {
+//		this.ur = ur;
+//		this.getBotonSeguir().setVisible(false);
+//		this.getBotonPeticionAmistad().setVisible(false);
+//		this.getBotonDenunciar().setVisible(false);
+//		this.getLabelUsuarioPrivado().setVisible(false);
+//	}
+//	
+//	public void Ver_publicaciones_gustadas() {
+//		throw new UnsupportedOperationException();
+//	}
+//
+//	public void Bloquear_usuario() {
+//		this.getBotonBloquear().addClickListener(event ->{
+//			bd.bloquearUsuario(this.ur.getID());
+//		});
+//	}
+//
+//	public void Lista_publicaciones_usuario() {
+//		throw new UnsupportedOperationException();
+//	}
 }

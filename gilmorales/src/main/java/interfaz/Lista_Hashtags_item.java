@@ -1,8 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.icon.IronIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
@@ -31,7 +28,7 @@ public class Lista_Hashtags_item extends VistaListaHashtagsItem{
 	}
 
 	public void Ver_hashtag() {
-		this._ver_hashtag = new Ver_hashtag(hashtag);
+		this._ver_hashtag = new Ver_hashtag(hashtag, this);
 		this.getNombreHashtags().addClickListener(event ->{
 			this._lista_Hashtags._ver_lista_Hashtag.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
 			this._lista_Hashtags._ver_lista_Hashtag.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_ver_hashtag);

@@ -25,6 +25,8 @@ public class Lista_publicaciones_Usuario_Registrado extends Lista_Publicaciones_
 		cargarPublicacionesUR();
 	}
 
+	
+	//A este metodo tengo que darle una vuelta
 	public void cargarPublicacionesUR() {
 		this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 		_item.clear();

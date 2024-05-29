@@ -20,8 +20,7 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vista-ver-publicacion-usuario-no-registrado.ts")
 public class VistaVerPublicacionUsuarioNoRegistrado extends LitTemplate {
 
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
+
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("layoutNumVisualizaciones")
@@ -124,19 +123,6 @@ public class VistaVerPublicacionUsuarioNoRegistrado extends LitTemplate {
 	public void setDescripcion(Label descripcion) {
 		this.descripcion = descripcion;
 	}
-
-
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
-	}
-
-
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
-	}
-
 
 
 	public HorizontalLayout getVaadinHorizontalLayout() {

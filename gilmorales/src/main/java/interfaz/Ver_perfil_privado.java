@@ -12,7 +12,8 @@ public class Ver_perfil_privado extends Ver_Perfil__2 {
 	UsuarioRegistrado user;
 	iUsuario_Registrado bd = new BDPrincipal();
 	
-	public Ver_perfil_privado(UsuarioRegistrado userAver) {
+	public Ver_perfil_privado(UsuarioRegistrado userAver, Cabecera_TOP cabecera_TOP) {
+		super(cabecera_TOP);
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.userAver = userAver;
@@ -29,22 +30,22 @@ public class Ver_perfil_privado extends Ver_Perfil__2 {
     	this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
 	}
 	
-	public Ver_perfil_privado(UsuarioRegistrado userAver, UsuarioRegistrado user) {
-		this.getStyle().set("width", "100%");
-    	this.getStyle().set("height", "100%");
-    	this.userAver = userAver;
-    	this.user = user;
-    	this.getVerSeguidores().setVisible(false);
-    	this.getVerSiguiendos().setVisible(false);
-    	this.getBotonEditarPerfil().setVisible(false);
-    	this.getBotonEliminarPublicacion().setVisible(false);
-    	this.getBotonModificarPerfil().setVisible(false);
-    	this.getBotonPeticionAmistad().setVisible(false);
-    	this.getLabelUsuarioPrivado().setVisible(false);
-    	this.getListaMeGustas().setVisible(false);
-    	this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
-    	this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());    	
-	}
+//	public Ver_perfil_privado(UsuarioRegistrado userAver, UsuarioRegistrado user) {
+//		this.getStyle().set("width", "100%");
+//    	this.getStyle().set("height", "100%");
+//    	this.userAver = userAver;
+//    	this.user = user;
+//    	this.getVerSeguidores().setVisible(false);
+//    	this.getVerSiguiendos().setVisible(false);
+//    	this.getBotonEditarPerfil().setVisible(false);
+//    	this.getBotonEliminarPublicacion().setVisible(false);
+//    	this.getBotonModificarPerfil().setVisible(false);
+//    	this.getBotonPeticionAmistad().setVisible(false);
+//    	this.getLabelUsuarioPrivado().setVisible(false);
+//    	this.getListaMeGustas().setVisible(false);
+//    	this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
+//    	this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());    	
+//	}
 
 	public void Enviar_peticion_amistad() {
 		throw new UnsupportedOperationException();

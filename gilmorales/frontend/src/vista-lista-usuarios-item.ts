@@ -22,7 +22,7 @@ export class VistaListaUsuariosItem extends LitElement {
  <vaadin-vertical-layout theme="spacing" id="labelInformacion" style="flex-grow: 0; flex-shrink: 1; z-index: 12; align-self: center;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1">
    <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
-   <vaadin-button theme="tertiary" id="botonNombreUsuario">
+   <vaadin-button theme="tertiary" id="botonNombreUsuario" style="z-index: 999;">
      NombreUsuario 
    </vaadin-button>
   </vaadin-horizontal-layout>

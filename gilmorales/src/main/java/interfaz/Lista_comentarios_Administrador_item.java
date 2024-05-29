@@ -28,7 +28,8 @@ public class Lista_comentarios_Administrador_item extends VistaListaComentariosU
 
 	public void Borrar_comentario() {
 		this.getBorrarComentarioB().addClickListener(event -> {
-			admin.borrarComentario(comentario.getIdComentario(), comentario.getComentadoEn().getIdPublicacion(), comentario.getEsComentadoPor().getID());
+//			admin.borrarComentario(comentario.getIdComentario(), comentario.getComentadoEn().getIdPublicacion(), comentario.getEsComentadoPor().getID());
+			admin.borrarComentario(comentario.getIdComentario());
 		});
 	}
 }

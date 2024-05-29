@@ -20,11 +20,11 @@ public interface iAdministrador {
 
 	public void eliminarPublicacion(int aIdPublicacion);
 
-	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aIDUsuarioPropietario);
+	public void borrarComentario(int aIdComentario);
 
 	public void addFoto(String aFoto, int aCodigoEmpleado);
 
-	public void bloquearUsuario(String aNombreUsuario, int aUsuarioID);
+	public void bloquearUsuario(int aUsuarioID);
 
 	public List realizarBusqueda(String aBusqueda, String aFiltro);
 

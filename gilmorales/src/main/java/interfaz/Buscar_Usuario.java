@@ -5,7 +5,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import vistas.VistaBuscarUsuario;
 
 public class Buscar_Usuario extends VistaBuscarUsuario{
-	public Filtrar_resultado _filtrar_resultado = new Filtrar_resultado();
+	public Filtrar_resultado _filtrar_resultado;
 	public Resultado_usuarios _resultado_usuarios;
 	
 	public Buscar_Usuario(String buscar, String filtro){

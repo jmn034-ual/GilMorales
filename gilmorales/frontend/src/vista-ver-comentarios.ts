@@ -18,11 +18,11 @@ export class VistaVerComentarios extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; flex-grow: 1; height: 100%; width: 100%; z-index: 999; padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-m);">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; flex-grow: 1; height: 100%; width: 100%; z-index: 999; padding-top: var(--lumo-space-m); padding-bottom: var(--lumo-space-m);" theme="spacing">
  <vaadin-vertical-layout theme="spacing" id="layoutInfo" style="flex-shrink: 0; width: 20%; height: 99%; align-items: center;">
   <vaadin-horizontal-layout theme="spacing" id="layoutpropietario" style="align-self: center;">
    <vaadin-vertical-layout theme="spacing" id="layoutFotoPerfil">
-    <vaadin-avatar id="fotoPerfil"></vaadin-avatar>
+    <vaadin-avatar id="fotoPerfil" style="width: 100px; height: 100px;"></vaadin-avatar>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout id="vaadinVerticalLayout1">
     <vaadin-button theme="tertiary" id="botonNombreUsuario">
@@ -62,7 +62,7 @@ export class VistaVerComentarios extends LitElement {
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
- <hr style="height: 90%; width: 2px; padding: var(--lumo-space-xs);">
+ <hr style="height: 93%; z-index: 999; padding: 2px;">
  <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 80%;">
   <vaadin-vertical-layout theme="spacing" id="layoutListaComentarios" style="flex-grow: 0; width: 100%; flex-shrink: 0; height: 94%;"></vaadin-vertical-layout>
   <vaadin-horizontal-layout theme="spacing-s" id="layoutComentar" style="flex-shrink: 0; width: 100%;">

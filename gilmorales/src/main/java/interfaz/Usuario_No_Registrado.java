@@ -23,27 +23,27 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public Login inicioSesion;	
 
 	public Usuario_No_Registrado() {
+		this.getVaadinHorizontalLayout().removeAll();
 		Cabecera_Usuario_No_Registrado();	
 		Lista_Publicaciones__Usuario_no_registrado_();
 		Iniciar_Sesion();
 	}
 
+	public void Cabecera_Usuario_No_Registrado() {
+
+		cabeceraUNR = new Cabecera_Usuario_No_Registrado(this);
+		this.getLayoutCabecera().add(cabeceraUNR);
+		
+	}
 	public void Lista_Publicaciones__Usuario_no_registrado_() {
 		this.publicacionesNoRegistrado = new Lista_Publicaciones_Usuario_no_registrado(this);
-		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(publicacionesNoRegistrado);
-	}
-
-	public void Cabecera_Usuario_No_Registrado() {
-		cabeceraUNR = new Cabecera_Usuario_No_Registrado(this);
-//		this.getLayoutCabeceraTop().as(VerticalLayout.class).add(this.cabeceraUNR._cabecera_TOP);
-		this.getLayoutCabecera().add(cabeceraUNR);
+		this.getVaadinHorizontalLayout().add(publicacionesNoRegistrado);
 	}
 
 	public void Iniciar_Sesion() {
 		inicioSesion = new Login(this);
 		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {
-			this.cabeceraUNR.setVisible(false);
-			this.getVaadinHorizontalLayout().setVisible(false);
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(inicioSesion);
 		});
 	}
