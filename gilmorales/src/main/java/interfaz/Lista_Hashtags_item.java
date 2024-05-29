@@ -1,8 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.icon.IronIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;

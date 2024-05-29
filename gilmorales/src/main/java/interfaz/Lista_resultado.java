@@ -24,10 +24,10 @@ public class Lista_resultado extends VistaListaResultado{
 	public Lista_resultado(String buscar, String filtro, Realizar_busqueda _realizar_busqueda) {
 		this._realizar_busqueda = _realizar_busqueda;
 		Filtrar_resultado();
-		carga_realizar_busquedausqueda(buscar, filtro);
+		carga_realizar_busqueda(buscar, filtro);
 	}
 	
-	public void carga_realizar_busquedausqueda(String buscar, String filtro){
+	public void carga_realizar_busqueda(String buscar, String filtro){
 			List<Object> resultado = bd.realizarBusqueda(buscar, filtro);
 			this.getLayoutResultadoUsuario().as(VerticalLayout.class).removeAll();
 			_item.clear();

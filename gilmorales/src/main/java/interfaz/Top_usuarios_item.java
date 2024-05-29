@@ -13,21 +13,22 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 	Usuario_Registrado userInterfaz;
 	UsuarioRegistrado usuario;
 	
-	public Top_usuarios_item(UsuarioRegistrado usuario, Object user){
+	public Top_usuarios_item(UsuarioRegistrado usuario, Top_usuarios interfaz){
 		this.getNombreUsuario().setText(usuario.getNombreUsuario());
 		this.getFotoPerfil1().setImage(usuario.getFoto());
 		this.usuario = usuario;
+		this._top_usuarios = interfaz;
 
-		if(user instanceof Usuario_No_Registrado) {
-			this.unrInterfaz = (Usuario_No_Registrado) user;
+		if(this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado.unr != null) {
+			this.unrInterfaz = this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
 			Ver_perfilUNR();
 		}else {
-			this.userInterfaz = (Usuario_Registrado) user;
+			this.userInterfaz = this._top_usuarios._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 			Ver_perfilUR();
 		}	
 	}
 	public void Ver_perfilUR() {
-		this.ver_perfil = new Ver_perfil_publico(this.usuario, this);
+		this.ver_perfil = new Ver_perfil_publico(this.usuario, this, this._top_usuarios._cabecera_TOP);
 		this.getNombreUsuario().addClickListener(event ->{
 			userInterfaz.getCabeceraTop().setVisible(false);
 			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
@@ -35,7 +36,7 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 			});
 	}
 	public void Ver_perfilUNR() {
-		this.ver_perfil = new Ver_perfil_publico(this.usuario, this);
+		this.ver_perfil = new Ver_perfil_publico(this.usuario, this, this._top_usuarios._cabecera_TOP);
 		this.getNombreUsuario().addClickListener(event ->{
 //			unrInterfaz.getLayoutCabeceraTop().setVisible(false);
 			unrInterfaz.getVaadinHorizontalLayout().removeAll();

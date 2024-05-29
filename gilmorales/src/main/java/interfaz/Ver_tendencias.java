@@ -8,10 +8,12 @@ public class Ver_tendencias extends VistaVerTendencias{
 
 	public Ver_lista_Hashtag _ver_lista_Hashtag;
 	public Tendencias _tendencias;
+	public Cabecera_TOP cabecera_top;
 	
-	public Ver_tendencias() {
+	public Ver_tendencias(Cabecera_TOP cabecera_TOP) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
+    	this.cabecera_top = cabecera_TOP;
 		Tendencias();
 		Ver_lista_Hashtag();
 	}

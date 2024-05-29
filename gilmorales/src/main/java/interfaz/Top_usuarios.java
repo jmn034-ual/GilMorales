@@ -35,9 +35,9 @@ public class Top_usuarios extends VistaTopUsuarios{
 		
 		for (UsuarioRegistrado u : top) {
 			if(this._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
-				tui = new Top_usuarios_item(u, this._cabecera_TOP._cabecera_Usuario_No_Registrado.unr);
+				tui = new Top_usuarios_item(u, this);
 			}else {
-				tui = new Top_usuarios_item(u, this._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz);
+				tui = new Top_usuarios_item(u, this);
 			}
 			this.getLayoutTopUsuarios().as(VerticalLayout.class).add(tui);
 			_item.add(tui);

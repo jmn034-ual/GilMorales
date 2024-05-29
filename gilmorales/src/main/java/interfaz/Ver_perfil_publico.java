@@ -6,16 +6,15 @@ import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
 import bd_dcl.UsuarioRegistrado;
 
-//import basededatos.iVer_perfil_publico;
 
 public class Ver_perfil_publico extends Ver_Perfil__2 {
-//	public iVer_perfil_publico _iVer_perfil_ublico;
 	public Publicaciones_usuario_publico _publicaciones_usuario_publico;
 	public Ver_publicacciones_gustadas_Otro_usuario _ver_publicacciones_gustadas__Otro_usuario_;
 	UsuarioRegistrado userAver;
 	iUsuario_Registrado bd = new BDPrincipal();
 
-	public Ver_perfil_publico(UsuarioRegistrado userAver, Object interfaz) {
+	public Ver_perfil_publico(UsuarioRegistrado userAver, Object interfaz, Cabecera_TOP cabecera_TOP) {
+		super(cabecera_TOP);
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.userAver = userAver;
@@ -31,18 +30,6 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		publicaciones_usuario_publico();
 		Ver_publicacciones_gustadas__Otro_usuario_();
 	}
-
-//	private void asignarInterfaz(Object interfaz) {
-//		if (interfaz instanceof Lista_Publicaciones_Usuario_no_registrado_item) {
-//			motrarDatosUserNoRegistrado();
-//		} else if(interfaz instanceof Lista_publicaciones_Usuario_Registrado_item){
-//			this.publicaciones_Usuario_Registrado = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
-//			this.user = publicaciones_Usuario_Registrado._lista_publicaciones__Usuario_Registrado_.urInterfaz.ur;
-//			motrarDatosUserRegistrado();
-//		}else if(interfaz instanceof Publicaciones_hashtag_item) {
-//			this._publicaciones_hashtag = (Publicaciones_hashtag_item) interfaz;
-//		}
-//	}
 
 	private void motrarDatosUserNoRegistrado() {
 		this.getBotonSeguir().setVisible(false);
@@ -77,32 +64,6 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		Seguir();
 
 	}
-
-//	public Ver_perfil_publico(UsuarioRegistrado userAver, UsuarioRegistrado user) {
-//		this.getStyle().set("width", "100%");
-//    	this.getStyle().set("height", "100%");
-//    	this.userAver = userAver;
-//    	this.user = user;
-//    	this.getVerSeguidores().setVisible(false);
-//    	this.getVerSiguiendos().setVisible(false);
-//    	this.getBotonEditarPerfil().setVisible(false);
-//    	this.getBotonEliminarPublicacion().setVisible(false);
-//    	this.getBotonModificarPerfil().setVisible(false);
-//    	this.getBotonPeticionAmistad().setVisible(false);
-//    	this.getLabelUsuarioPrivado().setVisible(false);
-//    	this.getListaMeGustas().setVisible(false);
-//    	this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
-//    	this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
-//    	_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas_Otro_usuario();
-//    	publicaciones_usuario_publico();
-//    	if(this.user.seguir.contains(userAver)) {
-//    		this.getBotonSeguir().setText("Dejar de Seguir");
-//    	}else {
-//    		this.getBotonSeguir().setText("Seguir");
-//    	}
-//    	Seguir();
-//
-//	}
 
 	public void Seguir() {
 		this.getBotonSeguir().addClickListener(event -> {

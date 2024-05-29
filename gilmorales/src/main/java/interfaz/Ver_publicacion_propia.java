@@ -73,7 +73,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		this.getVerPerfil().addClickListener(event ->{
 			UsuarioRegistrado ur = this.publicacion.getPerteneceA();
 			if(ur != null) {
-				this.ver_perfil_propio = new Ver_perfil_propio(_add_publiacacion.urInterfaz._cabecera_Usuario_Registrado);
+				this.ver_perfil_propio = new Ver_perfil_propio(_add_publiacacion.urInterfaz._cabecera_Usuario_Registrado, _add_publiacacion.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
 				urInterfaz.getListaPublicaciones().setVisible(false);
 				urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
 			}

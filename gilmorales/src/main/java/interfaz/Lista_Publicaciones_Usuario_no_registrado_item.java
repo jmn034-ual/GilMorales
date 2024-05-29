@@ -52,7 +52,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	}
 	
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this);
+		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, this._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR._cabecera_TOP);
 		this.getBotonNombreUsuario().addClickListener(event ->{
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().removeAll();
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().add(ver_perfil);
@@ -60,7 +60,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	}
 
 	public void Ver_publicacion__Usuario_No_Registrado_() {
-		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, _publicaciones__Usuario_no_registrado_.unr);
+		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, this);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event ->{
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().removeAll();
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().add(verPublicacionUNR);

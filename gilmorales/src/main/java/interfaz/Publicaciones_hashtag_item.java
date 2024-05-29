@@ -37,15 +37,21 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 			this.userNoRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_No_Registrado.unr;
 			if(userNoRegistrado == null)
 				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz;
-		}else if(this._publicaciones_hashtag._ver_hashtag._tendencias != null) {
+		}else if(this._publicaciones_hashtag._ver_hashtag._tendencias != null){
 			this.tendencias = this._publicaciones_hashtag._ver_hashtag._tendencias;
-//			this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._tendencias._tendencias._ver_tendencias._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
-//			this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
-		}else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null){
-			if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado != null)
+			this.userNoRegistrado = this.tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
+//			this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
+		}
+		else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags != null){
+			if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null)
 				this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+			else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias != null)
+				this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
 			if(userNoRegistrado == null){
-				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+				if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null)
+					this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+				else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias != null)
+					this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 			}
 		}
 		
@@ -58,7 +64,7 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this.userNoRegistrado != null) {
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
-						.add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this.userNoRegistrado));
+						.add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this));
 			} else {
 				if (this.userRegistrado.ur.equals(this.publicacion.getPerteneceA())) {
 					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
@@ -76,10 +82,16 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 		this.getBotonNombreUsuario().addClickListener(event -> {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this.publicacion.getPerteneceA() != null && this.publicacion.getPerteneceA().getPrivacidad() != 0) {
-				perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA());
+				if(this.userNoRegistrado != null)
+					perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA(), this.userNoRegistrado.cabeceraUNR._cabecera_TOP);
+				else
+					perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA(), this.userRegistrado._cabecera_Usuario_Registrado._cabecera_TOP);
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPrivado);
 			} else if (this.publicacion.getPerteneceA() != null) {
-				perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this);
+				if(this.userNoRegistrado != null)
+					perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, this.userNoRegistrado.cabeceraUNR._cabecera_TOP);
+				else
+					perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, this.userRegistrado._cabecera_Usuario_Registrado._cabecera_TOP);				
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPublico);
 			}
 		});

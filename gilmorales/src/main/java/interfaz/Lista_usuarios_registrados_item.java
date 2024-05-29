@@ -39,7 +39,7 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 	}
 
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.user, this);
+		this.ver_perfil = new Ver_perfil_publico(this.user, this, this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP);
 		this.getBotonNombreUsuario().addClickListener(event ->{
 			this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.ver_perfil);
@@ -55,7 +55,7 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 			this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
 				Usuario_No_Registrado userNoRegistrado = this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
-				this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_Usuario_No_Registrado(publicacion, userNoRegistrado));
+				this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this));
 			} else if (this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null) {
 				Usuario_Registrado userRegistrado = this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 				if (userRegistrado.ur.equals(publicacion.getPerteneceA())) {

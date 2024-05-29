@@ -39,7 +39,7 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	}
 	@Override
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this);
+		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, unrInterfaz.cabeceraUNR._cabecera_TOP);
 		this.getBotonNombreUsuario().addClickListener(event ->{
 			unrInterfaz.getVaadinHorizontalLayout().removeAll();
 			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);

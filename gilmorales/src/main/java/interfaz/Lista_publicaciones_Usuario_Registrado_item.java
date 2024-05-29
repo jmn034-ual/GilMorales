@@ -66,7 +66,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 
 	@Override
 	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this);
+		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, this._lista_publicaciones__Usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
 		this.getBotonNombreUsuario().addClickListener(event -> {
 			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)

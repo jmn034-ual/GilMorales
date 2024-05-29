@@ -29,7 +29,7 @@ public class Tendencias extends VistaListaTendencias{
 		_item.clear();
 
 		for (Hashtag h : tendencias) {
-			tendencia = new Tendencias_item(h);
+			tendencia = new Tendencias_item(h, this);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(tendencia);
 			_item.add(tendencia);
 		}	

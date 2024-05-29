@@ -3,6 +3,7 @@
 import bd_dcl.UsuarioRegistrado;
 
 public class Ver_Perfil__2 extends Ver_perfil__1 {
+
 	public Lista_Top_Comentarios_Usuario_No_Registrado_item _lista_Top_Comentarios__Usuario_No_Registrado_;
 	public Lista_de_seguidores_item _lista_de_seguidores;
 	public Lista_de_segidos_item _lista_de_segidos;
@@ -21,6 +22,12 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 	public Lista_denuncias_item _lista_denuncias;
 	public Lista_Publicaciones_Administrador_item _lista_Publicaciones__Administrador_;
 	public 	UsuarioRegistrado user;
+	
+	public Ver_Perfil__2(Cabecera_TOP cabecera_TOP) {
+		super(cabecera_TOP);
+		// TODO Auto-generated constructor stub
+	}
+
 
 	protected void asignarInterfaz(Object interfaz) {
 		if(interfaz instanceof Lista_Top_Comentarios_Usuario_No_Registrado_item) {
@@ -53,6 +60,7 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 			this._lista_Publicaciones__Administrador_ = (Lista_Publicaciones_Administrador_item) interfaz;
 		}else if (interfaz instanceof Lista_Publicaciones_Usuario_no_registrado_item) {
 			this._publicaciones__Usuario_no_registrado_ = (Lista_Publicaciones_Usuario_no_registrado_item) interfaz;
+			this.cabecera_top = this._publicaciones__Usuario_no_registrado_._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR._cabecera_TOP;
 		} else if(interfaz instanceof Lista_publicaciones_Usuario_Registrado_item){
 			this.publicaciones_Usuario_Registrado = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
 			this.user = publicaciones_Usuario_Registrado._lista_publicaciones__Usuario_Registrado_.urInterfaz.ur;

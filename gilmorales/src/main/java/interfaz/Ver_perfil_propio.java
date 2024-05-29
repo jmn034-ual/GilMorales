@@ -23,14 +23,10 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	public Editar_perfil _editar_perfil;
 	public Configurar_perfil _configurar_perfil;
 	public Eliminar_publicaciones _eliminar_publicaciones;
-    private Image imagenPerfil;
-
+    private Image imagenPerfil;	
 	
-	public Ver_perfil_propio() {}
-	
-	
-	public Ver_perfil_propio(Cabecera_Usuario_Registrado interfaz) {
-		super();
+	public Ver_perfil_propio(Cabecera_Usuario_Registrado interfaz, Cabecera_TOP cabecera_TOP) {
+		super(cabecera_TOP);
 		this._cabecera_Usuario_Registrado = interfaz;
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
