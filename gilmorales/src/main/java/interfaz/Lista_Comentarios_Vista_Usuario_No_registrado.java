@@ -22,7 +22,7 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado extends VistaListaCom
 	public Lista_Comentarios_Vista_Usuario_No_registrado() {}
 	
 	public Lista_Comentarios_Vista_Usuario_No_registrado(Usuario_No_Registrado unr, Publicacion publicacion) {
-		this.unr = unr;
+//		this.unr = unr;
 		this.publicacion = publicacion;
 		cargarComentarios();
 	}
@@ -34,7 +34,7 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado extends VistaListaCom
 		_item.clear();
 
 		for(Comentario com : lista) {
-				this.comentario = new Lista_Comentarios_Vista_Usuario_No_registrado_item(this.unr, com);
+				this.comentario = new Lista_Comentarios_Vista_Usuario_No_registrado_item(this, com);
 				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.comentario);
 				_item.add(this.comentario);
 			

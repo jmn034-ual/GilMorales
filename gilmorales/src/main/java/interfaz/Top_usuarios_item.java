@@ -19,7 +19,7 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 		this.usuario = usuario;
 		this._top_usuarios = interfaz;
 
-		if(this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado.unr != null) {
+		if(this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
 			this.unrInterfaz = this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
 			Ver_perfilUNR();
 		}else {

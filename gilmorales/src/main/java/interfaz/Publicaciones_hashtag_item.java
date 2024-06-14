@@ -16,7 +16,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 	public Usuario_Registrado userRegistrado;
 	Publicacion publicacion;
 	
-	public Tendencias_item tendencias;
 
 	public Publicaciones_hashtag_item(Publicacion p, Publicaciones_hashtag interfaz) {
 		this._publicaciones_hashtag = interfaz;
@@ -38,20 +37,26 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 			if(userNoRegistrado == null)
 				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz;
 		}else if(this._publicaciones_hashtag._ver_hashtag._tendencias != null){
-			this.tendencias = this._publicaciones_hashtag._ver_hashtag._tendencias;
-			this.userNoRegistrado = this.tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
-//			this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
+			Tendencias_item tendencias = this._publicaciones_hashtag._ver_hashtag._tendencias;
+			if(tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado != null)
+				this.userNoRegistrado = tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
+			if(this.userNoRegistrado == null)
+				this.userRegistrado =  tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 		}
 		else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags != null){
-			if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null)
-				this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
-			else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias != null)
-				this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
+			if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null) {
+				Cabecera_TOP cabeceraTop = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP;
+				if(cabeceraTop._cabecera_Usuario_No_Registrado != null)
+					this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+			}else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias != null)
+				if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado != null)
+					this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
 			if(userNoRegistrado == null){
 				if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null)
 					this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 				else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias != null)
-					this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
+					if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado != null)
+						this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 			}
 		}
 		

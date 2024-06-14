@@ -35,9 +35,6 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 		this.getBotonVerListaHashtag().addClickListener(event -> {
 			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().removeAll();
 			this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);
-//			_cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
-//			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).removeAll();
-//			this._cabecera_Usuario_No_Registrado.unr.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_ver_lista_Hashtag);
 			});
 	}
 	
