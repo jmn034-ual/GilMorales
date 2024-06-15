@@ -24,20 +24,17 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	BDPrincipal bd = new BDPrincipal();
 	UsuarioRegistrado user;
 
-	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,
-			Lista_publicaciones_Usuario_Registrado interfaz) {
-		super(publicacion, interfaz);
+	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,	Lista_publicaciones_Usuario_Registrado interfaz) {
+//		super(publicacion, interfaz);
+		this.publicacion = publicacion;
 		this._lista_publicaciones__Usuario_Registrado_ = interfaz;
 		this.user = interfaz.urInterfaz.ur;
 		this.getLayoutBotonesUsuarioR().setVisible(true);
-		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
-//		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
 		this.getVaadinButton().setVisible(true);
 		this.getLabelMeGustas().setVisible(false);
-		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
-		this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios() + "");
 		this.getLayoutComentar().setVisible(true);
-//		mostrarDatosUsuario();
+		mostrarDatosPublicacion();
+		mostrarDatosUsuario();
 		if (this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();
 			Seguir();
@@ -49,18 +46,14 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		Ver_publicacion_ajena();
 		Denunciar_publicacion();
 		Comentar();
-
 	}
 
 	public void Ver_comentarios__Usuario_Registrado_() {
 		verComentarios = new Ver_comentarios_Usuario_Registrado(this.publicacion,
 				_lista_publicaciones__Usuario_Registrado_.urInterfaz, user);
 		this.getBotonVerComentarios().addClickListener(event -> {
-			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
-			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)
-					.add(verComentarios);
-			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getCabeceraTop().setVisible(false);
-
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(verComentarios);
 		});
 	}
 
@@ -68,10 +61,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	public void Ver_perfil() {
 		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, this._lista_publicaciones__Usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
 		this.getBotonNombreUsuario().addClickListener(event -> {
-			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
-			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)
-					.add(ver_perfil);
-			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getCabeceraTop().setVisible(false);
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
 		});
 	}
 
@@ -79,10 +70,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion,
 				_lista_publicaciones__Usuario_Registrado_.urInterfaz);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event -> {
-			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
-			_lista_publicaciones__Usuario_Registrado_.getLayoutPublicacionesUNR().as(VerticalLayout.class)
-					.add(_ver_publicacion_ajena);
-			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getCabeceraTop().setVisible(false);
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
+			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(_ver_publicacion_ajena);
 		});
 	}
 

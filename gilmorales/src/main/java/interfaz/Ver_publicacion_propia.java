@@ -29,7 +29,6 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		super(publicacion, publicacion.getPerteneceA());
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		//		this.publicacion = publicacion;
 		this.urInterfaz = urInterfaz;
 		this.getVaadinHorizontalLayout2().setVisible(false);
 		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());
@@ -52,30 +51,18 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 
 	public void Eliminar_publicacion_propia() {
 		this.getVaadinButton1().addClickListener(event ->{
-			//			urInterfaz._cabecera_Usuario_Registrado.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
-//			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
-			//			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
-			urInterfaz.listaPublicaciones.setVisible(true);
-			urInterfaz.getListaPublicaciones().setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
-			//			urInterfaz._cabecera_Usuario_Registrado.addPubli.setVisible(false);
-			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			//			urInterfaz._cabecera_Usuario_Registrado.volverInicio();
 			bd.eliminarPublicacion(this.publicacion.getIdPublicacion());
 			Notification.show("Publicacion eliminada.");
 		});
 	}
 
 	public void Ver_perfil_propio() {
+		this.ver_perfil_propio = new Ver_perfil_propio(_add_publiacacion.urInterfaz._cabecera_Usuario_Registrado, _add_publiacacion.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
 		this.getVerPerfil().addClickListener(event ->{
 			UsuarioRegistrado ur = this.publicacion.getPerteneceA();
 			if(ur != null) {
-				this.ver_perfil_propio = new Ver_perfil_propio(_add_publiacacion.urInterfaz._cabecera_Usuario_Registrado, _add_publiacacion.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
-				urInterfaz.getListaPublicaciones().setVisible(false);
-				urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(false);
+				this.urInterfaz.getVaadinHorizontalLayout().removeAll();
+				this.urInterfaz.getVaadinHorizontalLayout().add(ver_perfil_propio);
 			}
 		});	
 	}

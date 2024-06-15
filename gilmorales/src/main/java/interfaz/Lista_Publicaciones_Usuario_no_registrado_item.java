@@ -16,6 +16,10 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	public Ver_comentarios_Usuario_No_registrado verComentariosUNR;
 	public Publicacion publicacion;
 	
+	public Lista_Publicaciones_Usuario_no_registrado_item() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Lista_Publicaciones_Usuario_no_registrado_item(Publicacion publicacion, Lista_Publicaciones_Usuario_no_registrado interfaz) {
 		this._publicaciones__Usuario_no_registrado_  = interfaz;
 		this.publicacion = publicacion;

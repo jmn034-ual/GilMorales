@@ -14,7 +14,7 @@ export class VistaVerNotificaciones extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; align-items: center; padding-bottom: var(--lumo-space-xl); overflow-y: auto;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="align-items: center; padding-bottom: var(--lumo-space-xl); width: 100%; height: 100%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
 `;
   }
 

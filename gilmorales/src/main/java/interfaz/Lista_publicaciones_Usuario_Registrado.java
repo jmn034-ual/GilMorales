@@ -21,6 +21,8 @@ public class Lista_publicaciones_Usuario_Registrado extends Lista_Publicaciones_
 	private iUsuario_Registrado	bd = new BDPrincipal();
 	
 	public Lista_publicaciones_Usuario_Registrado(Usuario_Registrado urInterfaz) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this.urInterfaz = urInterfaz;
 		cargarPublicacionesUR();
 	}

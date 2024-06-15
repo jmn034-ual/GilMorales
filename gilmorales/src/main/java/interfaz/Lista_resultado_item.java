@@ -45,12 +45,6 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 				this._ver_perfil = new Ver_perfil_privado(user, this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado._cabecera_TOP);
 		}
 		this.getBotonNombreUsuario().addClickListener(event -> {
-			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null) {
-//				this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
-
-			}else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null) {
-				this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
-			}
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(_ver_perfil);
 		});
@@ -58,12 +52,6 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 
 	public void Ver_hashtag() {
 		this.getBotonHashtag().addClickListener(event -> {
-			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null) {
-//				this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado.unr.getLayoutCabeceraTop().setVisible(false);
-
-			}else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null) {
-				this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.getCabeceraTop().setVisible(false);
-			}
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(this._ver_hashtag);
 		});

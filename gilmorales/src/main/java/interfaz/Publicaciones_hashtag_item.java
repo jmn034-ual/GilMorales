@@ -33,7 +33,9 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 			if(userNoRegistrado == null)
 				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 		}else if(this._publicaciones_hashtag._ver_hashtag._resultado_hashtags != null) {
-			this.userNoRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_No_Registrado.unr;
+			if( this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_No_Registrado != null) {
+				this.userNoRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_No_Registrado.unr;
+			}
 			if(userNoRegistrado == null)
 				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz;
 		}else if(this._publicaciones_hashtag._ver_hashtag._tendencias != null){

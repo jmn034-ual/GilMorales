@@ -16,10 +16,11 @@ import basededatos.BDPrincipal;
 import bd_dcl.Publicacion;
 import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
+import javassist.runtime.Desc;
 import vistas.VistaAddpublicacion;
 
 public class Add_publicacion extends VistaAddpublicacion{
-	//	public Comun__Comercial_y_Usuario_Registrado_ _comun__Comercial_y_Usuario_Registrado_ = new Comun__Comercial_y_Usuario_Registrado_();
+	public Comun_Comercial_y_Usuario_Registrado _comun__Comercial_y_Usuario_Registrado_;
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Ver_publicacion_propia_Comercial _ver_publicacion_propiaComercial;
 	private UsuarioRegistrado ur;
@@ -52,7 +53,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 		Add_localizacion();
 		Ver_publicacion_propia();
 		Publicar();
-		Descartar();
+//		Descartar();
 //		Subir_video();
 	}
 
@@ -115,14 +116,9 @@ public class Add_publicacion extends VistaAddpublicacion{
 
 	public void Descartar() {
 		this.getBotonDescartar().addClickListener(event ->{
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getCabeceraTop().setVisible(true);
-			//			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.getLayoutAyuda().setVisible(false);
-			urInterfaz._cabecera_Usuario_Registrado.Cabecera_TOP();
-			urInterfaz.listaPublicaciones.setVisible(true);
-			urInterfaz.getListaPublicaciones().setVisible(true);
-			urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP.setVisible(true);
-			urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			urInterfaz._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
+			//Falta controlar el caso del Comercial
+			urInterfaz.getVaadinHorizontalLayout().removeAll();
+			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(urInterfaz._cabecera_Usuario_Registrado), new Lista_publicaciones_Usuario_Registrado(urInterfaz));
 		});
 	}
 }

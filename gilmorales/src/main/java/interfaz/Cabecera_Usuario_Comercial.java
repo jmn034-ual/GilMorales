@@ -14,7 +14,6 @@ public class Cabecera_Usuario_Comercial extends Comun_Comercial_y_Usuario_Regist
 		this.Add_publicacion();
 	}
 	
-	@Override
 	public void Add_publicacion() {
 		this.getBotonAniadir().addClickListener(event->{
 			this.addPubli = new Add_publicacion(this.comercial, _usuario_comercial);

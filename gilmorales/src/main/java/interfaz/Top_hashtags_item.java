@@ -19,32 +19,30 @@ public class Top_hashtags_item extends VistaTopHashtagsItem{
 	public Top_hashtags_item(Hashtag hashtag, Top_hashtags interfaz) {
 		this.hashtag = hashtag;
 		this._top_hashtags = interfaz;
-		if(this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {			
-			Ver_hashtagUNR();
-		}else {
-			Ver_hashtagUR();
-		}
-	
 		this.getHashtagItem().setText(hashtag.getNombreHashtag());
+		Ver_hashtag();	
 	}
 	
-	public void Ver_hashtagUR() {
-		this.userInterfaz = this._top_hashtags._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
-		this._ver_hashtag = new Ver_hashtag(hashtag, this);
+	public void Ver_hashtag() {
+		if(this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {		
+			this.unrInterfaz = this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+			this._ver_hashtag = new Ver_hashtag(hashtag, this);
+		}else {
+			this.userInterfaz = this._top_hashtags._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+			this._ver_hashtag = new Ver_hashtag(hashtag, this);
+		}
+		
 		this.getHashtagItem().addClickListener(event -> {
-			userInterfaz.getCabeceraTop().setVisible(false);
-			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
-			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(_ver_hashtag);
+			if(this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {		
+				unrInterfaz.getVaadinHorizontalLayout().removeAll();
+				unrInterfaz.getVaadinHorizontalLayout().add(_ver_hashtag);
+			}else {
+				userInterfaz.getVaadinHorizontalLayout().removeAll();
+				userInterfaz.getVaadinHorizontalLayout().add(_ver_hashtag);
+			}
+
 		});
 	}
 	
-	public void Ver_hashtagUNR() {
-		this.unrInterfaz = this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
-		this._ver_hashtag = new Ver_hashtag(hashtag, this);
-		this.getHashtagItem().addClickListener(event -> {
-//			unrInterfaz.getLayoutCabeceraTop().setVisible(false);
-			unrInterfaz.getVaadinHorizontalLayout().removeAll();
-			unrInterfaz.getVaadinHorizontalLayout().add(_ver_hashtag);
-		});
-	}
+
 }

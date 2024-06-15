@@ -28,11 +28,21 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 		}	
 	}
 	public void Ver_perfilUR() {
-		this.ver_perfil = new Ver_perfil_publico(this.usuario, this, this._top_usuarios._cabecera_TOP);
+		if(this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
+			this.unrInterfaz = this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+			this.ver_perfil = new Ver_perfil_publico(this.usuario, this, this._top_usuarios._cabecera_TOP);
+		}else {
+			this.userInterfaz = this._top_usuarios._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+			this.ver_perfil = new Ver_perfil_publico(this.usuario, this, this._top_usuarios._cabecera_TOP);
+		}	
 		this.getNombreUsuario().addClickListener(event ->{
-			userInterfaz.getCabeceraTop().setVisible(false);
-			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
-			userInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(ver_perfil);
+			if(this.unrInterfaz != null) {
+				unrInterfaz.getVaadinHorizontalLayout().removeAll();
+				unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
+			}else {
+				this.userInterfaz.getVaadinHorizontalLayout().removeAll();
+				this.userInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
+			}
 			});
 	}
 	public void Ver_perfilUNR() {

@@ -17,21 +17,21 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @JsModule("./src/vista-usuario-registrado.ts")
 public class VistaUsuarioRegistrado extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
+  
+
+	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("cabecera")
 	private HorizontalLayout cabecera;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("cabeceraTop")
-	private Element cabeceraTop;
-	@Id("listaPublicaciones")
-	private Element listaPublicaciones;
-
 	
+	
+
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
+
 
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
@@ -39,9 +39,11 @@ public class VistaUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public HorizontalLayout getCabecera() {
 		return cabecera;
 	}
+
 
 
 	public void setCabecera(HorizontalLayout cabecera) {
@@ -49,34 +51,17 @@ public class VistaUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
+
 
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
 
-
-	public Element getCabeceraTop() {
-		return cabeceraTop;
-	}
-
-
-	public void setCabeceraTop(Element cabeceraTop) {
-		this.cabeceraTop = cabeceraTop;
-	}
-
-
-	public Element getListaPublicaciones() {
-		return listaPublicaciones;
-	}
-
-
-	public void setListaPublicaciones(Element listaPublicaciones) {
-		this.listaPublicaciones = listaPublicaciones;
-	}
 
 
 	/**

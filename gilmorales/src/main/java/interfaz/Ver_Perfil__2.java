@@ -60,7 +60,12 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 			this._lista_Publicaciones__Administrador_ = (Lista_Publicaciones_Administrador_item) interfaz;
 		}else if (interfaz instanceof Lista_Publicaciones_Usuario_no_registrado_item) {
 			this._publicaciones__Usuario_no_registrado_ = (Lista_Publicaciones_Usuario_no_registrado_item) interfaz;
-			this.cabecera_top = this._publicaciones__Usuario_no_registrado_._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR._cabecera_TOP;
+			if(this._publicaciones__Usuario_no_registrado_._publicaciones__Usuario_no_registrado_ != null)
+				this.cabecera_top = this._publicaciones__Usuario_no_registrado_._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR._cabecera_TOP;
+//			else
+//				this.cabecera_top = this._publicaciones__Usuario_registrado_._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR._cabecera_TOP;
+				//Tengo que comprobar el usuario registrado
+
 		} else if(interfaz instanceof Lista_publicaciones_Usuario_Registrado_item){
 			this.publicaciones_Usuario_Registrado = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
 			this.user = publicaciones_Usuario_Registrado._lista_publicaciones__Usuario_Registrado_.urInterfaz.ur;

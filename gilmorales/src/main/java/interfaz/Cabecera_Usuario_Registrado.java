@@ -20,7 +20,6 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	
 	public Cabecera_Usuario_Registrado(UsuarioRegistrado ur, Usuario_Registrado urInterfaz) {
 		super();
-
     	this.getTextoBusqueda().getStyle().set("background-color", "transparent");
     	this.getTextoBusqueda().getStyle().set("border-radius", "8px");
     	this.getTextoBusqueda().getStyle().set("color", "#FFFFF");
@@ -31,26 +30,22 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
     	this.ur = ur;
 		this.urInterfaz = urInterfaz; 
     	Cabecera_TOP();  
-    	this.Add_publicacion();
+    	Add_publicacion();
+    	
     	volverInicio();
     	Ver_perfil_propio();
     	Ver_notificaciones();
     	Realizar_busqueda();
 	}
-	@Override
+
 	public void Add_publicacion() {
 		this.addPubli = new Add_publicacion(ur, urInterfaz);
 		this.getBotonAniadir().addClickListener(event->{
-			this.addPubli = new Add_publicacion(ur, urInterfaz);
+//			this.addPubli = new Add_publicacion(ur, urInterfaz);
 			this.getBotonAniadir().setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
-			urInterfaz.getCabeceraTop().setVisible(false);
-			this.addPubli.setVisible(true);
-			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			urInterfaz.getListaPublicaciones().setVisible(false);
+			urInterfaz.getVaadinHorizontalLayout().removeAll();
 			urInterfaz.getVaadinHorizontalLayout().add(addPubli);
 		});
 	}
@@ -58,17 +53,11 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	public void Ver_notificaciones() {
 		_ver_notificaciones = new Ver_notificaciones(this);
 		this.getBotonNotificaciones().addClickListener(event -> {
-			_ver_notificaciones = new Ver_notificaciones(this);
-			this._ver_notificaciones.setVisible(true);
+//			_ver_notificaciones = new Ver_notificaciones(this);
 			this.getBotonNotificaciones().setVisible(false);
-			urInterfaz.getCabeceraTop().setVisible(false);
-			this.addPubli.setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
-			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			urInterfaz.getListaPublicaciones().setVisible(false);
+			urInterfaz.getVaadinHorizontalLayout().removeAll();
 			urInterfaz.getVaadinHorizontalLayout().add(_ver_notificaciones);
 		});
 	}
@@ -76,33 +65,20 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	public void Ver_perfil_propio() {
 		_ver_perfil_propio =  new Ver_perfil_propio(this, this._cabecera_TOP);
 		this.getBotonPerfil().addClickListener(event -> {
-
-			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
-			this._ver_perfil_propio.getLayoutTendencias().setVisible(true);
-			this._ver_notificaciones.setVisible(false);
-			this._ver_perfil_propio.setVisible(true);
-			this.addPubli.setVisible(false);
+//
+//			this._ver_perfil_propio._eliminar_publicaciones.setVisible(false);
+//			this._ver_perfil_propio.getLayoutTendencias().setVisible(true);
+//			this._ver_notificaciones.setVisible(false);
+//			this._ver_perfil_propio.setVisible(true);
+//			this.addPubli.setVisible(false);
 			this.getBotonPerfil().setVisible(false);
 			this.getBotonAniadir().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
-			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			urInterfaz.getCabeceraTop().setVisible(false);
-			urInterfaz.getListaPublicaciones().setVisible(false);
+			urInterfaz.getVaadinHorizontalLayout().removeAll();
 			urInterfaz.getVaadinHorizontalLayout().add(_ver_perfil_propio);
 		});
 	}
 	
-//	public void Ver_perfil_propio() {
-//		_ver_perfil_propio =  new Ver_perfil_propio(ur);
-//		this.getBotonPerfil().addClickListener(event -> {
-//			urInterfaz.getCabeceraTop().setVisible(false);
-//			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
-//			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(_ver_perfil_propio);
-//
-//		});
-//	}
 
 	public void Realizar_busqueda() {
 		this.getBotonBuscar().addClickListener(event ->{
@@ -110,32 +86,24 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
-			this._realizar_busqueda.setVisible(true);
-			this._cabecera_TOP.setVisible(true);
-			if(urInterfaz.getVaadinHorizontalLayout().getComponentCount() != 0) {
-				urInterfaz.getVaadinHorizontalLayout().remove(urInterfaz.getVaadinHorizontalLayout().getComponentAt(0));
-			}
-			urInterfaz.getListaPublicaciones().setVisible(false);
+			urInterfaz.getVaadinHorizontalLayout().removeAll();
 			urInterfaz.getVaadinHorizontalLayout().add(_realizar_busqueda);
 			this.getTextoBusqueda().setValue("");
 		});
 	}
 	public void Cabecera_TOP() {
 		this._cabecera_TOP = new Cabecera_TOP(this);
-		urInterfaz.getCabeceraTop().as(VerticalLayout.class).add(this._cabecera_TOP);
+		urInterfaz.getVaadinHorizontalLayout().add(this._cabecera_TOP);
 	}
 	
 	
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
-			urInterfaz.getCabeceraTop().as(VerticalLayout.class).remove(this._cabecera_TOP);
-			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).removeAll();
-			urInterfaz.getCabeceraTop().setVisible(true);
-			urInterfaz.getListaPublicaciones().setVisible(true);
-			urInterfaz.ur = urInterfaz._iUsuario_Registrado.cargarUsuarioRegistrado(urInterfaz.ur.getID());
-			urInterfaz.getListaPublicaciones().as(VerticalLayout.class).add(new Lista_publicaciones_Usuario_Registrado(urInterfaz));
-			Cabecera_TOP();
-			this._cabecera_TOP.setVisible(true);
+			this.getBotonAniadir().setVisible(true);
+			this.getBotonPerfil().setVisible(true);
+			this.getBotonNotificaciones().setVisible(true);
+			urInterfaz.getVaadinHorizontalLayout().removeAll();
+			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(this), new Lista_publicaciones_Usuario_Registrado(urInterfaz));
 		});
 	}
 	
