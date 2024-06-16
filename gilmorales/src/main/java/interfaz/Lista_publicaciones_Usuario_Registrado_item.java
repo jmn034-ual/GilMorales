@@ -29,12 +29,12 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this.publicacion = publicacion;
 		this._lista_publicaciones__Usuario_Registrado_ = interfaz;
 		this.user = interfaz.urInterfaz.ur;
+		mostrarDatosPublicacion();
+		mostrarDatosUsuario();
 		this.getLayoutBotonesUsuarioR().setVisible(true);
 		this.getVaadinButton().setVisible(true);
 		this.getLabelMeGustas().setVisible(false);
 		this.getLayoutComentar().setVisible(true);
-		mostrarDatosPublicacion();
-		mostrarDatosUsuario();
 		if (this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();
 			Seguir();
@@ -109,7 +109,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 			this.bd.comentarPublicacion(this.publicacion.getIdPublicacion(), this.user.getID(),
 					this.getTextFieldComentario().getValue());
 			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
-
+			this.getLabelNumComentarios().setText(this.publicacion.getNumComentarios()+"");
+			this.getTextFieldComentario().setValue("");
 		});
 	}
 }

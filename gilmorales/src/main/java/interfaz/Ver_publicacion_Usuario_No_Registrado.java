@@ -82,7 +82,7 @@ public class Ver_publicacion_Usuario_No_Registrado extends VistaVerPublicacionUs
 	}
 	
 	public void Ver_comentarios__Usuario_No_registrado_() {
-		_ver_comentarios__Usuario_No_registrado_ = new Ver_comentarios_Usuario_No_registrado(this.p, unr);
+		_ver_comentarios__Usuario_No_registrado_ = new Ver_comentarios_Usuario_No_registrado(this.p, this);
 		this.getBotonVerComentario().addClickListener(event -> {
 			this.getVaadinHorizontalLayout().removeAll();
 			this.getVaadinHorizontalLayout().add(_ver_comentarios__Usuario_No_registrado_);

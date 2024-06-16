@@ -10,8 +10,7 @@ public class Lista_comentarios_Usuario_registrado_item extends Lista_Comentarios
 	public Denunciar_comentario _denunciar_comentario;
 	
 	public Lista_comentarios_Usuario_registrado_item(Object interfaz, Comentario comentario) {
-		super(interfaz, comentario);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void Dar_me_gusta_comentario() {

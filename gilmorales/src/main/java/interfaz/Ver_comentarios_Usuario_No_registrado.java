@@ -13,11 +13,17 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	private Usuario_No_Registrado unrInterfaz;
 	Publicacion publicacion;
 	
-	public Ver_comentarios_Usuario_No_registrado(Publicacion publicacion, Usuario_No_Registrado unr) {
+	public Ver_comentarios_Usuario_No_registrado(Publicacion publicacion, Object interfaz) {
 		super(publicacion);
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-		this.unrInterfaz = unr;
+    	if(interfaz instanceof Lista_Publicaciones_Usuario_no_registrado_item) {    		
+    		this._publicacionesUNR = (Lista_Publicaciones_Usuario_no_registrado_item) interfaz;
+    		this.unrInterfaz = this._publicacionesUNR._publicaciones__Usuario_no_registrado_.unr;
+    	}else {
+    		this.verPublicacionUNR = (Ver_publicacion_Usuario_No_Registrado) interfaz;
+    		this.unrInterfaz = this.verPublicacionUNR.unr;
+    	}
 		this.publicacion = publicacion;
 		interfazUserNoRegistrado();
 		Lista_Comentarios__Vista_Usuario_No_registrado_();
@@ -26,6 +32,7 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	
 	public void interfazUserNoRegistrado() {
 		this.getFotoPerfil().setImage(publicacion.getPerteneceA().getFoto());
+		this.getNumComentarios().setText(publicacion.getNumComentarios()+"");
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(false);
 		this.getBotonMeGusta().setVisible(false);
@@ -34,7 +41,7 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	}
 	
 	public void Lista_Comentarios__Vista_Usuario_No_registrado_() {
-		_lista_Comentarios__Vista_Usuario_No_registrado_ = new Lista_Comentarios_Vista_Usuario_No_registrado(unrInterfaz, publicacion); 
+		_lista_Comentarios__Vista_Usuario_No_registrado_ = new Lista_Comentarios_Vista_Usuario_No_registrado(unrInterfaz, publicacion, this); 
 		this.getLayoutListaComentarios().as(VerticalLayout.class).add(_lista_Comentarios__Vista_Usuario_No_registrado_);
 	}
 	@Override

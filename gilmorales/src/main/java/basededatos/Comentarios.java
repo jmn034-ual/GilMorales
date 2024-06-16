@@ -49,6 +49,7 @@ public class Comentarios {
 			comentario.setNumeroMeGustas(0);
 			ComentarioDAO.save(comentario);
 			publicacion.tieneComentarios.add(comentario);
+			publicacion.setNumComentarios(publicacion.tieneComentarios.size());
 			PublicacionDAO.save(publicacion);
 			t.commit();
 		} catch (Exception e) {

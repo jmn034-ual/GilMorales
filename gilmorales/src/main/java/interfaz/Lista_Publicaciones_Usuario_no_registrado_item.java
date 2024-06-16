@@ -23,8 +23,6 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	public Lista_Publicaciones_Usuario_no_registrado_item(Publicacion publicacion, Lista_Publicaciones_Usuario_no_registrado interfaz) {
 		this._publicaciones__Usuario_no_registrado_  = interfaz;
 		this.publicacion = publicacion;
-		NumeroComentarios();
-		NumeroMeGustas();
 		Ver_comentarios__Usuario_No_registrado_();
 		mostrarDatosUsuario();
 		mostrarDatosPublicacion();
@@ -43,7 +41,8 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
 		this.getLayoutComentar().setVisible(false);
 		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+"");
-
+		NumeroComentarios();
+		NumeroMeGustas();
 	}
 	public void mostrarDatosUsuario() {
 		if(this.publicacion.getPerteneceA() != null) {
@@ -72,7 +71,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	}
 	
 	public void Ver_comentarios__Usuario_No_registrado_() {
-		verComentariosUNR = new Ver_comentarios_Usuario_No_registrado(this.publicacion, _publicaciones__Usuario_no_registrado_.unr);
+		verComentariosUNR = new Ver_comentarios_Usuario_No_registrado(this.publicacion, this);
 		this.getBotonVerComentarios().addClickListener(event -> {
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().removeAll();
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().add(verComentariosUNR);

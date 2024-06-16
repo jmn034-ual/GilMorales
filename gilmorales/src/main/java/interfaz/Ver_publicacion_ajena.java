@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.dialog.DialogVariant;
+
 import TikTok.Video;
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
@@ -15,7 +18,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public Lista_usuarios_registrados_item _lista_usuarios_registrados;
 	public Denunciar_publicacion _denunciar_publicacion;
 	public Ver_Perfil__2 _ver_perfil;
-	iUsuario_Registrado bd = new BDPrincipal();
+	BDPrincipal bd = new BDPrincipal();
 	Publicacion publicacion;
 	Usuario_Registrado urInterfaz;
 
@@ -64,6 +67,10 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones() + "");
 		this.getVideo().add(new Video(publicacion.getVideo()));
 		Seguir();
+		Comentar();
+		Denunciar_publicacion();
+		Dar_me_gusta_publicacion();
+		//Ver_perfil();
 	}
 
 	public void Seguir() {
@@ -73,17 +80,35 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	}
 
 	public void Comentar() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void Denunciar_publicacion() {
-		this.getBotonDenunciar().addClickListener(event -> {
+		this.getBotonComentar().addClickListener(event -> {
+			this.bd.comentarPublicacion(this.publicacion.getIdPublicacion(), this.user.getID(),
+					this.getTextComentario().getValue());
+			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
 
 		});
 	}
 
+	public void Denunciar_publicacion() {
+		_denunciar_publicacion = new Denunciar_publicacion(this.publicacion.getPerteneceA(), this.user);
+		this.getBotonDenunciar().addClickListener(event -> {
+			Dialog dialog = new Dialog(_denunciar_publicacion);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("70%");
+			dialog.setWidth("61%");
+			this._denunciar_publicacion.getBotonCancelar().addClickListener(event2 -> {
+				dialog.close();
+			});
+			dialog.open();
+		});
+	}
+
 	public void Dar_me_gusta_publicacion() {
-		throw new UnsupportedOperationException();
+		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+		this.getBotonMeGusta().addClickListener(event -> {
+			this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
+			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+			this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+		});
 	}
 
 	public void Ver_perfil() {
