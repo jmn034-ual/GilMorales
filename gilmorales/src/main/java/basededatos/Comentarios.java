@@ -12,6 +12,8 @@ import org.orm.PersistentTransaction;
 import bd_dcl.Comentario;
 import bd_dcl.ComentarioDAO;
 import bd_dcl.GilMoralesPersistentManager;
+import bd_dcl.Notificacion;
+import bd_dcl.NotificacionDAO;
 import bd_dcl.Publicacion;
 import bd_dcl.PublicacionDAO;
 import bd_dcl.UsuarioRegistrado;
@@ -43,6 +45,7 @@ public class Comentarios {
 			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			Comentario comentario = ComentarioDAO.createComentario();
+			Notificacion notificacion = NotificacionDAO.createNotificacion();
 			comentario.setComentadoEn(publicacion);
 			comentario.setComentario(aComentario);
 			comentario.setEsComentadoPor(usuario);
@@ -50,6 +53,10 @@ public class Comentarios {
 			ComentarioDAO.save(comentario);
 			publicacion.tieneComentarios.add(comentario);
 			publicacion.setNumComentarios(publicacion.tieneComentarios.size());
+			notificacion.setTipoNotificacion(2);
+			notificacion.setEnviadaA(publicacion.getPerteneceA());
+			notificacion.setIDUsuarioNotifica(usuario.getID());
+			NotificacionDAO.save(notificacion);
 			PublicacionDAO.save(publicacion);
 			t.commit();
 		} catch (Exception e) {

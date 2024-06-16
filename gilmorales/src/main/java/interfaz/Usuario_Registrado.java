@@ -27,7 +27,7 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 		this.getVaadinHorizontalLayout().add(listaPublicaciones);
 	}
 	public void Cabecera_Usuario_Registrado() {
-		_cabecera_Usuario_Registrado = new Cabecera_Usuario_Registrado(ur, this);
+		_cabecera_Usuario_Registrado = new Cabecera_Usuario_Registrado(this);
 		this.getCabecera().add(_cabecera_Usuario_Registrado);
 	}
 	

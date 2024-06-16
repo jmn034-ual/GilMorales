@@ -42,7 +42,7 @@ public class Notificaciones_comentarios extends Notificaciones_comun {
 			nuevoItem = new Notificaciones_comentarios_item(nuevoComentario.getEnviadaA(), usuarioComenta);
 			this.getFotoPerfil().setImage(usuarioComenta.getFoto());
 			this.getVaadinButton().setText(usuarioComenta.getNombreUsuario());
-			nuevoItem.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.getVaadinHorizontalLayout());
+//			nuevoItem.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.getVaadinHorizontalLayout());
 			ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(this.ur.publica.getCollection());
 			for(Publicacion p : publicaciones) {
 				ArrayList<Comentario> comentarios = new ArrayList<Comentario>(p.tieneComentarios.getCollection());

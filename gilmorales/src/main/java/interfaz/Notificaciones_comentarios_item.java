@@ -21,8 +21,8 @@ public class Notificaciones_comentarios_item extends VistaNotificacionesComentar
 	
 	
 	public Notificaciones_comentarios_item(UsuarioRegistrado daMeGusta, UsuarioRegistrado recibe) {
-		this.getBotonMeGusta().setVisible(false);
-		this.getVaadinVerticalLayout().setVisible(false);
+		this.getBotonMeGusta().setVisible(true);
+		this.getVaadinVerticalLayout().setVisible(true);
 		this.daMeGusta = daMeGusta;
 		this.recibe = recibe;
 	}

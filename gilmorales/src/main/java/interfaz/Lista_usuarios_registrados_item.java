@@ -61,7 +61,7 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 				if (userRegistrado.ur.equals(publicacion.getPerteneceA())) {
 					this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_propia(publicacion, userRegistrado));
 				} else {
-					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this);
+					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, user,this);
 					this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_publicacion_ajena);
 				}
 			}

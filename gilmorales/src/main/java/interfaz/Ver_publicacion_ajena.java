@@ -19,11 +19,12 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public Denunciar_publicacion _denunciar_publicacion;
 	public Ver_Perfil__2 _ver_perfil;
 	BDPrincipal bd = new BDPrincipal();
-	Publicacion publicacion;
+//	Publicacion publicacion;
 	Usuario_Registrado urInterfaz;
 
-	public Ver_publicacion_ajena(Publicacion p, Object urInterfaz) {
-		this.publicacion = p;
+	public Ver_publicacion_ajena(Publicacion p, UsuarioRegistrado user, Object urInterfaz) {
+		super(p, user);
+//		this.publicacion = p;
 
 		if (urInterfaz instanceof Lista_publicaciones_Usuario_Registrado_item) {
 			_lista_publicaciones__Usuario_Registrado_ = (Lista_publicaciones_Usuario_Registrado_item) urInterfaz;
@@ -67,7 +68,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones() + "");
 		this.getVideo().add(new Video(publicacion.getVideo()));
 		Seguir();
-		Comentar();
+		this.Comentar();
 		Denunciar_publicacion();
 		Dar_me_gusta_publicacion();
 		//Ver_perfil();

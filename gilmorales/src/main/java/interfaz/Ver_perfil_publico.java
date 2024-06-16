@@ -18,8 +18,12 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.userAver = userAver;
-		asignarInterfaz(interfaz);
-		if(this.user != null) {
+		if(cabecera_TOP._cabecera_Usuario_Registrado != null) {
+			user = bd.cargarUsuarioRegistrado(cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur.getID());
+		}else {
+			asignarInterfaz(interfaz);
+		}
+		if(this.userAver != null) {
 			motrarDatosUserRegistrado();
 		}else {
 			motrarDatosUserNoRegistrado();
@@ -46,6 +50,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	}
 
 	private void motrarDatosUserRegistrado() {
+		this.getBotonSeguir().setVisible(true);
 		this.getVerSeguidores().setVisible(true);
 		this.getVerSiguiendos().setVisible(true);
 		this.getBotonEditarPerfil().setVisible(false);
@@ -54,9 +59,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.getBotonPeticionAmistad().setVisible(false);
 		this.getLabelUsuarioPrivado().setVisible(false);
 		this.getListaMeGustas().setVisible(true);
-		this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
-		this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
-		if (this.user.seguir.contains(userAver)) {
+		if (user.seguir.contains(userAver)) {
 			this.getBotonSeguir().setText("Dejar de Seguir");
 		} else {
 			this.getBotonSeguir().setText("Seguir");
@@ -67,11 +70,11 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 
 	public void Seguir() {
 		this.getBotonSeguir().addClickListener(event -> {
-			if (this.user.seguir.contains(userAver)) {
-				this.bd.seguirUsuario(this.user.getID(), this.userAver.getID());
+			if (user.seguir.contains(userAver)) {
+				this.bd.seguirUsuario(user.getID(), this.userAver.getID());
 				this.getBotonSeguir().setText("Dejar de Seguir");
 			} else {
-				this.bd.dejarSeguirUsuario(this.user.getID(), this.userAver.getID());
+				this.bd.dejarSeguirUsuario(user.getID(), this.userAver.getID());
 				this.getBotonSeguir().setText("Seguir");
 			}
 		});

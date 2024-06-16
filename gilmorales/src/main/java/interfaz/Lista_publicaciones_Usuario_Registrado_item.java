@@ -26,9 +26,9 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 
 	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,	Lista_publicaciones_Usuario_Registrado interfaz) {
 //		super(publicacion, interfaz);
-		this.publicacion = publicacion;
+		this.publicacion = bd.cargarPublicacion(publicacion.getIdPublicacion());
 		this._lista_publicaciones__Usuario_Registrado_ = interfaz;
-		this.user = interfaz.urInterfaz.ur;
+		this.user = bd.cargarUsuarioRegistrado(interfaz.urInterfaz.ur.getID());
 		mostrarDatosPublicacion();
 		mostrarDatosUsuario();
 		this.getLayoutBotonesUsuarioR().setVisible(true);
@@ -49,9 +49,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Ver_comentarios__Usuario_Registrado_() {
-		verComentarios = new Ver_comentarios_Usuario_Registrado(this.publicacion,
-				_lista_publicaciones__Usuario_Registrado_.urInterfaz, user);
 		this.getBotonVerComentarios().addClickListener(event -> {
+			verComentarios = new Ver_comentarios_Usuario_Registrado(this.publicacion, this, this.user);
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(verComentarios);
 		});
@@ -67,8 +66,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Ver_publicacion_ajena() {
-		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion,
-				_lista_publicaciones__Usuario_Registrado_.urInterfaz);
+		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.user,_lista_publicaciones__Usuario_Registrado_.urInterfaz);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event -> {
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(_ver_publicacion_ajena);
@@ -82,7 +80,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Dar_me_gusta_publicacion() {
-		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+//		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getVaadinButton().addClickListener(event -> {
 			this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
 			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());

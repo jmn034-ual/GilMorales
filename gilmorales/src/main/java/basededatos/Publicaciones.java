@@ -133,17 +133,24 @@ public class Publicaciones {
 		try {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
+			Notificacion notificacion = NotificacionDAO.createNotificacion();
 
 			if (!p.gustaA.contains(usuario)) {
 				p.gustaA.add(usuario);
 				p.setNumMeGustas(p.gustaA.size());
 				usuario.daMeGustaPublicacion.add(p);
+				notificacion.setTipoNotificacion(1);
+				notificacion.setEnviadaA(p.getPerteneceA());
+				notificacion.setIDUsuarioNotifica(usuario.getID());
+				NotificacionDAO.save(notificacion);
 			} else {
 				p.gustaA.remove(usuario);
 				usuario.daMeGustaPublicacion.remove(p);
 				p.setNumMeGustas(p.gustaA.size());
+				NotificacionDAO.deleteAndDissociate(notificacion);
 			}
 			PublicacionDAO.save(p);
+
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

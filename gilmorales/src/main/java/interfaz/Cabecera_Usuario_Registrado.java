@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.dom.Element;
 
+import basededatos.iUsuario_Registrado;
 import bd_dcl.UsuarioRegistrado;
 
 public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Registrado {
@@ -16,9 +17,8 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	public Ver_perfil_propio _ver_perfil_propio;
 	public Realizar_busqueda _realizar_busqueda;
 	public Cabecera_TOP _cabecera_TOP;
-	private UsuarioRegistrado ur;
 	
-	public Cabecera_Usuario_Registrado(UsuarioRegistrado ur, Usuario_Registrado urInterfaz) {
+	public Cabecera_Usuario_Registrado(Usuario_Registrado urInterfaz) {
 		super();
     	this.getTextoBusqueda().getStyle().set("background-color", "transparent");
     	this.getTextoBusqueda().getStyle().set("border-radius", "8px");
@@ -27,7 +27,6 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
     	Image customIcon = new Image("icons/logo.png", null);
 		customIcon.getStyle().set("width", "6%");
 		this.getLogoWeb().setIcon(customIcon);
-    	this.ur = ur;
 		this.urInterfaz = urInterfaz; 
     	Cabecera_TOP();  
     	Add_publicacion();
@@ -39,7 +38,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 
 	public void Add_publicacion() {
-		this.addPubli = new Add_publicacion(ur, urInterfaz);
+		this.addPubli = new Add_publicacion(urInterfaz.ur, urInterfaz);
 		this.getBotonAniadir().addClickListener(event->{
 //			this.addPubli = new Add_publicacion(ur, urInterfaz);
 			this.getBotonAniadir().setVisible(false);
@@ -102,6 +101,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this.getBotonAniadir().setVisible(true);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
+			urInterfaz.ur = urInterfaz._iUsuario_Registrado.cargarUsuarioRegistrado(urInterfaz.ur.getID());
 			urInterfaz.getVaadinHorizontalLayout().removeAll();
 			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(this), new Lista_publicaciones_Usuario_Registrado(urInterfaz));
 		});

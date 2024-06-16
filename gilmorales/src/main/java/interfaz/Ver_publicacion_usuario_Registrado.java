@@ -18,9 +18,10 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 	UsuarioComercial uc;
 	iUsuario_Registrado bd = new BDPrincipal();
 	
-	public Ver_publicacion_usuario_Registrado() {}
 	
 	public Ver_publicacion_usuario_Registrado(Publicacion p, UsuarioRegistrado user) {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
 		this.publicacion = p;
 		this.user = user;
 		Lista_Top_comentarios__Usuario_Registrado_();
@@ -38,7 +39,11 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 	}
 	
 	public void Ver_comentarios__Usuario_Registrado_() {
-		throw new UnsupportedOperationException();
+		this.getBotonVerComentario().addClickListener(event->{
+			_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this, this.user);
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_comentarios__Usuario_Registrado_);
+		});
 	}
 
 	public void Lista_Top_comentarios__Usuario_Registrado_() {

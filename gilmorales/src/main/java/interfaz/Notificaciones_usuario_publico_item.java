@@ -19,9 +19,6 @@ public class Notificaciones_usuario_publico_item extends Notificaciones_item {
 		this.ur = ur;
 		this.notificaciones = new ArrayList<Notificacion>(this.ur.recibe.getCollection());
 		
-//		this.notificaciones = new ArrayList<Notificacion>();
-		System.out.println(notificaciones.isEmpty());
-		
 		if(notificaciones.isEmpty()) {
 			this._nuevos_seguidores = new Nuevos_seguidores();
 			this._me_gustas = new Me_gustas();
@@ -45,11 +42,11 @@ public class Notificaciones_usuario_publico_item extends Notificaciones_item {
 				case 0: //Nuevos seguidores													
 					_nuevos_seguidores.addNuevoSeguidor(notificaciones.get(i));
 					break;
-				case 1: //Comentarios
-					this._notificaciones_comentarios.addNuevoComentario(notificaciones.get(i));
-					break;
-				case 2: //Me gustas
+				case 1:  //Me gustas
 					this._me_gustas.addNuevoMeGusta(notificaciones.get(i));
+					break;
+				case 2: //Comentarios
+					this._notificaciones_comentarios.addNuevoComentario(notificaciones.get(i));
 					break;
 				case 3: //Menciones
 					this.nuevasMenciones.addNuevaMencion(notificaciones.get(i));
