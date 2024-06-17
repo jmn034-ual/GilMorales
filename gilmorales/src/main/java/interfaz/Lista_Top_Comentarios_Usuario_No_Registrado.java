@@ -16,6 +16,8 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado extends VistaListaTopCo
 	Publicacion p;
 	Lista_Top_Comentarios_Usuario_No_Registrado_item comentario;
 	
+	public Lista_Top_Comentarios_Usuario_No_Registrado() {}
+	
 	public Lista_Top_Comentarios_Usuario_No_Registrado(Publicacion p) {
 		this.p = p;
 		cargarComentariosTOP();
@@ -25,12 +27,13 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado extends VistaListaTopCo
 		List<Comentario> comentarios = new ArrayList<Comentario>(this.p.tieneComentarios.getCollection());
 		
 		this.getListaTopComentarios().as(VerticalLayout.class).removeAll();
-		this._item.clear();
+		_item.clear();
 		
 		for(Comentario c : comentarios) {
 			this.comentario = new Lista_Top_Comentarios_Usuario_No_Registrado_item(c);
 			this.getListaTopComentarios().as(VerticalLayout.class).add(comentario);
 			_item.add(comentario);
+			if(_item.size() == 5) break;
 		}
 	}
 

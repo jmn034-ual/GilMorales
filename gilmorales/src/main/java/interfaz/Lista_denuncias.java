@@ -7,6 +7,7 @@ import java.util.Vector;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -14,16 +15,20 @@ import bd_dcl.Denuncia;
 import vistas.VistaListasDenunciasAdministrador;
 
 public class Lista_denuncias extends VistaListasDenunciasAdministrador {
-	private ComboBox _filtrarCB;
+	
 	public Ver_denuncias _ver_denuncias;
 	public Vector<Lista_denuncias_item> _item = new Vector<Lista_denuncias_item>();
 	public Filtrar_denuncias _filtrar_denuncias;
 	Lista_denuncias_item denuncia;
 	BDPrincipal admin = new BDPrincipal();
-	public Lista_denuncias() {
+	
+	public Lista_denuncias() {}
+	
+	public Lista_denuncias(Ver_denuncias interfaz) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		
+		this._ver_denuncias = interfaz;
+		cargarDenuncias();
 	}
 	
 	public void Filtrar() {
@@ -31,20 +36,29 @@ public class Lista_denuncias extends VistaListasDenunciasAdministrador {
 	}
 	
 	public void cargarDenuncias() {
-		List<Denuncia> denuncias = null;
-		try {
-			denuncias = new ArrayList<Denuncia>(admin.denuncias.cargarDenuncias());
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		List<Denuncia> denuncias = admin.cargarDenuncias();
+	
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		_item.clear();
+		
+		int tamanio = denuncias.size();
 
-		for (Denuncia d : denuncias) {
-			denuncia = new Lista_denuncias_item(d);
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(denuncia);
-			_item.add(denuncia);
+		for(int i = 0; i < denuncias.size(); i++) {
+			if(tamanio >= 3) {					
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this),
+						new Lista_denuncias_item(denuncias.get(++i), this), new Lista_denuncias_item(denuncias.get(i+=1), this)));
+				tamanio -= 3;
+			}else if(tamanio == 2){
+				HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this),
+						new Lista_denuncias_item(denuncias.get(++i), this));
+				horizontal2.getStyle().set("width", "66.66%");
+
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal2);
+			}else {
+				HorizontalLayout horizontal = new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this));
+				horizontal.getStyle().set("width", "33%");
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal);
+			}
 		}
 
 	}

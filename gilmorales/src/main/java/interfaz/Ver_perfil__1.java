@@ -5,6 +5,8 @@ import vistas.VistaVerTendencias;
 
 public class Ver_perfil__1 extends Ver_tendencias{
 	
+	public Ver_perfil__1() {}
+	
 	public Ver_perfil__1(Cabecera_TOP cabecera_TOP) {
 		super(cabecera_TOP);
 		// TODO Auto-generated constructor stub

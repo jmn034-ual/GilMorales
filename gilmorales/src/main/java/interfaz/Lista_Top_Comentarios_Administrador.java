@@ -11,28 +11,32 @@ import bd_dcl.Publicacion;
 import bd_dcl.UsuarioAdministrador;
 import vistas.VistaListaTopComentariosUsuarioNoRegistrado;
 
-public class Lista_Top_Comentarios_Administrador extends Lista_Top_Comentarios_Usuario_No_Registrado{
-	
+public class Lista_Top_Comentarios_Administrador extends Lista_Top_Comentarios_Usuario_No_Registrado {
+
 	public Ver_publicacion_Administrador _ver_publicacion__Administrador_;
-	public Vector<Lista_Top_Comentarios_Administrador_item> _item = new Vector<Lista_Top_Comentarios_Administrador_item>();
+	public Vector<Lista_Top_Comentarios_Administrador_item> itemAdmin = new Vector<Lista_Top_Comentarios_Administrador_item>();
 	Lista_Top_Comentarios_Administrador_item comentario;
-	
-	public Lista_Top_Comentarios_Administrador(Publicacion p) {
-		super(p);
+
+	public Lista_Top_Comentarios_Administrador(Publicacion p, Ver_publicacion_Administrador interfaz) {
+		this.p = p;
+		this._ver_publicacion__Administrador_ = interfaz;
+
 		this.cargarComentariosTOP();
+	}
+
+	@Override
+	public void cargarComentariosTOP() {
+		List<Comentario> comentarios = new ArrayList<Comentario>(this.p.tieneComentarios.getCollection());
+
+		this.getListaTopComentarios().as(VerticalLayout.class).removeAll();
+		this.itemAdmin.clear();
+
+		for (Comentario c : comentarios) {
+			this.comentario = new Lista_Top_Comentarios_Administrador_item(c);
+			this.getListaTopComentarios().as(VerticalLayout.class).add(comentario);
+			this.itemAdmin.add(comentario);
+			if (this.itemAdmin.size() == 5)
+				break;
 		}
-		
-		@Override
-		public void cargarComentariosTOP() {
-			List<Comentario> comentarios = new ArrayList<Comentario>(this.p.tieneComentarios.getCollection());
-			
-			this.getListaTopComentarios().as(VerticalLayout.class).removeAll();
-			this._item.clear();
-			
-			for(Comentario c : comentarios) {
-				this.comentario = new Lista_Top_Comentarios_Administrador_item(c);
-				this.getListaTopComentarios().as(VerticalLayout.class).add(comentario);
-				_item.add(comentario);
-			}
-		}
+	}
 }

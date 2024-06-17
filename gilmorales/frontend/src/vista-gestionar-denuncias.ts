@@ -17,7 +17,7 @@ export class VistaGestionarDenuncias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: center;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: center; margin: 0px; padding: 0px;" id="vaadinVerticalLayout">
  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="align-self: center; width: 80%; height: 70%;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: center;">
    <h1 id="datos">Datos del administrador</h1>

@@ -18,12 +18,10 @@ public class Lista_Publicaciones_Administrador extends VistaListaPublicacionesAd
 	public Vector<Lista_Publicaciones_Administrador_item> _item = new Vector<Lista_Publicaciones_Administrador_item>();
 	iAdministrador bd = new BDPrincipal();
 	Lista_Publicaciones_Administrador_item publicacion;
-	UsuarioAdministrador admin;
 	
-	public Lista_Publicaciones_Administrador(UsuarioAdministrador admin, Administrador adminInterfaz) {
+	public Lista_Publicaciones_Administrador(Administrador adminInterfaz) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		this.admin = admin;
 		this._administrador = adminInterfaz;
 		cargarPublicaciones();
 	};
@@ -34,11 +32,11 @@ public class Lista_Publicaciones_Administrador extends VistaListaPublicacionesAd
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		_item.clear();
 
-//		for(Publicacion p : lista) {
-//				this.publicacion = new Lista_Publicaciones_Administrador_item(p, this.admin, this._administrador);
-//				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.publicacion);
-//				_item.add(this.publicacion);
-//			
-//		}
+		for(Publicacion p : lista) {
+				this.publicacion = new Lista_Publicaciones_Administrador_item(p, this);
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.publicacion);
+				_item.add(this.publicacion);
+			
+		}
 	}
 }

@@ -18,40 +18,12 @@ public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados {
 	public Vector<Lista_usuarios_registrados_item> _item = new Vector<Lista_usuarios_registrados_item>();
 	iAdministrador bd = new BDPrincipal();
 	Lista_usuarios_registrados_item usuario;
-//	Administrador adminInterfaz;
-//	Usuario_No_Registrado unr;
-//	Usuario_Registrado ur;
 
 	public Lista_usuarios_registrados(Ver_lista_usuarios_registrados interfaz) {
 		this._ver_lista_usuarios_registrados = interfaz;
 		cargarListaUsuariosAdministrador();
 	}
 
-//	public Lista_usuarios_registrados(Usuario_Registrado ur) {
-//		this.ur = ur;
-//		cargarListaUsuariosAdministrador();
-//	}
-//
-//	public Lista_usuarios_registrados(Administrador adminInterfaz) {
-//		this.adminInterfaz = adminInterfaz;
-//		cargarListaUsuariosAdministrador();
-//	}
-
-//	public void cargarListaUsuarios() {
-//		List<UsuarioRegistrado> lista = bd.cargarListaUsuariosRegistrados();
-//
-//		this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).removeAll();
-//		_item.clear();
-//		if (lista != null) {
-//			for (UsuarioRegistrado user : lista) {
-//				this.usuario = new Lista_usuarios_registrados_item(user);
-//				this.getLayoutListaUsuariosRegistrados().as(VerticalLayout.class).add(this.usuario);
-//				_item.add(this.usuario);
-//
-//			}
-//		}
-//
-//	}
 
 	public void cargarListaUsuariosAdministrador() {
 		List<UsuarioRegistrado> lista = bd.cargarListaUsuariosRegistrados();

@@ -11,6 +11,7 @@ import org.orm.PersistentTransaction;
 import com.vaadin.flow.component.notification.Notification;
 
 import bd_dcl.Comentario;
+import bd_dcl.Denuncia;
 import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Hashtag;
 import bd_dcl.Publicacion;
@@ -46,6 +47,17 @@ public class BDPrincipal
 		return comercial;
 	}
 
+	public List cargarDenuncias() {
+		List<Denuncia> denuncias = null;
+		try {
+			denuncias = this.denuncias.cargarDenuncias();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return denuncias;
+	}
+	
 	public Publicacion cargarPublicacion(int idPublicacion) {
 		Publicacion publi = null;
 

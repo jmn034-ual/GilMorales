@@ -47,6 +47,7 @@ public class Lista_Top_comentarios_Usuario_Registrado extends Lista_Top_Comentar
 				
 				this.getListaTopComentarios().as(VerticalLayout.class).add(comentario);
 				_item.add(comentario);
+				if(_item.size() == 5) break;
 			}
 		}
 	}

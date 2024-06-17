@@ -65,20 +65,20 @@ public class Comentarios {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-//	public void borrarComentario(int aIdComentario, int aIdPublicacion, int aUsuarioID) throws PersistentException {
 	public void borrarComentario(int aIdComentario) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
-//			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
-//			UsuarioRegistrado user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
-//			if(publicacion.tieneComentarios.contains(comentario) && user.comenta.contains(comentario)) {
-//				publicacion.tieneComentarios.remove(comentario);
-//				user.comenta.remove(comentario);
-				ComentarioDAO.deleteAndDissociate(comentario);
-//			}
-//			UsuarioRegistradoDAO.save(user);
-//			PublicacionDAO.save(publicacion);
+			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(comentario.getComentadoEn().getIdPublicacion());
+			UsuarioRegistrado user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(comentario.getEsComentadoPor().getID());
+			if(publicacion.tieneComentarios.contains(comentario) && user.comenta.contains(comentario)) {
+				publicacion.tieneComentarios.remove(comentario);
+				publicacion.setNumComentarios(publicacion.tieneComentarios.size());
+				user.comenta.remove(comentario);
+			}
+			ComentarioDAO.deleteAndDissociate(comentario);
+			UsuarioRegistradoDAO.save(user);
+			PublicacionDAO.save(publicacion);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

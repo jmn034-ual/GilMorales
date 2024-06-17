@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.avatar.Avatar;
+import com.vaadin.flow.component.textfield.TextField;
 
 /**
  * A Designer generated component for the vista-lista-publicaciones-administrador-item template.
@@ -21,75 +22,58 @@ import com.vaadin.flow.component.avatar.Avatar;
 @JsModule("./src/vista-lista-publicaciones-administrador-item.ts")
 public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
-    
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+  
+
+
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-	@Id("nombre")
-	private Button nombre;
-	@Id("geolocalizacion")
-	private Label geolocalizacion;
-	@Id("eliminarPub")
-	private Button eliminarPub;
-	@Id("numVis")
-	private Label numVis;
-	@Id("vis")
-	private Label vis;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
-	@Id("numG")
-	private Label numG;
-	@Id("likesL")
-	private Label likesL;
-	@Id("vaadinVerticalLayout4")
-	private Element vaadinVerticalLayout4;
-	@Id("numC")
-	private Label numC;
-	@Id("comentarios")
-	private Button comentarios;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("vaadinHorizontalLayout3")
 	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("vaadinHorizontalLayout4")
-	private HorizontalLayout vaadinHorizontalLayout4;
-	@Id("vaadinHorizontalLayout5")
-	private HorizontalLayout vaadinHorizontalLayout5;
-	@Id("descripcion")
-	private Label descripcion;
-	@Id("vaadinVerticalLayout5")
-	private Element vaadinVerticalLayout5;
-	@Id("foto")
-	private Avatar foto;
-	@Id("vaadinVerticalLayout6")
-	private Element vaadinVerticalLayout6;
-	@Id("vaadinHorizontalLayout6")
-	private HorizontalLayout vaadinHorizontalLayout6;
+	@Id("layoutVideoPublicacion")
+	private Element layoutVideoPublicacion;
+	@Id("botonNombreUsuario")
+	private Button botonNombreUsuario;
+	@Id("labelGeolocalizacion")
+	private Label labelGeolocalizacion;
+	@Id("numVisualizaciones")
+	private Label numVisualizaciones;
+	@Id("layoutVideo")
+	private Element layoutVideo;
+	@Id("layoutDatos")
+	private Element layoutDatos;
+	@Id("layoutBotonesUsuarioR")
+	private HorizontalLayout layoutBotonesUsuarioR;
+	@Id("layoutBotonesPublicacion")
+	private HorizontalLayout layoutBotonesPublicacion;
+	@Id("layoutMeGustas")
+	private Element layoutMeGustas;
+	@Id("labelNumMeGustas")
+	private Label labelNumMeGustas;
+	@Id("labelMeGustas")
+	private Label labelMeGustas;
+	@Id("layoutComentarios")
+	private Element layoutComentarios;
+	@Id("labelNumComentarios")
+	private Label labelNumComentarios;
+	@Id("botonVerComentarios")
+	private Button botonVerComentarios;
+	@Id("botonEliminar")
+	private Button botonEliminar;
+	@Id("fotoPerfil")
+	private Element fotoPerfil;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
 	
 	
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+	public Button getBotonEliminar() {
+		return botonEliminar;
 	}
 
 
 
-
-
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	public void setBotonEliminar(Button botonEliminar) {
+		this.botonEliminar = botonEliminar;
 	}
-
-
 
 
 
@@ -99,237 +83,9 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
-
-
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
-
-
-
-
-
-	public Button getNombre() {
-		return nombre;
-	}
-
-
-
-
-
-	public void setNombre(Button nombre) {
-		this.nombre = nombre;
-	}
-
-
-
-
-
-	public Label getGeolocalizacion() {
-		return geolocalizacion;
-	}
-
-
-
-
-
-	public void setGeolocalizacion(Label geolocalizacion) {
-		this.geolocalizacion = geolocalizacion;
-	}
-
-
-
-
-
-	public Button getEliminarPub() {
-		return eliminarPub;
-	}
-
-
-
-
-
-	public void setEliminarPub(Button eliminarPub) {
-		this.eliminarPub = eliminarPub;
-	}
-
-
-
-
-
-	public Label getNumVis() {
-		return numVis;
-	}
-
-
-
-
-
-	public void setNumVis(Label numVis) {
-		this.numVis = numVis;
-	}
-
-
-
-
-
-	public Label getVis() {
-		return vis;
-	}
-
-
-
-
-
-	public void setVis(Label vis) {
-		this.vis = vis;
-	}
-
-
-
-
-
-	public Element getVaadinVerticalLayout3() {
-		return vaadinVerticalLayout3;
-	}
-
-
-
-
-
-	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
-		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
-	}
-
-
-
-
-
-	public Label getNumG() {
-		return numG;
-	}
-
-
-
-
-
-	public void setNumG(Label numG) {
-		this.numG = numG;
-	}
-
-
-
-
-
-	public Label getLikesL() {
-		return likesL;
-	}
-
-
-
-
-
-	public void setLikesL(Label likesL) {
-		this.likesL = likesL;
-	}
-
-
-
-
-
-	public Element getVaadinVerticalLayout4() {
-		return vaadinVerticalLayout4;
-	}
-
-
-
-
-
-	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
-		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
-	}
-
-
-
-
-
-	public Label getNumC() {
-		return numC;
-	}
-
-
-
-
-
-	public void setNumC(Label numC) {
-		this.numC = numC;
-	}
-
-
-
-
-
-	public Button getComentarios() {
-		return comentarios;
-	}
-
-
-
-
-
-	public void setComentarios(Button comentarios) {
-		this.comentarios = comentarios;
-	}
-
-
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
-	}
-
-
-
-
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
-	}
-
-
-
-
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-
-
-
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-
-
-
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
-	}
-
-
 
 
 
@@ -339,111 +95,199 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
-
-
 	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
 		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
 	}
 
 
 
-
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
+	public Element getLayoutVideoPublicacion() {
+		return layoutVideoPublicacion;
 	}
 
 
 
-
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	public void setLayoutVideoPublicacion(Element layoutVideoPublicacion) {
+		this.layoutVideoPublicacion = layoutVideoPublicacion;
 	}
 
 
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout4() {
-		return vaadinHorizontalLayout4;
+	public Button getBotonNombreUsuario() {
+		return botonNombreUsuario;
 	}
 
 
 
-
-
-	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
-		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
+	public void setBotonNombreUsuario(Button botonNombreUsuario) {
+		this.botonNombreUsuario = botonNombreUsuario;
 	}
 
 
 
-
-
-	public HorizontalLayout getVaadinHorizontalLayout5() {
-		return vaadinHorizontalLayout5;
+	public Label getLabelGeolocalizacion() {
+		return labelGeolocalizacion;
 	}
 
 
 
-
-
-	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
-		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
+	public void setLabelGeolocalizacion(Label labelGeolocalizacion) {
+		this.labelGeolocalizacion = labelGeolocalizacion;
 	}
 
 
 
-
-
-	public Label getDescripcion() {
-		return descripcion;
+	public Label getNumVisualizaciones() {
+		return numVisualizaciones;
 	}
 
 
 
-
-
-	public void setDescripcion(Label descripcion) {
-		this.descripcion = descripcion;
+	public void setNumVisualizaciones(Label numVisualizaciones) {
+		this.numVisualizaciones = numVisualizaciones;
 	}
 
 
 
-
-
-	public Element getVaadinVerticalLayout5() {
-		return vaadinVerticalLayout5;
+	public Element getLayoutVideo() {
+		return layoutVideo;
 	}
 
 
 
-
-
-	public void setVaadinVerticalLayout5(Element vaadinVerticalLayout5) {
-		this.vaadinVerticalLayout5 = vaadinVerticalLayout5;
+	public void setLayoutVideo(Element layoutVideo) {
+		this.layoutVideo = layoutVideo;
 	}
 
 
 
-
-
-	public Avatar getFoto() {
-		return foto;
+	public Element getLayoutDatos() {
+		return layoutDatos;
 	}
 
 
 
-
-
-	public void setFoto(Avatar foto) {
-		this.foto = foto;
+	public void setLayoutDatos(Element layoutDatos) {
+		this.layoutDatos = layoutDatos;
 	}
 
 
 
+	public HorizontalLayout getLayoutBotonesUsuarioR() {
+		return layoutBotonesUsuarioR;
+	}
 
+
+
+	public void setLayoutBotonesUsuarioR(HorizontalLayout layoutBotonesUsuarioR) {
+		this.layoutBotonesUsuarioR = layoutBotonesUsuarioR;
+	}
+
+	public HorizontalLayout getLayoutBotonesPublicacion() {
+		return layoutBotonesPublicacion;
+	}
+
+
+
+	public Element getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+
+
+	public void setFotoPerfil(Element fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+
+
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
+	}
+
+
+
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
+	}
+
+
+
+	public void setLayoutBotonesPublicacion(HorizontalLayout layoutBotonesPublicacion) {
+		this.layoutBotonesPublicacion = layoutBotonesPublicacion;
+	}
+
+
+
+	public Element getLayoutMeGustas() {
+		return layoutMeGustas;
+	}
+
+
+
+	public void setLayoutMeGustas(Element layoutMeGustas) {
+		this.layoutMeGustas = layoutMeGustas;
+	}
+
+
+
+	public Label getLabelNumMeGustas() {
+		return labelNumMeGustas;
+	}
+
+
+
+	public void setLabelNumMeGustas(Label labelNumMeGustas) {
+		this.labelNumMeGustas = labelNumMeGustas;
+	}
+
+
+
+	public Label getLabelMeGustas() {
+		return labelMeGustas;
+	}
+
+
+
+	public void setLabelMeGustas(Label labelMeGustas) {
+		this.labelMeGustas = labelMeGustas;
+	}
+
+
+
+	public Element getLayoutComentarios() {
+		return layoutComentarios;
+	}
+
+
+
+	public void setLayoutComentarios(Element layoutComentarios) {
+		this.layoutComentarios = layoutComentarios;
+	}
+
+
+
+	public Label getLabelNumComentarios() {
+		return labelNumComentarios;
+	}
+
+
+
+	public void setLabelNumComentarios(Label labelNumComentarios) {
+		this.labelNumComentarios = labelNumComentarios;
+	}
+
+
+
+	public Button getBotonVerComentarios() {
+		return botonVerComentarios;
+	}
+
+
+
+	public void setBotonVerComentarios(Button botonVerComentarios) {
+		this.botonVerComentarios = botonVerComentarios;
+	}
 
 	/**
      * Creates a new VistaListaPublicacionesAdministradorItem.

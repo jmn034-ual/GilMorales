@@ -17,14 +17,17 @@ public class Top_hashtags extends VistaTopHashtags{
 	Top_hashtags_item thi;
 	Usuario_Registrado user;
 	Usuario_No_Registrado unr;
+	Administrador admin;
 	
-	public Top_hashtags(Cabecera_TOP user) {
-		this._cabecera_TOP = user;
+	public Top_hashtags(Cabecera_TOP interfaz) {
+		this._cabecera_TOP = interfaz;
 		if(this._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
 			this.unr = this._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
-		}else {
+		}else if(this._cabecera_TOP._cabecera_Usuario_Registrado != null){
 			this.user = this._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
-		}	
+		}else {
+			this.admin = this._cabecera_TOP.cabeceraAdmin._administrador;
+		}
 		cargarHashtagTOP();
 	}
 	

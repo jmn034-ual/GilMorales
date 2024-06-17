@@ -7,7 +7,7 @@ import bd_dcl.UsuarioRegistrado;
 
 public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 	
-	public Ver_publicacion_usuario_Registrado _ver_publicacion__usuario_Registrado_;
+	public Ver_publicacion_ajena _ver_publicacion__usuario_Registrado_;
 	public Lista_publicaciones_Usuario_Registrado_item publicacionItem;
 	public Lista_comentarios_Usuario_registrado _lista_comentarios__Usuario_registrado_;
 	UsuarioRegistrado user;
@@ -18,7 +18,7 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 		if(interfaz instanceof Lista_publicaciones_Usuario_Registrado_item) {			
 			this.publicacionItem = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
 		}else {
-			this._ver_publicacion__usuario_Registrado_ = (Ver_publicacion_usuario_Registrado) interfaz;
+			this._ver_publicacion__usuario_Registrado_ = (Ver_publicacion_ajena) interfaz;
 		}
 		if(this.publicacion.getPerteneceA() != this.user) {
 			this.getBotonEliminarAdmi().setVisible(false);
@@ -29,6 +29,7 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 		Comentar();
 		Dar_me_gusta_publicacion();
 		Seguir();
+		Ver_perfil(this);
 	}
 
 	public void Lista_comentarios__Usuario_registrado_() {

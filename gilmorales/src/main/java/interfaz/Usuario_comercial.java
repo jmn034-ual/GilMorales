@@ -11,15 +11,7 @@ import basededatos.BDPrincipal;
 import basededatos.iUsuario_comercial;
 
 public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
-//	private ImageIcon _fotoComercial;
-//	private Label _nombreUsuarioL;
-//	private Label _nombreEmpresaL;
-//	private button _editarPerfilB;
-//	private button _eliminarPublicacionesB;
-//	private int _numeroMeGustas;
-//	private Label _meGustasL;
-//	private TextArea _descripcionTA;
-//	private Label _tituloVideosL;
+
 	public iUsuario_comercial _iUsuario_comercial = new BDPrincipal();
 	public Eliminar_publicaciones_Comercial _eliminar_publicaciones__Comercial_;
 	public Editar_perfil_Comercial _editar_perfil__Comercial_;

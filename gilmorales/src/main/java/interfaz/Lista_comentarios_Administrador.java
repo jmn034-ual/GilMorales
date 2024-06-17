@@ -19,10 +19,12 @@ public class Lista_comentarios_Administrador extends VistaListaComentariosUsuari
 	Publicacion publicacion;
 	Lista_comentarios_Administrador_item comentario ;
 	
-	public Lista_comentarios_Administrador(Publicacion publicacion) {
+	public Lista_comentarios_Administrador(Publicacion publicacion, Ver_comentarios_Administrador interfaz) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100");
 		this.publicacion = publicacion;
+		this._ver_comentarios__Administrador_ = interfaz;
+		cargarComentarios();
 	}
 	
 	public void cargarComentarios() {
@@ -31,7 +33,7 @@ public class Lista_comentarios_Administrador extends VistaListaComentariosUsuari
 		_item.clear();
 
 		for (Comentario c : comentarios) {
-			comentario = new Lista_comentarios_Administrador_item(c);
+			comentario = new Lista_comentarios_Administrador_item(c, this);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(comentario);
 			_item.add(comentario);
 		}
