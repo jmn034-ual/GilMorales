@@ -18,6 +18,8 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 	UsuarioComercial uc;
 	iUsuario_Registrado bd = new BDPrincipal();
 	
+	public Ver_publicacion_usuario_Registrado() {}
+	
 	
 	public Ver_publicacion_usuario_Registrado(Publicacion p, UsuarioRegistrado user) {
 		this.getStyle().set("width", "100%");

@@ -89,7 +89,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Denunciar_publicacion() {
-		_denunciar_publicacion = new Denunciar_publicacion(this.publicacion.getPerteneceA(), this.user);
+		_denunciar_publicacion = new Denunciar_publicacion(this.publicacion, this);
 		this.getBotonDenunciar().addClickListener(event -> {
 			Dialog dialog = new Dialog(_denunciar_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);

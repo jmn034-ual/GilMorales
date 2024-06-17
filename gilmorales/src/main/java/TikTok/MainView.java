@@ -69,11 +69,11 @@ public class MainView extends VerticalLayout {
 
 //		Registrar registro = new Registrar(unr);
 //		add(registro);
-		Usuario_comercial uc = new Usuario_comercial(1);
-		add(uc);
+//		Usuario_comercial uc = new Usuario_comercial(1);
+//		add(uc);
 //
-//				Usuario_Registrado ur = new Usuario_Registrado(1);
-//				add(ur);
+				Usuario_Registrado ur = new Usuario_Registrado(1);
+				add(ur);
 //		Administrador admin = new Administrador(999);
 //		add(admin);
 //		Usuario_No_Registrado unr = new Usuario_No_Registrado();

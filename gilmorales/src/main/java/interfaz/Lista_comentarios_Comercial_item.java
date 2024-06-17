@@ -1,16 +1,20 @@
 package interfaz;
 
+import bd_dcl.Comentario;
+
 public class Lista_comentarios_Comercial_item {
-//	private button _denunciarB;
-//	private int _numeroMeGustasComentario;
-//	private ImageIcon _usuarioIcono;
-//	private Label _nombreUsuarioL;
-//	private Label _comentarioL;
-//	private Label _meGustasComentarioL;
+
 	public Lista_comentarios_Comercial _lista_comentarios__Comercial_;
 	public Denunciar_comentario _denunciar_comentario;
+	Comentario comentario;
+	
+	public Lista_comentarios_Comercial_item(Comentario c, Lista_comentarios_Comercial interfaz) {
+		this.comentario = c;
+		this._lista_comentarios__Comercial_ = interfaz;
+	}
+	
 
 	public void Denunciar_comentario() {
-		throw new UnsupportedOperationException();
+		this._denunciar_comentario = new Denunciar_comentario(comentario, this);
 	}
 }

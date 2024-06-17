@@ -23,8 +23,7 @@ import com.vaadin.flow.component.button.Button;
 public class VistaDenunciarUsuario extends LitTemplate {
 
 
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
+	
 	@Id("layoutDenunciarUsuario")
 	private Element layoutDenunciarUsuario;
 	@Id("vaadinHorizontalLayout")
@@ -51,14 +50,6 @@ public class VistaDenunciarUsuario extends LitTemplate {
 	private Button botonCancelar;
 	@Id("botonEnviar")
 	private Button botonEnviar;
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
 
 	public Element getLayoutDenunciarUsuario() {
 		return layoutDenunciarUsuario;

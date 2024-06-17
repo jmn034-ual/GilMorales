@@ -65,7 +65,7 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 	}
 
 	public void Lista_publicaciones__Comercial_() {
-		_lista_publicaciones__Comercial_ = new Lista_publicaciones_Comercial();;
+		_lista_publicaciones__Comercial_ = new Lista_publicaciones_Comercial(this);
 		this.getListaVideos().as(VerticalLayout.class).add(_lista_publicaciones__Comercial_);
 	}
 }

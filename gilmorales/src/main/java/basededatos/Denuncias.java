@@ -15,6 +15,8 @@ import bd_dcl.DenunciaDAO;
 import bd_dcl.GilMoralesPersistentManager;
 import bd_dcl.Publicacion;
 import bd_dcl.PublicacionDAO;
+import bd_dcl.UsuarioAdministrador;
+import bd_dcl.UsuarioAdministradorDAO;
 import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
 
@@ -38,13 +40,14 @@ public class Denuncias {
 		try {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
 			UsuarioRegistrado usuarioDenunciante = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
+			UsuarioAdministrador admin = UsuarioAdministradorDAO.loadUsuarioAdministradorByORMID(999);
 			Denuncia denuncia = DenunciaDAO.createDenuncia();
 			denuncia.setExplicacion(aExplicacion);
 			denuncia.setMotivo(aMotivo);
 			denuncia.setRealizadaPor(usuarioDenunciante);
 			denuncia.setTipoDenuncia(2);
 			denuncia.setTipoEstado(0);
-			denuncia.setAtendida(null);
+			denuncia.setAtendida(admin);
 			DenunciaDAO.save(denuncia);
 			usuarioDenunciante.realizaDenuncia.add(denuncia);
 			usuarioDenunciante.denuciaPublicacion.add(p);
@@ -62,18 +65,19 @@ public class Denuncias {
 		try {
 			UsuarioRegistrado usuarioDenunciado = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioDenunciadoID);
 			UsuarioRegistrado usuarioDenunciante = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioDenuncianteID);
+			UsuarioAdministrador admin = UsuarioAdministradorDAO.loadUsuarioAdministradorByORMID(999);
 			Denuncia denuncia = DenunciaDAO.createDenuncia();
 			denuncia.setExplicacion(aExplicacion);
 			denuncia.setMotivo(aMotivo);
 			denuncia.setRealizadaPor(usuarioDenunciante);
 			denuncia.setTipoDenuncia(0);
 			denuncia.setTipoEstado(0);
-			denuncia.setAtendida(null);
+			denuncia.setAtendida(admin);
 			DenunciaDAO.save(denuncia);
 			usuarioDenunciante.realizaDenuncia.add(denuncia);
 			usuarioDenunciante.denucia.add(usuarioDenunciado);
-			usuarioDenunciado.esDenunciado.add(usuarioDenunciante);
 			UsuarioRegistradoDAO.save(usuarioDenunciante);
+			usuarioDenunciado.esDenunciado.add(usuarioDenunciante);
 			UsuarioRegistradoDAO.save(usuarioDenunciado);
 		}catch(Exception e){
 			t.rollback();
@@ -86,13 +90,14 @@ public class Denuncias {
 		try {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
 			UsuarioRegistrado usuarioDenunciante = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
+			UsuarioAdministrador admin = UsuarioAdministradorDAO.loadUsuarioAdministradorByORMID(999);
 			Denuncia denuncia = DenunciaDAO.createDenuncia();
 			denuncia.setExplicacion(aExplicacion);
 			denuncia.setMotivo(aMotivo);
 			denuncia.setRealizadaPor(usuarioDenunciante);
 			denuncia.setTipoDenuncia(1);
 			denuncia.setTipoEstado(0);
-			denuncia.setAtendida(null);
+			denuncia.setAtendida(admin);
 			DenunciaDAO.save(denuncia);
 			usuarioDenunciante.realizaDenuncia.add(denuncia);
 			usuarioDenunciante.denunciaComentarioUR.add(comentario);

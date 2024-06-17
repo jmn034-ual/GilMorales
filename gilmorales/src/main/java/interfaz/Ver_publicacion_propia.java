@@ -23,7 +23,8 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	//	private Publicacion publicacion;
 	private Usuario_Registrado urInterfaz;
 	private iUsuario_Registrado bd = new BDPrincipal();
-
+	
+	public Ver_publicacion_propia() {}
 
 	public Ver_publicacion_propia(Publicacion publicacion, Usuario_Registrado urInterfaz) {
 		super(publicacion, publicacion.getPerteneceA());

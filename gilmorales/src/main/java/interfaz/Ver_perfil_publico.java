@@ -12,18 +12,20 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	public Ver_publicacciones_gustadas_Otro_usuario _ver_publicacciones_gustadas__Otro_usuario_;
 	UsuarioRegistrado userAver;
 	iUsuario_Registrado bd = new BDPrincipal();
+	Object interfazAux;
 
 	public Ver_perfil_publico(UsuarioRegistrado userAver, Object interfaz, Cabecera_TOP cabecera_TOP) {
 		super(cabecera_TOP);
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.userAver = userAver;
+		this.interfazAux = interfaz;
 		if(cabecera_TOP._cabecera_Usuario_Registrado != null) {
 			user = bd.cargarUsuarioRegistrado(cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur.getID());
-			asignarInterfaz(interfaz);
+			asignarInterfaz(interfazAux);
 			motrarDatosUserRegistrado();
 		}else {
-			asignarInterfaz(interfaz);
+			asignarInterfaz(interfazAux);
 			motrarDatosUserNoRegistrado();
 		}
 		
@@ -32,6 +34,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.getFotoPerfil1().setImage(this.userAver.getFoto());
 		publicaciones_usuario_publico();
 		Ver_publicacciones_gustadas__Otro_usuario_();
+		Denunciar_usuario(this);
 	}
 
 	private void motrarDatosUserNoRegistrado() {
