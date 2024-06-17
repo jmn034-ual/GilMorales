@@ -35,7 +35,9 @@ public class Editar_perfil extends VistaEditarPerfil{
 	}
 
 	public void Guardar() {
-		throw new UnsupportedOperationException();
+		this.getBotonGuardar().addClickListener(event ->{
+			
+		});
 	}
 
 	public void Cancelar() {
