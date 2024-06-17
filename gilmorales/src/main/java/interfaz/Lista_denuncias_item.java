@@ -11,19 +11,16 @@ import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaDdenunciasAdministradorItem;
 
 public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem {
-	private Image _usuarioIcono;
-	private Button _verPerfilB;
-	private Label _nombreL;
-	private Label _estadoDenunciaL;
-	private Label _motivoL;
+
 	public Lista_denuncias _lista_denuncias;
 	public Filtrar_denuncias _filtrar_denuncias;
-	public Ver_perfil_publico _ver_perfil;
+	public Ver_perfil_Administrador _ver_perfil;
 	UsuarioRegistrado denunciante;
 	
-	public Lista_denuncias_item(Denuncia d) {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("height", "100%");
+	public Lista_denuncias_item() {}
+	
+	public Lista_denuncias_item(Denuncia d,Lista_denuncias interfaz) {
+		this._lista_denuncias = interfaz;
 		this.getNombreCompleto().setText(d.getRealizadaPor().getNombre() + " " + d.getRealizadaPor().getApellidos());
 		this.getNombreUsuario().setText(d.getRealizadaPor().getNombreUsuario());
 		if(d.getTipoEstado() == 0) {
@@ -40,17 +37,15 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 	}
 	
 	public Lista_denuncias_item(Usuario_Registrado usuario, Ver_denuncias admin) {
-		this.getStyle().set("width", "100%");
-		this.getStyle().set("height", "100%");
 		this.getNombreCompleto().setText(usuario.toString());
 	}
 
 
 	public void Ver_perfil() {
-//		_ver_perfil = new Ver_perfil_publico(denunciante, this);
+		_ver_perfil = new Ver_perfil_Administrador(denunciante);
 		getNombreUsuario().addClickListener(event->{
-			this.getVaadinHorizontalLayout().setVisible(false);
-			this.getVaadinHorizontalLayout().add(this._ver_perfil);
+			this._lista_denuncias._ver_denuncias._gestionar_denuncias.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+			this._lista_denuncias._ver_denuncias._gestionar_denuncias.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_perfil);
 		});
 	}
 }

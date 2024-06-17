@@ -20,14 +20,13 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.userAver = userAver;
 		if(cabecera_TOP._cabecera_Usuario_Registrado != null) {
 			user = bd.cargarUsuarioRegistrado(cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur.getID());
-		}else {
 			asignarInterfaz(interfaz);
-		}
-		if(this.userAver != null) {
 			motrarDatosUserRegistrado();
 		}else {
+			asignarInterfaz(interfaz);
 			motrarDatosUserNoRegistrado();
 		}
+		
 		this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
 		this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
 		this.getFotoPerfil1().setImage(this.userAver.getFoto());

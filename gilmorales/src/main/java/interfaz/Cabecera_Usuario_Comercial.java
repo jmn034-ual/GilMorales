@@ -11,6 +11,8 @@ public class Cabecera_Usuario_Comercial extends Comun_Comercial_y_Usuario_Regist
 	public Cabecera_Usuario_Comercial(Usuario_comercial comercialInterfaz, UsuarioComercial uc) {
 		this._usuario_comercial = comercialInterfaz;
 		this.comercial = uc;
+		this.getBotonNotificaciones().setVisible(false);
+		this.getBotonPerfil().setVisible(false);
 		this.Add_publicacion();
 	}
 	

@@ -19,11 +19,7 @@ public class Top_usuarios extends VistaTopUsuarios{
 	Usuario_No_Registrado unr;
 	
 	public Top_usuarios(Cabecera_TOP interfaz) {
-		if(interfaz instanceof Cabecera_TOP) {
-			this._cabecera_TOP = (Cabecera_TOP) interfaz;
-		}else {
-			this._cabecera_TOP = (Cabecera_TOP) interfaz;
-		}			
+		this._cabecera_TOP = (Cabecera_TOP) interfaz;			
 		cargarUsuariosTOP();
 	}
 

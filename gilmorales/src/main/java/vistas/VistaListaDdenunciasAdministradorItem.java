@@ -21,32 +21,36 @@ import com.vaadin.flow.component.avatar.Avatar;
 @JsModule("./src/vista-lista-ddenuncias-administrador-item.ts")
 public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
+
+
+	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinHorizontalLayout1")
-	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("nombreUsuario")
-	private Button nombreUsuario;
-	@Id("vaadinHorizontalLayout3")
-	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("nombreCompleto")
-	private Label nombreCompleto;
-	@Id("vaadinHorizontalLayout4")
-	private HorizontalLayout vaadinHorizontalLayout4;
-	@Id("estadoDenuncia")
-	private Label estadoDenuncia;
-	@Id("vaadinHorizontalLayout5")
-	private HorizontalLayout vaadinHorizontalLayout5;
-	@Id("motivoDenuncia")
-	private Label motivoDenuncia;
 	@Id("vaadinAvatar")
 	private Avatar vaadinAvatar;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
+	@Id("nombreUsuario")
+	private Button nombreUsuario;
+	@Id("nombreCompleto")
+	private Label nombreCompleto;
+	@Id("estadoDenuncia")
+	private Label estadoDenuncia;
+	@Id("motivoDenuncia")
+	private Label motivoDenuncia;
+	
+	
+
+	public Label getMotivoDenuncia() {
+		return motivoDenuncia;
+	}
+
+
+
+	public void setMotivoDenuncia(Label motivoDenuncia) {
+		this.motivoDenuncia = motivoDenuncia;
+	}
+
+
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
@@ -56,30 +60,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
-	}
-
-
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
-	}
-
-
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
 
@@ -95,7 +75,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
 
 
-
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
 	}
@@ -104,18 +83,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
 	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
 	}
 
 
@@ -132,18 +99,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
 
 
-	public HorizontalLayout getVaadinHorizontalLayout3() {
-		return vaadinHorizontalLayout3;
-	}
-
-
-
-	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
-		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
-	}
-
-
-
 	public Label getNombreCompleto() {
 		return nombreCompleto;
 	}
@@ -156,18 +111,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
 
 
-	public HorizontalLayout getVaadinHorizontalLayout4() {
-		return vaadinHorizontalLayout4;
-	}
-
-
-
-	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
-		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
-	}
-
-
-
 	public Label getEstadoDenuncia() {
 		return estadoDenuncia;
 	}
@@ -176,30 +119,6 @@ public class VistaListaDdenunciasAdministradorItem extends LitTemplate {
 
 	public void setEstadoDenuncia(Label estadoDenuncia) {
 		this.estadoDenuncia = estadoDenuncia;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout5() {
-		return vaadinHorizontalLayout5;
-	}
-
-
-
-	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
-		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
-	}
-
-
-
-	public Label getMotivoDenuncia() {
-		return motivoDenuncia;
-	}
-
-
-
-	public void setMotivoDenuncia(Label motivoDenuncia) {
-		this.motivoDenuncia = motivoDenuncia;
 	}
 
 

@@ -8,6 +8,7 @@ import vistas.VistaVerComentarios;
 public class Ver_comentarios extends VistaVerComentarios{
 
 	public Ver_perfil_publico ver_perfil;
+	public Ver_perfil_Administrador verPerfilAdmin;
 	Publicacion publicacion;
 	BDPrincipal bd = new BDPrincipal();
 	
@@ -25,8 +26,36 @@ public class Ver_comentarios extends VistaVerComentarios{
 	}
 
 	
-	public void Ver_perfil() {
+	public void Ver_perfil(Object interfaz) {
+		if(interfaz instanceof Ver_comentarios_Usuario_Registrado) {
+			Ver_comentarios_Usuario_Registrado auxUR = (Ver_comentarios_Usuario_Registrado) interfaz; 
+			Cabecera_TOP cabeceraTopAux = null;
+			if(auxUR._ver_publicacion__usuario_Registrado_ != null) {
+				cabeceraTopAux = auxUR._ver_publicacion__usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
+			}else {
+				cabeceraTopAux = auxUR.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
+			}
+			this.ver_perfil = new Ver_perfil_publico(auxUR.publicacion.getPerteneceA(), interfaz, cabeceraTopAux);
+		}else if(interfaz instanceof Ver_comentarios_Administrador) {
+			Ver_comentarios_Administrador auxAdmin = (Ver_comentarios_Administrador) interfaz;
+			this.verPerfilAdmin = new Ver_perfil_Administrador(auxAdmin.publicacion.getPerteneceA());
+		}else {
+			Ver_comentarios_Usuario_No_registrado auxUNR = (Ver_comentarios_Usuario_No_registrado) interfaz;
+			this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, auxUNR.unrInterfaz.cabeceraUNR._cabecera_TOP);
+		}
 		
+		this.getBotonNombreUsuario().addClickListener(event ->{
+			if(this.ver_perfil != null) {
+				this.getVaadinHorizontalLayout().removeAll();
+				this.getVaadinHorizontalLayout().add(ver_perfil);
+			}else if(this.verPerfilAdmin != null) {
+				this.getVaadinHorizontalLayout().removeAll();
+				this.getVaadinHorizontalLayout().add(verPerfilAdmin);
+			}else {
+				this.getVaadinHorizontalLayout().removeAll();
+				this.getVaadinHorizontalLayout().add(ver_perfil);
+			}
+		});
 	}
 
 	public void NumeroMeGustas() {

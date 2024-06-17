@@ -27,10 +27,6 @@ public class VistaAdministradorPrincipal extends LitTemplate {
 	private HorizontalLayout layoutCabeceraAdmin;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("layoutPublicaciones")
-	private Element layoutPublicaciones;
-	@Id("vaadinVerticalLayout1")
-	private Element vaadinVerticalLayout1;
 	
 	
 
@@ -66,30 +62,6 @@ public class VistaAdministradorPrincipal extends LitTemplate {
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
-
-
-
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-
-
-	public Element getLayoutPublicaciones() {
-		return layoutPublicaciones;
-	}
-
-
-
-	public void setLayoutPublicaciones(Element layoutPublicaciones) {
-		this.layoutPublicaciones = layoutPublicaciones;
 	}
 
 

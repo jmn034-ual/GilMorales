@@ -10,7 +10,7 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	public Ver_publicacion_Usuario_No_Registrado verPublicacionUNR;
 	public Lista_Publicaciones_Usuario_no_registrado_item _publicacionesUNR;
 	public Lista_Comentarios_Vista_Usuario_No_registrado _lista_Comentarios__Vista_Usuario_No_registrado_;
-	private Usuario_No_Registrado unrInterfaz;
+	public Usuario_No_Registrado unrInterfaz;
 	Publicacion publicacion;
 	
 	public Ver_comentarios_Usuario_No_registrado(Publicacion publicacion, Object interfaz) {
@@ -27,7 +27,7 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 		this.publicacion = publicacion;
 		interfazUserNoRegistrado();
 		Lista_Comentarios__Vista_Usuario_No_registrado_();
-		this.Ver_perfil();
+		Ver_perfil(this);
 	}
 	
 	public void interfazUserNoRegistrado() {
@@ -44,12 +44,12 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 		_lista_Comentarios__Vista_Usuario_No_registrado_ = new Lista_Comentarios_Vista_Usuario_No_registrado(unrInterfaz, publicacion, this); 
 		this.getLayoutListaComentarios().as(VerticalLayout.class).add(_lista_Comentarios__Vista_Usuario_No_registrado_);
 	}
-	@Override
-	public void Ver_perfil() {
-		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, unrInterfaz.cabeceraUNR._cabecera_TOP);
-		this.getBotonNombreUsuario().addClickListener(event ->{
-			unrInterfaz.getVaadinHorizontalLayout().removeAll();
-			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
-			});
-	}
+	
+//	public void Ver_perfil() {
+//		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, unrInterfaz.cabeceraUNR._cabecera_TOP);
+//		this.getBotonNombreUsuario().addClickListener(event ->{
+//			unrInterfaz.getVaadinHorizontalLayout().removeAll();
+//			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
+//			});
+//	}
 }

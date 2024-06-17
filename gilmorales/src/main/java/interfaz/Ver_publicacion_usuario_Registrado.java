@@ -38,9 +38,10 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 		});
 	}
 	
-	public void Ver_comentarios__Usuario_Registrado_() {
+	public void Ver_comentarios__Usuario_Registrado_(Object interfaz) {
+		Ver_publicacion_ajena aux = (Ver_publicacion_ajena) interfaz;
 		this.getBotonVerComentario().addClickListener(event->{
-			_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this, this.user);
+			_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, aux, this.user);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_comentarios__Usuario_Registrado_);
 		});

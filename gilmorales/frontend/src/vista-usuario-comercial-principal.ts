@@ -17,7 +17,7 @@ export class VistaUsuarioComercialPrincipal extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; position: fixed; overflow-y: auto; background-color: #fffff; padding: 0%; align-items: center;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout style="width: 100%; height: 100%; position: fixed; overflow-y: auto; " id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing" id="cabecera" style="align-self: stretch; align-items: center; flex-shrink: 0; z-index:999;"></vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout1" style="flex-grow: 1; position:fixed; width: 100%; margin-top: 6%; overflow-y: auto; flex-shrink: 0; height: 95%; justify-content: flex-start; background-color: #ffffff;">
   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: flex-start; align-items: center; width: 100%; justify-content: flex-start;">

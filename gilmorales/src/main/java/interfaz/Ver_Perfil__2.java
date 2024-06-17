@@ -23,6 +23,8 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 	public Lista_Publicaciones_Administrador_item _lista_Publicaciones__Administrador_;
 	public 	UsuarioRegistrado user;
 	
+	public Ver_Perfil__2() {}
+	
 	public Ver_Perfil__2(Cabecera_TOP cabecera_TOP) {
 		super(cabecera_TOP);
 		// TODO Auto-generated constructor stub
@@ -39,14 +41,15 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 			this._lista_de_segidos = (Lista_de_segidos_item) interfaz;
 		}else if (interfaz instanceof Top_usuarios_item) {
 			this._top_usuarios = (Top_usuarios_item) interfaz;
-			this.user = this._top_usuarios._top_usuarios._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
+//			this.user = this._top_usuarios._top_usuarios._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
 		}else if (interfaz instanceof Resultado_usuarios_item) {
 			this._resultado_usuarios = (Resultado_usuarios_item) interfaz;
 		}else if (interfaz instanceof Ver_publicacion_ajena) {
 			this._ver_publicacion_ajena = (Ver_publicacion_ajena) interfaz;
 		}else if (interfaz instanceof Lista_usuarios_registrados_item) {
 			this._lista_usuarios_registrados = (Lista_usuarios_registrados_item) interfaz;
-			this.user = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
+			if(this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null)
+				this.user = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
 		}else if (interfaz instanceof Notificaciones_comun) {
 			this._notificaciones__comun_ = (Notificaciones_comun) interfaz;
 		}else if (interfaz instanceof Ver_comentarios) {

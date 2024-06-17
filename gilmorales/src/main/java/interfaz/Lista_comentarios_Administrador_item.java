@@ -13,10 +13,11 @@ public class Lista_comentarios_Administrador_item extends VistaListaComentariosU
 	Comentario comentario;
 	iAdministrador admin = new BDPrincipal();
 	
-	public Lista_comentarios_Administrador_item(Comentario comentario) {
+	public Lista_comentarios_Administrador_item(Comentario comentario, Lista_comentarios_Administrador interfaz) {
 		this.comentario = comentario;
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
+    	this._lista_comentarios__Administrador_ = interfaz;
 		this.getFotoPerfil().setImage(comentario.getEsComentadoPor().getFoto());
 		this.getNombreUsuario().setText(comentario.getEsComentadoPor().getNombreUsuario());
 		this.getComentarioL().setText(comentario.getComentario());
@@ -28,8 +29,10 @@ public class Lista_comentarios_Administrador_item extends VistaListaComentariosU
 
 	public void Borrar_comentario() {
 		this.getBorrarComentarioB().addClickListener(event -> {
-//			admin.borrarComentario(comentario.getIdComentario(), comentario.getComentadoEn().getIdPublicacion(), comentario.getEsComentadoPor().getID());
+			this._lista_comentarios__Administrador_.getVaadinVerticalLayout().as(VerticalLayout.class).remove(this);
+			this._lista_comentarios__Administrador_._item.remove(this);
 			admin.borrarComentario(comentario.getIdComentario());
+			this._lista_comentarios__Administrador_._ver_comentarios__Administrador_.getNumComentarios().setText(this._lista_comentarios__Administrador_._item.size() +"");
 		});
 	}
 }
