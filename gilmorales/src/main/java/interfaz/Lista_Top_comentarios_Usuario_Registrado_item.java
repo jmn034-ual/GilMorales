@@ -17,13 +17,7 @@ public class Lista_Top_comentarios_Usuario_Registrado_item extends Lista_Top_Com
 	public Lista_Top_comentarios_Usuario_Registrado_item(Comentario comentario, UsuarioRegistrado usuario) {
 		super(comentario);
 		this.user = usuario;
-		// TODO Auto-generated constructor stub
-	}
-
-	public Lista_Top_comentarios_Usuario_Registrado_item(Comentario comentario, UsuarioComercial uc) {
-		super(comentario);
-		this.uc = uc;
-		// TODO Auto-generated constructor stub
+		datosComentario();
 	}
 
 	public void Dar_me_gusta_comentario() {

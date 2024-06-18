@@ -23,7 +23,11 @@ public class Lista_Publicaciones_Administrador_item extends VistaListaPublicacio
 		this.publicacion = p;
 		this._lista_Publicaciones__Administrador_ = adminInterfaz;
 		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(p.getVideo()));
-		this.getBotonNombreUsuario().setText(p.getPerteneceA().getNombreUsuario());
+		if(this.publicacion.getPerteneceA() != null) {			
+			this.getBotonNombreUsuario().setText(p.getPerteneceA().getNombreUsuario());
+		}else {
+			this.getBotonNombreUsuario().setText(p.getEsPublicada().getNombreUsuarioComercial());
+		}
 		this.getLabelGeolocalizacion().setText(p.getLocalizacion());
 		this.getVaadinAvatar().setImage(p.getPerteneceA().getFoto());
 		Eliminar_publicacion__Administrador_();

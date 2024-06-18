@@ -1,11 +1,11 @@
 package interfaz;
 
 
-//import basededatos.iPlataformas_externas;
+import basededatos.iPlataformas_externas;
 
 public class Plataformas_externas {
 	public Iniciar_sesion_otras_plataformas _iniciar_sesion_otras_plataformas;
-//	public iPlataformas_externas _iPlataformas_externas;
+	public iPlataformas_externas _iPlataformas_externas;
 
 	public void Iniciar_sesion_otras_plataformas() {
 	}

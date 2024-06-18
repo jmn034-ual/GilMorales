@@ -1,5 +1,5 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-lista-publicaciones-comercial')
 export class VistaListaPublicacionesComercial extends LitElement {
@@ -14,7 +14,7 @@ export class VistaListaPublicacionesComercial extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;" id="vaadinHorizontalLayout"></vaadin-horizontal-layout>
+<vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout" style="width: 100%; height: 100%; overflow-y: auto;"></vaadin-vertical-layout>
 `;
   }
 

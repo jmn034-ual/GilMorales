@@ -39,12 +39,7 @@ public class Lista_Top_comentarios_Usuario_Registrado extends Lista_Top_Comentar
 
 
 			for(Comentario c : comentarios) {
-				if(this.user != null) {
 				this.comentario = new Lista_Top_comentarios_Usuario_Registrado_item(c, this.user);
-				}else {
-					this.comentario = new Lista_Top_comentarios_Usuario_Registrado_item(c, this.uc);
-				}
-				
 				this.getListaTopComentarios().as(VerticalLayout.class).add(comentario);
 				_item.add(comentario);
 				if(_item.size() == 5) break;

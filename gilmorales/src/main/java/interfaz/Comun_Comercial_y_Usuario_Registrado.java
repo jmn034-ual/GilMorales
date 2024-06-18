@@ -12,12 +12,10 @@ public class Comun_Comercial_y_Usuario_Registrado extends VistaCabecera{
 	public Add_publicacion addPubli;
 	
 	public Comun_Comercial_y_Usuario_Registrado() {
-//		this.getStyle().set("width","100%");
-//		this.getStyle().set("height","100%");
 		this.getBotonAniadir().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
-    	Image customIcon = new Image("icons/logo.png", null);
-		customIcon.getStyle().set("width", "80px");
-		customIcon.getStyle().set("heigth", "80px");
+		Image customIcon = new Image("icons/logo.png", null);
+		customIcon.getStyle().set("width", "6%");
+		this.getLogoWeb().setIcon(customIcon);
 //		addPubli = new Add_publicacion();
 //		Add_publicacion();
 		Cerrar_sesion();

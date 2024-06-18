@@ -2,6 +2,8 @@ package interfaz;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
 import com.vaadin.flow.component.html.Image;
@@ -11,7 +13,6 @@ import com.vaadin.flow.router.Route;
 import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 
-@Route("mostrar-imagen")
 public class Ver_perfil_propio extends Ver_tendencias {
 	
 	public Ver_publicacion_propia _ver_publicacion_propia;
@@ -23,7 +24,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	public Editar_perfil _editar_perfil;
 	public Configurar_perfil _configurar_perfil;
 	public Eliminar_publicaciones _eliminar_publicaciones;
-    private Image imagenPerfil;	
+	 @Value("${file.upload.dir}")
+    private String imagenPerfil;	
 	
 	public Ver_perfil_propio(Cabecera_Usuario_Registrado interfaz, Cabecera_TOP cabecera_TOP) {
 		super(cabecera_TOP);
@@ -40,7 +42,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	this.getNombreUsuario().setText(_cabecera_Usuario_Registrado.urInterfaz.ur.getNombreUsuario());
     	this.getNombreYapellidos().setText(_cabecera_Usuario_Registrado.urInterfaz.ur.getNombre() + " " + _cabecera_Usuario_Registrado.urInterfaz.ur.getApellidos());
     	this.getBotonBloquear().setVisible(false);
-    	this.getFotoPerfil1().setImage(_cabecera_Usuario_Registrado.urInterfaz.ur.getFoto());
+    	this.imagenPerfil = _cabecera_Usuario_Registrado.urInterfaz.ur.getFoto();
+    	this.getFotoPerfil1().setImage(this.imagenPerfil);
     	Ver_publicaciones_propias();
     	Ver_seguidores();
     	Ver_seguidos();

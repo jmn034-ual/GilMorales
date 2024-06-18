@@ -1,35 +1,43 @@
 package interfaz;
 
-public class Ver_comentarios_Comercial {
-//	private ImageIcon _iconoUsuario;
-//	private Label _geolocalizacionL;
-//	private button _verPerfilB;
-//	private int _numeroMeGustas;
-//	private Label _meGustasL;
-//	private int _numeroComentarios;
-//	private Label _comentariosL;
-//	private int _numeroVisualizaciones;
-//	private Label _visualizacionesL;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import bd_dcl.Publicacion;
+import vistas.VistaVerComentariosComercial;
+
+public class Ver_comentarios_Comercial extends VistaVerComentariosComercial{
+
 	public Ver_publicacion_propia_Comercial _ver_publicacion_propia__Comercial_;
 	public Lista_comentarios_Comercial _lista_comentarios__Comercial_;
-
-	public void Lista_comentarios__Comercial_() {
-		throw new UnsupportedOperationException();
+	Publicacion publicacion;
+	
+	public Ver_comentarios_Comercial(Publicacion p, Ver_publicacion_propia_Comercial interfaz) {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+		this.publicacion = p;
+		this._ver_publicacion_propia__Comercial_ = interfaz;
+		NumMeGustas();
+		NumeroComentarios();
+		NumVisualizaciones();
+		Lista_comentarios__Comercial_();
 	}
 
+	public void Lista_comentarios__Comercial_() {
+		this._lista_comentarios__Comercial_ = new Lista_comentarios_Comercial(this.publicacion, this);
+		this.getLayoutListaComentarios().as(VerticalLayout.class).add(this._lista_comentarios__Comercial_);
+	}
+	
 	public void NumMeGustas() {
-		throw new UnsupportedOperationException();
+		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 	}
 
 	public void NumeroComentarios() {
-		throw new UnsupportedOperationException();
+		this.getNumComentarios().setText(this.publicacion.getNumComentarios() + "");
 	}
 
 	public void NumVisualizaciones() {
-		throw new UnsupportedOperationException();
+		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones() + "");
 	}
 
-	public void VerPerfil() {
-		throw new UnsupportedOperationException();
-	}
+
 }

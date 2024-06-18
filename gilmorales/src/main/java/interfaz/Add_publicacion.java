@@ -1,25 +1,31 @@
 package interfaz;
 
-import java.io.InputStream;
+import java.io.File;
 
-import com.vaadin.flow.component.button.Button;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.FileBuffer;
-import com.vaadin.flow.component.upload.receivers.FileData;
-import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
-import com.vaadin.flow.component.upload.receivers.MultiFileBuffer;
+
 
 import TikTok.Video;
 import basededatos.BDPrincipal;
 import bd_dcl.Publicacion;
 import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
-import javassist.runtime.Desc;
 import vistas.VistaAddpublicacion;
 
 public class Add_publicacion extends VistaAddpublicacion{
+	
+	private static final String VIDEO_PATH = "src/main/resources/META-INF/resources/videos/";
+	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/videos/";
+	
 	public Comun_Comercial_y_Usuario_Registrado _comun__Comercial_y_Usuario_Registrado_;
 	public Ver_publicacion_propia _ver_publicacion_propia;
 	public Ver_publicacion_propia_Comercial _ver_publicacion_propiaComercial;
@@ -30,6 +36,8 @@ public class Add_publicacion extends VistaAddpublicacion{
 	private String localizacion = "";
 	Usuario_comercial ucInterfaz;
 	UsuarioComercial uc;
+	public String urlVideo;
+	public Video video;
 
 	public Add_publicacion() {}
 
@@ -42,44 +50,73 @@ public class Add_publicacion extends VistaAddpublicacion{
 		Ver_publicacion_propia();
 		Publicar();
 		Descartar();
-//		Subir_video();
+		Subir_video();
 	}
 
 	public Add_publicacion(UsuarioComercial uc, Usuario_comercial comercial) {
-//		this.getStyle().set("width", "100%");
-//		this.getStyle().set("height", "100%");
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
 		this.uc = uc;
 		this.ucInterfaz = comercial;
 		Add_localizacion();
 		Ver_publicacion_propia();
 		Publicar();
-//		Descartar();
-//		Subir_video();
+		Descartar();
+		Subir_video();
 	}
 
-//	public void Subir_video() {
-//		/* Example for FileBuffer */
-//		FileBuffer fileBuffer = new FileBuffer();
-//		Upload singleFileUpload = new Upload(fileBuffer);
-////		singleFileUpload.setAcceptedFileTypes("video/*");
-//
-//		int maxFileSizeInBytes = 10 * 1024 * 1024; // 10MB
-//		singleFileUpload.setMaxFileSize(maxFileSizeInBytes);
-//
-//
-//		singleFileUpload.addSucceededListener(event -> {
-//			// Get information about the file that was written to the file system
-//			FileData savedFileData = fileBuffer.getFileData();
-//			String absolutePath = savedFileData.getFile().getAbsolutePath();
-//			System.out.println(absolutePath);
-//			this.getLayoutVideo().as(VerticalLayout.class).add(new Video(absolutePath));
-//		});
-//		this.getLayoutSubirVideo().as(VerticalLayout.class).add(singleFileUpload);
-//	}
+	public void Subir_video() {
+		this.getBotonSubir().addClickListener(event -> {
+//			MemoryBuffer  buffer = new MemoryBuffer ();
+			createUploadDirectory();
+
+
+			FileBuffer buffer = new FileBuffer();
+
+			Upload upload = new Upload(buffer);
+			
+			upload.setAcceptedFileTypes("video/mp4");
+			upload.setMaxFileSize(1000000000);
+
+			Dialog dialog = new Dialog();
+			dialog.getElement().setAttribute("aria-label", "Subir Video");
+
+			dialog.add(upload);
+			dialog.open();
+
+			upload.addSucceededListener(event2 -> {
+				File uploadedFile = buffer.getFileData().getFile();
+
+				 try {
+
+					 Path destinationPath = Paths.get(UPLOAD_DIR + event2.getFileName());
+					 Files.move(uploadedFile.toPath(), destinationPath, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+					 Notification.show("Image uploaded successfully!");
+
+					 this.urlVideo = "/videos/"+event2.getFileName();
+					 this.video = new Video(urlVideo);
+
+					 dialog.close();
+					 this.getLayoutVideo().as(VerticalLayout.class).removeAll();
+					 this.getLayoutVideo().as(VerticalLayout.class).add(this.video);
+		            } catch (Exception e) {
+		            	Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+		            }
+				 upload.addFileRejectedListener(event3 -> {
+
+					 Notification.show("File rejected: " + event3.getErrorMessage(), 5000, Notification.Position.MIDDLE);
+
+					 });
+			});
+			
+			
+		});
+	}
 
 	public void Add_localizacion() {
 		this.getBotonAniadir().addClickListener(event ->{
-			localizacion = this.getLabelLocalizacion().getText();
+			localizacion = this.getTextFielLocalizacion().getValue();
 		});
 	}
 
@@ -100,16 +137,16 @@ public class Add_publicacion extends VistaAddpublicacion{
 		this.getBotonPublicar().addClickListener(event -> {
 			if(this.ur != null) {
 				this.publicacion = bd.addPublicacion(this.localizacion,
-						this.getTextAreaDescripcion().getValue(), "videos/tiktok1.mp4", ur.getID());
+						this.getTextAreaDescripcion().getValue(), this.urlVideo, ur.getID());
 				this.getVaadinHorizontalLayout().removeAll();
 				_ver_publicacion_propia = new Ver_publicacion_propia(publicacion, urInterfaz);
 				this.getVaadinHorizontalLayout().add(_ver_publicacion_propia);
 			}else {
 				this.publicacion = bd.addPublicacionComercial(this.localizacion, 
-						this.getTextAreaDescripcion().getValue(), "videos/tiktok1.mp4", uc.getID());
+						this.getTextAreaDescripcion().getValue(), this.urlVideo, uc.getID());
 				this.getVaadinHorizontalLayout().removeAll();
-				//				_ver_publicacion_propia = new Ver_publicacion_propia_Comercial(publicacion, ucInterfaz, this.uc);
-				this.getVaadinHorizontalLayout().add(this.ucInterfaz);
+				_ver_publicacion_propiaComercial = new Ver_publicacion_propia_Comercial(publicacion, this);
+				this.getVaadinHorizontalLayout().add(this._ver_publicacion_propiaComercial);
 			}
 		});
 	}
@@ -121,4 +158,25 @@ public class Add_publicacion extends VistaAddpublicacion{
 			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(urInterfaz._cabecera_Usuario_Registrado), new Lista_publicaciones_Usuario_Registrado(urInterfaz));
 		});
 	}
+	
+	private void createUploadDirectory() {
+
+		Path uploadDirPath = Paths.get(UPLOAD_DIR);
+
+		if (!Files.exists(uploadDirPath)) {
+
+			try {
+
+				Files.createDirectories(uploadDirPath);
+
+			} catch (IOException e) {
+
+				throw new RuntimeException("Could not create upload directory: " + e.getMessage(), e);
+
+			}
+
+		}
+	}
+
+
 }

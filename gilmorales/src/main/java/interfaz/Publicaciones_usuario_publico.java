@@ -17,9 +17,10 @@ public class Publicaciones_usuario_publico extends VistaPublicacionesUsuarioPubl
 	Publicaciones_usuario_publico_item publicacion;
 	UsuarioRegistrado user;
 	
-	public Publicaciones_usuario_publico(UsuarioRegistrado user) {
+	public Publicaciones_usuario_publico(UsuarioRegistrado user, Ver_perfil_publico interfaz) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
+    	this._ver_perfil_publico = interfaz;
 		this.user = user;
 		cargarPublicacionesUsuario();
 	}
@@ -31,17 +32,17 @@ public class Publicaciones_usuario_publico extends VistaPublicacionesUsuarioPubl
 			int tamanio = lista.size();
 			for(int i = 0; i < lista.size(); i++) {
 				if(tamanio >= 3) {					
-					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Publicaciones_usuario_publico_item(lista.get(i)),
-							new Publicaciones_usuario_publico_item(lista.get(++i)), new Publicaciones_usuario_publico_item(lista.get(i+=1))));
+					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Publicaciones_usuario_publico_item(lista.get(i), this),
+							new Publicaciones_usuario_publico_item(lista.get(++i), this), new Publicaciones_usuario_publico_item(lista.get(i+=1), this)));
 					tamanio -= 3;
 				}else if(tamanio == 2){
-					HorizontalLayout horizontal2 = new HorizontalLayout(new Publicaciones_usuario_publico_item(lista.get(i)),
-							new Publicaciones_usuario_publico_item(lista.get(++i)));
+					HorizontalLayout horizontal2 = new HorizontalLayout(new Publicaciones_usuario_publico_item(lista.get(i), this),
+							new Publicaciones_usuario_publico_item(lista.get(++i), this));
 					horizontal2.getStyle().set("width", "66.66%");
 
 					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal2);
 				}else {
-					HorizontalLayout horizontal = new HorizontalLayout(new Publicaciones_usuario_publico_item(lista.get(i)));
+					HorizontalLayout horizontal = new HorizontalLayout(new Publicaciones_usuario_publico_item(lista.get(i), this));
 					horizontal.getStyle().set("width", "33%");
 					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal);
 				}

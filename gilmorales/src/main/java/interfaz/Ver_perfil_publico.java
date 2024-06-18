@@ -83,7 +83,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	}
 
 	public void publicaciones_usuario_publico() {
-		this._publicaciones_usuario_publico = new Publicaciones_usuario_publico(this.userAver);
+		this._publicaciones_usuario_publico = new Publicaciones_usuario_publico(this.userAver, this);
 		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_publicaciones_usuario_publico);
 		this.getBotonVideos().addClickListener(event -> {
 			this.getListaMeGustas().setVisible(false);

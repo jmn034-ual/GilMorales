@@ -22,14 +22,23 @@ public class Lista_publicaciones_propias_Eliminar extends VistaListaPublicacione
 	Lista_publicaciones_propias_Eliminar_item publicacion;
 	UsuarioRegistrado user;
 	iUsuario_Registrado bd = new BDPrincipal();
+	public Lista_publicaciones_propias_Eliminar(Usuario_comercial comercial) {
+		cargarPublicacionesPropias(comercial);
+
+	}
+	
 	public Lista_publicaciones_propias_Eliminar(UsuarioRegistrado ur) {
 		this.user = ur;
-		cargarPublicacionesPropias();
+		cargarPublicacionesPropias(null);
 	}
 
-	public void cargarPublicacionesPropias() {
-		List<Publicacion> publicaciones = new ArrayList<Publicacion>(this.user.publica.getCollection());
-
+	public void cargarPublicacionesPropias(Usuario_comercial comercial) {
+		List<Publicacion> publicaciones = null;
+		if(comercial != null) {
+			publicaciones = new ArrayList<Publicacion>(comercial.comercial.publica.getCollection());
+		}else {
+			publicaciones =	new ArrayList<Publicacion>(this.user.publica.getCollection());
+		}
 		this.getLayoutPublicacionesEliminar().as(VerticalLayout.class).removeAll();
 		this._item.clear();
 

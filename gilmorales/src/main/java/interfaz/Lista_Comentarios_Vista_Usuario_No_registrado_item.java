@@ -7,7 +7,7 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 
 	public Lista_Comentarios_Vista_Usuario_No_registrado listaComentariosUNR;
 	public Ver_perfil_publico ver_perfil;
-	private Usuario_No_Registrado unrInterfaz;
+	Cabecera_Usuario_No_Registrado interfazUNR = null ;
 	Comentario comentario;
 	
 	public Lista_Comentarios_Vista_Usuario_No_registrado_item() {}
@@ -29,7 +29,6 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 	}
 	
 	public void Ver_perfil(Object contenedor) {
-		Cabecera_Usuario_No_Registrado interfazUNR = null ;
 		if(this.listaComentariosUNR != null) {
 			if(this.listaComentariosUNR._ver_comentarios__Usuario_No_registrado_._publicacionesUNR != null) {
 				interfazUNR = this.listaComentariosUNR._ver_comentarios__Usuario_No_registrado_._publicacionesUNR._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR;
@@ -42,8 +41,8 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 		}
 		this.getNombreUsuario().addClickListener(event ->{
 			if(listaComentariosUNR != null) {
-				unrInterfaz.getVaadinHorizontalLayout().removeAll();
-				unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
+				interfazUNR.unr.getVaadinHorizontalLayout().removeAll();
+				interfazUNR.unr.getVaadinHorizontalLayout().add(ver_perfil);
 			}else {
 				Lista_comentarios_Usuario_registrado_item comentarios = (Lista_comentarios_Usuario_registrado_item) contenedor;
 				Ver_comentarios_Usuario_Registrado interfazUR = comentarios._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_;

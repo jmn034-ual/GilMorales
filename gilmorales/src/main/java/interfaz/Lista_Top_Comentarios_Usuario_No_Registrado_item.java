@@ -18,6 +18,22 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado_item extends VistaLista
 	
 	public Lista_Top_Comentarios_Usuario_No_Registrado_item(Comentario comentario) {
 		this.comentario = comentario;
+		datosComentario();
+	}
+	
+	public Lista_Top_Comentarios_Usuario_No_Registrado_item(Comentario comentario, Lista_Top_Comentarios_Usuario_No_Registrado interfaz) {
+		this.comentario = comentario;
+		this._lista_Top_Comentarios__Usuario_No_Registrado_ = interfaz;
+		datosComentario();
+	}
+	
+	public void datosComentario() {
+		this.getFotoPerfil().setImage(comentario.getEsComentadoPor().getFoto());
+		this.getNombreDeUsuarioB().setText(comentario.getEsComentadoPor().getNombreUsuario());
+		this.getComentarioL().setText(comentario.getComentario());
+		this.getNumeroMeGusta().setText(comentario.getNumeroMeGustas()+"");
+		this.getMeGustaL().setVisible(false);
+		this.getBorrarComentarioB().setVisible(false);
 	}
 
 	public void Ver_perfil() {

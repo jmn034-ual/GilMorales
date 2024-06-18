@@ -84,10 +84,7 @@ public class BDPrincipal
 			String aDescripcion, String aVideo, int aUsuarioComercialID) {
 		Publicacion p = null;
 		try {
-			p = this.publicaciones.addPublicacion(aLocalizacion, aDescripcion, aVideo,
-					aUsuarioComercialID);
-//			this.publicacion.crearHashtag(p);
-//			this.publicacion.crearMencion(p);
+			p = this.publicaciones.addPublicacionComercial(aLocalizacion, aDescripcion, aVideo, aUsuarioComercialID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -395,10 +392,6 @@ public class BDPrincipal
 		return p;
 	}
 
-	public UsuarioRegistrado verPerfilAjeno(int aUsuarioID) {
-		throw new UnsupportedOperationException();
-	}
-
 	public void denunciarPublicacion(int aIdPublicacion, String aMotivo, String aExplicacion, int aUsuarioID) {
 		try {
 			this.denuncias.denunciarPublicacion(aIdPublicacion, aMotivo, aExplicacion, aUsuarioID);
@@ -485,18 +478,6 @@ public class BDPrincipal
 
 				}
 
-//			} else{
-////				List<UsuarioComercial> comerciales = UsuarioComercialDAO.queryUsuarioComercial(null, null);
-//				if (!comerciales.isEmpty()) {
-//					for(UsuarioComercial uc : comerciales) {
-//						System.out.println("Usuario comercial");
-//						if(uc.getNombreUsuarioComercial().equals(aNombreUsuario) && uc.getPassword().equals(aPassword)) 
-//							user = comercial.cargarUsuarioComercial(uc.getID());
-//					}
-//				}else if(aNombreUsuario.equals("admin") && aPassword.equals("admin")) { 
-//					user = _c_usuarioAdministrador.cargarAdministrador(0);
-//				}
-//
 			}
 		} catch (PersistentException e) {
 			e.printStackTrace();

@@ -9,6 +9,7 @@ public class Eliminar_publicaciones extends VistaEliminarPublicaciones{
 	public Ver_perfil_propio _ver_perfil_propio;
 	public Lista_publicaciones_propias_Eliminar _lista_publicaciones_propias;
 	UsuarioRegistrado user;
+	public Eliminar_publicaciones() {}
 	public Eliminar_publicaciones(UsuarioRegistrado ur) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");

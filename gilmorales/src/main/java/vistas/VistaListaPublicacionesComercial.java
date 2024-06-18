@@ -5,6 +5,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 /**
  * A Designer generated component for the vista-lista-publicaciones-comercial template.
@@ -16,20 +17,23 @@ import com.vaadin.flow.component.template.Id;
 @JsModule("./src/vista-lista-publicaciones-comercial.ts")
 public class VistaListaPublicacionesComercial extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
     
     
 
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
 
 
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
 
 
 
