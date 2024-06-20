@@ -4,6 +4,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
@@ -51,6 +52,7 @@ public class Login extends Iniciar_sesion{
 			this.nombreUsuario = this.getUsuarioTF().getValue();
 			this.password = this.getContrasenaTF().getValue();
 			Object object = this.Iniciar_sesion(this.nombreUsuario, this.password);
+			if(object != null) {
 			this.interfaz.interfaz.removeAll();
 			if(object instanceof UsuarioRegistrado) {
 				this.user = (UsuarioRegistrado) object;
@@ -64,7 +66,11 @@ public class Login extends Iniciar_sesion{
 			}
 			this.getUsuarioTF().setValue("");
 			this.getContrasenaTF().setValue("");
+			}else {
+				 Notification.show("Usuario o claves incorrectas");
+			}
 		});
+		
 	}
 
 	public void Registrar() {

@@ -31,7 +31,7 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 		if(this._publicaciones_hashtag._ver_hashtag._top_hashtags != null) {
 			if(this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null)
 				this.userNoRegistrado =  this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
-			if(userNoRegistrado == null)
+			if(this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_Registrado != null)
 				this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 		}else if(this._publicaciones_hashtag._ver_hashtag._resultado_hashtags != null) {
 			if( this._publicaciones_hashtag._ver_hashtag._resultado_hashtags._resultado_hashtags._realizar_busqueda._cabecera_Usuario_No_Registrado != null) {
@@ -45,8 +45,10 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 			Tendencias_item tendencias = this._publicaciones_hashtag._ver_hashtag._tendencias;
 			if(tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado != null)
 				this.userNoRegistrado = tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
-			if(this.userNoRegistrado == null)
+			if(tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado != null)
 				this.userRegistrado =  tendencias._tendencias._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
+			else if(tendencias._tendencias._ver_tendencias.cabecera_top.cabeceraAdmin != null)
+				this.admin = tendencias._tendencias._ver_tendencias.cabecera_top.cabeceraAdmin._administrador;
 		}
 		else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags != null){
 			if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null) {
@@ -58,7 +60,10 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 					this.userNoRegistrado = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_No_Registrado.unr;
 			if(userNoRegistrado == null){
 				if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP != null)
-					this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+					if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado != null)
+						this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
+					else
+						this.admin = this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP.cabeceraAdmin._administrador;
 				else if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias != null)
 					if(this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado != null)
 						this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;

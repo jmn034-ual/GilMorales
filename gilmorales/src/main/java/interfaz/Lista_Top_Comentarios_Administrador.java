@@ -29,7 +29,8 @@ public class Lista_Top_Comentarios_Administrador extends Lista_Top_Comentarios_U
 		List<Comentario> comentarios = new ArrayList<Comentario>(this.p.tieneComentarios.getCollection());
 
 		this.getListaTopComentarios().as(VerticalLayout.class).removeAll();
-		this.itemAdmin.clear();
+		if(this.itemAdmin != null) {
+			this.itemAdmin.clear();
 
 		for (Comentario c : comentarios) {
 			this.comentario = new Lista_Top_Comentarios_Administrador_item(c, this);
@@ -37,6 +38,7 @@ public class Lista_Top_Comentarios_Administrador extends Lista_Top_Comentarios_U
 			this.itemAdmin.add(comentario);
 			if (this.itemAdmin.size() == 5)
 				break;
+		}
 		}
 	}
 }
