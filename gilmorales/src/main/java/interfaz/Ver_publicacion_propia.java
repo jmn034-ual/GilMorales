@@ -21,7 +21,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	public Ver_perfil_propio ver_perfil_propio;
 	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
 	public Usuario_Registrado urInterfaz;
-	private iUsuario_Registrado bd = new BDPrincipal();
+	public BDPrincipal bd = new BDPrincipal();
 	
 	public Ver_publicacion_propia() {}
 
@@ -52,12 +52,13 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	public void Eliminar_publicacion_propia() {
 		this.getVaadinButton1().addClickListener(event ->{
 			bd.eliminarPublicacion(this.publicacion.getIdPublicacion());
+			this.urInterfaz._cabecera_Usuario_Registrado.getInicio().click();
 			Notification.show("Publicacion eliminada.");
 		});
 	}
 
 	public void Ver_perfil_propio() {
-		this.ver_perfil_propio = new Ver_perfil_propio(new Cabecera_TOP(urInterfaz._cabecera_Usuario_Registrado));
+		this.ver_perfil_propio = new Ver_perfil_propio(this.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
 		this.getVerPerfil().addClickListener(event ->{
 			UsuarioRegistrado ur = this.publicacion.getPerteneceA();
 			if(ur != null) {

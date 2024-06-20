@@ -25,7 +25,7 @@ export class VistaAddpublicacion extends LitElement {
     <h2 id="titulo" style="margin: var(--lumo-space-s); align-self: flex-start;">Añadir publicación</h2>
     <label id="label" style="align-self: flex-start; flex-grow: 0; margin: var(--lumo-space-s);">Publica un video en tu perfil.</label>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout id="layoutVideo" style="flex-grow: 1; justify-content: center; align-items: center; flex-shrink: 0; align-self: center; width: 100%; padding: var(--lumo-space-m);"></vaadin-vertical-layout>
+   <vaadin-vertical-layout id="layoutVideo" style="flex-grow: 0; justify-content: center; align-items: center; flex-shrink: 0; align-self: center; padding: var(--lumo-space-m); height: 80%; width: 100%;"></vaadin-vertical-layout>
    <vaadin-button id="botonSubir" style="align-self: center; flex-grow: 0;">
      Subir 
    </vaadin-button>

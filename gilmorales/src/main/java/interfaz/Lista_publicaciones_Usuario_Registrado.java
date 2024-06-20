@@ -12,6 +12,7 @@ import basededatos.BDPrincipal;
 import basededatos.iUsuario_No_Registrado;
 import basededatos.iUsuario_Registrado;
 import bd_dcl.Publicacion;
+import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
 
 public class Lista_publicaciones_Usuario_Registrado extends Lista_Publicaciones_Usuario_no_registrado {
@@ -33,6 +34,7 @@ public class Lista_publicaciones_Usuario_Registrado extends Lista_Publicaciones_
 		this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
 		_item.clear();
 		List<UsuarioRegistrado> usuarios = new ArrayList<UsuarioRegistrado>(this.urInterfaz.ur.seguir.getCollection());
+	
 		for(UsuarioRegistrado user : usuarios) {
 		List<Publicacion> publicaciones = new ArrayList<Publicacion>(user.publica.getCollection());
 		for(Publicacion pub : publicaciones) {

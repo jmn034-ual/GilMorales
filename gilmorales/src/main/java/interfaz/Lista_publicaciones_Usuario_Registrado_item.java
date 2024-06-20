@@ -31,7 +31,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		mostrarDatosPublicacion();
 		mostrarDatosUsuario();
 		this.getLayoutBotonesUsuarioR().setVisible(true);
-		this.getVaadinButton().setVisible(true);
+		this.getVaadinButton().setEnabled(true);
 		this.getLayoutComentar().setVisible(true);
 		if (this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();

@@ -14,9 +14,9 @@ export class VistaPublicacionesGustadasUsaurioPublicoItem extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="align-items: center;" id="layoutItem">
- <vaadin-vertical-layout id="publicacion">
-  <vaadin-vertical-layout theme="spacing" id="video"></vaadin-vertical-layout>
+<vaadin-vertical-layout id="layoutItem">
+ <vaadin-vertical-layout id="publicacion" style="flex-grow: 0; overflow: hidden; flex-shrink: 0; width: 500px;  background-color: black; color: white;    border-radius: 10px;box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+  <vaadin-vertical-layout theme="spacing" id="video" style="align-self: center; flex-grow: 0; flex-shrink: 0; display: flex; justify-content: center; align-items: center; overflow: hidden; height: 700px; background-color: black; width: 100%;"></vaadin-vertical-layout>
   <label id="numVisualizaciones">0</label>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>

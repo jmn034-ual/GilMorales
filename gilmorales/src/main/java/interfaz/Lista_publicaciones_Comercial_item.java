@@ -18,11 +18,6 @@ public class Lista_publicaciones_Comercial_item extends VistaListaPublicacionesC
 		this._lista_publicaciones__Comercial_ = interfaz;
 		this.publicacion = this.bd.cargarPublicacion(p.getIdPublicacion());
 		Video video = new Video(this.publicacion.getVideo());
-		video.getStyle().set("width", "40%");
-		video.getStyle().set("height", "40%");
-		video.getElement().setProperty("controls", false);
-		video.getElement().setProperty("autoplay", false); 
-		video.getElement().getStyle().set("border-radius", "8px");
 		this.getLayaoutVideo().as(VerticalLayout.class).add(video);
 		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+"");
 		Ver_publicacion_propia__Comercial_();

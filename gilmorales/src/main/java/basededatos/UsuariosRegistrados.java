@@ -251,7 +251,11 @@ public class UsuariosRegistrados {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
-			UsuarioRegistradoDAO.deleteAndDissociate(usuario);
+			usuario.setPrivacidad(3);
+			UsuarioRegistradoDAO.save(usuario);
+//			t.commit();
+
+//			UsuarioRegistradoDAO.deleteAndDissociate(usuario);
 		}catch(Exception e){
 			t.rollback();
 		}

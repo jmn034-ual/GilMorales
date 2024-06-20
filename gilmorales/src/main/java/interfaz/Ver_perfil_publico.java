@@ -18,6 +18,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		super(cabecera_TOP);
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		if(userAver != null) {
 		this.userAver = bd.cargarUsuarioRegistrado(userAver.getID());
 		this.interfazAux = interfaz;
 		if(cabecera_TOP._cabecera_Usuario_Registrado != null) {
@@ -42,6 +43,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		publicaciones_usuario_publico();
 		Ver_publicacciones_gustadas__Otro_usuario_();
 		Denunciar_usuario(this);
+		}
 	}
 
 	private void motrarDatosUserNoRegistrado() {

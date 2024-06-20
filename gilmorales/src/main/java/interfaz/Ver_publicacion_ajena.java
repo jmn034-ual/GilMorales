@@ -35,13 +35,13 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 			this.urInterfaz = this._publicaciones_gustadas._publicaciones_gustadas._ver_publicaciones_gustadas__Usuario_registrado_._ver_perfil_propio._cabecera_Usuario_Registrado.urInterfaz;
 		} else if (urInterfaz instanceof Publicaciones_usuario_publico_item) {
 			this._publicaciones_usuario_publico = (Publicaciones_usuario_publico_item) urInterfaz;
-			this.urInterfaz = this._publicaciones_usuario_publico._publicaciones_usuario_publico._ver_perfil_publico._top_usuarios.userInterfaz;
+			this.urInterfaz = this._publicaciones_usuario_publico._publicaciones_usuario_publico._ver_perfil_publico.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 		}else if(urInterfaz instanceof Publicaciones_gustadas_usuario_publico_item) {
 			_publicaciones_gustadas_usuario_publico = (Publicaciones_gustadas_usuario_publico_item) urInterfaz;
-//			this.urInterfaz = this._publicaciones_gustadas_usuario_publico.;
+			this.urInterfaz = this._publicaciones_gustadas_usuario_publico._publicaciones_gustadas_usuario_publico._ver_publicacciones_gustadas__Otro_usuario_._ver_perfil_publico.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 		}else if(urInterfaz instanceof Publicaciones_hashtag_item) {
 			_publicaciones_hashtag = (Publicaciones_hashtag_item) urInterfaz;
-//			this.urInterfaz = urInterfaz;
+			this.urInterfaz = this._publicaciones_hashtag._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 		}else if(urInterfaz instanceof Lista_usuarios_registrados_item) {
 			this._lista_usuarios_registrados = (Lista_usuarios_registrados_item) urInterfaz;
 			this.urInterfaz = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
@@ -58,6 +58,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 		this.getGeolocalizacion().setText(this.publicacion.getLocalizacion());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getBotonComentar().setVisible(true);
+		this.getVaadinButton1().setVisible(false);
 		if (this.urInterfaz != null) {
 			if (this.urInterfaz.ur.seguir.contains(p.getPerteneceA())) {
 				this.getBotonSeguir().setVisible(true);

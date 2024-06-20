@@ -81,15 +81,15 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 						.add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this));
 			} else if(this.userRegistrado != null){
-//				if (this.userRegistrado.ur.equals(this.publicacion.getPerteneceA())) {
-//					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
-//							.add(new Ver_publicacion_propia(publicacion, this.userRegistrado));
-//				} else {
+				if (this.userRegistrado.ur.equals(this.publicacion.getPerteneceA())) {
+					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+							.add(new Ver_publicacion_propia(publicacion, this.userRegistrado));
+				} else {
 					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.userRegistrado.ur,
 							this.userRegistrado);
 					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 							.add(_ver_publicacion_ajena);
-//				}
+				}
 			}else {
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 				.add(new Ver_publicacion_Administrador(publicacion, this));

@@ -38,11 +38,12 @@ public class Registrar extends VistaRegistrarusuario {
 	int usuarioID;
 	Dialog dialog;
 
-	public Registrar(Usuario_No_Registrado interfaz, Dialog dialog) {
+	public Registrar(Usuario_No_Registrado interfaz, Login login, Dialog dialog) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.dialog = dialog;
 		this.interfaz = interfaz;
+		this._iniciar_sesion = login;
 		Descartar();
 		Subir_foto();
 		this.getNormal().addClickListener(event -> {

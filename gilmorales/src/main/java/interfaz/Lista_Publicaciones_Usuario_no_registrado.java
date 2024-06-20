@@ -18,7 +18,7 @@ public class Lista_Publicaciones_Usuario_no_registrado extends VistaListaPublica
 	public Usuario_No_Registrado unr;
 	public Vector<Lista_Publicaciones_Usuario_no_registrado_item> _item = new Vector<Lista_Publicaciones_Usuario_no_registrado_item>();
 	private Lista_Publicaciones_Usuario_no_registrado_item publicacion;
-	private iUsuario_No_Registrado bd = new BDPrincipal();
+	private BDPrincipal bd = new BDPrincipal();
 
 	public Lista_Publicaciones_Usuario_no_registrado(){
 	}
@@ -30,23 +30,37 @@ public class Lista_Publicaciones_Usuario_no_registrado extends VistaListaPublica
 	}
 
 	public void cargarPublicacionesUNR() {
-		List<UsuarioRegistrado> lista = bd.cargarUsuariosUNR();
+	    List<UsuarioRegistrado> lista = bd.cargarUsuariosUNR();
+	    List<Publicacion> publicacionesComerciales = this.bd.cargarPubliacionesComerciales();
 
-		this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
-		_item.clear();
-		if(lista != null) {
-		for( UsuarioRegistrado u : lista) {
-			if(u.getPrivacidad() == 1){
-				continue;
-			}else {
-				List<Publicacion> publicaciones = new ArrayList<Publicacion>(u.publica.getCollection());
-				for(Publicacion pub : publicaciones) {
-					this.publicacion = new Lista_Publicaciones_Usuario_no_registrado_item(pub, this);	
-					this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(this.publicacion);
-					_item.add(this.publicacion);
-				}		
-			}
-		}
-		}
+	    this.getLayoutPublicacionesUNR().as(VerticalLayout.class).removeAll();
+	    _item.clear();
+
+	    if (lista != null) {
+	        List<Publicacion> publicacionesUsuarios = new ArrayList<>();
+	        for (UsuarioRegistrado u : lista) {
+	            if (u.getPrivacidad() != 1) {
+	                publicacionesUsuarios.addAll(u.publica.getCollection());
+	            }
+	        }
+
+	        int i = 0, j = 0;
+	        while (i < publicacionesUsuarios.size() || j < publicacionesComerciales.size()) {
+	            if (i < publicacionesUsuarios.size()) {
+	                Publicacion pub = publicacionesUsuarios.get(i++);
+	                this.publicacion = new Lista_Publicaciones_Usuario_no_registrado_item(pub, this);  
+	                this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(this.publicacion);
+	                _item.add(this.publicacion);
+	            }
+
+	            if (j < publicacionesComerciales.size()) {
+	                Publicacion pubComercial = publicacionesComerciales.get(j++);
+	                this.publicacion = new Lista_Publicaciones_Usuario_no_registrado_item(pubComercial, this);  
+	                this.getLayoutPublicacionesUNR().as(VerticalLayout.class).add(this.publicacion);
+	                _item.add(this.publicacion);
+	            }
+	        }
+	    }
 	}
+
 }

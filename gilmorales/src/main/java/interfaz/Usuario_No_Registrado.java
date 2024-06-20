@@ -25,6 +25,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public Cabecera_Usuario_No_Registrado cabeceraUNR;
 	public Login inicioSesion;	
 	MainView interfaz;
+	Dialog dialog;
 
 	public Usuario_No_Registrado(MainView mainView) {
 		this.interfaz = mainView;
@@ -47,7 +48,7 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	public void Iniciar_Sesion() {
 		inicioSesion = new Login(this);
 		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {
-			Dialog dialog = new Dialog(inicioSesion);
+			dialog = new Dialog(inicioSesion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("70%");
 			dialog.setWidth("50%");

@@ -38,10 +38,10 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	this.getLabelUsuarioPrivado().setVisible(false);
     	this.getBotonPeticionAmistad().setVisible(false);
     	this.getListaMeGustas().setVisible(false);
-    	this.getNombreUsuario().setText(this._cabecera_Usuario_Registrado.urInterfaz.ur.getNombreUsuario());
-    	this.getNombreYapellidos().setText(this._cabecera_Usuario_Registrado.urInterfaz.ur.getNombre() + " " + this._cabecera_Usuario_Registrado.urInterfaz.ur.getApellidos());
+    	this.getNombreUsuario().setText(this.user.getNombreUsuario());
+    	this.getNombreYapellidos().setText(this.user.getNombre() + " " + this.user.getApellidos());
     	this.getBotonBloquear().setVisible(false);
-    	this.imagenPerfil = this._cabecera_Usuario_Registrado.urInterfaz.ur.getFoto();
+    	this.imagenPerfil = this.user.getFoto();
     	this.getFotoPerfil1().setImage(this.imagenPerfil);
     	Ver_publicaciones_propias();
     	Ver_seguidores();
@@ -64,7 +64,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_publicaciones_propias() {
-		_ver_publicaciones_propias = new Ver_publicaciones_propias(this.cabecera_top._cabecera_Usuario_Registrado.urInterfaz.ur, this);
+		_ver_publicaciones_propias = new Ver_publicaciones_propias(this.user, this);
 		this.getBotonVideos().addClickListener(event ->{
 			this.getListaMeGustas().setVisible(false);
 			this.getLayoutListaPublicaciones().setVisible(true);
@@ -73,7 +73,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidores() {
-		_ver_seguidores = new Ver_seguidores(this._cabecera_Usuario_Registrado.urInterfaz.ur);
+		_ver_seguidores = new Ver_seguidores(this.user);
 		this.getVerSeguidores().addClickListener(event ->{
 			this._ver_seguidores.setVisible(true);
 			this._ver_seguidos.setVisible(false);
@@ -91,7 +91,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidos() {
-		_ver_seguidos = new Ver_seguidos(this._cabecera_Usuario_Registrado.urInterfaz.ur);
+		_ver_seguidos = new Ver_seguidos(this.user);
 		this.getVerSiguiendos().addClickListener(event ->{
 			this._ver_seguidos.setVisible(true);
 			this._ver_seguidores.setVisible(false);
@@ -109,7 +109,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Editar_perfil() {
-		_editar_perfil = new Editar_perfil(this._cabecera_Usuario_Registrado.urInterfaz.ur);
+		_editar_perfil = new Editar_perfil(this.user);
 		this.getBotonEditarPerfil().addClickListener(event ->{
 			this._editar_perfil.setVisible(true);
 			this._ver_seguidores.setVisible(false);
@@ -127,7 +127,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Configurar_perfil() {
-		_configurar_perfil = new Configurar_perfil(this._cabecera_Usuario_Registrado.urInterfaz.ur);
+		_configurar_perfil = new Configurar_perfil(this.user);
 		this.getBotonModificarPerfil().addClickListener(event ->{
 			this._configurar_perfil.setVisible(true);
 			this._ver_seguidores.setVisible(false);
@@ -145,7 +145,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Eliminar_publicaciones() {
-		_eliminar_publicaciones = new Eliminar_publicaciones(this._cabecera_Usuario_Registrado.urInterfaz.ur);
+		_eliminar_publicaciones = new Eliminar_publicaciones(this.user);
 		this.getBotonEliminarPublicacion().addClickListener(event ->{
 			this._eliminar_publicaciones.setVisible(true);
 			this.getLayoutTendencias().setVisible(false);
@@ -155,20 +155,20 @@ public class Ver_perfil_propio extends Ver_tendencias {
 		this._eliminar_publicaciones.getBotonCancelar().addClickListener(event ->{
 			this.getLayoutTendencias().setVisible(true);
 			this.getVaadinVerticalLayout1().setVisible(true);
-			this._ver_publicaciones_propias = new Ver_publicaciones_propias(this._cabecera_Usuario_Registrado.urInterfaz.ur, this);
+			this._ver_publicaciones_propias = new Ver_publicaciones_propias(this.user, this);
 		});
 	}
 
 	public void NumeroSeguidores() {
-		this.getNumSeguidores().setText(this._cabecera_Usuario_Registrado.urInterfaz.ur.seguidor.size()+"");
+		this.getNumSeguidores().setText(this.user.seguidor.size()+"");
 	}
 
 	public void NumeroSeguidos() {
-		this.getNumSiguiendo().setText(this._cabecera_Usuario_Registrado.urInterfaz.ur.seguir.size()+"");
+		this.getNumSiguiendo().setText(this.user.seguir.size()+"");
 	}
 
 	public void NumeroMeGusta() {
-		ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(this._cabecera_Usuario_Registrado.urInterfaz.ur.publica.getCollection());
+		ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(this.user.publica.getCollection());
 		int numMeGustas = 0;
 		for(Publicacion p : publicaciones) {
 			numMeGustas += p.getNumMeGustas();

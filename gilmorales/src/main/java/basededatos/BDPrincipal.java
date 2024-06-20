@@ -303,6 +303,17 @@ public class BDPrincipal
 		}
 		return usuarios;
 	}
+	
+	public List cargarPubliacionesComerciales() {
+		List<Publicacion> publicacioens = null;
+		try {
+			publicacioens = publicaciones.cargarPublicacionesComerciales();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return publicacioens;
+	}
 
 	public UsuarioRegistrado cargarUsuarioRegistrado(int aUsuarioID) {
 		UsuarioRegistrado usuario = null;
@@ -471,8 +482,12 @@ public class BDPrincipal
 					if (ur instanceof UsuarioRegistrado) {
 						UsuarioRegistrado userAux = cargarUsuarioRegistrado(Integer.parseInt(ur.toString()));
 						if (userAux.getNombreUsuario().equals(aNombreUsuario)
-								&& userAux.getPassword().equals(aPassword)) {
+								&& userAux.getPassword().equals(aPassword) && userAux.getPrivacidad() != 3) {
 							return user = usuarios_registrados.cargarUsuarioRegistrado(userAux.getID());
+						}
+						else {
+							Notification.show("Usuario bloqueado");
+							return null;
 						}
 					} else if (ur instanceof UsuarioComercial) {
 						UsuarioComercial userAux = cargarUsuarioComercial(Integer.parseInt(ur.toString()));

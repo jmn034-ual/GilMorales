@@ -21,7 +21,6 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 	public Lista_resultado_item _lista_resultado;
 	public Lista_denuncias_item _lista_denuncias;
 	public Lista_Publicaciones_Administrador_item _lista_Publicaciones__Administrador_;
-	public 	UsuarioRegistrado user;
 	Cabecera_Usuario_Registrado cabecera;
 	
 	public Ver_Perfil__2() {}

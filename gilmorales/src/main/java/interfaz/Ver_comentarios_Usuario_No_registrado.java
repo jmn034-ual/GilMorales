@@ -31,7 +31,11 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	}
 	
 	public void interfazUserNoRegistrado() {
-		this.getFotoPerfil().setImage(publicacion.getPerteneceA().getFoto());
+		if(this.publicacion.getPerteneceA() != null)
+			this.getFotoPerfil().setImage(publicacion.getPerteneceA().getFoto());
+		else
+			this.getFotoPerfil().setImage(publicacion.getEsPublicada().getFoto());
+
 		this.getNumComentarios().setText(publicacion.getNumComentarios()+"");
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(false);

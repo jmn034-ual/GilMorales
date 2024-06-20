@@ -43,7 +43,7 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
       Denunciar 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing-xl" id="layoutBotonesPublicacion" style="align-self: center; justify-content: center;">
+   <vaadin-horizontal-layout theme="spacing-xl" id="layoutBotonesPublicacion" style="align-self: flex-end; justify-content: center;">
     <vaadin-vertical-layout theme="spacing" id="layoutMeGustas">
      <label id="labelNumMeGustas" style="align-self: center;">0</label>
      <vaadin-button theme="icon" aria-label="Add new" id="vaadinButton">

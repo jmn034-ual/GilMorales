@@ -29,6 +29,7 @@ public class Login extends Iniciar_sesion{
 	UsuarioRegistrado user;
 	UsuarioComercial uc;
 	UsuarioAdministrador admin;
+	Dialog dialogRegistrar;
 	
 	public Login(Usuario_No_Registrado interfaz) {
     	this.interfaz = interfaz;
@@ -75,16 +76,19 @@ public class Login extends Iniciar_sesion{
 
 	public void Registrar() {
 		this.getRegistrarB().addClickListener(event -> {
-			Dialog dialog = new Dialog();
-			_registrar = new Registrar(this.interfaz, dialog);
-			dialog.add(_registrar);
-			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
-			dialog.setCloseOnEsc(true);
-			dialog.setWidth("50%");
+			dialogRegistrar = new Dialog();
+			_registrar = new Registrar(this.interfaz, this, dialogRegistrar);
+			dialogRegistrar.add(_registrar);
+			dialogRegistrar.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialogRegistrar.setCloseOnEsc(true);
+			dialogRegistrar.setWidth("50%");
 			this._registrar.getDescartar().addClickListener(event2 -> {
-				dialog.close();
+				dialogRegistrar.close();
 			});
-			dialog.open();
+			this._registrar.getConfirmar().addClickListener(evente3 -> {
+				this.interfaz.dialog.close();
+			});
+			dialogRegistrar.open();
 
 		});
 	}

@@ -49,6 +49,19 @@ public class Publicaciones {
 			eliminarPublicacion(publicacion.getIdPublicacion());
 		}
 	}
+	
+	public List<Publicacion> cargarPublicacionesComerciales() throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		List<Publicacion> publicaciones = null;
+		try {
+			 String condition = "UsuarioComercialID IS NOT NULL";
+		      publicaciones = PublicacionDAO.queryPublicacion(condition, null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return publicaciones;
+	}
 
 	public void eliminarPublicacion(int aIDPublicacion) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
