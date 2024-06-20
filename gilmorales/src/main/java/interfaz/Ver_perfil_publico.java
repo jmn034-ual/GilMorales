@@ -37,7 +37,8 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 			asignarInterfaz(interfazAux);
 			motrarDatosUserNoRegistrado();
 		}
-		
+		NumeroSeguidores();
+		NumeroSeguidos();
 		this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
 		this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
 		this.getFotoPerfil1().setImage(this.userAver.getFoto());
@@ -45,6 +46,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		Ver_publicacciones_gustadas__Otro_usuario_();
 		Denunciar_usuario(this);
 		}
+		
 	}
 
 	private void motrarDatosUserNoRegistrado() {
@@ -110,5 +112,15 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 			this.getListaMeGustas().setVisible(true);
 			this.getListaMeGustas().as(VerticalLayout.class).add(_ver_publicacciones_gustadas__Otro_usuario_);
 		});
+	}
+	
+	public void NumeroSeguidores() {
+//		this.getNumSeguidores().setVisible(false);
+		this.getNumSeguidores().setText(this.userAver.seguidor.size()+"");
+	}
+
+	public void NumeroSeguidos() {
+		this.getNumSiguiendo().setText(this.userAver.seguir.size()+"");
+//		this.getNumSiguiendo().setVisible(false);
 	}
 }

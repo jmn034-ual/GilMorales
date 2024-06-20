@@ -50,6 +50,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	Ver_publicaciones_gustadas__Usuario_registrado_();
     	Eliminar_publicaciones();
     	NumeroMeGusta();
+    	NumeroSeguidores();
+    	NumeroMeGusta();
 
 	}
 
@@ -72,12 +74,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidores() {
-		_ver_seguidores = new Ver_seguidores(this.user, this);
 		this.getVerSeguidores().addClickListener(event ->{
-			this._ver_seguidores.setVisible(true);
-			this._ver_seguidos.setVisible(false);
-			this._editar_perfil.setVisible(false);
-			this._configurar_perfil.setVisible(false);
+			_ver_seguidores = new Ver_seguidores(this.user, this);
 			Dialog dialog = new Dialog();
 			dialog.add(_ver_seguidores);
 			dialog.setCloseOnEsc(true);
@@ -91,12 +89,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidos() {
-		_ver_seguidos = new Ver_seguidos(this.user, this);
 		this.getVerSiguiendos().addClickListener(event ->{
-			this._ver_seguidos.setVisible(true);
-			this._ver_seguidores.setVisible(false);
-			this._editar_perfil.setVisible(false);
-			this._configurar_perfil.setVisible(false);
+			_ver_seguidos = new Ver_seguidos(this.user, this);
 			Dialog dialog = new Dialog();
 			dialog.add(_ver_seguidos);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
@@ -115,10 +109,6 @@ public class Ver_perfil_propio extends Ver_tendencias {
 			Dialog dialog = new Dialog();
 			_editar_perfil = new Editar_perfil(this.user, dialog, this);
 			dialog.add(_editar_perfil);
-			this._editar_perfil.setVisible(true);
-			this._ver_seguidores.setVisible(false);
-			this._ver_seguidos.setVisible(false);
-			this._configurar_perfil.setVisible(false);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("50%");
 			dialog.setWidth("50%");
@@ -130,13 +120,10 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Configurar_perfil() {
-		_configurar_perfil = new Configurar_perfil(this.user);
 		this.getBotonModificarPerfil().addClickListener(event ->{
-			this._configurar_perfil.setVisible(true);
-			this._ver_seguidores.setVisible(false);
-			this._ver_seguidos.setVisible(false);
-			this._editar_perfil.setVisible(false);
-			Dialog dialog = new Dialog(_configurar_perfil);
+			Dialog dialog = new Dialog();
+			_configurar_perfil = new Configurar_perfil(this.user, dialog, this);
+			dialog.add(_configurar_perfil);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("50%");
 			dialog.setWidth("50%");
@@ -163,11 +150,13 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void NumeroSeguidores() {
+//		this.getNumSeguidores().setVisible(false);
 		this.getNumSeguidores().setText(this.user.seguidor.size()+"");
 	}
 
 	public void NumeroSeguidos() {
 		this.getNumSiguiendo().setText(this.user.seguir.size()+"");
+//		this.getNumSiguiendo().setVisible(false);
 	}
 
 	public void NumeroMeGusta() {
