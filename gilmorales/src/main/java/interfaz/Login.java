@@ -57,14 +57,19 @@ public class Login extends Iniciar_sesion{
 			this.password = this.getContrasenaTF().getValue();
 			Object object = this.Iniciar_sesion(this.nombreUsuario, this.password);
 			if(object != null) {
-			this.interfaz.interfaz.removeAll();
 			if(object instanceof UsuarioRegistrado) {
 				this.user = (UsuarioRegistrado) object;
-				this.interfaz.interfaz.add(new Usuario_Registrado(this.interfaz.interfaz, user.getID()));
+				if(this.user.getPrivacidad() != 3) {
+					this.interfaz.interfaz.removeAll();
+					this.interfaz.interfaz.add(new Usuario_Registrado(this.interfaz.interfaz, user.getID()));
+				}else
+					Notification.show("Usuario bloqueado");
 			} else if(object instanceof UsuarioComercial){
+				this.interfaz.interfaz.removeAll();
 				this.uc = (UsuarioComercial) object;
 				this.interfaz.interfaz.add(new Usuario_comercial(this.interfaz.interfaz, uc.getID()));
 			}else {
+				this.interfaz.interfaz.removeAll();
 				this.admin = (UsuarioAdministrador) object;
 				this.interfaz.interfaz.add(new Administrador(this.interfaz.interfaz, admin.getCodigoEmpleado()));
 			}

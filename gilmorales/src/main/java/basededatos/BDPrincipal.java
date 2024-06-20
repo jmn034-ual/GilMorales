@@ -482,13 +482,10 @@ public class BDPrincipal
 					if (ur instanceof UsuarioRegistrado) {
 						UsuarioRegistrado userAux = cargarUsuarioRegistrado(Integer.parseInt(ur.toString()));
 						if (userAux.getNombreUsuario().equals(aNombreUsuario)
-								&& userAux.getPassword().equals(aPassword) && userAux.getPrivacidad() != 3) {
+								&& userAux.getPassword().equals(aPassword)) {
 							return user = usuarios_registrados.cargarUsuarioRegistrado(userAux.getID());
 						}
-						else {
-							Notification.show("Usuario bloqueado");
-							return null;
-						}
+						
 					} else if (ur instanceof UsuarioComercial) {
 						UsuarioComercial userAux = cargarUsuarioComercial(Integer.parseInt(ur.toString()));
 						if (userAux.getNombreUsuarioComercial().equals(aNombreUsuario)
