@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-de-seguidores-item template.
@@ -24,6 +25,58 @@ public class VistaListaDeSeguidoresItem extends LitTemplate {
 	private Element imagen;
 	@Id("nombreUsuario")
 	private Button nombreUsuario;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
+	
+	
+
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
+	}
+
+
+
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
+	}
+
+
+
+	public HorizontalLayout getLayoutItem() {
+		return layoutItem;
+	}
+
+
+
+	public void setLayoutItem(HorizontalLayout layoutItem) {
+		this.layoutItem = layoutItem;
+	}
+
+
+
+	public Element getImagen() {
+		return imagen;
+	}
+
+
+
+	public void setImagen(Element imagen) {
+		this.imagen = imagen;
+	}
+
+
+
+	public Button getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+
+
+	public void setNombreUsuario(Button nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+
 
 	/**
      * Creates a new VistaListaDeSeguidoresItem.

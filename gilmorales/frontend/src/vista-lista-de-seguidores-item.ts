@@ -1,6 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-lista-de-seguidores-item')
@@ -16,13 +17,12 @@ export class VistaListaDeSeguidoresItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="justify-content: center;" id="layoutItem" theme="spacing-s">
- <vaadin-vertical-layout theme="spacing" id="imagen" style="justify-content: center;"></vaadin-vertical-layout>
+<vaadin-horizontal-layout class="content" style="justify-content: center; padding: 3px;" id="layoutItem" theme="spacing-s">
+ <vaadin-vertical-layout theme="spacing" id="imagen" style="justify-content: center;">
+  <vaadin-avatar id="vaadinAvatar" style="width: 60px; height: 60px;"></vaadin-avatar>
+ </vaadin-vertical-layout>
  <vaadin-button theme="tertiary" id="nombreUsuario" style="align-self: center;">
-  NombreUsuario
- </vaadin-button>
- <vaadin-button id="botonEliminarSeguidor" style="align-self: center;">
-  Eliminar
+   NombreUsuario 
  </vaadin-button>
 </vaadin-horizontal-layout>
 `;

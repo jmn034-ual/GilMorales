@@ -18,6 +18,20 @@ public class VistaListaDeSeguidores extends LitTemplate {
 
     @Id("layoutListaSeguidores")
 	private Element layoutListaSeguidores;
+    
+    
+
+	public Element getLayoutListaSeguidores() {
+		return layoutListaSeguidores;
+	}
+
+
+
+	public void setLayoutListaSeguidores(Element layoutListaSeguidores) {
+		this.layoutListaSeguidores = layoutListaSeguidores;
+	}
+
+
 
 	/**
      * Creates a new VistaListaDeSeguidores.

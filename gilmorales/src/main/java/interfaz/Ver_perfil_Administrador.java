@@ -42,6 +42,7 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 			Ver_publicaciones_gustadas();
 			Lista_publicaciones_usuario();
 		}
+		 Bloquear_usuario();
 	}
 	
 	public void Ver_publicaciones_gustadas() {

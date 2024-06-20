@@ -33,6 +33,9 @@ public class Login extends Iniciar_sesion{
 	
 	public Login(Usuario_No_Registrado interfaz) {
     	this.interfaz = interfaz;
+    	this.getUsuarioTF().setValue("");
+		this.getContrasenaTF().setValue("");
+		this.getRecuperarContrasenaB().setVisible(false);
     	Registrar();
     	Validar_datos();
 	}

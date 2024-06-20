@@ -73,16 +73,17 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidores() {
-		_ver_seguidores = new Ver_seguidores(this.user);
+		_ver_seguidores = new Ver_seguidores(this.user, this);
 		this.getVerSeguidores().addClickListener(event ->{
 			this._ver_seguidores.setVisible(true);
 			this._ver_seguidos.setVisible(false);
 			this._editar_perfil.setVisible(false);
 			this._configurar_perfil.setVisible(false);
-			Dialog dialog = new Dialog(_ver_seguidores);
+			Dialog dialog = new Dialog();
+			dialog.add(_ver_seguidores);
+			dialog.setCloseOnEsc(true);
+			dialog.setWidth("50%");
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
-			dialog.setHeight("70%");
-			dialog.setWidth("61%");
 			this._ver_seguidores.getBotonCerrar().addClickListener(event2 ->{
 				dialog.close();
 			});
@@ -91,16 +92,17 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_seguidos() {
-		_ver_seguidos = new Ver_seguidos(this.user);
+		_ver_seguidos = new Ver_seguidos(this.user, this);
 		this.getVerSiguiendos().addClickListener(event ->{
 			this._ver_seguidos.setVisible(true);
 			this._ver_seguidores.setVisible(false);
 			this._editar_perfil.setVisible(false);
 			this._configurar_perfil.setVisible(false);
-			Dialog dialog = new Dialog(_ver_seguidos);
+			Dialog dialog = new Dialog();
+			dialog.add(_ver_seguidos);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
-			dialog.setHeight("70%");
-			dialog.setWidth("61%");
+			dialog.setCloseOnEsc(true);
+			dialog.setWidth("50%");
 			this._ver_seguidos.getBotonSalir().addClickListener(event2 ->{
 				dialog.close();
 			});

@@ -17,6 +17,7 @@ public class Lista_Me_Gustas_Publicacion extends VistaListaMeGustasPublicacion{
 	Lista_Me_Gustas_Publicacion_item meGusta;
 	public Lista_Me_Gustas_Publicacion(Publicacion p) {
 		this.p = p;
+		cargarMeGustas();
 	}
 	
 	public void cargarMeGustas() {
