@@ -35,12 +35,13 @@ public class UsuariosRegistrados {
 		return usuario;	
 	}
 	
-	public void configurarPerfil(int usuarioID) throws PersistentException {
-		UsuarioRegistrado usuario = null;
+	public void configurarPerfil(int usuarioID, int privacidad) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(usuarioID);
-
+			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(usuarioID);
+			usuario.setPrivacidad(privacidad);
+			UsuarioRegistradoDAO.save(usuario);
+			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}

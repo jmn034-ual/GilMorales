@@ -34,9 +34,11 @@ public class Ver_comentarios extends VistaVerComentarios {
 		Cabecera_TOP cabeceraTopAux = null;
 		if (interfaz instanceof Ver_comentarios_Usuario_Registrado) {
 			Ver_comentarios_Usuario_Registrado auxUR = (Ver_comentarios_Usuario_Registrado) interfaz;
-			if (auxUR.verPublicacion != null) {
-				cabeceraTopAux = auxUR.verPublicacion.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
-			} else {
+			if (auxUR.verAjena != null) {
+				cabeceraTopAux = auxUR.verAjena.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
+			}else if(auxUR.verPropia != null) {
+				cabeceraTopAux = auxUR.verPropia.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
+			}	else {
 				cabeceraTopAux = auxUR.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
 			}
 			this.ver_perfil = new Ver_perfil_publico(auxUR.publicacion.getPerteneceA(), interfaz, cabeceraTopAux);

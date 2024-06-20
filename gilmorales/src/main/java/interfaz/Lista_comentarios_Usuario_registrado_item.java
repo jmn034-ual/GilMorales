@@ -16,8 +16,8 @@ public class Lista_comentarios_Usuario_registrado_item extends Lista_Comentarios
 		this.getNombreUsuario().setText(comentario.getEsComentadoPor().getNombreUsuario());
 		this.getComentarioL().setText(comentario.getComentario());
 		this.getNumeroMeGusta().setText(comentario.getNumeroMeGustas()+"");
-		this.getMeGustaB().setEnabled(false);
-		this.getDenunciarB().setVisible(false);
+		this.getMeGustaB().setEnabled(true);
+		this.getDenunciarB().setVisible(true);
 		this.getBorrarComentarioB().setVisible(false);
 		this._lista_comentarios__Usuario_registrado_ = interfaz;
 		this.comentario = comentario;

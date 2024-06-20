@@ -20,7 +20,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	public Add_publicacion _add_publiacacion;
 	public Ver_perfil_propio ver_perfil_propio;
 	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
-	public Usuario_Registrado urInterfaz;
+//	public Usuario_Registrado urInterfaz;
 	public BDPrincipal bd = new BDPrincipal();
 	
 	public Ver_publicacion_propia() {}
@@ -47,6 +47,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		Eliminar_publicacion_propia();
 		Ver_perfil_propio();
 		Ver_me_gustas_publicacion();
+		Ver_comentarios__Usuario_Registrado_(this);
 	}
 
 	public void Eliminar_publicacion_propia() {

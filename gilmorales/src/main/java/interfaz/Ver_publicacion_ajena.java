@@ -19,7 +19,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public Lista_usuarios_registrados_item _lista_usuarios_registrados;
 	public Denunciar_publicacion _denunciar_publicacion;
 	public Ver_perfil_publico _ver_perfil;
-	Usuario_Registrado urInterfaz;
+	
 	BDPrincipal bd = new BDPrincipal();
 
 	public Ver_publicacion_ajena(Publicacion p, UsuarioRegistrado user, Object urInterfaz) {
@@ -78,7 +78,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 		Comentar();
 		Denunciar_publicacion();
 		Dar_me_gusta_publicacion();
-		this.Ver_comentarios__Usuario_Registrado_(this);
+		Ver_comentarios__Usuario_Registrado_(this);
 		//Ver_perfil();
 	}
 
@@ -93,6 +93,8 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 			this.bd.comentarPublicacion(this.publicacion.getIdPublicacion(), this.user.getID(),
 					this.getTextComentario().getValue());
 			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+			this.getTextComentario().setValue("");
+			this.getNumComentarios().setText(this.publicacion.getNumComentarios() +"");
 
 		});
 	}

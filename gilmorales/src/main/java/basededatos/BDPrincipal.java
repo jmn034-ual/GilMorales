@@ -36,6 +36,15 @@ public class BDPrincipal
 	public Denuncias denuncias = new Denuncias();
 
 	TreeMap<String, String> nombresUsuarios = new TreeMap<String, String>();
+	
+	public void configurarPerfil(int aUsuarioComercialID, int privacidad) {
+		try {
+			this.usuarios_registrados.configurarPerfil(aUsuarioComercialID, privacidad);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public UsuarioComercial cargarUsuarioComercial(int aUsuarioComercialID) {
 		UsuarioComercial comercial = null;

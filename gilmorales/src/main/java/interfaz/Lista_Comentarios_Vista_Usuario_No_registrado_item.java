@@ -34,8 +34,11 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 			Lista_comentarios_Usuario_registrado_item listaComentariosItem = (Lista_comentarios_Usuario_registrado_item) contenedor;
 			if(listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.publicacionItem != null)
 				this.cabecera = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz;
+			else if(listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verAjena != null)
+				this.cabecera = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verAjena.urInterfaz;
 			else
-				this.cabecera = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verPublicacion.urInterfaz;
+				this.cabecera = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verPropia.urInterfaz;
+
 			this.ver_perfil = new Ver_perfil_publico(comentario.getEsComentadoPor(), listaComentariosItem, this.cabecera._cabecera_Usuario_Registrado._cabecera_TOP);
 		}
 		this.getNombreUsuario().addClickListener(event ->{

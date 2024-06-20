@@ -38,8 +38,8 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 
 	public void Add_publicacion() {
-		this.addPubli = new Add_publicacion(urInterfaz.ur, urInterfaz);
 		this.getBotonAniadir().addClickListener(event->{
+			this.addPubli = new Add_publicacion(urInterfaz.ur, urInterfaz);
 			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			this.urInterfaz.getVaadinHorizontalLayout().add(addPubli);
 		});

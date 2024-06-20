@@ -13,9 +13,12 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 
 	public Ver_comentarios_Usuario_Registrado _ver_comentarios__Usuario_Registrado_;
 	public Lista_Top_comentarios_Usuario_Registrado _lista_Top_comentarios__Usuario_Registrado_;
+	Ver_publicacion_ajena ajena;
+	Ver_publicacion_propia propia;
 	Publicacion publicacion;
 	UsuarioRegistrado user;
 	UsuarioComercial uc;
+	Usuario_Registrado urInterfaz;
 
 	
 	public Ver_publicacion_usuario_Registrado() {}
@@ -35,10 +38,16 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 	}
 	
 	
-	public void Ver_comentarios__Usuario_Registrado_(Object interfaz) {
-		Ver_publicacion_ajena aux = (Ver_publicacion_ajena) interfaz;
+	public void Ver_comentarios__Usuario_Registrado_(Object interfaz) {		
 		this.getBotonVerComentario().addClickListener(event->{
-			_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, aux, this.user);
+			
+			if(interfaz instanceof Ver_publicacion_ajena) {
+				 ajena =  (Ver_publicacion_ajena) interfaz;
+					_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this, this.user);
+			}else {
+				propia = (Ver_publicacion_propia) interfaz;	
+				_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this, this.user);
+			}
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_comentarios__Usuario_Registrado_);
 		});

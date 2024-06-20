@@ -74,25 +74,18 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.getLabelUsuarioPrivado().setVisible(false);
 		this.getListaMeGustas().setVisible(true);
 		this.getBotonBloquear().setVisible(false);
-//		if (user.seguir.contains(userAver)) {
-//			this.getBotonSeguir().setText("Dejar de Seguir");
-//		} else {
-//			this.getBotonSeguir().setText("Seguir");
-//		}
-//		
-
+		if (user.seguir.contains(userAver)) {
+			this.getBotonSeguir().setText("Dejar de Seguir");
+		} 
 	}
 
 	public void Seguir() {
-		if (user.seguir.contains(userAver)) {
-			this.getBotonSeguir().setText("Dejar de Seguir");
-		} else if(!user.seguir.contains(userAver)){
-			this.getBotonSeguir().setText("Seguir");
-		}
 		this.getBotonSeguir().addClickListener(event -> {
 			this.bd.seguirUsuario(user.getID(), this.userAver.getID());
 			user = this.bd.cargarUsuarioRegistrado(user.getID());
-			
+			if(this.getBotonSeguir().getText().equals("Dejar de Seguir"))
+				this.getBotonSeguir().setText("Seguir");
+
 		});
 	}
 
