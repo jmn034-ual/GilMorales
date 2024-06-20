@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import TikTok.MainView;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaUsuarioRegistrado;
 import basededatos.BDPrincipal;
@@ -12,11 +13,12 @@ public class Usuario_Registrado extends VistaUsuarioRegistrado{
 	public Lista_publicaciones_Usuario_Registrado listaPublicaciones;
 	public Cabecera_Usuario_Registrado _cabecera_Usuario_Registrado;
 	UsuarioRegistrado ur;
+	MainView mainview;
 	
-	public Usuario_Registrado(int UsuarioID) {
+	public Usuario_Registrado(MainView mainview , int UsuarioID) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-
+		this.mainview = mainview;
 		this.ur = _iUsuario_Registrado.cargarUsuarioRegistrado(UsuarioID);
 		Cabecera_Usuario_Registrado();
 		Lista_publicaciones__Usuario_Registrado_();

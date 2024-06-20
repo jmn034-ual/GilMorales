@@ -21,6 +21,9 @@ public class Video extends HtmlContainer implements ClickNotifier<com.vaadin.flo
         getElement().setProperty("controls", true);
         getElement().setProperty("autoplay", true);
         getElement().setProperty("muted", true);
+        this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+//		this.getStyle().set("object-fit", "cover");
         getElement().setProperty("overflow", "hidden");
         getElement().getStyle().set("border-radius", "8px");
     }

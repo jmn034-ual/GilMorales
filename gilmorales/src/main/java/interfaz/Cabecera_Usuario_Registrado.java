@@ -30,11 +30,11 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 		this.urInterfaz = urInterfaz; 
     	Cabecera_TOP();  
     	Add_publicacion();
-    	
     	volverInicio();
     	Ver_perfil_propio();
     	Ver_notificaciones();
     	Realizar_busqueda();
+    	Cerrar_sesion(this);
 	}
 
 	public void Add_publicacion() {
@@ -43,8 +43,8 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this.getBotonAniadir().setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
-			urInterfaz.getVaadinHorizontalLayout().removeAll();
-			urInterfaz.getVaadinHorizontalLayout().add(addPubli);
+			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
+			this.urInterfaz.getVaadinHorizontalLayout().add(addPubli);
 		});
 	}
 	
@@ -55,19 +55,19 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this.getBotonNotificaciones().setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
-			urInterfaz.getVaadinHorizontalLayout().removeAll();
-			urInterfaz.getVaadinHorizontalLayout().add(_ver_notificaciones);
+			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
+			this.urInterfaz.getVaadinHorizontalLayout().add(_ver_notificaciones);
 		});
 	}
 
 	public void Ver_perfil_propio() {
-		_ver_perfil_propio =  new Ver_perfil_propio(this, this._cabecera_TOP);
+		_ver_perfil_propio =  new Ver_perfil_propio(this._cabecera_TOP);
 		this.getBotonPerfil().addClickListener(event -> {
 			this.getBotonPerfil().setVisible(false);
 			this.getBotonAniadir().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
-			urInterfaz.getVaadinHorizontalLayout().removeAll();
-			urInterfaz.getVaadinHorizontalLayout().add(_ver_perfil_propio);
+			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
+			this.urInterfaz.getVaadinHorizontalLayout().add(_ver_perfil_propio);
 		});
 	}
 	
@@ -94,6 +94,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 			this.getBotonAniadir().setVisible(true);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonNotificaciones().setVisible(true);
+			this.addPubli = new Add_publicacion(urInterfaz.ur, urInterfaz);
 			urInterfaz.ur = urInterfaz._iUsuario_Registrado.cargarUsuarioRegistrado(urInterfaz.ur.getID());
 			urInterfaz.getVaadinHorizontalLayout().removeAll();
 			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(this), new Lista_publicaciones_Usuario_Registrado(urInterfaz));

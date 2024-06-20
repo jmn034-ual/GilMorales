@@ -51,7 +51,8 @@ public class Cabecera_Administrador extends VistaCabeceraAdmin{
 
 	public void Cerrar_sesion() {
 		this.getCerrarSesionB().addClickListener(event->{
-			
+			this._administrador.mainview.removeAll();
+			this._administrador.mainview.add(new Usuario_No_Registrado(this._administrador.mainview));
 		});
 		
 	}

@@ -14,7 +14,7 @@ export class VistaListaPublicacionesUsuarioNoRegistrado extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="flex-grow: 0; align-items: flex-start; flex-shrink: 0; overflow-y: auto; z-index: 999; scrollbar-width: thin; scrollbar-color: transparent transparent; width: 100%; padding-bottom: var(--lumo-space-xl); height: 100%; padding-top: var(--lumo-space-xl);" id="layoutPublicacionesUNR"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="flex-grow: 0; align-items: center; flex-shrink: 0; overflow-y: auto; z-index: 999; scrollbar-width: thin; scrollbar-color: transparent transparent; width: 100%; padding-bottom: var(--lumo-space-xl); height: 100%; padding-top: var(--lumo-space-xl);" id="layoutPublicacionesUNR"></vaadin-vertical-layout>
 `;
   }
 

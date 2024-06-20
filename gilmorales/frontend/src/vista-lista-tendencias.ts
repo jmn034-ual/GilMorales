@@ -14,7 +14,7 @@ export class VistaListaTendencias extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
 `;
   }
 

@@ -27,7 +27,7 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado extends VistaListaCom
 	public Lista_Comentarios_Vista_Usuario_No_registrado(Usuario_No_Registrado unr, Publicacion publicacion, Ver_comentarios_Usuario_No_registrado interfaz) {
 		this.getStyle().set("width", "100%");
 //    	this.getStyle().set("height", "100%");
-//		this.unr = unr;
+		this.unr = unr;
 		this._ver_comentarios__Usuario_No_registrado_ = interfaz;
 		this.publicacion = publicacion;
 		cargarComentarios();

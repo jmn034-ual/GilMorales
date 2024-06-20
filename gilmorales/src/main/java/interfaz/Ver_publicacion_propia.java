@@ -20,8 +20,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	public Add_publicacion _add_publiacacion;
 	public Ver_perfil_propio ver_perfil_propio;
 	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
-	//	private Publicacion publicacion;
-	private Usuario_Registrado urInterfaz;
+	public Usuario_Registrado urInterfaz;
 	private iUsuario_Registrado bd = new BDPrincipal();
 	
 	public Ver_publicacion_propia() {}
@@ -31,6 +30,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.urInterfaz = urInterfaz;
+//		this._add_publiacacion = new Add_publicacion(this.urInterfaz.ur, this.urInterfaz);
 		this.getVaadinHorizontalLayout2().setVisible(false);
 		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
@@ -44,7 +44,6 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		this.getFechaSubida().setText(this.publicacion.getFechaPublicacion());
 		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+"");
 		this.getVideo().add(new Video(publicacion.getVideo()));
-		this.getBotonMeGusta().setVisible(false);
 		Eliminar_publicacion_propia();
 		Ver_perfil_propio();
 		Ver_me_gustas_publicacion();
@@ -58,7 +57,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	}
 
 	public void Ver_perfil_propio() {
-		this.ver_perfil_propio = new Ver_perfil_propio(_add_publiacacion.urInterfaz._cabecera_Usuario_Registrado, _add_publiacacion.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
+		this.ver_perfil_propio = new Ver_perfil_propio(new Cabecera_TOP(urInterfaz._cabecera_Usuario_Registrado));
 		this.getVerPerfil().addClickListener(event ->{
 			UsuarioRegistrado ur = this.publicacion.getPerteneceA();
 			if(ur != null) {
@@ -66,11 +65,12 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 				this.urInterfaz.getVaadinHorizontalLayout().add(ver_perfil_propio);
 			}
 		});	
+//		}
 	}
 
 	public void Ver_me_gustas_publicacion() {
 		_ver_me_gustas_publicacion = new Ver_me_gustas_publicacion(this.publicacion);
-		this.getBotonVerMeGustas().addClickListener(event ->{
+		this.getBotonMeGusta().addClickListener(event ->{
 			Dialog dialog = new Dialog(_ver_me_gustas_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("70%");

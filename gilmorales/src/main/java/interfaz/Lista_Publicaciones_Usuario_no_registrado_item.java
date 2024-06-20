@@ -34,10 +34,14 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 		Ver_publicacion__Usuario_No_Registrado_();
 	}
 	public void mostrarDatosPublicacion() {
+		Video video = new Video(this.publicacion.getVideo());
+		video.getStyle().set("width", "100%");
+		video.getStyle().set("height", "100%");
+        video.getStyle().set("border-radius", "8px");
 		this.getLayoutBotonesUsuarioR().setVisible(false);
 		this.getLabelGeolocalizacion().setText(publicacion.getLocalizacion());
-		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(this.publicacion.getVideo()));
-		this.getVaadinButton().setVisible(false);
+		this.getLayoutVideo().as(VerticalLayout.class).add(video);
+		this.getVaadinButton().setEnabled(false);
 		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
 		this.getLayoutComentar().setVisible(false);
 		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+"");
@@ -63,7 +67,7 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	}
 
 	public void Ver_publicacion__Usuario_No_Registrado_() {
-		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(publicacion, this);
+		this.verPublicacionUNR = new Ver_publicacion_Usuario_No_Registrado(this.publicacion, this);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event ->{
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().removeAll();
 			_publicaciones__Usuario_no_registrado_.unr.getVaadinHorizontalLayout().add(verPublicacionUNR);

@@ -13,18 +13,22 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado_item extends VistaLista
 	private Button _verPerfilB;
 	private Label _comentarioL;
 	public Lista_Top_Comentarios_Usuario_No_Registrado _lista_Top_Comentarios__Usuario_No_Registrado_;
-	public Ver_Perfil__2 _ver_perfil;
+	public Ver_perfil_publico _ver_perfil;
 	Comentario comentario;
 	
 	public Lista_Top_Comentarios_Usuario_No_Registrado_item(Comentario comentario) {
+		this.getStyle().set("width", "100%");
 		this.comentario = comentario;
 		datosComentario();
 	}
 	
 	public Lista_Top_Comentarios_Usuario_No_Registrado_item(Comentario comentario, Lista_Top_Comentarios_Usuario_No_Registrado interfaz) {
+		this.getStyle().set("width", "100%");
 		this.comentario = comentario;
 		this._lista_Top_Comentarios__Usuario_No_Registrado_ = interfaz;
+		this.getMeGustaB().setEnabled(false);
 		datosComentario();
+		Ver_perfil();
 	}
 	
 	public void datosComentario() {
@@ -32,11 +36,14 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado_item extends VistaLista
 		this.getNombreDeUsuarioB().setText(comentario.getEsComentadoPor().getNombreUsuario());
 		this.getComentarioL().setText(comentario.getComentario());
 		this.getNumeroMeGusta().setText(comentario.getNumeroMeGustas()+"");
-		this.getMeGustaL().setVisible(false);
 		this.getBorrarComentarioB().setVisible(false);
 	}
 
 	public void Ver_perfil() {
-		throw new UnsupportedOperationException();
+		this._ver_perfil = new Ver_perfil_publico(this.comentario.getEsComentadoPor(), this, this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.cabeceraUNR._cabecera_TOP);
+		this.getNombreDeUsuarioB().addClickListener(event ->{
+			this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.getVaadinHorizontalLayout().removeAll();
+			this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.getVaadinHorizontalLayout().add(this._ver_perfil);
+		});
 	}
 }

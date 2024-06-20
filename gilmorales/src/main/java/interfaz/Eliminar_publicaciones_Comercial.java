@@ -19,7 +19,7 @@ public class Eliminar_publicaciones_Comercial extends Eliminar_publicaciones {
     	Cancelar();
     	this.getBotonCancelar().addClickListener(event -> {
     		this._usuario_comercial.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-    		this._usuario_comercial.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Usuario_comercial(this._usuario_comercial.comercial.getID()));
+    		this._usuario_comercial.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Usuario_comercial(this._usuario_comercial.mainview, this._usuario_comercial.comercial.getID()));
     	});
 	}
 	

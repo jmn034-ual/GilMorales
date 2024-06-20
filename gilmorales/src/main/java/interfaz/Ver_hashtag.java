@@ -39,7 +39,7 @@ public class Ver_hashtag extends VistaVerHashtag{
 		this.getStyle().set("height", "100%");
 		this.hashtag = hashtag;
 		this.getH2().setText(this.hashtag.getNombreHashtag());
-		this.getImagenHashtag().as(VerticalLayout.class).add(new Image("icons/luffy.jpg", this.hashtag.getNombreHashtag()));
+		this.getImagenHashtag().as(VerticalLayout.class).add(new Image("icons/hashtag.jpeg", this.hashtag.getNombreHashtag()));
 		Publicaciones_hashtag();
 		Visualizaciones();
 	}

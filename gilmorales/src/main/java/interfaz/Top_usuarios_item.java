@@ -35,7 +35,7 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 		}else if(this.userInterfaz != null){
 			this.ver_perfil = new Ver_perfil_publico(this.usuario, this, this._top_usuarios._cabecera_TOP);
 		}else {
-			this.verPerfilAdmin = new Ver_perfil_Administrador(this.usuario);
+			this.verPerfilAdmin = new Ver_perfil_Administrador( this._top_usuarios._cabecera_TOP, this.usuario);
 		}
 		this.getNombreUsuario().addClickListener(event ->{
 			if(this.unrInterfaz != null) {

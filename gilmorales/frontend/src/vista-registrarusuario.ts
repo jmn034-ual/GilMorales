@@ -1,10 +1,11 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-registrarusuario')
 export class VistaRegistrarusuario extends LitElement {
@@ -19,10 +20,9 @@ export class VistaRegistrarusuario extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; background-color: #ffffff;" id="vaadinVerticalLayout">
- <vaadin-horizontal-layout style="align-self: center;" id="vaadinHorizontalLayout">
-  <h1 id="h1">Registrarse</h1>
- </vaadin-horizontal-layout>
+<vaadin-vertical-layout style="width: 100%; background-color: #ffffff;" id="vaadinVerticalLayout" theme="spacing-xs">
+ <h1 id="h1" style="align-self: center;">Registrarse</h1>
+ <vaadin-avatar id="vaadinAvatar" style="align-self: center; width: 150px; height: 150px;"></vaadin-avatar>
  <vaadin-vertical-layout theme="spacing" style="width: 70%; align-self: center; flex-grow: 0; flex-shrink: 1;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout2">
    <label style="width: 20%; align-self: center;" id="label1">Nombre:</label>

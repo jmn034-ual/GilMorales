@@ -48,11 +48,12 @@ public class Ver_comentarios_Administrador extends Ver_comentarios{
 					this._ver_publicacion__Administrador_._lista_Publicaciones__Administrador_._lista_Publicaciones__Administrador_._administrador._cabecera_Administrador.getInicio().click();
 				}else if(this._ver_publicacion__Administrador_._lista_publicaciones_gustadas != null) {
 					this.getVaadinHorizontalLayout().removeAll();
-					this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.publicacion.getPerteneceA()));
+					this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador( this._ver_publicacion__Administrador_.admin._cabecera_Administrador.cabeceraTOP,
+							this.publicacion.getPerteneceA()));
 					this.bd.eliminarPublicacion(this.publicacion.getIdPublicacion());
 				}else {
 					this.getVaadinHorizontalLayout().removeAll();
-					this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.publicacion.getPerteneceA()));
+					this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this._ver_publicacion__Administrador_.admin._cabecera_Administrador.cabeceraTOP, this.publicacion.getPerteneceA()));
 					this.bd.eliminarPublicacion(this.publicacion.getIdPublicacion());
 				}
 			}

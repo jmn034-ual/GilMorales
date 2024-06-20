@@ -22,6 +22,7 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 	public Lista_denuncias_item _lista_denuncias;
 	public Lista_Publicaciones_Administrador_item _lista_Publicaciones__Administrador_;
 	public 	UsuarioRegistrado user;
+	Cabecera_Usuario_Registrado cabecera;
 	
 	public Ver_Perfil__2() {}
 	
@@ -34,22 +35,22 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 	protected void asignarInterfaz(Object interfaz) {
 		if(interfaz instanceof Lista_Top_Comentarios_Usuario_No_Registrado_item) {
 			this._lista_Top_Comentarios__Usuario_No_Registrado_ = (Lista_Top_Comentarios_Usuario_No_Registrado_item) interfaz;
-//			this.user = this._lista_Top_Comentarios__Usuario_No_Registrado_._lista_Top_Comentarios__Usuario_No_Registrado_.
 		}else if (interfaz instanceof Lista_de_seguidores_item) {
 			this._lista_de_seguidores = (Lista_de_seguidores_item) interfaz;
 		}else if (interfaz instanceof Lista_de_segidos_item) {
 			this._lista_de_segidos = (Lista_de_segidos_item) interfaz;
 		}else if (interfaz instanceof Top_usuarios_item) {
 			this._top_usuarios = (Top_usuarios_item) interfaz;
-//			this.user = this._top_usuarios._top_usuarios._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
 		}else if (interfaz instanceof Resultado_usuarios_item) {
 			this._resultado_usuarios = (Resultado_usuarios_item) interfaz;
 		}else if (interfaz instanceof Ver_publicacion_ajena) {
 			this._ver_publicacion_ajena = (Ver_publicacion_ajena) interfaz;
 		}else if (interfaz instanceof Lista_usuarios_registrados_item) {
 			this._lista_usuarios_registrados = (Lista_usuarios_registrados_item) interfaz;
-			if(this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null)
+			if(this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null) {
+				this.cabecera = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado;
 				this.user = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
+			}
 		}else if (interfaz instanceof Notificaciones_comun) {
 			this._notificaciones__comun_ = (Notificaciones_comun) interfaz;
 		}else if (interfaz instanceof Ver_comentarios) {

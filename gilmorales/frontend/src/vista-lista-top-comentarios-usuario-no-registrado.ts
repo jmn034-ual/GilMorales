@@ -14,7 +14,7 @@ export class VistaListaTopComentariosUsuarioNoRegistrado extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="listaTopComentarios"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="listaTopComentarios"></vaadin-vertical-layout>
 `;
   }
 

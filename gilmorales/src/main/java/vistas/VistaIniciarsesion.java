@@ -22,8 +22,6 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-iniciarsesion.ts")
 public class VistaIniciarsesion extends LitTemplate {
 
-
-
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout")
@@ -36,32 +34,24 @@ public class VistaIniciarsesion extends LitTemplate {
 	private TextField usuarioTF;
 	@Id("vaadinHorizontalLayout2")
 	private HorizontalLayout vaadinHorizontalLayout2;
+	@Id("contrasenaTF")
+	private PasswordField contrasenaTF;
+	@Id("vaadinHorizontalLayout3")
+	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("recuperarContrasenaB")
 	private Button recuperarContrasenaB;
 	@Id("vaadinHorizontalLayout4")
 	private HorizontalLayout vaadinHorizontalLayout4;
 	@Id("iniciarSesionB")
 	private Button iniciarSesionB;
-	@Id("vaadinHorizontalLayout5")
-	private HorizontalLayout vaadinHorizontalLayout5;
-	@Id("googleB")
-	private Button googleB;
-	@Id("facebookB")
-	private Button facebookB;
-	@Id("twitterB")
-	private Button twitterB;
-	@Id("instagramB")
-	private Button instagramB;
 	@Id("vaadinHorizontalLayout6")
 	private HorizontalLayout vaadinHorizontalLayout6;
 	@Id("noCuentraL")
 	private Label noCuentraL;
 	@Id("registrarB")
 	private Button registrarB;
-	@Id("vaadinHorizontalLayout3")
-	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("contrasenaTF")
-	private PasswordField contrasenaTF;
+	
+	
 
 	public Element getVaadinVerticalLayout1() {
 		return vaadinVerticalLayout1;
@@ -135,6 +125,30 @@ public class VistaIniciarsesion extends LitTemplate {
 
 
 
+	public PasswordField getContrasenaTF() {
+		return contrasenaTF;
+	}
+
+
+
+	public void setContrasenaTF(PasswordField contrasenaTF) {
+		this.contrasenaTF = contrasenaTF;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout3() {
+		return vaadinHorizontalLayout3;
+	}
+
+
+
+	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
+		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
+	}
+
+
+
 	public Button getRecuperarContrasenaB() {
 		return recuperarContrasenaB;
 	}
@@ -171,66 +185,6 @@ public class VistaIniciarsesion extends LitTemplate {
 
 
 
-	public HorizontalLayout getVaadinHorizontalLayout5() {
-		return vaadinHorizontalLayout5;
-	}
-
-
-
-	public void setVaadinHorizontalLayout5(HorizontalLayout vaadinHorizontalLayout5) {
-		this.vaadinHorizontalLayout5 = vaadinHorizontalLayout5;
-	}
-
-
-
-	public Button getGoogleB() {
-		return googleB;
-	}
-
-
-
-	public void setGoogleB(Button googleB) {
-		this.googleB = googleB;
-	}
-
-
-
-	public Button getFacebookB() {
-		return facebookB;
-	}
-
-
-
-	public void setFacebookB(Button facebookB) {
-		this.facebookB = facebookB;
-	}
-
-
-
-	public Button getTwitterB() {
-		return twitterB;
-	}
-
-
-
-	public void setTwitterB(Button twitterB) {
-		this.twitterB = twitterB;
-	}
-
-
-
-	public Button getInstagramB() {
-		return instagramB;
-	}
-
-
-
-	public void setInstagramB(Button instagramB) {
-		this.instagramB = instagramB;
-	}
-
-
-
 	public HorizontalLayout getVaadinHorizontalLayout6() {
 		return vaadinHorizontalLayout6;
 	}
@@ -263,30 +217,6 @@ public class VistaIniciarsesion extends LitTemplate {
 
 	public void setRegistrarB(Button registrarB) {
 		this.registrarB = registrarB;
-	}
-
-
-
-	public HorizontalLayout getVaadinHorizontalLayout3() {
-		return vaadinHorizontalLayout3;
-	}
-
-
-
-	public void setVaadinHorizontalLayout3(HorizontalLayout vaadinHorizontalLayout3) {
-		this.vaadinHorizontalLayout3 = vaadinHorizontalLayout3;
-	}
-
-
-
-	public PasswordField getContrasenaTF() {
-		return contrasenaTF;
-	}
-
-
-
-	public void setContrasenaTF(PasswordField contrasenaTF) {
-		this.contrasenaTF = contrasenaTF;
 	}
 
 

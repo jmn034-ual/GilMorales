@@ -4,6 +4,7 @@ import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import TikTok.MainView;
 import bd_dcl.UsuarioComercial;
 import vistas.VistaUsuarioComercialPrincipal;
 import basededatos.BDPrincipal;
@@ -19,10 +20,12 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 	public Lista_publicaciones_Comercial _lista_publicaciones__Comercial_;
 	
 	UsuarioComercial comercial;
+	MainView mainview;
 
-	public Usuario_comercial(int UsuarioComercialID) {
+	public Usuario_comercial(MainView mainview, int UsuarioComercialID) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.mainview = mainview;
 		this.comercial = _iUsuario_comercial.cargarUsuarioComercial(UsuarioComercialID);
 		this.Cabecera_Usuario_Comercial();
 		this.getVaadinAvatar().setImage(this.comercial.getFoto());

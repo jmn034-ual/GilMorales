@@ -42,7 +42,7 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 
 
 	public void Ver_perfil() {
-		_ver_perfil = new Ver_perfil_Administrador(denunciante);
+		_ver_perfil = new Ver_perfil_Administrador( this._lista_denuncias._ver_denuncias._gestionar_denuncias._cabecera_Administrador.cabeceraTOP, denunciante);
 		getNombreUsuario().addClickListener(event->{
 			this._lista_denuncias._ver_denuncias._gestionar_denuncias.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this._lista_denuncias._ver_denuncias._gestionar_denuncias.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_perfil);

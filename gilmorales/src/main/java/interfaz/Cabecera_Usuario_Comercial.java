@@ -17,8 +17,9 @@ public class Cabecera_Usuario_Comercial extends Comun_Comercial_y_Usuario_Regist
 		this.Add_publicacion();
 		this.getBotonPerfil().addClickListener(event ->{
 			this._usuario_comercial.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this._usuario_comercial.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Usuario_comercial(this._usuario_comercial.comercial.getID()));
+			this._usuario_comercial.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Usuario_comercial(this._usuario_comercial.mainview, this._usuario_comercial.comercial.getID()));
 		});
+		Cerrar_sesion(this);
 	}
 	
 	public void Add_publicacion() {

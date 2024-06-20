@@ -67,16 +67,13 @@ public class Add_publicacion extends VistaAddpublicacion{
 
 	public void Subir_video() {
 		this.getBotonSubir().addClickListener(event -> {
-//			MemoryBuffer  buffer = new MemoryBuffer ();
 			createUploadDirectory();
-
-
 			FileBuffer buffer = new FileBuffer();
 
 			Upload upload = new Upload(buffer);
 			
 			upload.setAcceptedFileTypes("video/mp4");
-			upload.setMaxFileSize(1000000000);
+			upload.setMaxFileSize(1000 * 1024 * 1024);
 
 			Dialog dialog = new Dialog();
 			dialog.getElement().setAttribute("aria-label", "Subir Video");
@@ -121,7 +118,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 	}
 
 	public void Ver_publicacion_propia() {
-		if(urInterfaz != null) {
+		if(this.urInterfaz != null) {
 			this.getBotonPublicar().addClickListener(event ->{
 				this.urInterfaz._cabecera_Usuario_Registrado.getBotonAniadir().setVisible(true);
 			});
@@ -139,7 +136,7 @@ public class Add_publicacion extends VistaAddpublicacion{
 				this.publicacion = bd.addPublicacion(this.localizacion,
 						this.getTextAreaDescripcion().getValue(), this.urlVideo, ur.getID());
 				this.getVaadinHorizontalLayout().removeAll();
-				_ver_publicacion_propia = new Ver_publicacion_propia(publicacion, urInterfaz);
+				_ver_publicacion_propia = new Ver_publicacion_propia(publicacion, this.urInterfaz);
 				this.getVaadinHorizontalLayout().add(_ver_publicacion_propia);
 			}else {
 				this.publicacion = bd.addPublicacionComercial(this.localizacion, 
@@ -153,9 +150,13 @@ public class Add_publicacion extends VistaAddpublicacion{
 
 	public void Descartar() {
 		this.getBotonDescartar().addClickListener(event ->{
-			//Falta controlar el caso del Comercial
+			if(this.urInterfaz != null) {
 			urInterfaz.getVaadinHorizontalLayout().removeAll();
 			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(urInterfaz._cabecera_Usuario_Registrado), new Lista_publicaciones_Usuario_Registrado(urInterfaz));
+			}else {
+				this.ucInterfaz.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+				this.ucInterfaz.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Usuario_comercial(this.ucInterfaz.mainview, this.uc.getID()));
+			}
 		});
 	}
 	

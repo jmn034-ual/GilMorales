@@ -27,10 +27,10 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 		customIcon.getStyle().set("width", "6%");
 		this.getLogoWeb().setIcon(customIcon);
 		this.getVaadinVerticalLayout().setVisible(false);
-//		Registrarse();
 		Cabecera_TOP();
 		Volver_Inicio();
 		Realizar_busqueda();
+		Registrarse();
 	}
 
 	public void Realizar_busqueda() {
@@ -47,18 +47,17 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 		this.unr.getVaadinHorizontalLayout().add(_cabecera_TOP);
 	}
 
-
-	
 	public void Volver_Inicio() {
-	this.getInicio().addClickListener(event -> {
-		unr.getVaadinHorizontalLayout().removeAll();
-		unr.getVaadinHorizontalLayout().add(new Cabecera_TOP(this), new Lista_Publicaciones_Usuario_no_registrado(unr));
-	});
-}
-//
-//	public void Registrarse() {
-//		this.getBotonRegistrarse().addClickListener(event -> {
-//			this.unr.inicioSesion.Registrar();
-//		});
-//	}
+		this.getInicio().addClickListener(event -> {
+			unr.getVaadinHorizontalLayout().removeAll();
+			unr.getVaadinHorizontalLayout().add(new Cabecera_TOP(this),
+					new Lista_Publicaciones_Usuario_no_registrado(unr));
+		});
+	}
+
+	public void Registrarse() {
+		this.getBotonRegistrarse().addClickListener(event -> {
+			this.unr.inicioSesion.getRegistrarB().click();
+		});
+	}
 }

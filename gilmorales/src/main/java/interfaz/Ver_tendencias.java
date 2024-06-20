@@ -11,10 +11,10 @@ public class Ver_tendencias extends VistaVerTendencias{
 	public Cabecera_TOP cabecera_top;
 	
 	public Ver_tendencias() {
-		this.getStyle().set("width", "100%");
-    	this.getStyle().set("height", "100%");
+		Ver_lista_Hashtag();
+		Tendencias();
 	}
-	
+		
 	public Ver_tendencias(Cabecera_TOP cabecera_TOP) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");

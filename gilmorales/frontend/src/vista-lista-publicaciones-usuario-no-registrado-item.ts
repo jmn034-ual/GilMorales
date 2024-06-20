@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-lista-publicaciones-usuario-no-registrado-item')
@@ -18,23 +19,23 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing" id="publicacion" style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout class="content" style="height: 100%; width: 100%;" id="layoutPublicacion">
+<vaadin-vertical-layout theme="spacing" id="publicacion" style="width: 100%; height: 100%; min-height: 100%; min-width: 100%;">
+ <vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; padding: 10px; min-width: 100%;" id="layoutPublicacion">
   <vaadin-vertical-layout id="vaadinVerticalLayout">
    <vaadin-vertical-layout theme="spacing-s" id="fotoPerfil">
     <vaadin-avatar id="vaadinAvatar"></vaadin-avatar>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout id="layoutVideoPublicacion" style="flex-grow: 1; flex-shrink: 0;">
+  <vaadin-vertical-layout id="layoutVideoPublicacion" style="flex-grow: 0; flex-shrink: 0; width: 1200px;">
    <vaadin-button theme="tertiary" id="botonNombreUsuario">
      NombreUsuario 
    </vaadin-button>
    <label id="labelGeolocalizacion">Geolocalización</label>
-   <label id="numVisualizaciones" style="align-self: flex-end;">0</label>
-   <vaadin-vertical-layout id="layoutVideo" style="align-self: stretch; flex-grow: 1; flex-shrink: 0;"></vaadin-vertical-layout>
+   <label id="numVisualizaciones" style="align-self: flex-end; padding-right: var(--lumo-space-xl);">0</label>
+   <vaadin-vertical-layout id="layoutVideo" style="align-self: center; flex-grow: 0; flex-shrink: 0; width: 1000px; display: flex; justify-content: center; align-items: center; overflow: hidden; height: 700px; background-color: black;"></vaadin-vertical-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="layoutDatos" style="justify-content: center; flex-grow: 0; flex-shrink: 0;">
-   <vaadin-horizontal-layout theme="spacing" id="layoutBotonesUsuarioR" style="align-self: stretch; justify-content: flex-end;">
+   <vaadin-horizontal-layout theme="spacing" id="layoutBotonesUsuarioR" style="align-self: flex-end; justify-content: flex-end;">
     <vaadin-button id="botonSeguir">
       Seguir 
     </vaadin-button>
@@ -42,22 +43,23 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
       Denunciar 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing-xl" id="layoutBotonesPublicacion" style="align-self: flex-end; justify-content: center;">
+   <vaadin-horizontal-layout theme="spacing-xl" id="layoutBotonesPublicacion" style="align-self: center; justify-content: center;">
     <vaadin-vertical-layout theme="spacing" id="layoutMeGustas">
      <label id="labelNumMeGustas" style="align-self: center;">0</label>
-     <label id="labelMeGustas" style="align-self: center;">Numero Me Gustas</label>
-     <vaadin-button id="vaadinButton" style="align-self: center;">
-       Me Gusta 
+     <vaadin-button theme="icon" aria-label="Add new" id="vaadinButton">
+      <iron-icon icon="vaadin:heart-o" id="ironIcon"></iron-icon>
      </vaadin-button>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout theme="spacing" id="layoutComentarios">
      <label id="labelNumComentarios" style="align-self: center;">0</label>
-     <vaadin-button id="botonVerComentarios" style="align-self: center;">
-       Ver Comentarios 
+     <vaadin-button theme="icon" aria-label="Add new" id="botonVerComentarios">
+      <iron-icon icon="vaadin:comments-o" id="ironIcon1"></iron-icon>
      </vaadin-button>
     </vaadin-vertical-layout>
    </vaadin-horizontal-layout>
-   <label id="labelDescripcion" style="flex-grow: 0; align-self: stretch;">Descripción de la publicación...</label>
+   <vaadin-vertical-layout theme="spacing" style="width: 300px; height: 30%;">
+    <label id="labelDescripcion" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%; word-wrap: break-word; white-space: normal; overflow-wrap: break-word;">Descripción de la publicación...</label>
+   </vaadin-vertical-layout>
    <vaadin-horizontal-layout theme="spacing-xs" id="layoutComentar" style="align-self: center;">
     <vaadin-text-field label="" placeholder="Escribe tu comentario..." id="textFieldComentario"></vaadin-text-field>
     <vaadin-button id="botonComentar">

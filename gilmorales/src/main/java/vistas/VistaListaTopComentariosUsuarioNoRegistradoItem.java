@@ -38,12 +38,14 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("numeroMeGusta")
 	private Label numeroMeGusta;
-	@Id("meGustaL")
-	private Label meGustaL;
 	@Id("meGustaB")
 	private Button meGustaB;
+	@Id("ironIcon")
+	private Element ironIcon;
 	@Id("borrarComentarioB")
 	private Button borrarComentarioB;
+	@Id("ironIcon1")
+	private Element ironIcon1;
 	
 	
 
@@ -143,18 +145,6 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 
 
 
-	public Label getMeGustaL() {
-		return meGustaL;
-	}
-
-
-
-	public void setMeGustaL(Label meGustaL) {
-		this.meGustaL = meGustaL;
-	}
-
-
-
 	public Button getMeGustaB() {
 		return meGustaB;
 	}
@@ -167,6 +157,18 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 
 
 
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
+
 	public Button getBorrarComentarioB() {
 		return borrarComentarioB;
 	}
@@ -175,6 +177,18 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 
 	public void setBorrarComentarioB(Button borrarComentarioB) {
 		this.borrarComentarioB = borrarComentarioB;
+	}
+
+
+
+	public Element getIronIcon1() {
+		return ironIcon1;
+	}
+
+
+
+	public void setIronIcon1(Element ironIcon1) {
+		this.ironIcon1 = ironIcon1;
 	}
 
 

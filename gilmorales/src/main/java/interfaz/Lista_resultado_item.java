@@ -37,14 +37,14 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 			else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null)
 				this._ver_perfil = new Ver_perfil_publico(user, this, this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado._cabecera_TOP);
 			else
-				this._ver_perfil = new Ver_perfil_Administrador(user);
+				this._ver_perfil = new Ver_perfil_Administrador(this._lista_resultado._realizar_busqueda._cabecera_Administrador.cabeceraTOP, user);
 		}else {
 			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null)
 				this._ver_perfil = new Ver_perfil_privado(user, this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado._cabecera_TOP);
 			else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null)
 				this._ver_perfil = new Ver_perfil_privado(user, this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado._cabecera_TOP);
 			else
-				this._ver_perfil = new Ver_perfil_Administrador(user);
+				this._ver_perfil = new Ver_perfil_Administrador(this._lista_resultado._realizar_busqueda._cabecera_Administrador.cabeceraTOP, user);
 		}
 		this.getBotonNombreUsuario().addClickListener(event -> {
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();

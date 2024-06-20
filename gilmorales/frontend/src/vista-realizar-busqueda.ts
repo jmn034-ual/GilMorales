@@ -16,7 +16,7 @@ export class VistaRealizarBusqueda extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="layoutListaResultadoBusqueda" style="flex-grow: 1; flex-shrink: 0; overflow-y: auto; width: 100%; height: 100%; padding: 0px;">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; flex-shrink: 0; justify-content: space-around;">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; flex-shrink: 0; justify-content: space-around; padding-top: var(--lumo-space-l);">
   <h2 id="tituloResultadoBusqueda" style="flex-grow: 0; flex-shrink: 0;">Resultado de la Busqueda</h2>
  </vaadin-horizontal-layout>
  <hr style="width: 95%;">

@@ -13,8 +13,10 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 	public Lista_publicaciones_gustadas_item _lista_publicaciones_gustadas;
 	public Ver_comentarios_Administrador _ver_comentarios__Administrador_;
 	public Lista_usuarios_registrados_item userRegistradoItem;
+	public Publicaciones_hashtag_item hashtagItem;
 	public Lista_Top_Comentarios_Administrador _lista_Top_Comentarios__Administrador_;
 	Publicacion publicacion;
+	Administrador admin;
 	
 	public Ver_publicacion_Administrador(Publicacion p, Object interfaz) {
 		this.getStyle().set("width", "100%");
@@ -22,14 +24,22 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 		this.publicacion = p;
 		if(interfaz instanceof Lista_Publicaciones_Administrador_item) {
 			this._lista_Publicaciones__Administrador_ = (Lista_Publicaciones_Administrador_item) interfaz;
+			this.admin = this._lista_Publicaciones__Administrador_._lista_Publicaciones__Administrador_._administrador;
 		}else if(interfaz instanceof Lista_publicaciones_usuario_item) {
 			this._lista_publicaciones_usuario = (Lista_publicaciones_usuario_item) interfaz;
+			this.admin = this._lista_publicaciones_usuario._lista_publicaciones_usuario._ver_perfil__Administrador_.cabecera_top.cabeceraAdmin._administrador;
 		}else if(interfaz instanceof Lista_usuarios_registrados_item) {
 			this.userRegistradoItem = (Lista_usuarios_registrados_item) interfaz;
+			this.admin = this.userRegistradoItem._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP.cabeceraAdmin._administrador;
+		}else if(interfaz instanceof Publicaciones_hashtag_item) {
+			this.hashtagItem = (Publicaciones_hashtag_item) interfaz;
+			this.admin = this.hashtagItem.admin;
 		}else {
 			this._lista_publicaciones_gustadas = (Lista_publicaciones_gustadas_item) interfaz;
+			this.admin = this._lista_publicaciones_gustadas._lista_publicaciones_gustadas._ver_publicaciones_gustadas._ver_perfil__Administrador_.cabecera_top.cabeceraAdmin._administrador;
 		}
 		this.getVideo().add(new Video(this.publicacion.getVideo()));
+		this.getVerPerfil().setText(this.publicacion.getNombreUsuario());
 		Lista_Top_Comentarios__Administrador_();
 		NumeroComentarios();
 		NumeroMeGustas();
@@ -53,7 +63,7 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 	public void VerPerfil() {
 		this.getVerPerfil().addClickListener(event ->{
 			this.getVaadinHorizontalLayout().removeAll();
-			this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.publicacion.getPerteneceA()));
+			this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.admin._cabecera_Administrador.cabeceraTOP, this.publicacion.getPerteneceA()));
 		});
 	}
 

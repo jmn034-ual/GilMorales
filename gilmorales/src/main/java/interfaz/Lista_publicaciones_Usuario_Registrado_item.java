@@ -25,7 +25,6 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	UsuarioRegistrado user;
 
 	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,	Lista_publicaciones_Usuario_Registrado interfaz) {
-//		super(publicacion, interfaz);
 		this.publicacion = bd.cargarPublicacion(publicacion.getIdPublicacion());
 		this._lista_publicaciones__Usuario_Registrado_ = interfaz;
 		this.user = bd.cargarUsuarioRegistrado(interfaz.urInterfaz.ur.getID());
@@ -33,7 +32,6 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		mostrarDatosUsuario();
 		this.getLayoutBotonesUsuarioR().setVisible(true);
 		this.getVaadinButton().setVisible(true);
-		this.getLabelMeGustas().setVisible(false);
 		this.getLayoutComentar().setVisible(true);
 		if (this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();
@@ -41,7 +39,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		} else {
 			this.getBotonNombreUsuario().setDisableOnClick(false);
 		}
-		this.Ver_comentarios__Usuario_Registrado_();
+		Ver_comentarios__Usuario_Registrado_();
 		Dar_me_gusta_publicacion();
 		Ver_publicacion_ajena();
 		Denunciar_publicacion();
@@ -66,7 +64,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Ver_publicacion_ajena() {
-		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.user,_lista_publicaciones__Usuario_Registrado_.urInterfaz);
+		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.user, this);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event -> {
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(_ver_publicacion_ajena);
@@ -96,6 +94,9 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 			dialog.setHeight("70%");
 			dialog.setWidth("61%");
 			this._denunciar_publicacion.getBotonCancelar().addClickListener(event2 -> {
+				dialog.close();
+			});
+			this._denunciar_publicacion.getBotonEnviar().addClickListener(evente3 -> {
 				dialog.close();
 			});
 			dialog.open();

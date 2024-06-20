@@ -15,7 +15,7 @@ export class VistaListaTendenciasItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="justify-content: flex-start; align-items: flex-start;" id="vaadinHorizontalLayout">
+<vaadin-horizontal-layout class="content" style="justify-content: center; align-items: flex-start;" id="vaadinHorizontalLayout">
  <vaadin-button theme="tertiary" id="hashtag" style="align-self: center; margin-top: 0%; margin-bottom: 0%;">
    #Hashtags 
  </vaadin-button>

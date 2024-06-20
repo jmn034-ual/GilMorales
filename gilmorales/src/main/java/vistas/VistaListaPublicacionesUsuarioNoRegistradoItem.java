@@ -50,8 +50,6 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Element layoutMeGustas;
 	@Id("labelNumMeGustas")
 	private Label labelNumMeGustas;
-	@Id("labelMeGustas")
-	private Label labelMeGustas;
 	@Id("vaadinButton")
 	private Button vaadinButton;
 	@Id("layoutComentarios")
@@ -76,6 +74,10 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Hr lineaHorizontal;
 	@Id("publicacion")
 	private Element publicacion;
+	@Id("ironIcon")
+	private Element ironIcon;
+	@Id("ironIcon1")
+	private Element ironIcon1;
 
 
 	public Hr getLineaHorizontal() {
@@ -254,16 +256,6 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 
 	public void setLabelNumMeGustas(Label labelNumMeGustas) {
 		this.labelNumMeGustas = labelNumMeGustas;
-	}
-
-
-	public Label getLabelMeGustas() {
-		return labelMeGustas;
-	}
-
-
-	public void setLabelMeGustas(Label labelMeGustas) {
-		this.labelMeGustas = labelMeGustas;
 	}
 
 

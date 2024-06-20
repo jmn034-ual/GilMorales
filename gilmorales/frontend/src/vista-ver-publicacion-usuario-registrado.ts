@@ -19,18 +19,18 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
 
  render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="vaadinVerticalLayout" theme="spacing">
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="justify-content: center; margin: var(--lumo-space-xl);" theme="spacing-xl">
-  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0;">
-   <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 0; margin-bottom: var(--lumo-space-l); flex-shrink: 0; height: 100%; justify-content: flex-start; align-self: stretch;">
-    <vaadin-horizontal-layout id="video" style="flex-grow: 0; width: 100%; margin-right: var(--lumo-space-m); align-items: flex-start; flex-shrink: 0;"></vaadin-horizontal-layout>
-    <vaadin-horizontal-layout id="layoutNumVisualizaciones" style="flex-shrink: 1; margin: var(--lumo-space-s);" theme="spacing-s">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; margin: 0px; padding: 0px; justify-content: center; " id="vaadinVerticalLayout">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="justify-content: center; align-items: center; flex-grow: 0; align-self: stretch; flex-shrink: 0; height: 100%;">
+  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; align-self: stretch;">
+   <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 0; margin-bottom: var(--lumo-space-l); flex-shrink: 0; height: 100%; justify-content: flex-start; align-self: stretch; background-color: #000000;">
+    <vaadin-horizontal-layout id="video" style="flex-grow: 0; width: 100%; margin-right: var(--lumo-space-m); align-items: center; flex-shrink: 0; justify-content: center; align-self: center; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); height: 850px; overflow: hidden;"></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout id="layoutNumVisualizaciones" style="flex-shrink: 1; margin: var(--lumo-space-s); padding-bottom: 5%; padding-left: 5%; color: #ffffff;" theme="spacing-s">
      <label id="numVisualizaciones">0</label>
      <label id="label">Visualizaciones</label>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout3" style="flex-grow: 0; margin: var(--lumo-space-s); margin-left: var(--lumo-space-xl); flex-shrink: 0;">
+  <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout3" style="flex-grow: 0; flex-shrink: 0; padding: 2%; height: 100%;">
    <vaadin-vertical-layout id="vaadinVerticalLayout4" style="width: 100%;">
     <vaadin-horizontal-layout id="layoutUsuario" style="width: 100%;">
      <vaadin-avatar id="avatar" style="margin: var(--lumo-space-xs);"></vaadin-avatar>
@@ -62,20 +62,18 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
        <vaadin-button theme="icon" aria-label="Add new" id="botonMeGusta">
         <iron-icon icon="vaadin:heart-o" id="ironIcon"></iron-icon>
        </vaadin-button>
-       <vaadin-button theme="icon" aria-label="Add new" id="botonVerMeGustas">
-        <iron-icon icon="lumo:plus" id="ironIcon1"></iron-icon>
-       </vaadin-button>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout id="layoutLabels" style="justify-content: center; flex-shrink: 1; margin: var(--lumo-space-xs); flex-grow: 0;" theme="spacing-xs">
        <label id="numComentarios" style="flex-grow: 0; align-self: center;">0</label>
        <vaadin-button theme="icon" aria-label="Add new" id="botonVerComentario">
-        <iron-icon icon="lumo:plus" id="ironIcon2"></iron-icon>
+        <iron-icon icon="vaadin:comments-o" id="ironIcon2"></iron-icon>
        </vaadin-button>
       </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
      <label id="fechaSubida" style="flex-grow: 0; margin: var(--lumo-space-xs);">Fecha</label>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
+   <hr style="width: 100%;">
    <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout5" style="flex-grow: 0; width: 100%;"></vaadin-vertical-layout>
    <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="width: 100%; margin: var(--lumo-space-xs);" theme="spacing-s">
     <vaadin-text-field id="textComentario" style="flex-grow: 1;" placeholder="Escribe aqui tu comentario..."></vaadin-text-field>

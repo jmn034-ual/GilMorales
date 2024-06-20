@@ -72,10 +72,6 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	private Button botonMeGusta;
 	@Id("ironIcon")
 	private Element ironIcon;
-	@Id("botonVerMeGustas")
-	private Button botonVerMeGustas;
-	@Id("ironIcon1")
-	private Element ironIcon1;
 	@Id("numComentarios")
 	private Label numComentarios;
 	@Id("botonVerComentario")
@@ -342,27 +338,6 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	public void setIronIcon(Element ironIcon) {
 		this.ironIcon = ironIcon;
 	}
-
-
-	public Button getBotonVerMeGustas() {
-		return botonVerMeGustas;
-	}
-
-
-	public void setBotonVerMeGustas(Button botonVerMeGustas) {
-		this.botonVerMeGustas = botonVerMeGustas;
-	}
-
-
-	public Element getIronIcon1() {
-		return ironIcon1;
-	}
-
-
-	public void setIronIcon1(Element ironIcon1) {
-		this.ironIcon1 = ironIcon1;
-	}
-
 
 	public Label getNumComentarios() {
 		return numComentarios;

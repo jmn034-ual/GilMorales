@@ -18,12 +18,19 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		super(cabecera_TOP);
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		this.userAver = userAver;
+		this.userAver = bd.cargarUsuarioRegistrado(userAver.getID());
 		this.interfazAux = interfaz;
 		if(cabecera_TOP._cabecera_Usuario_Registrado != null) {
 			user = bd.cargarUsuarioRegistrado(cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur.getID());
 			asignarInterfaz(interfazAux);
 			motrarDatosUserRegistrado();
+			if(this.userAver.getID() == user.getID()) {
+				this.getVaadinHorizontalLayout().removeAll();
+				this.getVaadinHorizontalLayout().add(new Ver_perfil_propio(cabecera_top));
+			}else if(this.userAver.getPrivacidad() == 1) {
+				this.getVaadinHorizontalLayout().removeAll();
+				this.getVaadinHorizontalLayout().add(new Ver_perfil_privado(this.userAver, cabecera_TOP));
+			}
 		}else {
 			asignarInterfaz(interfazAux);
 			motrarDatosUserNoRegistrado();

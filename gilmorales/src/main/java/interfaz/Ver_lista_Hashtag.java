@@ -15,8 +15,11 @@ public class Ver_lista_Hashtag extends VistaVerListaHashtags{
     	this.getStyle().set("height", "100%");
     	if(interfaz instanceof Cabecera_TOP) {    		
     		this._cabecera_TOP = (Cabecera_TOP) interfaz;
-    	}else {
+    	}else if(interfaz instanceof Ver_tendencias){
     		this._ver_tendencias = (Ver_tendencias) interfaz;
+    	}else {
+    		Cabecera_Administrador admin = (Cabecera_Administrador) interfaz;
+    		this._cabecera_TOP = admin.cabeceraTOP;
     	}
 		Lista_Hashtags();
 	}

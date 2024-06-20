@@ -18,15 +18,15 @@ export class VistaAddpublicacion extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing-s" style="width: 100%; position: fixed; height: 90%; justify-content: center; z-index: 999; background-color: #fffff;" id="vaadinVerticalLayout">
+<vaadin-vertical-layout theme="spacing-s" style="width: 100%; position: fixed; height: 100%; justify-content: center; z-index: 999; background-color: #fffff;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; flex-shrink: 1; flex-grow: 0; height: 100%; justify-content: center; background-color: #ffffff;" id="vaadinHorizontalLayout">
-  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-s); width: 40%; margin-left: var(--lumo-space-xl);" id="layoutSubirVideo" theme="spacing-xs">
+  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 1; width: 40%; height: 100%; padding-bottom: 5%;" id="layoutSubirVideo" theme="spacing-xs">
    <vaadin-vertical-layout theme="spacing-xs" id="layoutTitulo" style="margin: var(--lumo-space-s); margin-left: var(--lumo-space-xl); padding-top: var(--lumo-space-m);">
     <h2 id="titulo" style="margin: var(--lumo-space-s); align-self: flex-start;">Añadir publicación</h2>
     <label id="label" style="align-self: flex-start; flex-grow: 0; margin: var(--lumo-space-s);">Publica un video en tu perfil.</label>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout id="layoutVideo" style="flex-grow: 1; margin: var(--lumo-space-s); align-self: stretch; justify-content: center; align-items: center; flex-shrink: 0;"></vaadin-vertical-layout>
-   <vaadin-button id="botonSubir" style="align-self: center;">
+   <vaadin-vertical-layout id="layoutVideo" style="flex-grow: 1; justify-content: center; align-items: center; flex-shrink: 0; align-self: center; width: 100%; padding: var(--lumo-space-m);"></vaadin-vertical-layout>
+   <vaadin-button id="botonSubir" style="align-self: center; flex-grow: 0;">
      Subir 
    </vaadin-button>
   </vaadin-vertical-layout>

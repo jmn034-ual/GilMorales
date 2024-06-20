@@ -34,7 +34,7 @@ public class Cabecera_TOP extends VistaCabeceraTop{
 			if(this._cabecera_Usuario_No_Registrado != null) {
 				this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().removeAll();
 				this._cabecera_Usuario_No_Registrado.unr.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);
-			}else if(this._cabecera_Usuario_No_Registrado != null) {
+			}else if(this._cabecera_Usuario_Registrado != null) {
 				this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().removeAll();
 				this._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().add(_ver_lista_Hashtag);
 			}else {

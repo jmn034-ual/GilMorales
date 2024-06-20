@@ -1,30 +1,27 @@
 package interfaz;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.springframework.boot.SpringApplication;
-
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.FileBuffer;
-import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
 import com.vaadin.flow.server.StreamResource;
 
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_No_Registrado;
+import bd_dcl.UsuarioComercial;
+import bd_dcl.UsuarioRegistrado;
 import vistas.VistaRegistrarusuario;
 
 public class Registrar extends VistaRegistrarusuario {
@@ -36,14 +33,16 @@ public class Registrar extends VistaRegistrarusuario {
 	iUsuario_No_Registrado bd = new BDPrincipal();
 	boolean tipoCuenta;
 	private String fotoURL = "";
-	private String fotoURL2 = "";
 	Usuario_No_Registrado interfaz;
 	private Image imagen;
 	int usuarioID;
+	Dialog dialog;
 
-	public Registrar(Usuario_No_Registrado interfaz) {
+	public Registrar(Usuario_No_Registrado interfaz, Dialog dialog) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.dialog = dialog;
+		this.interfaz = interfaz;
 		Descartar();
 		Subir_foto();
 		this.getNormal().addClickListener(event -> {
@@ -94,9 +93,9 @@ public class Registrar extends VistaRegistrarusuario {
 					Notification.show("Image uploaded successfully!");
 
 					Image img = createImageFromFile(IMAGE_PATH + event2.getFileName());
-					dialog.removeAll();
-					dialog.add(img);
-					this.fotoURL2 = "/icons/uploads/" + event2.getFileName();
+					dialog.close();
+					this.fotoURL = "/icons/uploads/" + event2.getFileName();
+					this.getVaadinAvatar().setImage(fotoURL);
 				} catch (Exception e) {
 					Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
 				}
@@ -111,20 +110,27 @@ public class Registrar extends VistaRegistrarusuario {
 
 	public void Validar_registro() {
 		this.getConfirmar().addClickListener(event -> {
-
-			this.bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(),
+			UsuarioRegistrado user;
+			UsuarioComercial uc;
+			Object userAux = this.bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(),
 					this.getEmail().getValue(), this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(),
 					this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(), tipoCuenta,
-					this.fotoURL2);
+					this.fotoURL);
+			this.dialog.close();
+			this.interfaz.interfaz.removeAll();
+			if(userAux instanceof UsuarioRegistrado) {		
+				user = (UsuarioRegistrado) userAux;
+				this.interfaz.interfaz.add(new Usuario_Registrado(this.interfaz.interfaz, user.getID()));
+			}else {
+				uc = (UsuarioComercial) userAux;
+				this.interfaz.interfaz.add(new Usuario_comercial(this.interfaz.interfaz, uc.getID()));
+			}
 		});
 	}
 
 	public void Descartar() {
 		this.getDescartar().addClickListener(event -> {
-			this.interfaz.cabeceraUNR.setVisible(true);
-			this.interfaz.getVaadinHorizontalLayout().setVisible(true);
-			this.interfaz.getVaadinVerticalLayout().as(VerticalLayout.class)
-					.remove(this.interfaz.inicioSesion._registrar);
+			this.dialog.close();
 		});
 	}
 

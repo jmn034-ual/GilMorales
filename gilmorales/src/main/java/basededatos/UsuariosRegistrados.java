@@ -118,10 +118,6 @@ public class UsuariosRegistrados {
 		GilMoralesPersistentManager.instance().disposePersistentManager();	
 	}
 
-	public UsuarioRegistrado verPerfilAjeno(String aNombreUsuario, int aUsuarioID) {
-		throw new UnsupportedOperationException();
-	}
-
 	public List<UsuarioRegistrado> buscarUsuario(String aNombreUsuario) throws PersistentException {
 		if(aNombreUsuario == "") return null;
 		List lista = null;
@@ -194,7 +190,7 @@ public class UsuariosRegistrados {
 		return lista;
 	}
 
-	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) throws PersistentException {
+	public UsuarioRegistrado registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) throws PersistentException {
 		UsuarioRegistrado user = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
@@ -210,12 +206,15 @@ public class UsuariosRegistrados {
 				ur.setFoto(aFoto);
 				ur.setPrivacidad(0);
 				UsuarioRegistradoDAO.save(ur);
+				user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(ur.getID());
+				this._usuarioRegistrado.add(user);
 			}
 			t.commit();
 		}catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
+		return user;
 	}
 
 	public List cargarUsuariosUNR() throws PersistentException {

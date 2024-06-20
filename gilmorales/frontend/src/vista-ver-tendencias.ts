@@ -18,12 +18,12 @@ export class VistaVerTendencias extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-shrink: 0; overflow-y: auto; height: 100%; scrollbar-width: thin; scrollbar-color: transparent transparent; width: 100%;">
+<vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-shrink: 0; overflow-y: auto; height: 100%; scrollbar-width: thin; scrollbar-color: transparent transparent; width: 100%; margin: 0px;">
  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 0; align-items: center; z-index: 999; height: 100%; justify-content: flex-start; overflow-y: auto; scrollbar-color: transparent transparent; background-color: #C8C4C4; padding: var(--lumo-space-m);" id="layoutTendencias" theme="spacing-xs">
   <h4 id="tituloTendencias" style="align-self: center; margin-bottom: 0px; margin-top: 0px; padding-top: var(--lumo-space-m);">Tendencias </h4>
   <vaadin-vertical-layout id="layoutHashtags" style="flex-grow: 0; align-self: center; align-items: center; flex-shrink: 0; justify-content: flex-start; margin-top: 0%; padding: 0%;"></vaadin-vertical-layout>
   <vaadin-button id="botonVerListaHashtags" style="align-self: center;">
-   Lista Hashtags
+    Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0; height: 100%; flex-shrink: 0; overflow-y: auto; scrollbar-width: thin; scrollbar-color: transparent transparent; padding-bottom: var(--lumo-space-xl); width: 88%;">
@@ -84,7 +84,7 @@ export class VistaVerTendencias extends LitElement {
      Me Gustas 
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <hr style="width: 98%; align-self: center; padding-bottom: 0.1%;" id="barraHorizontal">
+  <hr style="width: 99%; align-self: center; padding-bottom: 0.1%;" id="barraHorizontal">
   <label id="labelUsuarioPrivado" style="align-self: center;">Perfil privado, para ver sus videos envíe una petición de amistad.</label>
   <vaadin-vertical-layout theme="spacing" id="listaMeGustas" style="flex-grow: 0; overflow-y: auto; flex-shrink: 0; align-self: center;"></vaadin-vertical-layout>
   <vaadin-vertical-layout theme="spacing" id="layoutListaPublicaciones" style="flex-grow: 0; overflow-y: auto; flex-shrink: 0; align-self: center;"></vaadin-vertical-layout>

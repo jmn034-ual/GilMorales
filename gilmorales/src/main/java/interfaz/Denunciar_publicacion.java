@@ -14,6 +14,7 @@ public class Denunciar_publicacion extends VistaDenunciarUsuario {
 	BDPrincipal bd = new BDPrincipal();
 
 	public Denunciar_publicacion(Publicacion p, Object interfaz) {
+		this.publiacion = p;
 		if(interfaz instanceof Ver_publicacion_ajena) {
 			this._ver_publicacion_ajena = (Ver_publicacion_ajena) interfaz;
 			this.user = this._ver_publicacion_ajena.user;

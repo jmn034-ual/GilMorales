@@ -25,11 +25,12 @@ public class Lista_Publicaciones_Administrador_item extends VistaListaPublicacio
 		this.getLayoutVideo().as(VerticalLayout.class).add(new Video(p.getVideo()));
 		if(this.publicacion.getPerteneceA() != null) {			
 			this.getBotonNombreUsuario().setText(p.getPerteneceA().getNombreUsuario());
+			this.getVaadinAvatar().setImage(p.getPerteneceA().getFoto());
 		}else {
 			this.getBotonNombreUsuario().setText(p.getEsPublicada().getNombreUsuarioComercial());
+			this.getVaadinAvatar().setImage(p.getEsPublicada().getFoto());
 		}
 		this.getLabelGeolocalizacion().setText(p.getLocalizacion());
-		this.getVaadinAvatar().setImage(p.getPerteneceA().getFoto());
 		Eliminar_publicacion__Administrador_();
 		NumeroComentarios();
 		Ver_comentarios__Administrador_();
@@ -71,11 +72,13 @@ public class Lista_Publicaciones_Administrador_item extends VistaListaPublicacio
 	}
 
 	public void VerPerfil() {
-		_ver_perfil_administrador_ = new Ver_perfil_Administrador(this.publicacion.getPerteneceA());
+		if(this.publicacion.getPerteneceA() != null) {
+		_ver_perfil_administrador_ = new Ver_perfil_Administrador(this._lista_Publicaciones__Administrador_._administrador._cabecera_Administrador.cabeceraTOP, this.publicacion.getPerteneceA());
 		this.getBotonNombreUsuario().addClickListener(event->{
 			this._lista_Publicaciones__Administrador_._administrador.getVaadinHorizontalLayout().removeAll();
 			this._lista_Publicaciones__Administrador_._administrador.getVaadinHorizontalLayout().add(_ver_perfil_administrador_);
 		});
+		}
 	}
 
 	public void NumeroVisualizaciones() {

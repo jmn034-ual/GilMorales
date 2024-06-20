@@ -18,11 +18,11 @@ export class VistaVerHashtag extends LitElement {
 <vaadin-vertical-layout id="vaadinVerticalLayout" style="width: 100%; height: 100%; overflow-y: auto; scrollbar-color: transparent transparent; align-items: center; padding: 0px;">
  <vaadin-horizontal-layout id="layoutDatosHashtag" style="justify-content: center; align-self: center; flex-shrink: 0; padding-top: 2%;">
   <vaadin-vertical-layout id="imagenHashtag" style="flex-shrink: 0; align-self: center; align-items: center;"></vaadin-vertical-layout>
-  <vaadin-vertical-layout theme="spacing" id="layoutInformacionHashtag">
+  <vaadin-vertical-layout theme="spacing" id="layoutInformacionHashtag" style="align-self: center;">
    <h2 id="h2">#NombreHashtag</h2>
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="flex-grow: 0; width: 100%;">
     <label id="numVisualizaciones">0</label>
-    <label id="labelNumVisualizaciones" style="flex-grow: 1;">Numero Visualizaciones</label>
+    <label id="labelNumVisualizaciones" style="flex-grow: 1;">Visualizaciones</label>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>

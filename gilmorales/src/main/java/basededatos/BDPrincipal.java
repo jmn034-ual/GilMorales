@@ -6,6 +6,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import org.orm.PersistentException;
+import org.orm.PersistentSession;
 import org.orm.PersistentTransaction;
 
 import com.vaadin.flow.component.notification.Notification;
@@ -267,17 +268,18 @@ public class BDPrincipal
 
 	// La estructura nombresUsuarios no sirve para nada, por tanto tengo que darle
 	// una vuelta para que no se puedan registrar usuarios con el mismo nombre
-	public void registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword,
+	public Object registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword,
 			String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) {
+		Object user = null;
 		try {
 			if (!nombresUsuarios.containsKey(aNombreUsuario)) {
 				if (aTipoCuenta) {
 					nombresUsuarios.put(aNombreUsuario, "UsuarioRegistrado");
-					this.usuarios_registrados.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion,
+					user =  this.usuarios_registrados.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion,
 							aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
 				} else if (aTipoCuenta == false) {
 					nombresUsuarios.put(aNombreUsuario, "UsuarioComercial");
-					this.comerciales.registrarUsuario(aNombre, aEmail, aPassword, aDescripcion, aNombreUsuario,
+					user = this.comerciales.registrarUsuario(aNombre, aEmail, aPassword, aDescripcion, aNombreUsuario,
 							aFechaNacimiento, aFoto);
 
 				}
@@ -288,6 +290,7 @@ public class BDPrincipal
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return user;
 	}
 
 	public List cargarUsuariosUNR() {
@@ -457,6 +460,11 @@ public class BDPrincipal
 			usuarios.addAll(UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null));
 			usuarios.addAll(UsuarioComercialDAO.queryUsuarioComercial(null, null));
 
+			if (aNombreUsuario.equals("admin") && aPassword.equals("admin")) {
+				user = _c_usuarioAdministrador.cargarAdministrador(999);
+				return user;
+			}
+			
 			// Verificar si se encontró un usuario con el nombre especificado
 			if (!usuarios.isEmpty()) {
 				for (Object ur : usuarios) {
@@ -472,13 +480,19 @@ public class BDPrincipal
 								&& userAux.getPassword().equals(aPassword)) {
 							return user = comerciales.cargarUsuarioComercial(userAux.getID());
 						}
-					} else if (aNombreUsuario.equals("admin") && aPassword.equals("admin")) {
-						user = _c_usuarioAdministrador.cargarAdministrador(0);
 					}
-
 				}
 
 			}
+			
+//			 PersistentSession session = bd_dcl.GilMoralesPersistentManager.instance().getSession();
+//	            String condition = "NombreUsuario = '" + aNombreUsuario + "' AND Password = '" + aPassword + "'";
+//	            List<UsuarioRegistrado> usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(session, condition, null);
+//	            if (usuarios != null && !usuarios.isEmpty()) {
+//	                return usuarios.get(0);
+//	            }
+//	            return null;
+
 		} catch (PersistentException e) {
 			e.printStackTrace();
 			// Manejar la excepción

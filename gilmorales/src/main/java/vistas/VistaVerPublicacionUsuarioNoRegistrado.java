@@ -51,8 +51,6 @@ public class VistaVerPublicacionUsuarioNoRegistrado extends LitTemplate {
 	private Button botonVerComentario;
 	@Id("numMeGustas")
 	private Label numMeGustas;
-	@Id("labelNumMeGustas")
-	private Label labelNumMeGustas;
 	@Id("descripcion")
 	private Label descripcion;
 	@Id("avatar")
@@ -63,8 +61,36 @@ public class VistaVerPublicacionUsuarioNoRegistrado extends LitTemplate {
 	private Button verPerfil;
 	@Id("geolocalizacion")
 	private Label geolocalizacion;
+	@Id("vaadinButton")
+	private Button vaadinButton;
+	@Id("ironIcon")
+	private Element ironIcon;
 	
 	
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
+
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
 
 	public Avatar getAvatar() {
 		return avatar;
@@ -301,18 +327,6 @@ public class VistaVerPublicacionUsuarioNoRegistrado extends LitTemplate {
 
 	public void setNumMeGustas(Label numMeGustas) {
 		this.numMeGustas = numMeGustas;
-	}
-
-
-
-	public Label getLabelNumMeGustas() {
-		return labelNumMeGustas;
-	}
-
-
-
-	public void setLabelNumMeGustas(Label labelNumMeGustas) {
-		this.labelNumMeGustas = labelNumMeGustas;
 	}
 
 

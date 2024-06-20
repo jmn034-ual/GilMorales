@@ -41,15 +41,8 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 	}
 	
 	public void Lista_Comentarios__Vista_Usuario_No_registrado_() {
-		_lista_Comentarios__Vista_Usuario_No_registrado_ = new Lista_Comentarios_Vista_Usuario_No_registrado(unrInterfaz, publicacion, this); 
+		_lista_Comentarios__Vista_Usuario_No_registrado_ = new Lista_Comentarios_Vista_Usuario_No_registrado(this.unrInterfaz, publicacion, this); 
 		this.getLayoutListaComentarios().as(VerticalLayout.class).add(_lista_Comentarios__Vista_Usuario_No_registrado_);
 	}
 	
-//	public void Ver_perfil() {
-//		this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, unrInterfaz.cabeceraUNR._cabecera_TOP);
-//		this.getBotonNombreUsuario().addClickListener(event ->{
-//			unrInterfaz.getVaadinHorizontalLayout().removeAll();
-//			unrInterfaz.getVaadinHorizontalLayout().add(ver_perfil);
-//			});
-//	}
 }

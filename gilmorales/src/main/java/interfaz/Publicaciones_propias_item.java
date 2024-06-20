@@ -10,30 +10,32 @@ import bd_dcl.Publicacion;
 import vistas.VistaPublicacionesPropiasItem;
 
 public class Publicaciones_propias_item extends VistaPublicacionesPropiasItem{
-	private int _numeroVisualizaciones;
-	private Label _visualizacionesL;
-	private Div _video;
-	private Button _verPubliacionB;
+
 	public Lista_Publicaciones_propias _publicaciones_propias;
 	public Ver_publicacion_propia _ver_publicacion_propia;
+	Publicacion publicacion;
+	Usuario_Registrado userInterfaz;
 	
-	public Publicaciones_propias_item(Publicacion publicacion) {
+	public Publicaciones_propias_item(Publicacion publicacion, Lista_Publicaciones_propias interfaz) {
+		this.publicacion = publicacion;
 		Video video = new Video(publicacion.getVideo());
-		video.getStyle().set("width", "60%");
-		video.getStyle().set("height", "60%");
-		video.getElement().setProperty("controls", false);
-		video.getElement().setProperty("autoplay", false); 
-		video.getElement().getStyle().set("border-radius", "8px");
+		this._publicaciones_propias = interfaz;
+		this.userInterfaz = this._publicaciones_propias._ver_publicaciones_propias._ver_perfil_propio.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 		this.getLayoutVideo().as(VerticalLayout.class).add(video);
-		this.getNumVisualizaciones().setText(""+publicacion.getNumVisualizaciones());
+		NumeroVisualizaciones();
+//		Ver_publicacion_propia();
 	}
 
 	
 	public void Ver_publicacion_propia() {
-		throw new UnsupportedOperationException();
+		this._ver_publicacion_propia = new Ver_publicacion_propia(this.publicacion, this.userInterfaz);
+		this.getLayoutItem().as(VerticalLayout.class).addClickListener(event ->{
+			this.userInterfaz.getVaadinHorizontalLayout().removeAll();
+			this.userInterfaz.getVaadinHorizontalLayout().add(this._ver_publicacion_propia);
+		});
 	}
 
 	public void NumeroVisualizaciones() {
-		throw new UnsupportedOperationException();
+		this.getNumVisualizaciones().setText(""+this.publicacion.getNumVisualizaciones());
 	}
 }

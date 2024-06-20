@@ -35,7 +35,6 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 		this.getFechaSubida().setText(this.publicacion.getFechaPublicacion());
 		this.getVideo().add(new Video(this.publicacion.getVideo()));
 		this.getBotonSeguir().setVisible(false);
-		this.getBotonVerMeGustas().setVisible(false);
 		Ver_comentarios__Comercial_();
 		
 	}

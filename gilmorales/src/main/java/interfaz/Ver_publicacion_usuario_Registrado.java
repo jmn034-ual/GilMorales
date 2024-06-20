@@ -16,7 +16,7 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 	Publicacion publicacion;
 	UsuarioRegistrado user;
 	UsuarioComercial uc;
-	iUsuario_Registrado bd = new BDPrincipal();
+
 	
 	public Ver_publicacion_usuario_Registrado() {}
 	
@@ -34,14 +34,11 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 		Lista_Top_comentarios__Usuario_Registrado_();
 	}
 	
-	public void comentar() {
-		this.getBotonComentar().addClickListener(event -> {
-			 this.bd.comentarPublicacion(this.publicacion.getIdPublicacion(), this.user.getID(), this.getTextComentario().getValue());
-		});
-	}
 	
 	public void Ver_comentarios__Usuario_Registrado_(Object interfaz) {
 		Ver_publicacion_ajena aux = (Ver_publicacion_ajena) interfaz;
+		System.out.println(aux._lista_publicaciones__Usuario_Registrado_._lista_publicaciones__Usuario_Registrado_.urInterfaz != null);
+
 		this.getBotonVerComentario().addClickListener(event->{
 			_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, aux, this.user);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();

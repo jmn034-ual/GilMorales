@@ -20,10 +20,11 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 	public Bloquear_usuario _bloquear_usuario;
 	public Lista_publicaciones_usuario _lista_publicaciones_usuario;
 	iAdministrador bd = new BDPrincipal();
-	UsuarioRegistrado ur;
 
-	public Ver_perfil_Administrador(UsuarioRegistrado ur) {
-		this.ur = ur;
+
+	public Ver_perfil_Administrador(Cabecera_TOP cabecera_top, UsuarioRegistrado ur) {
+		super(cabecera_top);
+		this.user = ur;
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
 		this.getBotonSeguir().setVisible(false);
@@ -34,8 +35,13 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 		this.getBotonModificarPerfil().setVisible(false);
 		this.getLabelSiguiendo().setVisible(false);
 		this.getLabelSeguidores().setVisible(false);
-		Ver_publicaciones_gustadas();
-		Lista_publicaciones_usuario();
+		if(this.user != null) {
+			this.getNombreUsuario().setText(this.user.getNombreUsuario());
+			this.getNombreYapellidos().setText(this.user.getNombre() + " " + this.user.getApellidos());
+			this.getFotoPerfil1().setImage(this.user.getFoto());
+			Ver_publicaciones_gustadas();
+			Lista_publicaciones_usuario();
+		}
 	}
 	
 	public void Ver_publicaciones_gustadas() {
@@ -49,12 +55,12 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 
 	public void Bloquear_usuario() {
 		this.getBotonBloquear().addClickListener(event ->{
-			bd.bloquearUsuario(this.ur.getID());
+			bd.bloquearUsuario(this.user.getID());
 		});
 	}
 
 	public void Lista_publicaciones_usuario() {
-		this._lista_publicaciones_usuario = new Lista_publicaciones_usuario(this.ur, this);
+		this._lista_publicaciones_usuario = new Lista_publicaciones_usuario(this.user, this);
 		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_lista_publicaciones_usuario);
 		this.getBotonVideos().addClickListener(event -> {
 			this.getListaMeGustas().setVisible(false);

@@ -19,7 +19,7 @@ export class VistaListaComentariosUsuarioNoRegistradoItem extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content" id="vaadinHorizontalLayout" style="width: 100%;">
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center; flex-grow: 0; width: 15%; justify-content: center; flex-shrink: 0;">
+ <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center; flex-grow: 0; justify-content: center; flex-shrink: 0;">
   <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout" style="align-self: center; flex-grow: 0; flex-shrink: 0; width: 53%;">
@@ -31,7 +31,7 @@ export class VistaListaComentariosUsuarioNoRegistradoItem extends LitElement {
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 1; justify-content: flex-end; flex-shrink: 0;">
   <label id="numeroMeGusta" style="align-self: center;">0</label>
   <vaadin-button theme="icon" aria-label="Add new" id="meGustaB">
-   <iron-icon icon="lumo:plus"></iron-icon>
+   <iron-icon icon="vaadin:heart-o"></iron-icon>
   </vaadin-button>
   <vaadin-button id="denunciarB">
     Denunciar 

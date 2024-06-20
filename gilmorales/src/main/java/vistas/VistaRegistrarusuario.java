@@ -14,6 +14,7 @@ import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.datepicker.DatePicker;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-registrarusuario template.
@@ -28,8 +29,6 @@ public class VistaRegistrarusuario extends LitTemplate {
 
 		@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
-		@Id("vaadinHorizontalLayout")
-		private HorizontalLayout vaadinHorizontalLayout;
 		@Id("h1")
 		private H1 h1;
 		@Id("vaadinVerticalLayout1")
@@ -100,8 +99,29 @@ public class VistaRegistrarusuario extends LitTemplate {
 		private Button descartar;
 		@Id("confirmar")
 		private Button confirmar;
+		@Id("vaadinAvatar")
+		private Avatar vaadinAvatar;
 		
 		
+		
+		public Avatar getVaadinAvatar() {
+			return vaadinAvatar;
+		}
+
+
+
+
+
+
+		public void setVaadinAvatar(Avatar vaadinAvatar) {
+			this.vaadinAvatar = vaadinAvatar;
+		}
+
+
+
+
+
+
 		public Element getVaadinVerticalLayout() {
 			return vaadinVerticalLayout;
 		}
@@ -114,28 +134,6 @@ public class VistaRegistrarusuario extends LitTemplate {
 		public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 			this.vaadinVerticalLayout = vaadinVerticalLayout;
 		}
-
-
-
-
-
-
-		public HorizontalLayout getVaadinHorizontalLayout() {
-			return vaadinHorizontalLayout;
-		}
-
-
-
-
-
-
-		public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-			this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-		}
-
-
-
-
 
 
 		public H1 getH1() {

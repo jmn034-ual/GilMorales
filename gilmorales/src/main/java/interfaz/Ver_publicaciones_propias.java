@@ -18,13 +18,14 @@ public class Ver_publicaciones_propias extends VistaVerPublicacionesPropias{
 	public Lista_Publicaciones_propias _publicaciones_propias;
 	private UsuarioRegistrado ur;
 
-	public Ver_publicaciones_propias(UsuarioRegistrado ur) {
+	public Ver_publicaciones_propias(UsuarioRegistrado ur, Ver_perfil_propio interfaz) {
 		this.ur = ur;
+		this._ver_perfil_propio = interfaz;
 		Publicaciones_propias();
 	}
 
 	public void Publicaciones_propias() {
-		_publicaciones_propias = new Lista_Publicaciones_propias(ur);
+		_publicaciones_propias = new Lista_Publicaciones_propias(ur, this);
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_publicaciones_propias);
 	}
 	

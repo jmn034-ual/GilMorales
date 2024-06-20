@@ -38,7 +38,7 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 
 	public void Ver_perfil() {
 		if(this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP.cabeceraAdmin != null) {
-			this.verPerfilAdmin = new Ver_perfil_Administrador(this.user);
+			this.verPerfilAdmin = new Ver_perfil_Administrador(this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP, this.user);
 		}else {			
 			this.ver_perfil = new Ver_perfil_publico(this.user, this, this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP);
 		}

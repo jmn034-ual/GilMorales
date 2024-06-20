@@ -18,7 +18,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 	public Administrador admin;
 	Publicacion publicacion;
 	
-
 	public Publicaciones_hashtag_item(Publicacion p, Publicaciones_hashtag interfaz) {
 		this._publicaciones_hashtag = interfaz;
 		this.publicacion = p;
@@ -28,7 +27,7 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 		this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getImagenPublicacion().as(VerticalLayout.class).add(video);
-		
+
 		if(this._publicaciones_hashtag._ver_hashtag._top_hashtags != null) {
 			if(this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null)
 				this.userNoRegistrado =  this._publicaciones_hashtag._ver_hashtag._top_hashtags._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
@@ -65,7 +64,7 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 						this.userRegistrado =  this._publicaciones_hashtag._ver_hashtag._lista_Hashtags._lista_Hashtags._ver_lista_Hashtag._ver_tendencias.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 			}
 		}
-		
+
 		Ver_publicacion_ajena();
 		Ver_perfil();
 	}
@@ -76,15 +75,19 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 			if (this.userNoRegistrado != null) {
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 						.add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this));
-			} else {
-				if (this.userRegistrado.ur.equals(this.publicacion.getPerteneceA())) {
-					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
-							.add(new Ver_publicacion_propia(publicacion, this.userRegistrado));
-				} else {
-					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.userRegistrado.ur,this.userRegistrado);
+			} else if(this.userRegistrado != null){
+//				if (this.userRegistrado.ur.equals(this.publicacion.getPerteneceA())) {
+//					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+//							.add(new Ver_publicacion_propia(publicacion, this.userRegistrado));
+//				} else {
+					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.userRegistrado.ur,
+							this.userRegistrado);
 					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 							.add(_ver_publicacion_ajena);
-				}
+//				}
+			}else {
+				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+				.add(new Ver_publicacion_Administrador(publicacion, this));
 			}
 		});
 	}
@@ -93,28 +96,36 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 		this.getBotonNombreUsuario().addClickListener(event -> {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this.publicacion.getPerteneceA() != null && this.publicacion.getPerteneceA().getPrivacidad() != 0) {
-				if(this.userNoRegistrado != null) {
-					perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA(), this.userNoRegistrado.cabeceraUNR._cabecera_TOP);
-					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPrivado);
-				}
-				else if(this.userRegistrado != null) {					
-					perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA(), this.userRegistrado._cabecera_Usuario_Registrado._cabecera_TOP);
-					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPrivado);
-				}
-				else {					
-					verPerfilAdmin = new Ver_perfil_Administrador(this.publicacion.getPerteneceA());
-					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(verPerfilAdmin);
+				if (this.userNoRegistrado != null) {
+					perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA(),
+							this.userNoRegistrado.cabeceraUNR._cabecera_TOP);
+					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+							.add(perfilPrivado);
+				} else if (this.userRegistrado != null) {
+					perfilPrivado = new Ver_perfil_privado(this.publicacion.getPerteneceA(),
+							this.userRegistrado._cabecera_Usuario_Registrado._cabecera_TOP);
+					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+							.add(perfilPrivado);
+				} else {
+					verPerfilAdmin = new Ver_perfil_Administrador(this.admin._cabecera_Administrador.cabeceraTOP, this.publicacion.getPerteneceA());
+					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+							.add(verPerfilAdmin);
 				}
 			} else if (this.publicacion.getPerteneceA() != null) {
-				if(this.userNoRegistrado != null) {
-					perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, this.userNoRegistrado.cabeceraUNR._cabecera_TOP);
-					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPublico);
-				}else if(this.userRegistrado != null) {
-					perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this, this.userRegistrado._cabecera_Usuario_Registrado._cabecera_TOP);	
-					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(perfilPublico);
-				}else {
-					verPerfilAdmin = new Ver_perfil_Administrador(this.publicacion.getPerteneceA());
-					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).add(verPerfilAdmin);
+				if (this.userNoRegistrado != null) {
+					perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this,
+							this.userNoRegistrado.cabeceraUNR._cabecera_TOP);
+					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+							.add(perfilPublico);
+				} else if (this.userRegistrado != null) {
+					perfilPublico = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this,
+							this.userRegistrado._cabecera_Usuario_Registrado._cabecera_TOP);
+					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+							.add(perfilPublico);
+				} else {
+					verPerfilAdmin = new Ver_perfil_Administrador(this.admin._cabecera_Administrador.cabeceraTOP, this.publicacion.getPerteneceA());
+					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
+							.add(verPerfilAdmin);
 				}
 			}
 		});

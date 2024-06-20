@@ -65,86 +65,9 @@ public class MainView extends VerticalLayout {
 		this.setSizeFull();
 		this.setMargin(false);
 		this.setPadding(false);
-		BDPrincipal bd = new BDPrincipal();
 
-//		Administrador admin = new Administrador(999);
-//		add(admin);
-//		Usuario_comercial uc = new Usuario_comercial(1);
-//		add(uc);
-//
-//		Usuario_Registrado ur = new Usuario_Registrado(1);
-//		add(ur);
-//		
-		Usuario_No_Registrado unr = new Usuario_No_Registrado();
+		Usuario_No_Registrado unr = new Usuario_No_Registrado(this);
 		add(unr);
-
-		unr.cabeceraUNR.getBotonRegistrarse().addClickListener(new ComponentEventListener<ClickEvent<Button>>() {
-
-
-			@Override
-			public void onComponentEvent(ClickEvent<Button> event) {
-				// TODO Auto-generated method stub
-				removeAll();
-				Registrar registro = new Registrar(unr);
-				add(registro);
-				registro.getConfirmar().addClickListener(event2 ->{
-					if(registro.getValido()) {
-						removeAll();
-						UsuarioRegistrado user = (UsuarioRegistrado) bd.iniciarSesion(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
-						Usuario_Registrado ur = new Usuario_Registrado(user.getID());
-						add(ur);
-					}else {
-						removeAll();
-						UsuarioComercial uc = (UsuarioComercial) bd.iniciarSesion(registro.getNombreDeUsuarioTF().getValue(), registro.getContrasenaTF().getValue());
-						Usuario_comercial comercial = new Usuario_comercial(uc.getID());
-						add(comercial);
-					}
-				});
-			}
-		});
-
-		unr.cabeceraUNR.getVaadinButton().addClickListener(new ComponentEventListener<ClickEvent<Button>>(){
-			@Override
-			public void onComponentEvent(ClickEvent<Button> event) {
-				unr.inicioSesion.getIniciarSesionB().addClickListener(event2 ->{
-					Object usuarioValidado =  unr.inicioSesion.Validar_datos();
-					if(usuarioValidado == null) {
-						// Manejar el caso en el que no se encontró ningún usuario con el nombre especificado
-						Notification.show("Usuario y/o contraseña incorrecta.");
-					}
-					else {
-					 switch (usuarioValidado.getClass().getSimpleName()) {
-				        case "UsuarioRegistrado":
-				            UsuarioRegistrado ur2 = (UsuarioRegistrado) usuarioValidado;
-				                removeAll();
-				                Usuario_Registrado urInterfaz = new Usuario_Registrado(ur2.getID());
-				                add(urInterfaz);
-				                urInterfaz._cabecera_Usuario_Registrado.getBotonCerrarSesion().addClickListener(event3 ->{
-				                    removeAll();
-				                    add(unr);
-				                });
-//				            }
-				            break;
-				        case "UsuarioComercial":
-				            UsuarioComercial com = (UsuarioComercial) usuarioValidado;
-				                Usuario_comercial comercial = new Usuario_comercial(com.getID());
-				                removeAll();
-				                add(comercial);
-				                comercial._cabecera_Usuario_Comercial.getBotonCerrarSesion().addClickListener(event4 ->{
-				                    removeAll();
-				                    add(unr);
-				                });
-//				            }
-				            break;
-				        default:
-							Notification.show("Usuario y/o contraseña incorrecta.");
-				            break;
-				    }
-					}
-				});
-			}
-		});
-
 
 	}
 }

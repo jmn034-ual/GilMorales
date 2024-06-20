@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.dom.Element;
 
+import TikTok.MainView;
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
 import bd_dcl.UsuarioAdministrador;
@@ -14,10 +15,12 @@ public class Administrador extends VistaAdministradorPrincipal {
 	public Lista_Publicaciones_Administrador _lista_Publicaciones__Administrador_;
 	public Cabecera_Administrador _cabecera_Administrador;
 	UsuarioAdministrador admin;
+	MainView mainview;
 	
-	public Administrador(int codigoEmpleado) {
+	public Administrador(MainView mainview, int codigoEmpleado) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.mainview = mainview;
 		this.admin = this._iAdministrador.cargarAdministrador(codigoEmpleado);
 		Cabecera_Administrador();
 		Lista_Publicaciones__Administrador_();

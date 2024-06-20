@@ -64,7 +64,7 @@ public class UsuariosComerciales {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void registrarUsuario(String aNombre, String aEmail, String aPassword, String aDescripcion, String aNombreUsuarioEmpresa, String aFechaNacimiento, String aFoto) throws PersistentException {
+	public Object registrarUsuario(String aNombre, String aEmail, String aPassword, String aDescripcion, String aNombreUsuarioEmpresa, String aFechaNacimiento, String aFoto) throws PersistentException {
 		UsuarioComercial comercial = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
@@ -78,10 +78,12 @@ public class UsuariosComerciales {
 				uc.setEmail(aEmail);
 				uc.setFoto(aFoto);
 				UsuarioComercialDAO.save(uc);
+				comercial = UsuarioComercialDAO.loadUsuarioComercialByORMID(uc.getID());
 			t.commit();
 		}catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
+		return comercial;
 	}
 }
