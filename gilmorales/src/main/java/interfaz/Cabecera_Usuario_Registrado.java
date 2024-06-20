@@ -57,8 +57,8 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	}
 
 	public void Ver_perfil_propio() {
-		_ver_perfil_propio =  new Ver_perfil_propio(this._cabecera_TOP);
 		this.getBotonPerfil().addClickListener(event -> {
+			_ver_perfil_propio =  new Ver_perfil_propio(this._cabecera_TOP);
 			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			this.urInterfaz.getVaadinHorizontalLayout().add(_ver_perfil_propio);
 		});
