@@ -32,6 +32,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 				this.getVaadinHorizontalLayout().removeAll();
 				this.getVaadinHorizontalLayout().add(new Ver_perfil_privado(this.userAver, cabecera_TOP));
 			}
+			Seguir();
 		}else {
 			asignarInterfaz(interfazAux);
 			motrarDatosUserNoRegistrado();
@@ -48,8 +49,8 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 
 	private void motrarDatosUserNoRegistrado() {
 		this.getBotonSeguir().setVisible(false);
-		this.getVerSeguidores().setVisible(false);
-		this.getVerSiguiendos().setVisible(false);
+		this.getVerSeguidores().setEnabled(false);
+		this.getVerSiguiendos().setEnabled(false);
 		this.getBotonEditarPerfil().setVisible(false);
 		this.getBotonEliminarPublicacion().setVisible(false);
 		this.getBotonModificarPerfil().setVisible(false);
@@ -70,24 +71,26 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.getBotonPeticionAmistad().setVisible(false);
 		this.getLabelUsuarioPrivado().setVisible(false);
 		this.getListaMeGustas().setVisible(true);
-		if (user.seguir.contains(userAver)) {
-			this.getBotonSeguir().setText("Dejar de Seguir");
-		} else {
-			this.getBotonSeguir().setText("Seguir");
-		}
-		Seguir();
+		this.getBotonBloquear().setVisible(false);
+//		if (user.seguir.contains(userAver)) {
+//			this.getBotonSeguir().setText("Dejar de Seguir");
+//		} else {
+//			this.getBotonSeguir().setText("Seguir");
+//		}
+//		
 
 	}
 
 	public void Seguir() {
+		if (user.seguir.contains(userAver)) {
+			this.getBotonSeguir().setText("Dejar de Seguir");
+		} else if(!user.seguir.contains(userAver)){
+			this.getBotonSeguir().setText("Seguir");
+		}
 		this.getBotonSeguir().addClickListener(event -> {
-			if (user.seguir.contains(userAver)) {
-				this.bd.seguirUsuario(user.getID(), this.userAver.getID());
-				this.getBotonSeguir().setText("Dejar de Seguir");
-			} else {
-				this.bd.dejarSeguirUsuario(user.getID(), this.userAver.getID());
-				this.getBotonSeguir().setText("Seguir");
-			}
+			this.bd.seguirUsuario(user.getID(), this.userAver.getID());
+			user = this.bd.cargarUsuarioRegistrado(user.getID());
+			
 		});
 	}
 

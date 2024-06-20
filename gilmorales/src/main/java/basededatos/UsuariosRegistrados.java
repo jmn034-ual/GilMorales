@@ -68,7 +68,7 @@ public class UsuariosRegistrados {
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			usuario.setNombre(aNombre);
 			usuario.setNombreUsuario(aNuevoNombreUsuario);
-			cambiarFotoPerfil(usuario.getNombreUsuario(), aFoto, aUsuarioID);
+			usuario.setFoto(aFoto);
 			usuario.setDescripcion(aDescripcion);
 			UsuarioRegistradoDAO.save(usuario);
 			t.commit();

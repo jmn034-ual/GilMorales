@@ -38,7 +38,7 @@ export class VistaVerTendencias extends LitElement {
       Seguir 
     </vaadin-button>
     <vaadin-button theme="icon" aria-label="Add new" id="botonEditarPerfil">
-     <iron-icon icon="lumo:edit"></iron-icon>
+     <iron-icon icon="lumo:edit" id="ironIcon"></iron-icon>
     </vaadin-button>
     <vaadin-button id="botonPeticionAmistad">
       Enviar Petición de Amistad 
@@ -52,7 +52,7 @@ export class VistaVerTendencias extends LitElement {
       Denunciar 
     </vaadin-button>
     <vaadin-button theme="icon" aria-label="Add new" id="botonModificarPerfil" style="align-self: flex-end; margin: var(--lumo-space-xs);">
-     <iron-icon icon="lumo:cog"></iron-icon>
+     <iron-icon icon="lumo:cog" id="ironIcon1"></iron-icon>
     </vaadin-button>
     <vaadin-button id="botonEliminarPublicacion" style="align-self: flex-end; margin: var(--lumo-space-xs);">
       Eliminar Publicación 
@@ -64,14 +64,12 @@ export class VistaVerTendencias extends LitElement {
    <vaadin-button id="verSiguiendos">
      Siguiendo 
    </vaadin-button>
-   <label id="labelSiguiendo">Siguiendo</label>
    <label id="numSeguidores">0</label>
    <vaadin-button id="verSeguidores">
      Seguidores 
    </vaadin-button>
-   <label id="labelSeguidores">Seguidores</label>
    <label id="numMeGustas">0</label>
-   <label id="labelMeGustas">Me Gustas</label>
+   <iron-icon id="ironIcon2" icon="vaadin:heart-o"></iron-icon>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="layoutDescripcion" style="margin: var(--lumo-space-xs);">
    <label id="labelDescripcion" style="flex-grow: 0; flex-shrink: 0;">Descripción sobre el perfil del usuario.</label>

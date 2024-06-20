@@ -33,7 +33,8 @@ public class Top_usuarios extends VistaTopUsuarios{
 			if(this._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
 				tui = new Top_usuarios_item(u, this);
 			}else {
-				tui = new Top_usuarios_item(u, this);
+				UsuarioRegistrado ur = bd.cargarUsuarioRegistrado(u.getID());
+				tui = new Top_usuarios_item(ur, this);
 			}
 			this.getLayoutTopUsuarios().as(VerticalLayout.class).add(tui);
 			_item.add(tui);

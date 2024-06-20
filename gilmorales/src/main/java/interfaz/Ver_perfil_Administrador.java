@@ -33,8 +33,7 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 		this.getLabelUsuarioPrivado().setVisible(false);
 		this.getBotonEditarPerfil().setVisible(false);
 		this.getBotonModificarPerfil().setVisible(false);
-		this.getLabelSiguiendo().setVisible(false);
-		this.getLabelSeguidores().setVisible(false);
+		this.getBotonEliminarPublicacion().setVisible(false);
 		if(this.user != null) {
 			this.getNombreUsuario().setText(this.user.getNombreUsuario());
 			this.getNombreYapellidos().setText(this.user.getNombre() + " " + this.user.getApellidos());

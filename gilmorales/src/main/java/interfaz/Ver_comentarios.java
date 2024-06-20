@@ -81,7 +81,7 @@ public class Ver_comentarios extends VistaVerComentarios {
 	}
 
 	public void NumeroSeguidores() {
-		if (this.publicacion.getPerteneceA() != null) {
+		if (this.publicacion.getPerteneceA() != null && this.publicacion.getPerteneceA().seguidor != null) {
 			this.getNumSeguidores().setText(this.publicacion.getPerteneceA().seguidor.size() + "");
 		} else {
 			this.getNumSeguidores().setVisible(false);

@@ -81,13 +81,15 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
-			this.getBotonAniadir().setVisible(true);
-			this.getBotonPerfil().setVisible(true);
-			this.getBotonNotificaciones().setVisible(true);
-			this.addPubli = new Add_publicacion(urInterfaz.ur, urInterfaz);
-			urInterfaz.ur = urInterfaz._iUsuario_Registrado.cargarUsuarioRegistrado(urInterfaz.ur.getID());
-			urInterfaz.getVaadinHorizontalLayout().removeAll();
-			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(this), new Lista_publicaciones_Usuario_Registrado(urInterfaz));
+//			this.getBotonAniadir().setVisible(true);
+//			this.getBotonPerfil().setVisible(true);
+//			this.getBotonNotificaciones().setVisible(true);
+//			this.addPubli = new Add_publicacion(urInterfaz.ur, urInterfaz);
+//			urInterfaz.ur = urInterfaz._iUsuario_Registrado.cargarUsuarioRegistrado(urInterfaz.ur.getID());
+//			urInterfaz.getVaadinHorizontalLayout().removeAll();
+//			urInterfaz.getVaadinHorizontalLayout().add(new Cabecera_TOP(this), new Lista_publicaciones_Usuario_Registrado(urInterfaz));
+			this.urInterfaz.mainview.removeAll();
+			this.urInterfaz.mainview.add(new Usuario_Registrado(this.urInterfaz.mainview, this.urInterfaz.ur.getID()));
 		});
 	}
 	

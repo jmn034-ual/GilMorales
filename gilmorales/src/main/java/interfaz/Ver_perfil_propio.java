@@ -31,8 +31,6 @@ public class Ver_perfil_propio extends Ver_tendencias {
 		this._cabecera_Usuario_Registrado = cabecera_top._cabecera_Usuario_Registrado;
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-    	this.getLabelSiguiendo().setVisible(false);
-    	this.getLabelSeguidores().setVisible(false);
     	this.getBotonDenunciar().setVisible(false);
     	this.getBotonSeguir().setVisible(false);
     	this.getLabelUsuarioPrivado().setVisible(false);
@@ -43,6 +41,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	this.getBotonBloquear().setVisible(false);
     	this.imagenPerfil = this.user.getFoto();
     	this.getFotoPerfil1().setImage(this.imagenPerfil);
+    	this.getLabelDescripcion().setText(this.user.getDescripcion());
     	Ver_publicaciones_propias();
     	Ver_seguidores();
     	Ver_seguidos();
@@ -111,13 +110,15 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Editar_perfil() {
-		_editar_perfil = new Editar_perfil(this.user);
+		
 		this.getBotonEditarPerfil().addClickListener(event ->{
+			Dialog dialog = new Dialog();
+			_editar_perfil = new Editar_perfil(this.user, dialog, this);
+			dialog.add(_editar_perfil);
 			this._editar_perfil.setVisible(true);
 			this._ver_seguidores.setVisible(false);
 			this._ver_seguidos.setVisible(false);
 			this._configurar_perfil.setVisible(false);
-			Dialog dialog = new Dialog(_editar_perfil);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("50%");
 			dialog.setWidth("50%");
