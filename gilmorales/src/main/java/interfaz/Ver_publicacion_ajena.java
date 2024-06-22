@@ -20,7 +20,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public Denunciar_publicacion _denunciar_publicacion;
 	public Ver_perfil_publico _ver_perfil;
 	
-	BDPrincipal bd = new BDPrincipal();
+//	BDPrincipal bd = new BDPrincipal();
 
 	public Ver_publicacion_ajena(Publicacion p, UsuarioRegistrado user, Object urInterfaz) {
 		super(p, user);
@@ -29,7 +29,6 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 		if (urInterfaz instanceof Lista_publicaciones_Usuario_Registrado_item) {
 			this._lista_publicaciones__Usuario_Registrado_ = (Lista_publicaciones_Usuario_Registrado_item) urInterfaz;
 			this.urInterfaz = this._lista_publicaciones__Usuario_Registrado_._lista_publicaciones__Usuario_Registrado_.urInterfaz;
-
 		} else if (urInterfaz instanceof Publicaciones_gustadas_item) {
 			this._publicaciones_gustadas = (Publicaciones_gustadas_item) urInterfaz;
 			this.urInterfaz = this._publicaciones_gustadas._publicaciones_gustadas._ver_publicaciones_gustadas__Usuario_registrado_._ver_perfil_propio._cabecera_Usuario_Registrado.urInterfaz;
@@ -47,34 +46,42 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 			this.urInterfaz = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
 		}
 		
-		if(this.publicacion.getPerteneceA().getID() == (user.getID())) {
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_propia(this.publicacion, this.urInterfaz));
+		this.getVaadinHorizontalLayout2().setVisible(true);
+		
+		if(this.publicacion.getPerteneceA() != null) {
+			this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());
+			this.getAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
+			if(this.publicacion.getPerteneceA().getID() == (user.getID())) {
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_propia(this.publicacion, this.urInterfaz));
+			}
+			if (this.urInterfaz != null) {
+				if (this.urInterfaz.ur.seguir.contains(p.getPerteneceA())) {
+					this.getBotonSeguir().setVisible(true);
+					this.getBotonSeguir().setText("Dejar de Seguir");
+				} else if (!this.urInterfaz.ur.seguir.contains(p.getPerteneceA())) {
+					this.getBotonSeguir().setVisible(true);
+					this.getBotonSeguir().setText("Seguir");
+				}
+			}
+			Seguir();
+		}else {
+			this.getVerPerfil().setText(this.publicacion.getEsPublicada().getNombreUsuarioComercial());
+			this.getAvatar().setImage(this.publicacion.getEsPublicada().getFoto());
+			this.getBotonSeguir().setEnabled(false);
 		}
 
-		this.getVaadinHorizontalLayout2().setVisible(true);
-		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());
-		this.getAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
 		this.getGeolocalizacion().setText(this.publicacion.getLocalizacion());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getBotonComentar().setVisible(true);
 		this.getVaadinButton1().setVisible(false);
-		if (this.urInterfaz != null) {
-			if (this.urInterfaz.ur.seguir.contains(p.getPerteneceA())) {
-				this.getBotonSeguir().setVisible(true);
-				this.getBotonSeguir().setText("Dejar de Seguir");
-			} else if (!this.urInterfaz.ur.seguir.contains(p.getPerteneceA())) {
-				this.getBotonSeguir().setVisible(true);
-				this.getBotonSeguir().setText("Seguir");
-			}
-		}
+		
 		this.getVaadinHorizontalLayout2().setVisible(true);
 		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getNumComentarios().setText(this.publicacion.getNumComentarios() + "");
 		this.getFechaSubida().setText(this.publicacion.getFechaPublicacion());
 		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones() + "");
 		this.getVideo().add(new Video(publicacion.getVideo()));
-		Seguir();
 		Comentar();
 		Denunciar_publicacion();
 		Dar_me_gusta_publicacion();
@@ -84,7 +91,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 
 	public void Seguir() {
 		this.getBotonSeguir().addClickListener(event -> {
-			bd.seguirUsuario(urInterfaz.ur.getID(), this.publicacion.getPerteneceA().getID());
+			this.bd.seguirUsuario(urInterfaz.ur.getID(), this.publicacion.getPerteneceA().getID());
 		});
 	}
 
@@ -116,8 +123,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public void Dar_me_gusta_publicacion() {
 		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getBotonMeGusta().addClickListener(event -> {
-			this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
-			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
 			this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		});
 	}

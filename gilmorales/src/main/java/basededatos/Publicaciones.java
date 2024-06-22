@@ -49,13 +49,13 @@ public class Publicaciones {
 			eliminarPublicacion(publicacion.getIdPublicacion());
 		}
 	}
-	
+
 	public List<Publicacion> cargarPublicacionesComerciales() throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		List<Publicacion> publicaciones = null;
 		try {
-			 String condition = "UsuarioComercialID IS NOT NULL";
-		      publicaciones = PublicacionDAO.queryPublicacion(condition, null);
+			String condition = "UsuarioComercialID IS NOT NULL";
+			publicaciones = PublicacionDAO.queryPublicacion(condition, null);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
@@ -97,8 +97,8 @@ public class Publicaciones {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public Publicacion addPublicacion(String aLocalizacion, String aDescripcion, String aVideo,
-			int aUsuarioID) throws PersistentException {
+	public Publicacion addPublicacion(String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID)
+			throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		Publicacion p = null;
 
@@ -140,9 +140,9 @@ public class Publicaciones {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 		return p;
 	}
-	
-	public Publicacion addPublicacionComercial(String aLocalizacion, String aDescripcion, String aVideo,
-			int aUsuarioID) throws PersistentException {
+
+	public Publicacion addPublicacionComercial(String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID)
+			throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		Publicacion p = null;
 
@@ -168,8 +168,6 @@ public class Publicaciones {
 			p.setNumComentarios(0);
 			p.setNumMeGustas(0);
 			p.setNumVisualizaciones(0);
-//			crearHashtag(p);
-//			crearMencion(p);
 			PublicacionDAO.save(p);
 			t.commit();
 		} catch (Exception e) {
@@ -179,10 +177,11 @@ public class Publicaciones {
 		return p;
 	}
 
-	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID) throws PersistentException {
+	public Publicacion meGustaPublicacion(int aIdPublicacion, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		Publicacion p = null;
 		try {
-			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
+			p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			Notificacion notificacion = NotificacionDAO.createNotificacion();
 
@@ -190,10 +189,12 @@ public class Publicaciones {
 				p.gustaA.add(usuario);
 				p.setNumMeGustas(p.gustaA.size());
 				usuario.daMeGustaPublicacion.add(p);
-				notificacion.setTipoNotificacion(1);
-				notificacion.setEnviadaA(p.getPerteneceA());
-				notificacion.setIDUsuarioNotifica(usuario.getID());
-				NotificacionDAO.save(notificacion);
+				if (p.getPerteneceA() != null) {
+					notificacion.setTipoNotificacion(1);
+					notificacion.setEnviadaA(p.getPerteneceA());
+					notificacion.setIDUsuarioNotifica(usuario.getID());
+					NotificacionDAO.save(notificacion);
+				}
 			} else {
 				p.gustaA.remove(usuario);
 				usuario.daMeGustaPublicacion.remove(p);
@@ -207,7 +208,7 @@ public class Publicaciones {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
-
+		return p;
 	}
 
 	public List cargarPublicacionesUsuarios() throws PersistentException {
@@ -229,7 +230,7 @@ public class Publicaciones {
 			while (m.find()) {
 				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
 				for (UsuarioRegistrado ur : lista) {
-					if (ur.getNombreUsuario().equals(m.group(1))) {
+					if (ur.getNombreUsuario().equals(m.group(1)) && !ur.getNombreUsuario().equals(m.group(1))) {
 						Notificacion notificacion = NotificacionDAO.createNotificacion();
 						notificacion.setTipoNotificacion(3);
 						notificacion.setEnviadaA(ur);

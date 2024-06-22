@@ -80,8 +80,7 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	public void Dar_me_gusta_publicacion() {
 //		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getVaadinButton().addClickListener(event -> {
-			this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
-			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
 			this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		});
 	}

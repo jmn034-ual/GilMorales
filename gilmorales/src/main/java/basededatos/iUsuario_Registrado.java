@@ -4,6 +4,7 @@ import bd_dcl.UsuarioRegistrado;
 
 import java.util.List;
 
+import bd_dcl.Comentario;
 import bd_dcl.Hashtag;
 import bd_dcl.Publicacion;
 
@@ -13,7 +14,7 @@ public interface iUsuario_Registrado {
 
 	public void comentarPublicacion(int aIdPublicacion, int aUsuarioID, String aComentario);
 
-	public void meGustaComentario(int aIdComentario, int aUsuarioID);
+	public Comentario meGustaComentario(int aIdComentario, int aUsuarioID);
 
 	public void cambiarFotoPerfil(int aUsuarioID, String aNombreUsuario, String aFoto);
 
@@ -21,11 +22,9 @@ public interface iUsuario_Registrado {
 
 	public void eliminarSeleccion(List aListaSeleccion);
 
-	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID);
+	public Publicacion meGustaPublicacion(int aIdPublicacion, int aUsuarioID);
 
 	public void seguirUsuario(int aUsuarioSeguidorID, int aUsuarioAseguirID);
-
-	public void dejarSeguirUsuario(int aUsuarioDejaSeguirID, int aUsuarioDejadoSeguirID);
 
 	public Publicacion addPublicacion(String aLocalizacion, String aDescripcion, String aVideo, int aUsuarioID);
 

@@ -24,7 +24,7 @@ public class Lista_Top_comentarios_Usuario_Registrado_item extends Lista_Top_Com
 	public void Dar_me_gusta_comentario() {
 		this.getMeGustaB().addClickListener(event ->{
 			if(this.user != null) {
-				bd.meGustaComentario(this.comentario.getIdComentario(), this.user.getID());
+			this.comentario = bd.meGustaComentario(this.comentario.getIdComentario(), this.user.getID());
 				this.getNumeroMeGusta().setText(this.comentario.getNumeroMeGustas() +"");
 			}
 		});

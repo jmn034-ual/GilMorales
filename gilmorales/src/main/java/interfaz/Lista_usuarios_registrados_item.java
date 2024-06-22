@@ -19,10 +19,13 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
 	iUsuario_Registrado bd = new BDPrincipal();
 	UsuarioRegistrado user;
+	UsuarioRegistrado userRegistrado;
 	
 	public Lista_usuarios_registrados_item(UsuarioRegistrado user, Lista_usuarios_registrados interfaz) {
-		this.user = user;
 		this._lista_usuarios_registrados = interfaz;
+		this.user = user;
+		if(this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null)
+			this.userRegistrado = this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
 		Video video = new Video("videos/tiktok1.mp4"); 
 		video.getStyle().set("width", "60%");
 		video.getStyle().set("height", "60%");
@@ -62,14 +65,9 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 			this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
 				this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this));
-			} else if (this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null) {
-				Usuario_Registrado userRegistrado = this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz;
-				if (userRegistrado.ur.equals(publicacion.getPerteneceA())) {
-					this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_propia(publicacion, userRegistrado));
-				} else {
-					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, user,this);
+			} else if (this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null) {	
+					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.userRegistrado,this);
 					this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_publicacion_ajena);
-				}
 			}else {
 				this._lista_usuarios_registrados._ver_lista_usuarios_registrados.getVaadinVerticalLayout().as(VerticalLayout.class).add(new Ver_publicacion_Administrador(publicacion, this));
 			}

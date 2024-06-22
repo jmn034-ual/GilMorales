@@ -19,16 +19,23 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 	UsuarioRegistrado user;
 	UsuarioComercial uc;
 	Usuario_Registrado urInterfaz;
+	BDPrincipal bd = new BDPrincipal();
 
 	
 	public Ver_publicacion_usuario_Registrado() {}
 	
 	
-	public Ver_publicacion_usuario_Registrado(Publicacion p, UsuarioRegistrado user) {
+	public Ver_publicacion_usuario_Registrado(Publicacion p, Object user) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
-		this.publicacion = p;
-		this.user = user;
+		this.publicacion = this.bd.cargarPublicacion(p.getIdPublicacion());
+		if(user instanceof UsuarioRegistrado) {
+			this.user = (UsuarioRegistrado) user;
+			this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
+		}else {
+			this.uc = (UsuarioComercial) user;
+			this.uc = this.bd.cargarUsuarioComercial(this.uc.getID());
+		}
 		Lista_Top_comentarios__Usuario_Registrado_();
 	}
 	public Ver_publicacion_usuario_Registrado(Publicacion p, UsuarioComercial uc) {

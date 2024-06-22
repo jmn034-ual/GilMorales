@@ -44,8 +44,7 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 
 	public void Dar_me_gusta_publicacion() {
 		this.getBotonMeGusta().addClickListener(event -> {
-			this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
-			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
 			this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		});	
 	}

@@ -9,10 +9,10 @@ public class Notificaciones_item extends VistaNotificacionesItem{
 	public Notificaciones_comentarios _notificaciones_comentarios;
 
 	public void Me_gustas() {
-		throw new UnsupportedOperationException();
+		_me_gustas = new Me_gustas();
 	}
 
 	public void Notificaciones_comentarios() {
-		throw new UnsupportedOperationException();
+		_notificaciones_comentarios = new Notificaciones_comentarios();
 	}
 }

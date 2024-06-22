@@ -1,18 +1,19 @@
 package interfaz;
 
-import com.vaadin.flow.component.html.Label;
 
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
+import bd_dcl.Comentario;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaNotificacionesComentariosItem;
 
 public class Notificaciones_comentarios_item extends VistaNotificacionesComentariosItem{
 
-//	public Notificaciones_comentarios _notificaciones_comentarios;
+	public Notificaciones_comentarios _notificaciones_comentarios;
 	iUsuario_Registrado bd = new BDPrincipal();
 	UsuarioRegistrado daMeGusta;
 	UsuarioRegistrado recibe;
+	Comentario comentario;
 	
 	public Notificaciones_comentarios_item() {
 		this.getLabelComentario().setText("No tienes notificaciones");
@@ -20,11 +21,15 @@ public class Notificaciones_comentarios_item extends VistaNotificacionesComentar
 	}
 	
 	
-	public Notificaciones_comentarios_item(UsuarioRegistrado daMeGusta, UsuarioRegistrado recibe) {
+	public Notificaciones_comentarios_item(UsuarioRegistrado daMeGusta, UsuarioRegistrado recibe, Comentario c , Notificaciones_comentarios interfaz) {
 		this.getBotonMeGusta().setVisible(true);
 		this.getVaadinVerticalLayout().setVisible(true);
 		this.daMeGusta = daMeGusta;
 		this.recibe = recibe;
+		this.comentario = c;
+		this._notificaciones_comentarios = interfaz;
+		this.getLabelComentario().setText(this.comentario.getComentario());
+		System.out.println("Aparece en la publicacion: " + this.comentario.getComentadoEn());
 	}
 
 	public void Dar_me_gusta_comentario() {

@@ -37,9 +37,10 @@ public class BDPrincipal
 
 	TreeMap<String, String> nombresUsuarios = new TreeMap<String, String>();
 	
-	public void configurarPerfil(int aUsuarioComercialID, int privacidad) {
+	
+	public void configurarPerfil(int aUsuarioID, int privacidad) {
 		try {
-			this.usuarios_registrados.configurarPerfil(aUsuarioComercialID, privacidad);
+			this.usuarios_registrados.configurarPerfil(aUsuarioID, privacidad);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -95,6 +96,8 @@ public class BDPrincipal
 		Publicacion p = null;
 		try {
 			p = this.publicaciones.addPublicacionComercial(aLocalizacion, aDescripcion, aVideo, aUsuarioComercialID);
+			this.publicaciones.crearHashtag(p);
+//			this.publicaciones.crearMencion(p);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -345,13 +348,15 @@ public class BDPrincipal
 
 	}
 
-	public void meGustaComentario(int aIdComentario, int aUsuarioID) {
+	public Comentario meGustaComentario(int aIdComentario, int aUsuarioID) {
+		Comentario c = null;
 		try {
-			this.comentarios.meGustaComentario(aIdComentario, aUsuarioID);
+			c = this.comentarios.meGustaComentario(aIdComentario, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return c;
 
 	}
 
@@ -374,27 +379,20 @@ public class BDPrincipal
 		}
 	}
 
-	public void meGustaPublicacion(int aIdPublicacion, int aUsuarioID) {
+	public Publicacion meGustaPublicacion(int aIdPublicacion, int aUsuarioID) {
+		Publicacion p = null;
 		try {
-			this.publicaciones.meGustaPublicacion(aIdPublicacion, aUsuarioID);
+			p = this.publicaciones.meGustaPublicacion(aIdPublicacion, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return p;
 	}
 
 	public void seguirUsuario(int aUsuarioSeguidorID, int aUsuarioAseguirID) {
 		try {
 			this.usuarios_registrados.seguirUsuario(aUsuarioSeguidorID, aUsuarioAseguirID);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public void dejarSeguirUsuario(int aUsuarioDejaSeguirID, int aUsuarioDejadoSeguirID) {
-		try {
-			this.usuarios_registrados.dejarSeguirUsuario(aUsuarioDejaSeguirID, aUsuarioDejadoSeguirID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

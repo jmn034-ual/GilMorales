@@ -85,6 +85,8 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 			user = this.bd.cargarUsuarioRegistrado(user.getID());
 			if(this.getBotonSeguir().getText().equals("Dejar de Seguir"))
 				this.getBotonSeguir().setText("Seguir");
+			else
+				this.getBotonSeguir().setText("Dejar de Seguir");
 
 		});
 	}

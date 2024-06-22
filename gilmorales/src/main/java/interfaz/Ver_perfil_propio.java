@@ -51,6 +51,7 @@ public class Ver_perfil_propio extends Ver_tendencias {
     	Eliminar_publicaciones();
     	NumeroMeGusta();
     	NumeroSeguidores();
+    	NumeroSeguidos();
     	NumeroMeGusta();
 
 	}

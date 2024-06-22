@@ -21,15 +21,15 @@ public class Notificaciones_usuario_publico_item extends Notificaciones_item {
 		
 		if(notificaciones.isEmpty()) {
 			this._nuevos_seguidores = new Nuevos_seguidores();
-			this._me_gustas = new Me_gustas();
-			this._notificaciones_comentarios = new Notificaciones_comentarios();
+			this.Me_gustas();
+			this.Notificaciones_comentarios();
 			this.nuevasMenciones = new Nuevos_seguidores();
 		}else {
 			Nuevos_seguidores();
 			this._me_gustas = new Me_gustas(this.ur);
 			this.getNotificaciones().as(VerticalLayout.class).add(_me_gustas);
 
-			this._notificaciones_comentarios = new Notificaciones_comentarios(this.ur);
+			this._notificaciones_comentarios = new Notificaciones_comentarios(this.ur, this);
 			this.getNotificaciones().as(VerticalLayout.class).add(_notificaciones_comentarios);
 
 			this.nuevasMenciones = new Nuevos_seguidores(this.ur);

@@ -21,7 +21,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	public Ver_perfil_propio ver_perfil_propio;
 	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
 //	public Usuario_Registrado urInterfaz;
-	public BDPrincipal bd = new BDPrincipal();
+//	public BDPrincipal bd = new BDPrincipal();
 	
 	public Ver_publicacion_propia() {}
 

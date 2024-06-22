@@ -71,11 +71,7 @@ public class Comentarios {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
 			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(comentario.getComentadoEn().getIdPublicacion());
 			UsuarioRegistrado user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(comentario.getEsComentadoPor().getID());
-			if(publicacion.tieneComentarios.contains(comentario) && user.comenta.contains(comentario)) {
-				publicacion.tieneComentarios.remove(comentario);
-				publicacion.setNumComentarios(publicacion.tieneComentarios.size());
-				user.comenta.remove(comentario);
-			}
+			//Eliminar la notificacion
 			ComentarioDAO.deleteAndDissociate(comentario);
 			UsuarioRegistradoDAO.save(user);
 			PublicacionDAO.save(publicacion);
@@ -86,10 +82,11 @@ public class Comentarios {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void meGustaComentario(int aIdComentario, int aUsuarioID)throws PersistentException {
+	public Comentario meGustaComentario(int aIdComentario, int aUsuarioID)throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		Comentario c = null;
 		try {
-			Comentario c = ComentarioDAO.loadComentarioByORMID(aIdComentario);
+			c = ComentarioDAO.loadComentarioByORMID(aIdComentario);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			if(!c.gustaA.contains(usuario)) {
 				usuario.daMeGustaComentario.add(c);
@@ -106,5 +103,6 @@ public class Comentarios {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
+		return c;
 	}
 }

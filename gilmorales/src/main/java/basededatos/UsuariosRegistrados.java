@@ -14,7 +14,11 @@ import org.hibernate.mapping.Collection;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import bd_dcl.GilMoralesPersistentManager;
+import bd_dcl.Notificacion;
+import bd_dcl.NotificacionDAO;
 import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
@@ -94,35 +98,20 @@ public class UsuariosRegistrados {
 		try {
 			UsuarioRegistrado userSigue = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioSeguidorID);
 			UsuarioRegistrado userAseguir = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioAseguirID);
-			if(!userAseguir.seguidor.contains(userSigue)) {
+			if(!userAseguir.seguidor.contains(userSigue) && (userSigue.getID() != userAseguir.getID())) {
 				userAseguir.seguidor.add(userSigue);
 				userSigue.seguir.add(userAseguir);
-//				UsuarioRegistradoDAO.save(userAseguir);
-//				UsuarioRegistradoDAO.save(userSigue);
+				Notificacion notificacion = NotificacionDAO.createNotificacion();
+				notificacion.setTipoNotificacion(0);
+				notificacion.setEnviadaA(userAseguir);
+				notificacion.setIDUsuarioNotifica(userSigue.getID());
+				NotificacionDAO.save(notificacion);
 			}else {
 				userAseguir.seguidor.remove(userSigue);
 				userSigue.seguir.remove(userAseguir);
 			}
 			UsuarioRegistradoDAO.save(userAseguir);
 			UsuarioRegistradoDAO.save(userSigue);
-			t.commit();
-		} catch (PersistentException e) {
-			t.rollback();
-		}
-		GilMoralesPersistentManager.instance().disposePersistentManager();	
-	}
-
-	public void dejarSeguirUsuario(int aUsuarioDejaSeguirID, int aUsuarioDejadoSeguirID) throws PersistentException {
-		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-		try {
-			UsuarioRegistrado userDejaSeguir = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioDejaSeguirID);
-			UsuarioRegistrado user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioDejadoSeguirID);
-			if(user.seguidor.contains(userDejaSeguir)) {
-				userDejaSeguir.seguir.remove(user);
-				user.seguidor.remove(userDejaSeguir);
-				UsuarioRegistradoDAO.save(userDejaSeguir);
-				UsuarioRegistradoDAO.save(user);
-			}
 			t.commit();
 		} catch (PersistentException e) {
 			t.rollback();

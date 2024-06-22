@@ -27,9 +27,10 @@ public class Notificaciones_comentarios extends Notificaciones_comun {
 		this.getNuevosSeguidores().as(VerticalLayout.class).add(nuevoItem);
 	}
 	
-	public Notificaciones_comentarios(UsuarioRegistrado ur) {
+	public Notificaciones_comentarios(UsuarioRegistrado ur, Notificaciones_item interfaz) {
 		this.getTituloNotificacion().setVisible(false);
 		this.ur = ur;
+		this._notificaciones = interfaz;
 	}
 	public void addNuevoComentario(Notificacion nuevoComentario) {
 		Notificaciones_comentarios_item nuevoItem = informacion(nuevoComentario);
@@ -39,16 +40,15 @@ public class Notificaciones_comentarios extends Notificaciones_comun {
 	private Notificaciones_comentarios_item informacion(Notificacion nuevoComentario) {
 		Notificaciones_comentarios_item nuevoItem = null;
 			UsuarioRegistrado usuarioComenta = this.bd.cargarUsuarioRegistrado(nuevoComentario.getIDUsuarioNotifica());
-			nuevoItem = new Notificaciones_comentarios_item(nuevoComentario.getEnviadaA(), usuarioComenta);
 			this.getFotoPerfil().setImage(usuarioComenta.getFoto());
 			this.getVaadinButton().setText(usuarioComenta.getNombreUsuario());
-//			nuevoItem.getVaadinVerticalLayout().as(VerticalLayout.class).add(this.getVaadinHorizontalLayout());
 			ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(this.ur.publica.getCollection());
 			for(Publicacion p : publicaciones) {
 				ArrayList<Comentario> comentarios = new ArrayList<Comentario>(p.tieneComentarios.getCollection());
 				for(Comentario c : comentarios) {
 					if(c.getEsComentadoPor().equals(usuarioComenta)) {
-						nuevoItem.getLabelComentario().setText(c.getComentario());
+						nuevoItem = new Notificaciones_comentarios_item(nuevoComentario.getEnviadaA(), usuarioComenta, c, this);
+						break;
 					}
 				}
 			}

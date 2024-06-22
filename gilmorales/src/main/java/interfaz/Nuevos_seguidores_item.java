@@ -34,24 +34,25 @@ public class Nuevos_seguidores_item extends VistaNuevosSeguirdoresItem{
 		this.getFotoPerfil().add(boton);
 		Seguir();
 		Enviar_peticion_amistad();
-		Dejar_de_seguir();
 	}
 
 	public void Seguir() {
+		if (this.usuario.seguir.contains(this.nuevoSeguidor)) {
+			this.getBotonSeguir().setText("Dejar de Seguir");
+		} 
 		this.getBotonSeguir().addClickListener(event ->{
 			this.bd.seguirUsuario( this.usuario.getID(), this.nuevoSeguidor.getID());
+			this.usuario = this.bd.cargarUsuarioRegistrado(this.usuario.getID());
+			if(this.getBotonSeguir().getText().equals("Dejar de Seguir"))
+				this.getBotonSeguir().setText("Seguir");
+			else
+				this.getBotonSeguir().setText("Dejar de Seguir");
 		});
 	}
 
 	public void Enviar_peticion_amistad() {
 		this.getBotonEnviarSolicitud().addClickListener(event ->{
 			
-		});
-	}
-
-	public void Dejar_de_seguir() {
-		this.getBotonDejarDeSeguir().addClickListener(event ->{
-			this.bd.dejarSeguirUsuario( this.usuario.getID(), this.nuevoSeguidor.getID());
 		});
 	}
 }

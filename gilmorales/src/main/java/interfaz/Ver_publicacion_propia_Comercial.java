@@ -14,7 +14,6 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 	public Ver_me_gustas_publicacion_Comercial _ver_me_gustas_publicacion__Comercial_;
 	public Ver_comentarios_Comercial _ver_comentarios__Comercial_;
 	public Lista_Top_comentarios_Publicacion_comercial _lista_Top_comentarios__Publicacion_comercial_;
-	Publicacion publicacion; Usuario_comercial ucInterfaz; 
 	Usuario_comercial uc;
 	
 	
@@ -24,7 +23,7 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 		this.getStyle().set("margin", "0px");
 		this.getStyle().set("padding", "0px");
 
-		this.publicacion = publicacion;
+		this.publicacion = this.bd.cargarPublicacion(publicacion.getIdPublicacion());
 		if(interfaz instanceof Lista_publicaciones_Comercial_item) {
 			this._lista_publicaciones__Comercial_ = (Lista_publicaciones_Comercial_item) interfaz;
 			this.uc = this._lista_publicaciones__Comercial_._lista_publicaciones__Comercial_._usuario_comercial;
