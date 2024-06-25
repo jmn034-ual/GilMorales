@@ -23,7 +23,7 @@ public class Publicaciones_propias_item extends VistaPublicacionesPropiasItem{
 		this.userInterfaz = this._publicaciones_propias._ver_publicaciones_propias._ver_perfil_propio.cabecera_top._cabecera_Usuario_Registrado.urInterfaz;
 		this.getLayoutVideo().as(VerticalLayout.class).add(video);
 		NumeroVisualizaciones();
-//		Ver_publicacion_propia();
+		Ver_publicacion_propia();
 	}
 
 	

@@ -48,14 +48,10 @@ public class VistaVerComentarios extends LitTemplate {
 	private Label numMeGustas;
 	@Id("botonMeGusta")
 	private Button botonMeGusta;
-	@Id("labelNumMeGustas")
-	private Label labelNumMeGustas;
 	@Id("layoutNumComentarios")
 	private HorizontalLayout layoutNumComentarios;
 	@Id("numComentarios")
 	private Label numComentarios;
-	@Id("labelComentarios")
-	private Label labelComentarios;
 	@Id("layoutVisualizaciones")
 	private HorizontalLayout layoutVisualizaciones;
 	@Id("numVisualizaciones")
@@ -84,6 +80,20 @@ public class VistaVerComentarios extends LitTemplate {
 	private TextField textFieldCmentario;
 	@Id("botonComentar")
 	private Button botonComentar;
+	@Id("iconoHeart")
+	private Element iconoHeart;
+	
+	
+
+	public Element getIconoHeart() {
+		return iconoHeart;
+	}
+
+
+	public void setIconoHeart(Element iconoHeart) {
+		this.iconoHeart = iconoHeart;
+	}
+
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
@@ -214,17 +224,6 @@ public class VistaVerComentarios extends LitTemplate {
 		this.botonMeGusta = botonMeGusta;
 	}
 
-
-	public Label getLabelNumMeGustas() {
-		return labelNumMeGustas;
-	}
-
-
-	public void setLabelNumMeGustas(Label labelNumMeGustas) {
-		this.labelNumMeGustas = labelNumMeGustas;
-	}
-
-
 	public HorizontalLayout getLayoutNumComentarios() {
 		return layoutNumComentarios;
 	}
@@ -243,17 +242,6 @@ public class VistaVerComentarios extends LitTemplate {
 	public void setNumComentarios(Label numComentarios) {
 		this.numComentarios = numComentarios;
 	}
-
-
-	public Label getLabelComentarios() {
-		return labelComentarios;
-	}
-
-
-	public void setLabelComentarios(Label labelComentarios) {
-		this.labelComentarios = labelComentarios;
-	}
-
 
 	public HorizontalLayout getLayoutVisualizaciones() {
 		return layoutVisualizaciones;

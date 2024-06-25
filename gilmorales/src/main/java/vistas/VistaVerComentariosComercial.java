@@ -52,8 +52,6 @@ public class VistaVerComentariosComercial extends LitTemplate {
 	private HorizontalLayout layoutNumComentarios;
 	@Id("numComentarios")
 	private Label numComentarios;
-	@Id("labelComentarios")
-	private Label labelComentarios;
 	@Id("layoutVisualizaciones")
 	private HorizontalLayout layoutVisualizaciones;
 	@Id("numVisualizaciones")
@@ -66,6 +64,8 @@ public class VistaVerComentariosComercial extends LitTemplate {
 	private Element vaadinVerticalLayout2;
 	@Id("layoutListaComentarios")
 	private Element layoutListaComentarios;
+	@Id("Comentarios")
+	private Button comentarios;
 	
 	
 
@@ -247,20 +247,6 @@ public class VistaVerComentariosComercial extends LitTemplate {
 		this.numComentarios = numComentarios;
 	}
 
-
-
-	public Label getLabelComentarios() {
-		return labelComentarios;
-	}
-
-
-
-	public void setLabelComentarios(Label labelComentarios) {
-		this.labelComentarios = labelComentarios;
-	}
-
-
-
 	public HorizontalLayout getLayoutVisualizaciones() {
 		return layoutVisualizaciones;
 	}
@@ -269,6 +255,18 @@ public class VistaVerComentariosComercial extends LitTemplate {
 
 	public void setLayoutVisualizaciones(HorizontalLayout layoutVisualizaciones) {
 		this.layoutVisualizaciones = layoutVisualizaciones;
+	}
+
+
+
+	public Button getComentarios() {
+		return comentarios;
+	}
+
+
+
+	public void setComentarios(Button comentarios) {
+		this.comentarios = comentarios;
 	}
 
 

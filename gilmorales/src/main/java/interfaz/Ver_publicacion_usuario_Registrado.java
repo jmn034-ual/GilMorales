@@ -50,13 +50,13 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 			
 			if(interfaz instanceof Ver_publicacion_ajena) {
 				 ajena =  (Ver_publicacion_ajena) interfaz;
-					_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this, this.user);
+					_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this.ajena, this.user);
 			}else {
 				propia = (Ver_publicacion_propia) interfaz;	
-				_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this, this.user);
+				_ver_comentarios__Usuario_Registrado_ = new Ver_comentarios_Usuario_Registrado(this.publicacion, this.propia, this.user);
 			}
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_comentarios__Usuario_Registrado_);
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(_ver_comentarios__Usuario_Registrado_);
 		});
 	}
 

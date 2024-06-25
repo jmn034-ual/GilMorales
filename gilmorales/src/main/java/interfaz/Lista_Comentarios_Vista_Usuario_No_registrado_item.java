@@ -9,7 +9,7 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 	public Ver_perfil_publico ver_perfil;
 	Cabecera_Usuario_No_Registrado interfazUNR = null ;
 	Comentario comentario;
-	Usuario_Registrado cabecera;
+	Usuario_Registrado userInterfaz;
 	
 	public Lista_Comentarios_Vista_Usuario_No_registrado_item() {}
 
@@ -29,17 +29,15 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 	}
 	
 	public void Ver_perfil(Object contenedor) {
+		Lista_comentarios_Usuario_registrado_item listaComentariosItem = null;
 		if(contenedor instanceof Lista_comentarios_Usuario_registrado_item){
-			
-			Lista_comentarios_Usuario_registrado_item listaComentariosItem = (Lista_comentarios_Usuario_registrado_item) contenedor;
+			listaComentariosItem = (Lista_comentarios_Usuario_registrado_item) contenedor;
 			if(listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.publicacionItem != null)
-				this.cabecera = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz;
+				userInterfaz = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz;
 			else if(listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verAjena != null)
-				this.cabecera = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verAjena.urInterfaz;
-			else
-				this.cabecera = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verPropia.urInterfaz;
-
-			this.ver_perfil = new Ver_perfil_publico(comentario.getEsComentadoPor(), listaComentariosItem, this.cabecera._cabecera_Usuario_Registrado._cabecera_TOP);
+				userInterfaz = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verAjena.urInterfaz;
+			else if(listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verPropia != null)
+				userInterfaz = listaComentariosItem._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_.verPropia.urInterfaz;
 		}
 		this.getNombreUsuario().addClickListener(event ->{
 			if(listaComentariosUNR != null) {
@@ -48,6 +46,8 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 				this.listaComentariosUNR._ver_comentarios__Usuario_No_registrado_.getVaadinHorizontalLayout().removeAll();
 				this.listaComentariosUNR._ver_comentarios__Usuario_No_registrado_.getVaadinHorizontalLayout().add(this.ver_perfil);
 			}else {
+				Lista_comentarios_Usuario_registrado_item listaComentarios = (Lista_comentarios_Usuario_registrado_item) contenedor;
+				this.ver_perfil = new Ver_perfil_publico(comentario.getEsComentadoPor(), listaComentarios, userInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
 				Lista_comentarios_Usuario_registrado_item comentarios = (Lista_comentarios_Usuario_registrado_item) contenedor;
 				Ver_comentarios_Usuario_Registrado interfazUR = comentarios._lista_comentarios__Usuario_registrado_._ver_comentarios__Usuario_Registrado_;
 				interfazUR.getVaadinHorizontalLayout().removeAll();

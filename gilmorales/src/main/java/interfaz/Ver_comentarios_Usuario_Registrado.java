@@ -1,5 +1,9 @@
 package interfaz;
 
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.IronIcon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bd_dcl.Publicacion;
@@ -17,12 +21,12 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 		super(publicacion);
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
-		this.user = user;
+		this.user = bd.cargarUsuarioRegistrado(user.getID());
 		if(interfaz instanceof Lista_publicaciones_Usuario_Registrado_item) {			
 			this.publicacionItem = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
 		}else if(interfaz instanceof Ver_publicacion_propia){
 			this.verPropia = (Ver_publicacion_propia) interfaz;
-		}else {
+		}else if(interfaz instanceof Ver_publicacion_ajena){
 			this.verAjena = (Ver_publicacion_ajena) interfaz;
 		}
 		if(this.publicacion.getPerteneceA() != this.user) {
@@ -34,7 +38,7 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 		Comentar();
 		Dar_me_gusta_publicacion();
 		Seguir();
-		Ver_perfil(this);
+		this.Ver_perfil(this);
 	}
 
 	public void Lista_comentarios__Usuario_registrado_() {
@@ -45,18 +49,27 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 	public void Dar_me_gusta_publicacion() {
 		this.getBotonMeGusta().addClickListener(event -> {
 			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
+//			this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
 			this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+			if(this.publicacion.gustaA.contains(this.user)) {
+				this.getIconoHeart().as(IronIcon.class).getStyle().set("color", "red");
+			}
+	
+
 		});	
 	}
 
 	public void Seguir() {
 		if(this.user.seguir.contains(this.publicacion.getPerteneceA()))
 			this.getBotonSeguir().setText("Dejar de Seguir");
-		else
-			this.getBotonSeguir().setText("Seguir");
 
 		this.getBotonSeguir().addClickListener(event -> {
 			this.bd.seguirUsuario(this.user.getID(), this.publicacion.getPerteneceA().getID());
+			this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
+			if(this.getBotonSeguir().getText().equals("Dejar de Seguir"))
+				this.getBotonSeguir().setText("Seguir");
+			else
+				this.getBotonSeguir().setText("Dejar de Seguir");
 		});
 	}
 	

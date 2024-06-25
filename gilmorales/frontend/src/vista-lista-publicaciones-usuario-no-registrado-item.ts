@@ -1,10 +1,10 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-lista-publicaciones-usuario-no-registrado-item')
 export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
@@ -44,20 +44,28 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
     </vaadin-button>
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing-xl" id="layoutBotonesPublicacion" style="align-self: flex-end; justify-content: center;">
-    <vaadin-vertical-layout theme="spacing" id="layoutMeGustas">
-     <label id="labelNumMeGustas" style="align-self: center;">0</label>
-     <vaadin-button theme="icon" aria-label="Add new" id="vaadinButton">
-      <iron-icon icon="vaadin:heart-o" id="ironIcon"></iron-icon>
+    <vaadin-horizontal-layout theme="spacing" id="layaoutMeGustas">
+     <label id="labelNumMeGustas" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
+     <vaadin-button theme="icon" aria-label="Add new" id="vaadinButton" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">
+      <iron-icon icon="vaadin:heart" id="ironIcon" style="height: 30px; width: 30px; color: black; align-self: center;"></iron-icon>
      </vaadin-button>
-    </vaadin-vertical-layout>
-    <vaadin-vertical-layout theme="spacing" id="layoutComentarios">
-     <label id="labelNumComentarios" style="align-self: center;">0</label>
-     <vaadin-button theme="icon" aria-label="Add new" id="botonVerComentarios">
-      <iron-icon icon="vaadin:comments-o" id="ironIcon1"></iron-icon>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" id="layoutComentarios">
+     <label id="labelNumComentarios" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
+     <vaadin-button theme="icon" aria-label="Add new" id="botonVerComentarios" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">
+      <iron-icon icon="vaadin:comments" id="ironIcon1" style="height: 30px; width: 30px; color: black; align-self: center;"></iron-icon>
      </vaadin-button>
-    </vaadin-vertical-layout>
+    </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
-   <vaadin-vertical-layout theme="spacing" style="width: 300px; height: 30%;">
+   <vaadin-vertical-layout theme="spacing" style="width: 300px; height: 30%;" id="vaadinVerticalLayout1">
     <label id="labelDescripcion" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 100%; word-wrap: break-word; white-space: normal; overflow-wrap: break-word;">Descripción de la publicación...</label>
    </vaadin-vertical-layout>
    <vaadin-horizontal-layout theme="spacing-xs" id="layoutComentar" style="align-self: center;">

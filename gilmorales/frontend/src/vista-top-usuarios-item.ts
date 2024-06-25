@@ -17,7 +17,7 @@ export class VistaTopUsuariosItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="justify-content: center;" id="vaadinHorizontalLayout" theme="spacing-xs" dir="layoutItem">
+<vaadin-horizontal-layout class="content" style="justify-content: flex-start; margin: 0px; padding: 0px;" id="vaadinHorizontalLayout" theme="spacing-xs" dir="layoutItem">
  <vaadin-vertical-layout theme="spacing" id="fotoPerfil" style="align-self: center;">
   <vaadin-avatar id="fotoPerfil1"></vaadin-avatar>
  </vaadin-vertical-layout>

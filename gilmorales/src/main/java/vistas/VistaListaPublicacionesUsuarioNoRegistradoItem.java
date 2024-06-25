@@ -22,20 +22,27 @@ import com.vaadin.flow.component.html.Hr;
 @JsModule("./src/vista-lista-publicaciones-usuario-no-registrado-item.ts")
 public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate {
 
-    @Id("layoutPublicacion")
+
+	@Id("publicacion")
+	private Element publicacion;
+	@Id("layoutPublicacion")
 	private HorizontalLayout layoutPublicacion;
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
+	@Id("fotoPerfil")
+	private Element fotoPerfil;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
 	@Id("layoutVideoPublicacion")
 	private Element layoutVideoPublicacion;
 	@Id("botonNombreUsuario")
 	private Button botonNombreUsuario;
 	@Id("labelGeolocalizacion")
 	private Label labelGeolocalizacion;
-	@Id("layoutVideo")
-	private Element layoutVideo;
 	@Id("numVisualizaciones")
 	private Label numVisualizaciones;
+	@Id("layoutVideo")
+	private Element layoutVideo;
 	@Id("layoutDatos")
 	private Element layoutDatos;
 	@Id("layoutBotonesUsuarioR")
@@ -46,18 +53,24 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Button botonDenunciar;
 	@Id("layoutBotonesPublicacion")
 	private HorizontalLayout layoutBotonesPublicacion;
-	@Id("layoutMeGustas")
-	private Element layoutMeGustas;
+	@Id("layaoutMeGustas")
+	private HorizontalLayout layaoutMeGustas;
 	@Id("labelNumMeGustas")
 	private Label labelNumMeGustas;
 	@Id("vaadinButton")
 	private Button vaadinButton;
+	@Id("ironIcon")
+	private Element ironIcon;
 	@Id("layoutComentarios")
-	private Element layoutComentarios;
+	private HorizontalLayout layoutComentarios;
 	@Id("labelNumComentarios")
 	private Label labelNumComentarios;
 	@Id("botonVerComentarios")
 	private Button botonVerComentarios;
+	@Id("ironIcon1")
+	private Element ironIcon1;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 	@Id("labelDescripcion")
 	private Label labelDescripcion;
 	@Id("layoutComentar")
@@ -66,33 +79,15 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private TextField textFieldComentario;
 	@Id("botonComentar")
 	private Button botonComentar;
-	@Id("fotoPerfil")
-	private Element fotoPerfil;
-	@Id("vaadinAvatar")
-	private Avatar vaadinAvatar;
 	@Id("lineaHorizontal")
 	private Hr lineaHorizontal;
-	@Id("publicacion")
-	private Element publicacion;
-	@Id("ironIcon")
-	private Element ironIcon;
-	@Id("ironIcon1")
-	private Element ironIcon1;
-
-
-	public Hr getLineaHorizontal() {
-		return lineaHorizontal;
-	}
-
-
-	public void setLineaHorizontal(Hr lineaHorizontal) {
-		this.lineaHorizontal = lineaHorizontal;
-	}
-
+	
+	
 
 	public Element getPublicacion() {
 		return publicacion;
 	}
+
 
 
 	public void setPublicacion(Element publicacion) {
@@ -100,29 +95,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
-	public Avatar getVaadinAvatar() {
-		return vaadinAvatar;
-	}
-
-
-	public void setVaadinAvatar(Avatar vaadinAvatar) {
-		this.vaadinAvatar = vaadinAvatar;
-	}
-
-
-	public Element getFotoPerfil() {
-		return fotoPerfil;
-	}
-
-
-	public void setFotoPerfil(Element fotoPerfil) {
-		this.fotoPerfil = fotoPerfil;
-	}
-
 
 	public HorizontalLayout getLayoutPublicacion() {
 		return layoutPublicacion;
 	}
+
 
 
 	public void setLayoutPublicacion(HorizontalLayout layoutPublicacion) {
@@ -130,18 +107,47 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
 	}
+
 
 
 	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
 		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
+
+
+	public Element getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+
+
+	public void setFotoPerfil(Element fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+
+
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
+	}
+
+
+
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
+	}
+
+
+
 	public Element getLayoutVideoPublicacion() {
 		return layoutVideoPublicacion;
 	}
+
 
 
 	public void setLayoutVideoPublicacion(Element layoutVideoPublicacion) {
@@ -149,9 +155,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public Button getBotonNombreUsuario() {
 		return botonNombreUsuario;
 	}
+
 
 
 	public void setBotonNombreUsuario(Button botonNombreUsuario) {
@@ -159,9 +167,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public Label getLabelGeolocalizacion() {
 		return labelGeolocalizacion;
 	}
+
 
 
 	public void setLabelGeolocalizacion(Label labelGeolocalizacion) {
@@ -169,19 +179,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
-	public Element getLayoutVideo() {
-		return layoutVideo;
-	}
-
-
-	public void setLayoutVideo(Element layoutVideo) {
-		this.layoutVideo = layoutVideo;
-	}
-
 
 	public Label getNumVisualizaciones() {
 		return numVisualizaciones;
 	}
+
 
 
 	public void setNumVisualizaciones(Label numVisualizaciones) {
@@ -189,9 +191,23 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
+	public Element getLayoutVideo() {
+		return layoutVideo;
+	}
+
+
+
+	public void setLayoutVideo(Element layoutVideo) {
+		this.layoutVideo = layoutVideo;
+	}
+
+
+
 	public Element getLayoutDatos() {
 		return layoutDatos;
 	}
+
 
 
 	public void setLayoutDatos(Element layoutDatos) {
@@ -199,9 +215,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public HorizontalLayout getLayoutBotonesUsuarioR() {
 		return layoutBotonesUsuarioR;
 	}
+
 
 
 	public void setLayoutBotonesUsuarioR(HorizontalLayout layoutBotonesUsuarioR) {
@@ -209,9 +227,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public Button getBotonSeguir() {
 		return botonSeguir;
 	}
+
 
 
 	public void setBotonSeguir(Button botonSeguir) {
@@ -219,9 +239,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public Button getBotonDenunciar() {
 		return botonDenunciar;
 	}
+
 
 
 	public void setBotonDenunciar(Button botonDenunciar) {
@@ -229,9 +251,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public HorizontalLayout getLayoutBotonesPublicacion() {
 		return layoutBotonesPublicacion;
 	}
+
 
 
 	public void setLayoutBotonesPublicacion(HorizontalLayout layoutBotonesPublicacion) {
@@ -239,14 +263,17 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
-	public Element getLayoutMeGustas() {
-		return layoutMeGustas;
+
+	public HorizontalLayout getLayaoutMeGustas() {
+		return layaoutMeGustas;
 	}
 
 
-	public void setLayoutMeGustas(Element layoutMeGustas) {
-		this.layoutMeGustas = layoutMeGustas;
+
+	public void setLayaoutMeGustas(HorizontalLayout layaoutMeGustas) {
+		this.layaoutMeGustas = layaoutMeGustas;
 	}
+
 
 
 	public Label getLabelNumMeGustas() {
@@ -254,9 +281,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setLabelNumMeGustas(Label labelNumMeGustas) {
 		this.labelNumMeGustas = labelNumMeGustas;
 	}
+
 
 
 	public Button getVaadinButton() {
@@ -264,19 +293,35 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
 	}
 
 
-	public Element getLayoutComentarios() {
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
+
+	public HorizontalLayout getLayoutComentarios() {
 		return layoutComentarios;
 	}
 
 
-	public void setLayoutComentarios(Element layoutComentarios) {
+
+	public void setLayoutComentarios(HorizontalLayout layoutComentarios) {
 		this.layoutComentarios = layoutComentarios;
 	}
+
 
 
 	public Label getLabelNumComentarios() {
@@ -284,9 +329,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setLabelNumComentarios(Label labelNumComentarios) {
 		this.labelNumComentarios = labelNumComentarios;
 	}
+
 
 
 	public Button getBotonVerComentarios() {
@@ -294,9 +341,35 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setBotonVerComentarios(Button botonVerComentarios) {
 		this.botonVerComentarios = botonVerComentarios;
 	}
+
+
+
+	public Element getIronIcon1() {
+		return ironIcon1;
+	}
+
+
+
+	public void setIronIcon1(Element ironIcon1) {
+		this.ironIcon1 = ironIcon1;
+	}
+
+
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
 
 
 	public Label getLabelDescripcion() {
@@ -304,9 +377,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setLabelDescripcion(Label labelDescripcion) {
 		this.labelDescripcion = labelDescripcion;
 	}
+
 
 
 	public HorizontalLayout getLayoutComentar() {
@@ -314,9 +389,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setLayoutComentar(HorizontalLayout layoutComentar) {
 		this.layoutComentar = layoutComentar;
 	}
+
 
 
 	public TextField getTextFieldComentario() {
@@ -324,9 +401,11 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setTextFieldComentario(TextField textFieldComentario) {
 		this.textFieldComentario = textFieldComentario;
 	}
+
 
 
 	public Button getBotonComentar() {
@@ -334,9 +413,23 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	}
 
 
+
 	public void setBotonComentar(Button botonComentar) {
 		this.botonComentar = botonComentar;
 	}
+
+
+
+	public Hr getLineaHorizontal() {
+		return lineaHorizontal;
+	}
+
+
+
+	public void setLineaHorizontal(Hr lineaHorizontal) {
+		this.lineaHorizontal = lineaHorizontal;
+	}
+
 
 
 	/**

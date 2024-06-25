@@ -60,8 +60,8 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 	public void Ver_comentarios__Comercial_() {
 		this._ver_comentarios__Comercial_ = new Ver_comentarios_Comercial(this.publicacion, this);
 		this.getBotonVerComentario().addClickListener(event ->{
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(this._ver_comentarios__Comercial_);
+			this.getVaadinHorizontalLayout().removeAll();
+			this.getVaadinHorizontalLayout().add(this._ver_comentarios__Comercial_);
 		});
 	}
 

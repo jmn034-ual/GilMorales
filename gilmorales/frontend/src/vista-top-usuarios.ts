@@ -14,7 +14,7 @@ export class VistaTopUsuarios extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; padding: 0%; margin: 0%;" id="layoutTopUsuarios" theme="spacing-xs"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: flex-start; padding: 0%; margin: 0%;" id="layoutTopUsuarios" theme="spacing-s"></vaadin-vertical-layout>
 `;
   }
 

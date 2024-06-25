@@ -24,11 +24,11 @@ export class VistaCabecera extends LitElement {
    <iron-icon id="iconoWeb"></iron-icon>
   </vaadin-button>
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; flex-shrink: 0; justify-content: flex-end;">
-   <vaadin-horizontal-layout id="barraBusqueda" style="justify-content: flex-start; flex-grow: 0; flex-shrink: 0; width: 35%;">
-    <vaadin-text-field placeholder="Search" id="textoBusqueda" style="flex-grow: 0; width: 80%; margin: 0%; align-self: stretch; background: white;">
+   <vaadin-horizontal-layout id="barraBusqueda" style="flex-grow: 0; flex-shrink: 0; width: 30%; margin-right: 5%;">
+    <vaadin-text-field placeholder="Search" id="textoBusqueda" style="flex-grow: 1; margin: 0%; align-self: center; padding: 0px; background-color: #FFFFFF; flex-shrink: 0;" clear-button-visible>
      <iron-icon icon="lumo:search" slot="prefix" id="ironIcon"></iron-icon>
     </vaadin-text-field>
-    <vaadin-button theme="icon" aria-label="Add new" id="botonBuscar" style="background-color: transparent; flex-shrink: 1;">
+    <vaadin-button theme="icon" aria-label="Add new" id="botonBuscar" style="background-color: transparent; flex-shrink: 1; padding: 0px; align-self: center; flex-grow: 0;">
      <iron-icon icon="lumo:search" style="background-color: transparent; color: #fffff; font-size: 40px; color: white;"></iron-icon>
     </vaadin-button>
    </vaadin-horizontal-layout>

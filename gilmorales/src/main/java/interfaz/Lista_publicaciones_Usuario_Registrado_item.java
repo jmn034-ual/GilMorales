@@ -72,8 +72,16 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Seguir() {
+		if (this.user.seguir.contains(this.publicacion.getPerteneceA())) {
+			this.getBotonSeguir().setText("Dejar de Seguir");
+		} 
 		this.getBotonSeguir().addClickListener(event -> {
 			this.bd.seguirUsuario(this.user.getID(), this.publicacion.getPerteneceA().getID());
+			this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
+			if(this.getBotonSeguir().getText().equals("Dejar de Seguir"))
+				this.getBotonSeguir().setText("Seguir");
+			else
+				this.getBotonSeguir().setText("Dejar de Seguir");
 		});
 	}
 

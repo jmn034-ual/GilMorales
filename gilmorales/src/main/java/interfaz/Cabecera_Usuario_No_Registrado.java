@@ -19,9 +19,7 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 
 	public Cabecera_Usuario_No_Registrado(Usuario_No_Registrado unr) {
 		this.unr = unr;
-		this.getTextoBusqueda().getStyle().set("background-color", "transparent");
 		this.getTextoBusqueda().getStyle().set("border-radius", "8px");
-		this.getTextoBusqueda().getStyle().set("color", "#FFFFF");
 		this.getVaadinButton().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
 		Image customIcon = new Image("icons/logo.png", null);
 		customIcon.getStyle().set("width", "6%");

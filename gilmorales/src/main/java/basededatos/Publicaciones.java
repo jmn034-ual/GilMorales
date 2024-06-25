@@ -130,8 +130,6 @@ public class Publicaciones {
 			p.setNumComentarios(0);
 			p.setNumMeGustas(0);
 			p.setNumVisualizaciones(0);
-//			crearHashtag(p);
-//			crearMencion(p);
 			PublicacionDAO.save(p);
 			t.commit();
 		} catch (Exception e) {

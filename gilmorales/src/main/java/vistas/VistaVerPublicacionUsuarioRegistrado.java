@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.html.Hr;
 
 /**
  * A Designer generated component for the vista-ver-publicacion-usuario-registrado template.
@@ -22,22 +23,8 @@ import com.vaadin.flow.component.textfield.TextField;
 public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 
 
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
-	@Id("vaadinVerticalLayout2")
-	private Element vaadinVerticalLayout2;
-	@Id("video")
-	private HorizontalLayout video;
-	@Id("layoutNumVisualizaciones")
-	private HorizontalLayout layoutNumVisualizaciones;
-	@Id("numVisualizaciones")
-	private Label numVisualizaciones;
-	@Id("label")
-	private Label label;
 	@Id("vaadinVerticalLayout3")
 	private Element vaadinVerticalLayout3;
 	@Id("vaadinVerticalLayout4")
@@ -60,12 +47,14 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	private Button botonDenunciar;
 	@Id("vaadinButton1")
 	private Button vaadinButton1;
-	@Id("layoutLabels")
-	private HorizontalLayout layoutLabels;
 	@Id("descripcion")
 	private Label descripcion;
+	@Id("fechaSubida")
+	private Label fechaSubida;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
+	@Id("layoutLabels")
+	private HorizontalLayout layoutLabels;
 	@Id("numMeGustas")
 	private Label numMeGustas;
 	@Id("botonMeGusta")
@@ -78,8 +67,8 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	private Button botonVerComentario;
 	@Id("ironIcon2")
 	private Element ironIcon2;
-	@Id("fechaSubida")
-	private Label fechaSubida;
+	@Id("hr")
+	private Hr hr;
 	@Id("vaadinVerticalLayout5")
 	private Element vaadinVerticalLayout5;
 	@Id("vaadinHorizontalLayout2")
@@ -88,21 +77,26 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	private TextField textComentario;
 	@Id("botonComentar")
 	private Button botonComentar;
-
+	@Id("layoutNumVisualizaciones")
+	private HorizontalLayout layoutNumVisualizaciones;
+	@Id("vaadinVerticalLayout2")
+	private Element vaadinVerticalLayout2;
+	@Id("video")
+	private HorizontalLayout video;
+	@Id("numVisualizaciones")
+	private Label numVisualizaciones;
+	@Id("label")
+	private Label label;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
 	
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
-	}
-
-
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
-	}
-
+	
+	
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
+
 
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
@@ -110,39 +104,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
-	public Element getVaadinVerticalLayout1() {
-		return vaadinVerticalLayout1;
-	}
-
-
-	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
-		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-
-	public Element getVaadinVerticalLayout2() {
-		return vaadinVerticalLayout2;
-	}
-
-
-	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
-		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
-	}
-
-
-	public HorizontalLayout getVideo() {
-		return video;
-	}
-
-
-	public void setVideo(HorizontalLayout video) {
-		this.video = video;
-	}
-
 
 	public HorizontalLayout getLayoutNumVisualizaciones() {
 		return layoutNumVisualizaciones;
 	}
+
 
 
 	public void setLayoutNumVisualizaciones(HorizontalLayout layoutNumVisualizaciones) {
@@ -150,9 +116,35 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
+	public Element getVaadinVerticalLayout2() {
+		return vaadinVerticalLayout2;
+	}
+
+
+
+	public void setVaadinVerticalLayout2(Element vaadinVerticalLayout2) {
+		this.vaadinVerticalLayout2 = vaadinVerticalLayout2;
+	}
+
+
+
+	public HorizontalLayout getVideo() {
+		return video;
+	}
+
+
+
+	public void setVideo(HorizontalLayout video) {
+		this.video = video;
+	}
+
+
+
 	public Label getNumVisualizaciones() {
 		return numVisualizaciones;
 	}
+
 
 
 	public void setNumVisualizaciones(Label numVisualizaciones) {
@@ -160,9 +152,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Label getLabel() {
 		return label;
 	}
+
 
 
 	public void setLabel(Label label) {
@@ -170,9 +164,23 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+
+
 	public Element getVaadinVerticalLayout3() {
 		return vaadinVerticalLayout3;
 	}
+
 
 
 	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
@@ -180,9 +188,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Element getVaadinVerticalLayout4() {
 		return vaadinVerticalLayout4;
 	}
+
 
 
 	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
@@ -190,9 +200,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public HorizontalLayout getLayoutUsuario() {
 		return layoutUsuario;
 	}
+
 
 
 	public void setLayoutUsuario(HorizontalLayout layoutUsuario) {
@@ -200,9 +212,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Avatar getAvatar() {
 		return avatar;
 	}
+
 
 
 	public void setAvatar(Avatar avatar) {
@@ -210,9 +224,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Element getLayoutVerPerfil() {
 		return layoutVerPerfil;
 	}
+
 
 
 	public void setLayoutVerPerfil(Element layoutVerPerfil) {
@@ -220,9 +236,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getVerPerfil() {
 		return verPerfil;
 	}
+
 
 
 	public void setVerPerfil(Button verPerfil) {
@@ -230,9 +248,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Label getGeolocalizacion() {
 		return geolocalizacion;
 	}
+
 
 
 	public void setGeolocalizacion(Label geolocalizacion) {
@@ -240,9 +260,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Element getBotones() {
 		return botones;
 	}
+
 
 
 	public void setBotones(Element botones) {
@@ -250,9 +272,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getBotonSeguir() {
 		return botonSeguir;
 	}
+
 
 
 	public void setBotonSeguir(Button botonSeguir) {
@@ -260,9 +284,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getBotonDenunciar() {
 		return botonDenunciar;
 	}
+
 
 
 	public void setBotonDenunciar(Button botonDenunciar) {
@@ -270,9 +296,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getVaadinButton1() {
 		return vaadinButton1;
 	}
+
 
 
 	public void setVaadinButton1(Button vaadinButton1) {
@@ -280,19 +308,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
-	public HorizontalLayout getLayoutLabels() {
-		return layoutLabels;
-	}
-
-
-	public void setLayoutLabels(HorizontalLayout layoutLabels) {
-		this.layoutLabels = layoutLabels;
-	}
-
 
 	public Label getDescripcion() {
 		return descripcion;
 	}
+
 
 
 	public void setDescripcion(Label descripcion) {
@@ -300,78 +320,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
-	public HorizontalLayout getVaadinHorizontalLayout1() {
-		return vaadinHorizontalLayout1;
-	}
-
-
-	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
-		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
-	}
-
-
-	public Label getNumMeGustas() {
-		return numMeGustas;
-	}
-
-
-	public void setNumMeGustas(Label numMeGustas) {
-		this.numMeGustas = numMeGustas;
-	}
-
-
-	public Button getBotonMeGusta() {
-		return botonMeGusta;
-	}
-
-
-	public void setBotonMeGusta(Button botonMeGusta) {
-		this.botonMeGusta = botonMeGusta;
-	}
-
-
-	public Element getIronIcon() {
-		return ironIcon;
-	}
-
-
-	public void setIronIcon(Element ironIcon) {
-		this.ironIcon = ironIcon;
-	}
-
-	public Label getNumComentarios() {
-		return numComentarios;
-	}
-
-
-	public void setNumComentarios(Label numComentarios) {
-		this.numComentarios = numComentarios;
-	}
-
-
-	public Button getBotonVerComentario() {
-		return botonVerComentario;
-	}
-
-
-	public void setBotonVerComentario(Button botonVerComentario) {
-		this.botonVerComentario = botonVerComentario;
-	}
-
-
-	public Element getIronIcon2() {
-		return ironIcon2;
-	}
-
-
-	public void setIronIcon2(Element ironIcon2) {
-		this.ironIcon2 = ironIcon2;
-	}
-
 
 	public Label getFechaSubida() {
 		return fechaSubida;
 	}
+
 
 
 	public void setFechaSubida(Label fechaSubida) {
@@ -379,9 +332,119 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+
+	public HorizontalLayout getLayoutLabels() {
+		return layoutLabels;
+	}
+
+
+
+	public void setLayoutLabels(HorizontalLayout layoutLabels) {
+		this.layoutLabels = layoutLabels;
+	}
+
+
+
+	public Label getNumMeGustas() {
+		return numMeGustas;
+	}
+
+
+
+	public void setNumMeGustas(Label numMeGustas) {
+		this.numMeGustas = numMeGustas;
+	}
+
+
+
+	public Button getBotonMeGusta() {
+		return botonMeGusta;
+	}
+
+
+
+	public void setBotonMeGusta(Button botonMeGusta) {
+		this.botonMeGusta = botonMeGusta;
+	}
+
+
+
+	public Element getIronIcon() {
+		return ironIcon;
+	}
+
+
+
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
+
+	public Label getNumComentarios() {
+		return numComentarios;
+	}
+
+
+
+	public void setNumComentarios(Label numComentarios) {
+		this.numComentarios = numComentarios;
+	}
+
+
+
+	public Button getBotonVerComentario() {
+		return botonVerComentario;
+	}
+
+
+
+	public void setBotonVerComentario(Button botonVerComentario) {
+		this.botonVerComentario = botonVerComentario;
+	}
+
+
+
+	public Element getIronIcon2() {
+		return ironIcon2;
+	}
+
+
+
+	public void setIronIcon2(Element ironIcon2) {
+		this.ironIcon2 = ironIcon2;
+	}
+
+
+
+	public Hr getHr() {
+		return hr;
+	}
+
+
+
+	public void setHr(Hr hr) {
+		this.hr = hr;
+	}
+
+
+
 	public Element getVaadinVerticalLayout5() {
 		return vaadinVerticalLayout5;
 	}
+
 
 
 	public void setVaadinVerticalLayout5(Element vaadinVerticalLayout5) {
@@ -389,9 +452,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public HorizontalLayout getVaadinHorizontalLayout2() {
 		return vaadinHorizontalLayout2;
 	}
+
 
 
 	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
@@ -399,9 +464,11 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public TextField getTextComentario() {
 		return textComentario;
 	}
+
 
 
 	public void setTextComentario(TextField textComentario) {
@@ -409,14 +476,17 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	}
 
 
+
 	public Button getBotonComentar() {
 		return botonComentar;
 	}
 
 
+
 	public void setBotonComentar(Button botonComentar) {
 		this.botonComentar = botonComentar;
 	}
+
 
 
 	/**

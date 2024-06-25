@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-cabecera-usuario-no-registrado')
 export class VistaCabeceraUsuarioNoRegistrado extends LitElement {
@@ -23,12 +23,12 @@ export class VistaCabeceraUsuarioNoRegistrado extends LitElement {
   <vaadin-button theme="icon" aria-label="Add new" id="logoWeb" style="flex-grow: 0; background-color: transparent; margin-right: 10%; max-width: 3%; max-height: 100%; align-self: center;">
    <iron-icon id="iconoWeb" style="width: 1px; height: 1px;"></iron-icon>
   </vaadin-button>
-  <vaadin-horizontal-layout id="barraBusqueda" style="justify-content: flex-start; flex-grow: 0; flex-shrink: 0; width: 35%;" theme="spacing">
-   <vaadin-text-field placeholder="Search" id="textoBusqueda" style="flex-grow: 0; width: 80%; margin: 0%; align-self: stretch; background: white;">
+  <vaadin-horizontal-layout id="barraBusqueda" style="flex-grow: 0; flex-shrink: 0; width: 30%; margin-right: 5%;" theme="spacing">
+   <vaadin-text-field placeholder="Search" id="textoBusqueda" style="flex-grow: 1; margin: 0%; align-self: center; padding: 0px; background-color: #FFFFFF; flex-shrink: 0;" clear-button-visible>
     <iron-icon icon="lumo:search" slot="prefix" id="ironIcon"></iron-icon>
    </vaadin-text-field>
-   <vaadin-button id="botonBuscar" style="background-color: #ffffff;">
-     Buscar 
+   <vaadin-button theme="icon" aria-label="Add new" id="botonBuscar">
+    <iron-icon icon="lumo:search" style="background-color: transparent; color: #fffff; font-size: 40px; color: white;"></iron-icon>
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-button id="inicio" style="background-color: #ffff; broder-radius: 8px;">

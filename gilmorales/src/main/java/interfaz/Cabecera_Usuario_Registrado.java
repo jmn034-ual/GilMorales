@@ -20,9 +20,7 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	
 	public Cabecera_Usuario_Registrado(Usuario_Registrado urInterfaz) {
 		super();
-    	this.getTextoBusqueda().getStyle().set("background-color", "transparent");
     	this.getTextoBusqueda().getStyle().set("border-radius", "8px");
-    	this.getTextoBusqueda().getStyle().set("color", "#FFFFF");
     	this.getBotonAniadir().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
     	Image customIcon = new Image("icons/logo.png", null);
 		customIcon.getStyle().set("width", "6%");
