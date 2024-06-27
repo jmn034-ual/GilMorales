@@ -37,6 +37,17 @@ public class BDPrincipal
 
 	TreeMap<String, String> nombresUsuarios = new TreeMap<String, String>();
 	
+	public Hashtag actualizarHashtag(int idHashtag) {
+		Hashtag hashtag =  null;
+		try {
+			this.hashtags.actualizarHashtag(idHashtag);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return hashtag;
+	}
+	
 	
 	public void configurarPerfil(int aUsuarioID, int privacidad) {
 		try {
@@ -80,10 +91,10 @@ public class BDPrincipal
 		return publi;
 	}
 
-	public Hashtag cargarHashtag(int idHashtag, String nombre) {
+	public Hashtag cargarHashtag(int idHashtag) {
 		Hashtag h = null;
 		try {
-			h = this.hashtags.cargarHashtag(idHashtag, nombre);
+			h = this.hashtags.cargarHashtag(idHashtag);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -339,8 +350,14 @@ public class BDPrincipal
 	}
 
 	public void comentarPublicacion(int aIdPublicacion, int aUsuarioID, String aComentario) {
+		Comentario comentario;
 		try {
-			this.comentarios.comentarPublicacion(aIdPublicacion, aComentario, aUsuarioID);
+			if(aComentario.isBlank()) {
+				Notification.show("Añade un comentario");
+			}else {
+			comentario = this.comentarios.comentarPublicacion(aIdPublicacion, aComentario, aUsuarioID);
+			this.publicaciones.crearMencion(comentario);
+			}
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

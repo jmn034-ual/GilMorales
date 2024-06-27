@@ -11,6 +11,7 @@ public class Lista_Top_comentarios_Publicacion_comercial_item extends Lista_Top_
 	
 	public Lista_Top_comentarios_Publicacion_comercial_item (Comentario c) {
 		super(c);
+		this.getStyle().set("width", "100%");
 		this.getMeGustaB().setDisableOnClick(true);
 	}
 }

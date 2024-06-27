@@ -46,6 +46,7 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 		NumeroVisualizaciones();
 		Ver_comentarios__Administrador_();
 		VerPerfil();
+		EliminarPublicacion();
 	}
 
 	public void Ver_comentarios__Administrador_() {
@@ -76,10 +77,13 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 	}
 
 	public void NumeroVisualizaciones() {
-		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+"");
+		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+ " Visualizaciones");
 	}
 
 	public void EliminarPublicacion() {
-		throw new UnsupportedOperationException();
+		this.getEliminarPublicacion().addClickListener(event -> {
+			this.admin._iAdministrador.eliminarPublicacion(this.publicacion.getIdPublicacion());
+			this.admin._cabecera_Administrador.getInicio().click();
+		});
 	}
 }

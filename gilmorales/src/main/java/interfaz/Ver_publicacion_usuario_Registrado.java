@@ -62,7 +62,7 @@ public class Ver_publicacion_usuario_Registrado extends VistaVerPublicacionUsuar
 
 	public void Lista_Top_comentarios__Usuario_Registrado_() {
 		if(this.user != null) {
-		_lista_Top_comentarios__Usuario_Registrado_ = new Lista_Top_comentarios_Usuario_Registrado(this.publicacion, this.user);
+		_lista_Top_comentarios__Usuario_Registrado_ = new Lista_Top_comentarios_Usuario_Registrado(this.publicacion, this.user, this);
 		}else {
 			_lista_Top_comentarios__Usuario_Registrado_ = new Lista_Top_comentarios_Usuario_Registrado(this.publicacion, this.uc);
 		}

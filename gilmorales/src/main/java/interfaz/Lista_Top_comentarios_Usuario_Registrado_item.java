@@ -14,11 +14,14 @@ public class Lista_Top_comentarios_Usuario_Registrado_item extends Lista_Top_Com
 	UsuarioRegistrado user;
 	UsuarioComercial uc;
 
-	public Lista_Top_comentarios_Usuario_Registrado_item(Comentario comentario, UsuarioRegistrado usuario) {
+	public Lista_Top_comentarios_Usuario_Registrado_item(Comentario comentario, UsuarioRegistrado usuario, Lista_Top_comentarios_Usuario_Registrado interfaz) {
 		super(comentario);
+		this.getStyle().set("width", "100%");
 		this.user = usuario;
+		this._lista_Top_comentarios__Usuario_Registrado_ = interfaz;
 		datosComentario();
 		Dar_me_gusta_comentario();
+		Ver_perfil(this);
 	}
 
 	public void Dar_me_gusta_comentario() {

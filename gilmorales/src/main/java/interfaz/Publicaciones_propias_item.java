@@ -36,6 +36,6 @@ public class Publicaciones_propias_item extends VistaPublicacionesPropiasItem{
 	}
 
 	public void NumeroVisualizaciones() {
-		this.getNumVisualizaciones().setText(""+this.publicacion.getNumVisualizaciones());
+		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones() + " Visualizaciones");
 	}
 }

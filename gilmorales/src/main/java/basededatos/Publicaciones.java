@@ -221,18 +221,33 @@ public class Publicaciones {
 		return publicaciones;
 	}
 
-	public void crearMencion(Publicacion p) {
+	public void crearMencion(Object p) {
+		Publicacion publicacion = null;
+		Comentario comentario = null;
+		UsuarioRegistrado user = null;
 		Pattern mencion = Pattern.compile("@(\\w+)");
-		Matcher m = mencion.matcher(p.getDescripcion());
+		Matcher m = null;
+		if(p instanceof Publicacion) {
+			publicacion = (Publicacion) p;
+			if(publicacion.getPerteneceA() != null)
+				user = publicacion.getPerteneceA();
+			m = mencion.matcher(publicacion.getDescripcion());
+		}else {
+			comentario = (Comentario) p;
+			user = comentario.getEsComentadoPor();
+			m = mencion.matcher(comentario.getComentario());
+		}
+		
 		try {
 			while (m.find()) {
-				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+				String condition = "nombreUsuario = '" + m.group(1) + "'";
+				List<UsuarioRegistrado> lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(condition, null);
 				for (UsuarioRegistrado ur : lista) {
-					if (ur.getNombreUsuario().equals(m.group(1)) && !ur.getNombreUsuario().equals(m.group(1))) {
+					if (ur.getNombreUsuario().equals(m.group(1)) && !ur.getNombreUsuario().equals(user.getNombreUsuario())) {
 						Notificacion notificacion = NotificacionDAO.createNotificacion();
 						notificacion.setTipoNotificacion(3);
 						notificacion.setEnviadaA(ur);
-						notificacion.setIDUsuarioNotifica(p.getPerteneceA().getID());
+						notificacion.setIDUsuarioNotifica(user.getID());
 						NotificacionDAO.save(notificacion);
 						break;
 					}
@@ -246,36 +261,32 @@ public class Publicaciones {
 	}
 
 	public void crearHashtag(Publicacion p) {
-		Pattern hashtag = Pattern.compile("#(\\w+)");
-		Matcher h = hashtag.matcher(p.getDescripcion());
-		try {
-			while (h.find()) {
-				String nombreHashtag = h.group(1);
-				List<Hashtag> listaHashtag = HashtagDAO.queryHashtag(null, null);
-				if (listaHashtag.isEmpty()) {
-					Hashtag nuevoHashatag = HashtagDAO.createHashtag();
-					nuevoHashatag.setNombreHashtag(nombreHashtag);
-					nuevoHashatag.aparece.add(p);
-					HashtagDAO.save(nuevoHashatag);
-				} else {
-					for (Hashtag h2 : listaHashtag) {
-						if (!h2.getNombreHashtag().equals(nombreHashtag)) {
-							Hashtag nuevoHashatag = HashtagDAO.createHashtag();
-							nuevoHashatag.setNombreHashtag(nombreHashtag);
-							nuevoHashatag.aparece.add(p);
-							HashtagDAO.save(nuevoHashatag);
-							break;
-						} else if (h2.getNombreHashtag().equals(nombreHashtag)) {
-							h2.aparece.add(p);
-							HashtagDAO.save(h2);
-						}
-					}
-				}
-			}
-			GilMoralesPersistentManager.instance().disposePersistentManager();
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	    Pattern hashtagPattern = Pattern.compile("#(\\w+)");
+	    Matcher matcher = hashtagPattern.matcher(p.getDescripcion());
+
+	    try {
+	        while (matcher.find()) {
+	            String nombreHashtag = matcher.group(1);
+	            String condition = "nombreHashtag = '" + nombreHashtag + "'";
+	            List<Hashtag> listaHashtag = HashtagDAO.queryHashtag(condition, null);
+
+	            if (listaHashtag.isEmpty()) {
+	                // Crear un nuevo hashtag si no existe
+	                Hashtag nuevoHashtag = HashtagDAO.createHashtag();
+	                nuevoHashtag.setNombreHashtag(nombreHashtag);
+	                nuevoHashtag.aparece.add(p);
+	                HashtagDAO.save(nuevoHashtag);
+	            } else {
+	                // Añadir la publicación al hashtag existente
+	                Hashtag hashtagExistente = listaHashtag.get(0);
+	                hashtagExistente.aparece.add(p);
+	                HashtagDAO.save(hashtagExistente);
+	            }
+	        }
+	        GilMoralesPersistentManager.instance().disposePersistentManager();
+	    } catch (PersistentException e) {
+	        e.printStackTrace();
+	    }
 	}
+
 }

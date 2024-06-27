@@ -82,8 +82,22 @@ public class VistaVerComentarios extends LitTemplate {
 	private Button botonComentar;
 	@Id("iconoHeart")
 	private Element iconoHeart;
+	@Id("vaadinButton")
+	private Button vaadinButton;
 	
 	
+	
+	
+
+	public Button getVaadinButton() {
+		return vaadinButton;
+	}
+
+
+	public void setVaadinButton(Button vaadinButton) {
+		this.vaadinButton = vaadinButton;
+	}
+
 
 	public Element getIconoHeart() {
 		return iconoHeart;

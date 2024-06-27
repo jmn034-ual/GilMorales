@@ -26,6 +26,8 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 			this.publicacionItem = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
 		}else if(interfaz instanceof Ver_publicacion_propia){
 			this.verPropia = (Ver_publicacion_propia) interfaz;
+			this.getLayoutComentar().setVisible(false);
+			this.getBotonSeguir().setVisible(false);
 		}else if(interfaz instanceof Ver_publicacion_ajena){
 			this.verAjena = (Ver_publicacion_ajena) interfaz;
 		}

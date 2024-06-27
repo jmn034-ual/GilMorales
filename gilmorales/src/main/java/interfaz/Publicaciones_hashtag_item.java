@@ -78,6 +78,7 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 	}
 
 	public void Ver_publicacion_ajena() {
+		
 		this.getImagenPublicacion().as(VerticalLayout.class).addClickListener(event -> {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this.userNoRegistrado != null) {
@@ -100,6 +101,8 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 	}
 
 	public void Ver_perfil() {
+		if(this.publicacion.getPerteneceA() != null) {
+//			this.getBotonNombreUsuario().setEnabled(false);
 		this.getBotonNombreUsuario().addClickListener(event -> {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this.publicacion.getPerteneceA() != null && this.publicacion.getPerteneceA().getPrivacidad() != 0) {
@@ -135,6 +138,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 							.add(verPerfilAdmin);
 				}
 			}
-		});
+		});}
 	}
 }

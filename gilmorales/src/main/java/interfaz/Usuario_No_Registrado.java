@@ -46,8 +46,8 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	}
 
 	public void Iniciar_Sesion() {
+		inicioSesion = new Login(this);
 		this.cabeceraUNR.getVaadinButton().addClickListener(event-> {
-			inicioSesion = new Login(this);
 			dialog = new Dialog(inicioSesion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("70%");

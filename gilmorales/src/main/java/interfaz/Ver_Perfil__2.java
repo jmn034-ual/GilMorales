@@ -5,6 +5,7 @@ import bd_dcl.UsuarioRegistrado;
 public class Ver_Perfil__2 extends Ver_perfil__1 {
 
 	public Lista_Top_Comentarios_Usuario_No_Registrado_item _lista_Top_Comentarios__Usuario_No_Registrado_;
+	public Lista_Top_comentarios_Usuario_Registrado_item topComentariosUserRegistrado;
 	public Lista_de_seguidores_item _lista_de_seguidores;
 	public Lista_de_segidos_item _lista_de_segidos;
 	public Lista_Publicaciones_Usuario_no_registrado_item _publicaciones__Usuario_no_registrado_;
@@ -78,6 +79,8 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 			System.out.println("User es: " + this.user);
 		}else if(interfaz instanceof Publicaciones_hashtag_item) {
 			this._publicaciones_hashtag = (Publicaciones_hashtag_item) interfaz;
+		}else if(interfaz instanceof Lista_Top_comentarios_Usuario_Registrado_item) {
+			this.topComentariosUserRegistrado = (Lista_Top_comentarios_Usuario_Registrado_item) interfaz;
 		}
 	}
 	

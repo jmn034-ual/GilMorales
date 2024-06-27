@@ -54,6 +54,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 				this.getVaadinHorizontalLayout().add(new Ver_publicacion_propia(this.publicacion, this.urInterfaz));
 			}
 			Seguir();
+			Ver_perfil();
 		}else {
 			this.getVerPerfil().setText(this.publicacion.getEsPublicada().getNombreUsuarioComercial());
 			this.getAvatar().setImage(this.publicacion.getEsPublicada().getFoto());
@@ -125,6 +126,13 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	}
 
 	public void Ver_perfil() {
-		this._ver_perfil = new Ver_perfil_publico(user, this, this.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
+		this.getVerPerfil().addClickListener(event -> {
+			UsuarioRegistrado ur = this.publicacion.getPerteneceA();
+			this._ver_perfil = new Ver_perfil_publico(ur, this, this.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
+			if(ur != null) {
+				this.urInterfaz.getVaadinHorizontalLayout().removeAll();
+				this.urInterfaz.getVaadinHorizontalLayout().add(_ver_perfil);
+			}
+		});
 	}
 }

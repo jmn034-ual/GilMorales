@@ -39,12 +39,13 @@ public class Comentarios {
 		return top;
 	}
 
-	public void comentarPublicacion(int aIdPublicacion, String aComentario, int aUsuarioID) throws PersistentException {
+	public Comentario comentarPublicacion(int aIdPublicacion, String aComentario, int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		Comentario comentario = null;
 		try {
 			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
-			Comentario comentario = ComentarioDAO.createComentario();
+			comentario = ComentarioDAO.createComentario();
 			Notificacion notificacion = NotificacionDAO.createNotificacion();
 			comentario.setComentadoEn(publicacion);
 			comentario.setComentario(aComentario);
@@ -65,6 +66,7 @@ public class Comentarios {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
+		return comentario;
 	}
 
 	public void borrarComentario(int aIdComentario) throws PersistentException {
@@ -78,6 +80,7 @@ public class Comentarios {
 			// Eliminar la notificacion
 			ComentarioDAO.deleteAndDissociate(comentario);
 			UsuarioRegistradoDAO.save(user);
+			publicacion.setNumComentarios(publicacion.tieneComentarios.size());
 			PublicacionDAO.save(publicacion);
 			t.commit();
 		} catch (Exception e) {

@@ -34,7 +34,7 @@ public class Hashtags {
 		return hashtags;
 	}
 
-	public Hashtag cargarHashtag(int aIdHashtag, String aNombreHashstag) throws PersistentException {
+	public Hashtag cargarHashtag(int aIdHashtag) throws PersistentException {
 		Hashtag hashtag = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
@@ -106,5 +106,19 @@ public class Hashtags {
 			t.rollback();
 		}
 		return tendencias;
+	}
+
+	public Hashtag actualizarHashtag(int idHashtag) throws PersistentException {
+		Hashtag hashtag = null;
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			hashtag = HashtagDAO.loadHashtagByORMID(idHashtag);
+			hashtag.setNumVisualizaciones(hashtag.getNumVisualizaciones()+1);
+			HashtagDAO.save(hashtag);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return hashtag;
 	}
 }

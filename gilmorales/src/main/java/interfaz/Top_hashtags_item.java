@@ -37,6 +37,7 @@ public class Top_hashtags_item extends VistaTopHashtagsItem{
 		}
 		
 		this.getHashtagItem().addClickListener(event -> {
+			this.hashtag = this._top_hashtags.bd.actualizarHashtag(this.hashtag.getIdHashtag());
 			if(this._top_hashtags._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {		
 				unrInterfaz.getVaadinHorizontalLayout().removeAll();
 				unrInterfaz.getVaadinHorizontalLayout().add(_ver_hashtag);
@@ -47,7 +48,6 @@ public class Top_hashtags_item extends VistaTopHashtagsItem{
 				admin.getVaadinHorizontalLayout().removeAll();
 				admin.getVaadinHorizontalLayout().add(_ver_hashtag);
 			}
-
 		});
 	}
 	

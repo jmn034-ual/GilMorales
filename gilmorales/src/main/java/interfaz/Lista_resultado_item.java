@@ -54,6 +54,7 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 
 	public void Ver_hashtag() {
 		this.getBotonHashtag().addClickListener(event -> {
+			this.hashtag.setNumVisualizaciones(this.hashtag.getNumVisualizaciones()+1);
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(this._ver_hashtag);
 		});

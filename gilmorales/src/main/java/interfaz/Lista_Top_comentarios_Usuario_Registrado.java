@@ -19,9 +19,10 @@ public class Lista_Top_comentarios_Usuario_Registrado extends Lista_Top_Comentar
 	UsuarioRegistrado user;
 	UsuarioComercial uc;
 
-	public Lista_Top_comentarios_Usuario_Registrado(Publicacion p, UsuarioRegistrado user) {
+	public Lista_Top_comentarios_Usuario_Registrado(Publicacion p, UsuarioRegistrado user, Ver_publicacion_usuario_Registrado interfaz) {
 		super(p);
 		this.user = user;
+		this._ver_publicacion__usuario_Registrado_ = interfaz;
 		this.cargarComentariosTOP();
 	}
 	public Lista_Top_comentarios_Usuario_Registrado(Publicacion p, UsuarioComercial uc) {
@@ -39,7 +40,7 @@ public class Lista_Top_comentarios_Usuario_Registrado extends Lista_Top_Comentar
 
 
 			for(Comentario c : comentarios) {
-				this.comentario = new Lista_Top_comentarios_Usuario_Registrado_item(c, this.user);
+				this.comentario = new Lista_Top_comentarios_Usuario_Registrado_item(c, this.user, this);
 				this.getListaTopComentarios().as(VerticalLayout.class).add(comentario);
 				_item.add(comentario);
 				if(_item.size() == 5) break;

@@ -42,6 +42,8 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 			Lista_publicaciones_usuario();
 		}
 		 Bloquear_usuario();
+		 NumeroSeguidores();
+		 NumeroSeguidos();
 	}
 	
 	public void Ver_publicaciones_gustadas() {
@@ -66,5 +68,15 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 			this.getListaMeGustas().setVisible(false);
 			this.getLayoutListaPublicaciones().setVisible(true);
 		});
+	}
+	
+	public void NumeroSeguidores() {
+//		this.getNumSeguidores().setVisible(false);
+		this.getNumSeguidores().setText(this.user.seguidor.size()+"");
+	}
+
+	public void NumeroSeguidos() {
+		this.getNumSiguiendo().setText(this.user.seguir.size()+"");
+//		this.getNumSiguiendo().setVisible(false);
 	}
 }

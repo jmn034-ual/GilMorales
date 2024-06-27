@@ -55,7 +55,7 @@ height: 100px; display: flex; /* Asegura que el contenido esté centrado si es n
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
        <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
-justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">
+justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;" id="vaadinButton">
         <iron-icon style="height: 30px; width: 30px; color: black; align-self: center;" icon="vaadin:comments"></iron-icon>
        </vaadin-button>
       </vaadin-horizontal-layout>

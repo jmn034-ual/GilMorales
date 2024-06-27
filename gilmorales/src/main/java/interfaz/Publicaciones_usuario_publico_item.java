@@ -40,6 +40,6 @@ public class Publicaciones_usuario_publico_item extends VistaPublicacionesUsuari
 	}
 
 	public void Visualizaciones() {
-		this.getNumVisualizaciones().setText(""+this.publicacion.getNumVisualizaciones());
+		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones() + " Visualizaciones");
 	}
 }

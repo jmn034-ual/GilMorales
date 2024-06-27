@@ -18,7 +18,7 @@ export class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitElement 
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; justify-content: center;" id="vaadinHorizontalLayout" theme="spacing-s">
+<vaadin-horizontal-layout class="content" style="width: 100%; justify-content: center; padding-right: var(--lumo-space-m); padding-left: var(--lumo-space-m);" id="vaadinHorizontalLayout" theme="spacing-s">
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center; flex-grow: 0; justify-content: center;">
   <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
  </vaadin-horizontal-layout>
@@ -29,12 +29,18 @@ export class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitElement 
   <label id="comentarioL" style="padding-left: var(--lumo-space-s); align-self: stretch;">Comentario</label>
  </vaadin-vertical-layout>
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 0; flex-shrink: 0;">
-  <label id="numeroMeGusta" style="align-self: center;">0</label>
-  <vaadin-button theme="icon" aria-label="Add new" id="meGustaB">
+  <label id="numeroMeGusta" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
+  <vaadin-button theme="icon" aria-label="Add new" id="meGustaB" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">
    <iron-icon icon="vaadin:heart-o" id="ironIcon"></iron-icon>
   </vaadin-button>
-  <vaadin-button theme="icon" aria-label="Add new" id="borrarComentarioB">
-   <iron-icon icon="vaadin:trash" id="ironIcon1"></iron-icon>
+  <vaadin-button theme="icon" aria-label="Add new" id="borrarComentarioB" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">
+   <iron-icon icon="vaadin:trash" id="ironIcon1" style="color: red;"></iron-icon>
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-horizontal-layout>

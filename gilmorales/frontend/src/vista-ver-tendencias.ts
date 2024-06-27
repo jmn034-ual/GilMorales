@@ -60,16 +60,25 @@ export class VistaVerTendencias extends LitElement {
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="layoutDatosPerfil" style="margin: var(--lumo-space-xs); align-items: center;">
-   <label id="numSiguiendo">0</label>
+   <label id="numSiguiendo" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
    <vaadin-button id="verSiguiendos">
      Siguiendo 
    </vaadin-button>
-   <label id="numSeguidores">0</label>
+   <label id="numSeguidores" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
    <vaadin-button id="verSeguidores">
      Seguidores 
    </vaadin-button>
-   <label id="numMeGustas">0</label>
-   <iron-icon id="ironIcon2" icon="vaadin:heart-o"></iron-icon>
+   <label id="numMeGustas" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
+   <label style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold; background-color:  #F5F5F5;">
+    <iron-icon id="ironIcon2" icon="vaadin:heart" style="height: 30px; width: 30px; color: black; align-self: center;"></iron-icon></label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" id="layoutDescripcion" style="margin: var(--lumo-space-xs);">
    <label id="labelDescripcion" style="flex-grow: 0; flex-shrink: 0;">Descripción sobre el perfil del usuario.</label>

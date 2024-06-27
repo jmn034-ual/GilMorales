@@ -38,7 +38,7 @@ public class Lista_resultado extends VistaListaResultado{
 					item = new Resultado_usuarios_item(ur, this);
 					this._realizar_busqueda.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).add(item);
 	            } else if (resultado.get(i) instanceof Hashtag) {
-	            	Hashtag h = bd.cargarHashtag(Integer.parseInt(resultado.get(i).toString()), buscar);
+	            	Hashtag h = bd.cargarHashtag(Integer.parseInt(resultado.get(i).toString()));
 					item = new Resultado_hashtags_item(h, this);
 					this._realizar_busqueda.getLayoutListaResultadoHashtags().as(VerticalLayout.class).add(item);
 	            }

@@ -28,7 +28,7 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado_item extends VistaLista
 		this._lista_Top_Comentarios__Usuario_No_Registrado_ = interfaz;
 		this.getMeGustaB().setEnabled(false);
 		datosComentario();
-		Ver_perfil();
+		Ver_perfil(null);
 	}
 	
 	public void datosComentario() {
@@ -39,11 +39,18 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado_item extends VistaLista
 		this.getBorrarComentarioB().setVisible(false);
 	}
 
-	public void Ver_perfil() {
-		this._ver_perfil = new Ver_perfil_publico(this.comentario.getEsComentadoPor(), this, this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.cabeceraUNR._cabecera_TOP);
+	public void Ver_perfil(Object interfaz) {
 		this.getNombreDeUsuarioB().addClickListener(event ->{
-			this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.getVaadinHorizontalLayout().removeAll();
-			this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.getVaadinHorizontalLayout().add(this._ver_perfil);
+			if(this._lista_Top_Comentarios__Usuario_No_Registrado_ != null) {
+				this._ver_perfil = new Ver_perfil_publico(this.comentario.getEsComentadoPor(), this, this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.cabeceraUNR._cabecera_TOP);
+				this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.getVaadinHorizontalLayout().removeAll();
+				this._lista_Top_Comentarios__Usuario_No_Registrado_._ver_publicacion__Usuario_No_Registrado_.unr.getVaadinHorizontalLayout().add(this._ver_perfil);
+			}else if (interfaz instanceof Lista_Top_comentarios_Usuario_Registrado_item) {
+				Lista_Top_comentarios_Usuario_Registrado_item itemRegistrado = (Lista_Top_comentarios_Usuario_Registrado_item) interfaz;
+				this._ver_perfil = new Ver_perfil_publico(this.comentario.getEsComentadoPor(), interfaz, itemRegistrado._lista_Top_comentarios__Usuario_Registrado_._ver_publicacion__usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
+				itemRegistrado._lista_Top_comentarios__Usuario_Registrado_._ver_publicacion__usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
+				itemRegistrado._lista_Top_comentarios__Usuario_Registrado_._ver_publicacion__usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(this._ver_perfil);
+			}
 		});
 	}
 }
