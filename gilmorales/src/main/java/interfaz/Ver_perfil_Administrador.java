@@ -1,5 +1,8 @@
 package interfaz;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.IronIcon;
@@ -8,6 +11,7 @@ import com.vaadin.flow.component.textfield.TextArea;
 
 import basededatos.BDPrincipal;
 import basededatos.iAdministrador;
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioAdministrador;
 import bd_dcl.UsuarioRegistrado;
 
@@ -44,6 +48,7 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 		 Bloquear_usuario();
 		 NumeroSeguidores();
 		 NumeroSeguidos();
+		 NumeroMegustas();
 	}
 	
 	public void Ver_publicaciones_gustadas() {
@@ -71,12 +76,19 @@ public class Ver_perfil_Administrador extends Ver_Perfil__2{
 	}
 	
 	public void NumeroSeguidores() {
-//		this.getNumSeguidores().setVisible(false);
 		this.getNumSeguidores().setText(this.user.seguidor.size()+"");
 	}
 
 	public void NumeroSeguidos() {
 		this.getNumSiguiendo().setText(this.user.seguir.size()+"");
-//		this.getNumSiguiendo().setVisible(false);
+	}
+	
+	public void NumeroMegustas() {
+		int total = 0;
+		List<Publicacion> publicaciones = new ArrayList<Publicacion>(this.user.publica.getCollection());
+		for(Publicacion p : publicaciones) {
+			total += p.getNumMeGustas();
+		}
+		this.getNumMeGustas().setText(total + "");
 	}
 }

@@ -59,8 +59,6 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	private Label numMeGustas;
 	@Id("botonMeGusta")
 	private Button botonMeGusta;
-	@Id("ironIcon")
-	private Element ironIcon;
 	@Id("numComentarios")
 	private Label numComentarios;
 	@Id("botonVerComentario")
@@ -378,20 +376,6 @@ public class VistaVerPublicacionUsuarioRegistrado extends LitTemplate {
 	public void setBotonMeGusta(Button botonMeGusta) {
 		this.botonMeGusta = botonMeGusta;
 	}
-
-
-
-	public Element getIronIcon() {
-		return ironIcon;
-	}
-
-
-
-	public void setIronIcon(Element ironIcon) {
-		this.ironIcon = ironIcon;
-	}
-
-
 
 	public Label getNumComentarios() {
 		return numComentarios;

@@ -39,7 +39,7 @@ export class VistaCabecera extends LitElement {
     <iron-icon icon="lumo:plus" slot="suffix"></iron-icon>Añadir 
    </vaadin-button>
    <vaadin-button theme="icon" aria-label="Add new" id="botonNotificaciones">
-    <iron-icon icon="lumo:bell" style="font-size: 250%; color: white;"></iron-icon>
+    <iron-icon icon="vaadin:bell" style="font-size: 250%; color: white; width: 70px; height: 70px;"></iron-icon>
    </vaadin-button>
    <vaadin-button theme="icon" aria-label="Add new" id="botonPerfil">
     <iron-icon icon="lumo:user" style="font-size: 250%; color: white;"></iron-icon>

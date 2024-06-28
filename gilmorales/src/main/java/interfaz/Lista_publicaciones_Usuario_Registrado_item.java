@@ -5,6 +5,8 @@ import org.orm.PersistentException;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
@@ -23,6 +25,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	public Ver_comentarios_Usuario_Registrado verComentarios;
 	BDPrincipal bd = new BDPrincipal();
 	UsuarioRegistrado user;
+	boolean gusta = false;
+	Icon icono = null;
 
 	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,	Lista_publicaciones_Usuario_Registrado interfaz) {
 		this.publicacion = bd.cargarPublicacion(publicacion.getIdPublicacion());
@@ -86,10 +90,29 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	}
 
 	public void Dar_me_gusta_publicacion() {
-//		this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+		gusta = this.publicacion.gustaA.contains(this.user);
+		if(gusta) {
+			icono = new Icon(VaadinIcon.HEART);
+			icono.setSize("30px");
+			this.getVaadinButton().setIcon(icono);
+		}else {
+			icono = new Icon(VaadinIcon.HEART_O);
+			icono.setSize("30px");
+			this.getVaadinButton().setIcon(icono);
+		}		
 		this.getVaadinButton().addClickListener(event -> {
+			gusta = !(gusta);
 			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
 			this.getLabelNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+			if(gusta) {
+				icono = new Icon(VaadinIcon.HEART);
+				icono.setSize("30px");
+				this.getVaadinButton().setIcon(icono);
+			}else {
+				icono = new Icon(VaadinIcon.HEART_O);
+				icono.setSize("30px");
+				this.getVaadinButton().setIcon(icono);
+			}	
 		});
 	}
 
@@ -98,8 +121,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this.getBotonDenunciar().addClickListener(event -> {
 			Dialog dialog = new Dialog(_denunciar_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
-			dialog.setHeight("70%");
-			dialog.setWidth("61%");
+			dialog.setHeight("50%");
+			dialog.setWidth("50%");
 			this._denunciar_publicacion.getBotonCancelar().addClickListener(event2 -> {
 				dialog.close();
 			});

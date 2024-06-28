@@ -289,4 +289,16 @@ public class Publicaciones {
 	    }
 	}
 
+	public List<Publicacion> cargarAllPublicaciones() throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		List<Publicacion> publicaciones = null;
+		try {
+	        publicaciones = PublicacionDAO.queryPublicacion(null, "numMeGustas DESC");
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return publicaciones;		
+	}
+
 }

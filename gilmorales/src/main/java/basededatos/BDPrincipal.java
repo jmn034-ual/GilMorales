@@ -37,6 +37,17 @@ public class BDPrincipal
 
 	TreeMap<String, String> nombresUsuarios = new TreeMap<String, String>();
 	
+	public List<Publicacion> cargarAllPubliaciones(){
+		List<Publicacion> publicaciones = null;
+		try {
+			publicaciones = this.publicaciones.cargarAllPublicaciones();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return publicaciones;
+	}
+	
 	public Hashtag actualizarHashtag(int idHashtag) {
 		Hashtag hashtag =  null;
 		try {
@@ -147,7 +158,10 @@ public class BDPrincipal
 
 	public void denunciarComentario(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID) {
 		try {
-			this.denuncias.denunciarComentario(aIdComentario, aMotivo, aExplicacion, aUsuarioID);
+			if(aMotivo.isBlank() || aExplicacion.isBlank())
+				Notification.show("Rellena los campos");
+			else
+				this.denuncias.denunciarComentario(aIdComentario, aMotivo, aExplicacion, aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

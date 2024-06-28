@@ -22,60 +22,56 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-lista-publicaciones-administrador-item.ts")
 public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
+	
   
-
-
 	@Id("vaadinVerticalLayout")
 	private Element vaadinVerticalLayout;
 	@Id("vaadinHorizontalLayout3")
 	private HorizontalLayout vaadinHorizontalLayout3;
 	@Id("layoutVideoPublicacion")
 	private Element layoutVideoPublicacion;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
 	@Id("botonNombreUsuario")
 	private Button botonNombreUsuario;
 	@Id("labelGeolocalizacion")
 	private Label labelGeolocalizacion;
+	@Id("vaadinHorizontalLayout1")
+	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("numVisualizaciones")
 	private Label numVisualizaciones;
+	@Id("label")
+	private Label label;
 	@Id("layoutVideo")
 	private Element layoutVideo;
 	@Id("layoutDatos")
 	private Element layoutDatos;
 	@Id("layoutBotonesUsuarioR")
 	private HorizontalLayout layoutBotonesUsuarioR;
+	@Id("botonEliminar")
+	private Button botonEliminar;
 	@Id("layoutBotonesPublicacion")
 	private HorizontalLayout layoutBotonesPublicacion;
-	@Id("layoutMeGustas")
-	private Element layoutMeGustas;
+	@Id("vaadinHorizontalLayout2")
+	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("labelNumMeGustas")
 	private Label labelNumMeGustas;
 	@Id("labelMeGustas")
 	private Label labelMeGustas;
-	@Id("layoutComentarios")
-	private Element layoutComentarios;
+	@Id("ironIcon")
+	private Element ironIcon;
+	@Id("vaadinHorizontalLayout4")
+	private HorizontalLayout vaadinHorizontalLayout4;
 	@Id("labelNumComentarios")
 	private Label labelNumComentarios;
 	@Id("botonVerComentarios")
 	private Button botonVerComentarios;
-	@Id("botonEliminar")
-	private Button botonEliminar;
-	@Id("fotoPerfil")
-	private Element fotoPerfil;
-	@Id("vaadinAvatar")
-	private Avatar vaadinAvatar;
+	@Id("ironIcon1")
+	private Element ironIcon1;
 	
 	
-	public Button getBotonEliminar() {
-		return botonEliminar;
-	}
-
-
-
-	public void setBotonEliminar(Button botonEliminar) {
-		this.botonEliminar = botonEliminar;
-	}
-
-
 
 	public Element getVaadinVerticalLayout() {
 		return vaadinVerticalLayout;
@@ -113,6 +109,30 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
+	}
+
+
+
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
+	}
+
+
+
 	public Button getBotonNombreUsuario() {
 		return botonNombreUsuario;
 	}
@@ -137,6 +157,18 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+
 	public Label getNumVisualizaciones() {
 		return numVisualizaciones;
 	}
@@ -145,6 +177,18 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 	public void setNumVisualizaciones(Label numVisualizaciones) {
 		this.numVisualizaciones = numVisualizaciones;
+	}
+
+
+
+	public Label getLabel() {
+		return label;
+	}
+
+
+
+	public void setLabel(Label label) {
+		this.label = label;
 	}
 
 
@@ -183,32 +227,22 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 		this.layoutBotonesUsuarioR = layoutBotonesUsuarioR;
 	}
 
+
+
+	public Button getBotonEliminar() {
+		return botonEliminar;
+	}
+
+
+
+	public void setBotonEliminar(Button botonEliminar) {
+		this.botonEliminar = botonEliminar;
+	}
+
+
+
 	public HorizontalLayout getLayoutBotonesPublicacion() {
 		return layoutBotonesPublicacion;
-	}
-
-
-
-	public Element getFotoPerfil() {
-		return fotoPerfil;
-	}
-
-
-
-	public void setFotoPerfil(Element fotoPerfil) {
-		this.fotoPerfil = fotoPerfil;
-	}
-
-
-
-	public Avatar getVaadinAvatar() {
-		return vaadinAvatar;
-	}
-
-
-
-	public void setVaadinAvatar(Avatar vaadinAvatar) {
-		this.vaadinAvatar = vaadinAvatar;
 	}
 
 
@@ -219,14 +253,14 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
-	public Element getLayoutMeGustas() {
-		return layoutMeGustas;
+	public HorizontalLayout getVaadinHorizontalLayout2() {
+		return vaadinHorizontalLayout2;
 	}
 
 
 
-	public void setLayoutMeGustas(Element layoutMeGustas) {
-		this.layoutMeGustas = layoutMeGustas;
+	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
+		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
 	}
 
 
@@ -255,14 +289,26 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
-	public Element getLayoutComentarios() {
-		return layoutComentarios;
+	public Element getIronIcon() {
+		return ironIcon;
 	}
 
 
 
-	public void setLayoutComentarios(Element layoutComentarios) {
-		this.layoutComentarios = layoutComentarios;
+	public void setIronIcon(Element ironIcon) {
+		this.ironIcon = ironIcon;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout4() {
+		return vaadinHorizontalLayout4;
+	}
+
+
+
+	public void setVaadinHorizontalLayout4(HorizontalLayout vaadinHorizontalLayout4) {
+		this.vaadinHorizontalLayout4 = vaadinHorizontalLayout4;
 	}
 
 
@@ -288,6 +334,20 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 	public void setBotonVerComentarios(Button botonVerComentarios) {
 		this.botonVerComentarios = botonVerComentarios;
 	}
+
+
+
+	public Element getIronIcon1() {
+		return ironIcon1;
+	}
+
+
+
+	public void setIronIcon1(Element ironIcon1) {
+		this.ironIcon1 = ironIcon1;
+	}
+
+
 
 	/**
      * Creates a new VistaListaPublicacionesAdministradorItem.

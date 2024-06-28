@@ -48,7 +48,7 @@ public class Ver_comentarios extends VistaVerComentarios {
 				if(auxAdmin._lista_Publicaciones__Administrador_ != null) {
 					cabeceraTopAux = auxAdmin._lista_Publicaciones__Administrador_._lista_Publicaciones__Administrador_._administrador._cabecera_Administrador.cabeceraTOP;
 				}else {
-					cabeceraTopAux = auxAdmin._ver_publicacion__Administrador_._lista_Publicaciones__Administrador_._lista_Publicaciones__Administrador_._administrador._cabecera_Administrador.cabeceraTOP;
+					cabeceraTopAux = auxAdmin._ver_publicacion__Administrador_.admin._cabecera_Administrador.cabeceraTOP;
 				}
 				this.verPerfilAdmin = new Ver_perfil_Administrador(cabeceraTopAux, auxAdmin.publicacion.getPerteneceA());
 			} else {

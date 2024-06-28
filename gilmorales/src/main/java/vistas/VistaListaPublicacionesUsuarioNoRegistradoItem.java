@@ -27,10 +27,6 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Element publicacion;
 	@Id("layoutPublicacion")
 	private HorizontalLayout layoutPublicacion;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
-	@Id("fotoPerfil")
-	private Element fotoPerfil;
 	@Id("vaadinAvatar")
 	private Avatar vaadinAvatar;
 	@Id("layoutVideoPublicacion")
@@ -59,8 +55,6 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Label labelNumMeGustas;
 	@Id("vaadinButton")
 	private Button vaadinButton;
-	@Id("ironIcon")
-	private Element ironIcon;
 	@Id("layoutComentarios")
 	private HorizontalLayout layoutComentarios;
 	@Id("labelNumComentarios")
@@ -81,6 +75,8 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	private Button botonComentar;
 	@Id("lineaHorizontal")
 	private Hr lineaHorizontal;
+	@Id("vaadinHorizontalLayout")
+	private HorizontalLayout vaadinHorizontalLayout;
 	
 	
 
@@ -106,30 +102,17 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 		this.layoutPublicacion = layoutPublicacion;
 	}
 
+	
 
-
-	public Element getVaadinVerticalLayout() {
-		return vaadinVerticalLayout;
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
 	}
 
 
 
-	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
-		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
-
-
-
-	public Element getFotoPerfil() {
-		return fotoPerfil;
-	}
-
-
-
-	public void setFotoPerfil(Element fotoPerfil) {
-		this.fotoPerfil = fotoPerfil;
-	}
-
 
 
 	public Avatar getVaadinAvatar() {
@@ -297,20 +280,6 @@ public class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitTemplate 
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
 	}
-
-
-
-	public Element getIronIcon() {
-		return ironIcon;
-	}
-
-
-
-	public void setIronIcon(Element ironIcon) {
-		this.ironIcon = ironIcon;
-	}
-
-
 
 	public HorizontalLayout getLayoutComentarios() {
 		return layoutComentarios;

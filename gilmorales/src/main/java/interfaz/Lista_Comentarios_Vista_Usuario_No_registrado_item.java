@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
+
 import bd_dcl.Comentario;
 import vistas.VistaListaComentariosUsuarioNoRegistradoItem;
 
@@ -20,6 +23,9 @@ public class Lista_Comentarios_Vista_Usuario_No_registrado_item extends VistaLis
 		this.getNombreUsuario().setText(comentario.getEsComentadoPor().getNombreUsuario());
 		this.getComentarioL().setText(comentario.getComentario());
 		this.getNumeroMeGusta().setText(comentario.getNumeroMeGustas()+"");
+		Icon icono = new Icon(VaadinIcon.HEART);
+		this.getMeGustaB().getStyle().set("color", "black");
+		this.getMeGustaB().setIcon(icono);
 		this.getMeGustaB().setEnabled(false);
 		this.getDenunciarB().setVisible(false);
 		this.getBorrarComentarioB().setVisible(false);

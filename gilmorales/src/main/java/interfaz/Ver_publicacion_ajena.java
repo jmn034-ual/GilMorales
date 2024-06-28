@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
@@ -19,6 +21,9 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public Lista_usuarios_registrados_item _lista_usuarios_registrados;
 	public Denunciar_publicacion _denunciar_publicacion;
 	public Ver_perfil_publico _ver_perfil;
+	boolean gusta = false;
+	Icon icono = null;
+
 	
 	public Ver_publicacion_ajena(Publicacion p, UsuarioRegistrado user, Object urInterfaz) {
 		super(p, user);
@@ -108,8 +113,8 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 		this.getBotonDenunciar().addClickListener(event -> {
 			Dialog dialog = new Dialog(_denunciar_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
-			dialog.setHeight("70%");
-			dialog.setWidth("61%");
+			dialog.setHeight("50%");
+			dialog.setWidth("50%");
 			this._denunciar_publicacion.getBotonCancelar().addClickListener(event2 -> {
 				dialog.close();
 			});
@@ -118,10 +123,31 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	}
 
 	public void Dar_me_gusta_publicacion() {
+		gusta = this.publicacion.gustaA.contains(this.user);
+		if(gusta) {
+			icono = new Icon(VaadinIcon.HEART);
+			icono.setSize("30px");
+			this.getBotonMeGusta().setIcon(icono);
+		}else {
+			icono = new Icon(VaadinIcon.HEART_O);
+			icono.setSize("30px");
+			this.getBotonMeGusta().setIcon(icono);
+		}
+
 		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
 		this.getBotonMeGusta().addClickListener(event -> {
+			gusta = !(gusta);
 			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
 			this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+			if(gusta) {
+				icono = new Icon(VaadinIcon.HEART);
+				icono.setSize("30px");
+				this.getBotonMeGusta().setIcon(icono);
+			}else {
+				icono = new Icon(VaadinIcon.HEART_O);
+				icono.setSize("30px");
+				this.getBotonMeGusta().setIcon(icono);
+			}
 		});
 	}
 

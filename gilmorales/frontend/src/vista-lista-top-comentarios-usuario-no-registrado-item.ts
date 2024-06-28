@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 @customElement('vista-lista-top-comentarios-usuario-no-registrado-item')
 export class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitElement {
@@ -34,9 +34,7 @@ height: 100px; display: flex; /* Asegura que el contenido esté centrado si es n
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
   <vaadin-button theme="icon" aria-label="Add new" id="meGustaB" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
-justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">
-   <iron-icon icon="vaadin:heart-o" id="ironIcon"></iron-icon>
-  </vaadin-button>
+justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px; color: red;"></vaadin-button>
   <vaadin-button theme="icon" aria-label="Add new" id="borrarComentarioB" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
 justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">

@@ -1,5 +1,8 @@
 package interfaz;
 
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.dialog.DialogVariant;
+
 import bd_dcl.Comentario;
 import vistas.VistaListaComentariosComercialItem;
 
@@ -8,6 +11,8 @@ public class Lista_comentarios_Comercial_item extends VistaListaComentariosComer
 	public Lista_comentarios_Comercial _lista_comentarios__Comercial_;
 	public Denunciar_comentario _denunciar_comentario;
 	Comentario comentario;
+	Dialog dialog;
+
 	
 	public Lista_comentarios_Comercial_item(Comentario c, Lista_comentarios_Comercial interfaz) {
 		this.comentario = c;
@@ -23,6 +28,14 @@ public class Lista_comentarios_Comercial_item extends VistaListaComentariosComer
 	
 
 	public void Denunciar_comentario() {
-		this._denunciar_comentario = new Denunciar_comentario(comentario, this);
+		this.getDenunciarB().addClickListener(event -> {
+			dialog = new Dialog();
+			this._denunciar_comentario = new Denunciar_comentario(this.comentario, this);
+			dialog.add(_denunciar_comentario);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("50%");
+			dialog.setWidth("50%");
+			dialog.open();
+		});
 	}
 }

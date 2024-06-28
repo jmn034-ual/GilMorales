@@ -43,11 +43,9 @@ export class VistaVerComentarios extends LitElement {
        <label id="numMeGustas" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
-       <vaadin-button theme="icon" aria-label="Add new" id="botonMeGusta" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
+       <vaadin-button theme="icon " aria-label="Add new" id="botonMeGusta" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
-justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px;">
-        <iron-icon icon="vaadin:heart" id="iconoHeart" style="height: 30px; width: 30px; color: black; align-self: center;"></iron-icon>
-       </vaadin-button>
+justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px; color: red;"></vaadin-button>
       </vaadin-horizontal-layout>
       <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 100%; align-items: center; justify-content: flex-start;" id="layoutNumComentarios">
        <label id="numComentarios" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
@@ -76,10 +74,10 @@ justify-content: center; align-items: center; height: 20px; justify-content: cen
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <vaadin-vertical-layout theme="spacing" id="layoutSeguidores" style="flex-grow: 0; align-self: center; flex-shrink: 0;">
-   <vaadin-button id="botonSeguir" style="align-self: center;">
+   <vaadin-button id="botonSeguir" style="align-self: center;" theme="primary">
      Seguir 
    </vaadin-button>
-   <vaadin-button id="botonEliminarAdmi" style="align-self: center;">
+   <vaadin-button id="botonEliminarAdmi" style="align-self: center;" theme="primary error">
      Eliminar Publicación 
    </vaadin-button>
   </vaadin-vertical-layout>
@@ -89,7 +87,7 @@ justify-content: center; align-items: center; height: 20px; justify-content: cen
   <vaadin-vertical-layout theme="spacing" id="layoutListaComentarios" style="flex-grow: 1; width: 100%; flex-shrink: 0; align-self: stretch; border-radius: 10px; border: 2px solid #F5F5F5; margin-top: var(--lumo-space-l);"></vaadin-vertical-layout>
   <vaadin-horizontal-layout theme="spacing-s" id="layoutComentar" style="flex-shrink: 0; width: 100%; padding-bottom: var(--lumo-space-l);">
    <vaadin-text-field label="" placeholder="Escribe tu comentario..." id="textFieldCmentario" style="flex-grow: 1;"></vaadin-text-field>
-   <vaadin-button id="botonComentar">
+   <vaadin-button id="botonComentar" theme="primary">
      Comentar 
    </vaadin-button>
   </vaadin-horizontal-layout>

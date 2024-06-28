@@ -3,6 +3,8 @@ package interfaz;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 
 import bd_dcl.Comentario;
 import bd_dcl.UsuarioRegistrado;
@@ -26,6 +28,9 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado_item extends VistaLista
 		this.getStyle().set("width", "100%");
 		this.comentario = comentario;
 		this._lista_Top_Comentarios__Usuario_No_Registrado_ = interfaz;
+		Icon icono = new Icon(VaadinIcon.HEART);
+		this.getMeGustaB().setIcon(icono);
+		this.getMeGustaB().getStyle().set("color", "black");
 		this.getMeGustaB().setEnabled(false);
 		datosComentario();
 		Ver_perfil(null);

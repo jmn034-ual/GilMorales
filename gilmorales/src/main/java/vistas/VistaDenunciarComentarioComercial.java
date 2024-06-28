@@ -11,6 +11,7 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H4;
 
 /**
  * A Designer generated component for the vista-denunciar-comentario-comercial template.
@@ -22,8 +23,6 @@ import com.vaadin.flow.component.button.Button;
 @JsModule("./src/vista-denunciar-comentario-comercial.ts")
 public class VistaDenunciarComentarioComercial extends LitTemplate {
 
-    @Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
 	@Id("vaadinHorizontalLayout")
@@ -32,44 +31,153 @@ public class VistaDenunciarComentarioComercial extends LitTemplate {
 	private H1 denunciarL;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
-	@Id("motivol")
-	private Label motivol;
-	@Id("vaadinHorizontalLayout3")
-	private HorizontalLayout vaadinHorizontalLayout3;
-	@Id("combo")
-	private Select combo;
-	@Id("vaadinListBox")
-	private Element vaadinListBox;
-	@Id("noMeGustaItem")
-	private Element noMeGustaItem;
-	@Id("spamItem")
-	private Element spamItem;
-	@Id("ofensivoItem")
-	private Element ofensivoItem;
-	@Id("explicitoItem")
-	private Element explicitoItem;
-	@Id("vaadinHorizontalLayout4")
-	private HorizontalLayout vaadinHorizontalLayout4;
-	@Id("vaadinHorizontalLayout5")
-	private HorizontalLayout vaadinHorizontalLayout5;
-	@Id("expliqueL")
-	private Label expliqueL;
-	@Id("vaadinHorizontalLayout6")
-	private HorizontalLayout vaadinHorizontalLayout6;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("h4")
+	private H4 h4;
 	@Id("motivoTA")
 	private TextArea motivoTA;
 	@Id("vaadinHorizontalLayout7")
 	private HorizontalLayout vaadinHorizontalLayout7;
-	@Id("vaadinHorizontalLayout8")
-	private HorizontalLayout vaadinHorizontalLayout8;
 	@Id("cancelarB")
 	private Button cancelarB;
-	@Id("vaadinHorizontalLayout9")
-	private HorizontalLayout vaadinHorizontalLayout9;
 	@Id("EnviarB")
 	private Button enviarB;
+	@Id("h41")
+	private H4 h41;	
+	
+
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
+	}
+
+
+
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout() {
+		return vaadinHorizontalLayout;
+	}
+
+
+
+	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
+		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+
+
+	public H1 getDenunciarL() {
+		return denunciarL;
+	}
+
+
+
+	public void setDenunciarL(H1 denunciarL) {
+		this.denunciarL = denunciarL;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout1() {
+		return vaadinHorizontalLayout1;
+	}
+
+
+
+	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
+		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
+	}
+
+
+
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
+	}
+
+
+
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
+	}
+
+
+
+	public H4 getH4() {
+		return h4;
+	}
+
+
+
+	public void setH4(H4 h4) {
+		this.h4 = h4;
+	}
+
+
+
+	public TextArea getMotivoTA() {
+		return motivoTA;
+	}
+
+
+
+	public void setMotivoTA(TextArea motivoTA) {
+		this.motivoTA = motivoTA;
+	}
+
+
+
+	public HorizontalLayout getVaadinHorizontalLayout7() {
+		return vaadinHorizontalLayout7;
+	}
+
+
+
+	public void setVaadinHorizontalLayout7(HorizontalLayout vaadinHorizontalLayout7) {
+		this.vaadinHorizontalLayout7 = vaadinHorizontalLayout7;
+	}
+
+
+
+	public Button getCancelarB() {
+		return cancelarB;
+	}
+
+
+
+	public void setCancelarB(Button cancelarB) {
+		this.cancelarB = cancelarB;
+	}
+
+
+
+	public Button getEnviarB() {
+		return enviarB;
+	}
+
+
+
+	public void setEnviarB(Button enviarB) {
+		this.enviarB = enviarB;
+	}
+
+
+	public H4 getH41() {
+		return h41;
+	}
+
+
+
+	public void setH41(H4 h41) {
+		this.h41 = h41;
+	}
+
+
+
 	/**
      * Creates a new VistaDenunciarComentarioComercial.
      */

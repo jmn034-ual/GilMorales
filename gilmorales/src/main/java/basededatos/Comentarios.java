@@ -104,6 +104,7 @@ public class Comentarios {
 				c.setNumeroMeGustas(c.getNumeroMeGustas() - 1);
 				c.gustaA.remove(usuario);
 			}
+			UsuarioRegistradoDAO.save(usuario);
 			ComentarioDAO.save(c);
 			t.commit();
 		} catch (Exception e) {

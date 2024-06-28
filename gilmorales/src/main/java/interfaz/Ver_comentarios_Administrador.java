@@ -1,6 +1,8 @@
 package interfaz;
 
 
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -22,9 +24,12 @@ public class Ver_comentarios_Administrador extends Ver_comentarios{
 		}else {
 			this._ver_publicacion__Administrador_ = (Ver_publicacion_Administrador) interfaz;
 		}
+		Icon icono = new Icon(VaadinIcon.HEART);
+		icono.setSize("30px");
+		this.getBotonMeGusta().getStyle().set("color", "black");
+		this.getBotonMeGusta().setIcon(icono);
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(true);
-		this.getBotonMeGusta().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getLayoutComentar().setVisible(false);
 		Lista_comentarios__Administrador_();

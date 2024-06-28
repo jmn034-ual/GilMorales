@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bd_dcl.Publicacion;
@@ -39,6 +41,10 @@ public class Ver_comentarios_Usuario_No_registrado extends Ver_comentarios {
 		this.getNumComentarios().setText(publicacion.getNumComentarios()+"");
 		this.getBotonComentar().setVisible(false);
 		this.getBotonEliminarAdmi().setVisible(false);
+		Icon icono = new Icon(VaadinIcon.HEART);
+		icono.setSize("30px");
+		this.getBotonMeGusta().getStyle().set("color", "black");
+		this.getBotonMeGusta().setIcon(icono);
 		this.getBotonMeGusta().setEnabled(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getLayoutComentar().setVisible(false);

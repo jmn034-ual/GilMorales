@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
@@ -23,6 +25,10 @@ public class Lista_Publicaciones_Usuario_no_registrado_item extends VistaListaPu
 	public Lista_Publicaciones_Usuario_no_registrado_item(Publicacion publicacion, Lista_Publicaciones_Usuario_no_registrado interfaz) {
 		this._publicaciones__Usuario_no_registrado_  = interfaz;
 		this.publicacion = publicacion;
+		Icon icono = new Icon(VaadinIcon.HEART);
+		icono.setSize("30px");
+		this.getVaadinButton().setIcon(icono);
+		this.getVaadinButton().getStyle().set("color", "black");
 		Ver_comentarios__Usuario_No_registrado_();
 		mostrarDatosUsuario();
 		mostrarDatosPublicacion();

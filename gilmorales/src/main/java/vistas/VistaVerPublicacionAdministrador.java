@@ -9,6 +9,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Hr;
 
 /**
  * A Designer generated component for the vista-ver-publicacion-administrador template.
@@ -20,16 +21,12 @@ import com.vaadin.flow.component.html.Label;
 @JsModule("./src/vista-ver-publicacion-administrador.ts")
 public class VistaVerPublicacionAdministrador extends LitTemplate {
 
+
+
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("vaadinVerticalLayout1")
 	private Element vaadinVerticalLayout1;
-	@Id("vaadinVerticalLayout3")
-	private Element vaadinVerticalLayout3;
-	@Id("layoutUsuario")
-	private HorizontalLayout layoutUsuario;
-	@Id("vaadinVerticalLayout4")
-	private Element vaadinVerticalLayout4;
 	@Id("vaadinVerticalLayout2")
 	private Element vaadinVerticalLayout2;
 	@Id("video")
@@ -40,6 +37,12 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 	private Label numVisualizaciones;
 	@Id("label")
 	private Label label;
+	@Id("vaadinVerticalLayout3")
+	private Element vaadinVerticalLayout3;
+	@Id("vaadinVerticalLayout4")
+	private Element vaadinVerticalLayout4;
+	@Id("layoutUsuario")
+	private HorizontalLayout layoutUsuario;
 	@Id("avatar")
 	private Avatar avatar;
 	@Id("layoutVerPerfil")
@@ -52,10 +55,12 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 	private Element botonDenunciar;
 	@Id("eliminarPublicacion")
 	private Button eliminarPublicacion;
-	@Id("layoutLabels")
-	private HorizontalLayout layoutLabels;
 	@Id("descripcion")
 	private Label descripcion;
+	@Id("fechaSubida")
+	private Label fechaSubida;
+	@Id("layoutLabels")
+	private HorizontalLayout layoutLabels;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
 	@Id("numMeGustas")
@@ -70,8 +75,8 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 	private Button botonVerComentario;
 	@Id("ironIcon2")
 	private Element ironIcon2;
-	@Id("fechaSubida")
-	private Label fechaSubida;
+	@Id("hr")
+	private Hr hr;
 	@Id("vaadinVerticalLayout5")
 	private Element vaadinVerticalLayout5;
 	
@@ -97,42 +102,6 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 
 	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
 		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
-	}
-
-
-
-	public Element getVaadinVerticalLayout3() {
-		return vaadinVerticalLayout3;
-	}
-
-
-
-	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
-		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
-	}
-
-
-
-	public HorizontalLayout getLayoutUsuario() {
-		return layoutUsuario;
-	}
-
-
-
-	public void setLayoutUsuario(HorizontalLayout layoutUsuario) {
-		this.layoutUsuario = layoutUsuario;
-	}
-
-
-
-	public Element getVaadinVerticalLayout4() {
-		return vaadinVerticalLayout4;
-	}
-
-
-
-	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
-		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
 	}
 
 
@@ -193,6 +162,42 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 
 	public void setLabel(Label label) {
 		this.label = label;
+	}
+
+
+
+	public Element getVaadinVerticalLayout3() {
+		return vaadinVerticalLayout3;
+	}
+
+
+
+	public void setVaadinVerticalLayout3(Element vaadinVerticalLayout3) {
+		this.vaadinVerticalLayout3 = vaadinVerticalLayout3;
+	}
+
+
+
+	public Element getVaadinVerticalLayout4() {
+		return vaadinVerticalLayout4;
+	}
+
+
+
+	public void setVaadinVerticalLayout4(Element vaadinVerticalLayout4) {
+		this.vaadinVerticalLayout4 = vaadinVerticalLayout4;
+	}
+
+
+
+	public HorizontalLayout getLayoutUsuario() {
+		return layoutUsuario;
+	}
+
+
+
+	public void setLayoutUsuario(HorizontalLayout layoutUsuario) {
+		this.layoutUsuario = layoutUsuario;
 	}
 
 
@@ -269,18 +274,6 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 
 
 
-	public HorizontalLayout getLayoutLabels() {
-		return layoutLabels;
-	}
-
-
-
-	public void setLayoutLabels(HorizontalLayout layoutLabels) {
-		this.layoutLabels = layoutLabels;
-	}
-
-
-
 	public Label getDescripcion() {
 		return descripcion;
 	}
@@ -289,6 +282,30 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 
 	public void setDescripcion(Label descripcion) {
 		this.descripcion = descripcion;
+	}
+
+
+
+	public Label getFechaSubida() {
+		return fechaSubida;
+	}
+
+
+
+	public void setFechaSubida(Label fechaSubida) {
+		this.fechaSubida = fechaSubida;
+	}
+
+
+
+	public HorizontalLayout getLayoutLabels() {
+		return layoutLabels;
+	}
+
+
+
+	public void setLayoutLabels(HorizontalLayout layoutLabels) {
+		this.layoutLabels = layoutLabels;
 	}
 
 
@@ -377,14 +394,14 @@ public class VistaVerPublicacionAdministrador extends LitTemplate {
 
 
 
-	public Label getFechaSubida() {
-		return fechaSubida;
+	public Hr getHr() {
+		return hr;
 	}
 
 
 
-	public void setFechaSubida(Label fechaSubida) {
-		this.fechaSubida = fechaSubida;
+	public void setHr(Hr hr) {
+		this.hr = hr;
 	}
 
 

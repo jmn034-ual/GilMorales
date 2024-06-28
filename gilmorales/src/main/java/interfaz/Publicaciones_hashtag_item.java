@@ -21,13 +21,18 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 	public Publicaciones_hashtag_item(Publicacion p, Publicaciones_hashtag interfaz) {
 		this._publicaciones_hashtag = interfaz;
 		this.publicacion = p;
+
+
 		Video video = new Video(this.publicacion.getVideo());
-		video.getStyle().set("width", "70%");
-		video.getStyle().set("height", "70%");
-		if(this.publicacion.getPerteneceA() != null)
+//		video.getStyle().set("width", "70%");
+//		video.getStyle().set("height", "70%");
+		if(this.publicacion.getPerteneceA() != null) {
 			this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
-		else
+			this.getVaadinAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
+		}else {
 			this.getBotonNombreUsuario().setText(this.publicacion.getEsPublicada().getNombreUsuarioComercial());
+			this.getVaadinAvatar().setImage(this.publicacion.getEsPublicada().getFoto());
+		}
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getImagenPublicacion().as(VerticalLayout.class).add(video);
 

@@ -16,6 +16,8 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 	public Lista_publicaciones_Usuario_Registrado_item publicacionItem;
 	public Lista_comentarios_Usuario_registrado _lista_comentarios__Usuario_registrado_;
 	UsuarioRegistrado user;
+	boolean gusta = false;
+	Icon icono = null;
 	
 	public Ver_comentarios_Usuario_Registrado(Publicacion publicacion, Object interfaz, UsuarioRegistrado user) {
 		super(publicacion);
@@ -49,15 +51,30 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 	}
 
 	public void Dar_me_gusta_publicacion() {
+		gusta = this.publicacion.gustaA.contains(this.user);
+		if(gusta) {
+			icono = new Icon(VaadinIcon.HEART);
+			icono.setSize("30px");
+			this.getBotonMeGusta().setIcon(icono);
+		}else {
+			icono = new Icon(VaadinIcon.HEART_O);
+			icono.setSize("30px");
+			this.getBotonMeGusta().setIcon(icono);
+		}
 		this.getBotonMeGusta().addClickListener(event -> {
-			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
-//			this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
-			this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
-			if(this.publicacion.gustaA.contains(this.user)) {
-				this.getIconoHeart().as(IronIcon.class).getStyle().set("color", "red");
-			}
-	
+			gusta = !(gusta);
 
+			this.publicacion = this.bd.meGustaPublicacion(this.publicacion.getIdPublicacion(), this.user.getID());
+			this.getNumMeGustas().setText(this.publicacion.getNumMeGustas() + "");
+			if(gusta) {
+				icono = new Icon(VaadinIcon.HEART);
+				icono.setSize("30px");
+				this.getBotonMeGusta().setIcon(icono);
+			}else {
+				icono = new Icon(VaadinIcon.HEART_O);
+				icono.setSize("30px");
+				this.getBotonMeGusta().setIcon(icono);
+			}
 		});	
 	}
 

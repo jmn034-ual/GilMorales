@@ -80,8 +80,6 @@ public class VistaVerComentarios extends LitTemplate {
 	private TextField textFieldCmentario;
 	@Id("botonComentar")
 	private Button botonComentar;
-	@Id("iconoHeart")
-	private Element iconoHeart;
 	@Id("vaadinButton")
 	private Button vaadinButton;
 	
@@ -97,17 +95,6 @@ public class VistaVerComentarios extends LitTemplate {
 	public void setVaadinButton(Button vaadinButton) {
 		this.vaadinButton = vaadinButton;
 	}
-
-
-	public Element getIconoHeart() {
-		return iconoHeart;
-	}
-
-
-	public void setIconoHeart(Element iconoHeart) {
-		this.iconoHeart = iconoHeart;
-	}
-
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;

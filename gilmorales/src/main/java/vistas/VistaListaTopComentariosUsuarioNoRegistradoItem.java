@@ -40,8 +40,6 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 	private Label numeroMeGusta;
 	@Id("meGustaB")
 	private Button meGustaB;
-	@Id("ironIcon")
-	private Element ironIcon;
 	@Id("borrarComentarioB")
 	private Button borrarComentarioB;
 	@Id("ironIcon1")
@@ -154,20 +152,6 @@ public class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitTemplate
 	public void setMeGustaB(Button meGustaB) {
 		this.meGustaB = meGustaB;
 	}
-
-
-
-	public Element getIronIcon() {
-		return ironIcon;
-	}
-
-
-
-	public void setIronIcon(Element ironIcon) {
-		this.ironIcon = ironIcon;
-	}
-
-
 
 	public Button getBorrarComentarioB() {
 		return borrarComentarioB;

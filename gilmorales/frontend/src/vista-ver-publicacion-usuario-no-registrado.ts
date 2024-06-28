@@ -27,7 +27,7 @@ export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout3" style="flex-grow: 0; flex-shrink: 0; padding: 2%; height: 100%; width: 30%;">
-  <vaadin-vertical-layout id="vaadinVerticalLayout" style="border-radius: 10px; width: 100%; background-color: #F5F5F5; align-self: center; padding: var(--lumo-space-m); flex-shrink: 0;">
+  <vaadin-vertical-layout id="vaadinVerticalLayout" style="border-radius: 10px; width: 100%; background-color: #F5F5F5; align-self: center; padding: 1%; flex-shrink: 0;">
    <vaadin-horizontal-layout id="layoutUsuario" style="width: 100%; padding-top: 5%;">
     <vaadin-avatar id="avatar" style="margin: var(--lumo-space-xs);"></vaadin-avatar>
     <vaadin-vertical-layout id="layoutVerPerfil" style="flex-shrink: 1; flex-grow: 0;">
@@ -42,8 +42,8 @@ export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="vaadinVerticalLayout4" style="margin-left: var(--lumo-space-m); align-self: stretch;">
    <vaadin-horizontal-layout id="layoutLabels" style="width: 100%; justify-content: space-around; align-self: center;">
-    <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="flex-grow: 1; justify-content: flex-start; margin: var(--lumo-space-xs); align-items: center;" theme="spacing-s">
-     <vaadin-horizontal-layout id="layoutLabels" style="flex-shrink: 1; margin: var(--lumo-space-s); flex-grow: 0; justify-content: center;" theme="spacing-s">
+    <vaadin-horizontal-layout id="vaadinHorizontalLayout1" style="flex-grow: 0; justify-content: center; flex-shrink: 0; width: 100%;" theme="spacing-s">
+     <vaadin-horizontal-layout id="layoutLabels" style="flex-shrink: 0; margin: var(--lumo-space-s); flex-grow: 0; justify-content: center;" theme="spacing-s">
       <label id="numMeGustas" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
