@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -18,8 +20,11 @@ public class Lista_Top_Comentarios_Administrador_item extends Lista_Top_Comentar
 		this.getStyle().set("width", "100%");
 		this._lista_Top_Comentarios__Administrador_ = interfaz;
 		this.getBorrarComentarioB().setVisible(true);
-		this.getMeGustaB().setEnabled(false);
+		Icon icono = new Icon(VaadinIcon.HEART);
+		this.getMeGustaB().getStyle().set("color", "black");
+		this.getMeGustaB().setIcon(icono);
 		Borrar_comentario();
+		Ver_perfil(this);
 	}
 
 	public void Borrar_comentario() {

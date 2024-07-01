@@ -18,8 +18,8 @@ public class Top_usuarios_item extends VistaTopUsuariosItem{
 	public Top_usuarios_item(UsuarioRegistrado usuario, Top_usuarios interfaz){
 		this.getNombreUsuario().setText(usuario.getNombreUsuario());
 		this.getFotoPerfil1().setImage(usuario.getFoto());
-		this.usuario = usuario;
 		this._top_usuarios = interfaz;
+		this.usuario = usuario;
 		if(this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado != null) {
 			this.unrInterfaz = this._top_usuarios._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
 		}else if(this._top_usuarios._cabecera_TOP._cabecera_Usuario_Registrado != null){

@@ -11,8 +11,8 @@ public class Ver_denuncias extends VistaVerDenuncias {
 	public Lista_denuncias _lista_denuncias;
 		
 	public Ver_denuncias(Gestionar_denuncias interfaz) {
-		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
+		this.getStyle().set("width", "100%");
 		this._gestionar_denuncias = interfaz;
 		Lista_denuncias();
 		

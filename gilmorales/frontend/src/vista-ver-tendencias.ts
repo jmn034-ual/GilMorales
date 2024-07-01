@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-ver-tendencias')
 export class VistaVerTendencias extends LitElement {
@@ -34,27 +34,27 @@ export class VistaVerTendencias extends LitElement {
    <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout2" style="justify-content: flex-start; align-items: flex-start;">
     <h3 id="nombreUsuario" style="margin: var(--lumo-space-xs);">NombreUsuario</h3>
     <h4 style="align-self: flex-start; margin: var(--lumo-space-xs);" id="nombreYapellidos">Nombre y Apellidos</h4>
-    <vaadin-button id="botonSeguir" style="align-self: flex-start;">
+    <vaadin-button id="botonSeguir" style="align-self: flex-start;" theme="contrast">
       Seguir 
     </vaadin-button>
-    <vaadin-button theme="icon" aria-label="Add new" id="botonEditarPerfil">
-     <iron-icon icon="lumo:edit" id="ironIcon"></iron-icon>
+    <vaadin-button theme="contrast" aria-label="Add new" id="botonEditarPerfil">
+     <iron-icon icon="lumo:edit" id="ironIcon"></iron-icon>Editar perfil 
     </vaadin-button>
-    <vaadin-button id="botonPeticionAmistad">
+    <vaadin-button theme="contrast" aria-label="Add new" id="botonModificarPerfil">
+     <iron-icon icon="lumo:cog" id="ironIcon1"></iron-icon>Configurar perfil 
+    </vaadin-button>
+    <vaadin-button id="botonPeticionAmistad" theme="contrast">
       Enviar Petición de Amistad 
     </vaadin-button>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout id="vaadinVerticalLayout3" style="flex-grow: 1; flex-shrink: 0;">
-    <vaadin-button id="botonBloquear" style="align-self: flex-end; margin: var(--lumo-space-xs);">
+   <vaadin-vertical-layout id="vaadinVerticalLayout3" style="flex-grow: 1; flex-shrink: 0; align-items: flex-end;">
+    <vaadin-button id="botonBloquear" style="align-self: flex-end; margin: var(--lumo-space-xs);" theme="primary error">
       Bloquear 
     </vaadin-button>
-    <vaadin-button id="botonDenunciar" style="align-self: flex-end; margin: var(--lumo-space-xs);">
+    <vaadin-button id="botonDenunciar" style="align-self: flex-end; margin: var(--lumo-space-xs);" theme="primary error">
       Denunciar 
     </vaadin-button>
-    <vaadin-button theme="icon" aria-label="Add new" id="botonModificarPerfil" style="align-self: flex-end; margin: var(--lumo-space-xs);">
-     <iron-icon icon="lumo:cog" id="ironIcon1"></iron-icon>
-    </vaadin-button>
-    <vaadin-button id="botonEliminarPublicacion" style="align-self: flex-end; margin: var(--lumo-space-xs);">
+    <vaadin-button id="botonEliminarPublicacion" style="align-self: flex-end; margin: var(--lumo-space-xs);" theme="primary error">
       Eliminar Publicación 
     </vaadin-button>
    </vaadin-vertical-layout>
@@ -63,13 +63,13 @@ export class VistaVerTendencias extends LitElement {
    <label id="numSiguiendo" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
-   <vaadin-button id="verSiguiendos">
+   <vaadin-button id="verSiguiendos" theme="contrast">
      Siguiendo 
    </vaadin-button>
    <label id="numSeguidores" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
-   <vaadin-button id="verSeguidores">
+   <vaadin-button id="verSeguidores" theme="contrast">
      Seguidores 
    </vaadin-button>
    <label id="numMeGustas" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
@@ -84,7 +84,7 @@ justify-content: center; align-items: center; height: 20px; justify-content: cen
    <label id="labelDescripcion" style="flex-grow: 0; flex-shrink: 0;">Descripción sobre el perfil del usuario.</label>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" id="layoutBonoes" style="margin: var(--lumo-space-s);">
-   <vaadin-button id="botonVideos">
+   <vaadin-button id="botonVideos" theme="primary">
      Videos 
    </vaadin-button>
    <vaadin-button id="botonMeGustas">

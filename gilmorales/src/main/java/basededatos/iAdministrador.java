@@ -3,6 +3,7 @@ package basededatos;
 import java.util.List;
 
 import bd_dcl.UsuarioAdministrador;
+import bd_dcl.UsuarioRegistrado;
 
 public interface iAdministrador {
 
@@ -22,11 +23,10 @@ public interface iAdministrador {
 
 	public void borrarComentario(int aIdComentario);
 
-	public void addFoto(String aFoto, int aCodigoEmpleado);
+	public UsuarioAdministrador addFoto(String aFoto, int aCodigoEmpleado);
 
-	public void bloquearUsuario(int aUsuarioID);
+	public UsuarioRegistrado bloquearUsuario(int aUsuarioID);
 
 	public List realizarBusqueda(String aBusqueda, String aFiltro);
 
-	public List filtrarDenuncias(String aFiltro);
 }

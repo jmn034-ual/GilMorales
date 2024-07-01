@@ -23,14 +23,14 @@ public class Lista_publicaciones_usuario_item extends VistaPublicacionesUsuarioP
 	public Lista_publicaciones_usuario_item(Publicacion p, Lista_publicaciones_usuario interfaz) {
 		this.publicacion = this.bd.cargarPublicacion(p.getIdPublicacion());;
 		this._lista_publicaciones_usuario = interfaz;
-		Video video = new Video(publicacion.getVideo());
+		Video video = new Video(this.publicacion.getVideo());
 		this.getLayoutVideo().as(VerticalLayout.class).add(video);
 		this.getNumVisualizaciones().setText(""+publicacion.getNumVisualizaciones());
 		Ver_publicacion__Administrador();
 	}
 
 	public void Ver_publicacion__Administrador() {
-		this._ver_publicacion__Administrador_ = new Ver_publicacion_Administrador(publicacion, this);
+		this._ver_publicacion__Administrador_ = new Ver_publicacion_Administrador(this.publicacion, this);
 		this.getLayoutPublicacion().as(VerticalLayout.class).addClickListener(event -> {
 			this._lista_publicaciones_usuario._ver_perfil__Administrador_.getVaadinHorizontalLayout().removeAll();
 			this._lista_publicaciones_usuario._ver_perfil__Administrador_.getVaadinHorizontalLayout().add(_ver_publicacion__Administrador_);

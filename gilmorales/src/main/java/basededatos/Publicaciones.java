@@ -149,7 +149,7 @@ public class Publicaciones {
 			UsuarioComercial uc = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioID);
 			if (uc != null) {
 				p.setNombreUsuarioComercial(uc.getNombreUsuarioComercial());
-				p.setNombreUsuario(null);
+				p.setNombreUsuario(uc.getNombreEmpresa());
 				p.setPerteneceA(null);
 				p.setEsPublicada(uc);
 			}

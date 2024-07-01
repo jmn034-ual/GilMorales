@@ -25,11 +25,16 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 		this.getVaadinHorizontalLayout().setVisible(false);
 		Nuevos_seguidores_item nuevoItem = new Nuevos_seguidores_item();
 		this.getNuevosSeguidores().as(VerticalLayout.class).add(nuevoItem);
+//		this._notificaciones_usuario_publico = interfaz;
 	}
 
 	public Nuevos_seguidores(UsuarioRegistrado ur) {
-		this.getTituloNotificacion().setVisible(false);
 		this.ur = ur;
+	}
+	
+	public Nuevos_seguidores(UsuarioRegistrado ur, Notificaciones_usuario_publico_item interfaz) {
+		this.ur = ur;
+		this._notificaciones_usuario_publico = interfaz;
 	}
 	public void addNuevoSeguidor(Notificacion nuevoSeguidor) {
 		this.getNuevosSeguidores().as(VerticalLayout.class).add(informacion(nuevoSeguidor));
@@ -38,25 +43,21 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 		Nuevos_seguidores_item nuevoItem = null;
 		UsuarioRegistrado usuarioNotifica = bd.cargarUsuarioRegistrado(notificacionNuevoSeguidor.getIDUsuarioNotifica());
 		nuevoItem = new Nuevos_seguidores_item(this.ur, usuarioNotifica);
-		if(!ur.seguir.contains(usuarioNotifica) && usuarioNotifica.getPrivacidad() != 1) {
+		if(usuarioNotifica.getPrivacidad() != 1) {
 			nuevoItem.getPrivado().setVisible(false);
 			nuevoItem.getBotonSeguir().setVisible(true);
-			nuevoItem.getBotonDejarDeSeguir().setVisible(false);
 			nuevoItem.getBotonEnviarSolicitud().setVisible(false);
-		}else if(!ur.seguir.contains(usuarioNotifica) && usuarioNotifica.getPrivacidad() == 1){
+		}else if(usuarioNotifica.getPrivacidad() == 1){
 			nuevoItem.getBotonSeguir().setVisible(false);
 			nuevoItem.getPrivado().setVisible(false);
-			nuevoItem.getBotonDejarDeSeguir().setVisible(false);
 			nuevoItem.getBotonEnviarSolicitud().setVisible(true);
-		}else if(ur.seguir.contains(usuarioNotifica) && usuarioNotifica.getPrivacidad() == 1) {
+		}else if(usuarioNotifica.getPrivacidad() == 1) {
 			nuevoItem.getBotonSeguir().setVisible(false);
 			nuevoItem.getPrivado().setVisible(false);
-			nuevoItem.getBotonDejarDeSeguir().setVisible(true);
 			nuevoItem.getBotonEnviarSolicitud().setVisible(false);		
 		}else {
 			nuevoItem.getBotonSeguir().setVisible(false);
 			nuevoItem.getPrivado().setVisible(false);
-			nuevoItem.getBotonDejarDeSeguir().setVisible(true);
 			nuevoItem.getBotonEnviarSolicitud().setVisible(false);	
 		}
 		return nuevoItem;

@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
-@customElement('vista-notificaciones')
-export class VistaNotificaciones extends LitElement {
+@customElement('vista-ver-denuncias-filtradas')
+export class VistaVerDenunciasFiltradas extends LitElement {
   static get styles() {
     return css`
       :host {
@@ -14,7 +14,7 @@ export class VistaNotificaciones extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; background-color: black;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout"></vaadin-vertical-layout>
 `;
   }
 

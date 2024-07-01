@@ -33,8 +33,8 @@ public class Cabecera_Administrador extends VistaCabeceraAdmin{
 	}
 
 	public void Gestionar_denuncias() {
-		denuncias = new Gestionar_denuncias(this);
 		this.getGestionarDenunciasB().addClickListener(event->{
+			denuncias = new Gestionar_denuncias(this);
 			_administrador.getVaadinHorizontalLayout().removeAll();
 			_administrador.getVaadinHorizontalLayout().add(denuncias);
 		});

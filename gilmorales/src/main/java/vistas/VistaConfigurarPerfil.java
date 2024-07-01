@@ -42,8 +42,6 @@ public class VistaConfigurarPerfil extends LitTemplate {
 	private Label labelVisibilidad;
 	@Id("vaadinHorizontalLayout1")
 	private HorizontalLayout vaadinHorizontalLayout1;
-	@Id("radioGroupVisibilidad")
-	private RadioButtonGroup<String> radioGroupVisibilidad;
 	@Id("layoutNotificaciones")
 	private Element layoutNotificaciones;
 	@Id("vaadinHorizontalLayout2")
@@ -70,10 +68,6 @@ public class VistaConfigurarPerfil extends LitTemplate {
 	private Button botonRestaurar;
 	@Id("botonGuardar")
 	private Button botonGuardar;
-//	@Id("radioBotonPrivada")
-//	private RadioButton<String> radioBotonPrivada;
-//	@Id("radioBotonPublica")
-//	private RadioButton<String> radioBotonPublica;
 	@Id("layoutTitulo")
 	private HorizontalLayout layoutTitulo;
 	@Id("botonCerrar")
@@ -203,17 +197,6 @@ public class VistaConfigurarPerfil extends LitTemplate {
 	public void setVaadinHorizontalLayout1(HorizontalLayout vaadinHorizontalLayout1) {
 		this.vaadinHorizontalLayout1 = vaadinHorizontalLayout1;
 	}
-
-
-	public RadioButtonGroup<String> getRadioGroupVisibilidad() {
-		return radioGroupVisibilidad;
-	}
-
-
-	public void setRadioGroupVisibilidad(RadioButtonGroup<String> radioGroupVisibilidad) {
-		this.radioGroupVisibilidad = radioGroupVisibilidad;
-	}
-
 
 	public Element getLayoutNotificaciones() {
 		return layoutNotificaciones;

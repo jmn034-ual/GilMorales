@@ -21,7 +21,7 @@ export class VistaTopUsuariosItem extends LitElement {
  <vaadin-vertical-layout theme="spacing" id="fotoPerfil" style="align-self: center;">
   <vaadin-avatar id="fotoPerfil1"></vaadin-avatar>
  </vaadin-vertical-layout>
- <vaadin-button theme="tertiary" id="nombreUsuario" style="align-self: center;">
+ <vaadin-button theme="tertiary" id="nombreUsuario" style="align-self: center; color: black;">
    Tertiary 
  </vaadin-button>
 </vaadin-horizontal-layout>

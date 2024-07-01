@@ -1,5 +1,9 @@
 package interfaz;
 
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.dialog.DialogVariant;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
@@ -40,10 +44,12 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 		this.getFechaSubida().setText(this.publicacion.getFechaPublicacion());
 		this.getVideo().add(new Video(this.publicacion.getVideo()));
 		this.getBotonSeguir().setVisible(false);
+		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas()+"");
+		this.getNumComentarios().setText(this.publicacion.getNumComentarios()+"");
 		Ver_comentarios__Comercial_();
 		Eliminar();
 		Ver_perfil_comcercial();
-		
+		Ver_me_gustas_publicacion__Comercial_();
 	}
 	
 	public void Ver_perfil_comcercial() {
@@ -54,7 +60,19 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 	
 
 	public void Ver_me_gustas_publicacion__Comercial_() {
-		throw new UnsupportedOperationException();
+			this.getBotonMeGusta().getStyle().set("color", "black");
+			this.getBotonMeGusta().setIcon(new Icon(VaadinIcon.HEART));
+			_ver_me_gustas_publicacion__Comercial_ = new Ver_me_gustas_publicacion_Comercial(this.publicacion, this);
+			this.getBotonMeGusta().addClickListener(event ->{
+				dialog = new Dialog(_ver_me_gustas_publicacion__Comercial_);
+				dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+				dialog.setHeight("50%");
+				dialog.setWidth("30%");
+				this._ver_me_gustas_publicacion__Comercial_.getBotonCerrar().addClickListener(event2 ->{
+					dialog.close();
+				});
+				dialog.open();
+			});
 	}
 
 	public void Ver_comentarios__Comercial_() {

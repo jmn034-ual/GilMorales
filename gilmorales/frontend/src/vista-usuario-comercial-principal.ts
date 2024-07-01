@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 @customElement('vista-usuario-comercial-principal')
 export class VistaUsuarioComercialPrincipal extends LitElement {
@@ -22,21 +23,26 @@ export class VistaUsuarioComercialPrincipal extends LitElement {
  <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; width: 100%; flex-shrink: 0; justify-content: flex-start; background-color: #ffffff; display: flex; overflow-y: auto; align-items: center; padding: 0px;">
   <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="align-self: stretch; align-items: center; justify-content: flex-start; padding-top: var(--lumo-space-s); flex-shrink: 0; padding-right: var(--lumo-space-m);">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="flex-grow: 0; justify-content: flex-end; width: 8%; margin-left: var(--lumo-space-xl);">
-    <vaadin-avatar id="vaadinAvatar" style="width: 100%; height: 100%; margin-left: var(--lumo-space-xl);"></vaadin-avatar>
+    <vaadin-avatar id="vaadinAvatar" style="width: 150px; height: 150px;"></vaadin-avatar>
    </vaadin-horizontal-layout>
    <vaadin-vertical-layout theme="spacing-xs" id="vaadinVerticalLayout2" style="flex-grow: 0; height: 100%; flex-shrink: 0; padding-left: var(--lumo-space-m);">
     <h2 id="nombreDeUsuario">NombreDeUsuario</h2>
     <h3 id="nombreDeEmpresa">NombreDeEmpresa</h3>
-    <vaadin-button id="editarPerffilB">
-      Editar perfil 
+    <vaadin-button id="editarPerffilB" theme="contrast">
+     <iron-icon icon="lumo:edit"></iron-icon> Editar perfil 
     </vaadin-button>
     <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout3" style="justify-content: center;">
-     <label id="numeroL">0</label>
-     <label id="meGustasL">Me gustas</label>
+     <label id="numeroL" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
+     <label id="meGustasL" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
+height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
+justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold; background-color:  #F5F5F5;">
+      <iron-icon style="height: 30px; width: 30px; color: black; align-self: center;" icon="vaadin:heart"></iron-icon></label>
     </vaadin-horizontal-layout>
    </vaadin-vertical-layout>
    <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="flex-grow: 1; justify-content: flex-end; flex-shrink: 0; margin-left: var(--lumo-space-l);">
-    <vaadin-button id="eliminarPublicacion" style="flex-grow: 0;">
+    <vaadin-button id="eliminarPublicacion" style="flex-grow: 0;" theme="primary error">
       Eliminar publicación 
     </vaadin-button>
    </vaadin-horizontal-layout>

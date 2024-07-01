@@ -30,11 +30,12 @@ public class Notificaciones_comentarios_item extends VistaNotificacionesComentar
 		this._notificaciones_comentarios = interfaz;
 		this.getLabelComentario().setText(this.comentario.getComentario());
 		System.out.println("Aparece en la publicacion: " + this.comentario.getComentadoEn());
+		
 	}
 
 	public void Dar_me_gusta_comentario() {
 		this.getBotonMeGusta().addClickListener(event -> {
-			this.bd.meGustaComentario(daMeGusta.getID(), recibe.getID());
+		 	this.comentario = this.bd.meGustaComentario(daMeGusta.getID(), recibe.getID());
 		});
 	}
 }

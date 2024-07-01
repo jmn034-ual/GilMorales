@@ -27,7 +27,7 @@ export class VistaVerComentarios extends LitElement {
      <vaadin-avatar id="fotoPerfil" style="width: 100px; height: 100px;"></vaadin-avatar>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout id="vaadinVerticalLayout1">
-     <vaadin-button theme="tertiary" id="botonNombreUsuario">
+     <vaadin-button theme="tertiary" id="botonNombreUsuario" style="color: black; font-weight: bold;">
        NombreUsuario 
      </vaadin-button>
      <label id="labelGeolocalizacion">Geolocalización</label>
@@ -78,7 +78,7 @@ justify-content: center; align-items: center; height: 20px; justify-content: cen
      Seguir 
    </vaadin-button>
    <vaadin-button id="botonEliminarAdmi" style="align-self: center;" theme="primary error">
-     Eliminar Publicación 
+     Eliminar 
    </vaadin-button>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>

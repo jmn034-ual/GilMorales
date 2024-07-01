@@ -19,7 +19,6 @@ export class VistaPublicacionPropiaComercial extends LitElement {
    render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="vaadinVerticalLayout" theme="spacing">
- <vaadin-horizontal-layout id="cabecera" style="width: 100%; flex-grow: 0;"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="width: 100%; height: 100%;">
   <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; width: 100%;">
    <vaadin-vertical-layout id="vaadinVerticalLayout2" style="flex-grow: 1; width: 100%; margin: var(--lumo-space-xs);">

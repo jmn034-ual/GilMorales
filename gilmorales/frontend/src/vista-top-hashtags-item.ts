@@ -16,7 +16,7 @@ export class VistaTopHashtagsItem extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout id="vaadinVerticalLayout" style="align-items: center; margin: 0px; padding: 0px;" theme="spacing-xs">
- <vaadin-button theme="tertiary" id="hashtagItem" style="align-self: center; flex-shrink: 0;">
+ <vaadin-button theme="tertiary" id="hashtagItem" style="align-self: center; flex-shrink: 0; color: black; ">
    Tertiary 
  </vaadin-button>
 </vaadin-vertical-layout>

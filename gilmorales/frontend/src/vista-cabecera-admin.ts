@@ -34,10 +34,10 @@ export class VistaCabeceraAdmin extends LitElement {
   <vaadin-button id="inicio" style="background-color: #ffff; broder-radius: 8px;">
     Inicio 
   </vaadin-button>
-  <vaadin-button id="gestionarDenunciasB" style="background-color: #ffff; broder-radius: 8px;">
+  <vaadin-button id="gestionarDenunciasB" style=" broder-radius: 8px;" theme="primary">
     Gestionar denuncias 
   </vaadin-button>
-  <vaadin-button id="cerrarSesionB" style="background-color: #ffff; broder-radius: 8px;">
+  <vaadin-button id="cerrarSesionB" style="background-color: #ffff; broder-radius: 8px;" theme="error">
     Cerrar sesión 
   </vaadin-button>
  </vaadin-horizontal-layout>

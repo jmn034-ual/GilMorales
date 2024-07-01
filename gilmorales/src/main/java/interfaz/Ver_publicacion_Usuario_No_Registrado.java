@@ -8,6 +8,7 @@ import vistas.VistaVerPublicacionUsuarioNoRegistrado;
 
 public class Ver_publicacion_Usuario_No_Registrado extends VistaVerPublicacionUsuarioNoRegistrado{
 	public Lista_Publicaciones_Usuario_no_registrado_item _publicaciones__Usuario_no_registrado_;
+	public Publicaciones_gustadas_usuario_publico_item itemGustadas;
 	public Publicaciones_hashtag_item hashtag;
 	public Publicaciones_usuario_publico_item itemUsuarioPublico;
 	public Lista_usuarios_registrados_item userRegistradoItem;
@@ -30,6 +31,9 @@ public class Ver_publicacion_Usuario_No_Registrado extends VistaVerPublicacionUs
 		}else if(interfaz instanceof Lista_usuarios_registrados_item){
 			this.userRegistradoItem = (Lista_usuarios_registrados_item) interfaz;
 			this.unr = this.userRegistradoItem._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_No_Registrado.unr;
+		}else if(interfaz instanceof Publicaciones_gustadas_usuario_publico_item){
+			this.itemGustadas = (Publicaciones_gustadas_usuario_publico_item) interfaz;
+			this.unr = this.itemGustadas._publicaciones_gustadas_usuario_publico._ver_publicacciones_gustadas__Otro_usuario_._ver_perfil_publico.cabecera_top._cabecera_Usuario_No_Registrado.unr;
 		}else {
 			this.itemUsuarioPublico = (Publicaciones_usuario_publico_item) interfaz;
 			this.unr = this.itemUsuarioPublico._publicaciones_usuario_publico._ver_perfil_publico.cabecera_top._cabecera_Usuario_No_Registrado.unr;

@@ -16,10 +16,16 @@ public class Ver_comentarios_Comercial extends VistaVerComentariosComercial{
 		this.getStyle().set("height", "100%");
 		this.publicacion = p;
 		this._ver_publicacion_propia__Comercial_ = interfaz;
+		this.getBotonNombreUsuario().setText(this.publicacion.getEsPublicada().getNombreUsuarioComercial());
+		this.getLabelGeolocalizacion().setText(this.publicacion.getLocalizacion());
+		this.getLabelDescripcion().setText(this.publicacion.getDescripcion());
 		NumMeGustas();
 		NumeroComentarios();
 		NumVisualizaciones();
 		Lista_comentarios__Comercial_();
+		this.getBotonNombreUsuario().addClickListener(event ->{
+			this._ver_publicacion_propia__Comercial_.uc._cabecera_Usuario_Comercial.getBotonPerfil().click();
+		});
 	}
 
 	public void Lista_comentarios__Comercial_() {

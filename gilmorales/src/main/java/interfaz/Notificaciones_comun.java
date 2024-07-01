@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import vistas.VistaNotificacionesComun;
 
 public class Notificaciones_comun extends VistaNotificacionesComun{
@@ -11,7 +13,7 @@ public class Notificaciones_comun extends VistaNotificacionesComun{
 		this.getVaadinHorizontalLayout().setVisible(false);
 	}
 
-	public void Ver_perfil() {
-		throw new UnsupportedOperationException();
-	}
+//	public void Ver_perfil() {
+//		this.getVaadinButton().addClickListener(event -> Notification.show("VAmos bien"));
+//	}
 }

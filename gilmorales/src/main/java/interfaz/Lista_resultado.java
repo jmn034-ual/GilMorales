@@ -10,6 +10,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
 import bd_dcl.Hashtag;
+import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaResultado;
 
@@ -18,7 +19,7 @@ public class Lista_resultado extends VistaListaResultado{
 	public static Realizar_busqueda _realizar_busqueda;
 	public Vector<Lista_resultado_item> _item = new Vector<Lista_resultado_item>();
 	public Filtrar_resultado _filtrar_resultado;
-	iUsuario_Registrado bd = new BDPrincipal();
+	BDPrincipal bd = new BDPrincipal();
 	Lista_resultado_item item;
 
 	public Lista_resultado(String buscar, String filtro, Realizar_busqueda _realizar_busqueda) {
@@ -41,6 +42,10 @@ public class Lista_resultado extends VistaListaResultado{
 	            	Hashtag h = bd.cargarHashtag(Integer.parseInt(resultado.get(i).toString()));
 					item = new Resultado_hashtags_item(h, this);
 					this._realizar_busqueda.getLayoutListaResultadoHashtags().as(VerticalLayout.class).add(item);
+	            }else {
+					UsuarioComercial comercial = bd.cargarUsuarioComercial(Integer.parseInt(resultado.get(i).toString()));
+	            	item = new Resultado_usuarios_item(comercial, this);
+					this._realizar_busqueda.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).add(item);
 	            }
 				_item.add(item);
 			}

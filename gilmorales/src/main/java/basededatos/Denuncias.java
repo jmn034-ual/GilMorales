@@ -23,12 +23,37 @@ import bd_dcl.UsuarioRegistradoDAO;
 public class Denuncias {
 	public BDPrincipal _c_bd_denuncia;
 	public Vector<Denuncia> _denuncia = new Vector<Denuncia>();
+	
+	public Denuncia actualizarDenuncia(int idDenuncia, int estado) throws PersistentException {
+		Denuncia denuncia = null;
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {			
+			denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
+			denuncia.setTipoEstado(estado);
+			DenunciaDAO.save(denuncia);
+			t.commit();
+		}catch(Exception e){
+			t.rollback();
+		}
+		return denuncia;
+	}
 
-	public List cargarDenuncias() throws PersistentException {
+	public List cargarDenuncias(String filtro) throws PersistentException {
 		List<Denuncia> denuncias = null;
+		String condicion = "";
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			denuncias = DenunciaDAO.queryDenuncia(null, null);
+			if(filtro == "pendientes")
+				condicion = "tipoEstado = '" + 0 + "'"; 
+			else if(filtro == "aplicadas")
+				condicion = "tipoEstado = '" + 1 + "'"; 
+			else if(filtro == "finalizadas")
+				condicion = "tipoEstado = '" + 2 + "'"; 
+			else 
+				condicion = null;
+			
+			denuncias = DenunciaDAO.queryDenuncia(condicion, null);
+			t.commit();
 		}catch(Exception e){
 			t.rollback();
 		}
@@ -54,6 +79,7 @@ public class Denuncias {
 			p.publicacionDenunciadaPor.add(usuarioDenunciante);
 			PublicacionDAO.save(p);
 			UsuarioRegistradoDAO.save(usuarioDenunciante);
+			t.commit();
 		}catch(Exception e){
 			t.rollback();
 		}
@@ -76,9 +102,10 @@ public class Denuncias {
 			DenunciaDAO.save(denuncia);
 			usuarioDenunciante.realizaDenuncia.add(denuncia);
 			usuarioDenunciante.denucia.add(usuarioDenunciado);
-			UsuarioRegistradoDAO.save(usuarioDenunciante);
 			usuarioDenunciado.esDenunciado.add(usuarioDenunciante);
 			UsuarioRegistradoDAO.save(usuarioDenunciado);
+			UsuarioRegistradoDAO.save(usuarioDenunciante);
+			t.commit();
 		}catch(Exception e){
 			t.rollback();
 		}
@@ -104,20 +131,12 @@ public class Denuncias {
 			comentario.denunciadoPor.add(usuarioDenunciante);
 			UsuarioRegistradoDAO.save(usuarioDenunciante);
 			ComentarioDAO.save(comentario);
+			t.commit();
 		}catch(Exception e){
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();	
 	}
 
-	public List filtrarDenuncias(String aFiltro) throws PersistentException {
-		List<Denuncia> denuncias = null;
-		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-		try {
-			denuncias = DenunciaDAO.queryDenuncia(null, aFiltro);
-		}catch(Exception e){
-			t.rollback();
-		}
-		return denuncias;
-	}
+
 }

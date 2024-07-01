@@ -26,8 +26,8 @@ import vistas.VistaRegistrarusuario;
 
 public class Registrar extends VistaRegistrarusuario {
 
-	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/icons/uploads/";
-	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/icons/uploads/";
+	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/icons/";
+	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/icons/";
 
 	public Login _iniciar_sesion;
 	iUsuario_No_Registrado bd = new BDPrincipal();
@@ -37,6 +37,7 @@ public class Registrar extends VistaRegistrarusuario {
 	private Image imagen;
 	int usuarioID;
 	Dialog dialog;
+	boolean okRegistro = false;
 
 	public Registrar(Usuario_No_Registrado interfaz, Login login, Dialog dialog) {
 		this.getStyle().set("width", "100%");
@@ -95,7 +96,7 @@ public class Registrar extends VistaRegistrarusuario {
 
 					Image img = createImageFromFile(IMAGE_PATH + event2.getFileName());
 					dialog.close();
-					this.fotoURL = "/icons/uploads/" + event2.getFileName();
+					this.fotoURL = "/icons/" + event2.getFileName();
 					this.getVaadinAvatar().setImage(fotoURL);
 				} catch (Exception e) {
 					Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
@@ -113,19 +114,60 @@ public class Registrar extends VistaRegistrarusuario {
 		this.getConfirmar().addClickListener(event -> {
 			UsuarioRegistrado user;
 			UsuarioComercial uc;
-			Object userAux = this.bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(),
+			Object userAux = null;
+			if (this.getNombreTF().getValue().isBlank()) {
+				this.getNombreTF().setInvalid(true);
+			}
+			if (this.getEmail().getValue().isBlank()) {
+				this.getEmail().setInvalid(true);
+			}
+			if (this.getContrasenaTF().getValue().isBlank()) {
+				this.getContrasenaTF().setInvalid(true);
+			}
+			if (this.getConfirmarTF().getValue().isBlank()) {
+				this.getConfirmarTF().setInvalid(true);
+			}
+			if (this.getNombreDeUsuarioTF().getValue().isBlank()) {
+				this.getNombreDeUsuarioTF().setInvalid(true);
+			}
+			if(this.getContrasenaTF().getValue().equals(this.getConfirmarTF().getValue())) {
+				this.getConfirmarTF().setInvalid(true);
+				this.getContrasenaTF().setInvalid(true);
+				Notification.show("La contraseña no coincide.");
+			}
+			if(this.getFecha().getValue() == null)
+				this.getFecha().setInvalid(true);
+			if(!this.getNormal().getValue() && !this.getComercial().getValue()) {
+				Notification.show("Elgia el tipo de usuario antes de continuar.");
+				this.getNormal().setAutofocus(true);
+				this.getComercial().setAutofocus(true);
+			}
+			if(!this.getNombreTF().getValue().isBlank() && !this.getEmail().getValue().isBlank() && !this.getContrasenaTF().getValue().isBlank() && !this.getConfirmarTF().getValue().isBlank() &&
+					(this.getContrasenaTF().getValue().equals(this.getConfirmarTF().getValue())) && !this.getNombreDeUsuarioTF().getValue().isBlank() && (this.getFecha().getValue() != null) && (this.getNormal().getValue() || this.getComercial().getValue()))
+				okRegistro = true;
+			
+			if(okRegistro) {
+				userAux = this.bd.registrarUsuario(this.getNombreTF().getValue(), this.getApellifosTF().getValue(),
 					this.getEmail().getValue(), this.getContrasenaTF().getValue(), this.getDescripcionTF().getValue(),
 					this.getNombreDeUsuarioTF().getValue(), this.getFecha().getValue().toString(), tipoCuenta,
 					this.fotoURL);
-			this.dialog.close();
-			this.interfaz.interfaz.removeAll();
-			if(userAux instanceof UsuarioRegistrado) {		
-				user = (UsuarioRegistrado) userAux;
-				this.interfaz.interfaz.add(new Usuario_Registrado(this.interfaz.interfaz, user.getID()));
-			}else {
-				uc = (UsuarioComercial) userAux;
-				this.interfaz.interfaz.add(new Usuario_comercial(this.interfaz.interfaz, uc.getID()));
+				if (userAux != null) {
+					this.getNombreDeUsuarioTF().setInvalid(false);
+					this.dialog.close();
+					this.interfaz.interfaz.removeAll();
+					if (userAux instanceof UsuarioRegistrado) {
+						user = (UsuarioRegistrado) userAux;
+						this.interfaz.interfaz.add(new Usuario_Registrado(this.interfaz.interfaz, user.getID()));
+					} else {
+						uc = (UsuarioComercial) userAux;
+						this.interfaz.interfaz.add(new Usuario_comercial(this.interfaz.interfaz, uc.getID()));
+					}
+				} else {
+					this.getNombreDeUsuarioTF().setInvalid(true);
+					Notification.show("El nombre de usaurio elegido, ya existe.");
+				}
 			}
+			
 		});
 	}
 

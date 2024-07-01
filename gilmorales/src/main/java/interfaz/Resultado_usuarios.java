@@ -18,7 +18,7 @@ public class Resultado_usuarios extends Lista_resultado {
 	}
 	
 	public void cargarUsuariosBusqueda(String buscar, String filtro) {
-			List<UsuarioRegistrado> resultado = bd.realizarBusqueda(buscar, filtro);
+			List<Object> resultado = bd.realizarBusqueda(buscar, filtro);
 			this.getLayoutResultadoBusqueda().as(VerticalLayout.class).removeAll();
 			_item.clear();
 			

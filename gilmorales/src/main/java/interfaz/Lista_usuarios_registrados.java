@@ -13,7 +13,6 @@ import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaUsuariosRegistrados;
 
 public class Lista_usuarios_registrados extends VistaListaUsuariosRegistrados {
-	// private ComboBox _ordenarCB;
 	public Ver_lista_usuarios_registrados _ver_lista_usuarios_registrados;
 	public Vector<Lista_usuarios_registrados_item> _item = new Vector<Lista_usuarios_registrados_item>();
 	iAdministrador bd = new BDPrincipal();

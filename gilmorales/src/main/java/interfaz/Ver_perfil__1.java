@@ -26,12 +26,4 @@ public class Ver_perfil__1 extends Ver_tendencias{
 			aux.getVaadinHorizontalLayout().add(denunciar);
 		});
 	}
-
-	public void Videos() {
-		throw new UnsupportedOperationException();
-	}
-
-	public void MeGustas() {
-		throw new UnsupportedOperationException();
-	}
 }

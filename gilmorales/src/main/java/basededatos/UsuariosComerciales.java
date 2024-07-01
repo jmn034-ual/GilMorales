@@ -2,6 +2,7 @@ package basededatos;
 
 import basededatos.BDPrincipal;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -85,5 +86,30 @@ public class UsuariosComerciales {
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 		return comercial;
+	}
+	
+	public List<UsuarioComercial> buscarUsuario(String aNombreUsuario) throws PersistentException {
+		if(aNombreUsuario == "") return null;
+		List lista = null;
+		List<UsuarioComercial> usuariosCoincidentes = new ArrayList<UsuarioComercial>();
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			lista = UsuarioComercialDAO.queryUsuarioComercial(null, null);
+			for(int i = 0; i < lista.size(); i++) {
+				UsuarioComercial usuario = (UsuarioComercial) lista.get(i);
+				if(usuario.getNombreUsuarioComercial().equals(aNombreUsuario)) {
+						usuariosCoincidentes.add(usuario);
+				}else if(aNombreUsuario.length() > 1) {
+					if (usuario.getNombreUsuarioComercial().startsWith(aNombreUsuario.substring(0, 1))
+							|| usuario.getNombreUsuarioComercial().startsWith(aNombreUsuario.substring(0, 2))) {
+						usuariosCoincidentes.add(usuario);
+					}
+				}
+			}
+			t.commit();
+		} catch (PersistentException e) {
+			t.rollback();
+		}
+		return usuariosCoincidentes;
 	}
 }

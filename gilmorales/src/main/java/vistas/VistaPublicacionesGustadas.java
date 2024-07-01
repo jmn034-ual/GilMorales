@@ -19,9 +19,6 @@ public class VistaPublicacionesGustadas extends LitTemplate {
 
     @Id("layoutListaVertical")
 	private Element layoutListaVertical;
-	@Id("layoutListaHorizontal")
-	private HorizontalLayout layoutListaHorizontal;
-	
 
 	public Element getLayoutListaVertical() {
 		return layoutListaVertical;
@@ -33,14 +30,6 @@ public class VistaPublicacionesGustadas extends LitTemplate {
 	}
 
 
-	public HorizontalLayout getLayoutListaHorizontal() {
-		return layoutListaHorizontal;
-	}
-
-
-	public void setLayoutListaHorizontal(HorizontalLayout layoutListaHorizontal) {
-		this.layoutListaHorizontal = layoutListaHorizontal;
-	}
 
 
 	/**

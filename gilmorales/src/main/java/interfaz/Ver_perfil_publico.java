@@ -1,9 +1,13 @@
 package interfaz;
 
+import java.util.ArrayList;
+
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 
 
@@ -36,9 +40,14 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		}else {
 			asignarInterfaz(interfazAux);
 			motrarDatosUserNoRegistrado();
+			if(this.userAver.getPrivacidad() == 1) {
+				this.getVaadinHorizontalLayout().removeAll();
+				this.getVaadinHorizontalLayout().add(new Ver_perfil_privado(this.userAver, cabecera_TOP));
+			}
 		}
 		NumeroSeguidores();
 		NumeroSeguidos();
+		NumeroMeGusta();
 		this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
 		this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
 		this.getFotoPerfil1().setImage(this.userAver.getFoto());
@@ -95,14 +104,19 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this._publicaciones_usuario_publico = new Publicaciones_usuario_publico(this.userAver, this);
 		this.getLayoutListaPublicaciones().as(VerticalLayout.class).add(_publicaciones_usuario_publico);
 		this.getBotonVideos().addClickListener(event -> {
+			this.getBotonVideos().addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+			this.getBotonMeGustas().removeThemeVariants(ButtonVariant.LUMO_PRIMARY);
 			this.getListaMeGustas().setVisible(false);
 			this.getLayoutListaPublicaciones().setVisible(true);
 		});
 	}
 
 	public void Ver_publicacciones_gustadas__Otro_usuario_() {
-		_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas_Otro_usuario();
+		_ver_publicacciones_gustadas__Otro_usuario_ = new Ver_publicacciones_gustadas_Otro_usuario(this);
 		this.getBotonMeGustas().addClickListener(event -> {
+			this.getBotonMeGustas().addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+			this.getBotonVideos().removeThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
 			this.getLayoutListaPublicaciones().setVisible(false);
 			this.getListaMeGustas().setVisible(true);
 			this.getListaMeGustas().as(VerticalLayout.class).add(_ver_publicacciones_gustadas__Otro_usuario_);
@@ -110,12 +124,19 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 	}
 	
 	public void NumeroSeguidores() {
-//		this.getNumSeguidores().setVisible(false);
 		this.getNumSeguidores().setText(this.userAver.seguidor.size()+"");
 	}
 
 	public void NumeroSeguidos() {
 		this.getNumSiguiendo().setText(this.userAver.seguir.size()+"");
-//		this.getNumSiguiendo().setVisible(false);
+	}
+	
+	public void NumeroMeGusta() {
+		ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(this.userAver.publica.getCollection());
+		int numMeGustas = 0;
+		for(Publicacion p : publicaciones) {
+			numMeGustas += p.getNumMeGustas();
+		}
+		this.getNumMeGustas().setText(numMeGustas+"");
 	}
 }

@@ -9,6 +9,8 @@ public class Ver_publicaciones_gustadas  extends VistaVerPublicacionesGustadasOt
 	public Lista_publicaciones_gustadas _lista_publicaciones_gustadas;
 	
 	public Ver_publicaciones_gustadas(Ver_perfil_Administrador interfaz) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this._ver_perfil__Administrador_ = interfaz;
 		Lista_publicaciones_gustadas();
 	}

@@ -7,10 +7,9 @@ import basededatos.iAdministrador;
 import bd_dcl.Comentario;
 import vistas.VistaListaComentariosUsuarioNoRegistradoItem;
 
-public class Lista_comentarios_Administrador_item extends VistaListaComentariosUsuarioNoRegistradoItem{
+public class Lista_comentarios_Administrador_item extends Lista_Comentarios_Vista_Usuario_No_registrado_item{
 //	private button _borrar_comentarioB;
 	public Lista_comentarios_Administrador _lista_comentarios__Administrador_ ;
-	Comentario comentario;
 	iAdministrador admin = new BDPrincipal();
 	
 	public Lista_comentarios_Administrador_item(Comentario comentario, Lista_comentarios_Administrador interfaz) {
@@ -25,6 +24,7 @@ public class Lista_comentarios_Administrador_item extends VistaListaComentariosU
 		this.getDenunciarB().setVisible(false);
 		this.getMeGustaB().setVisible(false);
 		Borrar_comentario();
+		Ver_perfil(this);
 	}
 
 	public void Borrar_comentario() {

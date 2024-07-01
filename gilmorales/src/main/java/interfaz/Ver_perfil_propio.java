@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
 import com.vaadin.flow.component.html.Image;
@@ -57,8 +58,10 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Ver_publicaciones_gustadas__Usuario_registrado_() {
-		this.publicaciones_gustadas = new Ver_publicaciones_gustadas_Usuario_registrado();
+		this.publicaciones_gustadas = new Ver_publicaciones_gustadas_Usuario_registrado(this);
 		this.getBotonMeGustas().addClickListener(event ->{
+			this.getBotonMeGustas().addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+			this.getBotonVideos().removeThemeVariants(ButtonVariant.LUMO_PRIMARY);
 			this.getListaMeGustas().setVisible(true);
 			this.getLayoutListaPublicaciones().setVisible(false);
 			this.getListaMeGustas().as(VerticalLayout.class).add(publicaciones_gustadas);
@@ -68,6 +71,8 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	public void Ver_publicaciones_propias() {
 		_ver_publicaciones_propias = new Ver_publicaciones_propias(this.user, this);
 		this.getBotonVideos().addClickListener(event ->{
+			this.getBotonVideos().addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+			this.getBotonMeGustas().removeThemeVariants(ButtonVariant.LUMO_PRIMARY);
 			this.getListaMeGustas().setVisible(false);
 			this.getLayoutListaPublicaciones().setVisible(true);
 		});
@@ -151,13 +156,11 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void NumeroSeguidores() {
-//		this.getNumSeguidores().setVisible(false);
 		this.getNumSeguidores().setText(this.user.seguidor.size()+"");
 	}
 
 	public void NumeroSeguidos() {
 		this.getNumSiguiendo().setText(this.user.seguir.size()+"");
-//		this.getNumSiguiendo().setVisible(false);
 	}
 
 	public void NumeroMeGusta() {

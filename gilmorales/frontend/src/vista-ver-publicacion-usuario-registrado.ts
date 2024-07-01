@@ -29,12 +29,12 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout3" style="flex-grow: 0; flex-shrink: 0; padding: 1%; height: 100%; width: 30%;">
+ <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout3" style="flex-grow: 0; flex-shrink: 0; padding: 2%; height: 100%; width: 30%;">
   <vaadin-vertical-layout id="vaadinVerticalLayout4" style="border-radius: 10px; width: 100%; background-color: #F5F5F5; align-self: center; padding: var(--lumo-space-m); flex-shrink: 0; margin-top: var(--lumo-space-m);">
    <vaadin-horizontal-layout id="layoutUsuario" style="width: 100%;">
     <vaadin-avatar id="avatar" style="margin: var(--lumo-space-xs);"></vaadin-avatar>
     <vaadin-vertical-layout id="layoutVerPerfil" style="flex-shrink: 1; flex-grow: 0;">
-     <vaadin-button theme="tertiary" id="verPerfil">
+     <vaadin-button theme="tertiary" id="verPerfil" style="color: black; font-weight: bold;">
        NombreUsuario 
      </vaadin-button>
      <label id="geolocalizacion" style="width: 100%; flex-grow: 0; flex-shrink: 1;">Geolocalización</label>
@@ -43,10 +43,10 @@ export class VistaVerPublicacionUsuarioRegistrado extends LitElement {
      <vaadin-button id="botonSeguir" style="align-self: center; margin: var(--lumo-space-xs);">
        Seguir 
      </vaadin-button>
-     <vaadin-button id="botonDenunciar" style="align-self: center; margin: var(--lumo-space-xs);">
+     <vaadin-button id="botonDenunciar" style="align-self: center; margin: var(--lumo-space-xs);" theme="primary error">
        Denunciar 
      </vaadin-button>
-     <vaadin-button style="align-self: center; margin: var(--lumo-space-xs);" id="vaadinButton1">
+     <vaadin-button style="align-self: center; margin: var(--lumo-space-xs);" id="vaadinButton1" theme="primary error">
        Eliminar 
      </vaadin-button>
     </vaadin-vertical-layout>
@@ -78,7 +78,7 @@ justify-content: center; align-items: center; justify-content: center; font-weig
   <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout5" style="width: 90%; border-radius: 10px; border: 2px solid #F5F5F5; align-self: center; justify-content: center;"></vaadin-vertical-layout>
   <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="margin: var(--lumo-space-xs); align-self: center; flex-shrink: 0; width: 100%;" theme="spacing-s">
    <vaadin-text-field id="textComentario" style="flex-grow: 1;" placeholder="Escribe aqui tu comentario..."></vaadin-text-field>
-   <vaadin-button id="botonComentar">
+   <vaadin-button id="botonComentar" theme="primary">
      Comentar 
    </vaadin-button>
   </vaadin-horizontal-layout>

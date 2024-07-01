@@ -22,9 +22,9 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
 <vaadin-vertical-layout theme="spacing" id="publicacion" style="width: 100%; height: 100%; min-height: 100%; min-width: 100%;">
  <vaadin-horizontal-layout class="content" style="height: 100%; width: 100%; padding: 10px; min-width: 100%; border-radius: 18px; border: 2px solid #F5F5F5; flex-shrink: 1;" id="layoutPublicacion" theme="spacing-xs">
   <vaadin-vertical-layout id="layoutVideoPublicacion" style="flex-grow: 0; flex-shrink: 0; width: 1200px; background-color: black; color: gray; border-radius: 18px; border: 2px solid #F5F5F5; padding: var(--lumo-space-xs);">
-   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="margin-top: var(--lumo-space-m); margin-left: var(--lumo-space-m); align-items: center;">
+   <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="margin-top: var(--lumo-space-m); margin-left: var(--lumo-space-m); align-items: center; color: white; font-weight: bold;">
     <vaadin-avatar id="vaadinAvatar"></vaadin-avatar>
-    <vaadin-button theme="tertiary" id="botonNombreUsuario">
+    <vaadin-button theme="tertiary" id="botonNombreUsuario" style="color: white; font-weight: bold;">
       NombreUsuario 
     </vaadin-button>
    </vaadin-horizontal-layout>
@@ -42,7 +42,7 @@ export class VistaListaPublicacionesUsuarioNoRegistradoItem extends LitElement {
     <vaadin-button id="botonSeguir">
       Seguir 
     </vaadin-button>
-    <vaadin-button id="botonDenunciar">
+    <vaadin-button id="botonDenunciar" theme="primary error">
       Denunciar 
     </vaadin-button>
    </vaadin-horizontal-layout>
@@ -71,7 +71,7 @@ justify-content: center; align-items: center; justify-content: center; font-weig
    </vaadin-vertical-layout>
    <vaadin-horizontal-layout theme="spacing-xs" id="layoutComentar" style="align-self: center;">
     <vaadin-text-field label="" placeholder="Escribe tu comentario..." id="textFieldComentario"></vaadin-text-field>
-    <vaadin-button id="botonComentar">
+    <vaadin-button id="botonComentar" theme="primary">
       Comentar 
     </vaadin-button>
    </vaadin-horizontal-layout>

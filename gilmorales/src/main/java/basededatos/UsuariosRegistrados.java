@@ -197,6 +197,10 @@ public class UsuariosRegistrados {
 		try {
 			if(aTipoCuenta) {
 				UsuarioRegistrado ur = UsuarioRegistradoDAO.createUsuarioRegistrado();
+				UsuarioRegistrado nombreRepetido = UsuarioRegistradoDAO.loadUsuarioRegistradoByQuery(("nombreUsuario = '" + aNombreUsuario + "'"), null);
+				if(nombreRepetido != null) {
+					return null;
+				}
 				ur.setNombre(aNombre);
 				ur.setApellidos(aApellidos);
 				ur.setEmail(aEmail);
@@ -248,10 +252,11 @@ public class UsuariosRegistrados {
 		return password;
 	}
 
-	public void bloquearUsuario(int aUsuarioID) throws PersistentException {
+	public UsuarioRegistrado bloquearUsuario(int aUsuarioID) throws PersistentException {
+		UsuarioRegistrado usuario = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
+			usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			if(usuario.getPrivacidad() != 3) {
 				usuario.setPrivacidad(3);
 				System.out.println(usuario.getPrivacidad());
@@ -267,5 +272,6 @@ public class UsuariosRegistrados {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
+		return usuario;
 	}
 }

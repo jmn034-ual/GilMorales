@@ -17,7 +17,7 @@ export class VistaUsuarioNoRegistrado extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; position: fixed; padding: 0px; margin: 0px; flex-direction: column; display: flex; justify-content: flex-start;" id="vaadinVerticalLayout">
  <vaadin-horizontal-layout id="layoutCabecera" style="align-items: flex-start; flex-shrink: 0; z-index:9999; height: 60px; padding: 0px; margin: 0px; width: 100%;"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 0; width: 100%; flex-shrink: 0; justify-content: flex-start; background-color: #ffffff; display: flex; overflow-y: auto; height: 100%;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-grow: 0; width: 100%; flex-shrink: 0; background-color: #ffffff; display: flex; overflow-y: auto; height: 100%; justify-content: flex-start;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

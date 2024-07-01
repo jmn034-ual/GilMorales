@@ -30,7 +30,7 @@ public class UsuariosAdministradores {
 		return admin;
 	}
 
-	public void addFoto(String aFoto, int aCodigoEmpleado) throws PersistentException {
+	public UsuarioAdministrador addFoto(String aFoto, int aCodigoEmpleado) throws PersistentException {
 		UsuarioAdministrador admin = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
@@ -40,5 +40,6 @@ public class UsuariosAdministradores {
 		}catch(Exception e){
 			t.rollback();
 		}
+		return admin;
 	}
 }

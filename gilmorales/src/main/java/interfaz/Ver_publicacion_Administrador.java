@@ -40,6 +40,11 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 		}
 		this.getVideo().add(new Video(this.publicacion.getVideo()));
 		this.getVerPerfil().setText(this.publicacion.getNombreUsuario());
+		if(this.publicacion.getPerteneceA() != null)
+			this.getAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
+		else
+			this.getAvatar().setImage(this.publicacion.getEsPublicada().getFoto());
+
 		Lista_Top_Comentarios__Administrador_();
 		NumeroComentarios();
 		NumeroMeGustas();
@@ -64,7 +69,10 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 	public void VerPerfil() {
 		this.getVerPerfil().addClickListener(event ->{
 			this.getVaadinHorizontalLayout().removeAll();
-			this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.admin._cabecera_Administrador.cabeceraTOP, this.publicacion.getPerteneceA()));
+			if(this.publicacion.getPerteneceA() != null)
+				this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.admin._cabecera_Administrador.cabeceraTOP, this.publicacion.getPerteneceA()));
+			else
+				this.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.admin._cabecera_Administrador.cabeceraTOP, this.publicacion.getEsPublicada()));
 		});
 	}
 
@@ -77,7 +85,7 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 	}
 
 	public void NumeroVisualizaciones() {
-		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+ " Visualizaciones");
+		this.getNumVisualizaciones().setText(this.publicacion.getNumVisualizaciones()+ "");
 	}
 
 	public void EliminarPublicacion() {

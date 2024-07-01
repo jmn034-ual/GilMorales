@@ -8,6 +8,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import bd_dcl.Publicacion;
+import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaListaPublicacionesUsuarioNoRegistrado;
 import vistas.VistaPublicacionesUsuarioPublico;
@@ -16,17 +17,25 @@ public class Lista_publicaciones_usuario extends VistaPublicacionesUsuarioPublic
 	public Ver_perfil_Administrador _ver_perfil__Administrador_;
 	public Vector<Lista_publicaciones_usuario_item> _item = new Vector<Lista_publicaciones_usuario_item>();
 	UsuarioRegistrado user;
+	UsuarioComercial comercial;
 	
-	public Lista_publicaciones_usuario(UsuarioRegistrado user, Ver_perfil_Administrador interfaz) {
+	public Lista_publicaciones_usuario(Object user, Ver_perfil_Administrador interfaz) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
 		this._ver_perfil__Administrador_ = interfaz;
-		this.user = user;
+		if(user instanceof UsuarioRegistrado) 
+			this.user = (UsuarioRegistrado) user;
+		else
+			this.comercial = (UsuarioComercial) user;
 		cargarPublicacionesUsuario();
 	}
 	
 	public void cargarPublicacionesUsuario() {
-		List<Publicacion> lista = new ArrayList<Publicacion>(this.user.publica.getCollection());
+		List<Publicacion> lista = null;
+		if(this.user != null)
+			lista = new ArrayList<Publicacion>(this.user.publica.getCollection());
+		else
+			lista = new ArrayList<Publicacion>(this.comercial.publica.getCollection());
 		
 		if(lista != null) {
 			int tamanio = lista.size();

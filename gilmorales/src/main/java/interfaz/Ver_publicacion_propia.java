@@ -3,6 +3,8 @@ package interfaz;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -20,6 +22,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	public Add_publicacion _add_publiacacion;
 	public Ver_perfil_propio ver_perfil_propio;
 	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
+	public Dialog dialog;
 	
 	public Ver_publicacion_propia() {}
 
@@ -35,6 +38,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
 		this.getBotonComentar().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
+		this.getBotonDenunciar().setVisible(false);
 		this.getVaadinHorizontalLayout2().setVisible(false);
 		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas()+"");
 		this.getNumComentarios().setText(this.publicacion.getNumComentarios()+"");
@@ -68,12 +72,14 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 	}
 
 	public void Ver_me_gustas_publicacion() {
-		_ver_me_gustas_publicacion = new Ver_me_gustas_publicacion(this.publicacion);
+		this.getBotonMeGusta().getStyle().set("color", "black");
+		this.getBotonMeGusta().setIcon(new Icon(VaadinIcon.HEART));
+		_ver_me_gustas_publicacion = new Ver_me_gustas_publicacion(this.publicacion, this);
 		this.getBotonMeGusta().addClickListener(event ->{
-			Dialog dialog = new Dialog(_ver_me_gustas_publicacion);
+			dialog = new Dialog(_ver_me_gustas_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
-			dialog.setHeight("70%");
-			dialog.setWidth("61%");
+			dialog.setHeight("50%");
+			dialog.setWidth("30%");
 			this._ver_me_gustas_publicacion.getBotonCerrar().addClickListener(event2 ->{
 				dialog.close();
 			});

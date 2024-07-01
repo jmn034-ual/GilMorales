@@ -1,11 +1,11 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-date-picker/src/vaadin-date-picker.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-registrarusuario')
 export class VistaRegistrarusuario extends LitElement {
@@ -26,7 +26,7 @@ export class VistaRegistrarusuario extends LitElement {
  <vaadin-vertical-layout theme="spacing" style="width: 70%; align-self: center; flex-grow: 0; flex-shrink: 1;" id="vaadinVerticalLayout1">
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout2">
    <label style="width: 20%; align-self: center;" id="label1">Nombre:</label>
-   <vaadin-text-field style="width: 100%;" id="nombreTF"></vaadin-text-field>
+   <vaadin-text-field style="width: 100%;" id="nombreTF" required></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout3">
    <label style="width: 20%; align-self: center;" id="label2">Apellidos:</label>
@@ -34,15 +34,15 @@ export class VistaRegistrarusuario extends LitElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout4">
    <label style="width: 20%; align-self: center;" id="label3">Email:</label>
-   <vaadin-text-field style="width: 100%;" id="email"></vaadin-text-field>
+   <vaadin-text-field style="width: 100%;" id="email" required></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout5">
    <label style="width: 20%; align-self: center;" id="label4">Contraseña:</label>
-   <vaadin-text-field style="width: 100%;" id="contrasenaTF"></vaadin-text-field>
+   <vaadin-text-field style="width: 100%;" id="contrasenaTF" required></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout6">
    <label style="width: 20%; align-self: center;" id="label5">Confirmar:</label>
-   <vaadin-text-field style="width: 100%;" id="confirmarTF"></vaadin-text-field>
+   <vaadin-text-field style="width: 100%;" id="confirmarTF" required></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout7">
    <label style="width: 20%; align-self: center;" id="label6">Descripción:</label>
@@ -50,11 +50,11 @@ export class VistaRegistrarusuario extends LitElement {
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout8">
    <label style="width: 20%; align-self: center;" id="label7">Nombre de usuario:</label>
-   <vaadin-text-field style="width: 100%;" id="nombreDeUsuarioTF"></vaadin-text-field>
+   <vaadin-text-field style="width: 100%;" id="nombreDeUsuarioTF" required></vaadin-text-field>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing-xl" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout9">
    <label style="width: 15%; align-self: center;" id="label8">Fecha de naciemiento:</label>
-   <vaadin-date-picker id="fecha"></vaadin-date-picker>
+   <vaadin-date-picker id="fecha" required></vaadin-date-picker>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout10">
    <vaadin-horizontal-layout theme="spacing" style="align-self: center; width: 80%;" id="vaadinHorizontalLayout10">

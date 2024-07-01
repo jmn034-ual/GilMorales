@@ -94,7 +94,8 @@ public class Login extends Iniciar_sesion{
 				dialogRegistrar.close();
 			});
 			this._registrar.getConfirmar().addClickListener(evente3 -> {
-				this.interfaz.dialog.close();
+				if(this.interfaz.dialog != null)
+					this.interfaz.dialog.close();
 			});
 			dialogRegistrar.open();
 

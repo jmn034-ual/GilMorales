@@ -3,6 +3,7 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
+import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaVerTendencias;
 
@@ -12,6 +13,7 @@ public class Ver_tendencias extends VistaVerTendencias{
 	public Tendencias _tendencias;
 	public Cabecera_TOP cabecera_top;
 	public 	UsuarioRegistrado user;
+	public UsuarioComercial comercial;
 	BDPrincipal bd = new BDPrincipal();
 
 	public Ver_tendencias() {

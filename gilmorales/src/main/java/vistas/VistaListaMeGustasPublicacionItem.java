@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-lista-me-gustas-publicacion-item template.
@@ -20,12 +21,12 @@ public class VistaListaMeGustasPublicacionItem extends LitTemplate {
 
     @Id("layoutItem")
 	private HorizontalLayout layoutItem;
-	@Id("layoutFoto")
-	private Element layoutFoto;
 	@Id("botonNombreUsuario")
 	private Button botonNombreUsuario;
 	@Id("botonSeguir")
 	private Button botonSeguir;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
 	
 	
 
@@ -41,14 +42,17 @@ public class VistaListaMeGustasPublicacionItem extends LitTemplate {
 
 
 
-	public Element getLayoutFoto() {
-		return layoutFoto;
+
+
+
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
 	}
 
 
 
-	public void setLayoutFoto(Element layoutFoto) {
-		this.layoutFoto = layoutFoto;
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
 	}
 
 

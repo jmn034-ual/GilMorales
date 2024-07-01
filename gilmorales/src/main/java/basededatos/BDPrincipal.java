@@ -34,8 +34,6 @@ public class BDPrincipal
 	public Hashtags hashtags = new Hashtags();
 	public UsuariosAdministradores _c_usuarioAdministrador = new UsuariosAdministradores();
 	public Denuncias denuncias = new Denuncias();
-
-	TreeMap<String, String> nombresUsuarios = new TreeMap<String, String>();
 	
 	public List<Publicacion> cargarAllPubliaciones(){
 		List<Publicacion> publicaciones = null;
@@ -80,10 +78,10 @@ public class BDPrincipal
 		return comercial;
 	}
 
-	public List cargarDenuncias() {
+	public List cargarDenuncias(String filtro) {
 		List<Denuncia> denuncias = null;
 		try {
-			denuncias = this.denuncias.cargarDenuncias();
+			denuncias = this.denuncias.cargarDenuncias(filtro);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -253,23 +251,26 @@ public class BDPrincipal
 		}
 	}
 
-	public void addFoto(String aFoto, int aCodigoEmpleado) {
+	public UsuarioAdministrador addFoto(String aFoto, int aCodigoEmpleado) {
+		UsuarioAdministrador admin = null;
 		try {
-			this._c_usuarioAdministrador.addFoto(aFoto, aCodigoEmpleado);
+			admin = this._c_usuarioAdministrador.addFoto(aFoto, aCodigoEmpleado);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return admin;
 	}
 
-	public void bloquearUsuario(int aUsuarioID) {
+	public UsuarioRegistrado bloquearUsuario(int aUsuarioID) {
+		UsuarioRegistrado usuario = null;
 		try {
-			this.usuarios_registrados.bloquearUsuario(aUsuarioID);
+			usuario = this.usuarios_registrados.bloquearUsuario(aUsuarioID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		return usuario;
 	}
 
 	public ArrayList<Object> realizarBusqueda(String aBusqueda, String aFiltro) {
@@ -281,8 +282,10 @@ public class BDPrincipal
 			} else if (aFiltro.equals("Usuarios")) {
 				resultado.clear();
 				resultado.addAll(this.usuarios_registrados.buscarUsuario(aBusqueda));
+				resultado.addAll(this.comerciales.buscarUsuario(aBusqueda));
 			} else {
 				resultado.addAll(this.usuarios_registrados.buscarUsuario(aBusqueda));
+				resultado.addAll(this.comerciales.buscarUsuario(aBusqueda));
 				resultado.addAll(this.hashtags.buscarHashtag(aBusqueda));
 			}
 		} catch (PersistentException e) {
@@ -291,38 +294,33 @@ public class BDPrincipal
 		}
 		return resultado;
 	}
-
-	public List filtrarDenuncias(String aFiltro) {
-		List lista = null;
+	public Denuncia actualizarDenuncia(int idDenuncia, int estado) {
+		Denuncia denuncia = null;
 		try {
-			lista = this.denuncias.filtrarDenuncias(aFiltro);
+			denuncia = this.denuncias.actualizarDenuncia(idDenuncia, estado);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return lista;
+		return denuncia;
 	}
-
 	// La estructura nombresUsuarios no sirve para nada, por tanto tengo que darle
 	// una vuelta para que no se puedan registrar usuarios con el mismo nombre
 	public Object registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword,
 			String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) {
 		Object user = null;
 		try {
-			if (!nombresUsuarios.containsKey(aNombreUsuario)) {
 				if (aTipoCuenta) {
-					nombresUsuarios.put(aNombreUsuario, "UsuarioRegistrado");
 					user =  this.usuarios_registrados.registrarUsuario(aNombre, aApellidos, aEmail, aPassword, aDescripcion,
 							aNombreUsuario, aFechaNacimiento, aTipoCuenta, aFoto);
 				} else if (aTipoCuenta == false) {
-					nombresUsuarios.put(aNombreUsuario, "UsuarioComercial");
 					user = this.comerciales.registrarUsuario(aNombre, aEmail, aPassword, aDescripcion, aNombreUsuario,
 							aFechaNacimiento, aFoto);
-
 				}
-			} else {
-				Notification.show("El nombre de usuario elegido esta ocupado. Por favor, elija otro nombre de usuario");
-			}
+	
+				if(user == null) {
+					return null;
+				}
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -468,9 +466,6 @@ public class BDPrincipal
 		List<UsuarioRegistrado> usuariosTop = null;
 		try {
 			usuariosTop = usuarios_registrados.cargarListaUsuariosTOP();
-//			for (int i = 0; i < usuarios.size() && i < 5; i++) {
-//				usuariosTop.add(usuarios.get(i));
-//			}
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -534,18 +529,8 @@ public class BDPrincipal
 				}
 
 			}
-			
-//			 PersistentSession session = bd_dcl.GilMoralesPersistentManager.instance().getSession();
-//	            String condition = "NombreUsuario = '" + aNombreUsuario + "' AND Password = '" + aPassword + "'";
-//	            List<UsuarioRegistrado> usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(session, condition, null);
-//	            if (usuarios != null && !usuarios.isEmpty()) {
-//	                return usuarios.get(0);
-//	            }
-//	            return null;
-
 		} catch (PersistentException e) {
 			e.printStackTrace();
-			// Manejar la excepción
 		}
 		return user;
 	}

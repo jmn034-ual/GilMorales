@@ -1,6 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
 
 @customElement('vista-nuevos-seguirdores-item')
 export class VistaNuevosSeguirdoresItem extends LitElement {
@@ -16,9 +17,11 @@ export class VistaNuevosSeguirdoresItem extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content" style="width: 100%; justify-content: center;" id="nuevoSeguidor" theme="spacing">
- <vaadin-horizontal-layout theme="spacing" id="fotoPerfil" style="align-self: center;"></vaadin-horizontal-layout>
- <vaadin-button id="botonDejarDeSeguir" style="align-self: center;">
-   Dejar de seguir 
+ <vaadin-horizontal-layout theme="spacing" id="fotoPerfil" style="align-self: center;">
+  <vaadin-avatar id="avatar"></vaadin-avatar>
+ </vaadin-horizontal-layout>
+ <vaadin-button id="nombreusuario" style="align-self: center;">
+  NombreUsuario
  </vaadin-button>
  <vaadin-button id="botonEnviarSolicitud" style="align-self: center;">
    Enviar solicitud de amistad 

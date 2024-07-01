@@ -36,7 +36,7 @@ public class Lista_publicaciones_Comercial extends VistaListaPublicacionesComerc
 					tamanio -= 3;
 				}else if(tamanio == 2){
 					HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_publicaciones_Comercial_item(publicaciones.get(i), this),
-							new Lista_publicaciones_Comercial_item(publicaciones.get(i++), this));
+							new Lista_publicaciones_Comercial_item(publicaciones.get(++i), this));
 					horizontal2.getStyle().set("width", "66.66%");
 					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal2);
 				}else {

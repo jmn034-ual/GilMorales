@@ -8,17 +8,19 @@ import vistas.VistaVerNotificacionesUsuarioPublico;
 
 public class Ver_notificaciones_usuario_publico extends VistaVerNotificacionesUsuarioPublico{
 	public iVer_notificaciones_usuario_publico _iVer_notificaciones_usuario_publico;
+	public Ver_notificaciones verNotificaciones;
 	public Notificaciones_usuario_publico _notificaciones_usuario_publico;
 	UsuarioRegistrado ur;
 
-	public Ver_notificaciones_usuario_publico(UsuarioRegistrado ur) {
+	public Ver_notificaciones_usuario_publico(UsuarioRegistrado ur, Ver_notificaciones interfaz) {
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
     	this.ur = ur;
+    	this.verNotificaciones = interfaz;
     	Notificaciones_usuario_publico();
 	}
 	public void Notificaciones_usuario_publico() {
-    	_notificaciones_usuario_publico = new Notificaciones_usuario_publico(ur);
+    	_notificaciones_usuario_publico = new Notificaciones_usuario_publico(ur, this);
     	this.getLayoutListaNuevosSeguidores().as(VerticalLayout.class).add(this._notificaciones_usuario_publico.notificaciones._nuevos_seguidores);
     	this.getLayoutListaComentarios().as(VerticalLayout.class).add(this._notificaciones_usuario_publico.notificaciones._notificaciones_comentarios);
     	this.getLayoutListaMeGustas().as(VerticalLayout.class).add(this._notificaciones_usuario_publico.notificaciones._me_gustas);

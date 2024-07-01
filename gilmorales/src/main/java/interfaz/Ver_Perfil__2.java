@@ -15,7 +15,7 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 	public Ver_publicacion_ajena _ver_publicacion_ajena;
 	public Publicaciones_hashtag_item _publicaciones_hashtag;
 	public Lista_usuarios_registrados_item _lista_usuarios_registrados;
-	public Notificaciones_comun _notificaciones__comun_;
+	public Nuevos_seguidores_item _notificaciones__comun_;
 	public Ver_comentarios _ver_comentarios;
 	public Lista_Comentarios_Vista_Usuario_No_registrado_item _lista_Comentarios__Vista_Usuario_No_registrado_;
 	public Lista_Me_Gustas_Publicacion_item _lista_Me_Gustas_Publicacion;
@@ -51,8 +51,8 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 				this.cabecera = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado;
 				this.user = this._lista_usuarios_registrados._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
 			}
-		}else if (interfaz instanceof Notificaciones_comun) {
-			this._notificaciones__comun_ = (Notificaciones_comun) interfaz;
+		}else if (interfaz instanceof Nuevos_seguidores_item) {
+			this._notificaciones__comun_ = (Nuevos_seguidores_item) interfaz;
 		}else if (interfaz instanceof Ver_comentarios) {
 			this._ver_comentarios = (Ver_comentarios) interfaz;
 		}else if (interfaz instanceof Lista_Comentarios_Vista_Usuario_No_registrado_item) {
@@ -69,10 +69,6 @@ public class Ver_Perfil__2 extends Ver_perfil__1 {
 			this._publicaciones__Usuario_no_registrado_ = (Lista_Publicaciones_Usuario_no_registrado_item) interfaz;
 			if(this._publicaciones__Usuario_no_registrado_._publicaciones__Usuario_no_registrado_ != null)
 				this.cabecera_top = this._publicaciones__Usuario_no_registrado_._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR._cabecera_TOP;
-//			else
-//				this.cabecera_top = this._publicaciones__Usuario_registrado_._publicaciones__Usuario_no_registrado_.unr.cabeceraUNR._cabecera_TOP;
-				//Tengo que comprobar el usuario registrado
-
 		} else if(interfaz instanceof Lista_publicaciones_Usuario_Registrado_item){
 			this.publicaciones_Usuario_Registrado = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
 			this.user = publicaciones_Usuario_Registrado._lista_publicaciones__Usuario_Registrado_.urInterfaz.ur;

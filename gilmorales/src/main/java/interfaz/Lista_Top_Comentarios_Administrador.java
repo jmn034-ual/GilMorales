@@ -21,15 +21,14 @@ public class Lista_Top_Comentarios_Administrador extends Lista_Top_Comentarios_U
 		super(p);
 //		this.p = p;
 		this._ver_publicacion__Administrador_ = interfaz;
-//		this.cargarComentariosTOP();
+		this.cargarComentariosTOPAdmin();
 	}
 
-	@Override
-	public void cargarComentariosTOP() {
+	public void cargarComentariosTOPAdmin() {
 		List<Comentario> comentarios = new ArrayList<Comentario>(this.p.tieneComentarios.getCollection());
 
 		this.getListaTopComentarios().as(VerticalLayout.class).removeAll();
-		if(this.itemAdmin != null) {
+//		if(this.itemAdmin != null) {
 			this.itemAdmin.clear();
 
 		for (Comentario c : comentarios) {
@@ -39,6 +38,6 @@ public class Lista_Top_Comentarios_Administrador extends Lista_Top_Comentarios_U
 			if (this.itemAdmin.size() == 5)
 				break;
 		}
-		}
+		
 	}
 }

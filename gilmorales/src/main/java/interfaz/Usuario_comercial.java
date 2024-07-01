@@ -1,10 +1,13 @@
 package interfaz;
 
+import java.util.ArrayList;
+
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.dialog.DialogVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.MainView;
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioComercial;
 import vistas.VistaUsuarioComercialPrincipal;
 import basededatos.BDPrincipal;
@@ -18,6 +21,7 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 	public Editar_perfil_Comercial _editar_perfil__Comercial_;
 	public Cabecera_Usuario_Comercial _cabecera_Usuario_Comercial;
 	public Lista_publicaciones_Comercial _lista_publicaciones__Comercial_;
+	Dialog dialog;
 	
 	UsuarioComercial comercial;
 	MainView mainview;
@@ -35,6 +39,7 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 		Editar_perfil__Comercial_();
 		Eliminar_publicaciones__Comercial_();
 		Lista_publicaciones__Comercial_();
+		NumeroMeGusta();
 	}
 	
 	public void Eliminar_publicaciones__Comercial_() {
@@ -46,13 +51,10 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 	}
 
 	public void Editar_perfil__Comercial_() {
-		_editar_perfil__Comercial_ = new Editar_perfil_Comercial(comercial);
 		this.getEditarPerffilB().addClickListener(event ->{
-			this._editar_perfil__Comercial_.setVisible(true);
-			this._editar_perfil__Comercial_.setVisible(false);
-			this._editar_perfil__Comercial_.setVisible(false);
-			this._editar_perfil__Comercial_.setVisible(false);
-			Dialog dialog = new Dialog(_editar_perfil__Comercial_);
+			dialog = new Dialog();
+			_editar_perfil__Comercial_ = new Editar_perfil_Comercial(comercial, dialog, this);
+			dialog.add(_editar_perfil__Comercial_);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("50%");
 			dialog.setWidth("50%");
@@ -72,5 +74,14 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 	public void Lista_publicaciones__Comercial_() {
 		_lista_publicaciones__Comercial_ = new Lista_publicaciones_Comercial(this);
 		this.getListaVideos().as(VerticalLayout.class).add(_lista_publicaciones__Comercial_);
+	}
+	
+	public void NumeroMeGusta() {
+		ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(this.comercial.publica.getCollection());
+		int numMeGustas = 0;
+		for(Publicacion p : publicaciones) {
+			numMeGustas += p.getNumMeGustas();
+		}
+		this.getNumeroL().setText(numMeGustas+"");
 	}
 }

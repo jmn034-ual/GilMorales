@@ -55,6 +55,11 @@ public class Lista_Top_Comentarios_Usuario_No_Registrado_item extends VistaLista
 				this._ver_perfil = new Ver_perfil_publico(this.comentario.getEsComentadoPor(), interfaz, itemRegistrado._lista_Top_comentarios__Usuario_Registrado_._ver_publicacion__usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP);
 				itemRegistrado._lista_Top_comentarios__Usuario_Registrado_._ver_publicacion__usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
 				itemRegistrado._lista_Top_comentarios__Usuario_Registrado_._ver_publicacion__usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(this._ver_perfil);
+			}else {
+				Lista_Top_Comentarios_Administrador_item itemAdmin = (Lista_Top_Comentarios_Administrador_item) interfaz;
+				itemAdmin._lista_Top_Comentarios__Administrador_._ver_publicacion__Administrador_.admin.getVaadinHorizontalLayout().removeAll();
+				itemAdmin._lista_Top_Comentarios__Administrador_._ver_publicacion__Administrador_.admin.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(itemAdmin._lista_Top_Comentarios__Administrador_._ver_publicacion__Administrador_.admin._cabecera_Administrador.cabeceraTOP, this.comentario.getEsComentadoPor()));
+
 			}
 		});
 	}

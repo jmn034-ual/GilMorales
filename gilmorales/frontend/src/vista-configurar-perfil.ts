@@ -1,8 +1,6 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-radio-button/src/vaadin-radio-group.js';
-import '@vaadin/vaadin-radio-button/src/vaadin-radio-button.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 
@@ -35,16 +33,7 @@ export class VistaConfigurarPerfil extends LitElement {
    </vaadin-horizontal-layout>
    <vaadin-horizontal-layout theme="spacing" id="layoutVisibilidad" style="margin: var(--lumo-space-s); align-self: stretch;">
     <label id="labelVisibilidad" style="align-self: flex-start;">Visibilidad:</label>
-    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1">
-     <vaadin-radio-group value="foo" id="radioGroupVisibilidad" style="align-self: center;">
-      <vaadin-radio-button name="foo" id="radioBotonPrivada" checked>
-        Privada 
-      </vaadin-radio-button>
-      <vaadin-radio-button name="bar" id="radioBotonPublica" checked>
-        Pública 
-      </vaadin-radio-button>
-     </vaadin-radio-group>
-    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1"></vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-grow: 0; align-self: center; flex-shrink: 0;" id="layoutNotificaciones">

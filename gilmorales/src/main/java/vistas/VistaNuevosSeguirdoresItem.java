@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-nuevos-seguirdores-item template.
@@ -23,8 +24,6 @@ public class VistaNuevosSeguirdoresItem extends LitTemplate {
 	private HorizontalLayout nuevoSeguidor;
 	@Id("fotoPerfil")
 	private HorizontalLayout fotoPerfil;
-	@Id("botonDejarDeSeguir")
-	private Button botonDejarDeSeguir;
 	@Id("botonEnviarSolicitud")
 	private Button botonEnviarSolicitud;
 	@Id("botonSeguir")
@@ -35,6 +34,10 @@ public class VistaNuevosSeguirdoresItem extends LitTemplate {
 	private Button botonCancelar;
 	@Id("botonAceptar")
 	private Button botonAceptar;
+	@Id("avatar")
+	private Avatar avatar;
+	@Id("nombreusuario")
+	private Button nombreusuario;
 
 	
 	public HorizontalLayout getNuevoSeguidor() {
@@ -57,13 +60,24 @@ public class VistaNuevosSeguirdoresItem extends LitTemplate {
 	}
 
 
-	public Button getBotonDejarDeSeguir() {
-		return botonDejarDeSeguir;
+
+	public Avatar getAvatar() {
+		return avatar;
 	}
 
 
-	public void setBotonDejarDeSeguir(Button botonDejarDeSeguir) {
-		this.botonDejarDeSeguir = botonDejarDeSeguir;
+	public void setAvatar(Avatar avatar) {
+		this.avatar = avatar;
+	}
+
+
+	public Button getNombreusuario() {
+		return nombreusuario;
+	}
+
+
+	public void setNombreusuario(Button nombreusuario) {
+		this.nombreusuario = nombreusuario;
 	}
 
 

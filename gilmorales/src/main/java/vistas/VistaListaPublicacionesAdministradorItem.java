@@ -59,7 +59,7 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 	@Id("labelNumMeGustas")
 	private Label labelNumMeGustas;
 	@Id("labelMeGustas")
-	private Label labelMeGustas;
+	private Button labelMeGustas;
 	@Id("ironIcon")
 	private Element ironIcon;
 	@Id("vaadinHorizontalLayout4")
@@ -277,13 +277,13 @@ public class VistaListaPublicacionesAdministradorItem extends LitTemplate {
 
 
 
-	public Label getLabelMeGustas() {
+	public Button getLabelMeGustas() {
 		return labelMeGustas;
 	}
 
 
 
-	public void setLabelMeGustas(Label labelMeGustas) {
+	public void setLabelMeGustas(Button labelMeGustas) {
 		this.labelMeGustas = labelMeGustas;
 	}
 

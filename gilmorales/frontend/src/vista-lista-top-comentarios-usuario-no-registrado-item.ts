@@ -23,12 +23,12 @@ export class VistaListaTopComentariosUsuarioNoRegistradoItem extends LitElement 
   <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout id="vaadinVerticalLayout" style="align-self: center; flex-grow: 0; flex-shrink: 0; width: 70%;">
-  <vaadin-button theme="tertiary" id="nombreDeUsuarioB">
+  <vaadin-button theme="tertiary" id="nombreDeUsuarioB" style="color: black; font-weight: bold;">
     Nombre de usuario 
   </vaadin-button>
   <label id="comentarioL" style="padding-left: var(--lumo-space-s); align-self: stretch;">Comentario</label>
  </vaadin-vertical-layout>
- <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 0; flex-shrink: 0;">
+ <vaadin-horizontal-layout id="vaadinHorizontalLayout2" style="align-self: center; flex-grow: 0; flex-shrink: 0;">
   <label id="numeroMeGusta" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
@@ -42,6 +42,7 @@ justify-content: center; align-items: center; justify-content: center; font-weig
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-horizontal-layout>
+<hr>
 `;
   }
 

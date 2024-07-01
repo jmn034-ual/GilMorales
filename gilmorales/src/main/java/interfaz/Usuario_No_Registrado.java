@@ -28,6 +28,8 @@ public class Usuario_No_Registrado extends VistaUsuarioNoRegistrado{
 	Dialog dialog;
 
 	public Usuario_No_Registrado(MainView mainView) {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
 		this.interfaz = mainView;
 		Cabecera_Usuario_No_Registrado();	
 		Lista_Publicaciones__Usuario_no_registrado_();

@@ -23,7 +23,7 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 	
 	public Lista_usuarios_registrados_item(UsuarioRegistrado user, Lista_usuarios_registrados interfaz) {
 		this._lista_usuarios_registrados = interfaz;
-		this.user = user;
+		this.user = this.bd.cargarUsuarioRegistrado(user.getID());
 		if(this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null)
 			this.userRegistrado = this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
 		Video video = new Video("videos/tiktok1.mp4"); 

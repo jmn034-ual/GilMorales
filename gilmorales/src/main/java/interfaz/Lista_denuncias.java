@@ -20,23 +20,28 @@ public class Lista_denuncias extends VistaListasDenunciasAdministrador {
 	public Vector<Lista_denuncias_item> _item = new Vector<Lista_denuncias_item>();
 	public Filtrar_denuncias _filtrar_denuncias;
 	Lista_denuncias_item denuncia;
-	BDPrincipal admin = new BDPrincipal();
+	BDPrincipal bdAdmin = new BDPrincipal();
 	
-	public Lista_denuncias() {}
+	public Lista_denuncias() {
+		this.getStyle().set("width", "100%");
+		this.getStyle().set("height", "100%");
+	}
 	
 	public Lista_denuncias(Ver_denuncias interfaz) {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this._ver_denuncias = interfaz;
+		Filtrar();
 		cargarDenuncias();
 	}
 	
 	public void Filtrar() {
-		
+		this._filtrar_denuncias = new Filtrar_denuncias(this);
+		this._ver_denuncias.getVaadinHorizontalLayout4().add(this._filtrar_denuncias);
 	}
 	
 	public void cargarDenuncias() {
-		List<Denuncia> denuncias = admin.cargarDenuncias();
+		List<Denuncia> denuncias = bdAdmin.cargarDenuncias(this._filtrar_denuncias.select.getValue());
 	
 		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 		_item.clear();

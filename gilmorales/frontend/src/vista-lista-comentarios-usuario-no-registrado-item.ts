@@ -2,6 +2,7 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-avatar/src/vaadin-avatar.js';
+import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-lista-comentarios-usuario-no-registrado-item')
@@ -21,8 +22,8 @@ export class VistaListaComentariosUsuarioNoRegistradoItem extends LitElement {
  <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout1" style="align-self: center; flex-grow: 0; justify-content: center; flex-shrink: 0;">
   <vaadin-avatar id="fotoPerfil" style="align-self: center;"></vaadin-avatar>
  </vaadin-horizontal-layout>
- <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout" style="align-self: center; flex-grow: 0; flex-shrink: 0; width: 53%;">
-  <vaadin-button theme="tertiary" id="nombreUsuario">
+ <vaadin-vertical-layout id="vaadinVerticalLayout" style="align-self: center; flex-grow: 0; flex-shrink: 0; width: 53%;">
+  <vaadin-button theme="tertiary constrast" id="nombreUsuario" style="color: black; font-weight: bold;">
     Nombre de usuario 
   </vaadin-button>
   <label id="comentarioL" style="flex-shrink: 0; align-self: stretch; margin-left: var(--lumo-space-xs);">Comentario</label>
@@ -33,11 +34,11 @@ height: 100px; display: flex; /* Asegura que el contenido esté centrado si es n
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
   <vaadin-button theme="icon large" aria-label="Add new" id="meGustaB" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; height: 100px; display: flex; 
 justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px; color: red;"></vaadin-button>
-  <vaadin-button id="denunciarB" style="align-self: center;">
+  <vaadin-button id="denunciarB" style="align-self: center;" theme="primary error">
     Denunciar 
   </vaadin-button>
-  <vaadin-button id="borrarComentarioB" style="align-self: center;">
-    Borrar 
+  <vaadin-button theme="icon" aria-label="Add new" id="borrarComentarioB" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; height: 100px; display: flex; justify-content: center; align-items: center; justify-content: center; font-weight: bold; width: 50px; height: 50px; padding: 0px; color: red; margin-right: var(--lumo-space-s);">
+   <iron-icon icon="vaadin:trash"></iron-icon>
   </vaadin-button>
  </vaadin-horizontal-layout>
 </vaadin-horizontal-layout>

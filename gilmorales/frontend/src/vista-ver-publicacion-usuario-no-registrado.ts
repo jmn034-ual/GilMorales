@@ -27,11 +27,11 @@ export class VistaVerPublicacionUsuarioNoRegistrado extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing-s" id="vaadinVerticalLayout3" style="flex-grow: 0; flex-shrink: 0; padding: 2%; height: 100%; width: 30%;">
-  <vaadin-vertical-layout id="vaadinVerticalLayout" style="border-radius: 10px; width: 100%; background-color: #F5F5F5; align-self: center; padding: 1%; flex-shrink: 0;">
-   <vaadin-horizontal-layout id="layoutUsuario" style="width: 100%; padding-top: 5%;">
+  <vaadin-vertical-layout id="vaadinVerticalLayout" style="border-radius: 10px; width: 100%; background-color: #F5F5F5; align-self: center; padding: var(--lumo-space-m); flex-shrink: 0; margin-top: var(--lumo-space-m);">
+   <vaadin-horizontal-layout id="layoutUsuario" style="width: 100%;">
     <vaadin-avatar id="avatar" style="margin: var(--lumo-space-xs);"></vaadin-avatar>
     <vaadin-vertical-layout id="layoutVerPerfil" style="flex-shrink: 1; flex-grow: 0;">
-     <vaadin-button theme="tertiary" id="verPerfil">
+     <vaadin-button theme="tertiary" id="verPerfil" style="color: black; font-weight: bold;">
        NombreUsuario 
      </vaadin-button>
      <label id="geolocalizacion" style="width: 100%; flex-grow: 0; flex-shrink: 1;">Geolocalización</label>

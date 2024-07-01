@@ -19,14 +19,14 @@ export class VistaVerComentariosComercial extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="lex-grow: 1; height: 100%; width: 100%; z-index: 999; justify-content: center; padding-right: var(--lumo-space-m);" theme="spacing">
- <vaadin-vertical-layout theme="spacing" id="layoutInfo" style="flex-shrink: 0; align-items: center; border-radius: 10px; border: 2px solid #F5F5F5; margin-top: var(--lumo-space-l); padding: var(--lumo-space-s); width: 25%; margin-bottom: var(--lumo-space-xl); align-self: stretch;">
+ <vaadin-vertical-layout theme="spacing" id="layoutInfo" style="flex-shrink: 0; align-items: center; border-radius: 10px; border: 2px solid #F5F5F5; margin-top: var(--lumo-space-xl); padding: var(--lumo-space-s); width: 25%; margin-bottom: var(--lumo-space-xl); align-self: stretch;">
   <vaadin-vertical-layout theme="spacing" style="border-radius: 10px; width: 90%; background-color: #F5F5F5; align-self: center; margin-left: var(--lumo-space-m); padding: var(--lumo-space-m);">
-   <vaadin-horizontal-layout theme="spacing" id="layoutpropietario" style="align-self: center;">
+   <vaadin-horizontal-layout theme="spacing" id="layoutpropietario" style="align-self: flex-start;">
     <vaadin-vertical-layout theme="spacing" id="layoutFotoPerfil">
      <vaadin-avatar id="vaadinAvatar" style="width: 100px; height: 100px;"></vaadin-avatar>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout id="vaadinVerticalLayout1">
-     <vaadin-button theme="tertiary" id="botonNombreUsuario">
+     <vaadin-button theme="tertiary" id="botonNombreUsuario" style="color: black; font-weight: bold;">
        NombreUsuario 
      </vaadin-button>
      <label id="labelGeolocalizacion">Geolocalización</label>
@@ -34,8 +34,8 @@ export class VistaVerComentariosComercial extends LitElement {
    </vaadin-horizontal-layout>
    <label id="labelDescripcion" style="flex-grow: 0;">Descripción de la publicación...</label>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout id="layoutEstadisticas" style="width: 90%; border-radius: 10px; border: 2px solid #F5F5F5; align-self: center; justify-content: center; flex-shrink: 0;">
-   <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; justify-content: center;">
+  <vaadin-vertical-layout id="layoutEstadisticas" style="width: 90%; border-radius: 10px; border: 2px solid #F5F5F5; align-self: center; margin-left: var(--lumo-space-m); justify-content: center; padding: var(--lumo-space-m);">
+   <vaadin-horizontal-layout theme="spacing-s" style="width: 100%; justify-content: flex-start;">
     <vaadin-horizontal-layout theme="spacing-s" id="layoutMeGustas" style="flex-shrink: 0; flex-grow: 0;">
      <label id="numMeGustas" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
@@ -57,17 +57,17 @@ justify-content: center; align-items: center; justify-content: center; font-weig
      </vaadin-button>
     </vaadin-horizontal-layout>
    </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout theme="spacing" style="align-items: center; align-self: flex-start; margin-left: var(--lumo-space-l);" id="layoutVisualizaciones">
+   <vaadin-horizontal-layout theme="spacing" style="width: 100%;" id="layoutVisualizaciones">
     <label id="numVisualizaciones" style="align-self: center; border-radius: 100px; border: 2px solid #F5F5F5; padding: var(--lumo-space-s); width: 20px; /* Ajusta la altura y el ancho para que sean iguales */
 height: 100px; display: flex; /* Asegura que el contenido esté centrado si es necesario */
 justify-content: center; align-items: center; height: 20px; justify-content: center; font-weight: bold;">0</label>
-    <label id="labelVisualizaciones">Visualizaciones</label>
+    <label id="labelVisualizaciones" style="align-self: center; font-weight: bold;">Visualizaciones</label>
    </vaadin-horizontal-layout>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
  <hr style="height: 98%; z-index: 999; padding: 1px;" id="hr">
- <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="flex-grow: 1; flex-shrink: 0; height: 95%; justify-content: flex-start;">
-  <vaadin-vertical-layout theme="spacing" id="layoutListaComentarios" style="flex-grow: 1; width: 100%; flex-shrink: 0; align-self: stretch; border-radius: 10px; border: 2px solid #F5F5F5; margin-top: var(--lumo-space-l);"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout2" style="flex-grow: 1; flex-shrink: 0; justify-content: flex-start; margin-top: var(--lumo-space-xl); margin-bottom: var(--lumo-space-xl); align-self: stretch;">
+  <vaadin-vertical-layout theme="spacing" id="layoutListaComentarios" style="flex-grow: 1; width: 100%; flex-shrink: 0; align-self: stretch; border-radius: 10px; border: 2px solid #F5F5F5;"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;

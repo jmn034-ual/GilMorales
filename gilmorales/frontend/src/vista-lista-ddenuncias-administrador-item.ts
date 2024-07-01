@@ -17,9 +17,9 @@ export class VistaListaDdenunciasAdministradorItem extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="z-index: 11;  align-items: center;" id="vaadinHorizontalLayout">
+<vaadin-horizontal-layout class="content" style="z-index: 11; align-items: center; border-radius: 10px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); padding: var(--lumo-space-m); width: 100%; border-radius: 18px; border: 2px solid #F5F5F5; background-color: white;" id="vaadinHorizontalLayout" theme="spacing">
  <vaadin-avatar id="vaadinAvatar" style="align-items: center; width: 150px; align-self: center; height: 150px;"></vaadin-avatar>
- <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 0; flex-shrink: 0; z-index: 12; width: 30%; align-self: center;">
+ <vaadin-vertical-layout id="vaadinVerticalLayout1" style="flex-grow: 1; flex-shrink: 0; z-index: 12; align-self: center;">
   <vaadin-button theme="tertiary" id="nombreUsuario" style="flex-shrink: 0;">
     NombreDeUsuario 
   </vaadin-button>
