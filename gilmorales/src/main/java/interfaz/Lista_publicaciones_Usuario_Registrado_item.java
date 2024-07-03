@@ -40,18 +40,17 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		if (this.publicacion.getPerteneceA() != null) {
 			Ver_perfil();
 			Seguir();
-			if(this.publicacion.getPerteneceA().getID() != this.user.getID()) {
-				Dar_me_gusta_publicacion();
-			}else {
-				icono = new Icon(VaadinIcon.HEART_O);
-				icono.setSize("30px");
-				this.getVaadinButton().setIcon(icono);
-			}
+//			if(this.publicacion.getPerteneceA().getID() != this.user.getID()) {
+//			}else {
+//				icono = new Icon(VaadinIcon.HEART_O);
+//				icono.setSize("30px");
+//				this.getVaadinButton().setIcon(icono);
+//			}
 		} else {
 			this.getBotonNombreUsuario().setDisableOnClick(false);
 		}
 		Ver_comentarios__Usuario_Registrado_();
-		
+		Dar_me_gusta_publicacion();
 		Ver_publicacion_ajena();
 		Denunciar_publicacion();
 		Comentar();

@@ -21,8 +21,10 @@ export class VistaVerTendencias extends LitElement {
 <vaadin-horizontal-layout id="vaadinHorizontalLayout" style="flex-shrink: 0; overflow-y: auto; height: 100%; scrollbar-width: thin; scrollbar-color: transparent transparent; width: 100%; margin: 0px;">
  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 0; align-items: center; z-index: 999; height: 100%; justify-content: flex-start; overflow-y: auto; scrollbar-color: transparent transparent; background-color: #C8C4C4; padding: var(--lumo-space-m);" id="layoutTendencias" theme="spacing-xs">
   <h4 id="tituloTendencias" style="align-self: center; margin-bottom: 0px; margin-top: 0px; padding-top: var(--lumo-space-m);">Tendencias </h4>
+  <hr style="width: 100%; height: 2px;">
   <vaadin-vertical-layout id="layoutHashtags" style="flex-grow: 0; align-self: center; align-items: center; flex-shrink: 0; justify-content: flex-start; margin-top: 0%; padding: 0%;"></vaadin-vertical-layout>
-  <vaadin-button id="botonVerListaHashtags" style="align-self: center;">
+  <hr style="width: 100%; height: 2px;">
+  <vaadin-button id="botonVerListaHashtags" style="align-self: center;" theme="primary contrast">
     Lista Hashtags 
   </vaadin-button>
  </vaadin-vertical-layout>

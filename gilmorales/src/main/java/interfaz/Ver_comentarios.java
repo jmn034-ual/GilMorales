@@ -31,36 +31,36 @@ public class Ver_comentarios extends VistaVerComentarios {
 	}
 
 	public void Ver_perfil(Object interfaz) {
-		Cabecera_TOP cabeceraTopAux = null;
-		if (interfaz instanceof Ver_comentarios_Usuario_Registrado) {
-			Ver_comentarios_Usuario_Registrado auxUR = (Ver_comentarios_Usuario_Registrado) interfaz;
-			if (auxUR.verAjena != null) {
-				cabeceraTopAux = auxUR.verAjena.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
-			}else if(auxUR.verPropia != null) {
-				cabeceraTopAux = auxUR.verPropia.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
-			}	else {
-				cabeceraTopAux = auxUR.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
-			}
-			this.ver_perfil = new Ver_perfil_publico(auxUR.publicacion.getPerteneceA(), interfaz, cabeceraTopAux);
-		} else if (interfaz instanceof Ver_comentarios_Administrador) {
-			Ver_comentarios_Administrador auxAdmin = (Ver_comentarios_Administrador) interfaz;
-			if(auxAdmin._lista_Publicaciones__Administrador_ != null) {
-				cabeceraTopAux = auxAdmin._lista_Publicaciones__Administrador_._lista_Publicaciones__Administrador_._administrador._cabecera_Administrador.cabeceraTOP;
-			}else {
-				cabeceraTopAux = auxAdmin._ver_publicacion__Administrador_.admin._cabecera_Administrador.cabeceraTOP;
-			}
-			if(auxAdmin.publicacion.getPerteneceA() != null)
-				this.verPerfilAdmin = new Ver_perfil_Administrador(cabeceraTopAux, auxAdmin.publicacion.getPerteneceA());
-			else
-				this.verPerfilAdmin = new Ver_perfil_Administrador(cabeceraTopAux, auxAdmin.publicacion.getEsPublicada());
-
-		} else {
-			Ver_comentarios_Usuario_No_registrado auxUNR = (Ver_comentarios_Usuario_No_registrado) interfaz;
-			this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this,
-					auxUNR.unrInterfaz.cabeceraUNR._cabecera_TOP);
-		}
+		
 		this.getBotonNombreUsuario().addClickListener(event -> {
-			
+			Cabecera_TOP cabeceraTopAux = null;
+			if (interfaz instanceof Ver_comentarios_Usuario_Registrado) {
+				Ver_comentarios_Usuario_Registrado auxUR = (Ver_comentarios_Usuario_Registrado) interfaz;
+				if (auxUR.verAjena != null) {
+					cabeceraTopAux = auxUR.verAjena.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
+				}else if(auxUR.verPropia != null) {
+					cabeceraTopAux = auxUR.verPropia.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
+				}	else {
+					cabeceraTopAux = auxUR.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
+				}
+				this.ver_perfil = new Ver_perfil_publico(auxUR.publicacion.getPerteneceA(), interfaz, cabeceraTopAux);
+			} else if (interfaz instanceof Ver_comentarios_Administrador) {
+				Ver_comentarios_Administrador auxAdmin = (Ver_comentarios_Administrador) interfaz;
+				if(auxAdmin._lista_Publicaciones__Administrador_ != null) {
+					cabeceraTopAux = auxAdmin._lista_Publicaciones__Administrador_._lista_Publicaciones__Administrador_._administrador._cabecera_Administrador.cabeceraTOP;
+				}else {
+					cabeceraTopAux = auxAdmin._ver_publicacion__Administrador_.admin._cabecera_Administrador.cabeceraTOP;
+				}
+				if(auxAdmin.publicacion.getPerteneceA() != null)
+					this.verPerfilAdmin = new Ver_perfil_Administrador(cabeceraTopAux, auxAdmin.publicacion.getPerteneceA());
+				else
+					this.verPerfilAdmin = new Ver_perfil_Administrador(cabeceraTopAux, auxAdmin.publicacion.getEsPublicada());
+
+			} else {
+				Ver_comentarios_Usuario_No_registrado auxUNR = (Ver_comentarios_Usuario_No_registrado) interfaz;
+				this.ver_perfil = new Ver_perfil_publico(this.publicacion.getPerteneceA(), this,
+						auxUNR.unrInterfaz.cabeceraUNR._cabecera_TOP);
+			}
 			if (this.ver_perfil != null) {
 				this.getVaadinHorizontalLayout().removeAll();
 				this.getVaadinHorizontalLayout().add(ver_perfil);

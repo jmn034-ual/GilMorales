@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.ArrayList;
 
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import TikTok.Video;
@@ -26,15 +27,22 @@ public class Lista_usuarios_registrados_item extends VistaListaUsuariosItem{
 		this.user = this.bd.cargarUsuarioRegistrado(user.getID());
 		if(this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado != null)
 			this.userRegistrado = this._lista_usuarios_registrados._ver_lista_usuarios_registrados._cabecera_TOP._cabecera_Usuario_Registrado.urInterfaz.ur;
-		Video video = new Video("videos/tiktok1.mp4"); 
-		video.getStyle().set("width", "60%");
-		video.getStyle().set("height", "60%");
-        video.getStyle().set("border-radius", "8px");
-		video.getElement().setProperty("controls", false);
-		video.getElement().setProperty("autoplay", false);
+		Publicacion p = null;
+		Video video = null;
+		ArrayList<Publicacion> publicaciones = new ArrayList<Publicacion>(this.user.publica.getCollection());
+		if(publicaciones != null && publicaciones.size() > 0) {
+			p = publicaciones.get(0);
+			video = new Video(p.getVideo()); 
+			this.getLayoutPublicacion().as(VerticalLayout.class).add(video);
+		}else {
+			Label label = new Label("Este usuario aún no tiene publicacioenes");
+			label.getStyle().set("color", "white");
+			this.getLayoutPublicacion().as(VerticalLayout.class).add(label);
+		}
 		this.getBotonNombreUsuario().setText(this.user.getNombreUsuario());
+		this.getLabelNombreCompleto().setText(this.user.getNombre() + " " + this.user.getApellidos());
+		this.getLabelDescripcion().setText(this.user.getDescripcion());
 		this.getFotoPerfil().setImage(this.user.getFoto());
-		this.getLayoutPublicacion().as(VerticalLayout.class).add(video);
 		Ver_perfil();
 		Ver_publicacion_ajena();
 	}

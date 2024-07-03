@@ -21,8 +21,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 	public Publicaciones_hashtag_item(Publicacion p, Publicaciones_hashtag interfaz) {
 		this._publicaciones_hashtag = interfaz;
 		this.publicacion = p;
-
-
 		Video video = new Video(this.publicacion.getVideo());
 //		video.getStyle().set("width", "70%");
 //		video.getStyle().set("height", "70%");

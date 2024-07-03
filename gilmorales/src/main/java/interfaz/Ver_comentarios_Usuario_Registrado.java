@@ -28,21 +28,24 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 			this.publicacionItem = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
 		}else if(interfaz instanceof Ver_publicacion_propia){
 			this.verPropia = (Ver_publicacion_propia) interfaz;
-			this.getLayoutComentar().setVisible(false);
-			this.getBotonSeguir().setVisible(false);
 		}else if(interfaz instanceof Ver_publicacion_ajena){
 			this.verAjena = (Ver_publicacion_ajena) interfaz;
 		}
-		if(this.publicacion.getPerteneceA() != this.user) {
-			this.getBotonEliminarAdmi().setVisible(false);
-			this.getBotonSeguir().setVisible(true);
-
+		
+		if (this.publicacion.getPerteneceA() != null) {
+			this.Ver_perfil(this);
+			if(this.publicacion.getPerteneceA().getID() != this.user.getID()) {
+				this.getBotonEliminarAdmi().setVisible(false);
+				this.getBotonSeguir().setVisible(true);
+				Seguir();
+			}
+		} else {
+			this.getBotonNombreUsuario().setDisableOnClick(false);
+			this.getBotonSeguir().setVisible(false);
 		}
 		Lista_comentarios__Usuario_registrado_();
 		Comentar();
 		Dar_me_gusta_publicacion();
-		Seguir();
-		this.Ver_perfil(this);
 	}
 
 	public void Lista_comentarios__Usuario_registrado_() {
