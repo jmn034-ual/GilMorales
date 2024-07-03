@@ -27,6 +27,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	UsuarioRegistrado user;
 	boolean gusta = false;
 	Icon icono = null;
+	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
+	public Dialog dialog;
 
 	public Lista_publicaciones_Usuario_Registrado_item(Publicacion publicacion,	Lista_publicaciones_Usuario_Registrado interfaz) {
 		this.publicacion = bd.cargarPublicacion(publicacion.getIdPublicacion());
@@ -38,21 +40,23 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		this.getVaadinButton().setEnabled(true);
 		this.getLayoutComentar().setVisible(true);
 		if (this.publicacion.getPerteneceA() != null) {
+			if(this.publicacion.getPerteneceA().getID() == this.user.getID()) {
+				this.getBotonSeguir().setVisible(false);
+				this.getBotonDenunciar().setVisible(false);
+				Ver_me_gustas_publicacion();
+			}else {
+				Seguir();
+				Dar_me_gusta_publicacion();
+				Denunciar_publicacion();
+			}
 			Ver_perfil();
-			Seguir();
-//			if(this.publicacion.getPerteneceA().getID() != this.user.getID()) {
-//			}else {
-//				icono = new Icon(VaadinIcon.HEART_O);
-//				icono.setSize("30px");
-//				this.getVaadinButton().setIcon(icono);
-//			}
 		} else {
 			this.getBotonNombreUsuario().setDisableOnClick(false);
+			this.getBotonSeguir().setVisible(false);
+			Dar_me_gusta_publicacion();
 		}
 		Ver_comentarios__Usuario_Registrado_();
-		Dar_me_gusta_publicacion();
 		Ver_publicacion_ajena();
-		Denunciar_publicacion();
 		Comentar();
 	}
 
@@ -73,9 +77,25 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 		});
 	}
 
+	public void Ver_me_gustas_publicacion() {
+		this.getVaadinButton().getStyle().set("color", "black");
+		this.getVaadinButton().setIcon(new Icon(VaadinIcon.HEART));
+		_ver_me_gustas_publicacion = new Ver_me_gustas_publicacion(this.publicacion, this);
+		this.getVaadinButton().addClickListener(event ->{
+			dialog = new Dialog(_ver_me_gustas_publicacion);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("50%");
+			dialog.setWidth("30%");
+			this._ver_me_gustas_publicacion.getBotonCerrar().addClickListener(event2 ->{
+				dialog.close();
+			});
+			dialog.open();
+		});
+	}
+	
 	public void Ver_publicacion_ajena() {
-		this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.user, this);
 		this.getLayoutVideo().as(VerticalLayout.class).addClickListener(event -> {
+			this._ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.user, this);
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			_lista_publicaciones__Usuario_Registrado_.urInterfaz.getVaadinHorizontalLayout().add(_ver_publicacion_ajena);
 		});

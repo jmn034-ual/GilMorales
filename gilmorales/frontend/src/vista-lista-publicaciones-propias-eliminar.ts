@@ -14,7 +14,7 @@ export class VistaListaPublicacionesPropiasEliminar extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutPublicacionesEliminar"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="flex-grow: 0; width: 80%; flex-shrink: 1; border-radius: 10px; border: 2px solid #F5F5F5; align-self: center; margin-top: var(--lumo-space-l); align-items: center;" id="layoutPublicacionesEliminar"></vaadin-vertical-layout>
 `;
   }
 

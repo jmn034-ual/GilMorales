@@ -25,7 +25,7 @@ public class Lista_publicaciones_usuario_item extends VistaPublicacionesUsuarioP
 		this._lista_publicaciones_usuario = interfaz;
 		Video video = new Video(this.publicacion.getVideo());
 		this.getLayoutVideo().as(VerticalLayout.class).add(video);
-		this.getNumVisualizaciones().setText(""+publicacion.getNumVisualizaciones());
+		this.getNumVisualizaciones().setText(publicacion.getNumVisualizaciones() + " Visualizaciones");
 		Ver_publicacion__Administrador();
 	}
 

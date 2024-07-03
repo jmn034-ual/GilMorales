@@ -1,6 +1,8 @@
 package interfaz;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dialog.Dialog;
+import com.vaadin.flow.component.dialog.DialogVariant;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.IronIcon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -18,6 +20,9 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 	UsuarioRegistrado user;
 	boolean gusta = false;
 	Icon icono = null;
+	public Ver_me_gustas_publicacion _ver_me_gustas_publicacion;
+	public Dialog dialog;
+	public Cabecera_TOP top;
 	
 	public Ver_comentarios_Usuario_Registrado(Publicacion publicacion, Object interfaz, UsuarioRegistrado user) {
 		super(publicacion);
@@ -26,26 +31,31 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 		this.user = bd.cargarUsuarioRegistrado(user.getID());
 		if(interfaz instanceof Lista_publicaciones_Usuario_Registrado_item) {			
 			this.publicacionItem = (Lista_publicaciones_Usuario_Registrado_item) interfaz;
+			this.top = this.publicacionItem._lista_publicaciones__Usuario_Registrado_.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
 		}else if(interfaz instanceof Ver_publicacion_propia){
 			this.verPropia = (Ver_publicacion_propia) interfaz;
+			this.top = this.verPropia.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
 		}else if(interfaz instanceof Ver_publicacion_ajena){
 			this.verAjena = (Ver_publicacion_ajena) interfaz;
+			this.top = this.verAjena.urInterfaz._cabecera_Usuario_Registrado._cabecera_TOP;
 		}
-		
 		if (this.publicacion.getPerteneceA() != null) {
-			this.Ver_perfil(this);
-			if(this.publicacion.getPerteneceA().getID() != this.user.getID()) {
-				this.getBotonEliminarAdmi().setVisible(false);
-				this.getBotonSeguir().setVisible(true);
+			if(this.publicacion.getPerteneceA().getID() == this.user.getID()) {
+				this.getBotonSeguir().setVisible(false);
+				Ver_me_gustas_publicacion();
+			}else {
 				Seguir();
+				Dar_me_gusta_publicacion();
 			}
+			this.Ver_perfil(this);
 		} else {
 			this.getBotonNombreUsuario().setDisableOnClick(false);
 			this.getBotonSeguir().setVisible(false);
+			Dar_me_gusta_publicacion();
 		}
+		this.getBotonEliminarAdmi().setVisible(false);
 		Lista_comentarios__Usuario_registrado_();
 		Comentar();
-		Dar_me_gusta_publicacion();
 	}
 
 	public void Lista_comentarios__Usuario_registrado_() {
@@ -88,9 +98,10 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 		this.getBotonSeguir().addClickListener(event -> {
 			this.bd.seguirUsuario(this.user.getID(), this.publicacion.getPerteneceA().getID());
 			this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
-			if(this.getBotonSeguir().getText().equals("Dejar de Seguir"))
+			if(this.getBotonSeguir().getText().equals("Dejar de Seguir")) {
 				this.getBotonSeguir().setText("Seguir");
-			else
+				NumeroSeguidores();
+			}else
 				this.getBotonSeguir().setText("Dejar de Seguir");
 		});
 	}
@@ -104,6 +115,22 @@ public class Ver_comentarios_Usuario_Registrado extends Ver_comentarios {
 			this.getLayoutListaComentarios().as(VerticalLayout.class).removeAll();
 			Lista_comentarios__Usuario_registrado_();
 			this.getTextFieldCmentario().setValue("");
+		});
+	}
+	
+	public void Ver_me_gustas_publicacion() {
+		this.getBotonMeGusta().getStyle().set("color", "black");
+		this.getBotonMeGusta().setIcon(new Icon(VaadinIcon.HEART));
+		_ver_me_gustas_publicacion = new Ver_me_gustas_publicacion(this.publicacion, this);
+		this.getBotonMeGusta().addClickListener(event ->{
+			dialog = new Dialog(_ver_me_gustas_publicacion);
+			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
+			dialog.setHeight("50%");
+			dialog.setWidth("30%");
+			this._ver_me_gustas_publicacion.getBotonCerrar().addClickListener(event2 ->{
+				dialog.close();
+			});
+			dialog.open();
 		});
 	}
 }

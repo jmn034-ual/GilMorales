@@ -141,11 +141,9 @@ public class Ver_perfil_propio extends Ver_tendencias {
 	}
 
 	public void Eliminar_publicaciones() {
-		_eliminar_publicaciones = new Eliminar_publicaciones(this.user);
+		_eliminar_publicaciones = new Eliminar_publicaciones(this);
 		this.getBotonEliminarPublicacion().addClickListener(event ->{
-			this._eliminar_publicaciones.setVisible(true);
-			this.getLayoutTendencias().setVisible(false);
-			this.getVaadinVerticalLayout1().setVisible(false);
+			this.getVaadinHorizontalLayout().removeAll();
 			this.getVaadinHorizontalLayout().add(_eliminar_publicaciones);
 		});
 		this._eliminar_publicaciones.getBotonCancelar().addClickListener(event ->{

@@ -19,7 +19,7 @@ export class VistaPublicacionesHashtagItem extends LitElement {
     return html`
 <vaadin-horizontal-layout class="content" id="layoutItem" style="z-index: 11; align-items: center; border-radius: 10px; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
  <vaadin-vertical-layout id="vaadinVerticalLayout" style="flex-grow: 0; overflow: hidden; flex-shrink: 0; width: 500px;  background-color: black; color: white;    border-radius: 10px;box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
-  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="border-radius: 10px; background-color: #F5F5F5; align-self: center; flex-shrink: 0; width: 90%; margin: var(--lumo-space-m); padding: var(--lumo-space-s);">
+  <vaadin-vertical-layout theme="spacing" id="vaadinVerticalLayout1" style="border-radius: 10px; background-color: #F5F5F5; align-self: center; flex-shrink: 0; width: 90%; margin: var(--lumo-space-m); padding: var(--lumo-space-s); height: 140px;">
    <vaadin-horizontal-layout theme="spacing" id="vaadinHorizontalLayout" style="align-self: flex-start; align-items: center;">
     <vaadin-avatar id="vaadinAvatar"></vaadin-avatar>
     <vaadin-button theme="tertiary" id="botonNombreUsuario" style="color: black; font-weight: bold;">

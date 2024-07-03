@@ -31,7 +31,7 @@ public class Publicaciones_hashtag extends VistaPublicacionesHashtag{
 		this.getLayoutLista().as(VerticalLayout.class).removeAll();
 		this._item.clear();
 
-//		if(publicaciones != null) {
+		if(publicaciones != null) {
 			int tamanio = publicaciones.size();
 			for(int i = 0; i < publicaciones.size(); i++) {
 				if(tamanio >= 3) {					
@@ -50,6 +50,6 @@ public class Publicaciones_hashtag extends VistaPublicacionesHashtag{
 					this.getLayoutLista().as(VerticalLayout.class).add(horizontal);
 				}
 			}
-//		}
+		}
 	}
 }

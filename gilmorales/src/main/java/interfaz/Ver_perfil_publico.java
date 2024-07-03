@@ -51,6 +51,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 		this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
 		this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
 		this.getFotoPerfil1().setImage(this.userAver.getFoto());
+		this.getLabelDescripcion().setText(this.userAver.getDescripcion());
 		publicaciones_usuario_publico();
 		Ver_publicacciones_gustadas__Otro_usuario_();
 		Denunciar_usuario(this);

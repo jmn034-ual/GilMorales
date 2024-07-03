@@ -17,6 +17,7 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 	public Lista_publicaciones_Comercial_item _lista_publicaciones__Comercial_;
 	public Ver_me_gustas_publicacion_Comercial _ver_me_gustas_publicacion__Comercial_;
 	public Ver_comentarios_Comercial _ver_comentarios__Comercial_;
+	public Lista_publicaciones_propias_Eliminar_item itemEliminar;
 	public Lista_Top_comentarios_Publicacion_comercial _lista_Top_comentarios__Publicacion_comercial_;
 	Usuario_comercial uc;
 	
@@ -31,6 +32,9 @@ public class Ver_publicacion_propia_Comercial extends Ver_publicacion_propia{
 		if(interfaz instanceof Lista_publicaciones_Comercial_item) {
 			this._lista_publicaciones__Comercial_ = (Lista_publicaciones_Comercial_item) interfaz;
 			this.uc = this._lista_publicaciones__Comercial_._lista_publicaciones__Comercial_._usuario_comercial;
+		}else if(interfaz instanceof Lista_publicaciones_propias_Eliminar_item){
+			this.itemEliminar = (Lista_publicaciones_propias_Eliminar_item) interfaz;
+			this.uc = this.itemEliminar._lista_publicaciones_propias._eliminar_publicaciones.comercialInterfaz;
 		}else {
 			this._add_publiacacion = (Add_publicacion) interfaz;
 			this.uc = this._add_publiacacion.ucInterfaz;

@@ -58,8 +58,6 @@ public class VistaAddpublicacion extends LitTemplate {
 	private Label labelDescripcion;
 	@Id("textAreaDescripcion")
 	private TextArea textAreaDescripcion;
-	@Id("vaadinHorizontalLayout2")
-	private HorizontalLayout vaadinHorizontalLayout2;
 	@Id("botonDescartar")
 	private Button botonDescartar;
 	@Id("botonPublicar")
@@ -233,17 +231,6 @@ public class VistaAddpublicacion extends LitTemplate {
 	public void setTextAreaDescripcion(TextArea textAreaDescripcion) {
 		this.textAreaDescripcion = textAreaDescripcion;
 	}
-
-
-	public HorizontalLayout getVaadinHorizontalLayout2() {
-		return vaadinHorizontalLayout2;
-	}
-
-
-	public void setVaadinHorizontalLayout2(HorizontalLayout vaadinHorizontalLayout2) {
-		this.vaadinHorizontalLayout2 = vaadinHorizontalLayout2;
-	}
-
 
 	public Button getBotonDescartar() {
 		return botonDescartar;

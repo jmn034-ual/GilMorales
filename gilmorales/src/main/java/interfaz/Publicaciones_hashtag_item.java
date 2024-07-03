@@ -22,8 +22,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 		this._publicaciones_hashtag = interfaz;
 		this.publicacion = p;
 		Video video = new Video(this.publicacion.getVideo());
-//		video.getStyle().set("width", "70%");
-//		video.getStyle().set("height", "70%");
 		if(this.publicacion.getPerteneceA() != null) {
 			this.getBotonNombreUsuario().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 			this.getVaadinAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
@@ -88,10 +86,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 				this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 						.add(new Ver_publicacion_Usuario_No_Registrado(publicacion, this));
 			} else if(this.userRegistrado != null){
-//				if (this.userRegistrado.ur.equals(this.publicacion.getPerteneceA())) {
-//					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
-//							.add(new Ver_publicacion_propia(publicacion, this.userRegistrado));
-//				} else {
 					_ver_publicacion_ajena = new Ver_publicacion_ajena(publicacion, this.userRegistrado.ur, this);
 					this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class)
 							.add(_ver_publicacion_ajena);
@@ -105,7 +99,6 @@ public class Publicaciones_hashtag_item extends VistaPublicacionesHashtagItem {
 
 	public void Ver_perfil() {
 		if(this.publicacion.getPerteneceA() != null) {
-//			this.getBotonNombreUsuario().setEnabled(false);
 		this.getBotonNombreUsuario().addClickListener(event -> {
 			this._publicaciones_hashtag._ver_hashtag.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			if (this.publicacion.getPerteneceA() != null && this.publicacion.getPerteneceA().getPrivacidad() != 0) {

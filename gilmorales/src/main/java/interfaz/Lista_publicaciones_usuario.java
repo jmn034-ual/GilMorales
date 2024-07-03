@@ -47,12 +47,9 @@ public class Lista_publicaciones_usuario extends VistaPublicacionesUsuarioPublic
 				}else if(tamanio == 2){
 					HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_publicaciones_usuario_item(lista.get(i), this),
 							new Lista_publicaciones_usuario_item(lista.get(++i), this));
-					horizontal2.getStyle().set("width", "66.66%");
-
 					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal2);
 				}else {
 					HorizontalLayout horizontal = new HorizontalLayout(new Lista_publicaciones_usuario_item(lista.get(i), this));
-					horizontal.getStyle().set("width", "33%");
 					this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal);
 				}
 			}

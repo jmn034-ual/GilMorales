@@ -68,7 +68,6 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 				this.urInterfaz.getVaadinHorizontalLayout().add(ver_perfil_propio);
 			}
 		});	
-//		}
 	}
 
 	public void Ver_me_gustas_publicacion() {

@@ -43,8 +43,8 @@ public class Usuario_comercial extends VistaUsuarioComercialPrincipal {
 	}
 	
 	public void Eliminar_publicaciones__Comercial_() {
-		_eliminar_publicaciones__Comercial_ = new Eliminar_publicaciones_Comercial(this);
 		this.getEliminarPublicacion().addClickListener(event ->{
+			_eliminar_publicaciones__Comercial_ = new Eliminar_publicaciones_Comercial(this);
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout1().as(VerticalLayout.class).add(_eliminar_publicaciones__Comercial_);
 		});
