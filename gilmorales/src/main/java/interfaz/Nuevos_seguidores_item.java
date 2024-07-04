@@ -32,10 +32,9 @@ public class Nuevos_seguidores_item extends VistaNuevosSeguirdoresItem{
 		this.getAvatar().setImage(nuevoSeguidor.getFoto());
 		this.getNombreusuario().setText(this.nuevoSeguidor.getNombreUsuario());
 		Seguir();
-		Enviar_peticion_amistad();
-//		Ver_perfil();
+//		Enviar_peticion_amistad();
 	}
-	
+		
 	public Nuevos_seguidores_item(UsuarioRegistrado usuario, UsuarioRegistrado nuevoSeguidor, Nuevos_seguidores interfaz) {
 		this.nuevoSeguidor = nuevoSeguidor;
 		this.usuario = usuario;
@@ -43,8 +42,7 @@ public class Nuevos_seguidores_item extends VistaNuevosSeguirdoresItem{
 		this.getAvatar().setImage(nuevoSeguidor.getFoto());
 		this.getNombreusuario().setText(this.nuevoSeguidor.getNombreUsuario());
 		Seguir();
-		Enviar_peticion_amistad();
-//		Ver_perfil();
+//		Enviar_peticion_amistad();
 	}
 
 	public void Seguir() {
@@ -67,18 +65,5 @@ public class Nuevos_seguidores_item extends VistaNuevosSeguirdoresItem{
 		});
 	}
 	
-	public void Ver_perfil(Object interfaz) {
-		this.getNombreusuario().addClickListener(event ->{
-			Me_gustas_item itemMeGustas = null;
 
-			if(interfaz instanceof Me_gustas_item) {
-				itemMeGustas = (Me_gustas_item) interfaz;
-				if(itemMeGustas._me_gustas._notificaciones._notificacionesPublico != null) {
-					this.verPerfil = new Ver_perfil_publico(nuevoSeguidor, this, itemMeGustas._me_gustas._notificaciones._notificacionesPublico._ver_notificaciones_usuario_publico.verNotificaciones._cabecera_Usuario_Registrado._cabecera_TOP);
-					itemMeGustas._me_gustas._notificaciones._notificacionesPublico._ver_notificaciones_usuario_publico.verNotificaciones._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().removeAll();
-					itemMeGustas._me_gustas._notificaciones._notificacionesPublico._ver_notificaciones_usuario_publico.verNotificaciones._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().add(this.verPerfil);
-				}
-			}
-		});
-	}
 }

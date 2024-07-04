@@ -98,7 +98,6 @@ public class Lista_publicaciones_propias_Eliminar extends VistaListaPublicacione
 		for (Lista_publicaciones_propias_Eliminar_item pub : this._item) {
 			if (pub.getCheckboxEliminar().getValue()) {
 				publicacionesSeleccionadas.add(pub.Seleccionar_publicacion());
-				this.getLayoutPublicacionesEliminar().as(VerticalLayout.class).remove(pub);
 			}
 		}
 		this.bd.eliminarSeleccion(publicacionesSeleccionadas);

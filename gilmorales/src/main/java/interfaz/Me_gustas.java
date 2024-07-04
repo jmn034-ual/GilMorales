@@ -1,5 +1,6 @@
 package interfaz;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -15,32 +16,26 @@ import bd_dcl.UsuarioRegistradoDAO;
 public class Me_gustas extends Nuevos_seguidores {
 
 	public Notificaciones_item _notificaciones;
-	public Vector<Me_gustas_item> _item = new Vector<Me_gustas_item>();
+	public Vector<Me_gustas_item> _itemMeGustas = new Vector<Me_gustas_item>();
 
-	public Me_gustas(Notificaciones_item interfaz) {
-		this._notificaciones = interfaz;
-		this.getTituloNotificacion().setVisible(false);
-		this.getVaadinHorizontalLayout().setVisible(false);
-	}
 
 	public Me_gustas(UsuarioRegistrado ur, Notificaciones_item interfaz) {
 		super(ur);
 		this._notificaciones = interfaz;
-		this.getTituloNotificacion().setVisible(false);
+		this.getTituloNotificacion().setText("Me Gustas:");
+		cargarNotificacionesMeGustas();
 	}
 
 	public void addNuevoMeGusta(Notificacion nuevoMeGusta) {
 		Me_gustas_item nuevoItem = informacion(nuevoMeGusta);
-		this.getNuevosSeguidores().as(VerticalLayout.class).add(nuevoItem);
+		this.getListaNotificaciones().as(VerticalLayout.class).add(nuevoItem);
 	}
 
 	private Me_gustas_item informacion(Notificacion notificacionNuevoMeGusta) {
 		Me_gustas_item nuevoItem = null;
 
 		UsuarioRegistrado seguidor = bd.cargarUsuarioRegistrado(notificacionNuevoMeGusta.getIDUsuarioNotifica());
-		nuevoItem = new Me_gustas_item(ur, seguidor, this);
-		this.getFotoPerfil().setImage(seguidor.getFoto());
-		this.getVaadinButton().setText(seguidor.getNombreUsuario());
+		nuevoItem = new Me_gustas_item(this.user, seguidor, this);
 		if (seguidor.getPrivacidad() != 1) {
 			nuevoItem.getPrivado().setVisible(false);
 			nuevoItem.getBotonSeguir().setVisible(true);
@@ -49,16 +44,28 @@ public class Me_gustas extends Nuevos_seguidores {
 			nuevoItem.getBotonSeguir().setVisible(false);
 			nuevoItem.getPrivado().setVisible(false);
 			nuevoItem.getBotonEnviarSolicitud().setVisible(true);
-		} else if (seguidor.getPrivacidad() == 1) {
-			nuevoItem.getBotonSeguir().setVisible(false);
-			nuevoItem.getPrivado().setVisible(false);
-			nuevoItem.getBotonEnviarSolicitud().setVisible(false);
-		} else {
-			nuevoItem.getBotonSeguir().setVisible(false);
-			nuevoItem.getPrivado().setVisible(false);
-			nuevoItem.getBotonEnviarSolicitud().setVisible(false);
-		}
+		} 
 
 		return nuevoItem;
 	}
+	
+	public void cargarNotificacionesMeGustas() {
+		this.notificaciones = new ArrayList<Notificacion>(this.user.recibe.getCollection());
+
+		if (notificaciones.isEmpty()) {
+			System.out.println("No tiene notificaciones de Me Gustas");
+		} else {
+			
+
+			this.getListaNotificaciones().as(VerticalLayout.class).removeAll();
+			this._itemNuevosSeguidores.clear();
+
+			/* Cargamos las listas de notificaciones */
+			for (Notificacion n : this.notificaciones) {
+				if(n.getTipoNotificacion() != 1) continue;
+				addNuevoMeGusta(n);
+			}
+		}
+	}
+
 }

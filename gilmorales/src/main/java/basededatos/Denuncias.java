@@ -24,6 +24,18 @@ public class Denuncias {
 	public BDPrincipal _c_bd_denuncia;
 	public Vector<Denuncia> _denuncia = new Vector<Denuncia>();
 	
+	public Denuncia cargarDenuncia(int idDenuncia) throws PersistentException {
+		Denuncia denuncia = null;
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {			
+			denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
+			t.commit();
+		}catch(Exception e){
+			t.rollback();
+		}
+		return denuncia;
+	}
+	
 	public Denuncia actualizarDenuncia(int idDenuncia, int estado) throws PersistentException {
 		Denuncia denuncia = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();

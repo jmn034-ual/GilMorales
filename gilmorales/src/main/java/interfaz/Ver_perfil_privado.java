@@ -2,6 +2,8 @@ package interfaz;
 
 import java.util.ArrayList;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import basededatos.BDPrincipal;
 import basededatos.iUsuario_Registrado;
 import basededatos.iVer_perfil_privado;
@@ -12,8 +14,8 @@ public class Ver_perfil_privado extends Ver_Perfil__2 {
 
 	public iVer_perfil_privado _iVer_perfil_privado;
 	UsuarioRegistrado userAver;
-	UsuarioRegistrado user;
 	iUsuario_Registrado bd = new BDPrincipal();
+	boolean click = false;
 	
 	public Ver_perfil_privado(UsuarioRegistrado userAver, Cabecera_TOP cabecera_TOP) {
 		super(cabecera_TOP);
@@ -37,10 +39,21 @@ public class Ver_perfil_privado extends Ver_Perfil__2 {
     	NumeroSeguidores();
 		NumeroSeguidos();
 		NumeroMeGusta();
+		Enviar_peticion_amistad();
 	}
 	
 	public void Enviar_peticion_amistad() {
-		throw new UnsupportedOperationException();
+		this.getBotonPeticionAmistad().addClickListener(event ->{
+			click = !click;
+			this.bd.seguirUsuario(this.user.getID(), this.userAver.getID());
+			if(click) {
+				this.getBotonPeticionAmistad().setText("Petición envida");
+				Notification.show("Petición de amistad enviada.");
+			}else
+				this.getBotonPeticionAmistad().setText("Enviar petición de amistad");
+
+		});
+
 	}
 	
 	public void NumeroSeguidores() {

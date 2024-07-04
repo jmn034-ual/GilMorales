@@ -20,47 +20,23 @@ import com.vaadin.flow.component.avatar.Avatar;
 @JsModule("./src/vista-notificaciones-comun.ts")
 public class VistaNotificacionesComun extends LitTemplate {
 
-	@Id("nuevosSeguidores")
-	private Element nuevosSeguidores;
+
+
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("vaadinVerticalLayout1")
+	private Element vaadinVerticalLayout1;
 	@Id("tituloNotificacion")
 	private H3 tituloNotificacion;
+	@Id("listaNotificaciones")
+	private Element listaNotificaciones;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinButton")
-	private Button vaadinButton;
-	@Id("fotoPerfil")
-	private Avatar fotoPerfil;
+
 	
-	
-
-	public Element getNuevosSeguidores() {
-		return nuevosSeguidores;
-	}
-
-
-
-	public void setNuevosSeguidores(Element nuevosSeguidores) {
-		this.nuevosSeguidores = nuevosSeguidores;
-	}
-
-
-
-	public H3 getTituloNotificacion() {
-		return tituloNotificacion;
-	}
-
-
-
-	public void setTituloNotificacion(H3 tituloNotificacion) {
-		this.tituloNotificacion = tituloNotificacion;
-	}
-
-
-
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
-
 
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
@@ -68,29 +44,44 @@ public class VistaNotificacionesComun extends LitTemplate {
 	}
 
 
-
-	public Button getVaadinButton() {
-		return vaadinButton;
+	public Element getVaadinVerticalLayout() {
+		return vaadinVerticalLayout;
 	}
 
 
-
-	public void setVaadinButton(Button vaadinButton) {
-		this.vaadinButton = vaadinButton;
+	public void setVaadinVerticalLayout(Element vaadinVerticalLayout) {
+		this.vaadinVerticalLayout = vaadinVerticalLayout;
 	}
 
 
-
-	public Avatar getFotoPerfil() {
-		return fotoPerfil;
+	public Element getVaadinVerticalLayout1() {
+		return vaadinVerticalLayout1;
 	}
 
 
-
-	public void setFotoPerfil(Avatar fotoPerfil) {
-		this.fotoPerfil = fotoPerfil;
+	public void setVaadinVerticalLayout1(Element vaadinVerticalLayout1) {
+		this.vaadinVerticalLayout1 = vaadinVerticalLayout1;
 	}
 
+
+	public H3 getTituloNotificacion() {
+		return tituloNotificacion;
+	}
+
+
+	public void setTituloNotificacion(H3 tituloNotificacion) {
+		this.tituloNotificacion = tituloNotificacion;
+	}
+
+
+	public Element getListaNotificaciones() {
+		return listaNotificaciones;
+	}
+
+
+	public void setListaNotificaciones(Element listaNotificaciones) {
+		this.listaNotificaciones = listaNotificaciones;
+	}
 
 
 	/**

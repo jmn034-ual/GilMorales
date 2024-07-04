@@ -31,7 +31,7 @@ public class Lista_publicaciones_propias_Eliminar_item extends VistaListaPublica
 	}
 
 	public void Ver_publicacion_propia() {
-		this.getLayoutItem().as(VerticalLayout.class).addClickListener(event -> {
+		this.getLayoutPublicacion().as(VerticalLayout.class).addClickListener(event -> {
 			if(this._lista_publicaciones_propias._eliminar_publicaciones._ver_perfil_propio != null) {
 				this._ver_publicacion_propia = new Ver_publicacion_propia(this.publicacion, this._lista_publicaciones_propias._eliminar_publicaciones._ver_perfil_propio._cabecera_Usuario_Registrado.urInterfaz);
 				this._lista_publicaciones_propias._eliminar_publicaciones._ver_perfil_propio._cabecera_Usuario_Registrado.urInterfaz.getVaadinHorizontalLayout().removeAll();

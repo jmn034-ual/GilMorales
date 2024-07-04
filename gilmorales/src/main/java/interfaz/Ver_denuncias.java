@@ -21,5 +21,13 @@ public class Ver_denuncias extends VistaVerDenuncias {
 	public void Lista_denuncias() {
 		this._lista_denuncias = new Lista_denuncias(this);
 		this.getLayoutListaDenuncias().as(VerticalLayout.class).add(_lista_denuncias);
+		this._lista_denuncias._filtrar_denuncias.select.addValueChangeListener(event ->{
+			if(this._lista_denuncias._filtrar_denuncias.select.getValue() == "Todas") {
+				this.getVaadinHorizontalLayout4().removeAll();
+				this._lista_denuncias = new Lista_denuncias(this);
+				this.getLayoutListaDenuncias().as(VerticalLayout.class).removeAll();
+				this.getLayoutListaDenuncias().as(VerticalLayout.class).add(_lista_denuncias);
+			}
+		});
 	}
 }

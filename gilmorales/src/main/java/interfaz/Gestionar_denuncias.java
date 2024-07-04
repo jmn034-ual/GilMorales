@@ -45,8 +45,8 @@ public class Gestionar_denuncias extends VistaGestionarDenuncias {
 	
 
 	public void Ver_denuncias() {
-		this._ver_denuncias = new Ver_denuncias(this);
 		this.getVerDenuncias().addClickListener(event->{
+			this._ver_denuncias = new Ver_denuncias(this);
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
 			this.getVaadinVerticalLayout().as(VerticalLayout.class).add(_ver_denuncias);});
 	}

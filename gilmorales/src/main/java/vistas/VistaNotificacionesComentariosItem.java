@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * A Designer generated component for the vista-notificaciones-comentarios-item template.
@@ -22,12 +23,16 @@ public class VistaNotificacionesComentariosItem extends LitTemplate {
 
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-	@Id("vaadinVerticalLayout")
-	private Element vaadinVerticalLayout;
 	@Id("labelComentario")
 	private Label labelComentario;
 	@Id("botonMeGusta")
 	private Button botonMeGusta;
+	@Id("nombreUser")
+	private Button nombreUser;
+	@Id("vaadinVerticalLayout")
+	private Element vaadinVerticalLayout;
+	@Id("vaadinAvatar")
+	private Avatar vaadinAvatar;
 	
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
@@ -37,6 +42,24 @@ public class VistaNotificacionesComentariosItem extends LitTemplate {
 
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
+	}
+
+	public Avatar getVaadinAvatar() {
+		return vaadinAvatar;
+	}
+
+
+	public void setVaadinAvatar(Avatar vaadinAvatar) {
+		this.vaadinAvatar = vaadinAvatar;
+	}
+
+	public Button getNombreUser() {
+		return nombreUser;
+	}
+
+
+	public void setNombreUser(Button nombreUser) {
+		this.nombreUser = nombreUser;
 	}
 
 
