@@ -6,6 +6,7 @@ import java.util.Vector;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BDPrincipal;
@@ -30,7 +31,10 @@ public class Notificaciones_comentarios extends Notificaciones_comun {
 
 	public void addNuevoComentario(Notificacion nuevoComentario) {
 		Notificaciones_comentarios_item nuevoItem = informacion(nuevoComentario);
-		this.getListaNotificaciones().as(VerticalLayout.class).add(nuevoItem);
+		if (nuevoItem != null) {
+			this.getListaNotificaciones().as(VerticalLayout.class).add(nuevoItem);
+			this._itemComentarios.add(nuevoItem);
+		}
 	}
 
 	private Notificaciones_comentarios_item informacion(Notificacion nuevoComentario) {
@@ -56,15 +60,19 @@ public class Notificaciones_comentarios extends Notificaciones_comun {
 		if (notificaciones.isEmpty()) {
 			System.out.println("No tiene notificaciones de comentarios");
 		} else {
-			
 
 			this.getListaNotificaciones().as(VerticalLayout.class).removeAll();
 			this._itemComentarios.clear();
 
 			/* Cargamos las listas de notificaciones */
 			for (Notificacion n : this.notificaciones) {
-				if(n.getTipoNotificacion() != 2) continue;
+				if (n.getTipoNotificacion() != 2)
+					continue;
 				addNuevoComentario(n);
+			}
+			if (this._itemComentarios.isEmpty()) {
+				Label label = new Label("No tienes notificaciones de comentarios");
+				this.getListaNotificaciones().as(VerticalLayout.class).add(label);
 			}
 		}
 	}

@@ -8,6 +8,7 @@ import org.orm.PersistentException;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -36,8 +37,10 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 		this.getTituloNotificacion().setText("Nuevos seguidores:");
 	}
 	public void addNuevoSeguidor(Notificacion nuevoSeguidor) {
-		this.seguidores.add(informacion(nuevoSeguidor));
-		this._itemNuevosSeguidores.add(nuevoItem);
+		if(nuevoItem != null) {
+			this.seguidores.add(informacion(nuevoSeguidor));
+			this._itemNuevosSeguidores.add(nuevoItem);
+		}
 	}
 	private Nuevos_seguidores_item informacion(Notificacion notificacionNuevoSeguidor) {
 		UsuarioRegistrado usuarioNotifica = bd.cargarUsuarioRegistrado(notificacionNuevoSeguidor.getIDUsuarioNotifica());
@@ -55,8 +58,10 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 	}
 
 	public void addNuevaMencion(Notificacion mencion) {
-		this.menciones.add(informacion(mencion));
-		this._itemMenciones.add(nuevoItem);
+		if(nuevoItem != null) {
+			this.menciones.add(informacion(mencion));
+			this._itemMenciones.add(nuevoItem);
+		}		
 	}
 	
 	public void cargarNotificaciones() {
@@ -65,8 +70,6 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 		if (notificaciones.isEmpty()) {
 			System.out.println("No tiene notificaciones de nuevos seguidores");
 		} else {
-			
-
 			this.seguidores.removeAll();
 			this.menciones.removeAll();
 			this._itemNuevosSeguidores.clear();
@@ -82,10 +85,20 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 				}
 			}
 			this.getListaNotificaciones().as(VerticalLayout.class).add(this.seguidores);
+			if(this._itemNuevosSeguidores.isEmpty()) {
+				Label label = new Label("No tienes notificaciones de nuevos seguidores");
+				this.getListaNotificaciones().as(VerticalLayout.class).add(label);
+			}
 			VerticalLayout aux = new VerticalLayout(tituloMenciones, this.menciones);
 			aux.setPadding(false);
 			aux.setMargin(false);
+			if(this._itemMenciones.isEmpty()) {
+				Label label = new Label("No tienes notificaciones de nuevas menciones");
+				aux.add(label);
+			}
 			this.getVaadinHorizontalLayout().add(aux);
+
+			
 		}
 	}
 
