@@ -22,12 +22,12 @@ public class Notificaciones_comentarios_item extends VistaNotificacionesComentar
 	
 	
 	public Notificaciones_comentarios_item(UsuarioRegistrado daMeGusta, UsuarioRegistrado recibe, Comentario c , Notificaciones_comentarios interfaz) {
-		this.getBotonMeGusta().setVisible(true);
-		this.getVaadinVerticalLayout().setVisible(true);
 		this.daMeGusta = daMeGusta;
 		this.recibe = recibe;
 		this.comentario = c;
 		this._notificaciones_comentarios = interfaz;
+		this.getVaadinAvatar().setImage(this.recibe.getFoto());
+		this.getNombreUser().setText(this.recibe.getNombreUsuario());
 		this.getLabelComentario().setText(this.comentario.getComentario());
 		System.out.println("Aparece en la publicacion: " + this.comentario.getComentadoEn());
 		

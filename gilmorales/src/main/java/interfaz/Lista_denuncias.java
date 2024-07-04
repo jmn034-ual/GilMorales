@@ -32,39 +32,40 @@ public class Lista_denuncias extends VistaListasDenunciasAdministrador {
 		this.getStyle().set("height", "100%");
 		this._ver_denuncias = interfaz;
 		Filtrar();
-		cargarDenuncias();
+//		cargarDenuncias();
 	}
 	
 	public void Filtrar() {
 		this._filtrar_denuncias = new Filtrar_denuncias(this);
 		this._ver_denuncias.getVaadinHorizontalLayout4().add(this._filtrar_denuncias);
+		this._filtrar_denuncias.cargarDenuncias();
 	}
 	
-	public void cargarDenuncias() {
-		List<Denuncia> denuncias = bdAdmin.cargarDenuncias(this._filtrar_denuncias.select.getValue());
-	
-		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
-		_item.clear();
-		
-		int tamanio = denuncias.size();
-
-		for(int i = 0; i < denuncias.size(); i++) {
-			if(tamanio >= 3) {					
-				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this),
-						new Lista_denuncias_item(denuncias.get(++i), this), new Lista_denuncias_item(denuncias.get(i+=1), this)));
-				tamanio -= 3;
-			}else if(tamanio == 2){
-				HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this),
-						new Lista_denuncias_item(denuncias.get(++i), this));
-				horizontal2.getStyle().set("width", "66.66%");
-
-				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal2);
-			}else {
-				HorizontalLayout horizontal = new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this));
-				horizontal.getStyle().set("width", "33%");
-				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal);
-			}
-		}
-
-	}
+//	public void cargarDenuncias() {
+//		List<Denuncia> denuncias = bdAdmin.cargarDenuncias(this._filtrar_denuncias.select.getValue());
+//	
+//		this.getVaadinVerticalLayout().as(VerticalLayout.class).removeAll();
+//		_item.clear();
+//		
+//		int tamanio = denuncias.size();
+//
+//		for(int i = 0; i < denuncias.size(); i++) {
+//			if(tamanio >= 3) {					
+//				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this),
+//						new Lista_denuncias_item(denuncias.get(++i), this), new Lista_denuncias_item(denuncias.get(i+=1), this)));
+//				tamanio -= 3;
+//			}else if(tamanio == 2){
+//				HorizontalLayout horizontal2 = new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this),
+//						new Lista_denuncias_item(denuncias.get(++i), this));
+//				horizontal2.getStyle().set("width", "66.66%");
+//
+//				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal2);
+//			}else {
+//				HorizontalLayout horizontal = new HorizontalLayout(new Lista_denuncias_item(denuncias.get(i), this));
+//				horizontal.getStyle().set("width", "33%");
+//				this.getVaadinVerticalLayout().as(VerticalLayout.class).add(horizontal);
+//			}
+//		}
+//
+//	}
 }

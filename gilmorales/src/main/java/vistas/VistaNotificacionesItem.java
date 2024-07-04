@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.html.H3;
 
 /**
  * A Designer generated component for the vista-notificaciones-item template.
@@ -18,30 +19,37 @@ import com.vaadin.flow.dom.Element;
 public class VistaNotificacionesItem extends LitTemplate {
 
 
+
+
 	@Id("notificaciones")
 	private Element notificaciones;
 	@Id("vaadinHorizontalLayout")
 	private HorizontalLayout vaadinHorizontalLayout;
-
 	
-	public Element getNotificaciones() {
-		return notificaciones;
-	}
-
-
-	public void setNotificaciones(Element notificaciones) {
-		this.notificaciones = notificaciones;
-	}
-
+	
 
 	public HorizontalLayout getVaadinHorizontalLayout() {
 		return vaadinHorizontalLayout;
 	}
 
 
+
 	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
 		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
 	}
+
+
+
+	public Element getNotificaciones() {
+		return notificaciones;
+	}
+
+
+
+	public void setNotificaciones(Element notificaciones) {
+		this.notificaciones = notificaciones;
+	}
+
 
 
 	/**

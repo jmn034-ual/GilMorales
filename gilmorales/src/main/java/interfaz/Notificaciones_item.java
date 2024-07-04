@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import bd_dcl.UsuarioRegistrado;
 import vistas.VistaNotificacionesItem;
 
@@ -27,10 +29,14 @@ public class Notificaciones_item extends VistaNotificacionesItem{
 	}
 
 	public void Me_gustas() {
-		_me_gustas = new Me_gustas(this);
+		_me_gustas = new Me_gustas(this.user, this);
+//		this.getNotificaciones().as(VerticalLayout.class).add(this._me_gustas);
+		this.getVaadinHorizontalLayout().add(this._me_gustas);
 	}
 
 	public void Notificaciones_comentarios() {
-		_notificaciones_comentarios = new Notificaciones_comentarios();
+		_notificaciones_comentarios = new Notificaciones_comentarios(this.user, this);
+//		this.getNotificaciones().as(VerticalLayout.class).add(this._notificaciones_comentarios);
+		this.getVaadinHorizontalLayout().add(this._notificaciones_comentarios);
 	}
 }

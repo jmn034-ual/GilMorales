@@ -53,4 +53,5 @@ public interface iUsuario_Registrado {
 	public List cargarListaHashtagTOP();
 
 	public Hashtag cargarHashtag(int parseInt);
+
 }

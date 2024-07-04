@@ -23,12 +23,15 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 			this.user = (UsuarioRegistrado) o;
 			Ver_perfil();
 			this.getBotonNombreUsuario().setText(user.getNombre());
+			this.getVaadinAvatar().setImage(this.user.getFoto());
 		}else if(o instanceof UsuarioComercial){
 			this.getVaadinHorizontalLayout1().setVisible(false);	
 			this.comercial = (UsuarioComercial) o;
 			if(this._lista_resultado._realizar_busqueda._cabecera_Administrador != null)
 				Ver_perfil();
 			this.getBotonNombreUsuario().setText(comercial.getNombreUsuarioComercial());
+			this.getVaadinAvatar().setImage(this.comercial.getFoto());
+
 		}else {
 			this.getVaadinHorizontalLayout().setVisible(false);	
 			this.hashtag = (Hashtag) o;

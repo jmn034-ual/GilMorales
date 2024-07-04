@@ -34,7 +34,7 @@ public class BDPrincipal
 	public Hashtags hashtags = new Hashtags();
 	public UsuariosAdministradores _c_usuarioAdministrador = new UsuariosAdministradores();
 	public Denuncias denuncias = new Denuncias();
-	
+		
 	public List<Publicacion> cargarAllPubliaciones(){
 		List<Publicacion> publicaciones = null;
 		try {
@@ -294,6 +294,17 @@ public class BDPrincipal
 		}
 		return resultado;
 	}
+	public Denuncia cargarDenuncia(int idDenuncia) {
+		Denuncia denuncia = null;
+		try {
+			denuncia = this.denuncias.cargarDenuncia(idDenuncia);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return denuncia;
+	}
+	
 	public Denuncia actualizarDenuncia(int idDenuncia, int estado) {
 		Denuncia denuncia = null;
 		try {

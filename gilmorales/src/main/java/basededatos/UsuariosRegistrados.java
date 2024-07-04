@@ -99,8 +99,10 @@ public class UsuariosRegistrados {
 			UsuarioRegistrado userSigue = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioSeguidorID);
 			UsuarioRegistrado userAseguir = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioAseguirID);
 			if(!userAseguir.seguidor.contains(userSigue) && (userSigue.getID() != userAseguir.getID())) {
-				userAseguir.seguidor.add(userSigue);
-				userSigue.seguir.add(userAseguir);
+				if(userAseguir.getPrivacidad() == 0) {
+					userAseguir.seguidor.add(userSigue);
+					userSigue.seguir.add(userAseguir);
+				}
 				Notificacion notificacion = NotificacionDAO.createNotificacion();
 				notificacion.setTipoNotificacion(0);
 				notificacion.setEnviadaA(userAseguir);

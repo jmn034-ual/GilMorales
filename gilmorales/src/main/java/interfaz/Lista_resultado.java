@@ -42,7 +42,7 @@ public class Lista_resultado extends VistaListaResultado{
 	            	Hashtag h = bd.cargarHashtag(Integer.parseInt(resultado.get(i).toString()));
 					item = new Resultado_hashtags_item(h, this);
 					this._realizar_busqueda.getLayoutListaResultadoHashtags().as(VerticalLayout.class).add(item);
-	            }else {
+	            }else if(resultado.get(i) instanceof UsuarioComercial && this._realizar_busqueda._cabecera_Administrador != null){
 					UsuarioComercial comercial = bd.cargarUsuarioComercial(Integer.parseInt(resultado.get(i).toString()));
 	            	item = new Resultado_usuarios_item(comercial, this);
 					this._realizar_busqueda.getLayoutListaResultadoUsuarios().as(VerticalLayout.class).add(item);
