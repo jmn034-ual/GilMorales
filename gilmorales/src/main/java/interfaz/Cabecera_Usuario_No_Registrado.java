@@ -33,10 +33,12 @@ public class Cabecera_Usuario_No_Registrado extends VistaCabeceraUsuarioNoRegist
 
 	public void Realizar_busqueda() {
 		this.getBotonBuscar().addClickListener(event -> {
-			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue(), this);
-			unr.getVaadinHorizontalLayout().removeAll();
-			unr.getVaadinHorizontalLayout().add(this._realizar_busqueda);
-			this.getTextoBusqueda().setValue("");
+			if (!this.getTextoBusqueda().getValue().isBlank()) {
+				_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue(), this);
+				unr.getVaadinHorizontalLayout().removeAll();
+				unr.getVaadinHorizontalLayout().add(this._realizar_busqueda);
+				this.getTextoBusqueda().setValue("");
+			}
 		});
 	}
 

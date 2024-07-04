@@ -17,42 +17,39 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	public Ver_perfil_propio _ver_perfil_propio;
 	public Realizar_busqueda _realizar_busqueda;
 	public Cabecera_TOP _cabecera_TOP;
-	
+
 	public Cabecera_Usuario_Registrado(Usuario_Registrado urInterfaz) {
 		super();
-    	this.getTextoBusqueda().getStyle().set("border-radius", "8px");
-    	this.getBotonAniadir().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
-    	Image customIcon = new Image("icons/logo.png", null);
+		this.getTextoBusqueda().getStyle().set("border-radius", "8px");
+		this.getBotonAniadir().addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_ERROR);
+		Image customIcon = new Image("icons/logo.png", null);
 		customIcon.getStyle().set("width", "6%");
 		this.getLogoWeb().setIcon(customIcon);
-		this.urInterfaz = urInterfaz; 
-    	Cabecera_TOP();  
-    	Add_publicacion();
-    	volverInicio();
-    	Ver_perfil_propio();
-    	Ver_notificaciones();
-    	Realizar_busqueda();
-    	Cerrar_sesion(this);
+		this.urInterfaz = urInterfaz;
+		Cabecera_TOP();
+		Add_publicacion();
+		volverInicio();
+		Ver_perfil_propio();
+		Ver_notificaciones();
+		Realizar_busqueda();
+		Cerrar_sesion(this);
 	}
 
 	public void Add_publicacion() {
-		this.getBotonAniadir().addClickListener(event->{
+		this.getBotonAniadir().addClickListener(event -> {
 			this.addPubli = new Add_publicacion(urInterfaz.ur, urInterfaz);
 			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			this.urInterfaz.getVaadinHorizontalLayout().add(addPubli);
 		});
 	}
-	
+
 	public void Ver_notificaciones() {
 		this.getBotonNotificaciones().addClickListener(event -> {
-			if(this.urInterfaz.ur.getPrivacidad() == 0)
+			if (this.urInterfaz.ur.getPrivacidad() == 0)
 				_ver_notificaciones = new Ver_notificaciones_usuario_publico(this, this.urInterfaz.ur);
 			else
 				_ver_notificaciones = new Ver_notificaciones_usuario_privado(this, this.urInterfaz.ur);
 
-			this.getBotonNotificaciones().setVisible(false);
-			this.getBotonPerfil().setVisible(true);
-			this.getBotonAniadir().setVisible(true);
 			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			this.urInterfaz.getVaadinHorizontalLayout().add(_ver_notificaciones);
 		});
@@ -60,33 +57,33 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 
 	public void Ver_perfil_propio() {
 		this.getBotonPerfil().addClickListener(event -> {
-			_ver_perfil_propio =  new Ver_perfil_propio(this._cabecera_TOP);
+			_ver_perfil_propio = new Ver_perfil_propio(this._cabecera_TOP);
 			this.urInterfaz.getVaadinHorizontalLayout().removeAll();
 			this.urInterfaz.getVaadinHorizontalLayout().add(_ver_perfil_propio);
 		});
 	}
-	
 
 	public void Realizar_busqueda() {
-		this.getBotonBuscar().addClickListener(event ->{
-			_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue(), this);
-			urInterfaz.getVaadinHorizontalLayout().removeAll();
-			urInterfaz.getVaadinHorizontalLayout().add(_realizar_busqueda);
-			this.getTextoBusqueda().setValue("");
+		this.getBotonBuscar().addClickListener(event -> {
+			if (!this.getTextoBusqueda().getValue().isBlank()) {
+				_realizar_busqueda = new Realizar_busqueda(this.getTextoBusqueda().getValue(), this);
+				urInterfaz.getVaadinHorizontalLayout().removeAll();
+				urInterfaz.getVaadinHorizontalLayout().add(_realizar_busqueda);
+				this.getTextoBusqueda().setValue("");
+			}
 		});
 	}
+
 	public void Cabecera_TOP() {
 		this._cabecera_TOP = new Cabecera_TOP(this);
 		urInterfaz.getVaadinHorizontalLayout().add(this._cabecera_TOP);
 	}
-	
-	
+
 	public void volverInicio() {
 		this.getInicio().addClickListener(event -> {
 			this.urInterfaz.mainview.removeAll();
 			this.urInterfaz.mainview.add(new Usuario_Registrado(this.urInterfaz.mainview, this.urInterfaz.ur.getID()));
 		});
 	}
-	
 
 }

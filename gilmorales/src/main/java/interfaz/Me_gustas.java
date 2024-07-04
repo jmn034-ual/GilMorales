@@ -38,7 +38,7 @@ public class Me_gustas extends Nuevos_seguidores {
 		Me_gustas_item nuevoItem = null;
 
 		UsuarioRegistrado seguidor = bd.cargarUsuarioRegistrado(notificacionNuevoMeGusta.getIDUsuarioNotifica());
-		nuevoItem = new Me_gustas_item(this.user, seguidor, this);
+		nuevoItem = new Me_gustas_item( notificacionNuevoMeGusta, this.user, seguidor, this);
 		if (seguidor.getPrivacidad() != 1) {
 			nuevoItem.getPrivado().setVisible(false);
 			nuevoItem.getBotonSeguir().setVisible(true);

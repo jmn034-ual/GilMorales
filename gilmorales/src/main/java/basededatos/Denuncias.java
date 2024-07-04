@@ -2,6 +2,7 @@ package basededatos;
 
 import basededatos.BDPrincipal;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -150,5 +151,61 @@ public class Denuncias {
 		GilMoralesPersistentManager.instance().disposePersistentManager();	
 	}
 
+//	public Object origenDenuncia(int idDenuncia) throws PersistentException {
+//	    PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+//	    try {
+//	        Denuncia denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
+//	        if (denuncia == null) {
+//	            t.rollback();
+//	            return null; // Si la denuncia no existe, retorna null
+//	        }
+//
+//	        Object origen = null;
+//
+//	        if (denuncia.getTipoDenuncia() == 0) {
+//	            // Buscar el usuario que tiene esta denuncia
+//	        	ArrayList<UsuarioRegistrado> usuariosDenunciados = new ArrayList<UsuarioRegistrado>(denuncia.getRealizadaPor().denucia.getCollection());
+//	            for (UsuarioRegistrado user : usuariosDenunciados) {
+//	                    if (user.esDenunciado.contains(denuncia.getRealizadaPor())) {
+//	                    	if()
+//	                        origen = user;
+//	                        break;
+//	                    }
+//	                }
+//	                if (origen != null) break;
+//	            }
+//	        } else if (denuncia.getTipoDenuncia() == 1) {
+//	            // Buscar el comentario que tiene esta denuncia
+//	            for (Comentario comentario : ComentarioDAO.listComentarioByQuery(null, null)) {
+//	                for (Denuncia comentarioDenuncia : comentario.denunciadoPor) {
+//	                    if (comentarioDenuncia.getID() == idDenuncia) {
+//	                        origen = comentario;
+//	                        break;
+//	                    }
+//	                }
+//	                if (origen != null) break;
+//	            }
+//	        } else if (denuncia.getTipoDenuncia() == 2) {
+//	            // Buscar la publicación que tiene esta denuncia
+//	            for (Publicacion publicacion : PublicacionDAO.listPublicacionByQuery(null, null)) {
+//	                for (Denuncia publicacionDenuncia : publicacion.publicacionDenunciadaPor) {
+//	                    if (publicacionDenuncia.getID() == idDenuncia) {
+//	                        origen = publicacion;
+//	                        break;
+//	                    }
+//	                }
+//	                if (origen != null) break;
+//	            }
+//	        }
+//
+//	        t.commit();
+//	        return origen;
+//	    } catch (Exception e) {
+//	        t.rollback();
+//	        throw new PersistentException(e);
+//	    } finally {
+//	        GilMoralesPersistentManager.instance().disposePersistentManager();
+//	    }
+//	}
 
 }

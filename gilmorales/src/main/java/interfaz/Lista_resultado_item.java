@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BDPrincipal;
 import bd_dcl.Hashtag;
 import bd_dcl.UsuarioComercial;
 import bd_dcl.UsuarioRegistrado;
@@ -14,6 +15,8 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 	UsuarioRegistrado user;
 	UsuarioComercial comercial;
 	Hashtag hashtag;
+	BDPrincipal bd = new BDPrincipal();
+
 
 	
 	public Lista_resultado_item(Object o, Lista_resultado resultado) {
@@ -42,9 +45,10 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 	}
 	
 	public void Ver_perfil() {
-		if(comercial != null) {
+		this.getBotonNombreUsuario().addClickListener(event -> {
+			if(comercial != null) {
 				this._ver_perfil = new Ver_perfil_Administrador(this._lista_resultado._realizar_busqueda._cabecera_Administrador.cabeceraTOP, comercial);	
-		}else if(user != null && user.getPrivacidad() == 0) {
+		}else if(user != null) {
 			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null)
 				this._ver_perfil = new Ver_perfil_publico(user, this, this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado._cabecera_TOP);
 			else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null)
@@ -53,15 +57,15 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 				if(user != null)
 					this._ver_perfil = new Ver_perfil_Administrador(this._lista_resultado._realizar_busqueda._cabecera_Administrador.cabeceraTOP, user);
 			}
-		}else {
-			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null)
-				this._ver_perfil = new Ver_perfil_privado(user, this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado._cabecera_TOP);
-			else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null)
-				this._ver_perfil = new Ver_perfil_privado(user, this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado._cabecera_TOP);
-			else
-				this._ver_perfil = new Ver_perfil_Administrador(this._lista_resultado._realizar_busqueda._cabecera_Administrador.cabeceraTOP, user);
 		}
-		this.getBotonNombreUsuario().addClickListener(event -> {
+//			else {
+//			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado != null)
+//				this._ver_perfil = new Ver_perfil_privado(user, this._lista_resultado._realizar_busqueda._cabecera_Usuario_No_Registrado._cabecera_TOP);
+//			else if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null)
+//				this._ver_perfil = new Ver_perfil_privado(user, this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado._cabecera_TOP);
+//			else
+//				this._ver_perfil = new Ver_perfil_Administrador(this._lista_resultado._realizar_busqueda._cabecera_Administrador.cabeceraTOP, user);
+//		}
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).removeAll();
 			this._lista_resultado._realizar_busqueda.getLayoutListaResultadoBusqueda().as(VerticalLayout.class).add(_ver_perfil);
 		});

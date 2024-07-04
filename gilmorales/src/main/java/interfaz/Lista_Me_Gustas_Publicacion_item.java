@@ -28,15 +28,26 @@ public class Lista_Me_Gustas_Publicacion_item extends VistaListaMeGustasPublicac
 	public void Seguir() {
 		if (this._lista_Me_Gustas_Publicacion.p.getPerteneceA().seguir.contains(this.user)) {
 			this.getBotonSeguir().setText("Dejar de Seguir");
+			this.getBotonSeguir().addClickListener(event -> {
+				this.bd.seguirUsuario(this._lista_Me_Gustas_Publicacion.p.getPerteneceA().getID(), this.user.getID());
+				this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
+				if (this.getBotonSeguir().getText().equals("Dejar de Seguir"))
+					this.getBotonSeguir().setText("Seguir");
+				else
+					this.getBotonSeguir().setText("Dejar de Seguir");
+			});
+		}else if(!this._lista_Me_Gustas_Publicacion.p.getPerteneceA().seguir.contains(this.user) && this.user.getPrivacidad() == 1) {
+			this.getBotonSeguir().setText("Enviar petición de amistad");
+			this.getBotonSeguir().addClickListener(event -> {
+				this.bd.enviarSolicitud(this._lista_Me_Gustas_Publicacion.p.getPerteneceA().getID(), this.user.getID());
+				this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
+				if (this.getBotonSeguir().getText().equals("Dejar de Seguir"))
+					this.getBotonSeguir().setText("Seguir");
+				else
+					this.getBotonSeguir().setText("Dejar de Seguir");
+			});
 		}
-		this.getBotonSeguir().addClickListener(event -> {
-			this.bd.seguirUsuario(this._lista_Me_Gustas_Publicacion.p.getPerteneceA().getID(), this.user.getID());
-			this.user = this.bd.cargarUsuarioRegistrado(this.user.getID());
-			if (this.getBotonSeguir().getText().equals("Dejar de Seguir"))
-				this.getBotonSeguir().setText("Seguir");
-			else
-				this.getBotonSeguir().setText("Dejar de Seguir");
-		});
+		
 	}
 
 	public void Ver_perfil() {

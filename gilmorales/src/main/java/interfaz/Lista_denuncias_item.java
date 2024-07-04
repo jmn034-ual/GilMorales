@@ -28,6 +28,7 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 	BDPrincipal bd = new BDPrincipal();
 	int estadoInt = 0;
 	boolean estadoBolean = false;
+	Administrador admin;
 
 	public Lista_denuncias_item(Denuncia denuncia, Filtrar_denuncias interfaz) {
 		this.getStyle().set("width", "100%");
@@ -174,8 +175,27 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 					}
 				}
 			});
+			verDenuncia.getBotonVer().addClickListener(ver -> {
+				this.admin = this._filtrar_denuncias._lista_denuncias._ver_denuncias._gestionar_denuncias._cabecera_Administrador._administrador;
+				if (this.denuncia.getTipoDenuncia() == 0)
+					verDenuncia.getTipo().setText("Usuario");
+				else if (this.denuncia.getTipoDenuncia() == 1)
+					verDenuncia.getTipo().setText("Comentario");
+				else
+					verDenuncia.getTipo().setText("Publicación");
+			});
 		});
 		// Falta realizar la forma para ver la publicacion, comentario o usuario de la
 		// denuncia
+	}
+	
+	public Object origenDenuncia() {
+		Object origen = null;
+		if (this.denuncia.getTipoDenuncia() == 0) {
+		}else if (this.denuncia.getTipoDenuncia() == 1) {
+		}else {
+		}
+		
+		return origen;
 	}
 }

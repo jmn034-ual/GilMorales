@@ -32,7 +32,7 @@ public class Ver_perfil_publico extends Ver_Perfil__2 {
 			if(this.userAver.getID() == user.getID()) {
 				this.getVaadinHorizontalLayout().removeAll();
 				this.getVaadinHorizontalLayout().add(new Ver_perfil_propio(cabecera_top));
-			}else if(this.userAver.getPrivacidad() == 1) {
+			}else if(this.userAver.getPrivacidad() == 1  && !user.seguir.contains(this.userAver)) {
 				this.getVaadinHorizontalLayout().removeAll();
 				this.getVaadinHorizontalLayout().add(new Ver_perfil_privado(this.userAver, cabecera_TOP));
 			}

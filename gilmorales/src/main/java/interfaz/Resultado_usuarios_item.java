@@ -9,19 +9,18 @@ public class Resultado_usuarios_item extends Lista_resultado_item {
 
 	public Resultado_usuarios _resultado_usuarios;
 	public Ver_Perfil__2 _ver_perfil;
-	iUsuario_Registrado bd = new BDPrincipal();
 	int userSeguidor;
 	boolean sigue = false;
 	
 	public Resultado_usuarios_item(Object o, Lista_resultado resultado) {
 		super(o, resultado);
-			Seguir();
+		Seguir();
 
 	}
 	
 	public void Seguir() {
 		if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null) {
-//			if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur.seguir.contains(this.user))
+			this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur = this.bd.cargarUsuarioRegistrado(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur.getID());
 			this.sigue = this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur.seguir.contains(this.user);
 			if(sigue) {
 				this.getBotonSeguir().setText("Dejar de Seguir");
@@ -32,13 +31,16 @@ public class Resultado_usuarios_item extends Lista_resultado_item {
 			this.userSeguidor = this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur.getID();
 			this.getBotonSeguir().addClickListener(event -> {
 				this.sigue = !this.sigue;
-				this.bd.seguirUsuario(this.userSeguidor, this.user.getID());
-				this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur = this.bd.cargarUsuarioRegistrado(this.userSeguidor);
 				if(sigue) {
-					if(this.user.getPrivacidad() == 0)
+					if(this.user.getPrivacidad() == 0) {
+						this.bd.seguirUsuario(this.userSeguidor, this.user.getID());
+						this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur = this.bd.cargarUsuarioRegistrado(this.userSeguidor);
 						this.getBotonSeguir().setText("Dejar de Seguir");
-					else
+					}else {
 						this.getBotonSeguir().setText("Solicitud enviada");
+						this.bd.enviarSolicitud(this.userSeguidor, this.user.getID());
+						this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur = this.bd.cargarUsuarioRegistrado(this.userSeguidor);				
+					}
 				}else if(!sigue && this.user.getPrivacidad() == 1)
 					this.getBotonSeguir().setText("Enviar petición de amistad");
 				else

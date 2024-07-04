@@ -36,9 +36,9 @@ public class UsuariosRegistrados {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		return usuario;	
+		return usuario;
 	}
-	
+
 	public void configurarPerfil(int usuarioID, int privacidad) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
@@ -59,7 +59,7 @@ public class UsuariosRegistrados {
 		} catch (Exception e) {
 			t.rollback();
 		}
-		return usuarios;	
+		return usuarios;
 	}
 
 	public void cambiarFotoPerfil(String aNombreUsuario, String aFoto, int aUsuarioID) throws PersistentException {
@@ -67,7 +67,7 @@ public class UsuariosRegistrados {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			UsuarioRegistrado user = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
-			if(user.getNombreUsuario().equals(aNombreUsuario)) {
+			if (user.getNombreUsuario().equals(aNombreUsuario)) {
 				user.setFoto(aFoto);
 				UsuarioRegistradoDAO.save(user);
 			}
@@ -78,7 +78,9 @@ public class UsuariosRegistrados {
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 
 	}
-	public void editarPerfilUR(String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto, int aUsuarioID) throws PersistentException {
+
+	public void editarPerfilUR(String aNuevoNombreUsuario, String aNombre, String aDescripcion, String aFoto,
+			int aUsuarioID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
@@ -91,24 +93,23 @@ public class UsuariosRegistrados {
 		} catch (PersistentException e) {
 			t.rollback();
 		}
-		GilMoralesPersistentManager.instance().disposePersistentManager();	}
+		GilMoralesPersistentManager.instance().disposePersistentManager();
+	}
 
 	public void seguirUsuario(int aUsuarioSeguidorID, int aUsuarioAseguirID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			UsuarioRegistrado userSigue = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioSeguidorID);
 			UsuarioRegistrado userAseguir = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioAseguirID);
-			if(!userAseguir.seguidor.contains(userSigue) && (userSigue.getID() != userAseguir.getID())) {
-				if(userAseguir.getPrivacidad() == 0) {
-					userAseguir.seguidor.add(userSigue);
-					userSigue.seguir.add(userAseguir);
-				}
+			if (!userAseguir.seguidor.contains(userSigue) && (userSigue.getID() != userAseguir.getID())) {
+				userAseguir.seguidor.add(userSigue);
+				userSigue.seguir.add(userAseguir);
 				Notificacion notificacion = NotificacionDAO.createNotificacion();
 				notificacion.setTipoNotificacion(0);
 				notificacion.setEnviadaA(userAseguir);
 				notificacion.setIDUsuarioNotifica(userSigue.getID());
 				NotificacionDAO.save(notificacion);
-			}else {
+			} else {
 				userAseguir.seguidor.remove(userSigue);
 				userSigue.seguir.remove(userAseguir);
 			}
@@ -118,21 +119,22 @@ public class UsuariosRegistrados {
 		} catch (PersistentException e) {
 			t.rollback();
 		}
-		GilMoralesPersistentManager.instance().disposePersistentManager();	
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
 	public List<UsuarioRegistrado> buscarUsuario(String aNombreUsuario) throws PersistentException {
-		if(aNombreUsuario == "") return null;
+		if (aNombreUsuario == "")
+			return null;
 		List lista = null;
 		List<UsuarioRegistrado> usuariosCoincidentes = new ArrayList<UsuarioRegistrado>();
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			lista = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-			for(int i = 0; i < lista.size(); i++) {
+			for (int i = 0; i < lista.size(); i++) {
 				UsuarioRegistrado usuario = (UsuarioRegistrado) lista.get(i);
-				if(usuario.getNombreUsuario().equals(aNombreUsuario)) {
-						usuariosCoincidentes.add(usuario);
-				}else if(aNombreUsuario.length() > 1) {
+				if (usuario.getNombreUsuario().equals(aNombreUsuario)) {
+					usuariosCoincidentes.add(usuario);
+				} else if (aNombreUsuario.length() > 1) {
 					if (usuario.getNombreUsuario().startsWith(aNombreUsuario.substring(0, 1))
 							|| usuario.getNombreUsuario().startsWith(aNombreUsuario.substring(0, 2))) {
 						usuariosCoincidentes.add(usuario);
@@ -152,28 +154,29 @@ public class UsuariosRegistrados {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			List<UsuarioRegistrado> usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
-			TreeMap<Integer, UsuarioRegistrado> datos = new TreeMap<Integer, UsuarioRegistrado>(Collections.reverseOrder());
-			for(UsuarioRegistrado user : usuarios) {
+			TreeMap<Integer, UsuarioRegistrado> datos = new TreeMap<Integer, UsuarioRegistrado>(
+					Collections.reverseOrder());
+			for (UsuarioRegistrado user : usuarios) {
 				List<Publicacion> publicaciones = new ArrayList<Publicacion>(user.publica.getCollection());
 				int numMeGustas = 0;
-				for(Publicacion publicacion : publicaciones) {
+				for (Publicacion publicacion : publicaciones) {
 					numMeGustas += publicacion.getNumMeGustas();
 				}
-				if(numMeGustas != 0) {
-					if(!datos.containsKey(numMeGustas)) {						
+				if (numMeGustas != 0) {
+					if (!datos.containsKey(numMeGustas)) {
 						datos.put(numMeGustas, user);
-					}else {
+					} else {
 						usuariosTop.add(user);
 					}
 				}
 			}
 
-			for(Entry<Integer, UsuarioRegistrado> d : datos.entrySet()) {
-				if((usuariosTop.size() < 5)) {
+			for (Entry<Integer, UsuarioRegistrado> d : datos.entrySet()) {
+				if ((usuariosTop.size() < 5)) {
 					usuariosTop.add(d.getValue());
-				}else {
-						break;
-					}
+				} else {
+					break;
+				}
 			}
 			t.commit();
 		} catch (Exception e) {
@@ -185,7 +188,7 @@ public class UsuariosRegistrados {
 	public List ordenarUsuarios(String aFiltro) {
 		List<UsuarioRegistrado> lista = null;
 		try {
-			 lista = cargarListaUsuariosRegistrados();
+			lista = cargarListaUsuariosRegistrados();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -193,14 +196,17 @@ public class UsuariosRegistrados {
 		return lista;
 	}
 
-	public UsuarioRegistrado registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword, String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto) throws PersistentException {
+	public UsuarioRegistrado registrarUsuario(String aNombre, String aApellidos, String aEmail, String aPassword,
+			String aDescripcion, String aNombreUsuario, String aFechaNacimiento, boolean aTipoCuenta, String aFoto)
+			throws PersistentException {
 		UsuarioRegistrado user = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			if(aTipoCuenta) {
+			if (aTipoCuenta) {
 				UsuarioRegistrado ur = UsuarioRegistradoDAO.createUsuarioRegistrado();
-				UsuarioRegistrado nombreRepetido = UsuarioRegistradoDAO.loadUsuarioRegistradoByQuery(("nombreUsuario = '" + aNombreUsuario + "'"), null);
-				if(nombreRepetido != null) {
+				UsuarioRegistrado nombreRepetido = UsuarioRegistradoDAO
+						.loadUsuarioRegistradoByQuery(("nombreUsuario = '" + aNombreUsuario + "'"), null);
+				if (nombreRepetido != null) {
 					return null;
 				}
 				ur.setNombre(aNombre);
@@ -217,7 +223,7 @@ public class UsuariosRegistrados {
 				this._usuarioRegistrado.add(user);
 			}
 			t.commit();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
@@ -230,24 +236,25 @@ public class UsuariosRegistrados {
 		try {
 			usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
 		return usuarios;
 	}
 
-	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario, int aUsuarioID) throws PersistentException {
+	public String recuperarPassword(String aEmailRecuperacion, String aNuevaPassword, String aNombreUsuario,
+			int aUsuarioID) throws PersistentException {
 		String password = "";
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			UsuarioRegistrado usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
 			password = usuario.getPassword();
-			if(!password.equals(aNuevaPassword)) {
+			if (!password.equals(aNuevaPassword)) {
 				usuario.setPassword(aNuevaPassword);
 				password = aNuevaPassword;
 				UsuarioRegistradoDAO.save(usuario);
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
@@ -259,10 +266,10 @@ public class UsuariosRegistrados {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			usuario = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioID);
-			if(usuario.getPrivacidad() != 3) {
+			if (usuario.getPrivacidad() != 3) {
 				usuario.setPrivacidad(3);
 				System.out.println(usuario.getPrivacidad());
-			}else {
+			} else {
 				System.out.println(usuario.getPrivacidad());
 				usuario.setPrivacidad(0);
 			}
@@ -270,7 +277,7 @@ public class UsuariosRegistrados {
 			t.commit();
 
 //			UsuarioRegistradoDAO.deleteAndDissociate(usuario);
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();

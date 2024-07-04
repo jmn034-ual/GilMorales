@@ -17,10 +17,10 @@ public class Notificaciones_comun extends VistaNotificacionesComun{
 	public List<Notificacion> notificaciones;
 
 	public Notificaciones_comun(UsuarioRegistrado user) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this.user = this.bd.cargarUsuarioRegistrado(user.getID());
 	}
 
-	public void Ver_perfil() {
-//		this.getVaadinButton().addClickListener(event -> Notification.show("VAmos bien"));
-	}
+	
 }

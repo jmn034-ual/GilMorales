@@ -25,6 +25,8 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 	public VerticalLayout menciones = new VerticalLayout();
 	Nuevos_seguidores_item nuevoItem ;
 	public H3 tituloMenciones = new H3("Menciones: ");
+	boolean privado;
+	Nuevos_seguidores_usuario_privado itemPrivado;
 	
 	public Nuevos_seguidores(UsuarioRegistrado ur) {
 		super(ur);
@@ -33,7 +35,7 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 	public Nuevos_seguidores(UsuarioRegistrado ur, Notificaciones_usuario_publico_item interfaz) {
 		super(ur);
 		this._notificaciones_usuario_publico = interfaz;
-		cargarNotificaciones();
+		cargarNotificaciones(false, null);
 		this.getTituloNotificacion().setText("Nuevos seguidores:");
 	}
 	public void addNuevoSeguidor(Notificacion nuevoSeguidor) {
@@ -44,16 +46,12 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 		}
 	}
 	private Nuevos_seguidores_item informacion(Notificacion notificacionNuevoSeguidor) {
+		Nuevos_seguidores_item itemAux = null;
 		UsuarioRegistrado usuarioNotifica = bd.cargarUsuarioRegistrado(notificacionNuevoSeguidor.getIDUsuarioNotifica());
-		Nuevos_seguidores_item itemAux = new Nuevos_seguidores_item(this.user, usuarioNotifica, this);
-		if(usuarioNotifica.getPrivacidad() != 1) {
-			itemAux.getPrivado().setVisible(false);
-			itemAux.getBotonSeguir().setVisible(true);
-			itemAux.getBotonEnviarSolicitud().setVisible(false);
-		}else if(usuarioNotifica.getPrivacidad() == 1){
-			itemAux.getBotonSeguir().setVisible(false);
-			itemAux.getPrivado().setVisible(false);
-			itemAux.getBotonEnviarSolicitud().setVisible(true);
+		if(this.privado) {
+			itemAux = new Nuevos_seguidores_usuario_privado_item(notificacionNuevoSeguidor,this.user, usuarioNotifica, this.itemPrivado);
+		}else {
+			itemAux = new Nuevos_seguidores_item(notificacionNuevoSeguidor, this.user, usuarioNotifica, this);
 		}
 		return itemAux;
 	}
@@ -66,9 +64,10 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 		}		
 	}
 	
-	public void cargarNotificaciones() {
+	public void cargarNotificaciones(boolean privado, Nuevos_seguidores_usuario_privado itemPrivado) {
 		this.notificaciones = new ArrayList<Notificacion>(this.user.recibe.getCollection());
-
+		this.privado = privado;
+		this.itemPrivado = itemPrivado;
 		if (notificaciones.isEmpty()) {
 			System.out.println("No tiene notificaciones de nuevos seguidores");
 		} else {
@@ -94,6 +93,8 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 			VerticalLayout aux = new VerticalLayout(tituloMenciones, this.menciones);
 			aux.setPadding(false);
 			aux.setMargin(false);
+			aux.getStyle().set("width", "100%");
+			aux.getStyle().set("height", "100%");
 			if(this._itemMenciones.isEmpty()) {
 				Label label = new Label("No tienes notificaciones de nuevas menciones");
 				aux.add(label);

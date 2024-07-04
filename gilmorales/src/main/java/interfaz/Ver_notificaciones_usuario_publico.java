@@ -7,8 +7,7 @@ import bd_dcl.UsuarioRegistrado;
 import vistas.VistaVerNotificacionesUsuarioPublico;
 
 public class Ver_notificaciones_usuario_publico extends Ver_notificaciones{
-//	public iVer_notificaciones_usuario_publico _iVer_notificaciones_usuario_publico;
-//	public Ver_notificaciones verNotificaciones;
+
 	public Notificaciones_usuario_publico _notificaciones_usuario_publico;
 
 	public Ver_notificaciones_usuario_publico(Cabecera_Usuario_Registrado cabecera, UsuarioRegistrado user) {

@@ -13,30 +13,22 @@ public class Notificaciones_item extends VistaNotificacionesItem{
 	UsuarioRegistrado user;
 
 	public Notificaciones_item(UsuarioRegistrado user, Object interfaz) {
-		if(interfaz instanceof Notificaciones_usuario_publico)
-			this._notificacionesPublico = (Notificaciones_usuario_publico) interfaz;
-		else
-			this._notificacionesPrivado = (Notificaciones_usuario_privado) interfaz;	
-		this.user = user;
-		 Me_gustas();
-		 Notificaciones_comentarios();
-	}
-	
-	public Notificaciones_item(UsuarioRegistrado user) {
 		 this.user = user;
+		 if(interfaz instanceof Notificaciones_usuario_publico)
+				this._notificacionesPublico = (Notificaciones_usuario_publico) interfaz;
+			else
+				this._notificacionesPrivado = (Notificaciones_usuario_privado) interfaz;
 		 Me_gustas();
 		 Notificaciones_comentarios();
 	}
 
 	public void Me_gustas() {
 		_me_gustas = new Me_gustas(this.user, this);
-//		this.getNotificaciones().as(VerticalLayout.class).add(this._me_gustas);
 		this.getVaadinHorizontalLayout().add(this._me_gustas);
 	}
 
 	public void Notificaciones_comentarios() {
 		_notificaciones_comentarios = new Notificaciones_comentarios(this.user, this);
-//		this.getNotificaciones().as(VerticalLayout.class).add(this._notificaciones_comentarios);
 		this.getVaadinHorizontalLayout().add(this._notificaciones_comentarios);
 	}
 }

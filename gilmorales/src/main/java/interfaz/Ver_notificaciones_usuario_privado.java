@@ -15,6 +15,7 @@ public class Ver_notificaciones_usuario_privado  extends Ver_notificaciones{
 		super(cabecera, user);
 		this.getStyle().set("width", "100%");
     	this.getStyle().set("height", "100%");
+    	 Notificaciones_usuario_privado();
 	}
 	public void Notificaciones_usuario_privado() {
 		_notificaciones_usuario_privado = new Notificaciones_usuario_privado(this.user, this);

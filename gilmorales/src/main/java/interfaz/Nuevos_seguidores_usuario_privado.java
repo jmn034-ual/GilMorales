@@ -13,7 +13,7 @@ public class Nuevos_seguidores_usuario_privado extends Nuevos_seguidores {
 	public Nuevos_seguidores_usuario_privado(UsuarioRegistrado ur, Notificaciones_usuario_privado_item interfaz) {
 		super(ur);
 		this._notificaciones_usuario_privado = interfaz;
-		cargarNotificaciones();
 		this.getTituloNotificacion().setText("Nuevos seguidores:");
+		cargarNotificaciones(true, this);
 	}
 }

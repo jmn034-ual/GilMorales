@@ -241,7 +241,16 @@ public class BDPrincipal
 		}
 
 	}
-
+	
+	public void eliminarNotificacion(int idNotificacion) {
+		try {
+			this.notificaciones.eliminarNotificacion(idNotificacion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void borrarComentario(int aIdComentario) {
 		try {
 			this.comentarios.borrarComentario(aIdComentario);
@@ -433,6 +442,15 @@ public class BDPrincipal
 	public void seguirUsuario(int aUsuarioSeguidorID, int aUsuarioAseguirID) {
 		try {
 			this.usuarios_registrados.seguirUsuario(aUsuarioSeguidorID, aUsuarioAseguirID);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void enviarSolicitud(int aUsuarioSeguidorID, int aUsuarioAseguirID) {
+		try {
+			this.notificaciones.enviarSolicitud(aUsuarioSeguidorID, aUsuarioAseguirID);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
