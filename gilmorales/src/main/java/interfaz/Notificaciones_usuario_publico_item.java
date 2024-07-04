@@ -19,8 +19,6 @@ public class Notificaciones_usuario_publico_item extends Notificaciones_item {
 	}
 	public void Nuevos_seguidores() {
 		this._nuevos_seguidores = new Nuevos_seguidores(user, this);
-//		this.getNotificaciones().as(VerticalLayout.class).add(_nuevos_seguidores);
 		this.getVaadinHorizontalLayout().add(this._nuevos_seguidores);
-
 	}
 }

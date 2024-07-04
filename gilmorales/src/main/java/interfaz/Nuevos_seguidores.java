@@ -37,29 +37,31 @@ public class Nuevos_seguidores extends Notificaciones_comun {
 		this.getTituloNotificacion().setText("Nuevos seguidores:");
 	}
 	public void addNuevoSeguidor(Notificacion nuevoSeguidor) {
+		this.nuevoItem = informacion(nuevoSeguidor);
 		if(nuevoItem != null) {
-			this.seguidores.add(informacion(nuevoSeguidor));
+			this.seguidores.add(this.nuevoItem);
 			this._itemNuevosSeguidores.add(nuevoItem);
 		}
 	}
 	private Nuevos_seguidores_item informacion(Notificacion notificacionNuevoSeguidor) {
 		UsuarioRegistrado usuarioNotifica = bd.cargarUsuarioRegistrado(notificacionNuevoSeguidor.getIDUsuarioNotifica());
-		nuevoItem = new Nuevos_seguidores_item(this.user, usuarioNotifica, this);
+		Nuevos_seguidores_item itemAux = new Nuevos_seguidores_item(this.user, usuarioNotifica, this);
 		if(usuarioNotifica.getPrivacidad() != 1) {
-			nuevoItem.getPrivado().setVisible(false);
-			nuevoItem.getBotonSeguir().setVisible(true);
-			nuevoItem.getBotonEnviarSolicitud().setVisible(false);
+			itemAux.getPrivado().setVisible(false);
+			itemAux.getBotonSeguir().setVisible(true);
+			itemAux.getBotonEnviarSolicitud().setVisible(false);
 		}else if(usuarioNotifica.getPrivacidad() == 1){
-			nuevoItem.getBotonSeguir().setVisible(false);
-			nuevoItem.getPrivado().setVisible(false);
-			nuevoItem.getBotonEnviarSolicitud().setVisible(true);
+			itemAux.getBotonSeguir().setVisible(false);
+			itemAux.getPrivado().setVisible(false);
+			itemAux.getBotonEnviarSolicitud().setVisible(true);
 		}
-		return nuevoItem;
+		return itemAux;
 	}
 
 	public void addNuevaMencion(Notificacion mencion) {
+		this.nuevoItem = informacion(mencion);
 		if(nuevoItem != null) {
-			this.menciones.add(informacion(mencion));
+			this.menciones.add(this.nuevoItem);
 			this._itemMenciones.add(nuevoItem);
 		}		
 	}

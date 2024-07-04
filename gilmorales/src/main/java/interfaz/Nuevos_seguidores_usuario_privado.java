@@ -10,8 +10,10 @@ public class Nuevos_seguidores_usuario_privado extends Nuevos_seguidores {
 	public Notificaciones_usuario_privado_item _notificaciones_usuario_privado;
 	public Vector<Nuevos_seguidores_usuario_privado_item> _item = new Vector<Nuevos_seguidores_usuario_privado_item>();
 	
-	public Nuevos_seguidores_usuario_privado(UsuarioRegistrado ur) {
+	public Nuevos_seguidores_usuario_privado(UsuarioRegistrado ur, Notificaciones_usuario_privado_item interfaz) {
 		super(ur);
-		// TODO Auto-generated constructor stub
+		this._notificaciones_usuario_privado = interfaz;
+		cargarNotificaciones();
+		this.getTituloNotificacion().setText("Nuevos seguidores:");
 	}
 }

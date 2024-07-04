@@ -45,7 +45,11 @@ public class Cabecera_Usuario_Registrado extends Comun_Comercial_y_Usuario_Regis
 	
 	public void Ver_notificaciones() {
 		this.getBotonNotificaciones().addClickListener(event -> {
-			_ver_notificaciones = new Ver_notificaciones_usuario_publico(this, this.urInterfaz.ur);
+			if(this.urInterfaz.ur.getPrivacidad() == 0)
+				_ver_notificaciones = new Ver_notificaciones_usuario_publico(this, this.urInterfaz.ur);
+			else
+				_ver_notificaciones = new Ver_notificaciones_usuario_privado(this, this.urInterfaz.ur);
+
 			this.getBotonNotificaciones().setVisible(false);
 			this.getBotonPerfil().setVisible(true);
 			this.getBotonAniadir().setVisible(true);
