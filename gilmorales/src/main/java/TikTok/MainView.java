@@ -65,14 +65,10 @@ public class MainView extends VerticalLayout {
 		this.setSizeFull();
 		this.setMargin(false);
 		this.setPadding(false);
-//
-//		Usuario_No_Registrado unr = new Usuario_No_Registrado(this);
-//		add(unr);
+
+		Usuario_No_Registrado unr = new Usuario_No_Registrado(this);
+		add(unr);
 		
-		Usuario_Registrado user = new Usuario_Registrado(this, 3);
-		add(user);
-//		Administrador admin = new Administrador(this, 999);
-//		add(admin);
 
 	}
 }

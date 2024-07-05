@@ -27,6 +27,7 @@ public class Configurar_perfil extends VistaConfigurarPerfil {
 		this._ver_perfil_propio = ver_perfil_propio;
 		this.dialog = dialog;
 		this.user = user;
+		this.getLayoutNotificaciones().setVisible(false);
 		this.visibilidad = new RadioButtonGroup<String>();
 		visibilidad.setItems("Pública", "Privada");
 		if (this.user.getPrivacidad() == 0)

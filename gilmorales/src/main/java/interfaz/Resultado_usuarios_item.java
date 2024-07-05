@@ -22,7 +22,9 @@ public class Resultado_usuarios_item extends Lista_resultado_item {
 		if(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado != null) {
 			this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur = this.bd.cargarUsuarioRegistrado(this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur.getID());
 			this.sigue = this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur.seguir.contains(this.user);
-			if(sigue) {
+			if( this.user.getID() == this._lista_resultado._realizar_busqueda._cabecera_Usuario_Registrado.urInterfaz.ur.getID()) {
+				this.getBotonSeguir().setVisible(false);
+			}else if(sigue) {
 				this.getBotonSeguir().setText("Dejar de Seguir");
 			}else if(!sigue && this.user.getPrivacidad() == 1)
 				this.getBotonSeguir().setText("Enviar petición de amistad");

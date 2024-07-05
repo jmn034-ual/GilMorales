@@ -25,7 +25,7 @@ public class Lista_resultado_item extends VistaListaResultadoItem{
 			this.getVaadinHorizontalLayout1().setVisible(false);	
 			this.user = (UsuarioRegistrado) o;
 			Ver_perfil();
-			this.getBotonNombreUsuario().setText(user.getNombre());
+			this.getBotonNombreUsuario().setText(user.getNombreUsuario());
 			this.getVaadinAvatar().setImage(this.user.getFoto());
 		}else if(o instanceof UsuarioComercial){
 			this.getVaadinHorizontalLayout1().setVisible(false);	
