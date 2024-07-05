@@ -3,6 +3,8 @@ package basededatos;
 import basededatos.BDPrincipal;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Vector;
 
@@ -28,11 +30,18 @@ public class Comentarios {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Publicacion publicacion = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
-			List<Comentario> ordenada = new ArrayList<Comentario>(publicacion.tieneComentarios.getCollection());
-			ordenada.sort(null);
-			for (int i = ordenada.size() - 1, j = 0; j < 5; j++) {
-				top.add(ordenada.get(i));
-			}
+			List<Comentario> comentarios = new ArrayList<Comentario>(publicacion.tieneComentarios.getCollection());
+			  // Ordenar los comentarios por el número de "me gusta" en orden descendente
+            Collections.sort(comentarios, new Comparator<Comentario>() {
+                @Override
+                public int compare(Comentario c1, Comentario c2) {
+                    return Integer.compare(c2.gustaA.size(), c1.gustaA.size());
+                }
+            });
+			 // Seleccionar los primeros 5 comentarios o menos si no hay tantos
+            for (int i = 0; i < Math.min(5, comentarios.size()); i++) {
+                top.add(comentarios.get(i));
+            }
 		} catch (Exception e) {
 			t.rollback();
 		}

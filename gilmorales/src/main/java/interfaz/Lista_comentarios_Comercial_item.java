@@ -15,6 +15,8 @@ public class Lista_comentarios_Comercial_item extends VistaListaComentariosComer
 
 	
 	public Lista_comentarios_Comercial_item(Comentario c, Lista_comentarios_Comercial interfaz) {
+		this.getStyle().set("width", "100%");
+    	this.getStyle().set("height", "100%");
 		this.comentario = c;
 		this._lista_comentarios__Comercial_ = interfaz;
 		this.getAvatar().setImage(comentario.getEsComentadoPor().getFoto());

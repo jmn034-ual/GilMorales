@@ -31,15 +31,14 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		this.getStyle().set("width", "100%");
 		this.getStyle().set("height", "100%");
 		this.urInterfaz = urInterfaz;
-		this.getVaadinHorizontalLayout2().setVisible(false);
+//		this.getVaadinHorizontalLayout2().setVisible(false);
 		this.getVerPerfil().setText(this.publicacion.getPerteneceA().getNombreUsuario());
 		this.getAvatar().setImage(this.publicacion.getPerteneceA().getFoto());
 		this.getGeolocalizacion().setText(this.publicacion.getLocalizacion());
 		this.getDescripcion().setText(this.publicacion.getDescripcion());
-		this.getBotonComentar().setVisible(false);
+//		this.getBotonComentar().setVisible(false);
 		this.getBotonSeguir().setVisible(false);
 		this.getBotonDenunciar().setVisible(false);
-		this.getVaadinHorizontalLayout2().setVisible(false);
 		this.getNumMeGustas().setText(this.publicacion.getNumMeGustas()+"");
 		this.getNumComentarios().setText(this.publicacion.getNumComentarios()+"");
 		this.getFechaSubida().setText(this.publicacion.getFechaPublicacion());
@@ -49,6 +48,7 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 		Ver_perfil_propio();
 		Ver_me_gustas_publicacion();
 		Ver_comentarios__Usuario_Registrado_(this);
+		Comentar();
 	}
 
 	public void Eliminar_publicacion_propia() {
@@ -83,6 +83,17 @@ public class Ver_publicacion_propia extends Ver_publicacion_usuario_Registrado {
 				dialog.close();
 			});
 			dialog.open();
+		});
+	}
+	
+	public void Comentar() {
+		this.getBotonComentar().addClickListener(event -> {
+			this.bd.comentarPublicacion(this.publicacion.getIdPublicacion(), this.user.getID(),
+					this.getTextComentario().getValue());
+			this.publicacion = this.bd.cargarPublicacion(this.publicacion.getIdPublicacion());
+			this.getTextComentario().setValue("");
+			this.getNumComentarios().setText(this.publicacion.getNumComentarios() +"");
+
 		});
 	}
 }

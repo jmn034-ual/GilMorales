@@ -13,7 +13,6 @@ import bd_dcl.UsuarioRegistrado;
 public class Ver_perfil_privado extends Ver_Perfil__2 {
 
 	public iVer_perfil_privado _iVer_perfil_privado;
-	UsuarioRegistrado userAver;
 	BDPrincipal bd = new BDPrincipal();
 	boolean click = false;
 
@@ -36,10 +35,13 @@ public class Ver_perfil_privado extends Ver_Perfil__2 {
 		this.getListaMeGustas().setVisible(false);
 		this.getNombreUsuario().setText(this.userAver.getNombreUsuario());
 		this.getNombreYapellidos().setText(this.userAver.getNombre() + " " + this.userAver.getApellidos());
+		this.getFotoPerfil1().setImage(this.userAver.getFoto());
 		NumeroSeguidores();
 		NumeroSeguidos();
 		NumeroMeGusta();
 		Enviar_peticion_amistad();
+		Denunciar_usuario(this);
+
 	}
 
 	public void Enviar_peticion_amistad() {

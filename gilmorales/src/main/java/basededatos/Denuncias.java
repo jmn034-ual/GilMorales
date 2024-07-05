@@ -18,6 +18,8 @@ import bd_dcl.Publicacion;
 import bd_dcl.PublicacionDAO;
 import bd_dcl.UsuarioAdministrador;
 import bd_dcl.UsuarioAdministradorDAO;
+import bd_dcl.UsuarioComercial;
+import bd_dcl.UsuarioComercialDAO;
 import bd_dcl.UsuarioRegistrado;
 import bd_dcl.UsuarioRegistradoDAO;
 
@@ -150,62 +152,55 @@ public class Denuncias {
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();	
 	}
+	
+	public void denunciarComentarioComercial(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID) throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
+			UsuarioComercial usuarioDenunciante = UsuarioComercialDAO.loadUsuarioComercialByORMID(aUsuarioID);
+			UsuarioAdministrador admin = UsuarioAdministradorDAO.loadUsuarioAdministradorByORMID(999);
+			Denuncia denuncia = DenunciaDAO.createDenuncia();
+			denuncia.setExplicacion(aExplicacion);
+			denuncia.setMotivo(aMotivo);
+			denuncia.setRealizadaPor(null);
+			denuncia.setTipoDenuncia(1);
+			denuncia.setTipoEstado(0);
+			denuncia.setAtendida(admin);
+			DenunciaDAO.save(denuncia);
+			usuarioDenunciante.denunciaComentarioUC.add(comentario);
+			comentario.denunciaDe.add(usuarioDenunciante);
+			UsuarioComercialDAO.save(usuarioDenunciante);
+			ComentarioDAO.save(comentario);
+			t.commit();
+		}catch(Exception e){
+			t.rollback();
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();	
+	}
 
-//	public Object origenDenuncia(int idDenuncia) throws PersistentException {
-//	    PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-//	    try {
-//	        Denuncia denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
-//	        if (denuncia == null) {
-//	            t.rollback();
-//	            return null; // Si la denuncia no existe, retorna null
-//	        }
-//
-//	        Object origen = null;
-//
-//	        if (denuncia.getTipoDenuncia() == 0) {
-//	            // Buscar el usuario que tiene esta denuncia
-//	        	ArrayList<UsuarioRegistrado> usuariosDenunciados = new ArrayList<UsuarioRegistrado>(denuncia.getRealizadaPor().denucia.getCollection());
-//	            for (UsuarioRegistrado user : usuariosDenunciados) {
-//	                    if (user.esDenunciado.contains(denuncia.getRealizadaPor())) {
-//	                    	if()
-//	                        origen = user;
-//	                        break;
-//	                    }
-//	                }
-//	                if (origen != null) break;
-//	            }
-//	        } else if (denuncia.getTipoDenuncia() == 1) {
-//	            // Buscar el comentario que tiene esta denuncia
-//	            for (Comentario comentario : ComentarioDAO.listComentarioByQuery(null, null)) {
-//	                for (Denuncia comentarioDenuncia : comentario.denunciadoPor) {
-//	                    if (comentarioDenuncia.getID() == idDenuncia) {
-//	                        origen = comentario;
-//	                        break;
-//	                    }
-//	                }
-//	                if (origen != null) break;
-//	            }
-//	        } else if (denuncia.getTipoDenuncia() == 2) {
-//	            // Buscar la publicación que tiene esta denuncia
-//	            for (Publicacion publicacion : PublicacionDAO.listPublicacionByQuery(null, null)) {
-//	                for (Denuncia publicacionDenuncia : publicacion.publicacionDenunciadaPor) {
-//	                    if (publicacionDenuncia.getID() == idDenuncia) {
-//	                        origen = publicacion;
-//	                        break;
-//	                    }
-//	                }
-//	                if (origen != null) break;
-//	            }
-//	        }
-//
-//	        t.commit();
-//	        return origen;
-//	    } catch (Exception e) {
-//	        t.rollback();
-//	        throw new PersistentException(e);
-//	    } finally {
-//	        GilMoralesPersistentManager.instance().disposePersistentManager();
-//	    }
-//	}
+	public Object origenDenuncia(int idDenuncia) throws PersistentException {
+		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
+		try {
+			Denuncia denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
+			UsuarioRegistrado denunciante = denuncia.getRealizadaPor();
+			
+			if(denuncia.getTipoDenuncia() == 0) {
+				ArrayList<UsuarioRegistrado> usuariosDenunciados = new ArrayList<UsuarioRegistrado>(denunciante.denucia.getCollection());
+				for(UsuarioRegistrado user : usuariosDenunciados) {
+					if(user.esDenunciado.contains(denunciante)) {
+						return user;
+					}
+				}
+			}else if(denuncia.getTipoDenuncia() == 1) {
+				
+			}
+	
+			t.commit();
+		}catch(Exception e){
+			t.rollback();
+		}
+		GilMoralesPersistentManager.instance().disposePersistentManager();	
+		return null;
+	}
 
 }

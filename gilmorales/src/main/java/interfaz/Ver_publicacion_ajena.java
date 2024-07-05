@@ -23,6 +23,7 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	public Ver_perfil_publico _ver_perfil;
 	boolean gusta = false;
 	Icon icono = null;
+	Dialog dialog;
 
 	
 	public Ver_publicacion_ajena(Publicacion p, UsuarioRegistrado user, Object urInterfaz) {
@@ -109,9 +110,9 @@ public class Ver_publicacion_ajena extends Ver_publicacion_usuario_Registrado {
 	}
 
 	public void Denunciar_publicacion() {
-		_denunciar_publicacion = new Denunciar_publicacion(this.publicacion, this);
 		this.getBotonDenunciar().addClickListener(event -> {
-			Dialog dialog = new Dialog(_denunciar_publicacion);
+			_denunciar_publicacion = new Denunciar_publicacion(this.publicacion, this);
+			dialog = new Dialog(_denunciar_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("50%");
 			dialog.setWidth("50%");

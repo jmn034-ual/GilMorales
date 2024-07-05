@@ -18,7 +18,7 @@ public interface iUsuario_comercial {
 
 	public void eliminarPublicacoinUC(int aIdPublicacion);
 
-	public void denunciarComentario(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID);
+	public void denunciarComentarioComercial(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID);
 
 	public List cargarUsuariosMeGustas(int aIdPublicacion);
 }

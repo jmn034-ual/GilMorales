@@ -165,6 +165,18 @@ public class BDPrincipal
 			e.printStackTrace();
 		}
 	}
+	
+	public void denunciarComentarioComercial(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID) {
+		try {
+			if(aMotivo.isBlank() || aExplicacion.isBlank())
+				Notification.show("Rellena los campos");
+			else
+				this.denuncias.denunciarComentarioComercial(aIdComentario, aMotivo, aExplicacion, aUsuarioID);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public List cargarUsuariosMeGustas(int aIdPublicacion) {
 		throw new UnsupportedOperationException();

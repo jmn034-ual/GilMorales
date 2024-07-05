@@ -80,8 +80,8 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	public void Ver_me_gustas_publicacion() {
 		this.getVaadinButton().getStyle().set("color", "black");
 		this.getVaadinButton().setIcon(new Icon(VaadinIcon.HEART));
-		_ver_me_gustas_publicacion = new Ver_me_gustas_publicacion(this.publicacion, this);
 		this.getVaadinButton().addClickListener(event ->{
+			_ver_me_gustas_publicacion = new Ver_me_gustas_publicacion(this.publicacion, this);
 			dialog = new Dialog(_ver_me_gustas_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("50%");
@@ -145,14 +145,11 @@ public class Lista_publicaciones_Usuario_Registrado_item extends Lista_Publicaci
 	public void Denunciar_publicacion() {
 		_denunciar_publicacion = new Denunciar_publicacion(this.publicacion, this);
 		this.getBotonDenunciar().addClickListener(event -> {
-			Dialog dialog = new Dialog(_denunciar_publicacion);
+			dialog = new Dialog(_denunciar_publicacion);
 			dialog.addThemeVariants(DialogVariant.LUMO_NO_PADDING);
 			dialog.setHeight("50%");
 			dialog.setWidth("50%");
 			this._denunciar_publicacion.getBotonCancelar().addClickListener(event2 -> {
-				dialog.close();
-			});
-			this._denunciar_publicacion.getBotonEnviar().addClickListener(evente3 -> {
 				dialog.close();
 			});
 			dialog.open();

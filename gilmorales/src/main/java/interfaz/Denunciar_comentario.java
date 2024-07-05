@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.select.Select;
 
 import basededatos.BDPrincipal;
@@ -59,12 +60,20 @@ public class Denunciar_comentario extends VistaDenunciarComentarioComercial{
 	public void Enviar() {
 		this.getEnviarB().addClickListener(event -> {
 			String explicacion = this.getMotivoTA().getValue();
-			
-			this.bd.denunciarComentario(this.comentario.getIdComentario(), motivo, explicacion, this.user.getID());
+			if(motivo.isBlank() || explicacion.isBlank()) {
+				Notification.show("Rellene los campos de su denuncia");
+			}else {
+			if(this.user != null)
+				this.bd.denunciarComentario(this.comentario.getIdComentario(), motivo, explicacion, this.user.getID());
+			else
+				this.bd.denunciarComentarioComercial(this.comentario.getIdComentario(), motivo, explicacion, this.comercial.getID());
+
 			if(this._lista_comentarios__Usuario_registrado_ != null)
 				this._lista_comentarios__Usuario_registrado_.dialog.close();
 			else
 				this._lista_comentarios__Comercial_.dialog.close();
+			}
 		});
+		
 	}
 }

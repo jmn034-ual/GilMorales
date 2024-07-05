@@ -14,9 +14,7 @@ import bd_dcl.UsuarioRegistrado;
 public class Ver_perfil_publico extends Ver_Perfil__2 {
 	public Publicaciones_usuario_publico _publicaciones_usuario_publico;
 	public Ver_publicacciones_gustadas_Otro_usuario _ver_publicacciones_gustadas__Otro_usuario_;
-	UsuarioRegistrado userAver;
 	iUsuario_Registrado bd = new BDPrincipal();
-	Object interfazAux;
 
 	public Ver_perfil_publico(UsuarioRegistrado userAver, Object interfaz, Cabecera_TOP cabecera_TOP) {
 		super(cabecera_TOP);

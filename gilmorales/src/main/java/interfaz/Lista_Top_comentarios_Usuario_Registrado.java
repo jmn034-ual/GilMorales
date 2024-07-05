@@ -33,7 +33,7 @@ public class Lista_Top_comentarios_Usuario_Registrado extends Lista_Top_Comentar
 
 	@Override
 	public void cargarComentariosTOP() {
-		List<Comentario> comentarios = new ArrayList<Comentario>(this.p.tieneComentarios.getCollection());
+		List<Comentario> comentarios = this.bd.cargarComentariosTOP(this.p.getIdPublicacion());
 		if(_item != null) {
 			this.getListaTopComentarios().as(VerticalLayout.class).removeAll();
 			this._item.clear();	
