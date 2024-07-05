@@ -12,7 +12,9 @@ import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 
 import TikTok.Video;
 import basededatos.BDPrincipal;
+import bd_dcl.Comentario;
 import bd_dcl.Denuncia;
+import bd_dcl.Publicacion;
 import bd_dcl.UsuarioRegistrado;
 import net.bytebuddy.asm.Advice.This;
 import vistas.VistaListaDdenunciasAdministradorItem;
@@ -29,11 +31,15 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 	int estadoInt = 0;
 	boolean estadoBolean = false;
 	Administrador admin;
+	UsuarioRegistrado denunciado;
+	Publicacion publiDenunciada;
+	Comentario comentarioDenunciado;
 
 	public Lista_denuncias_item(Denuncia denuncia, Filtrar_denuncias interfaz) {
 		this.getStyle().set("width", "100%");
 		this.denuncia =  this.bd.cargarDenuncia(denuncia.getIdDenuncia());
 		this._filtrar_denuncias = interfaz;
+		this.admin = this._filtrar_denuncias._lista_denuncias._ver_denuncias._gestionar_denuncias._cabecera_Administrador._administrador;
 		this.getNombreCompleto().setText(
 				this.denuncia.getRealizadaPor().getNombre() + " " + this.denuncia.getRealizadaPor().getApellidos());
 		this.getNombreUsuario().setText(this.denuncia.getRealizadaPor().getNombreUsuario());
@@ -46,6 +52,7 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 		this.getStyle().set("width", "100%");
 		this.denuncia =  this.bd.cargarDenuncia(denuncia.getIdDenuncia());
 		this._filtrar_denuncias = filtrarInterfaz;
+		this.admin = this._filtrar_denuncias._lista_denuncias._ver_denuncias._gestionar_denuncias._cabecera_Administrador._administrador;
 		this._lista_denuncias = interfaz;
 		this.getNombreCompleto().setText(
 				this.denuncia.getRealizadaPor().getNombre() + " " + this.denuncia.getRealizadaPor().getApellidos());
@@ -176,26 +183,34 @@ public class Lista_denuncias_item extends VistaListaDdenunciasAdministradorItem 
 				}
 			});
 			verDenuncia.getBotonVer().addClickListener(ver -> {
-				this.admin = this._filtrar_denuncias._lista_denuncias._ver_denuncias._gestionar_denuncias._cabecera_Administrador._administrador;
-				if (this.denuncia.getTipoDenuncia() == 0)
-					verDenuncia.getTipo().setText("Usuario");
-				else if (this.denuncia.getTipoDenuncia() == 1)
-					verDenuncia.getTipo().setText("Comentario");
-				else
-					verDenuncia.getTipo().setText("Publicación");
+				origenDenuncia();
+				dialog.close();
 			});
 		});
 		// Falta realizar la forma para ver la publicacion, comentario o usuario de la
 		// denuncia
 	}
 	
-	public Object origenDenuncia() {
-		Object origen = null;
-		if (this.denuncia.getTipoDenuncia() == 0) {
-		}else if (this.denuncia.getTipoDenuncia() == 1) {
+	public void origenDenuncia() {
+		Object origen = this.bd.origenDenuncia(this.denuncia.getIdDenuncia());
+		Ver_publicacion_Administrador aux = null;
+		if (origen instanceof UsuarioRegistrado) {
+			this.denunciado = (UsuarioRegistrado) origen;
+			this.admin.getVaadinHorizontalLayout().removeAll();
+			this.admin.getVaadinHorizontalLayout().add(new Ver_perfil_Administrador(this.admin._cabecera_Administrador.cabeceraTOP, this.denunciado));
+
+		}else if (origen instanceof Comentario) {
+			this.comentarioDenunciado = (Comentario) origen;
+			this.admin.getVaadinHorizontalLayout().removeAll();
+			aux = new Ver_publicacion_Administrador(this.comentarioDenunciado.getComentadoEn(), this.admin);
+			this.admin.getVaadinHorizontalLayout().add(new Ver_comentarios_Administrador(this.comentarioDenunciado.getComentadoEn(), aux));
+
 		}else {
+			this.publiDenunciada = (Publicacion) origen;
+			aux = new Ver_publicacion_Administrador(this.publiDenunciada, this.admin);
+			this.admin.getVaadinHorizontalLayout().removeAll();
+			this.admin.getVaadinHorizontalLayout().add(aux);
 		}
 		
-		return origen;
 	}
 }

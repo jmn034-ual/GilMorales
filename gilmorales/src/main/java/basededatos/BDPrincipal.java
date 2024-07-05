@@ -35,6 +35,16 @@ public class BDPrincipal
 	public UsuariosAdministradores _c_usuarioAdministrador = new UsuariosAdministradores();
 	public Denuncias denuncias = new Denuncias();
 		
+	public Object origenDenuncia(int idDenuncia) {
+		Object origen = null;
+		try {
+			origen = this.denuncias.origenDenuncia(idDenuncia);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return origen;
+	}
 	public List<Publicacion> cargarAllPubliaciones(){
 		List<Publicacion> publicaciones = null;
 		try {

@@ -26,28 +26,28 @@ import bd_dcl.UsuarioRegistradoDAO;
 public class Denuncias {
 	public BDPrincipal _c_bd_denuncia;
 	public Vector<Denuncia> _denuncia = new Vector<Denuncia>();
-	
+
 	public Denuncia cargarDenuncia(int idDenuncia) throws PersistentException {
 		Denuncia denuncia = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-		try {			
+		try {
 			denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
 		return denuncia;
 	}
-	
+
 	public Denuncia actualizarDenuncia(int idDenuncia, int estado) throws PersistentException {
 		Denuncia denuncia = null;
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
-		try {			
+		try {
 			denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
 			denuncia.setTipoEstado(estado);
 			DenunciaDAO.save(denuncia);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
 		return denuncia;
@@ -58,24 +58,25 @@ public class Denuncias {
 		String condicion = "";
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			if(filtro == "pendientes")
-				condicion = "tipoEstado = '" + 0 + "'"; 
-			else if(filtro == "aplicadas")
-				condicion = "tipoEstado = '" + 1 + "'"; 
-			else if(filtro == "finalizadas")
-				condicion = "tipoEstado = '" + 2 + "'"; 
-			else 
+			if (filtro == "pendientes")
+				condicion = "tipoEstado = '" + 0 + "'";
+			else if (filtro == "aplicadas")
+				condicion = "tipoEstado = '" + 1 + "'";
+			else if (filtro == "finalizadas")
+				condicion = "tipoEstado = '" + 2 + "'";
+			else
 				condicion = null;
-			
+
 			denuncias = DenunciaDAO.queryDenuncia(condicion, null);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
-		return denuncias;	
+		return denuncias;
 	}
 
-	public void denunciarPublicacion(int aIdPublicacion, String aMotivo, String aExplicacion, int aUsuarioID)throws PersistentException {
+	public void denunciarPublicacion(int aIdPublicacion, String aMotivo, String aExplicacion, int aUsuarioID)
+			throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Publicacion p = PublicacionDAO.loadPublicacionByORMID(aIdPublicacion);
@@ -95,17 +96,20 @@ public class Denuncias {
 			PublicacionDAO.save(p);
 			UsuarioRegistradoDAO.save(usuarioDenunciante);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
 		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void denunciarUsuario(int aUsuarioDenunciadoID, String aExplicacion, String aMotivo, int aUsuarioDenuncianteID)throws PersistentException {
+	public void denunciarUsuario(int aUsuarioDenunciadoID, String aExplicacion, String aMotivo,
+			int aUsuarioDenuncianteID) throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
-			UsuarioRegistrado usuarioDenunciado = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioDenunciadoID);
-			UsuarioRegistrado usuarioDenunciante = UsuarioRegistradoDAO.loadUsuarioRegistradoByORMID(aUsuarioDenuncianteID);
+			UsuarioRegistrado usuarioDenunciado = UsuarioRegistradoDAO
+					.loadUsuarioRegistradoByORMID(aUsuarioDenunciadoID);
+			UsuarioRegistrado usuarioDenunciante = UsuarioRegistradoDAO
+					.loadUsuarioRegistradoByORMID(aUsuarioDenuncianteID);
 			UsuarioAdministrador admin = UsuarioAdministradorDAO.loadUsuarioAdministradorByORMID(999);
 			Denuncia denuncia = DenunciaDAO.createDenuncia();
 			denuncia.setExplicacion(aExplicacion);
@@ -121,13 +125,14 @@ public class Denuncias {
 			UsuarioRegistradoDAO.save(usuarioDenunciado);
 			UsuarioRegistradoDAO.save(usuarioDenunciante);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
-		GilMoralesPersistentManager.instance().disposePersistentManager();	
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void denunciarComentario(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID) throws PersistentException {
+	public void denunciarComentario(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID)
+			throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
@@ -147,13 +152,14 @@ public class Denuncias {
 			UsuarioRegistradoDAO.save(usuarioDenunciante);
 			ComentarioDAO.save(comentario);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
-		GilMoralesPersistentManager.instance().disposePersistentManager();	
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
-	
-	public void denunciarComentarioComercial(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID) throws PersistentException {
+
+	public void denunciarComentarioComercial(int aIdComentario, String aMotivo, String aExplicacion, int aUsuarioID)
+			throws PersistentException {
 		PersistentTransaction t = GilMoralesPersistentManager.instance().getSession().beginTransaction();
 		try {
 			Comentario comentario = ComentarioDAO.loadComentarioByORMID(aIdComentario);
@@ -172,10 +178,10 @@ public class Denuncias {
 			UsuarioComercialDAO.save(usuarioDenunciante);
 			ComentarioDAO.save(comentario);
 			t.commit();
-		}catch(Exception e){
+		} catch (Exception e) {
 			t.rollback();
 		}
-		GilMoralesPersistentManager.instance().disposePersistentManager();	
+		GilMoralesPersistentManager.instance().disposePersistentManager();
 	}
 
 	public Object origenDenuncia(int idDenuncia) throws PersistentException {
@@ -183,18 +189,27 @@ public class Denuncias {
 		try {
 			Denuncia denuncia = DenunciaDAO.loadDenunciaByORMID(idDenuncia);
 			UsuarioRegistrado denunciante = denuncia.getRealizadaPor();
-			
+
 			if(denuncia.getTipoDenuncia() == 0) {
-				ArrayList<UsuarioRegistrado> usuariosDenunciados = new ArrayList<UsuarioRegistrado>(denunciante.denucia.getCollection());
-				for(UsuarioRegistrado user : usuariosDenunciados) {
+				List<UsuarioRegistrado> usuarios = UsuarioRegistradoDAO.queryUsuarioRegistrado(null, null);
+				for(UsuarioRegistrado user : usuarios) {
 					if(user.esDenunciado.contains(denunciante)) {
 						return user;
 					}
 				}
 			}else if(denuncia.getTipoDenuncia() == 1) {
-				
+				List<Comentario> comentariosDenunciados = ComentarioDAO.queryComentario(null, null);
+				for(Comentario comenatario : comentariosDenunciados) {
+					if(comenatario.denunciadoPor.contains(denunciante));
+					return comenatario;
+				}
+			}else if(denuncia.getTipoDenuncia() == 2) {
+				List<Publicacion> publicacionesDenunciadas = PublicacionDAO.queryPublicacion(null, null);
+				for(Publicacion publicacion : publicacionesDenunciadas) {
+					if(publicacion.publicacionDenunciadaPor.contains(denunciante));
+					return publicacion;
+				}
 			}
-	
 			t.commit();
 		}catch(Exception e){
 			t.rollback();

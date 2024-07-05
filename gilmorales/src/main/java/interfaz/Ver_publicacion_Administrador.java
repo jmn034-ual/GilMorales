@@ -15,6 +15,7 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 	public Lista_usuarios_registrados_item userRegistradoItem;
 	public Publicaciones_hashtag_item hashtagItem;
 	public Lista_Top_Comentarios_Administrador _lista_Top_Comentarios__Administrador_;
+	public Gestionar_denuncias gestionarDenuncias;
 	Publicacion publicacion;
 	Administrador admin;
 	
@@ -34,6 +35,8 @@ public class Ver_publicacion_Administrador extends VistaVerPublicacionAdministra
 		}else if(interfaz instanceof Publicaciones_hashtag_item) {
 			this.hashtagItem = (Publicaciones_hashtag_item) interfaz;
 			this.admin = this.hashtagItem.admin;
+		}else if(interfaz instanceof Administrador){
+			this.admin = (Administrador) interfaz;
 		}else {
 			this._lista_publicaciones_gustadas = (Lista_publicaciones_gustadas_item) interfaz;
 			this.admin = this._lista_publicaciones_gustadas._lista_publicaciones_gustadas._ver_publicaciones_gustadas._ver_perfil__Administrador_.cabecera_top.cabeceraAdmin._administrador;
